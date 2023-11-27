@@ -1,0 +1,114 @@
+
+.GameFrame {
+    display: flex;
+    flex-direction: row;
+    background: #E6E6F0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.PlayingBoard {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.WordBoard {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.BoardRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.InfoBoard {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+.LetterTile {
+    display: flex;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    height: 44px;
+    min-height: 44px;
+    width: 44px;
+    min-width: 44px;
+    font-family: "Tamil Sangam MN";
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    z-index: 5;
+    position: relative;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.LetterTile.MEY {
+    /*background: rgb(218, 158, 255);*/
+    background: rgb(158, 218, 255);
+    border: 2px solid rgb(103, 181, 229);
+}
+
+.LetterTile.UYIR {
+    /*background: rgb(218, 158, 255);*/
+    background: rgb(255, 158, 218);
+    border: 2px solid rgb(229, 103, 181);
+}
+.LetterTile.UYIRMEY {
+    background: rgb(255, 218, 158);
+    border: 2px solid rgb(229, 181, 103);
+}
+
+
+.Square {
+    display: flex;
+    border: 0px;
+    border-radius: 6px;
+    margin: 2px;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    height: 40px;
+    width: 40px;
+    font-family: "Tamil Sangam MN";
+    font-size: 20px;
+    font-weight: bold;
+    background: #C4C4D1;
+    color: black;
+    overflow: visible;
+}
+
+.LetterRack {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Consonants {
+    display: flex;
+    flex-direction: row;
+}
+
+.Vowels {
+    display: flex;
+    flex-direction: row;
+}
