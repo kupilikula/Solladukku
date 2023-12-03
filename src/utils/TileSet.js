@@ -56,111 +56,133 @@ const MarkedConsonants = UnmarkedConsonants.map(c=> c + '\u0bcd');
 
 const MeyTiles = {
     'க்': {
+        key: 'க்',
         letter: 'க்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 1,
     },
     'ச்': {
+        key: 'ச்',
         letter: 'ச்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 2,
     },
     'ட்': {
+        key: 'ட்',
         letter: 'ட்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 2,
     },
     'த்': {
+        key: 'த்',
         letter: 'த்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 1,
     },
     'ப்': {
+        key: 'ப்',
         letter: 'ப்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 1,
     },
     'ற்': {
+        key: 'ற்',
         letter: 'ற்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 3,
     },
     'ங்': {
+        key: 'ங்',
         letter: 'ங்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 2,
     },
     'ஞ்': {
+        key: 'ஞ்',
         letter: 'ஞ்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 3,
     },
     'ண்': {
+        key: 'ண்',
         letter: 'ண்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 3,
     },
     'ந்': {
+        key: 'ந்',
         letter: 'ந்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 2,
     },
     'ம்': {
+        key: 'ம்',
         letter: 'ம்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 1,
     },
     'ன்': {
+        key: 'ன்',
         letter: 'ன்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 2,
     },
     'ய்': {
+        key: 'ய்',
         letter: 'ய்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 2,
     },
     'ர்': {
+        key: 'ர்',
         letter: 'ர்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 1,
     },
     'ல்': {
+        key: 'ல்',
         letter: 'ல்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 1,
     },
     'வ்': {
+        key: 'வ்',
         letter: 'வ்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 2,
     },
     'ழ்': {
+        key: 'ழ்',
         letter: 'ழ்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 5,
     },
     'ள்': {
+        key: 'ள்',
         letter: 'ள்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 3,
     },
     'ஜ்': {
+        key: 'ஜ்',
         letter: 'ஜ்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 5,
     },
     'ஷ்': {
+        key: 'ஷ்',
         letter: 'ஷ்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 5,
     },
     'ஸ்': {
+        key: 'ஸ்',
         letter: 'ஸ்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 5,
     },
     'ஹ்': {
+        key: 'ஹ்',
         letter: 'ஹ்',
         letterType: constants.LetterTile.letterType.MEY,
         points: 5,
@@ -169,61 +191,73 @@ const MeyTiles = {
 
 const UyirTiles = {
     'அ': {
+        key: 'அ',
         letter: 'அ',
         letterType: constants.LetterTile.letterType.UYIR,
         points: 1,
     },
     'ஆ': {
+        key: 'ஆ',
         letter: 'ஆ',
         letterType: constants.LetterTile.letterType.UYIR,
         points: 2,
     },
     'இ': {
+        key: 'இ',
         letter: 'இ',
         letterType: constants.LetterTile.letterType.UYIR,
         points: 1,
     },
     'ஈ': {
+        key: 'ஈ',
         letter: 'ஈ',
         letterType: constants.LetterTile.letterType.UYIR,
         points: 2,
     },
     'உ': {
+        key: 'உ',
         letter: 'உ',
         letterType: constants.LetterTile.letterType.UYIR,
         points: 2,
     },
     'ஊ': {
+        key: 'ஊ',
         letter: 'ஊ',
         letterType: constants.LetterTile.letterType.UYIR,
         points: 3,
     },
     'எ': {
+        key: 'எ',
         letter: 'எ',
         letterType: constants.LetterTile.letterType.UYIR,
         points: 3,
     },
     'ஏ': {
+        key: 'ஏ',
         letter: 'ஏ',
         letterType: constants.LetterTile.letterType.UYIR,
         points: 2,
     },
     'ஐ': {
+        key: 'ஐ',
         letter: 'ஐ',
         letterType: constants.LetterTile.letterType.UYIR,
         points: 3,
     },
     'ஒ': {
+        key: 'ஒ',
         letter: 'ஒ',
         letterType: constants.LetterTile.letterType.UYIR,
         points: 3,
     },
     'ஓ': {
+        key: 'ஓ',
         letter: 'ஓ',
         letterType: constants.LetterTile.letterType.UYIR,
         points: 3,
     },
     'ஔ': {
+        key: 'ஔ',
         letter: 'ஔ',
         letterType: constants.LetterTile.letterType.UYIR,
         points: 5,
@@ -260,12 +294,16 @@ for (const [c, cTile] of Object.entries(MeyTiles)) {
 
 const BonusTiles = {
 '?': {
+    key: '?',
     letter: '',
     letterType: constants.LetterTile.letterType.BONUS,
     points: 0,
     }
 }
 
+const isConsonant = (l) => MarkedConsonants.includes(l);
+const isVowel = (l) => Vowels.includes(l);
+
 const TileSet = { ...UyirTiles, ...MeyTiles, ...UyirMeyTiles, ...BonusTiles };
-const TileMethods = { joinMeyTileAndUyirTile, splitUyirMeyTile }
+const TileMethods = { joinMeyTileAndUyirTile, splitUyirMeyTile , isConsonant, isVowel}
 export { TileSet, TileMethods };

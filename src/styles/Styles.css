@@ -82,6 +82,22 @@
     border: 2px solid rgb(229, 181, 103);
 }
 
+.LetterTile.RACK {
+    margin: 2px;
+}
+
+.Points {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    color: black;
+    font-size: 12px;
+}
+
+.RackSlot {
+    height: 46px;
+    width: 46px;
+}
 
 .Square {
     display: flex;
@@ -102,6 +118,35 @@
     background: #C4C4D1;
     color: black;
     overflow: visible;
+}
+
+.Square.Word3 {
+     background: rgb(191,78,78);
+}
+.Square.Word2 {
+    background: rgb(228,162,163);
+}
+.Square.Letter3 {
+    background: rgb(12,103,156);
+}
+.Square.Letter2 {
+    background: rgb(104,162,195);
+}
+
+.Multiplier {
+    position: absolute;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.Square.Center .Multiplier{
+    font-size: 24px;
+}
+
+.Square.Center {
+    background: rgb(228,162,163);
 }
 
 .DropShadow {

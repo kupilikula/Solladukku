@@ -1,7 +1,14 @@
 import {useDispatch, useSelector} from "react-redux";
-import {playWord, updateScoreBoard} from "../store/actions";
+import {
+    initializeNewGameState,
+    playWord,
+    replenishRack,
+    returnAllUnplayedTilesToRackFromBoard,
+    updateScoreBoard
+} from "../store/actions";
 import constants from "../utils/constants";
-
+import {TileSet} from "../utils/TileSet";
+import _ from 'lodash';
 
 const computeWords = (main, unplayedTilesWithPositions, playedTilesWithPositions) => {
     const transverse = main==='row' ? 'col' : 'row';
@@ -125,30 +132,81 @@ const validateWordBoardAndComputeNewWords = (unplayedTilesWithPositions, playedT
         if (!touchesAlreadyPlayed) {
             return {valid: false};
         }
+    } else {
+        //Must use center square
+        if (!result.formedWords.flat(Infinity).some( t => t.row===7 && t.col===7)) {
+            return {valid: false};
+        }
     }
-
     return {valid: true, formedWords: result.formedWords};
 }
 
+const fetchNLettersFromBags = (nLettersToFetch, letterBags) => {
+    let V = [];
+    Object.keys(letterBags.vowelsBag).forEach(v => {
+        V = V.concat(Array(letterBags.vowelsBag[v]).fill(v));
+    });
+    console.log('V:', V);
+    let C = [];
+    Object.keys(letterBags.consonantsBag).forEach(c => {
+        C = C.concat(Array(letterBags.consonantsBag[c]).fill(c));
+    });
+    let B = [];
+    Object.keys(letterBags.bonusBag).forEach(b => {
+        B = B.concat(Array(letterBags.bonusBag[b]).fill(b));
+    });
+
+    let X = V.concat(C).concat(B);
+    let fetchedLetters = _.sampleSize(X, Math.min(nLettersToFetch, X.length));
+    return fetchedLetters;
+}
 
 export default function ActionMenu() {
 
     const dispatch = useDispatch();
     const unplayedTilesWithPositions = useSelector(state => state.WordBoard.unplayedTilesWithPositions);
     const playedTilesWithPositions = useSelector(state => state.WordBoard.playedTilesWithPositions);
+    const rackLetters = useSelector(state => state.LetterRack.tilesList);
+    const letterBags = useSelector(state => state.LetterBags);
+
+    const fetchLettersFromBags = () => {
+        let nVowelsOnRack= rackLetters.filter(l => l!==null && (TileSet[l].letterType===constants.LetterTile.letterType.UYIR || TileSet[l].letterType===constants.LetterTile.letterType.UYIRMEY)).length;
+        let nConsonantsOnRack= rackLetters.filter(l => l!==null && (TileSet[l].letterType===constants.LetterTile.letterType.MEY || TileSet[l].letterType===constants.LetterTile.letterType.UYIRMEY)).length;
+        let nBonusOnRack = rackLetters.filter(l => l==='?').length;
+        let nLettersToFetch = 14 - nVowelsOnRack - nConsonantsOnRack - nBonusOnRack;
+        console.log('nV,nC,nB,nL:', nVowelsOnRack, nConsonantsOnRack, nBonusOnRack, nLettersToFetch);
+        let fetchedLetters = fetchNLettersFromBags(nLettersToFetch, letterBags);
+        return fetchedLetters;
+    }
+
+
 
     function submitWord() {
         const result = validateWordBoardAndComputeNewWords(unplayedTilesWithPositions, playedTilesWithPositions);
-        console.log('line142:', result);
         if (result.valid) {
             dispatch(playWord());
-            dispatch(updateScoreBoard({}))
+            let fetchedLetters = fetchLettersFromBags();
+            console.log('fetchedLetters:', fetchedLetters);
+            dispatch(replenishRack(fetchedLetters));
+            dispatch(updateScoreBoard(result.formedWords));
         }
+    }
+
+    function returnAllTilesToRack() {
+        dispatch(returnAllUnplayedTilesToRackFromBoard(unplayedTilesWithPositions));
+    }
+
+    function newGame() {
+        dispatch(initializeNewGameState());
+        let fetchedLetters = fetchLettersFromBags();
+        dispatch(replenishRack(fetchedLetters));
     }
 
     return (
         <div className="ActionMenu">
             <button id={'SubmitButton'} onClick={submitWord}>தாக்கல் செய்</button>
+            <button id={'ReturnAllTilesToRack'} onClick={returnAllTilesToRack}>திருப்பி வாங்கு</button>
+            <button id={'NewGame'} onClick={newGame}>புது ஆ</button>
         </div>
     )
 }

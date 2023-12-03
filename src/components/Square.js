@@ -5,6 +5,7 @@ import {TileSet} from "../utils/TileSet";
 import {useDrop} from "react-dnd";
 import {useState} from "react";
 import {moveTileOnBoardFromBoard, placeTileOnBoardFromRack} from "../store/actions";
+import {multiplierLabels} from "../utils/squareMultipliers";
 
 
 export default function Square(props) {
@@ -41,8 +42,9 @@ export default function Square(props) {
                 height: '100%',
             }}
         >
-        <div className="Square">
+        <div className={`Square ${props.multiplier}`}>
             {props.tile ? <LetterTile tile={props.tile} played = {props.played} location={{host: 'WORDBOARD', pos: { row: props.row, col: props.col }}}/> : null}
+            <span className={'Multiplier'}>{multiplierLabels[props.multiplier]}</span>
         </div>
             {isOver && (
                 <div
