@@ -1,24 +1,37 @@
 import '../styles/Styles.css';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import LetterTile from "./LetterTile";
-import {UyirMeyTiles} from "../utils/TileSet";
+import {TileSet} from "../utils/TileSet";
 import {useDrop} from "react-dnd";
+import {useState} from "react";
+import {moveTileOnBoardFromBoard, placeTileOnBoardFromRack} from "../store/actions";
 
 
 export default function Square(props) {
     // const wordList = useSelector( state => state.wordList.words);
 
+    // const [hasUnplayedTile, setHasUnplayedTile] = useState(false);
+    // const [hasPlayedTile, setHasPlayedTile] = useState(false);
+    // const [tile, setTile] = useState(null);
+    const dispatch = useDispatch();
+
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'TILE',
-        drop: (item, monitor) => {console.log('QQQ:', item)},
-            // dropTile(monitor.getItem(), props.row, props.col),
+        drop: (droppedTileItem, monitor) => {
+            console.log('Dropped Tile:', droppedTileItem);
+            if (droppedTileItem.origin.host ==='RACK') {
+                dispatch(placeTileOnBoardFromRack({row: props.row, col: props.col, tile: droppedTileItem.tile, origin: droppedTileItem.origin}));
+            } else if (droppedTileItem.origin.host ==='WORDBOARD') {
+                dispatch(moveTileOnBoardFromBoard({row: props.row, col: props.col, tile: droppedTileItem.tile, origin: droppedTileItem.origin}));
+            }
+
+        },
+        canDrop: (tile, monitor) => props.tile===null,
         collect: monitor => ({
             isOver: !!monitor.isOver(),
         }),
     }), [props.row, props.col])
 
-    const squareAnnotate = props.row.toString() + ',' + props.col.toString();
-    const squareTile = useSelector(state => state.WordBoard.tiles[props.row][props.col]);
     return (
         <div
             ref={drop}
@@ -29,20 +42,11 @@ export default function Square(props) {
             }}
         >
         <div className="Square">
-            {squareTile!=='' ? <LetterTile tileType={UyirMeyTiles[squareTile]} /> : null}
+            {props.tile ? <LetterTile tile={props.tile} played = {props.played} location={{host: 'WORDBOARD', pos: { row: props.row, col: props.col }}}/> : null}
         </div>
             {isOver && (
                 <div
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        height: '100%',
-                        width: '100%',
-                        zIndex: 1,
-                        opacity: 0.5,
-                        backgroundColor: 'black',
-                    }}
+                    className={'DropShadow'}
                 />
             )}
         </div>

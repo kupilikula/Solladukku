@@ -1,7 +1,12 @@
 
 const constants = {
+    arrayRange: (start, stop, step) =>
+        Array.from(
+            { length: (stop - start) / step + 1 },
+            (value, index) => start + index * step
+        ),
     LetterTile: {
-        containedIn: {
+        host: {
             RACK: 'RACK',
             WORDBOARD: 'WORDBOARD',
             BAG: 'BAG',
@@ -14,6 +19,7 @@ const constants = {
             UYIR: 'UYIR',
             MEY: 'MEY',
             UYIRMEY: 'UYIRMEY',
+            BONUS: 'BONUS',
         }
     },
     Square: {

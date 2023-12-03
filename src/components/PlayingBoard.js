@@ -3,6 +3,7 @@ import WordBoard from "./WordBoard";
 import LetterRack from "./LetterRack";
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
+import ActionMenu from "./ActionMenu";
 
 export default function PlayingBoard() {
     return (
@@ -10,6 +11,7 @@ export default function PlayingBoard() {
         <div className="PlayingBoard">
             <WordBoard />
             <LetterRack />
+            <ActionMenu />
         </div>
         </DndProvider>
     )

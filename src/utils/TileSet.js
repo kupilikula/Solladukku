@@ -54,7 +54,7 @@ const UnmarkedConsonants= [
 ];
 const MarkedConsonants = UnmarkedConsonants.map(c=> c + '\u0bcd');
 
-export const MeyTiles = {
+const MeyTiles = {
     'க்': {
         letter: 'க்',
         letterType: constants.LetterTile.letterType.MEY,
@@ -167,7 +167,7 @@ export const MeyTiles = {
     },
 };
 
-export const UyirTiles = {
+const UyirTiles = {
     'அ': {
         letter: 'அ',
         letterType: constants.LetterTile.letterType.UYIR,
@@ -256,4 +256,16 @@ for (const [c, cTile] of Object.entries(MeyTiles)) {
     }
 }
 
-export {UyirMeyTiles, joinMeyTileAndUyirTile, joinMeyTileAndUyirTileReturnLetter, splitUyirMeyTile};
+// export {UyirMeyTiles, joinMeyTileAndUyirTile, joinMeyTileAndUyirTileReturnLetter, splitUyirMeyTile};
+
+const BonusTiles = {
+'?': {
+    letter: '',
+    letterType: constants.LetterTile.letterType.BONUS,
+    points: 0,
+    }
+}
+
+const TileSet = { ...UyirTiles, ...MeyTiles, ...UyirMeyTiles, ...BonusTiles };
+const TileMethods = { joinMeyTileAndUyirTile, splitUyirMeyTile }
+export { TileSet, TileMethods };

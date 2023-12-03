@@ -1,20 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
+import {endGame, initializeNewGameState, playWord} from "./actions";
 
 export const ScoreBoardSlice = createSlice({
     name: 'ScoreBoard',
     initialState: {
+        turnNumber: 0,
         scores: [],
         totalScore: 0,
     },
-    reducers: {
-        update: (state, action) => {
-            // Redux Toolkit allows us to write "mutating" logic in reducers. It
-            // doesn't actually mutate the state because it uses the immer library,
-            // which detects changes to a "draft state" and produces a brand new
-            // immutable state based off those changes
-            state.scores.push(action.payload);
-            state.totalScore += action.payload;
-        },
+    reducers: {},
+    extraReducers: builder => {
+        builder
+            .addCase(playWord, (state, action) => {
+
+            })
+            .addCase(initializeNewGameState, (state, action) => {})
+            .addCase(endGame, (state, action) => {})
     }
 })
 

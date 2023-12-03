@@ -429,7 +429,7 @@ const computeLetterToIndices = () => {
 
 const LetterToIndices = computeLetterToIndices();
 
-const initialConsonantBag = TamilLetters.Consonants.map( c => 10);
-const initialVowelBag = TamilLetters.Vowels.map( c => 10);
+// const initialConsonantBag = TamilLetters.Consonants.map( c => 10);
+// const initialVowelBag = TamilLetters.Vowels.map( c => 10);
 
-module.exports = {TamilLetters, LetterToIndices, initialConsonantBag, initialVowelBag};
+module.exports = {TamilLetters, LetterToIndices};
