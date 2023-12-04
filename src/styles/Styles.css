@@ -88,8 +88,8 @@
 
 .Points {
     position: absolute;
-    bottom: 2px;
-    right: 2px;
+    bottom: 1px;
+    right: 1px;
     color: black;
     font-size: 12px;
 }

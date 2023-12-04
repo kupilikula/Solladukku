@@ -9,29 +9,24 @@ import {multiplierLabels} from "../utils/squareMultipliers";
 
 
 export default function Square(props) {
-    // const wordList = useSelector( state => state.wordList.words);
-
-    // const [hasUnplayedTile, setHasUnplayedTile] = useState(false);
-    // const [hasPlayedTile, setHasPlayedTile] = useState(false);
-    // const [tile, setTile] = useState(null);
     const dispatch = useDispatch();
 
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'TILE',
         drop: (droppedTileItem, monitor) => {
-            console.log('Dropped Tile:', droppedTileItem);
             if (droppedTileItem.origin.host ==='RACK') {
                 dispatch(placeTileOnBoardFromRack({row: props.row, col: props.col, tile: droppedTileItem.tile, origin: droppedTileItem.origin}));
             } else if (droppedTileItem.origin.host ==='WORDBOARD') {
                 dispatch(moveTileOnBoardFromBoard({row: props.row, col: props.col, tile: droppedTileItem.tile, origin: droppedTileItem.origin}));
             }
-
         },
-        canDrop: (tile, monitor) => props.tile===null,
+        canDrop: (tile, monitor) => {
+            return props.tile===null;
+            },
         collect: monitor => ({
             isOver: !!monitor.isOver(),
         }),
-    }), [props.row, props.col])
+    }), [props.row, props.col, props.tile])
 
     return (
         <div

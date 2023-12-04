@@ -169,7 +169,7 @@ export default function ActionMenu() {
     const rackLetters = useSelector(state => state.LetterRack.tilesList);
     const letterBags = useSelector(state => state.LetterBags);
 
-    const fetchLettersFromBags = () => {
+    const fetchLettersFromBags = (rackLetters) => {
         let nVowelsOnRack= rackLetters.filter(l => l!==null && (TileSet[l].letterType===constants.LetterTile.letterType.UYIR || TileSet[l].letterType===constants.LetterTile.letterType.UYIRMEY)).length;
         let nConsonantsOnRack= rackLetters.filter(l => l!==null && (TileSet[l].letterType===constants.LetterTile.letterType.MEY || TileSet[l].letterType===constants.LetterTile.letterType.UYIRMEY)).length;
         let nBonusOnRack = rackLetters.filter(l => l==='?').length;
@@ -185,7 +185,7 @@ export default function ActionMenu() {
         const result = validateWordBoardAndComputeNewWords(unplayedTilesWithPositions, playedTilesWithPositions);
         if (result.valid) {
             dispatch(playWord());
-            let fetchedLetters = fetchLettersFromBags();
+            let fetchedLetters = fetchLettersFromBags(rackLetters);
             console.log('fetchedLetters:', fetchedLetters);
             dispatch(replenishRack(fetchedLetters));
             dispatch(updateScoreBoard(result.formedWords));
@@ -198,7 +198,7 @@ export default function ActionMenu() {
 
     function newGame() {
         dispatch(initializeNewGameState());
-        let fetchedLetters = fetchLettersFromBags();
+        let fetchedLetters = fetchLettersFromBags([]);
         dispatch(replenishRack(fetchedLetters));
     }
 
@@ -206,7 +206,7 @@ export default function ActionMenu() {
         <div className="ActionMenu">
             <button id={'SubmitButton'} onClick={submitWord}>தாக்கல் செய்</button>
             <button id={'ReturnAllTilesToRack'} onClick={returnAllTilesToRack}>திருப்பி வாங்கு</button>
-            <button id={'NewGame'} onClick={newGame}>புது ஆ</button>
+            <button id={'NewGame'} onClick={newGame}>புது ஆட்டம்</button>
         </div>
     )
 }

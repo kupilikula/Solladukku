@@ -19,23 +19,6 @@ export default function LetterTile(props) {
         })
     }));
 
-    const [{ isOver }, drop] = useDrop(() => ({
-        accept: 'TILE',
-        drop: (droppedTileItem, monitor) => {
-            console.log('Dropped Tile:', droppedTileItem);
-            if (droppedTileItem.origin.host ==='RACK') {
-                dispatch(moveTileOnRack(droppedTileItem));
-            } else if (droppedTileItem.origin.host ==='WORDBOARD') {
-                dispatch(placeTileOnRackFromBoard(droppedTileItem));
-            }
-
-        },
-        canDrop: (tile, monitor) => {},
-        collect: monitor => ({
-            isOver: !!monitor.isOver(),
-        }),
-    }), [])
-
     return (
         <>
         {
