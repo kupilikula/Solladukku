@@ -4,8 +4,9 @@ import {
     replenishRack, placeTileOnBoardFromRack,
     moveTileOnRack,
     createUyirMeyTileOnRack,
-    playWord, placeTileOnRackFromBoard, returnAllUnplayedTilesToRackFromBoard
+    playWord, placeTileOnRackFromBoard, returnAllUnplayedTilesToRackFromBoard, toggleActivatedOfTileOnRack
 } from "./actions";
+import {TileSet} from "../utils/TileSet";
 
 export const LetterRackSlice = createSlice({
     name: 'LetterRack',
@@ -17,7 +18,7 @@ export const LetterRackSlice = createSlice({
         builder
             .addCase(replenishRack, (state, action) => {
                 action.payload.forEach(l => {
-                    state.tilesList[state.tilesList.findIndex(x => x===null)] = l
+                    state.tilesList[state.tilesList.findIndex(x => x===null)] = TileSet[l];
                 });
         })
             .addCase(moveTileOnRack, (state, action) => {
@@ -29,12 +30,12 @@ export const LetterRackSlice = createSlice({
                         for (let k=action.payload.origin.pos; k < action.payload.toRackSlotPos; k++) {
                             state.tilesList[k] = state.tilesList[k+1];
                         }
-                        state.tilesList[action.payload.toRackSlotPos] = action.payload.tile.key;
+                        state.tilesList[action.payload.toRackSlotPos] = action.payload.tile;
                     } else if (action.payload.toRackSlotPos < action.payload.origin.pos) {
                         for (let k=action.payload.origin.pos; k > action.payload.toRackSlotPos; k--) {
                             state.tilesList[k] = state.tilesList[k-1];
                         }
-                        state.tilesList[action.payload.toRackSlotPos] = action.payload.tile.key;
+                        state.tilesList[action.payload.toRackSlotPos] = action.payload.tile;
                     }
                 }
             })
@@ -42,7 +43,7 @@ export const LetterRackSlice = createSlice({
                 // state.tilesList = [...state.tilesList.slice(0, action.payload.origin.pos), ...state.tilesList.slice(action.payload.origin.pos+1) ];
                 if (state.tilesList[action.payload.toRackSlotPos]===null) {
                     console.log('line42');
-                    state.tilesList[action.payload.toRackSlotPos] = action.payload.tile.key;
+                    state.tilesList[action.payload.toRackSlotPos] = action.payload.tile;
                 } else {
                     let emptyInd = state.tilesList.findIndex(c => c===null);
                     console.log('emptyInd:', emptyInd);
@@ -50,12 +51,12 @@ export const LetterRackSlice = createSlice({
                         for( let k=emptyInd; k > action.payload.toRackSlotPos; k--) {
                             state.tilesList[k] = state.tilesList[k-1];
                         }
-                        state.tilesList[action.payload.toRackSlotPos] = action.payload.tile.key;
+                        state.tilesList[action.payload.toRackSlotPos] = action.payload.tile;
                     } else if (emptyInd < action.payload.toRackSlotPos) {
                         for (let k= emptyInd; k < action.payload.toRackSlotPos; k++) {
                             state.tilesList[k] = state.tilesList[k+1];
                         }
-                        state.tilesList[action.payload.toRackSlotPos] = action.payload.tile.key;
+                        state.tilesList[action.payload.toRackSlotPos] = action.payload.tile;
                     }
                 }
             })
@@ -70,8 +71,11 @@ export const LetterRackSlice = createSlice({
             .addCase(returnAllUnplayedTilesToRackFromBoard, (state, action) => {
                 action.payload.forEach(t => {
                     let ind = state.tilesList.findIndex(c => c===null);
-                    state.tilesList[ind] = t.tile.key;
+                    state.tilesList[ind] = t.tile;
                 })
+            })
+            .addCase(toggleActivatedOfTileOnRack, (state, action) => {
+                state.tilesList[action.payload].activated = !state.tilesList[action.payload].activated;
             })
     }
 })

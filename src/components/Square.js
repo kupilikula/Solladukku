@@ -11,9 +11,13 @@ import {multiplierLabels} from "../utils/squareMultipliers";
 export default function Square(props) {
     const dispatch = useDispatch();
 
+    // const [tileActiveOnDrop, setTileActiveOnDrop] = useState(false);
+
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'TILE',
         drop: (droppedTileItem, monitor) => {
+            console.log('line18, droppedTileItem:', droppedTileItem);
+            // setTileActiveOnDrop(droppedTileItem.activated);
             if (droppedTileItem.origin.host ==='RACK') {
                 dispatch(placeTileOnBoardFromRack({row: props.row, col: props.col, tile: droppedTileItem.tile, origin: droppedTileItem.origin}));
             } else if (droppedTileItem.origin.host ==='WORDBOARD') {
@@ -38,7 +42,10 @@ export default function Square(props) {
             }}
         >
         <div className={`Square ${props.multiplier}`}>
-            {props.tile ? <LetterTile tile={props.tile} played = {props.played} location={{host: 'WORDBOARD', pos: { row: props.row, col: props.col }}}/> : null}
+            {props.tile ? <LetterTile tile={props.tile}
+                                      played = {props.played}
+                                      location={{host: 'WORDBOARD', pos: { row: props.row, col: props.col }}}
+            /> : null}
             <span className={'Multiplier'}>{multiplierLabels[props.multiplier]}</span>
         </div>
             {isOver && (

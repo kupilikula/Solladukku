@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import {
+    deactivateAllUnplayedTilesOnBoard,
     initializeNewGameState,
     moveTileOnBoardFromBoard,
     placeTileOnBoardFromRack,
     placeTileOnRackFromBoard,
-    playWord, returnAllUnplayedTilesToRackFromBoard
+    playWord, returnAllUnplayedTilesToRackFromBoard, toggleActivatedOfTileOnBoard
 } from "./actions";
 
 export const WordBoardSlice = createSlice({
@@ -19,6 +20,13 @@ export const WordBoardSlice = createSlice({
             .addCase(playWord, (state, action) => {
                 state.playedTilesWithPositions.push(...state.unplayedTilesWithPositions);
                 state.unplayedTilesWithPositions = [];
+                // let inds = state.playedTilesWithPositions.reduce( (I, t, i) => {
+                //     if (t.activated) {
+                //         I.push(i);
+                //     }
+                //     return I;
+                // },[]);
+                // inds.forEach( i => state.playedTilesWithPositions[i].activated = false);
             })
             .addCase(initializeNewGameState, (state, action) => {
                 state.playedTilesWithPositions = [];
@@ -39,6 +47,21 @@ export const WordBoardSlice = createSlice({
             .addCase(returnAllUnplayedTilesToRackFromBoard, (state, action) => {
                 state.unplayedTilesWithPositions = [];
             })
+            .addCase(toggleActivatedOfTileOnBoard, (state, action) => {
+                let ind = state.unplayedTilesWithPositions.findIndex(t => t.row===action.payload.row && t.col===action.payload.col);
+                state.unplayedTilesWithPositions[ind].tile.activated = !state.unplayedTilesWithPositions[ind].tile.activated;
+            })
+            .addCase(deactivateAllUnplayedTilesOnBoard, (state, action) => {
+                let inds = state.unplayedTilesWithPositions.reduce( (I, t, i) => {
+                    if (t.tile.activated) {
+                        I.push(i);
+                    }
+                    return I;
+                },[]);
+                console.log('line61, inds:', inds);
+                inds.forEach( i => {state.unplayedTilesWithPositions[i].tile.activated = false;});
+            })
+
 
     }
 })

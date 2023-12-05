@@ -1,20 +1,26 @@
 import '../styles/Styles.css';
 import {useDrag, useDrop} from "react-dnd";
 import {
-    moveTileOnBoardFromBoard,
     moveTileOnRack,
-    placeTileOnBoardFromRack,
     placeTileOnRackFromBoard
 } from "../store/actions";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect, useState} from "react";
+import LetterTile from "./LetterTile";
+import {TileSet} from "../utils/TileSet";
 
 export default function RackSlot(props) {
 
     const dispatch = useDispatch();
+    const rackTiles = useSelector( state => state.LetterRack.tilesList);
+    const myTile = rackTiles[props.index];
+    // const [tileActiveOnDrop, setTileActiveOnDrop] = useState(false);
+
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'TILE',
         drop: (droppedTileItem, monitor) => {
             console.log('Dropped Tile:', droppedTileItem);
+            // setTileActiveOnDrop(droppedTileItem.activated);
             if (droppedTileItem.origin.host ==='RACK') {
                 dispatch(moveTileOnRack({...droppedTileItem, toRackSlotPos: props.index}));
             } else if (droppedTileItem.origin.host ==='WORDBOARD') {
@@ -26,11 +32,11 @@ export default function RackSlot(props) {
         collect: monitor => ({
             isOver: !!monitor.isOver(),
         }),
-    }), [])
+    }), [props.index])
 
     return (
         <div className={'RackSlot'} ref={drop}>
-            {props.children}
+            {myTile!==null ? <LetterTile key={props.index + myTile.key} tile={myTile} played={false} location={{host: 'RACK', pos: props.index}} /> : null}
         </div>
     )
 }

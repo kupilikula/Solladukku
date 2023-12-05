@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {
+    deactivateAllUnplayedTilesOnBoard,
     initializeNewGameState,
     playWord,
     replenishRack,
@@ -166,13 +167,13 @@ export default function ActionMenu() {
     const dispatch = useDispatch();
     const unplayedTilesWithPositions = useSelector(state => state.WordBoard.unplayedTilesWithPositions);
     const playedTilesWithPositions = useSelector(state => state.WordBoard.playedTilesWithPositions);
-    const rackLetters = useSelector(state => state.LetterRack.tilesList);
+    const rackTiles = useSelector(state => state.LetterRack.tilesList);
     const letterBags = useSelector(state => state.LetterBags);
 
-    const fetchLettersFromBags = (rackLetters) => {
-        let nVowelsOnRack= rackLetters.filter(l => l!==null && (TileSet[l].letterType===constants.LetterTile.letterType.UYIR || TileSet[l].letterType===constants.LetterTile.letterType.UYIRMEY)).length;
-        let nConsonantsOnRack= rackLetters.filter(l => l!==null && (TileSet[l].letterType===constants.LetterTile.letterType.MEY || TileSet[l].letterType===constants.LetterTile.letterType.UYIRMEY)).length;
-        let nBonusOnRack = rackLetters.filter(l => l==='?').length;
+    const fetchLettersFromBags = (rackTiles) => {
+        let nVowelsOnRack= rackTiles.filter(l => l!==null && (l.letterType===constants.LetterTile.letterType.UYIR || l.letterType===constants.LetterTile.letterType.UYIRMEY)).length;
+        let nConsonantsOnRack= rackTiles.filter(l => l!==null && (l.letterType===constants.LetterTile.letterType.MEY || l.letterType===constants.LetterTile.letterType.UYIRMEY)).length;
+        let nBonusOnRack = rackTiles.filter(l => l!==null && l.key==='?').length;
         let nLettersToFetch = 14 - nVowelsOnRack - nConsonantsOnRack - nBonusOnRack;
         console.log('nV,nC,nB,nL:', nVowelsOnRack, nConsonantsOnRack, nBonusOnRack, nLettersToFetch);
         let fetchedLetters = fetchNLettersFromBags(nLettersToFetch, letterBags);
@@ -184,8 +185,9 @@ export default function ActionMenu() {
     function submitWord() {
         const result = validateWordBoardAndComputeNewWords(unplayedTilesWithPositions, playedTilesWithPositions);
         if (result.valid) {
+            dispatch(deactivateAllUnplayedTilesOnBoard());
             dispatch(playWord());
-            let fetchedLetters = fetchLettersFromBags(rackLetters);
+            let fetchedLetters = fetchLettersFromBags(rackTiles);
             console.log('fetchedLetters:', fetchedLetters);
             dispatch(replenishRack(fetchedLetters));
             dispatch(updateScoreBoard(result.formedWords));

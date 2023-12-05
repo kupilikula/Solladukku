@@ -1,13 +1,13 @@
 import '../styles/Styles.css';
-import {useSelector} from "react-redux";
+import {shallowEqual, useSelector} from "react-redux";
 import Square from "./Square";
 import {squareMultipliers} from "../utils/squareMultipliers";
 
 
 export default function WordBoard() {
-    const playedTilesWithPositions = useSelector(state => state.WordBoard.playedTilesWithPositions);
-    const unplayedTilesWithPositions = useSelector(state => state.WordBoard.unplayedTilesWithPositions);
-
+    const playedTilesWithPositions = useSelector(state => state.WordBoard.playedTilesWithPositions, [shallowEqual]);
+    const unplayedTilesWithPositions = useSelector(state => state.WordBoard.unplayedTilesWithPositions, [shallowEqual]);
+    console.log('line10, XXX:', unplayedTilesWithPositions);
     const allTiles = Array(15).fill().map(() => Array(15).fill({tile: null, played: false}));
 
     playedTilesWithPositions.forEach(({row, col, tile}) => {

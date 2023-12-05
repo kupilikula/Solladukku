@@ -270,8 +270,10 @@ const joinMeyTileAndUyirTileReturnLetter = (cTile,vTile) => {
     return UnmarkedConsonants[MarkedConsonants.indexOf(cTile.letter)] + VowelDiacritics[Vowels.indexOf(vTile.letter)];
 };
 const joinMeyTileAndUyirTile = (cTile,vTile) => {
+    let l = joinMeyTileAndUyirTileReturnLetter(cTile, vTile);
     return {
-        letter: joinMeyTileAndUyirTileReturnLetter(cTile, vTile),
+        key: l,
+        letter: l,
         letterType: constants.LetterTile.letterType.UYIRMEY,
         points: cTile.points + vTile.points,
     }

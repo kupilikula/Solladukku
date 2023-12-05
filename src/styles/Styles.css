@@ -60,26 +60,26 @@
 .LetterTile.MEY {
     /*background: rgb(218, 158, 255);*/
     background: rgb(158, 218, 255);
-    border: 2px solid rgb(103, 181, 229);
+    border: 1px solid rgb(103, 181, 229);
 }
 
 .LetterTile.UYIR {
     /*background: rgb(218, 158, 255);*/
     background: rgb(255, 158, 218);
-    border: 2px solid rgb(229, 103, 181);
+    border: 1px solid rgb(229, 103, 181);
 }
 .LetterTile.UYIRMEY {
     background: rgb(255, 218, 158);
-    border: 2px solid rgb(229, 181, 103);
+    border: 1px solid rgb(229, 181, 103);
 }
 .LetterTile.BONUS {
     background: rgb(255, 218, 158);
-    border: 2px solid rgb(229, 181, 103);
+    border: 1px solid rgb(229, 181, 103);
 }
 
 .LetterTile.Played {
     background: rgb(255, 218, 158);
-    border: 2px solid rgb(229, 181, 103);
+    border: 1px solid rgb(229, 181, 103);
 }
 
 .LetterTile.RACK {
@@ -121,16 +121,16 @@
 }
 
 .Square.Word3 {
-     background: rgb(191,78,78);
+     background: rgb(12,103,156);
 }
 .Square.Word2 {
-    background: rgb(228,162,163);
+    background: rgb(104,162,195);
 }
 .Square.Letter3 {
-    background: rgb(12,103,156);
+    background: rgb(191,78,78);
 }
 .Square.Letter2 {
-    background: rgb(104,162,195);
+    background: rgb(228,162,163);
 }
 
 .Multiplier {
@@ -146,7 +146,7 @@
 }
 
 .Square.Center {
-    background: rgb(228,162,163);
+    background: rgb(104,162,195);;
 }
 
 .DropShadow {
@@ -178,4 +178,64 @@
 .Vowels {
     display: flex;
     flex-direction: row;
+}
+
+@keyframes tilt-shaking-mey {
+    0% {
+        transform: rotate(5deg);
+        border: 1px solid black;
+        background: rgb(158, 218, 255);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: rotate(-5deg);
+        border: 1px solid black;
+        background: rgb(103, 181, 229);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: rotate(5deg);
+        border: 1px solid black;
+        background: rgb(158, 218, 255);
+        animation-timing-function: ease-in;
+    }
+}
+
+@keyframes tilt-shaking-uyir {
+
+    0% {
+        transform: rotate(5deg);
+        border: 1px solid black;
+        background: rgb(255, 158, 218);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: rotate(-5deg);
+        border: 1px solid black;
+        background: rgb(229, 103, 181);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: rotate(5deg);
+        border: 1px solid black;
+        background: rgb(255, 158, 218);
+        animation-timing-function: ease-in;
+    }
+}
+
+
+.activated.UYIR {
+    animation-name: tilt-shaking-uyir;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform-origin: 50% 60%;
+}
+
+.activated.MEY {
+    animation-name: tilt-shaking-mey;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform-origin: 50% 40%;
 }
