@@ -4,12 +4,21 @@ import {
     initializeNewGameState,
     playWord,
     replenishRack,
-    returnAllUnplayedTilesToRackFromBoard,
+    returnAllUnplayedTilesToRackFromBoard, shuffleRack,
     updateScoreBoard
 } from "../store/actions";
 import constants from "../utils/constants";
 import {TileSet} from "../utils/TileSet";
 import _ from 'lodash';
+import { FaShuffle } from "react-icons/fa6";
+import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
+import {FaAngleDoubleDown, FaPlay, FaQuestion} from "react-icons/fa";
+import {GiExitDoor} from "react-icons/gi";
+import {IoSwapHorizontal} from "react-icons/io5";
+import {IoMdSwap} from "react-icons/io";
+import {TbMailShare} from "react-icons/tb";
+
+
 
 const computeWords = (main, unplayedTilesWithPositions, playedTilesWithPositions) => {
     const transverse = main==='row' ? 'col' : 'row';
@@ -100,6 +109,12 @@ const computeWords = (main, unplayedTilesWithPositions, playedTilesWithPositions
     return {valid: true, formedWords: formedWords};
 }
 
+const arrayIncludes = (targetArray, searchArray) => {
+    return targetArray.some(
+        r => r.length === searchArray.length &&
+            r.every((value, index) => searchArray[index] === value)
+    );
+};
 const validateWordBoardAndComputeNewWords = (unplayedTilesWithPositions, playedTilesWithPositions)  => {
     // At least one unplayed Tile used
     const numberOfTiles = unplayedTilesWithPositions.length;
@@ -127,19 +142,21 @@ const validateWordBoardAndComputeNewWords = (unplayedTilesWithPositions, playedT
         return {valid: false};
     }
 
-    // Must make contact with already played Tiles if there are any
-    if (playedTilesWithPositions.length > 0) {
-        const touchesAlreadyPlayed = result.formedWords.flat(Infinity).some( t => t.alreadyPlayed);
-        if (!touchesAlreadyPlayed) {
-            return {valid: false};
-        }
+    // Must make contact with already played Tiles or use a Starred Square.
+    const starredSquaresList = [[7,7], [3,3],[3,11],[11,3],[11,11]];
+    const touchesAlreadyPlayed = result.formedWords.flat(Infinity).some( t => t.alreadyPlayed);
+    const usesStarredSquare = result.formedWords.flat(Infinity).some(t =>
+    {
+        console.log('line 144:', starredSquaresList, [t.row,t.col]);
+        return !t.alreadyPlayed && arrayIncludes(starredSquaresList, [t.row, t.col]);
+    });
+    console.log('line 143:', touchesAlreadyPlayed, usesStarredSquare);
+    // console.log('line144:',starredSquaresList, [t.row, t.col]);
+    if (touchesAlreadyPlayed || usesStarredSquare) {
+        return {valid: true, formedWords: result.formedWords};
     } else {
-        //Must use center square
-        if (!result.formedWords.flat(Infinity).some( t => t.row===7 && t.col===7)) {
-            return {valid: false};
-        }
+        return {valid: false};
     }
-    return {valid: true, formedWords: result.formedWords};
 }
 
 const fetchNLettersFromBags = (nLettersToFetch, letterBags) => {
@@ -171,9 +188,9 @@ export default function ActionMenu() {
     const letterBags = useSelector(state => state.LetterBags);
 
     const fetchLettersFromBags = (rackTiles) => {
-        let nVowelsOnRack= rackTiles.filter(l => l!==null && (l.letterType===constants.LetterTile.letterType.UYIR || l.letterType===constants.LetterTile.letterType.UYIRMEY)).length;
-        let nConsonantsOnRack= rackTiles.filter(l => l!==null && (l.letterType===constants.LetterTile.letterType.MEY || l.letterType===constants.LetterTile.letterType.UYIRMEY)).length;
-        let nBonusOnRack = rackTiles.filter(l => l!==null && l.key==='?').length;
+        let nVowelsOnRack= rackTiles.filter(l => l && (l.letterType===constants.LetterTile.letterType.UYIR || l.letterType===constants.LetterTile.letterType.UYIRMEY)).length;
+        let nConsonantsOnRack= rackTiles.filter(l => l && (l.letterType===constants.LetterTile.letterType.MEY || l.letterType===constants.LetterTile.letterType.UYIRMEY)).length;
+        let nBonusOnRack = rackTiles.filter(l => l && l.key==='?').length;
         let nLettersToFetch = 14 - nVowelsOnRack - nConsonantsOnRack - nBonusOnRack;
         console.log('nV,nC,nB,nL:', nVowelsOnRack, nConsonantsOnRack, nBonusOnRack, nLettersToFetch);
         let fetchedLetters = fetchNLettersFromBags(nLettersToFetch, letterBags);
@@ -204,11 +221,32 @@ export default function ActionMenu() {
         dispatch(replenishRack(fetchedLetters));
     }
 
+    function shuffleRackButton() {
+        dispatch(shuffleRack());
+    }
+
+    function swapLetters() {
+
+    }
+
+    function showHelp() {
+
+    }
+
     return (
         <div className="ActionMenu">
-            <button id={'SubmitButton'} onClick={submitWord}>தாக்கல் செய்</button>
-            <button id={'ReturnAllTilesToRack'} onClick={returnAllTilesToRack}>திருப்பி வாங்கு</button>
-            <button id={'NewGame'} onClick={newGame}>புது ஆட்டம்</button>
+            <button id={'ReturnAllTilesToRack'} className={'ActionMenuButton'} onClick={returnAllTilesToRack}><FaAngleDoubleDown size={26}/>
+            </button>
+            <button id={'Shuffle'} className={'ActionMenuButton'} onClick={shuffleRackButton}><FaShuffle size={26}/></button>
+            <button id={'Swap'} className={'ActionMenuButton'} onClick={swapLetters}><IoMdSwap size={26}/></button>
+            <button id={'SubmitButton'} className={'ActionMenuButton'} onClick={submitWord}><FaPlay size={26}/>
+            </button>
+            <button id={'Help'} className={'ActionMenuButton'} onClick={showHelp}><FaQuestion size={26} />
+            </button>
+            <button id={'Invite'} className={'ActionMenuButton'} onClick={showHelp}><TbMailShare size={26} />
+            </button>
+            <button id={'NewGame'} className={'ActionMenuButton'} onClick={newGame}><GiExitDoor size={26}/>
+            </button>
         </div>
     )
 }

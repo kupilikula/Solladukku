@@ -26,7 +26,7 @@ const initialConsonantsBag = {
 
 
 const initialVowelsBag = {
-    'அ': 40,
+    'அ': 50,
     'ஆ': 30,
     'இ': 30,
     'ஈ': 20,

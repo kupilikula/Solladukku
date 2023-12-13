@@ -4,6 +4,7 @@ import wordBoardReducer from './WordBoardSlice';
 import scoreBoardReducer from './ScoreBoardSlice';
 import letterRackReducer from './LetterRackSlice';
 import letterBagsReducer from './LetterBagsSlice';
+import gamePlayersReducer from './GamePlayersSlice';
 
 export default configureStore({
     reducer: {
@@ -11,5 +12,6 @@ export default configureStore({
         ScoreBoard: scoreBoardReducer,
         LetterRack: letterRackReducer,
         LetterBags: letterBagsReducer,
+        GamePlayers: gamePlayersReducer,
     },
 })

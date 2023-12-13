@@ -269,6 +269,19 @@ const UyirMeyTiles={};
 const joinMeyTileAndUyirTileReturnLetter = (cTile,vTile) => {
     return UnmarkedConsonants[MarkedConsonants.indexOf(cTile.letter)] + VowelDiacritics[Vowels.indexOf(vTile.letter)];
 };
+const joinMeyAndUyirLetters = (c,v) => {
+    if (c==='-' && v==='-') {
+        return '';
+    }
+    if (c==='-') {
+        return v;
+    }
+    if (v==='-') {
+        return c;
+    }
+
+    return UnmarkedConsonants[MarkedConsonants.indexOf(c)] + VowelDiacritics[Vowels.indexOf(v)];
+};
 const joinMeyTileAndUyirTile = (cTile,vTile) => {
     let l = joinMeyTileAndUyirTileReturnLetter(cTile, vTile);
     return {
@@ -281,7 +294,7 @@ const joinMeyTileAndUyirTile = (cTile,vTile) => {
 
 const splitUyirMeyTile = (umTile) => {
     const c = MarkedConsonants[UnmarkedConsonants.indexOf(umTile.letter[0])];
-    const v = Vowels[VowelDiacritics.indexOf(umTile.letter[1])];
+    const v = umTile.letter.length===2 ? Vowels[VowelDiacritics.indexOf(umTile.letter[1])] : Vowels[0];
     return [ MeyTiles[c], UyirTiles[v] ];
 }
 
@@ -307,5 +320,5 @@ const isConsonant = (l) => MarkedConsonants.includes(l);
 const isVowel = (l) => Vowels.includes(l);
 
 const TileSet = { ...UyirTiles, ...MeyTiles, ...UyirMeyTiles, ...BonusTiles };
-const TileMethods = { joinMeyTileAndUyirTile, splitUyirMeyTile , isConsonant, isVowel}
-export { TileSet, TileMethods };
+const TileMethods = { joinMeyTileAndUyirTile, splitUyirMeyTile , isConsonant, isVowel, joinMeyAndUyirLetters}
+export { TileSet, TileMethods, Vowels, MarkedConsonants, UnmarkedConsonants };

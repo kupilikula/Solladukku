@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     margin: 20px;
+    align-items: center;
 }
 
 .WordBoard {
@@ -35,6 +36,7 @@
     width: 100%;
 }
 .LetterTile {
+    /*position: relative;*/
     display: flex;
     border-radius: 4px;
     text-align: center;
@@ -69,8 +71,9 @@
     border: 1px solid rgb(229, 103, 181);
 }
 .LetterTile.UYIRMEY {
-    background: rgb(255, 218, 158);
-    border: 1px solid rgb(229, 181, 103);
+    background: rgb(0, 0, 0);
+    color: white;
+    /*border: 1px solid rgb(229, 181, 103);*/
 }
 .LetterTile.BONUS {
     background: rgb(255, 218, 158);
@@ -80,6 +83,7 @@
 .LetterTile.Played {
     background: rgb(255, 218, 158);
     border: 1px solid rgb(229, 181, 103);
+    color: black;
 }
 
 .LetterTile.RACK {
@@ -90,7 +94,6 @@
     position: absolute;
     bottom: 1px;
     right: 1px;
-    color: black;
     font-size: 12px;
 }
 
@@ -112,12 +115,12 @@
     align-self: center;
     height: 40px;
     width: 40px;
-    font-family: "Tamil Sangam MN";
     font-size: 20px;
     font-weight: bold;
     background: #C4C4D1;
     color: black;
     overflow: visible;
+    user-select: none;
 }
 
 .Square.Word3 {
@@ -141,12 +144,29 @@
     color: white;
 }
 
-.Square.Center .Multiplier{
-    font-size: 24px;
+.Square.Starred .Star{
+    font-size: 36px;
+    z-index: 0;
+    color: rgb(12,103,156);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
 }
 
-.Square.Center {
-    background: rgb(104,162,195);;
+.Square.Starred .StarMultiplier {
+    z-index: 1;
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.Square.Starred {
+    background: rgb(104,162,195);
 }
 
 .DropShadow {
@@ -162,14 +182,6 @@
     border: 0px;
 }
 
-.LetterRack {
-    height: 40vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
 .Consonants {
     display: flex;
     flex-direction: row;
@@ -180,62 +192,247 @@
     flex-direction: row;
 }
 
-@keyframes tilt-shaking-mey {
+@keyframes tilt-shaking {
     0% {
         transform: rotate(5deg);
-        border: 1px solid black;
-        background: rgb(158, 218, 255);
+        /*background: rgb(158, 218, 255);*/
         animation-timing-function: ease-in;
     }
     50% {
         transform: rotate(-5deg);
-        border: 1px solid black;
-        background: rgb(103, 181, 229);
+        /*background: rgb(103, 181, 229);*/
         animation-timing-function: ease-out;
     }
     100% {
         transform: rotate(5deg);
-        border: 1px solid black;
-        background: rgb(158, 218, 255);
+        /*background: rgb(158, 218, 255);*/
         animation-timing-function: ease-in;
     }
 }
 
-@keyframes tilt-shaking-uyir {
+@keyframes darkening-uyir {
 
     0% {
-        transform: rotate(5deg);
-        border: 1px solid black;
         background: rgb(255, 158, 218);
         animation-timing-function: ease-in;
     }
     50% {
-        transform: rotate(-5deg);
-        border: 1px solid black;
-        background: rgb(229, 103, 181);
+        /*background: rgb(90, 40, 72);*/
+        background: black;
+        color: white;
+        border-color: black;
         animation-timing-function: ease-out;
     }
     100% {
-        transform: rotate(5deg);
-        border: 1px solid black;
         background: rgb(255, 158, 218);
         animation-timing-function: ease-in;
     }
 }
 
+@keyframes darkening-mey {
+
+    0% {
+        background: rgb(158, 218, 255);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        /*background: rgb(40, 72, 90);*/
+        background: rgb(0 ,0, 0);
+        border-color: black;
+        color: white;
+        animation-timing-function: ease-out;
+    }
+    100% {
+        background: rgb(158, 218, 255);
+        animation-timing-function: ease-in;
+    }
+}
+
+@keyframes darkening-uyirmey {
+
+    0% {
+        background: rgb(0, 0, 0);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        /*background: rgb(40, 72, 90);*/
+        background: rgb(255 ,255, 255);
+        border-color: white;
+        color: black;
+        animation-timing-function: ease-out;
+    }
+    100% {
+        background: rgb(0, 0, 0);
+        animation-timing-function: ease-in;
+    }
+}
+
+@keyframes darkening-bonus {
+
+    0% {
+        background: rgb(255, 218, 158);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        /*background: rgb(40, 72, 90);*/
+        background: rgb(229, 181, 103);
+        /*border-color: white;*/
+        /*color: black;*/
+        animation-timing-function: ease-out;
+    }
+    100% {
+        background: rgb(255, 218, 158);
+        animation-timing-function: ease-in;
+    }
+}
 
 .activated.UYIR {
-    animation-name: tilt-shaking-uyir;
-    animation-duration: .5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    transform-origin: 50% 60%;
-}
-
-.activated.MEY {
-    animation-name: tilt-shaking-mey;
-    animation-duration: .5s;
+    animation-name: tilt-shaking, darkening-uyir;
+    animation-duration: .15s, 1.5s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     transform-origin: 50% 40%;
+}
+
+.activated.MEY {
+    animation-name: tilt-shaking, darkening-mey;
+    animation-duration: .15s, 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform-origin: 50% 40%;
+}
+
+.activated.UYIRMEY {
+    animation-name: tilt-shaking, darkening-uyirmey;
+    animation-duration: .075s, .75s;
+    animation-iteration-count: 10, 1;
+    animation-direction: alternate;
+    transform-origin: 50% 40%;
+}
+
+.activated.BONUS {
+    animation-name: tilt-shaking, darkening-bonus;
+    animation-duration: .15s, 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform-origin: 50% 40%;
+}
+
+.LetterRack {
+    /*height: 40vh;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 5px solid rgb(229, 181, 103);
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    padding: 10px;
+    /*padding-right: 20px;*/
+    /*padding-bottom: 20px;*/
+}
+
+.ActionPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    border: 1px solid rgb(229, 181, 103);
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.ActionMenu {
+    width: auto;
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+    /*width: 100%;*/
+    border-radius: 5px;
+    /*padding-left: 10px;*/
+    /*padding-right: 10px;*/
+    /*border-top-left-radius: 0px;*/
+    /*border-top-right-radius: 0px;*/
+    /*flex-wrap: wrap;*/
+}
+
+.ActionMenuButton {
+    height: 44px;
+    width: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*font-size: 44px;*/
+    color: white;
+    background-color: rgb(12,156,103);
+    margin: 10px;
+    border: 0px;
+    border-radius: 5px;
+}
+#SubmitButton {
+    min-width: 200px;
+}
+
+.ActionMenuButton:hover {
+    background-color: rgb(14,188,124);
+}
+/*.ActionMenuButton:click {*/
+/*    background-color: lightgray;*/
+/*}*/
+
+.ChooseLetter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*right: 0;*/
+    z-index: 200000;
+    background-color: white;
+    color: black;
+    padding: 15px;
+    min-width: 160px;
+    border: 5px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: normal;
+    /*align-content: center;*/
+    /*align-items: center;*/
+}
+
+#ChooseLetterButton
+{
+    background-color: rgb(12,156,103);
+    width: 60px;
+    height: 36px;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+}
+
+.ChooseLetterRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    vertical-align: middle;
+
+}
+
+#CloseChooseLetter {
+    position: absolute;
+    top: -30px;
+    right: 0;
 }

@@ -1,12 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit'
 import {
     initializeNewGameState,
-    replenishRack, placeTileOnBoardFromRack,
+    replenishRack,
+    placeTileOnBoardFromRack,
     moveTileOnRack,
     createUyirMeyTileOnRack,
-    playWord, placeTileOnRackFromBoard, returnAllUnplayedTilesToRackFromBoard, toggleActivatedOfTileOnRack
+    playWord,
+    placeTileOnRackFromBoard,
+    returnAllUnplayedTilesToRackFromBoard,
+    toggleActivatedOfTileOnRack,
+    mergeTiles, splitUyirMeyTile, shuffleRack, bonusTileLetterSelected, toggleActivatedOfTile
 } from "./actions";
-import {TileSet} from "../utils/TileSet";
+import {TileMethods, TileSet} from "../utils/TileSet";
+import constants from "../utils/constants";
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
 export const LetterRackSlice = createSlice({
     name: 'LetterRack',
@@ -42,11 +56,9 @@ export const LetterRackSlice = createSlice({
             .addCase(placeTileOnRackFromBoard,  (state, action) => {
                 // state.tilesList = [...state.tilesList.slice(0, action.payload.origin.pos), ...state.tilesList.slice(action.payload.origin.pos+1) ];
                 if (state.tilesList[action.payload.toRackSlotPos]===null) {
-                    console.log('line42');
                     state.tilesList[action.payload.toRackSlotPos] = action.payload.tile;
                 } else {
                     let emptyInd = state.tilesList.findIndex(c => c===null);
-                    console.log('emptyInd:', emptyInd);
                     if (emptyInd > action.payload.toRackSlotPos) {
                         for( let k=emptyInd; k > action.payload.toRackSlotPos; k--) {
                             state.tilesList[k] = state.tilesList[k-1];
@@ -74,8 +86,52 @@ export const LetterRackSlice = createSlice({
                     state.tilesList[ind] = t.tile;
                 })
             })
-            .addCase(toggleActivatedOfTileOnRack, (state, action) => {
-                state.tilesList[action.payload].activated = !state.tilesList[action.payload].activated;
+            .addCase(toggleActivatedOfTile, (state, action) => {
+                if (action.payload.location.host==='RACK')
+                state.tilesList[action.payload.location.pos].activated = !state.tilesList[action.payload.location.pos].activated;
+            })
+            .addCase(mergeTiles, (state, action) => {
+                if (action.payload.droppedTileItem.origin.host==='RACK') {
+                    state.tilesList[action.payload.droppedTileItem.origin.pos] = null;
+                }
+                if (action.payload.targetLocation.host==='RACK') {
+                    let meyTile = action.payload.targetTile.letterType === constants.LetterTile.letterType.MEY ? action.payload.targetTile : action.payload.droppedTileItem.tile;
+                    let uyirTile = action.payload.targetTile.letterType === constants.LetterTile.letterType.UYIR ? action.payload.targetTile : action.payload.droppedTileItem.tile;
+                    let mergedTile = TileMethods.joinMeyTileAndUyirTile(meyTile, uyirTile);
+                    state.tilesList[action.payload.targetLocation.pos] = mergedTile;
+                }
+            })
+            .addCase(splitUyirMeyTile, (state, action) => {
+                const [meyTile, uyirTile] = TileMethods.splitUyirMeyTile(action.payload.tile);
+                let ind1 = state.tilesList.findIndex(t => t===null);
+                if (action.payload.location.host==='RACK') {
+                    if (ind1 > action.payload.location.pos) {
+                        for (let k= ind1; k > (action.payload.location.pos+1); k-- ) {
+                            state.tilesList[k] = state.tilesList[k-1]
+                        }
+                        state.tilesList[action.payload.location.pos] = meyTile;
+                        state.tilesList[action.payload.location.pos+1] = uyirTile;
+                    } else {
+                        for (let k = ind1; k < (action.payload.location.pos-1) ; k++) {
+                            state.tilesList[k] = state.tilesList[k+1];
+                        }
+                        state.tilesList[action.payload.location.pos-1] = meyTile;
+                        state.tilesList[action.payload.location.pos] = uyirTile;
+                    }
+                } else if (action.payload.location.host==='WORDBOARD') {
+                    state.tilesList[ind1] = meyTile;
+                    let ind2 = state.tilesList.findIndex(t => t===null);
+                    state.tilesList[ind2] = uyirTile;
+                }
+            })
+            .addCase(shuffleRack, (state, action) => {
+                const listCopy = state.tilesList.slice(0);
+                state.tilesList = shuffleArray(listCopy);
+            })
+            .addCase(bonusTileLetterSelected, (state, action) => {
+                if (action.payload.location.host==='RACK') {
+                    state.tilesList[action.payload.location.pos].letter = action.payload.selectedLetter;
+                }
             })
     }
 })

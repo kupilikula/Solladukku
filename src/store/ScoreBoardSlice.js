@@ -6,6 +6,7 @@ export const ScoreBoardSlice = createSlice({
     name: 'ScoreBoard',
     initialState: {
         completedTurns: 0,
+        turnPlayerId: [],
         turnWords: [],
         wordScores: [],
         turnScores: [],

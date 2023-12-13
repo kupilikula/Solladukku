@@ -11,24 +11,25 @@ squareMultipliers[14][14] = 'Word3';
 
 squareMultipliers[1][1] = 'Word2';
 squareMultipliers[2][2] = 'Word2';
-squareMultipliers[3][3] = 'Word2';
+squareMultipliers[3][3] = 'Starred';
 squareMultipliers[4][4] = 'Word2';
 squareMultipliers[1][13] = 'Word2';
 squareMultipliers[2][12] = 'Word2';
-squareMultipliers[3][11] = 'Word2';
+squareMultipliers[3][11] = 'Starred';
 squareMultipliers[4][10] = 'Word2';
 squareMultipliers[13][1] = 'Word2';
 squareMultipliers[12][2] = 'Word2';
-squareMultipliers[11][3] = 'Word2';
+squareMultipliers[11][3] = 'Starred';
 squareMultipliers[10][4] = 'Word2';
 squareMultipliers[13][13] = 'Word2';
 squareMultipliers[12][12] = 'Word2';
-squareMultipliers[11][11] = 'Word2';
+squareMultipliers[11][11] = 'Starred';
 squareMultipliers[10][10] = 'Word2';
 
 squareMultipliers[0][3] = 'Letter2';
 squareMultipliers[0][11] = 'Letter2';
 squareMultipliers[2][6] = 'Letter2';
+squareMultipliers[2][8] = 'Letter2';
 squareMultipliers[3][0] = 'Letter2';
 squareMultipliers[3][7] = 'Letter2';
 squareMultipliers[3][14] = 'Letter2';
@@ -63,14 +64,22 @@ squareMultipliers[9][13] = 'Letter3';
 squareMultipliers[13][5] = 'Letter3';
 squareMultipliers[13][9] = 'Letter3';
 
-squareMultipliers[7][7] = 'Center';
+squareMultipliers[7][7] = 'Starred';
 
 const multiplierLabels = {
     'Word3': (<><span>3x</span><span>சொல்</span></>),
     'Word2': (<><span>2x</span><span>சொல்</span></>),
     'Letter3': (<><span>3x</span><span>எழு</span></>),
     'Letter2': (<><span>2x</span><span>எழு</span></>),
-    'Center': '★',
+    'Starred': (
+        <span style={{position: 'relative'}}>
+            <span className={'StarMultiplier'}>
+                <span>2x</span>
+                <span>சொல்</span>
+            </span>
+            <span className={'Star'} >★</span>
+        </span>
+),
 }
 
 export {squareMultipliers, multiplierLabels};

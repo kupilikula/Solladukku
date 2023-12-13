@@ -4,28 +4,49 @@ import LetterTile from "./LetterTile";
 import {TileSet} from "../utils/TileSet";
 import {useDrop} from "react-dnd";
 import {useState} from "react";
-import {moveTileOnBoardFromBoard, placeTileOnBoardFromRack} from "../store/actions";
+import {mergeTiles, moveTileOnBoardFromBoard, placeTileOnBoardFromRack} from "../store/actions";
 import {multiplierLabels} from "../utils/squareMultipliers";
+import constants from "../utils/constants";
 
 
 export default function Square(props) {
     const dispatch = useDispatch();
 
-    // const [tileActiveOnDrop, setTileActiveOnDrop] = useState(false);
-
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'TILE',
         drop: (droppedTileItem, monitor) => {
-            console.log('line18, droppedTileItem:', droppedTileItem);
-            // setTileActiveOnDrop(droppedTileItem.activated);
-            if (droppedTileItem.origin.host ==='RACK') {
-                dispatch(placeTileOnBoardFromRack({row: props.row, col: props.col, tile: droppedTileItem.tile, origin: droppedTileItem.origin}));
-            } else if (droppedTileItem.origin.host ==='WORDBOARD') {
-                dispatch(moveTileOnBoardFromBoard({row: props.row, col: props.col, tile: droppedTileItem.tile, origin: droppedTileItem.origin}));
+            if ( !props.tile || (!props.tile.activated && !droppedTileItem.tile.activated)) {
+                if (droppedTileItem.origin.host === 'RACK') {
+                    dispatch(placeTileOnBoardFromRack({
+                        row: props.row,
+                        col: props.col,
+                        tile: droppedTileItem.tile,
+                        origin: droppedTileItem.origin
+                    }));
+                } else if (droppedTileItem.origin.host === 'WORDBOARD') {
+                    dispatch(moveTileOnBoardFromBoard({
+                        row: props.row,
+                        col: props.col,
+                        tile: droppedTileItem.tile,
+                        origin: droppedTileItem.origin
+                    }));
+                }
+            } else {
+                dispatch(mergeTiles({droppedTileItem: droppedTileItem, targetTile: props.tile, targetLocation: {host: 'WORDBOARD', pos: {
+                            row: props.row, col: props.col
+                        }}}));
             }
         },
-        canDrop: (tile, monitor) => {
-            return props.tile===null;
+        canDrop: (droppedTileItem, monitor) => {
+            if (!props.tile) {
+                return true;
+            }
+            if (props.tile.activated || droppedTileItem.tile.activated) {
+                return ((droppedTileItem.tile.letterType === constants.LetterTile.letterType.UYIR && props.tile.letterType === constants.LetterTile.letterType.MEY) || (droppedTileItem.tile.letterType === constants.LetterTile.letterType.MEY && props.tile.letterType === constants.LetterTile.letterType.UYIR));
+            } else {
+                return false;
+            }
+
             },
         collect: monitor => ({
             isOver: !!monitor.isOver(),
