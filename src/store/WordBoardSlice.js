@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import {
+    addOtherPlayerTurn,
     bonusTileLetterSelected,
     deactivateAllUnplayedTilesOnBoard,
     initializeNewGameState,
@@ -32,6 +33,10 @@ export const WordBoardSlice = createSlice({
             .addCase(initializeNewGameState, (state, action) => {
                 state.playedTilesWithPositions = [];
                 state.unplayedTilesWithPositions = [];
+            })
+            .addCase(addOtherPlayerTurn, (state, action) => {
+                state.unplayedTilesWithPositions = [];
+                state.playedTilesWithPositions.push(...action.payload.turnInfo.newlyPlayedTilesWithPositions);
             })
             .addCase(placeTileOnBoardFromRack, (state, action) => {
             state.unplayedTilesWithPositions.push(action.payload);

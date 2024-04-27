@@ -1,5 +1,8 @@
 import {createAction} from '@reduxjs/toolkit';
 
+const storeUserId = createAction('game/storeUserId');
+const addPlayers = createAction('game/addPlayers');
+const addOtherPlayerTurn = createAction('game/addOtherPlayerTurn');
 const replenishRack = createAction('game/replenishRack');
 const toggleActivatedOfTile = createAction('game/toggleActivatedOfTile');
 const deactivateAllUnplayedTilesOnBoard = createAction('game/deactivateAllUnplayedTilesOnBoard');
@@ -18,4 +21,4 @@ const splitUyirMeyTile = createAction('game/splitUyirMeyTile');
 const shuffleRack = createAction('game/shuffleRack');
 const bonusTileLetterSelected = createAction('game/bonusTileLetterSelected');
 
-export {replenishRack, shuffleRack, mergeTiles, splitUyirMeyTile, bonusTileLetterSelected, toggleActivatedOfTile, deactivateAllUnplayedTilesOnBoard,placeTileOnBoardFromRack, moveTileOnBoardFromBoard, placeTileOnRackFromBoard, returnAllUnplayedTilesToRackFromBoard, moveTileOnRack, playWord, createUyirMeyTileOnRack, updateScoreBoard, initializeNewGameState, endGame};
+export {storeUserId, addPlayers, addOtherPlayerTurn, replenishRack, shuffleRack, mergeTiles, splitUyirMeyTile, bonusTileLetterSelected, toggleActivatedOfTile, deactivateAllUnplayedTilesOnBoard,placeTileOnBoardFromRack, moveTileOnBoardFromBoard, placeTileOnRackFromBoard, returnAllUnplayedTilesToRackFromBoard, moveTileOnRack, playWord, createUyirMeyTileOnRack, updateScoreBoard, initializeNewGameState, endGame};

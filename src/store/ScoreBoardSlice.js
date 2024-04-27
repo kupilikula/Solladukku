@@ -1,27 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {endGame, initializeNewGameState, playWord, updateScoreBoard} from "./actions";
+import {addOtherPlayerTurn, endGame, initializeNewGameState, playWord, updateScoreBoard} from "./actions";
 import {squareMultipliers} from "../utils/squareMultipliers";
 
 export const ScoreBoardSlice = createSlice({
     name: 'ScoreBoard',
     initialState: {
-        completedTurns: 0,
-        turnPlayerId: [],
-        turnWords: [],
-        wordScores: [],
-        turnScores: [],
-        totalScore: 0,
+        myCompletedTurns: 0,
+        allTurns: [],
+        // turnWords: [],
+        // wordScores: [],
+        // turnScores: [],
+        myTotalScore: 0,
+        otherPlayersTotalScores: [],
     },
     reducers: {},
     extraReducers: builder => {
         builder
             .addCase(updateScoreBoard, (state, action) => {
-                state.completedTurns += 1;
-                state.turnWords.push(action.payload);
+                state.myCompletedTurns += 1;
+                let turnInfo = action.payload;
+                // turnInfo.turnFormedWords = action.payload;
 
                 let wScores = [];
                 let turnScore = 0;
-                action.payload.forEach(
+                turnInfo.turnFormedWords.forEach(
                     w => {
                         let wScore = 0;
                         let wMultiplier = w.filter( t => !t.alreadyPlayed && ['Word2', 'Word3'].includes(squareMultipliers[t.row][t.col]))
@@ -41,16 +43,33 @@ export const ScoreBoardSlice = createSlice({
                         turnScore += totalWordScore;
                     }
                 );
-                state.turnScores.push(turnScore);
-                state.wordScores.push(wScores);
-                state.totalScore += turnScore;
+
+                turnInfo.turnScore = turnScore;
+                turnInfo.wordScores = wScores;
+                state.allTurns.push(turnInfo);
+                state.myTotalScore += turnScore;
+                console.log('line51:', turnInfo);
             })
             .addCase(initializeNewGameState, (state, action) => {
-                state.completedTurns = 0;
-                state.turnWords = [];
-                state.wordScores = [];
-                state.turnScores = [];
-                state.totalScore = 0;
+                state.myCompletedTurns = 0;
+                state.allTurns = [];
+                state.myTotalScore = 0;
+                state.otherPlayersTotalScores = [];
+            })
+            .addCase(addOtherPlayerTurn, (state, action) => {
+                let alreadyPlayedUserIds = [];
+                state.allTurns.forEach( (t,i) => {
+                    if (!alreadyPlayedUserIds.includes(t.turnUserId)) {
+                        alreadyPlayedUserIds.push(t.turnUserId);
+                    }
+                });
+
+                let uInd = alreadyPlayedUserIds.findIndex(action.payload.turnUserId);
+                if (uInd!==-1) {
+                   state.otherPlayersTotalScores[uInd] += action.payload.turnScore;
+                } else {
+                    state.otherPlayersTotalScores.push(action.payload.turnScore);
+                }
             })
     }
 })

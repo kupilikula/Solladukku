@@ -106,7 +106,7 @@ const computeWords = (main, unplayedTilesWithPositions, playedTilesWithPositions
         }
     });
     formedWords.push(...transverseWords);
-    return {valid: true, formedWords: formedWords};
+    return {valid: true, formedWords: formedWords, newlyPlayedTilesWithPositions: unplayedTilesWithPositions};
 }
 
 const arrayIncludes = (targetArray, searchArray) => {
@@ -153,7 +153,7 @@ const validateWordBoardAndComputeNewWords = (unplayedTilesWithPositions, playedT
     console.log('line 143:', touchesAlreadyPlayed, usesStarredSquare);
     // console.log('line144:',starredSquaresList, [t.row, t.col]);
     if (touchesAlreadyPlayed || usesStarredSquare) {
-        return {valid: true, formedWords: result.formedWords};
+        return result;
     } else {
         return {valid: false};
     }
@@ -179,13 +179,15 @@ const fetchNLettersFromBags = (nLettersToFetch, letterBags) => {
     return fetchedLetters;
 }
 
-export default function ActionMenu() {
+export default function ActionMenu(props) {
 
     const dispatch = useDispatch();
     const unplayedTilesWithPositions = useSelector(state => state.WordBoard.unplayedTilesWithPositions);
     const playedTilesWithPositions = useSelector(state => state.WordBoard.playedTilesWithPositions);
     const rackTiles = useSelector(state => state.LetterRack.tilesList);
     const letterBags = useSelector(state => state.LetterBags);
+    const scoreBoard = useSelector(state => state.ScoreBoard);
+    const myUserId = useSelector(state => state.Game.userId);
 
     const fetchLettersFromBags = (rackTiles) => {
         let nVowelsOnRack= rackTiles.filter(l => l && (l.letterType===constants.LetterTile.letterType.UYIR || l.letterType===constants.LetterTile.letterType.UYIRMEY)).length;
@@ -204,10 +206,23 @@ export default function ActionMenu() {
         if (result.valid) {
             dispatch(deactivateAllUnplayedTilesOnBoard());
             dispatch(playWord());
-            let fetchedLetters = fetchLettersFromBags(rackTiles);
-            console.log('fetchedLetters:', fetchedLetters);
-            dispatch(replenishRack(fetchedLetters));
-            dispatch(updateScoreBoard(result.formedWords));
+            let fetchedLettersFromBag = fetchLettersFromBags(rackTiles);
+            console.log('fetchedLetters:', fetchedLettersFromBag);
+            dispatch(replenishRack(fetchedLettersFromBag));
+            const preliminaryTurnInfo = {
+                turnUserId: myUserId,
+                turnFormedWords: result.formedWords,
+                newlyPlayedTilesWithPositions: result.newlyPlayedTilesWithPositions,
+                fetchedLettersFromBag: fetchedLettersFromBag,
+                turnScore: null,
+                wordScores: null,
+            };
+
+            dispatch(updateScoreBoard(preliminaryTurnInfo));
+            console.log('props', props);
+            console.log('T:', scoreBoard.allTurns[scoreBoard.allTurns.length-1])
+            // TODO: Move this websocket send to redux
+            // props.wsConnection.send({messageType: 'turn', turnInfo: scoreBoard.allTurns[scoreBoard.allTurns.length-1]});
         }
     }
 
