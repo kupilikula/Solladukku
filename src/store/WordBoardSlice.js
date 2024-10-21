@@ -72,14 +72,18 @@ export const WordBoardSlice = createSlice({
             .addCase(mergeTiles, (state, action) => {
                 if (action.payload.droppedTileItem.origin.host==='WORDBOARD') {
                     let i = state.unplayedTilesWithPositions.findIndex(t => t.row===action.payload.droppedTileItem.origin.pos.row && t.col===action.payload.droppedTileItem.origin.pos.col);
-                    state.unplayedTilesWithPositions = state.unplayedTilesWithPositions.slice(0,i).concat(state.unplayedTilesWithPositions.slice(i+1));
+                    if (i>=0) {
+                        state.unplayedTilesWithPositions = state.unplayedTilesWithPositions.slice(0,i).concat(state.unplayedTilesWithPositions.slice(i+1));
+                    }
                 }
                 if (action.payload.targetLocation.host==='WORDBOARD') {
                     let meyTile = action.payload.targetTile.letterType === constants.LetterTile.letterType.MEY ? action.payload.targetTile : action.payload.droppedTileItem.tile;
                     let uyirTile = action.payload.targetTile.letterType === constants.LetterTile.letterType.UYIR ? action.payload.targetTile : action.payload.droppedTileItem.tile;
                     let mergedTile = TileMethods.joinMeyTileAndUyirTile(meyTile, uyirTile);
                     let i = state.unplayedTilesWithPositions.findIndex(t => t.row===action.payload.targetLocation.pos.row && t.col===action.payload.targetLocation.pos.col);
-                    state.unplayedTilesWithPositions[i].tile = mergedTile;
+                    if (i>=0) {
+                        state.unplayedTilesWithPositions[i].tile = mergedTile;
+                    }
                 }
             })
             .addCase(splitUyirMeyTile, (state, action) => {

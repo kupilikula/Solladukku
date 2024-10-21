@@ -1,5 +1,5 @@
 import '../styles/Styles.css';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import LetterTile from "./LetterTile";
 import {useDrop} from "react-dnd";
 import {mergeTiles, moveTileOnBoardFromBoard, placeTileOnBoardFromRack} from "../store/actions";
@@ -9,6 +9,7 @@ import constants from "../utils/constants";
 
 export default function Square(props) {
     const dispatch = useDispatch();
+    const unplayedTilesOnBoardWithPositions = useSelector(state => state.WordBoard.unplayedTilesWithPositions);
 
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'TILE',
@@ -39,7 +40,8 @@ export default function Square(props) {
             if (!props.tile) {
                 return true;
             }
-            if (props.tile.activated || droppedTileItem.tile.activated) {
+            let i = unplayedTilesOnBoardWithPositions.findIndex(t => t.row===props.row && t.col===props.col);
+            if (i>=0 && (props.tile.activated || droppedTileItem.tile.activated)) {
                 return ((droppedTileItem.tile.letterType === constants.LetterTile.letterType.UYIR && props.tile.letterType === constants.LetterTile.letterType.MEY) || (droppedTileItem.tile.letterType === constants.LetterTile.letterType.MEY && props.tile.letterType === constants.LetterTile.letterType.UYIR));
             } else {
                 return false;
@@ -49,7 +51,7 @@ export default function Square(props) {
         collect: monitor => ({
             isOver: !!monitor.isOver(),
         }),
-    }), [props.row, props.col, props.tile])
+    }), [props.row, props.col, props.tile, unplayedTilesOnBoardWithPositions])
 
     return (
         <div
