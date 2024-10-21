@@ -8,7 +8,7 @@ export default function InfoBoard() {
     const scoreBoard = useSelector( state => state.ScoreBoard);
 
     return (
-        <div className="InfoBoard">
+        <div className="InfoBoard" style={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', borderRadius: 10, width: 300, backgroundColor: 'white', margin: 20}}>
             <ScoreBoard/>
             <LetterBags />
             <Chat />

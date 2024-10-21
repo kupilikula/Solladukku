@@ -48,10 +48,9 @@ function App() {
     }, []);
 
     return (
-        <>
-            <></>
+        <div style={{background: '#E6E6F0', height: '100vh', width: '100vw'}}>
             <GameFrame wsConnection={ws.current}/>
-        </>
+        </div>
     );
 }
 

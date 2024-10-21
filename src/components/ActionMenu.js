@@ -8,16 +8,13 @@ import {
     updateScoreBoard
 } from "../store/actions";
 import constants from "../utils/constants";
-import {TileSet} from "../utils/TileSet";
 import _ from 'lodash';
 import { FaShuffle } from "react-icons/fa6";
-import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
 import {FaAngleDoubleDown, FaPlay, FaQuestion} from "react-icons/fa";
-import {GiExitDoor} from "react-icons/gi";
-import {IoSwapHorizontal} from "react-icons/io5";
+import {MdAutorenew} from "react-icons/md";
 import {IoMdSwap} from "react-icons/io";
 import {TbMailShare} from "react-icons/tb";
-
+import { Tooltip } from 'react-tooltip'
 
 
 const computeWords = (main, unplayedTilesWithPositions, playedTilesWithPositions) => {
@@ -248,20 +245,30 @@ export default function ActionMenu(props) {
 
     }
 
+    function invite() {
+
+    }
+
     return (
         <div className="ActionMenu">
-            <button id={'ReturnAllTilesToRack'} className={'ActionMenuButton'} onClick={returnAllTilesToRack}><FaAngleDoubleDown size={26}/>
+            <button id={'ReturnAllTilesToRack'} className={'ActionMenuButton'} onClick={returnAllTilesToRack} data-tooltip-id="return-tooltip"><FaAngleDoubleDown size={26}/>
             </button>
-            <button id={'Shuffle'} className={'ActionMenuButton'} onClick={shuffleRackButton}><FaShuffle size={26}/></button>
-            <button id={'Swap'} className={'ActionMenuButton'} onClick={swapLetters}><IoMdSwap size={26}/></button>
+            <button id={'Shuffle'} className={'ActionMenuButton'} onClick={shuffleRackButton} data-tooltip-id="shuffle-tooltip"><FaShuffle size={26}/></button>
+            <button id={'Swap'} className={'ActionMenuButton'} onClick={swapLetters} data-tooltip-id="swap-tooltip"><IoMdSwap size={26}/></button>
             <button id={'SubmitButton'} className={'ActionMenuButton'} onClick={submitWord}><FaPlay size={26}/>
             </button>
-            <button id={'Help'} className={'ActionMenuButton'} onClick={showHelp}><FaQuestion size={26} />
+            <button id={'Help'} className={'ActionMenuButton'} onClick={showHelp} data-tooltip-id="help-tooltip"><FaQuestion size={26} />
             </button>
-            <button id={'Invite'} className={'ActionMenuButton'} onClick={showHelp}><TbMailShare size={26} />
+            <button id={'Invite'} className={'ActionMenuButton'} onClick={invite} data-tooltip-id="invite-tooltip"><TbMailShare size={26} />
             </button>
-            <button id={'NewGame'} className={'ActionMenuButton'} onClick={newGame}><GiExitDoor size={26}/>
+            <button id={'NewGame'} className={'ActionMenuButton'} onClick={newGame} data-tooltip-id="newGame-tooltip" ><MdAutorenew size={26}/>
             </button>
+            <Tooltip id="newGame-tooltip" content="புது விளையாட்டு" style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
+            <Tooltip id="help-tooltip" content="உதவி" style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
+            <Tooltip id="invite-tooltip" content="அழைப்பு" style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
+            <Tooltip id="shuffle-tooltip" content="வரிசையை மாற்று" style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
+            <Tooltip id="swap-tooltip" content="எழுத்துகளை மாற்று" style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
+            <Tooltip id="return-tooltip" content="எழுத்துகளை மீட்டெடு" style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
         </div>
     )
 }

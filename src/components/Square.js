@@ -1,9 +1,7 @@
 import '../styles/Styles.css';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import LetterTile from "./LetterTile";
-import {TileSet} from "../utils/TileSet";
 import {useDrop} from "react-dnd";
-import {useState} from "react";
 import {mergeTiles, moveTileOnBoardFromBoard, placeTileOnBoardFromRack} from "../store/actions";
 import {multiplierLabels} from "../utils/squareMultipliers";
 import constants from "../utils/constants";

@@ -1,6 +1,3 @@
-import {useSelector} from "react-redux";
-import LetterTile from "./LetterTile";
-import {TileSet} from "../utils/TileSet";
 import RackSlot from "./RackSlot";
 import constants from "../utils/constants";
 

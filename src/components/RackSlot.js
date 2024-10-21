@@ -1,14 +1,12 @@
 import '../styles/Styles.css';
-import {useDrag, useDrop} from "react-dnd";
+import {useDrop} from "react-dnd";
 import {
     mergeTiles,
     moveTileOnRack,
     placeTileOnRackFromBoard
 } from "../store/actions";
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect, useState} from "react";
 import LetterTile from "./LetterTile";
-import {TileSet} from "../utils/TileSet";
 import constants from "../utils/constants";
 
 export default function RackSlot(props) {
