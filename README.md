@@ -1,3 +1,6 @@
+# Screenshot of Tamil Scrabble Game
+<img width="1087" alt="image" src="https://github.com/user-attachments/assets/b1b40128-55a8-4297-a1a2-fc49381fea11">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
