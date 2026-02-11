@@ -1,0 +1,1 @@
+public/tamil_dictionary.txt filter=lfs diff=lfs merge=lfs -text

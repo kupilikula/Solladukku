@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="tileGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B5D4E6"/>
+      <stop offset="50%" stop-color="#F0DCA8"/>
+      <stop offset="100%" stop-color="#E8BAA8"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8AB8CE"/>
+      <stop offset="50%" stop-color="#D4B870"/>
+      <stop offset="100%" stop-color="#CC9480"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Border (slightly larger rect behind the tile) -->
+  <rect x="29" y="25" width="454" height="454" rx="38" ry="38"
+        fill="url(#borderGrad)" filter="url(#shadow)"/>
+
+  <!-- Tile face -->
+  <rect x="34" y="30" width="444" height="444" rx="33" ry="33"
+        fill="url(#tileGrad)"/>
+
+  <!-- Letter ஃ -->
+  <text x="256" y="330" text-anchor="middle"
+        font-family="Tamil Sangam MN, Noto Sans Tamil, sans-serif"
+        font-size="280" font-weight="bold" fill="#1a1a1a">ஃ</text>
+</svg>
