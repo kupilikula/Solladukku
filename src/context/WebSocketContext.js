@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useRef, useState, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
-import { addOtherPlayerTurn, addPlayers, syncNewGame, syncOpponentDraw, syncSwapTiles, syncPassTurn, setGameOver } from '../store/actions';
+import { useDispatch, useStore } from 'react-redux';
+import { addOtherPlayerTurn, addPlayers, syncNewGame, syncOpponentDraw, syncSwapTiles, syncPassTurn, setGameOver, returnAllUnplayedTilesToRackFromBoard } from '../store/actions';
 import { setMyTurn } from '../store/GameSlice';
 
 const WebSocketContext = createContext(null);
@@ -9,6 +9,7 @@ let requestIdCounter = 0;
 
 export function WebSocketProvider({ userId, gameId, children }) {
     const dispatch = useDispatch();
+    const store = useStore();
     const [isConnected, setIsConnected] = useState(false);
     const [connectionError, setConnectionError] = useState(null);
     const [chatMessages, setChatMessages] = useState([]);
@@ -79,9 +80,16 @@ export function WebSocketProvider({ userId, gameId, children }) {
                     console.log('WebSocket message received:', message.messageType, message);
 
                     switch (message.messageType) {
-                        case 'turn':
+                        case 'turn': {
+                            // Return any unplayed tiles to the rack before applying opponent's turn,
+                            // otherwise they get silently cleared and lost
+                            const unplayedTiles = store.getState().WordBoard.unplayedTilesWithPositions;
+                            if (unplayedTiles.length > 0) {
+                                dispatch(returnAllUnplayedTilesToRackFromBoard(unplayedTiles));
+                            }
                             dispatch(addOtherPlayerTurn({ turnInfo: message.turnInfo }));
                             break;
+                        }
                         case 'playerJoined':
                             // Someone joined our game - we keep our turn
                             dispatch(addPlayers({ otherPlayerIds: message.playerIds }));
