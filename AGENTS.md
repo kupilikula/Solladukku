@@ -12,7 +12,8 @@ A React-based Tamil Scrabble game with a landing page, real-time multiplayer via
 - **UI**: react-icons, react-tooltip, react-select, react-fitty
 - **Server**: Node.js with ws library, foma/flookup for FST validation, origin/rate-limit hardening, SQLite analytics
 - **Dictionary Build**: Python 3 scripts, foma toolkit for FST morphological generation
-- **Deployment**: nginx reverse proxy + PM2 process manager
+- **Deployment**: Railway (Dockerfile-based, auto-deploy on push to `main`). Server serves both API/WebSocket and React static build as a single service.
+- **Dictionary Storage**: Git LFS (135MB file exceeds GitHub's 100MB limit)
 
 ## Project Structure
 
@@ -81,7 +82,10 @@ src/
     └── Styles.css            # All component styles, animations, toasts
 .env                          # Dev defaults (REACT_APP_WS_URL=ws://localhost:8000)
 .env.production               # Production config (REACT_APP_WS_URL=wss://DOMAIN/ws)
-ecosystem.config.js           # PM2 process manager config
+ecosystem.config.js           # PM2 process manager config (legacy DO deploy)
+Dockerfile                    # Combined build: React frontend + Node.js server
+.dockerignore                 # Excludes node_modules, env files, wordlists from Docker context
+railway.toml                  # Railway deploy config: watchPatterns to skip doc-only builds
 ```
 
 ## Landing Page (`src/App.js`)
@@ -261,7 +265,7 @@ Analytics calls are added **after** existing `broadcastToRoom` calls — no chan
 
 ### Client-Side Visit Tracking (`src/App.js`)
 
-- `getApiBaseUrl()` derives HTTP URL from `REACT_APP_WS_URL` (`ws://` → `http://`, `wss://` → `https://`)
+- `getApiBaseUrl()` derives HTTP URL from `REACT_APP_WS_URL` if set, otherwise uses `window.location.origin`
 - Landing page: fire-and-forget POST on mount (`page: 'landing'`)
 - Game entry: fire-and-forget POST when `gameId` is set (`page: 'game'`, with `gameId` and `userId`)
 
@@ -370,7 +374,7 @@ Swap mode: Only **Swap** (red confirm) and **Cancel** buttons visible.
 {WS_BASE_URL}/{gameId}/{userId}
 ```
 
-Where `WS_BASE_URL` comes from `REACT_APP_WS_URL` env var (default: `ws://localhost:8000`).
+Where `WS_BASE_URL` comes from `REACT_APP_WS_URL` env var. In production (HTTPS), the URL is auto-derived from `window.location` if the env var is not set.
 
 The WebSocket connection is managed via React Context (`WebSocketContext.js`), providing:
 - Auto-reconnect on disconnect (3-second delay)
@@ -542,8 +546,6 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 ### TODO
 - [ ] Tile Bag Optimization: balance distribution for fun gameplay
 - [ ] Rendering & Code Optimization
-- [ ] Logo and branding assets (place `logo.png` in `public/`)
-- [ ] Domain name configuration
 
 ## Key Files for Common Tasks
 
@@ -636,8 +638,19 @@ The dictionary is sorted with Python's `sorted()` (Unicode codepoint order). The
 ### User ID Persistence
 User IDs are stored in cookies (`solladukku` cookie, 6-year TTL) for session persistence.
 
-### Deployment
-See `deploy/DEPLOY.md` for full Digital Ocean deployment instructions:
+### Deployment (Railway)
+Deployed as a single Dockerfile-based service on Railway:
+- `Dockerfile` builds the React frontend, then sets up the Node.js server
+- Server serves the static React build for non-API routes + handles WebSocket/API on the same port
+- Auto-deploys on push to `main` (connected via GitHub integration)
+- `railway.toml` `watchPatterns` limits rebuilds to code changes (skips doc-only commits)
+- Custom domain: `solmaalai.com` (CNAME → Railway). `சொல்மாலை.com` redirects via Namecheap.
+- FST validation is disabled in production (flookup not available in container) — client-side dictionary still validates
+- Dictionary file (135MB) stored via Git LFS
+- Railway CLI: `railway up` for manual deploy, `railway logs` to check output
+
+### Deployment (Legacy - Digital Ocean)
+See `deploy/DEPLOY.md` for Digital Ocean deployment instructions:
 - Ubuntu 22.04 droplet (2GB+ RAM for flookup processes)
 - nginx serves React build as static files + reverse proxies `/ws/` to WebSocket server
 - PM2 manages server process with auto-restart
