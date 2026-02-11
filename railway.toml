@@ -1,0 +1,2 @@
+[deploy]
+watchPatterns = ["src/**", "public/**", "server/**", "package*.json", "Dockerfile", ".dockerignore"]
