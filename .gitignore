@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+server/node_modules
 /.pnp
 .pnp.js
 
@@ -27,3 +28,5 @@ server/.env
 
 # analytics database
 server/analytics.db
+server/analytics.db-shm
+server/analytics.db-wal
