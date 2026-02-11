@@ -18,14 +18,14 @@ const MyPreview = () => {
     return <div style={{...style, zIndex: 100}}> <LetterTile tile={item.tile} location={item.origin} played={false} enableModals={false}/> </div>
 }
 
-export default function PlayingBoard(props) {
+export default function PlayingBoard() {
     return (
         <DndProvider backend={TouchBackend} options={{enableTouchEvents: true, enableMouseEvents: true}}>
             <div className="PlayingBoard">
                 <WordBoard />
                 <div className={"ActionPanel"}>
                     <LetterRack />
-                    <ActionMenu wsConnection={props.wsConnection} />
+                    <ActionMenu />
                 </div>
             </div>
             <MyPreview />

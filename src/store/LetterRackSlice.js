@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import {
     initializeNewGameState,
+    syncNewGame,
     replenishRack,
     placeTileOnBoardFromRack,
     moveTileOnRack,
@@ -9,7 +10,9 @@ import {
     placeTileOnRackFromBoard,
     returnAllUnplayedTilesToRackFromBoard,
     toggleActivatedOfTileOnRack,
-    mergeTiles, splitUyirMeyTile, shuffleRack, bonusTileLetterSelected, toggleActivatedOfTile
+    mergeTiles, splitUyirMeyTile, shuffleRack, bonusTileLetterSelected, toggleActivatedOfTile,
+    deactivateAllRackTiles,
+    swapTiles
 } from "./actions";
 import {TileMethods, TileSet} from "../utils/TileSet";
 import constants from "../utils/constants";
@@ -80,6 +83,9 @@ export const LetterRackSlice = createSlice({
             .addCase(initializeNewGameState, (state, action) => {
                 state.tilesList = Array(14).fill(null);
             })
+            .addCase(syncNewGame, (state, action) => {
+                state.tilesList = Array(14).fill(null);
+            })
             .addCase(returnAllUnplayedTilesToRackFromBoard, (state, action) => {
                 action.payload.forEach(t => {
                     let ind = state.tilesList.findIndex(c => c===null);
@@ -132,6 +138,21 @@ export const LetterRackSlice = createSlice({
                 if (action.payload.location.host==='RACK') {
                     state.tilesList[action.payload.location.pos].letter = action.payload.selectedLetter;
                 }
+            })
+            .addCase(deactivateAllRackTiles, (state) => {
+                state.tilesList.forEach((tile, i) => {
+                    if (tile && tile.activated) {
+                        state.tilesList[i] = { ...tile, activated: false };
+                    }
+                });
+            })
+            .addCase(swapTiles, (state, action) => {
+                // Remove activated tiles from rack (they'll be returned to bag)
+                // The indices of tiles to swap are passed in the action
+                const indicesToSwap = action.payload.indicesToSwap;
+                indicesToSwap.forEach(idx => {
+                    state.tilesList[idx] = null;
+                });
             })
     }
 })

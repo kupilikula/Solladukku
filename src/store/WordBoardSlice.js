@@ -4,6 +4,7 @@ import {
     bonusTileLetterSelected,
     deactivateAllUnplayedTilesOnBoard,
     initializeNewGameState,
+    syncNewGame,
     mergeTiles,
     moveTileOnBoardFromBoard,
     placeTileOnBoardFromRack,
@@ -31,6 +32,10 @@ export const WordBoardSlice = createSlice({
                 state.unplayedTilesWithPositions = [];
             })
             .addCase(initializeNewGameState, (state, action) => {
+                state.playedTilesWithPositions = [];
+                state.unplayedTilesWithPositions = [];
+            })
+            .addCase(syncNewGame, (state, action) => {
                 state.playedTilesWithPositions = [];
                 state.unplayedTilesWithPositions = [];
             })

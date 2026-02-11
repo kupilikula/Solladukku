@@ -2,9 +2,10 @@
 .GameFrame {
     display: flex;
     flex-direction: row;
-    background: #E6E6F0;
+    background: #EDE8E0;
     width: 100%;
     height: 100%;
+    align-items: flex-start;
 }
 
 .PlayingBoard {
@@ -32,7 +33,7 @@
     display: flex;
     flex-direction: column;
     align-content: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
 }
 .LetterTile {
@@ -60,15 +61,13 @@
 }
 
 .LetterTile.MEY {
-    /*background: rgb(218, 158, 255);*/
-    background: rgb(158, 218, 255);
-    border: 1px solid rgb(103, 181, 229);
+    background: #B5D4E6;
+    border: 1px solid #8AB8CE;
 }
 
 .LetterTile.UYIR {
-    /*background: rgb(218, 158, 255);*/
-    background: rgb(255, 158, 218);
-    border: 1px solid rgb(229, 103, 181);
+    background: #E8BAA8;
+    border: 1px solid #CC9480;
 }
 .LetterTile.UYIRMEY {
     background: rgb(0, 0, 0);
@@ -76,13 +75,13 @@
     /*border: 1px solid rgb(229, 181, 103);*/
 }
 .LetterTile.BONUS {
-    background: rgb(255, 218, 158);
-    border: 1px solid rgb(229, 181, 103);
+    background: #F0DCA8;
+    border: 1px solid #D4B870;
 }
 
 .LetterTile.Played {
-    background: rgb(255, 218, 158);
-    border: 1px solid rgb(229, 181, 103);
+    background: #F0DCA8;
+    border: 1px solid #D4B870;
     color: black;
 }
 
@@ -117,23 +116,23 @@
     width: 40px;
     font-size: 20px;
     font-weight: bold;
-    background: #C4C4D1;
+    background: #CCC8C0;
     color: black;
     overflow: visible;
     user-select: none;
 }
 
 .Square.Word3 {
-     background: rgb(12,103,156);
+     background: #B83230;
 }
 .Square.Word2 {
-    background: rgb(104,162,195);
+    background: #D4A843;
 }
 .Square.Letter3 {
-    background: rgb(191,78,78);
+    background: #0D6E5C;
 }
 .Square.Letter2 {
-    background: rgb(228,162,163);
+    background: #7BC8B5;
 }
 
 .Multiplier {
@@ -144,10 +143,14 @@
     color: white;
 }
 
+.Square.Letter2 .Multiplier {
+    color: #1a1a1a;
+}
+
 .Square.Starred .Star{
     font-size: 36px;
     z-index: 0;
-    color: rgb(12,103,156);
+    color: #B83230;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -166,7 +169,7 @@
 }
 
 .Square.Starred {
-    background: rgb(104,162,195);
+    background: #D4A843;
 }
 
 .DropShadow {
@@ -213,18 +216,17 @@
 @keyframes darkening-uyir {
 
     0% {
-        background: rgb(255, 158, 218);
+        background: #E8BAA8;
         animation-timing-function: ease-in;
     }
     50% {
-        /*background: rgb(90, 40, 72);*/
         background: black;
         color: white;
         border-color: black;
         animation-timing-function: ease-out;
     }
     100% {
-        background: rgb(255, 158, 218);
+        background: #E8BAA8;
         animation-timing-function: ease-in;
     }
 }
@@ -232,18 +234,17 @@
 @keyframes darkening-mey {
 
     0% {
-        background: rgb(158, 218, 255);
+        background: #B5D4E6;
         animation-timing-function: ease-in;
     }
     50% {
-        /*background: rgb(40, 72, 90);*/
         background: rgb(0 ,0, 0);
         border-color: black;
         color: white;
         animation-timing-function: ease-out;
     }
     100% {
-        background: rgb(158, 218, 255);
+        background: #B5D4E6;
         animation-timing-function: ease-in;
     }
 }
@@ -270,52 +271,22 @@
 @keyframes darkening-bonus {
 
     0% {
-        background: rgb(255, 218, 158);
+        background: #F0DCA8;
         animation-timing-function: ease-in;
     }
     50% {
-        /*background: rgb(40, 72, 90);*/
-        background: rgb(229, 181, 103);
-        /*border-color: white;*/
-        /*color: black;*/
+        background: #D4B870;
         animation-timing-function: ease-out;
     }
     100% {
-        background: rgb(255, 218, 158);
+        background: #F0DCA8;
         animation-timing-function: ease-in;
     }
 }
 
-.activated.UYIR {
-    animation-name: tilt-shaking, darkening-uyir;
-    animation-duration: .15s, 1.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    transform-origin: 50% 40%;
-}
-
-.activated.MEY {
-    animation-name: tilt-shaking, darkening-mey;
-    animation-duration: .15s, 1.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    transform-origin: 50% 40%;
-}
-
-.activated.UYIRMEY {
-    animation-name: tilt-shaking, darkening-uyirmey;
-    animation-duration: .075s, .75s;
-    animation-iteration-count: 10, 1;
-    animation-direction: alternate;
-    transform-origin: 50% 40%;
-}
-
-.activated.BONUS {
-    animation-name: tilt-shaking, darkening-bonus;
-    animation-duration: .15s, 1.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    transform-origin: 50% 40%;
+.activated {
+    border: 2px solid #C0392B !important;
+    box-shadow: 0 0 4px rgba(192, 57, 43, 0.4);
 }
 
 .LetterRack {
@@ -325,7 +296,7 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    border: 5px solid rgb(229, 181, 103);
+    border: 1px solid #ddd;
     border-top: none;
     border-radius: 0 0 5px 5px;
     padding: 10px;
@@ -340,7 +311,7 @@
     justify-content: center;
     align-self: center;
     align-content: center;
-    border: 1px solid rgb(229, 181, 103);
+    border: 1px solid #ddd;
     background-color: white;
     padding: 10px;
     border-radius: 10px;
@@ -354,11 +325,69 @@
     background-color: white;
     /*width: 100%;*/
     border-radius: 5px;
+    position: relative;
     /*padding-left: 10px;*/
     /*padding-right: 10px;*/
     /*border-top-left-radius: 0px;*/
     /*border-top-right-radius: 0px;*/
     /*flex-wrap: wrap;*/
+}
+
+.ValidatingToast {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1565c0;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: "Tamil Sangam MN", sans-serif;
+    white-space: nowrap;
+    margin-bottom: 8px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.Spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.InvalidWordsToast {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e53935;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: "Tamil Sangam MN", sans-serif;
+    white-space: nowrap;
+    margin-bottom: 8px;
+    z-index: 100;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50%) translateY(4px); }
+    10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .ActionMenuButton {
@@ -370,7 +399,7 @@
     justify-content: center;
     /*font-size: 44px;*/
     color: white;
-    background-color: rgb(12,156,103);
+    background-color: #1A5276;
     margin: 10px;
     border: 0px;
     border-radius: 5px;
@@ -380,7 +409,7 @@
 }
 
 .ActionMenuButton:hover {
-    background-color: rgb(14,188,124);
+    background-color: #2176A8;
 }
 /*.ActionMenuButton:click {*/
 /*    background-color: lightgray;*/
@@ -409,7 +438,7 @@
 
 #ChooseLetterButton
 {
-    background-color: rgb(12,156,103);
+    background-color: #1A5276;
     width: 60px;
     height: 36px;
     border: 0px;
