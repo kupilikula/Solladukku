@@ -7,7 +7,8 @@ import {
     moveTileOnRack,
     placeTileOnRackFromBoard, splitUyirMeyTile, toggleActivatedOfTile,
     toggleActivatedOfTileOnBoard,
-    toggleActivatedOfTileOnRack
+    toggleActivatedOfTileOnRack,
+    deactivateAllRackTiles
 } from "../store/actions";
 import constants from "../utils/constants";
 import {ReactFitty} from "react-fitty";
@@ -24,6 +25,10 @@ export default function LetterTile(props) {
         if (swapMode) return; // Don't allow double-click activation in swap mode
         const isAlreadyActivated = props.tile.activated;
         if (!props.played) {
+            if (!isAlreadyActivated) {
+                // Deactivate any other activated tiles first — only 1 tile can be activated for merge/split
+                dispatch(deactivateAllRackTiles());
+            }
             dispatch(toggleActivatedOfTile({location: props.location}));
         }
         if (props.tile.letterType===constants.LetterTile.letterType.UYIRMEY && !isAlreadyActivated) {
@@ -60,7 +65,7 @@ export default function LetterTile(props) {
          ref={drag}
          onClick={onClick}
          onDoubleClick={onDoubleClick}
-         className={`LetterTile ${props.tile.letterType} ${props.played ? 'Played' : 'Unplayed'} ${props.location.host} ${props.tile.activated ? 'activated' : ''} `}>
+         className={`LetterTile ${props.tile.letterType} ${props.played ? 'Played' : 'Unplayed'} ${props.location.host} ${props.tile.activated ? (swapMode ? 'swap-selected' : 'activated') : ''} `}>
         <ReactFitty maxSize={20}>{props.tile.letter}</ReactFitty>
         <span className={'Points'}>{props.tile.points}</span>
     </div>

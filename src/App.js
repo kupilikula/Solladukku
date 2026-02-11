@@ -8,8 +8,10 @@ import {WebSocketProvider} from "./context/WebSocketContext";
 import {LanguageProvider, useLanguage} from "./context/LanguageContext";
 
 function getApiBaseUrl() {
-    const wsUrl = process.env.REACT_APP_WS_URL || 'ws://localhost:8000';
-    return wsUrl.replace(/^ws(s?):\/\//, 'http$1://');
+    if (process.env.REACT_APP_WS_URL) {
+        return process.env.REACT_APP_WS_URL.replace(/^ws(s?):\/\//, 'http$1://');
+    }
+    return window.location.origin;
 }
 
 

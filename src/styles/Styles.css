@@ -284,9 +284,29 @@
     }
 }
 
-.activated {
+.swap-selected {
     border: 2px solid #C0392B !important;
     box-shadow: 0 0 4px rgba(192, 57, 43, 0.4);
+}
+
+.activated {
+    animation: tilt-shaking 0.15s infinite;
+}
+
+.activated.UYIR {
+    animation: tilt-shaking 0.15s infinite, darkening-uyir 0.75s infinite;
+}
+
+.activated.MEY {
+    animation: tilt-shaking 0.15s infinite, darkening-mey 0.75s infinite;
+}
+
+.activated.UYIRMEY {
+    animation: darkening-uyirmey 0.75s 1;
+}
+
+.activated.BONUS {
+    animation: tilt-shaking 0.15s infinite, darkening-bonus 0.75s infinite;
 }
 
 .LetterRack {
