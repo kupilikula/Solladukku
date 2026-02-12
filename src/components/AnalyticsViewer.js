@@ -103,6 +103,8 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
 
     const [visits, setVisits] = useState([]);
     const [visitsDays, setVisitsDays] = useState(30);
+    const [visitCountries, setVisitCountries] = useState([]);
+    const [playerCountries, setPlayerCountries] = useState([]);
 
     const isAuthenticated = Boolean(adminPassword);
 
@@ -131,12 +133,16 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
     const loadSummary = useCallback(async () => {
         setLoadingSummary(true);
         try {
-            const [summaryResp, visitsResp] = await Promise.all([
+            const [summaryResp, visitsResp, visitCountryResp, playerCountryResp] = await Promise.all([
                 fetchAdminJson('/api/admin/summary'),
                 fetchAdminJson(`/api/admin/visits/daily?days=${visitsDays}`),
+                fetchAdminJson(`/api/admin/visits/countries?days=${visitsDays}&limit=10`),
+                fetchAdminJson('/api/admin/players/countries?limit=10'),
             ]);
             setSummary(summaryResp);
             setVisits(Array.isArray(visitsResp) ? visitsResp : []);
+            setVisitCountries(Array.isArray(visitCountryResp) ? visitCountryResp : []);
+            setPlayerCountries(Array.isArray(playerCountryResp) ? playerCountryResp : []);
             setAuthError('');
         } catch (err) {
             if (err.status === 401 || err.status === 503) {
@@ -379,6 +385,54 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
                             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
                         }}>
                             <div style={{ backgroundColor: 'white', border: '1px solid #d5e1ea', borderRadius: 10, padding: 12 }}>
+                                <TableHeader title={`Visits by Country (${visitsDays}d)`} />
+                                <div style={{ maxHeight: 220, overflowY: 'auto', border: '1px solid #ebf0f4', borderRadius: 8 }}>
+                                    {(visitCountries || []).map((row) => (
+                                        <div key={`${row.countryCode}-${row.country}`} style={{
+                                            display: 'grid',
+                                            gridTemplateColumns: '1fr auto',
+                                            gap: 8,
+                                            alignItems: 'center',
+                                            padding: '8px 10px',
+                                            borderBottom: '1px solid #eef3f6',
+                                            fontSize: 12,
+                                        }}>
+                                            <div>{row.countryCode || 'UNK'} {row.country || 'Unknown'}</div>
+                                            <div style={{ color: '#60717f' }}>{row.count}</div>
+                                        </div>
+                                    ))}
+                                    {!visitCountries.length ? <div style={{ padding: 10, fontSize: 12, color: '#8897a3' }}>No geo visit data.</div> : null}
+                                </div>
+                            </div>
+
+                            <div style={{ backgroundColor: 'white', border: '1px solid #d5e1ea', borderRadius: 10, padding: 12 }}>
+                                <TableHeader title="Players by Last Country" />
+                                <div style={{ maxHeight: 220, overflowY: 'auto', border: '1px solid #ebf0f4', borderRadius: 8 }}>
+                                    {(playerCountries || []).map((row) => (
+                                        <div key={`${row.countryCode}-${row.country}`} style={{
+                                            display: 'grid',
+                                            gridTemplateColumns: '1fr auto',
+                                            gap: 8,
+                                            alignItems: 'center',
+                                            padding: '8px 10px',
+                                            borderBottom: '1px solid #eef3f6',
+                                            fontSize: 12,
+                                        }}>
+                                            <div>{row.countryCode || 'UNK'} {row.country || 'Unknown'}</div>
+                                            <div style={{ color: '#60717f' }}>{row.count}</div>
+                                        </div>
+                                    ))}
+                                    {!playerCountries.length ? <div style={{ padding: 10, fontSize: 12, color: '#8897a3' }}>No geo player data.</div> : null}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style={{
+                            display: 'grid',
+                            gap: 14,
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                        }}>
+                            <div style={{ backgroundColor: 'white', border: '1px solid #d5e1ea', borderRadius: 10, padding: 12 }}>
                                 <TableHeader
                                     title={`Games (${gamesTotal})`}
                                     right={(
@@ -408,6 +462,9 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
                                             <div style={{ fontSize: 12, fontWeight: 'bold', color: '#1A5276' }}>{game.game_id}</div>
                                             <div style={{ fontSize: 12 }}>{game.player1_name || game.player1_id || 'P1'} vs {game.player2_name || game.player2_id || 'P2'}</div>
                                             <div style={{ fontSize: 11, color: '#60717f' }}>{game.player1_score} - {game.player2_score} | turns {game.total_turns}</div>
+                                            <div style={{ fontSize: 11, color: '#60717f' }}>
+                                                start {game.started_country_code || 'UNK'} | end {game.ended_country_code || 'UNK'}
+                                            </div>
                                         </button>
                                     ))}
                                     {!games.length ? <div style={{ padding: 10, fontSize: 12, color: '#8897a3' }}>No games.</div> : null}
@@ -449,6 +506,9 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
                                             <div style={{ fontSize: 12, fontWeight: 'bold', color: '#1A5276' }}>{player.username}</div>
                                             <div style={{ fontSize: 11, color: '#60717f' }}>{player.userId}</div>
                                             <div style={{ fontSize: 11, color: '#60717f' }}>rating {player.rating} | games {player.gamesPlayed}</div>
+                                            <div style={{ fontSize: 11, color: '#60717f' }}>
+                                                {player.lastCountryCode || 'UNK'} {player.lastCountry || 'Unknown'}
+                                            </div>
                                         </button>
                                     ))}
                                     {!players.length ? <div style={{ padding: 10, fontSize: 12, color: '#8897a3' }}>No players.</div> : null}
@@ -471,6 +531,9 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
                                             <b>{gameDetail.game.game_id}</b> | {gameDetail.game.player1_name || gameDetail.game.player1_id || 'P1'} vs {gameDetail.game.player2_name || gameDetail.game.player2_id || 'P2'}
                                         </div>
                                         <div style={{ fontSize: 12, marginBottom: 8 }}>Score: {gameDetail.game.player1_score} - {gameDetail.game.player2_score} | Turns: {gameDetail.game.total_turns}</div>
+                                        <div style={{ fontSize: 12, marginBottom: 8 }}>
+                                            Geo: P1 {gameDetail.game.player1_country_code || 'UNK'} | P2 {gameDetail.game.player2_country_code || 'UNK'} | start {gameDetail.game.started_country_code || 'UNK'} | end {gameDetail.game.ended_country_code || 'UNK'}
+                                        </div>
                                         <div style={{ marginBottom: 8 }}>
                                             <input
                                                 type="range"
@@ -524,6 +587,12 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
                                         <div style={{ fontSize: 12, marginBottom: 8 }}><b>{playerDetail.profile.username}</b> ({playerDetail.profile.userId})</div>
                                         <div style={{ fontSize: 12, marginBottom: 8 }}>Rating {playerDetail.profile.rating} | W/L/D: {playerDetail.profile.wins}/{playerDetail.profile.losses}/{playerDetail.profile.draws}</div>
                                         <div style={{ fontSize: 12, marginBottom: 8 }}>Games {playerDetail.profile.gamesPlayed} | Total score {playerDetail.profile.totalScore}</div>
+                                        <div style={{ fontSize: 12, marginBottom: 8 }}>
+                                            Last geo: {playerDetail.profile.lastCountryCode || 'UNK'} {playerDetail.profile.lastCountry || 'Unknown'}
+                                            {playerDetail.profile.lastRegion ? `, ${playerDetail.profile.lastRegion}` : ''}
+                                            {playerDetail.profile.lastCity ? `, ${playerDetail.profile.lastCity}` : ''}
+                                            {' '}| seen {formatDateTime(playerDetail.profile.lastSeenAt)}
+                                        </div>
 
                                         <div style={{ fontSize: 12, fontWeight: 'bold', marginBottom: 4, color: '#1A5276' }}>Recent Games</div>
                                         <div style={{ maxHeight: 120, overflowY: 'auto', border: '1px solid #ebf0f4', borderRadius: 6, marginBottom: 10 }}>

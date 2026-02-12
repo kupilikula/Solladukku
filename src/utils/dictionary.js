@@ -1,3 +1,5 @@
+import { getApiBaseUrl } from './runtimeUrls';
+
 /**
  * Tamil dictionary for word validation.
  *
@@ -97,15 +99,6 @@ export function validateWords(words) {
 
 // Session-level cache: Map<word, boolean> — same word is never re-queried
 const serverValidationCache = new Map();
-
-function getApiBaseUrl() {
-    if (process.env.REACT_APP_WS_URL) {
-        return process.env.REACT_APP_WS_URL
-            .replace(/^ws(s?):\/\//, 'http$1://')
-            .replace(/\/ws\/?$/, '');
-    }
-    return window.location.origin;
-}
 
 /**
  * Validate words that failed local dictionary lookup by asking the server.

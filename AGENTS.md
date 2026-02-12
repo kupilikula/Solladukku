@@ -11,7 +11,7 @@ A React-based Tamil Scrabble game with a landing page, real-time multiplayer via
 - **Frontend**: React 18.2.0 with Create React App
 - **State Management**: Redux Toolkit (@reduxjs/toolkit 1.9.7)
 - **Drag & Drop**: react-dnd v16.0.1 with HTML5 and Touch backends
-- **Real-time**: WebSockets with room-based multiplayer (configurable via `REACT_APP_WS_URL` env var)
+- **Real-time**: WebSockets with room-based multiplayer (runtime URL auto-derived; localhost dev defaults to port 8000)
 - **I18n**: React Context-based Tamil/English language toggle
 - **UI**: react-icons, react-tooltip, react-select, react-fitty
 - **Server**: Node.js with ws library, foma/flookup for FST validation, origin/rate-limit hardening, SQLite analytics
@@ -28,6 +28,7 @@ deploy/
 server/
 ├── index.js                  # HTTP + WebSocket server: rooms, hardening, FST validation, REST API
 ├── analytics.js              # SQLite analytics: visits, games, turns tracking
+├── geo.js                    # Geo-IP resolver (provider + cache + IP hashing)
 ├── download-fsts.js          # Script to download FST models from ThamizhiMorph
 ├── package.json              # Server deps (ws, better-sqlite3); scripts: start, setup
 ├── analytics.db              # SQLite database (auto-created, gitignored)
@@ -89,8 +90,8 @@ src/
 │   └── squareMultipliers.js  # 15×15 board multiplier map
 └── styles/
     └── Styles.css            # All component styles, animations, toasts
-.env                          # Dev defaults (REACT_APP_WS_URL=ws://localhost:8000)
-.env.production               # Production config (REACT_APP_WS_URL=wss://DOMAIN/ws)
+.env                          # Optional frontend overrides (not required for API/WS routing)
+.env.production               # Optional frontend production overrides (usually empty)
 ecosystem.config.js           # PM2 process manager config (legacy DO deploy)
 Dockerfile                    # Combined build: React frontend + Node.js server (with LFS fallback)
 .dockerignore                 # Excludes node_modules, env files, wordlists from Docker context
@@ -256,10 +257,10 @@ Four tables with WAL mode enabled:
 
 | Table | Purpose | Key Columns |
 |-------|---------|-------------|
-| `visits` | Page view tracking | `page` ('landing'\|'game'), `game_id`, `user_id`, `ip`, `user_agent`, `referrer` |
-| `games` | One row per game session | `game_id`, `player1_id`, `player2_id`, scores, `winner_id`, `game_over_reason`, `total_turns` |
+| `visits` | Page view tracking + geo | `page` ('landing'\|'game'), `game_id`, `user_id`, `ip`, `user_agent`, `referrer`, `country_code`, `country`, `region`, `city`, `timezone`, `geo_source`, `geo_resolved_at`, `created_at` |
+| `games` | One row per game session + country snapshot | `game_id`, `player1_id`, `player2_id`, scores, `winner_id`, `game_over_reason`, `total_turns`, `player1_country_code`, `player2_country_code`, `started_country_code`, `ended_country_code`, `started_at`, `ended_at` |
 | `turns` | One row per turn action | `game_id`, `games_row_id` (FK), `user_id`, `turn_type` ('word'\|'pass'\|'swap'), `score`, `words_played` (JSON), `tiles_placed`, `placed_tiles_json` (JSON), `formed_words_json` (JSON) |
-| `players` | Persistent profile + rating | `user_id`, `username`, `rating`, `games_played`, `wins`, `losses`, `draws`, `total_score` |
+| `players` | Persistent profile + rating + last seen geo | `user_id`, `username`, `rating`, `games_played`, `wins`, `losses`, `draws`, `total_score`, `last_country_code`, `last_country`, `last_region`, `last_city`, `last_seen_ip_hash`, `last_seen_at`, `created_at`, `updated_at` |
 
 ### REST API Endpoints
 
@@ -282,6 +283,8 @@ Without `ANALYTICS_ADMIN_PASSWORD`, admin analytics endpoints return `503`.
 | `GET` | `/api/admin/players?limit=N&offset=N&q=...` | Protected paginated/searchable players |
 | `GET` | `/api/admin/players/:userId` | Protected player profile + recent games/turns |
 | `GET` | `/api/admin/visits/daily?days=N` | Protected daily visit breakdown (default 30, max 365) |
+| `GET` | `/api/admin/visits/countries?days=N&limit=N` | Protected visits grouped by country |
+| `GET` | `/api/admin/players/countries?limit=N` | Protected player counts by last-known country |
 | `POST` | `/api/matchmaking/join` | Join random-match queue (`{userId, username}`) |
 | `GET` | `/api/matchmaking/status?userId=...` | Check random-match queue/match status |
 | `POST` | `/api/matchmaking/cancel` | Cancel random matchmaking (`{userId}`) |
@@ -303,9 +306,10 @@ Analytics calls are added **after** existing `broadcastToRoom` calls — no chan
 
 ### Client-Side Visit Tracking (`src/App.js`)
 
-- `getApiBaseUrl()` derives HTTP URL from `REACT_APP_WS_URL` if set, otherwise uses `window.location.origin`
+- `getApiBaseUrl()` derives HTTP URL at runtime: localhost dev UI ports route to `http://{host}:8000`; otherwise same-origin
 - Landing page: fire-and-forget POST on mount (`page: 'landing'`)
 - Game entry: fire-and-forget POST when `gameId` is set (`page: 'game'`, with `gameId` and `userId`)
+- Server enriches visits/profiles with coarse geo (country/region/city/timezone) from request IP when `GEO_PROVIDER` is enabled
 
 ## Redux Store Structure
 
@@ -416,7 +420,7 @@ Swap mode: Only **Swap** (red confirm) and **Cancel** buttons visible.
 {WS_BASE_URL}/{gameId}/{userId}?name={username}
 ```
 
-Where `WS_BASE_URL` comes from `REACT_APP_WS_URL` env var. In production (HTTPS), the URL is auto-derived from `window.location` if the env var is not set.
+`WS_BASE_URL` is derived at runtime. In localhost dev (ports `3000/5173/4173`), it targets `ws://{host}:8000`; otherwise it uses same-origin `ws(s)://{host}`.
 
 The WebSocket connection is managed via React Context (`WebSocketContext.js`), providing:
 - Auto-reconnect on disconnect (3-second delay)
@@ -618,7 +622,8 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] **Tamil-inspired design**: peacock blue, vermilion, gold, teal, jade color scheme
 - [x] **Deployment config**: PM2 + nginx + TLS setup with DEPLOY.md guide
 - [x] **Analytics**: SQLite tracking for visits/games/turns with password-protected admin APIs (`/api/admin/*`)
-- [x] **Analytics Inspector UI**: `?analytics=1` view with summary cards, game/user inspection, and board replay slider
+- [x] **Geo analytics**: coarse Geo-IP enrichment for visits/profiles/games, hashed player IP tracking, and country breakdown admin endpoints
+- [x] **Analytics Inspector UI**: `?analytics=1` view with summary cards, country breakdowns, game/user inspection, and board replay slider
 
 - [x] **Single Player Mode**: Play vs Computer with client-side AI engine
   - Anchor-based word generation with dictionary prefix pruning (O(log 2.85M) per check)
@@ -685,15 +690,21 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - **Logo**: Place `logo.png` in `public/` — appears on landing page (96px height, hides if missing)
 - **HTML title**: `public/index.html` `<title>` tag
 - **PWA manifest**: `public/manifest.json` — `short_name` and `name` fields
-- **Domain**: `.env.production` `REACT_APP_WS_URL` and `ecosystem.config.js` `ALLOWED_ORIGINS`
+- **Domain**: runtime same-origin for frontend API/WS, and `ecosystem.config.js` / server env `ALLOWED_ORIGINS`
 
 ## Development Notes
 
 ### Environment Variables
-- `REACT_APP_WS_URL` — WebSocket server URL (set in `.env` for dev, `.env.production` for prod)
+- Frontend API/WS URL env vars are optional; routing is derived at runtime (`window.location`) with localhost dev fallback to port `8000`
+- `server/.env` — Local server env file (auto-loaded by `server/index.js` when present). Use `server/.env.example` as template.
 - `PORT` — Server port (default 8000, set in `server/.env` or environment)
 - `ALLOWED_ORIGINS` — Comma-separated allowed origins for WebSocket connections (set in `server/.env`)
 - `ANALYTICS_ADMIN_PASSWORD` — Required to enable protected analytics admin endpoints (`/api/admin/*`)
+- `ANALYTICS_STORE_RAW_IP` — Set `false` to avoid storing raw visit IP in `visits.ip` (default `true`)
+- `GEO_PROVIDER` — Geo lookup provider: `none` (default), `ipwhois`, or `ipapi`
+- `GEO_LOOKUP_TIMEOUT_MS` — Geo lookup timeout in milliseconds (default `800`)
+- `GEO_CACHE_TTL_MS` — In-memory geo cache TTL in milliseconds (default `86400000`)
+- `GEO_IP_HASH_SALT` — Salt used for SHA-256 IP hashing stored in `players.last_seen_ip_hash`
 
 ### Server (`server/index.js`)
 The server at `server/index.js` is an HTTP + WebSocket server on a single port:

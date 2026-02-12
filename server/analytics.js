@@ -12,6 +12,17 @@ const turnCounters = new Map();
 
 const RATING_K = 24;
 
+function addColumnsIfMissing(tableName, columns) {
+    const existing = new Set(
+        db.prepare(`PRAGMA table_info(${tableName})`).all().map(col => col.name)
+    );
+    for (const column of columns) {
+        if (!existing.has(column.name)) {
+            db.exec(`ALTER TABLE ${tableName} ADD COLUMN ${column.definition}`);
+        }
+    }
+}
+
 function sanitizeUsername(username) {
     if (typeof username !== 'string') return null;
     const trimmed = username.trim().slice(0, 24);
@@ -33,6 +44,13 @@ function init() {
             ip TEXT,
             user_agent TEXT,
             referrer TEXT,
+            country_code TEXT,
+            country TEXT,
+            region TEXT,
+            city TEXT,
+            timezone TEXT,
+            geo_source TEXT,
+            geo_resolved_at TEXT,
             created_at TEXT DEFAULT (datetime('now'))
         );
 
@@ -46,6 +64,10 @@ function init() {
             winner_id TEXT,
             game_over_reason TEXT,
             total_turns INTEGER DEFAULT 0,
+            player1_country_code TEXT,
+            player2_country_code TEXT,
+            started_country_code TEXT,
+            ended_country_code TEXT,
             started_at TEXT DEFAULT (datetime('now')),
             ended_at TEXT,
             created_at TEXT DEFAULT (datetime('now'))
@@ -74,6 +96,12 @@ function init() {
             losses INTEGER NOT NULL DEFAULT 0,
             draws INTEGER NOT NULL DEFAULT 0,
             total_score INTEGER NOT NULL DEFAULT 0,
+            last_country_code TEXT,
+            last_country TEXT,
+            last_region TEXT,
+            last_city TEXT,
+            last_seen_ip_hash TEXT,
+            last_seen_at TEXT,
             created_at TEXT DEFAULT (datetime('now')),
             updated_at TEXT DEFAULT (datetime('now'))
         );
@@ -91,27 +119,70 @@ function init() {
     `);
 
     // Lightweight migrations for existing DBs.
-    const turnColumns = new Set(
-        db.prepare(`PRAGMA table_info(turns)`).all().map(col => col.name)
-    );
-    if (!turnColumns.has('placed_tiles_json')) {
-        db.exec(`ALTER TABLE turns ADD COLUMN placed_tiles_json TEXT`);
-    }
-    if (!turnColumns.has('formed_words_json')) {
-        db.exec(`ALTER TABLE turns ADD COLUMN formed_words_json TEXT`);
-    }
+    addColumnsIfMissing('turns', [
+        { name: 'placed_tiles_json', definition: 'placed_tiles_json TEXT' },
+        { name: 'formed_words_json', definition: 'formed_words_json TEXT' },
+    ]);
+    addColumnsIfMissing('visits', [
+        { name: 'country_code', definition: 'country_code TEXT' },
+        { name: 'country', definition: 'country TEXT' },
+        { name: 'region', definition: 'region TEXT' },
+        { name: 'city', definition: 'city TEXT' },
+        { name: 'timezone', definition: 'timezone TEXT' },
+        { name: 'geo_source', definition: 'geo_source TEXT' },
+        { name: 'geo_resolved_at', definition: 'geo_resolved_at TEXT' },
+    ]);
+    addColumnsIfMissing('players', [
+        { name: 'last_country_code', definition: 'last_country_code TEXT' },
+        { name: 'last_country', definition: 'last_country TEXT' },
+        { name: 'last_region', definition: 'last_region TEXT' },
+        { name: 'last_city', definition: 'last_city TEXT' },
+        { name: 'last_seen_ip_hash', definition: 'last_seen_ip_hash TEXT' },
+        { name: 'last_seen_at', definition: 'last_seen_at TEXT' },
+    ]);
+    addColumnsIfMissing('games', [
+        { name: 'player1_country_code', definition: 'player1_country_code TEXT' },
+        { name: 'player2_country_code', definition: 'player2_country_code TEXT' },
+        { name: 'started_country_code', definition: 'started_country_code TEXT' },
+        { name: 'ended_country_code', definition: 'ended_country_code TEXT' },
+    ]);
+    db.exec(`
+        CREATE INDEX IF NOT EXISTS idx_visits_country_code ON visits(country_code);
+        CREATE INDEX IF NOT EXISTS idx_games_started_country_code ON games(started_country_code);
+        CREATE INDEX IF NOT EXISTS idx_players_last_country_code ON players(last_country_code);
+    `);
 
     console.log('Analytics DB initialized at', DB_PATH);
 }
 
-function recordVisit({ page, gameId, userId, ip, userAgent, referrer }) {
+function recordVisit({ page, gameId, userId, ip, userAgent, referrer, geo }) {
+    const geoResolvedAt = geo
+        ? new Date().toISOString().slice(0, 19).replace('T', ' ')
+        : null;
     const stmt = db.prepare(
-        'INSERT INTO visits (page, game_id, user_id, ip, user_agent, referrer) VALUES (?, ?, ?, ?, ?, ?)'
+        `INSERT INTO visits (
+            page, game_id, user_id, ip, user_agent, referrer,
+            country_code, country, region, city, timezone, geo_source, geo_resolved_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
     );
-    stmt.run(page, gameId || null, userId || null, ip || null, userAgent || null, referrer || null);
+    stmt.run(
+        page,
+        gameId || null,
+        userId || null,
+        ip || null,
+        userAgent || null,
+        referrer || null,
+        geo?.countryCode || null,
+        geo?.country || null,
+        geo?.region || null,
+        geo?.city || null,
+        geo?.timezone || null,
+        geo?.source || null,
+        geoResolvedAt
+    );
 }
 
-function upsertPlayerProfile({ userId, username }) {
+function upsertPlayerProfile({ userId, username, geo, ipHash }) {
     if (!userId || typeof userId !== 'string') return null;
     const cleanUsername = sanitizeUsername(username);
     if (!cleanUsername) return null;
@@ -124,6 +195,28 @@ function upsertPlayerProfile({ userId, username }) {
             updated_at = datetime('now')
     `).run(userId, cleanUsername);
 
+    if (geo || ipHash) {
+        db.prepare(`
+            UPDATE players
+            SET
+                last_country_code = COALESCE(?, last_country_code),
+                last_country = COALESCE(?, last_country),
+                last_region = COALESCE(?, last_region),
+                last_city = COALESCE(?, last_city),
+                last_seen_ip_hash = COALESCE(?, last_seen_ip_hash),
+                last_seen_at = datetime('now'),
+                updated_at = datetime('now')
+            WHERE user_id = ?
+        `).run(
+            geo?.countryCode || null,
+            geo?.country || null,
+            geo?.region || null,
+            geo?.city || null,
+            ipHash || null,
+            userId
+        );
+    }
+
     return getPlayerProfile(userId);
 }
 
@@ -131,7 +224,12 @@ function getPlayerProfile(userId) {
     if (!userId || typeof userId !== 'string') return null;
     return db.prepare(`
         SELECT user_id as userId, username, rating, games_played as gamesPlayed,
-               wins, losses, draws, total_score as totalScore
+               wins, losses, draws, total_score as totalScore,
+               last_country_code as lastCountryCode,
+               last_country as lastCountry,
+               last_region as lastRegion,
+               last_city as lastCity,
+               last_seen_at as lastSeenAt
         FROM players
         WHERE user_id = ?
     `).get(userId) || null;
@@ -143,6 +241,12 @@ function getDisplayName(userId) {
     return row?.username || null;
 }
 
+function getPlayerLastCountryCode(userId) {
+    if (!userId || typeof userId !== 'string') return null;
+    const row = db.prepare('SELECT last_country_code FROM players WHERE user_id = ?').get(userId);
+    return row?.last_country_code || null;
+}
+
 function ensurePlayer(userId, fallbackName) {
     if (!userId) return null;
     const current = getPlayerProfile(userId);
@@ -151,21 +255,34 @@ function ensurePlayer(userId, fallbackName) {
     return upsertPlayerProfile({ userId, username: fallback });
 }
 
-function startGame(gameId, player1Id) {
+function startGame(gameId, player1Id, options = {}) {
+    const {
+        player1CountryCode = null,
+        startedCountryCode = null,
+    } = options;
     const stmt = db.prepare(
-        'INSERT INTO games (game_id, player1_id) VALUES (?, ?)'
+        `INSERT INTO games (
+            game_id, player1_id, player1_country_code, started_country_code
+        ) VALUES (?, ?, ?, ?)`
     );
-    const result = stmt.run(gameId, player1Id);
+    const result = stmt.run(gameId, player1Id, player1CountryCode, startedCountryCode);
     const rowId = result.lastInsertRowid;
     activeGames.set(gameId, rowId);
     turnCounters.set(rowId, 0);
     return rowId;
 }
 
-function setPlayer2(gameId, player2Id) {
+function setPlayer2(gameId, player2Id, options = {}) {
     const rowId = activeGames.get(gameId);
     if (!rowId) return;
-    db.prepare('UPDATE games SET player2_id = ? WHERE id = ?').run(player2Id, rowId);
+    const { player2CountryCode = null } = options;
+    db.prepare(`
+        UPDATE games
+        SET
+            player2_id = ?,
+            player2_country_code = COALESCE(?, player2_country_code)
+        WHERE id = ?
+    `).run(player2Id, player2CountryCode, rowId);
 }
 
 function getActiveGameRowId(gameId) {
@@ -223,7 +340,7 @@ function recordTurn(gameId, {
     }
 }
 
-function endGame(gameId, { winnerId, reason }) {
+function endGame(gameId, { winnerId, reason, endedCountryCode = null }) {
     const rowId = activeGames.get(gameId);
     if (!rowId) return;
 
@@ -245,8 +362,14 @@ function endGame(gameId, { winnerId, reason }) {
     }
 
     db.prepare(
-        `UPDATE games SET winner_id = ?, game_over_reason = ?, ended_at = datetime('now') WHERE id = ?`
-    ).run(winnerId || null, reason || null, rowId);
+        `UPDATE games
+         SET
+            winner_id = ?,
+            game_over_reason = ?,
+            ended_country_code = COALESCE(?, ended_country_code),
+            ended_at = datetime('now')
+         WHERE id = ?`
+    ).run(winnerId || null, reason || null, endedCountryCode || null, rowId);
 
     // Update persistent player ratings + record only for human-vs-human games.
     if (game && game.player1_id && game.player2_id &&
@@ -397,6 +520,33 @@ function getVisitsPerDay(days = 30) {
     ).all(`-${days} days`);
 }
 
+function getVisitsByCountry(days = 30, limit = 20) {
+    return db.prepare(
+        `SELECT
+            COALESCE(country_code, 'UNK') as countryCode,
+            COALESCE(country, 'Unknown') as country,
+            COUNT(*) as count
+         FROM visits
+         WHERE created_at >= datetime('now', ?)
+         GROUP BY countryCode, country
+         ORDER BY count DESC
+         LIMIT ?`
+    ).all(`-${days} days`, limit);
+}
+
+function getPlayersByCountry(limit = 20) {
+    return db.prepare(
+        `SELECT
+            COALESCE(last_country_code, 'UNK') as countryCode,
+            COALESCE(last_country, 'Unknown') as country,
+            COUNT(*) as count
+         FROM players
+         GROUP BY countryCode, country
+         ORDER BY count DESC
+         LIMIT ?`
+    ).all(limit);
+}
+
 function getLeaderboard(limit = 20) {
     return db.prepare(`
         SELECT
@@ -437,6 +587,7 @@ function getAdminSummary() {
         GROUP BY turn_type
         ORDER BY count DESC
     `).all();
+    const topVisitCountries = getVisitsByCountry(30, 5);
 
     return {
         ...baseStats,
@@ -447,6 +598,7 @@ function getAdminSummary() {
             ? Number(((baseStats.completedGames * 100) / baseStats.totalGames).toFixed(1))
             : 0,
         turnTypeBreakdown,
+        topVisitCountries,
     };
 }
 
@@ -470,6 +622,11 @@ function getPlayers(limit = 20, offset = 0, query = '') {
                 losses,
                 draws,
                 total_score as totalScore,
+                last_country_code as lastCountryCode,
+                last_country as lastCountry,
+                last_region as lastRegion,
+                last_city as lastCity,
+                last_seen_at as lastSeenAt,
                 created_at as createdAt,
                 updated_at as updatedAt
             FROM players
@@ -487,6 +644,11 @@ function getPlayers(limit = 20, offset = 0, query = '') {
                 losses,
                 draws,
                 total_score as totalScore,
+                last_country_code as lastCountryCode,
+                last_country as lastCountry,
+                last_region as lastRegion,
+                last_city as lastCity,
+                last_seen_at as lastSeenAt,
                 created_at as createdAt,
                 updated_at as updatedAt
             FROM players
@@ -509,6 +671,11 @@ function getPlayerDetail(userId) {
             losses,
             draws,
             total_score as totalScore,
+            last_country_code as lastCountryCode,
+            last_country as lastCountry,
+            last_region as lastRegion,
+            last_city as lastCity,
+            last_seen_at as lastSeenAt,
             created_at as createdAt,
             updated_at as updatedAt
         FROM players
@@ -551,6 +718,7 @@ module.exports = {
     upsertPlayerProfile,
     getPlayerProfile,
     getDisplayName,
+    getPlayerLastCountryCode,
     startGame,
     setPlayer2,
     getActiveGameRowId,
@@ -560,6 +728,8 @@ module.exports = {
     getRecentGames,
     getGameDetail,
     getVisitsPerDay,
+    getVisitsByCountry,
+    getPlayersByCountry,
     getLeaderboard,
     getAdminSummary,
     getPlayers,

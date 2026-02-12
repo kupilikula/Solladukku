@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useRef, useState, useCallb
 import { useDispatch, useStore } from 'react-redux';
 import { addOtherPlayerTurn, addPlayers, syncNewGame, syncOpponentDraw, syncSwapTiles, syncPassTurn, setGameOver, returnAllUnplayedTilesToRackFromBoard } from '../store/actions';
 import { setMyTurn, setPlayerName } from '../store/GameSlice';
+import { getWsBaseUrl } from '../utils/runtimeUrls';
 
 const WebSocketContext = createContext(null);
 
@@ -19,10 +20,7 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
     // Map<requestId, { resolve, timer }> for request-response pattern
     const pendingRequestsRef = useRef(new Map());
 
-    const WS_BASE = process.env.REACT_APP_WS_URL
-        || (window.location.protocol === 'https:'
-            ? `wss://${window.location.host}`
-            : `ws://${window.location.hostname}:8000`);
+    const WS_BASE = getWsBaseUrl();
     const WS_URL = `${WS_BASE}/${gameId}/${userId}?name=${encodeURIComponent(username || '')}`;
 
     const connect = useCallback(() => {

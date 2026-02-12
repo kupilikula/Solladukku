@@ -1,10 +1,29 @@
+const path = require('path');
+const fs = require('fs');
+
+function loadLocalEnvFile() {
+    const envPath = path.join(__dirname, '.env');
+    if (!fs.existsSync(envPath)) return;
+    const content = fs.readFileSync(envPath, 'utf8');
+    for (const rawLine of content.split(/\r?\n/)) {
+        const line = rawLine.trim();
+        if (!line || line.startsWith('#')) continue;
+        const eqIndex = line.indexOf('=');
+        if (eqIndex <= 0) continue;
+        const key = line.slice(0, eqIndex).trim();
+        const value = line.slice(eqIndex + 1).trim();
+        if (!key || Object.prototype.hasOwnProperty.call(process.env, key)) continue;
+        process.env[key] = value;
+    }
+}
+
+loadLocalEnvFile();
 const WebSocket = require('ws');
 const http = require('http');
 const { spawn } = require('child_process');
-const path = require('path');
-const fs = require('fs');
 const crypto = require('crypto');
 const analytics = require('./analytics');
+const geo = require('./geo');
 
 const PORT = process.env.PORT || 8000;
 const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS
@@ -19,6 +38,7 @@ const MATCHMAKING_QUEUE_TTL_MS = 2 * 60 * 1000;
 const STRICT_SERVER_VALIDATION = String(process.env.STRICT_SERVER_VALIDATION || '').toLowerCase() === 'true';
 const ENABLE_GUESS_FSTS = String(process.env.ENABLE_GUESS_FSTS || '').toLowerCase() === 'true';
 const ANALYTICS_ADMIN_PASSWORD = process.env.ANALYTICS_ADMIN_PASSWORD || '';
+const ANALYTICS_STORE_RAW_IP = String(process.env.ANALYTICS_STORE_RAW_IP || 'true').toLowerCase() !== 'false';
 
 // Initialize analytics DB
 analytics.init();
@@ -41,6 +61,14 @@ function setCorsHeaders(res, req) {
 function sendJson(res, statusCode, data) {
     res.writeHead(statusCode, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(data));
+}
+
+function getClientIp(req) {
+    const forwardedRaw = req.headers['x-forwarded-for'];
+    const forwarded = typeof forwardedRaw === 'string'
+        ? forwardedRaw.split(',')[0].trim()
+        : null;
+    return geo.normalizeIp(forwarded || req.socket.remoteAddress);
 }
 
 function parseBody(req) {
@@ -115,15 +143,17 @@ function handleHttpRequest(req, res) {
     const pathname = url.pathname;
 
     if (req.method === 'POST' && pathname === '/api/visit') {
-        parseBody(req).then(body => {
-            const ip = req.headers['x-forwarded-for']?.split(',')[0].trim() || req.socket.remoteAddress;
+        parseBody(req).then(async body => {
+            const ip = getClientIp(req);
+            const resolvedGeo = await geo.resolveGeoForIp(ip);
             analytics.recordVisit({
                 page: body.page || 'unknown',
                 gameId: body.gameId || null,
                 userId: body.userId || null,
-                ip,
+                ip: ANALYTICS_STORE_RAW_IP ? ip : null,
                 userAgent: req.headers['user-agent'] || null,
                 referrer: req.headers.referer || null,
+                geo: resolvedGeo,
             });
             sendJson(res, 200, { ok: true });
         }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
@@ -131,14 +161,22 @@ function handleHttpRequest(req, res) {
     }
 
     if (req.method === 'POST' && pathname === '/api/profile') {
-        parseBody(req).then(body => {
+        parseBody(req).then(async body => {
             const userId = typeof body.userId === 'string' ? body.userId : null;
             const username = sanitizeUsername(body.username);
             if (!userId || !username) {
                 sendJson(res, 400, { error: 'Invalid profile payload' });
                 return;
             }
-            const profile = analytics.upsertPlayerProfile({ userId, username });
+            const ip = getClientIp(req);
+            const resolvedGeo = await geo.resolveGeoForIp(ip);
+            const ipHash = geo.hashIp(ip);
+            const profile = analytics.upsertPlayerProfile({
+                userId,
+                username,
+                geo: resolvedGeo,
+                ipHash,
+            });
             sendJson(res, 200, { ok: true, profile });
         }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
         return;
@@ -220,6 +258,19 @@ function handleHttpRequest(req, res) {
     if (req.method === 'GET' && pathname === '/api/admin/visits/daily') {
         const days = parseInt(url.searchParams.get('days')) || 30;
         sendJson(res, 200, analytics.getVisitsPerDay(Math.min(days, 365)));
+        return;
+    }
+
+    if (req.method === 'GET' && pathname === '/api/admin/visits/countries') {
+        const days = parseInt(url.searchParams.get('days')) || 30;
+        const limit = parseInt(url.searchParams.get('limit')) || 20;
+        sendJson(res, 200, analytics.getVisitsByCountry(Math.min(days, 365), Math.min(limit, 100)));
+        return;
+    }
+
+    if (req.method === 'GET' && pathname === '/api/admin/players/countries') {
+        const limit = parseInt(url.searchParams.get('limit')) || 20;
+        sendJson(res, 200, analytics.getPlayersByCountry(Math.min(limit, 100)));
         return;
     }
 
@@ -394,6 +445,20 @@ function getPlayerInfo(userId, indexHint = 1) {
         userId,
         name: analytics.getDisplayName(userId) || `Player ${indexHint}`,
     };
+}
+
+function refreshPlayerGeo(userId, username, ip) {
+    if (!userId || !username) return;
+    geo.resolveGeoForIp(ip)
+        .then((resolvedGeo) => {
+            analytics.upsertPlayerProfile({
+                userId,
+                username,
+                geo: resolvedGeo,
+                ipHash: geo.hashIp(ip),
+            });
+        })
+        .catch(() => {});
 }
 
 // ─── FST Validation Setup ────────────────────────────────────────────
@@ -714,7 +779,7 @@ wss.on('connection', (ws, req) => {
     }
 
     // ─── Connection limit per IP ─────────────────────────────────────
-    const ip = req.headers['x-forwarded-for']?.split(',')[0].trim() || req.socket.remoteAddress;
+    const ip = getClientIp(req);
     const currentConnections = connectionsPerIp.get(ip) || 0;
     if (currentConnections >= MAX_CONNECTIONS_PER_IP) {
         console.log(`Rejected connection: too many connections from IP ${ip}`);
@@ -736,8 +801,11 @@ wss.on('connection', (ws, req) => {
     const gameId = urlParts[0];
     const userId = urlParts[1];
     const profileName = sanitizeUsername(reqUrl.searchParams.get('name'));
-    if (profileName) {
-        analytics.upsertPlayerProfile({ userId, username: profileName });
+    const existingName = analytics.getDisplayName(userId);
+    const effectiveProfileName = profileName || existingName;
+    if (effectiveProfileName) {
+        analytics.upsertPlayerProfile({ userId, username: effectiveProfileName });
+        refreshPlayerGeo(userId, effectiveProfileName, ip);
     }
     const assignment = getActiveAssignment(userId);
     if (assignment && assignment.gameId === gameId) {
@@ -781,7 +849,9 @@ wss.on('connection', (ws, req) => {
     } else {
         // Track player2 joining an active game
         if (analytics.getActiveGameRowId(gameId)) {
-            analytics.setPlayer2(gameId, userId);
+            analytics.setPlayer2(gameId, userId, {
+                player2CountryCode: analytics.getPlayerLastCountryCode(userId),
+            });
         }
 
         if (otherPlayerIds.length > 0) {
@@ -887,13 +957,19 @@ wss.on('connection', (ws, req) => {
                     console.log(`New game started by ${userId}, tiles:`, message.drawnTiles?.length);
                     // Analytics: start new game session
                     try {
-                        analytics.startGame(gameId, userId);
+                        const starterCountryCode = analytics.getPlayerLastCountryCode(userId);
+                        analytics.startGame(gameId, userId, {
+                            player1CountryCode: starterCountryCode,
+                            startedCountryCode: starterCountryCode,
+                        });
                         // If other player already in room, set them as player2
                         const room = rooms.get(gameId);
                         if (room) {
                             for (const pid of room.players.keys()) {
                                 if (pid !== userId) {
-                                    analytics.setPlayer2(gameId, pid);
+                                    analytics.setPlayer2(gameId, pid, {
+                                        player2CountryCode: analytics.getPlayerLastCountryCode(pid),
+                                    });
                                     break;
                                 }
                             }
@@ -956,6 +1032,7 @@ wss.on('connection', (ws, req) => {
                         analytics.endGame(gameId, {
                             winnerId: winnerId || null,
                             reason: message.reason || null,
+                            endedCountryCode: analytics.getPlayerLastCountryCode(userId),
                         });
                     } catch (e) { console.error('Analytics gameOver error:', e.message); }
                     break;
@@ -964,6 +1041,7 @@ wss.on('connection', (ws, req) => {
                     const username = sanitizeUsername(message.username);
                     if (!username) break;
                     analytics.upsertPlayerProfile({ userId, username });
+                    refreshPlayerGeo(userId, username, ip);
                     broadcastToRoom(gameId, userId, {
                         messageType: 'playerProfile',
                         userId,

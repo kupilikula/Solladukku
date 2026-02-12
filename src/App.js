@@ -9,17 +9,9 @@ import {setAutoStartPending} from "./store/GameSlice";
 import {WebSocketProvider} from "./context/WebSocketContext";
 import {LanguageProvider, useLanguage} from "./context/LanguageContext";
 import { loadDictionary } from './utils/dictionary';
+import { getApiBaseUrl } from './utils/runtimeUrls';
 
 const USERNAME_STORAGE_KEY = 'solladukku_username';
-
-function getApiBaseUrl() {
-    if (process.env.REACT_APP_WS_URL) {
-        return process.env.REACT_APP_WS_URL
-            .replace(/^ws(s?):\/\//, 'http$1://')
-            .replace(/\/ws\/?$/, '');
-    }
-    return window.location.origin;
-}
 
 function normalizeUsername(value) {
     const clean = (value || '').trim().slice(0, 24);
