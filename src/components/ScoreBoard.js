@@ -4,12 +4,19 @@ import {useLanguage} from "../context/LanguageContext";
 export default function ScoreBoard() {
     const scores = useSelector(state => state.ScoreBoard);
     const game = useSelector(state => state.Game);
-    const { userId, otherPlayerIds, isMyTurn } = game;
+    const { userId, otherPlayerIds, isMyTurn, playerNames } = game;
     const { t } = useLanguage();
 
     const gameMode = game.gameMode;
-    const myName = t.you;
-    const opponentName = gameMode === 'singleplayer' ? t.computer : t.opponent;
+    const myLabel = t.you;
+    const myName = playerNames[userId] || t.you;
+    const opponentId = otherPlayerIds[0];
+    const opponentLabel = gameMode === 'singleplayer'
+        ? t.computer
+        : t.opponent;
+    const opponentName = (gameMode === 'singleplayer' || !opponentId)
+        ? null
+        : (playerNames[opponentId] || null);
     const opponentScore = scores.otherPlayersTotalScores[0] || 0;
 
     return (
@@ -22,14 +29,18 @@ export default function ScoreBoard() {
             backgroundColor: 'white',
         }}>
             <PlayerScoreCard
-                name={myName}
+                label={myLabel}
+                username={myName}
+                showUsername={true}
                 score={scores.myTotalScore}
                 isCurrentTurn={isMyTurn}
                 isLeft={true}
                 turnLabel={t.turn}
             />
             <PlayerScoreCard
-                name={opponentName}
+                label={opponentLabel}
+                username={opponentName}
+                showUsername={Boolean(opponentName)}
                 score={opponentScore}
                 isCurrentTurn={!isMyTurn && otherPlayerIds.length > 0}
                 isLeft={false}
@@ -39,7 +50,7 @@ export default function ScoreBoard() {
     );
 }
 
-function PlayerScoreCard({ name, score, isCurrentTurn, isLeft, turnLabel }) {
+function PlayerScoreCard({ label, username, showUsername, score, isCurrentTurn, isLeft, turnLabel }) {
     return (
         <div style={{
             padding: 15,
@@ -77,11 +88,24 @@ function PlayerScoreCard({ name, score, isCurrentTurn, isLeft, turnLabel }) {
                 borderBottomWidth: 1,
                 borderColor: '#eee',
                 paddingBottom: 5,
-                fontSize: 14,
+                fontSize: 13,
                 fontWeight: '500',
-                color: '#333',
+                color: '#2f2f2f',
             }}>
-                {name}
+                <div>{label}</div>
+                {showUsername && (
+                    <div style={{
+                        fontSize: 12,
+                        fontWeight: '400',
+                        color: '#555',
+                        marginTop: 2,
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                    }}>
+                        {username}
+                    </div>
+                )}
             </div>
             <div style={{
                 fontSize: 36,

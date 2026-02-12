@@ -98,9 +98,12 @@ The app opens to a landing page before entering any game:
 
 - **Game title**: "சொல்மாலை" in large peacock blue text
 - **Logo**: Renders `public/logo.png` above the title (96px height). Hides gracefully via `onError` if the file is missing.
-- **"Create Game" button**: Generates a 6-char gameId, sets `?game=` in URL, enters multiplayer game
+- **Persistent username**: Editable username input (saved in `localStorage` and synced to server profile)
+- **"New Game With Invited Opponent" button** (`புது ஆட்டம் அழைப்புடன்`): Creates a private multiplayer room, sets `?game=` in URL, and auto-opens invite modal in-game
+- **"Play Random Opponent" button** (`யாவொருவருடன் விளையாடு`): Joins queue-based matchmaking; on match, navigates to matched `gameId`
 - **"Play vs Computer" button**: Starts a single-player game against the AI (no WebSocket, no game code needed)
-- **"Join Game" section**: Text input for a game code (4-8 alphanumeric chars) + join button. Validates input, shows error for invalid codes. Supports Enter key.
+- **"Join Private Game" section**: Accepts either room code (4-8 alphanumeric) or full invite URL containing `?game=...`
+- **Leaderboard card**: Shows top rated players when data exists (hidden when empty)
 - **"Game Rules" link**: Opens help modal with bilingual game instructions (same content as in-game help)
 - **Language toggle**: Top-right corner ("EN" / "த"), shared with in-game toggle via LanguageContext
 
@@ -235,13 +238,14 @@ Server-side analytics using SQLite (`better-sqlite3`) with a REST API. The HTTP 
 
 ### Database (`server/analytics.db`)
 
-Three tables with WAL mode enabled:
+Four tables with WAL mode enabled:
 
 | Table | Purpose | Key Columns |
 |-------|---------|-------------|
 | `visits` | Page view tracking | `page` ('landing'\|'game'), `game_id`, `user_id`, `ip`, `user_agent`, `referrer` |
 | `games` | One row per game session | `game_id`, `player1_id`, `player2_id`, scores, `winner_id`, `game_over_reason`, `total_turns` |
 | `turns` | One row per turn action | `game_id`, `games_row_id` (FK), `user_id`, `turn_type` ('word'\|'pass'\|'swap'), `score`, `words_played` (JSON), `tiles_placed` |
+| `players` | Persistent profile + rating | `user_id`, `username`, `rating`, `games_played`, `wins`, `losses`, `draws`, `total_score` |
 
 ### REST API Endpoints
 
@@ -250,10 +254,17 @@ All endpoints served on the same port as WebSocket (default 8000). CORS uses the
 | Method | Path | Description |
 |--------|------|-------------|
 | `POST` | `/api/visit` | Record a page visit (`{page, gameId, userId}`) |
+| `POST` | `/api/profile` | Upsert persistent username/profile (`{userId, username}`) |
 | `GET` | `/api/stats` | Aggregate counts (visits, games, completed, turns) |
+| `GET` | `/api/leaderboard?limit=N` | Top players by rating (default 20, max 100) |
 | `GET` | `/api/games?limit=N` | Recent games list (default 20, max 100) |
 | `GET` | `/api/games/:gameId` | Game detail with all turns |
 | `GET` | `/api/visits/daily?days=N` | Daily visit breakdown (default 30, max 365) |
+| `POST` | `/api/matchmaking/join` | Join random-match queue (`{userId, username}`) |
+| `GET` | `/api/matchmaking/status?userId=...` | Check random-match queue/match status |
+| `POST` | `/api/matchmaking/cancel` | Cancel random matchmaking (`{userId}`) |
+| `POST` | `/api/validate-words` | FST validation over HTTP (`{ words: string[] }`, max 20) |
+| `GET` | `/health` | Readiness/liveness endpoint (200 when server is ready) |
 
 ### Server-Side Event Hooks
 
@@ -280,13 +291,14 @@ Analytics calls are added **after** existing `broadcastToRoom` calls — no chan
 ```javascript
 {
   userId: string,              // Current player's UUID (persisted in 'solladukku' cookie)
+  username: string | null,     // Persistent username (synced to server profile)
   gameId: string,              // Room identifier from URL ?game= param
   otherPlayerIds: string[],    // Other players in the game
   currentTurnUserId: string,   // Whose turn it is
   isMyTurn: boolean,           // Whether it's this player's turn
   gameStarted: boolean,        // Whether the game has started
   needsInitialDraw: boolean,   // Flag to trigger tile draw after sync
-  autoStartPending: boolean,   // Flag to auto-start game after WS connects (set on Create Game)
+  autoStartPending: boolean,   // Flag to auto-start game after WS connects (set for room creator)
   myInitialDraw: string[],     // Tiles drawn at game start (for re-syncing late joiners)
   playerNames: {               // Map of userId to display name
     [userId]: string
@@ -379,7 +391,7 @@ Swap mode: Only **Swap** (red confirm) and **Cancel** buttons visible.
 
 ### Connection
 ```
-{WS_BASE_URL}/{gameId}/{userId}
+{WS_BASE_URL}/{gameId}/{userId}?name={username}
 ```
 
 Where `WS_BASE_URL` comes from `REACT_APP_WS_URL` env var. In production (HTTPS), the URL is auto-derived from `window.location` if the env var is not set.
@@ -391,7 +403,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - `sendMessage(message)` — generic fire-and-forget broadcast to room
 - `sendRequest(message, timeoutMs)` — request-response with `requestId` matching, returns Promise
 - `sendChat(text)` — send chat message (trimmed to 500 chars)
-- `chatMessages` state — array of `{userId, text, timestamp}` objects
+- `chatMessages` state — array of `{userId, username, text, timestamp}` objects
 
 ### Room Management (Server)
 - Rooms are keyed by `gameId`, created on first connection
@@ -414,6 +426,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 | `passTurn` | broadcast | Player passed their turn |
 | `gameOver` | broadcast | Game ended (winner, reason) |
 | `chat` | all in room | Chat message (text ≤ 500 chars, timestamp from server) |
+| `setProfile` | broadcast | Update your username in current room |
 
 **Server → Client Messages**
 
@@ -422,6 +435,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 | `playerJoined` | server→all | New player joined room |
 | `joinedExistingGame` | server→joiner | You joined an existing game |
 | `roomState` | server→client | Reconnection: current room state |
+| `playerProfile` | server→others | Username update for a room player |
 | `playerLeft` | server→all | Player disconnected |
 
 **Request-Response Messages (client → server → same client)**
@@ -457,7 +471,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 
 **UI Labels**: `you`, `opponent`, `yourTurn`, `waiting`, `connected`, `disconnected`, `connectionFailed`, `tilesRemaining`, `total`, `tiles`, `turnHistory`, `noMovesYet`, `chat`, `noMessagesYet`, `typeMessage`, `send`, `turn`, `passed`, `swappedTiles`
 
-**Landing Page**: `tagline`, `createGame`, `joinGame`, `enterGameCode`, `join`, `howToPlay`, `invalidCode`, `playVsComputer`
+**Landing Page**: `playVsComputer`, `howToPlay`, `join`, and core shared labels. Several landing strings (new private game label, random match label, join-private helper text) are rendered inline in `App.js`.
 
 **Single Player**: `computer`, `computerThinking`, `vsComputer`
 
@@ -468,8 +482,8 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 **Game Over**: `gameOverTie`, `gameOverWon`, `gameOverLost`, `gameOverPasses`, `gameOverTilesOut`, `gameOverNewGame`, `vs`
 
 ### Components Using Translations
-- `App.js` — landing page: title, create/join, help modal, language toggle
-- `ScoreBoard.js` — player names (`t.you`, `t.opponent`), turn badge (`t.turn`)
+- `App.js` — landing page: title, mode actions, join-private input, leaderboard, help modal, language toggle
+- `ScoreBoard.js` — role labels (`t.you`, `t.opponent`), turn badge (`t.turn`), usernames from Redux `playerNames`
 - `ConnectionStatus.js` — status text, turn indicator
 - `TurnHistory.js` — header, empty state, pass/swap labels
 - `LetterBags.js` — header, total label (tile type labels are Tamil-only: மெய், உயிர், மாயம்)
@@ -481,10 +495,12 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 
 ### Landing Page → Game Entry
 1. User visits the app → sees landing page with "சொல்மாலை" title
-2. **Create Game**: Click button → generates 6-char gameId → enters multiplayer game
-3. **Play vs Computer**: Click button → enters single-player game (no WebSocket)
-4. **Join Game**: Enter code → validates (4-8 alphanum) → enters multiplayer game
-5. **Invite link** (`?game=XYZ`): Bypasses landing page → enters multiplayer game directly
+2. User sets/edits username (persisted locally and synced to `/api/profile`)
+3. **New Game With Invited Opponent**: Creates 6-char room `gameId` → enters multiplayer game → invite modal auto-opens
+4. **Play Random Opponent**: Joins matchmaking queue; once matched, auto-enters assigned `gameId`
+5. **Play vs Computer**: Enters single-player game (no WebSocket)
+6. **Join Private Game**: Enter code or full invite URL (`?game=...`) → enters multiplayer game
+7. **Invite link** (`?game=XYZ`): Bypasses landing page → enters multiplayer game directly
 
 ### Single Player Flow
 1. Player clicks "Play vs Computer" on landing page
@@ -519,9 +535,12 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 9. Winner determined by score; `gameOver` message syncs result
 
 ### Invite System
-- Invite button in ActionMenu copies `{origin}?game={gameId}` to clipboard
-- "Link copied!" toast confirms (auto-fades after 2s)
-- No router needed — `?game=` query param with `history.replaceState`
+- Creating an invited game sets `?invite=1` and opens invite modal automatically after game entry
+- Invite modal supports:
+  - Copy **game code** only
+  - Copy full **invite link** (`{origin}?game={gameId}`)
+  - Native share sheet (`navigator.share`) when available
+- Landing page join accepts either code or full invite URL for consistency
 
 ## Game Rules (as shown in help modal)
 
@@ -537,7 +556,10 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 ## Implementation Status
 
 ### Completed Features
-- [x] **Landing page**: Game title, logo slot, create/join game, help modal, language toggle
+- [x] **Landing page**: Game title, logo slot, persistent username, private/random/AI modes, join by code or link, help modal, language toggle
+- [x] **Random matchmaking**: queue-based matching with join/status/cancel REST endpoints
+- [x] **Persistent profiles**: username saved locally and synced to server `players` table
+- [x] **Leaderboard/rating**: persistent Elo-style rating + win/loss/draw stats via SQLite
 - [x] 15×15 game board with multiplier squares (Word2×, Word3×, Letter2×, Letter3×, Star)
 - [x] Drag-and-drop tile placement (desktop and touch)
 - [x] Tamil tile system with Mey/Uyir/Uyirmey/Bonus support
@@ -554,10 +576,10 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] **WebSocket client**: auto-reconnect, request-response pattern, chat
 - [x] **Server hardening**: origin validation, rate limiting, message size, IP limits
 - [x] **Chat UI**: real-time messages with timestamps, 500-char limit
-- [x] **Invite system**: copy game link to clipboard
+- [x] **Invite system**: auto-open invite modal after new invited game; copy code, copy link, and native share support
 - [x] LetterBags UI: remaining tile counts with Tamil-only labels (மெய், உயிர், மாயம்)
 - [x] TurnHistory UI: move history with words, scores, passes, and swaps
-- [x] ScoreBoard: player names (You/Opponent), scores, and turn indicator
+- [x] ScoreBoard: role labels (You/Opponent) + usernames, scores, and turn indicator
 - [x] ConnectionStatus: WebSocket connection state and whose turn it is
 - [x] **Swap mode UX**: sticky swap button, auto-return board tiles, single-click selection, red border, cancel
 - [x] **Pass Turn**: skip turn with confirmation dialog, broadcast to opponent
@@ -652,7 +674,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 ### Server (`server/index.js`)
 The server at `server/index.js` is an HTTP + WebSocket server on a single port:
 1. **HTTP server** wraps the WebSocket server — serves REST API for analytics
-2. Accepts WebSocket connections at `/{gameId}/{userId}` path (rejects malformed URLs)
+2. Accepts WebSocket connections at `/{gameId}/{userId}?name={username}` path (rejects malformed URLs)
 3. Validates origin against `ALLOWED_ORIGINS` (permissive in dev when unset)
 4. Enforces per-IP connection limits (max 10)
 5. Manages rooms (Map of gameId → players Map, max 2 per room)
@@ -661,10 +683,12 @@ The server at `server/index.js` is an HTTP + WebSocket server on a single port:
 8. Validates input per message type (chat text ≤ 500, validateWords ≤ 20, etc.)
 9. Handles `validateWords` requests via FST process pool (unicast response)
 10. Manages 16 long-lived `flookup` child processes with respawn on crash
-11. **Hooks analytics** into game message handlers (newGame, turn, pass, swap, gameOver)
-12. Cleans up empty rooms after 5 minutes
-13. Gracefully shuts down flookup processes, analytics DB, and HTTP server on SIGINT
-14. Start with: `cd server && npm run setup && npm start`
+11. Maintains random-opponent matchmaking queue (`/api/matchmaking/join|status|cancel`)
+12. Stores persistent player profiles + leaderboard data (`players` table, `/api/profile`, `/api/leaderboard`)
+13. **Hooks analytics** into game message handlers (newGame, turn, pass, swap, gameOver)
+14. Cleans up empty rooms after 5 minutes
+15. Gracefully shuts down flookup processes, analytics DB, and HTTP server on SIGINT
+16. Start with: `cd server && npm run setup && npm start`
 
 ### FST Models
 - **Build-time** (`wordlists/fst-models/`): Used by `generate_fst_forms.py` to pre-generate noun inflections
@@ -676,7 +700,10 @@ The server at `server/index.js` is an HTTP + WebSocket server on a single port:
 The dictionary is sorted with Python's `sorted()` (Unicode codepoint order). The JavaScript binary search MUST use `<`/`>` operators, NOT `localeCompare()`. Locale-aware Tamil sorting differs from codepoint order and will cause lookup failures.
 
 ### User ID Persistence
-User IDs are stored in cookies (`solladukku` cookie, 6-year TTL) for session persistence.
+User IDs are stored in cookies (`solladukku` cookie, 1-year TTL) for session persistence.
+
+### Username Persistence
+Usernames are stored in `localStorage` (`solladukku_username`) and synced to server with `POST /api/profile`.
 
 ### Deployment (Railway)
 Deployed as a single Dockerfile-based service on Railway:

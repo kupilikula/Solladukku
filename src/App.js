@@ -8,17 +8,122 @@ import {setAutoStartPending} from "./store/GameSlice";
 import {WebSocketProvider} from "./context/WebSocketContext";
 import {LanguageProvider, useLanguage} from "./context/LanguageContext";
 
+const USERNAME_STORAGE_KEY = 'solladukku_username';
+
 function getApiBaseUrl() {
     if (process.env.REACT_APP_WS_URL) {
-        return process.env.REACT_APP_WS_URL.replace(/^ws(s?):\/\//, 'http$1://');
+        return process.env.REACT_APP_WS_URL
+            .replace(/^ws(s?):\/\//, 'http$1://')
+            .replace(/\/ws\/?$/, '');
     }
     return window.location.origin;
 }
 
+function normalizeUsername(value) {
+    const clean = (value || '').trim().slice(0, 24);
+    return clean || null;
+}
 
-function LandingPage({ onCreateGame, onJoinGame, onPlayComputer }) {
+function getDefaultUsername() {
+    return `Player${Math.floor(1000 + Math.random() * 9000)}`;
+}
+
+function parseGameIdFromInput(input) {
+    const trimmed = (input || '').trim();
+    if (!trimmed) return null;
+
+    const directCode = trimmed.toLowerCase();
+    if (/^[a-zA-Z0-9]{4,8}$/.test(directCode)) {
+        return directCode;
+    }
+
+    const possibleUrls = trimmed.startsWith('http://') || trimmed.startsWith('https://')
+        ? [trimmed]
+        : [`https://${trimmed}`];
+
+    for (const candidate of possibleUrls) {
+        try {
+            const url = new URL(candidate);
+            const code = url.searchParams.get('game');
+            if (code && /^[a-zA-Z0-9]{4,8}$/.test(code)) {
+                return code.toLowerCase();
+            }
+        } catch {
+            // ignore invalid URL parse
+        }
+    }
+
+    return null;
+}
+
+function LeaderboardCard({ leaderboard, loading, language }) {
+    return (
+        <div style={{
+            width: '100%',
+            maxWidth: 420,
+            backgroundColor: 'white',
+            borderRadius: 10,
+            boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+            padding: 16,
+            boxSizing: 'border-box',
+        }}>
+            <div style={{ fontSize: 16, fontWeight: 'bold', color: '#1A5276', marginBottom: 10 }}>
+                {language === 'ta' ? 'முன்னணி பட்டியல்' : 'Leaderboard'}
+            </div>
+            {loading && (
+                <div style={{ fontSize: 13, color: '#777' }}>
+                    {language === 'ta' ? 'ஏற்றுகிறது...' : 'Loading...'}
+                </div>
+            )}
+            {!loading && leaderboard.length === 0 && (
+                <div style={{ fontSize: 13, color: '#777' }}>
+                    {language === 'ta' ? 'இன்னும் தரவு இல்லை' : 'No games yet'}
+                </div>
+            )}
+            {!loading && leaderboard.length > 0 && (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    {leaderboard.map((entry, index) => (
+                        <div key={entry.userId} style={{
+                            display: 'grid',
+                            gridTemplateColumns: '28px 1fr auto',
+                            alignItems: 'center',
+                            gap: 8,
+                            padding: '6px 8px',
+                            borderRadius: 6,
+                            backgroundColor: index < 3 ? '#f6f1e6' : '#f9f9f9',
+                            fontSize: 12,
+                        }}>
+                            <span style={{ color: '#666' }}>#{index + 1}</span>
+                            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                {entry.username}
+                            </span>
+                            <span style={{ fontWeight: 'bold', color: '#1A5276' }}>
+                                {entry.rating}
+                            </span>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+}
+
+function LandingPage({
+    onCreatePrivateGame,
+    onJoinGame,
+    onPlayComputer,
+    onFindRandomOpponent,
+    onCancelRandomMatch,
+    isMatching,
+    matchingPosition,
+    matchingError,
+    username,
+    onUsernameChange,
+    leaderboard,
+    leaderboardLoading,
+}) {
     const { language, toggleLanguage, t } = useLanguage();
-    const [gameCode, setGameCode] = useState('');
+    const [joinInput, setJoinInput] = useState('');
     const [codeError, setCodeError] = useState(false);
     const [showHelp, setShowHelp] = useState(false);
 
@@ -32,8 +137,8 @@ function LandingPage({ onCreateGame, onJoinGame, onPlayComputer }) {
     }, []);
 
     const handleJoin = () => {
-        const code = gameCode.trim();
-        if (/^[a-zA-Z0-9]{4,8}$/.test(code)) {
+        const code = parseGameIdFromInput(joinInput);
+        if (code) {
             setCodeError(false);
             onJoinGame(code);
         } else {
@@ -48,20 +153,23 @@ function LandingPage({ onCreateGame, onJoinGame, onPlayComputer }) {
     return (
         <div style={{
             background: '#EDE8E0',
-            height: '100vh',
+            minHeight: '100vh',
             width: '100vw',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             fontFamily: 'Tamil Sangam MN, sans-serif',
+            padding: '24px 16px',
+            boxSizing: 'border-box',
         }}>
             <div style={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: 32,
+                gap: 20,
+                width: '100%',
+                maxWidth: 460,
             }}>
-                {/* Language toggle */}
                 <div style={{ position: 'absolute', top: 16, right: 20 }}>
                     <button
                         onClick={toggleLanguage}
@@ -86,7 +194,6 @@ function LandingPage({ onCreateGame, onJoinGame, onPlayComputer }) {
                     </button>
                 </div>
 
-                {/* Logo + Game title */}
                 <div style={{ textAlign: 'center' }}>
                     <img
                         src={process.env.PUBLIC_URL + '/logo.png'}
@@ -105,48 +212,131 @@ function LandingPage({ onCreateGame, onJoinGame, onPlayComputer }) {
                     </div>
                 </div>
 
-                {/* Main card */}
                 <div style={{
                     backgroundColor: 'white',
                     borderRadius: 12,
-                    padding: '36px 44px',
+                    padding: '24px 22px',
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: 24,
-                    minWidth: 300,
+                    alignItems: 'stretch',
+                    gap: 14,
+                    width: '100%',
                     boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+                    boxSizing: 'border-box',
                 }}>
-                    {/* Create game */}
+                    <div>
+                        <div style={{ fontSize: 13, color: '#444', marginBottom: 6 }}>
+                            {language === 'ta' ? 'உங்கள் பெயர்' : 'Your Username'}
+                        </div>
+                        <input
+                            type="text"
+                            value={username}
+                            onChange={(e) => onUsernameChange(e.target.value)}
+                            maxLength={24}
+                            style={{
+                                width: '100%',
+                                padding: '11px 12px',
+                                borderRadius: 6,
+                                border: '1px solid #ddd',
+                                boxSizing: 'border-box',
+                                fontSize: 16,
+                                lineHeight: '24px',
+                                height: 'auto',
+                                WebkitAppearance: 'none',
+                                fontFamily: 'Tamil Sangam MN, sans-serif',
+                                display: 'block',
+                            }}
+                        />
+                    </div>
+
                     <button
-                        onClick={onCreateGame}
+                        onClick={onCreatePrivateGame}
                         style={{
                             backgroundColor: '#1A5276',
                             color: 'white',
                             border: 'none',
                             borderRadius: 8,
-                            padding: '14px 0',
+                            padding: '12px 0',
                             width: '100%',
-                            fontSize: 18,
+                            fontSize: 17,
                             fontWeight: 'bold',
                             cursor: 'pointer',
                             fontFamily: 'Tamil Sangam MN, sans-serif',
                         }}
                     >
-                        {t.createGame}
+                        {language === 'ta' ? 'புது ஆட்டம் அழைப்புடன்' : 'New Game With Invited Opponent'}
                     </button>
 
-                    {/* Play vs Computer */}
                     <button
-                        onClick={onPlayComputer}
+                        onClick={onFindRandomOpponent}
+                        disabled={isMatching}
                         style={{
-                            backgroundColor: 'white',
+                            backgroundColor: isMatching ? '#e8eef2' : 'white',
                             color: '#1A5276',
                             border: '2px solid #1A5276',
                             borderRadius: 8,
-                            padding: '12px 0',
+                            padding: '11px 0',
                             width: '100%',
                             fontSize: 16,
+                            fontWeight: 'bold',
+                            cursor: isMatching ? 'default' : 'pointer',
+                            fontFamily: 'Tamil Sangam MN, sans-serif',
+                        }}
+                    >
+                        {isMatching
+                            ? (language === 'ta' ? 'எதிரியை தேடுகிறது...' : 'Finding Opponent...')
+                            : (language === 'ta' ? 'யாவொருவருடன் விளையாடு' : 'Play Random Opponent')}
+                    </button>
+
+                    {isMatching && (
+                        <div style={{
+                            border: '1px solid #bfd3e2',
+                            backgroundColor: '#f4f9fc',
+                            borderRadius: 8,
+                            padding: '10px 12px',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            gap: 10,
+                        }}>
+                            <div style={{ fontSize: 12, color: '#345' }}>
+                                {language === 'ta' ? 'மற்ற வீரரை காத்திருக்கிறது' : 'Waiting for another player'}
+                                {matchingPosition ? ` (${language === 'ta' ? 'வரிசை' : 'Queue'} #${matchingPosition})` : ''}
+                            </div>
+                            <button
+                                onClick={onCancelRandomMatch}
+                                style={{
+                                    backgroundColor: '#C0392B',
+                                    color: 'white',
+                                    border: 'none',
+                                    borderRadius: 6,
+                                    padding: '6px 10px',
+                                    fontSize: 12,
+                                    cursor: 'pointer',
+                                    fontFamily: 'Tamil Sangam MN, sans-serif',
+                                }}
+                            >
+                                {language === 'ta' ? 'ரத்து செய்' : 'Cancel'}
+                            </button>
+                        </div>
+                    )}
+
+                    {matchingError && (
+                        <div style={{ fontSize: 12, color: '#e53935' }}>
+                            {matchingError}
+                        </div>
+                    )}
+
+                    <button
+                        onClick={onPlayComputer}
+                        style={{
+                            backgroundColor: '#fffaf0',
+                            color: '#1A5276',
+                            border: '1px solid #d9cba8',
+                            borderRadius: 8,
+                            padding: '11px 0',
+                            width: '100%',
+                            fontSize: 15,
                             fontWeight: 'bold',
                             cursor: 'pointer',
                             fontFamily: 'Tamil Sangam MN, sans-serif',
@@ -155,48 +345,31 @@ function LandingPage({ onCreateGame, onJoinGame, onPlayComputer }) {
                         {t.playVsComputer}
                     </button>
 
-                    {/* Divider */}
-                    <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        width: '100%',
-                        gap: 12,
-                    }}>
-                        <div style={{ flex: 1, height: 1, backgroundColor: '#ddd' }} />
-                        <span style={{ fontSize: 13, color: '#999' }}>
-                            {language === 'ta' ? 'அல்லது' : 'or'}
-                        </span>
-                        <div style={{ flex: 1, height: 1, backgroundColor: '#ddd' }} />
-                    </div>
-
-                    {/* Join game */}
-                    <div style={{ width: '100%' }}>
+                    <div style={{ borderTop: '1px solid #e6e6e6', marginTop: 4, paddingTop: 12 }}>
                         <div style={{
                             fontSize: 14,
                             fontWeight: '500',
                             color: '#333',
                             marginBottom: 8,
                         }}>
-                            {t.joinGame}
+                            {language === 'ta' ? 'தனிப்பட்ட ஆட்டத்தில் சேர' : 'Join Private Game'}
                         </div>
                         <div style={{ display: 'flex', gap: 8 }}>
                             <input
                                 type="text"
-                                value={gameCode}
-                                onChange={e => { setGameCode(e.target.value.toLowerCase()); setCodeError(false); }}
+                                value={joinInput}
+                                onChange={e => { setJoinInput(e.target.value); setCodeError(false); }}
                                 onKeyDown={handleKeyDown}
-                                placeholder={t.enterGameCode}
-                                maxLength={8}
+                                placeholder={language === 'ta' ? 'குறியீடு அல்லது அழைப்பு இணைப்பு' : 'Code or invite link'}
                                 style={{
                                     flex: 1,
                                     padding: '10px 12px',
                                     borderRadius: 6,
                                     border: `1px solid ${codeError ? '#e53935' : '#ddd'}`,
-                                    fontSize: 16,
+                                    fontSize: 14,
                                     lineHeight: 1.5,
-                                    fontFamily: 'monospace',
+                                    fontFamily: 'Tamil Sangam MN, sans-serif',
                                     outline: 'none',
-                                    letterSpacing: 2,
                                 }}
                             />
                             <button
@@ -206,8 +379,8 @@ function LandingPage({ onCreateGame, onJoinGame, onPlayComputer }) {
                                     color: 'white',
                                     border: 'none',
                                     borderRadius: 6,
-                                    padding: '10px 20px',
-                                    fontSize: 15,
+                                    padding: '10px 16px',
+                                    fontSize: 14,
                                     cursor: 'pointer',
                                     fontFamily: 'Tamil Sangam MN, sans-serif',
                                     fontWeight: 'bold',
@@ -218,13 +391,18 @@ function LandingPage({ onCreateGame, onJoinGame, onPlayComputer }) {
                         </div>
                         {codeError && (
                             <div style={{ fontSize: 12, color: '#e53935', marginTop: 6 }}>
-                                {t.invalidCode}
+                                {language === 'ta'
+                                    ? 'சரியான குறியீடு அல்லது அழைப்பு இணைப்பு உள்ளிடவும்'
+                                    : 'Enter a valid code or invite link'}
                             </div>
                         )}
                     </div>
                 </div>
 
-                {/* Help link */}
+                {leaderboard.length > 0 && (
+                    <LeaderboardCard leaderboard={leaderboard} loading={leaderboardLoading} language={language} />
+                )}
+
                 <button
                     onClick={() => setShowHelp(true)}
                     style={{
@@ -243,7 +421,6 @@ function LandingPage({ onCreateGame, onJoinGame, onPlayComputer }) {
                 </button>
             </div>
 
-            {/* Help modal */}
             {showHelp && (
                 <div style={{
                     position: 'fixed',
@@ -298,8 +475,8 @@ function LandingPage({ onCreateGame, onJoinGame, onPlayComputer }) {
 
 function AppContent() {
     const dispatch = useDispatch();
+    const fallbackUsernameRef = useRef(getDefaultUsername());
 
-    // Get or create userId from cookie
     const userId = useMemo(() => {
         let cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)solladukku\s*=\s*([^;]*).*$)|^.*$/, "$1");
         if (!isValidUUID(cookieValue)) {
@@ -310,49 +487,160 @@ function AppContent() {
         return cookieValue;
     }, []);
 
-    // Check if arriving via invite link
+    const [username, setUsername] = useState(() => {
+        const saved = normalizeUsername(localStorage.getItem(USERNAME_STORAGE_KEY));
+        return saved || fallbackUsernameRef.current;
+    });
+    const effectiveUsername = normalizeUsername(username) || fallbackUsernameRef.current;
+
+    useEffect(() => {
+        localStorage.setItem(USERNAME_STORAGE_KEY, effectiveUsername);
+    }, [effectiveUsername]);
+
     const initialGameId = useMemo(() => {
         const params = new URLSearchParams(window.location.search);
         const id = params.get('game');
         if (id && /^[a-zA-Z0-9]{4,8}$/.test(id)) {
-            return id;
+            return id.toLowerCase();
         }
         return null;
     }, []);
 
     const [gameId, setGameId] = useState(initialGameId);
     const [mode, setMode] = useState(initialGameId ? 'multiplayer' : null);
+    const [leaderboard, setLeaderboard] = useState([]);
+    const [leaderboardLoading, setLeaderboardLoading] = useState(true);
+    const [isMatching, setIsMatching] = useState(false);
+    const [matchingPosition, setMatchingPosition] = useState(null);
+    const [matchingError, setMatchingError] = useState('');
 
-    const handleCreateGame = useCallback(() => {
-        const id = crypto.randomUUID().slice(0, 6);
+    const enterMultiplayerGame = useCallback((id, starterUserId = null) => {
         const url = new URL(window.location);
         url.searchParams.set('game', id);
+        if (starterUserId === userId) {
+            url.searchParams.set('invite', '1');
+        } else {
+            url.searchParams.delete('invite');
+        }
         window.history.replaceState({}, '', url);
-        dispatch(setAutoStartPending(true));
+        if (starterUserId) {
+            dispatch(setAutoStartPending(starterUserId === userId));
+        }
+        setIsMatching(false);
+        setMatchingPosition(null);
         setGameId(id);
         setMode('multiplayer');
-    }, [dispatch]);
+    }, [dispatch, userId]);
+
+    const handleCreatePrivateGame = useCallback(() => {
+        const id = crypto.randomUUID().slice(0, 6).toLowerCase();
+        dispatch(setAutoStartPending(true));
+        enterMultiplayerGame(id, userId);
+    }, [dispatch, enterMultiplayerGame, userId]);
 
     const handleJoinGame = useCallback((code) => {
-        const url = new URL(window.location);
-        url.searchParams.set('game', code);
-        window.history.replaceState({}, '', url);
-        setGameId(code);
-        setMode('multiplayer');
-    }, []);
+        dispatch(setAutoStartPending(false));
+        enterMultiplayerGame(code, null);
+    }, [dispatch, enterMultiplayerGame]);
 
     const handlePlayComputer = useCallback(() => {
-        dispatch(storeUserId({ userId, gameId: 'solo' }));
+        dispatch(storeUserId({ userId, username: effectiveUsername, gameId: 'solo' }));
         setMode('singleplayer');
-    }, [dispatch, userId]);
+    }, [dispatch, userId, effectiveUsername]);
+
+    const handleFindRandomOpponent = useCallback(async () => {
+        setMatchingError('');
+        setIsMatching(true);
+        try {
+            const resp = await fetch(getApiBaseUrl() + '/api/matchmaking/join', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId, username: effectiveUsername }),
+            });
+            const data = await resp.json();
+            if (data.status === 'matched' && data.gameId) {
+                enterMultiplayerGame(data.gameId, data.starterUserId || null);
+                return;
+            }
+            setMatchingPosition(data.position || null);
+        } catch {
+            setIsMatching(false);
+            setMatchingError('Failed to start matchmaking');
+        }
+    }, [enterMultiplayerGame, userId, effectiveUsername]);
+
+    const handleCancelRandomMatch = useCallback(async () => {
+        setIsMatching(false);
+        setMatchingPosition(null);
+        try {
+            await fetch(getApiBaseUrl() + '/api/matchmaking/cancel', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId }),
+            });
+        } catch {
+            // no-op
+        }
+    }, [userId]);
+
+    useEffect(() => {
+        if (!isMatching) return;
+        let cancelled = false;
+        const poll = async () => {
+            try {
+                const resp = await fetch(`${getApiBaseUrl()}/api/matchmaking/status?userId=${encodeURIComponent(userId)}`);
+                const data = await resp.json();
+                if (cancelled) return;
+                if (data.status === 'matched' && data.gameId) {
+                    enterMultiplayerGame(data.gameId, data.starterUserId || null);
+                    return;
+                }
+                if (data.status === 'waiting') {
+                    setMatchingPosition(data.position || null);
+                    return;
+                }
+                if (data.status === 'idle') {
+                    setIsMatching(false);
+                }
+            } catch {
+                if (!cancelled) {
+                    setMatchingError('Matchmaking check failed');
+                }
+            }
+        };
+
+        const interval = setInterval(poll, 2000);
+        poll();
+        return () => {
+            cancelled = true;
+            clearInterval(interval);
+        };
+    }, [isMatching, userId, enterMultiplayerGame]);
+
+    useEffect(() => {
+        fetch(getApiBaseUrl() + '/api/leaderboard?limit=10')
+            .then(r => r.json())
+            .then(data => {
+                if (Array.isArray(data)) setLeaderboard(data);
+            })
+            .catch(() => {})
+            .finally(() => setLeaderboardLoading(false));
+    }, []);
+
+    useEffect(() => {
+        fetch(getApiBaseUrl() + '/api/profile', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId, username: effectiveUsername }),
+        }).catch(() => {});
+    }, [userId, effectiveUsername]);
 
     useEffect(() => {
         if (gameId && mode === 'multiplayer') {
-            dispatch(storeUserId({userId, gameId}));
+            dispatch(storeUserId({ userId, username: effectiveUsername, gameId }));
         }
-    }, [dispatch, userId, gameId, mode]);
+    }, [dispatch, userId, effectiveUsername, gameId, mode]);
 
-    // Track game entry visit
     const visitTracked = useRef(false);
     useEffect(() => {
         if (gameId && !visitTracked.current) {
@@ -365,12 +653,25 @@ function AppContent() {
         }
     }, [gameId, userId]);
 
-    // Show landing page if no gameId and not single player
     if (!gameId && mode !== 'singleplayer') {
-        return <LandingPage onCreateGame={handleCreateGame} onJoinGame={handleJoinGame} onPlayComputer={handlePlayComputer} />;
+        return (
+            <LandingPage
+                onCreatePrivateGame={handleCreatePrivateGame}
+                onJoinGame={handleJoinGame}
+                onPlayComputer={handlePlayComputer}
+                onFindRandomOpponent={handleFindRandomOpponent}
+                onCancelRandomMatch={handleCancelRandomMatch}
+                isMatching={isMatching}
+                matchingPosition={matchingPosition}
+                matchingError={matchingError}
+                username={effectiveUsername}
+                onUsernameChange={setUsername}
+                leaderboard={leaderboard}
+                leaderboardLoading={leaderboardLoading}
+            />
+        );
     }
 
-    // Single player mode: no WebSocket
     if (mode === 'singleplayer') {
         return (
             <div style={{background: '#EDE8E0', height: '100vh', width: '100vw'}}>
@@ -380,7 +681,7 @@ function AppContent() {
     }
 
     return (
-        <WebSocketProvider userId={userId} gameId={gameId}>
+        <WebSocketProvider userId={userId} username={effectiveUsername} gameId={gameId}>
             <div style={{background: '#EDE8E0', height: '100vh', width: '100vw'}}>
                 <GameFrame />
             </div>

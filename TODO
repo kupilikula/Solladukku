@@ -1,0 +1,21 @@
+
+Solmaalai - Tamil Scrabble Game
+
+DONE:
+	-- Landing page with persistent username and mode selection
+	-- Private invite flow (copy code/link + native share)
+	-- Random opponent matchmaking (join/status/cancel)
+	-- Single-player vs computer mode
+	-- Multiplayer functionality using WebSockets (full server + client)
+	-- Chat UI with timestamps and profile names
+	-- Scoreboard / turn history / connection status / letter bags
+	-- Swap / pass / end-game logic
+	-- Word validation: local dictionary + server-side FST fallback
+	-- Analytics + player profiles + leaderboard/rating
+	-- Health endpoint and production nginx proxying for /api and /health
+
+TODO:
+	-- Optimize Tile Bag to make game fun and easy
+	-- Optimization of Rendering and Code
+	-- Matchmaking stale queue cleanup / timeout strategy
+	-- Improve API error messages in landing matchmaking UX

@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useEffect, useRef, useState, useCallback } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 import { addOtherPlayerTurn, addPlayers, syncNewGame, syncOpponentDraw, syncSwapTiles, syncPassTurn, setGameOver, returnAllUnplayedTilesToRackFromBoard } from '../store/actions';
-import { setMyTurn } from '../store/GameSlice';
+import { setMyTurn, setPlayerName } from '../store/GameSlice';
 
 const WebSocketContext = createContext(null);
 
 let requestIdCounter = 0;
 
-export function WebSocketProvider({ userId, gameId, children }) {
+export function WebSocketProvider({ userId, gameId, username, children }) {
     const dispatch = useDispatch();
     const store = useStore();
     const [isConnected, setIsConnected] = useState(false);
@@ -23,7 +23,7 @@ export function WebSocketProvider({ userId, gameId, children }) {
         || (window.location.protocol === 'https:'
             ? `wss://${window.location.host}`
             : `ws://${window.location.hostname}:8000`);
-    const WS_URL = `${WS_BASE}/${gameId}/${userId}`;
+    const WS_URL = `${WS_BASE}/${gameId}/${userId}?name=${encodeURIComponent(username || '')}`;
 
     const connect = useCallback(() => {
         // Don't connect if we've been cleaned up (StrictMode unmount)
@@ -53,6 +53,12 @@ export function WebSocketProvider({ userId, gameId, children }) {
                 console.log('WebSocket connected');
                 setIsConnected(true);
                 setConnectionError(null);
+                if (username) {
+                    ws.send(JSON.stringify({
+                        messageType: 'setProfile',
+                        username,
+                    }));
+                }
             };
 
             ws.onclose = (event) => {
@@ -92,7 +98,10 @@ export function WebSocketProvider({ userId, gameId, children }) {
                         }
                         case 'playerJoined': {
                             // Someone joined our game - we keep our turn
-                            dispatch(addPlayers({ otherPlayerIds: message.playerIds }));
+                            dispatch(addPlayers({
+                                otherPlayerIds: message.playerIds,
+                                players: message.players,
+                            }));
                             // If game already started, re-sync the new player
                             const gameState = store.getState().Game;
                             if (gameState.gameStarted && gameState.myInitialDraw) {
@@ -110,13 +119,19 @@ export function WebSocketProvider({ userId, gameId, children }) {
                         }
                         case 'joinedExistingGame':
                             // We joined an existing game - wait for our turn
-                            dispatch(addPlayers({ otherPlayerIds: message.playerIds }));
+                            dispatch(addPlayers({
+                                otherPlayerIds: message.playerIds,
+                                players: message.players,
+                            }));
                             dispatch(setMyTurn(false));
                             console.log('Joined existing game, waiting for turn');
                             break;
                         case 'roomState':
                             // Reconnection - just update who's in the room, don't change turn
-                            dispatch(addPlayers({ otherPlayerIds: message.playerIds }));
+                            dispatch(addPlayers({
+                                otherPlayerIds: message.playerIds,
+                                players: message.players,
+                            }));
                             console.log('Reconnected, other players:', message.playerIds);
                             break;
                         case 'newGame':
@@ -158,9 +173,16 @@ export function WebSocketProvider({ userId, gameId, children }) {
                         case 'chat':
                             setChatMessages(prev => [...prev, {
                                 userId: message.userId,
+                                username: message.username || null,
                                 text: message.text,
                                 timestamp: message.timestamp,
                             }]);
+                            break;
+                        case 'playerProfile':
+                            dispatch(setPlayerName({
+                                userId: message.userId,
+                                name: message.username,
+                            }));
                             break;
                         case 'validateWordsResult': {
                             // Response to a validateWords request — resolve pending promise
@@ -188,7 +210,7 @@ export function WebSocketProvider({ userId, gameId, children }) {
             console.error('Failed to create WebSocket:', err);
             setConnectionError('Failed to connect');
         }
-    }, [WS_URL, dispatch]);
+    }, [WS_URL, dispatch, username, store]);
 
     useEffect(() => {
         isCleanedUpRef.current = false;

@@ -51,8 +51,8 @@ export default function LetterBags() {
             <div style={{
                 marginTop: 10,
                 textAlign: 'center',
-                fontSize: 12,
-                color: '#666',
+                fontSize: 13,
+                color: '#4f4f4f',
             }}>
                 {t.total}: <strong>{grandTotal}</strong> {t.tiles}
             </div>
@@ -71,7 +71,7 @@ function TileBagCount({ tamilLabel, count, color }) {
             backgroundColor: color,
             minWidth: 60,
         }}>
-            <div style={{ fontSize: 12, fontFamily: 'Tamil Sangam MN', fontWeight: '500' }}>{tamilLabel}</div>
+            <div style={{ fontSize: 13, fontFamily: 'Tamil Sangam MN', fontWeight: '500', color: '#333' }}>{tamilLabel}</div>
             <div style={{ fontSize: 18, fontWeight: 'bold' }}>{count}</div>
         </div>
     );

@@ -5,6 +5,7 @@ export const GameSlice = createSlice({
     name: 'Game',
     initialState: {
         userId: null,
+        username: null,
         gameId: null,
         otherPlayerIds: [],
         currentTurnUserId: null,  // Whose turn it is
@@ -65,11 +66,22 @@ export const GameSlice = createSlice({
             })
             .addCase(storeUserId, (state, action) => {
                 state.userId = action.payload.userId;
+                state.username = action.payload.username || state.username;
                 state.gameId = action.payload.gameId || null;
                 state.currentTurnUserId = action.payload.userId;
+                if (action.payload.userId && action.payload.username) {
+                    state.playerNames[action.payload.userId] = action.payload.username;
+                }
             })
             .addCase(addPlayers, (state, action) => {
                 state.otherPlayerIds = action.payload.otherPlayerIds;
+                if (Array.isArray(action.payload.players)) {
+                    action.payload.players.forEach((player) => {
+                        if (player?.userId && player?.name) {
+                            state.playerNames[player.userId] = player.name;
+                        }
+                    });
+                }
                 // Assign default names to other players
                 action.payload.otherPlayerIds.forEach((id, index) => {
                     if (!state.playerNames[id]) {

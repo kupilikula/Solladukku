@@ -10,6 +10,15 @@ const activeGames = new Map();
 // In-memory turn counters: games row id → turn count
 const turnCounters = new Map();
 
+const RATING_K = 24;
+
+function sanitizeUsername(username) {
+    if (typeof username !== 'string') return null;
+    const trimmed = username.trim().slice(0, 24);
+    if (!trimmed) return null;
+    return trimmed;
+}
+
 function init() {
     db = new Database(DB_PATH);
     db.pragma('journal_mode = WAL');
@@ -56,12 +65,26 @@ function init() {
             created_at TEXT DEFAULT (datetime('now'))
         );
 
+        CREATE TABLE IF NOT EXISTS players (
+            user_id TEXT PRIMARY KEY,
+            username TEXT NOT NULL,
+            rating INTEGER NOT NULL DEFAULT 1000,
+            games_played INTEGER NOT NULL DEFAULT 0,
+            wins INTEGER NOT NULL DEFAULT 0,
+            losses INTEGER NOT NULL DEFAULT 0,
+            draws INTEGER NOT NULL DEFAULT 0,
+            total_score INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT DEFAULT (datetime('now')),
+            updated_at TEXT DEFAULT (datetime('now'))
+        );
+
         CREATE INDEX IF NOT EXISTS idx_visits_created_at ON visits(created_at);
         CREATE INDEX IF NOT EXISTS idx_visits_page ON visits(page);
         CREATE INDEX IF NOT EXISTS idx_games_game_id ON games(game_id);
         CREATE INDEX IF NOT EXISTS idx_games_started_at ON games(started_at);
         CREATE INDEX IF NOT EXISTS idx_turns_game_id ON turns(game_id);
         CREATE INDEX IF NOT EXISTS idx_turns_games_row_id ON turns(games_row_id);
+        CREATE INDEX IF NOT EXISTS idx_players_rating ON players(rating DESC);
     `);
 
     console.log('Analytics DB initialized at', DB_PATH);
@@ -72,6 +95,46 @@ function recordVisit({ page, gameId, userId, ip, userAgent, referrer }) {
         'INSERT INTO visits (page, game_id, user_id, ip, user_agent, referrer) VALUES (?, ?, ?, ?, ?, ?)'
     );
     stmt.run(page, gameId || null, userId || null, ip || null, userAgent || null, referrer || null);
+}
+
+function upsertPlayerProfile({ userId, username }) {
+    if (!userId || typeof userId !== 'string') return null;
+    const cleanUsername = sanitizeUsername(username);
+    if (!cleanUsername) return null;
+
+    db.prepare(`
+        INSERT INTO players (user_id, username)
+        VALUES (?, ?)
+        ON CONFLICT(user_id) DO UPDATE SET
+            username = excluded.username,
+            updated_at = datetime('now')
+    `).run(userId, cleanUsername);
+
+    return getPlayerProfile(userId);
+}
+
+function getPlayerProfile(userId) {
+    if (!userId || typeof userId !== 'string') return null;
+    return db.prepare(`
+        SELECT user_id as userId, username, rating, games_played as gamesPlayed,
+               wins, losses, draws, total_score as totalScore
+        FROM players
+        WHERE user_id = ?
+    `).get(userId) || null;
+}
+
+function getDisplayName(userId) {
+    if (!userId || typeof userId !== 'string') return null;
+    const row = db.prepare('SELECT username FROM players WHERE user_id = ?').get(userId);
+    return row?.username || null;
+}
+
+function ensurePlayer(userId, fallbackName) {
+    if (!userId) return null;
+    const current = getPlayerProfile(userId);
+    if (current) return current;
+    const fallback = sanitizeUsername(fallbackName) || `Player-${userId.slice(0, 6)}`;
+    return upsertPlayerProfile({ userId, username: fallback });
 }
 
 function startGame(gameId, player1Id) {
@@ -141,6 +204,56 @@ function endGame(gameId, { winnerId, reason }) {
         `UPDATE games SET winner_id = ?, game_over_reason = ?, ended_at = datetime('now') WHERE id = ?`
     ).run(winnerId || null, reason || null, rowId);
 
+    // Update persistent player ratings + record only for human-vs-human games.
+    const game = db.prepare(`
+        SELECT player1_id, player2_id, player1_score, player2_score
+        FROM games
+        WHERE id = ?
+    `).get(rowId);
+    if (game && game.player1_id && game.player2_id &&
+        game.player1_id !== 'computer-player' && game.player2_id !== 'computer-player') {
+        const p1 = ensurePlayer(game.player1_id);
+        const p2 = ensurePlayer(game.player2_id);
+
+        if (p1 && p2) {
+            const expected1 = 1 / (1 + Math.pow(10, (p2.rating - p1.rating) / 400));
+            const expected2 = 1 - expected1;
+            let score1 = 0.5;
+            let score2 = 0.5;
+            if (winnerId === game.player1_id) {
+                score1 = 1;
+                score2 = 0;
+            } else if (winnerId === game.player2_id) {
+                score1 = 0;
+                score2 = 1;
+            }
+
+            const newP1Rating = Math.round(p1.rating + RATING_K * (score1 - expected1));
+            const newP2Rating = Math.round(p2.rating + RATING_K * (score2 - expected2));
+
+            const p1Wins = score1 === 1 ? 1 : 0;
+            const p1Losses = score1 === 0 ? 1 : 0;
+            const p1Draws = score1 === 0.5 ? 1 : 0;
+            const p2Wins = score2 === 1 ? 1 : 0;
+            const p2Losses = score2 === 0 ? 1 : 0;
+            const p2Draws = score2 === 0.5 ? 1 : 0;
+
+            db.prepare(`
+                UPDATE players
+                SET rating = ?, games_played = games_played + 1, wins = wins + ?, losses = losses + ?, draws = draws + ?,
+                    total_score = total_score + ?, updated_at = datetime('now')
+                WHERE user_id = ?
+            `).run(newP1Rating, p1Wins, p1Losses, p1Draws, game.player1_score || 0, game.player1_id);
+
+            db.prepare(`
+                UPDATE players
+                SET rating = ?, games_played = games_played + 1, wins = wins + ?, losses = losses + ?, draws = draws + ?,
+                    total_score = total_score + ?, updated_at = datetime('now')
+                WHERE user_id = ?
+            `).run(newP2Rating, p2Wins, p2Losses, p2Draws, game.player2_score || 0, game.player2_id);
+        }
+    }
+
     activeGames.delete(gameId);
     turnCounters.delete(rowId);
 }
@@ -155,13 +268,24 @@ function getStats() {
 
 function getRecentGames(limit = 20) {
     return db.prepare(
-        'SELECT * FROM games ORDER BY created_at DESC LIMIT ?'
+        `SELECT g.*, p1.username as player1_name, p2.username as player2_name
+         FROM games g
+         LEFT JOIN players p1 ON p1.user_id = g.player1_id
+         LEFT JOIN players p2 ON p2.user_id = g.player2_id
+         ORDER BY g.created_at DESC
+         LIMIT ?`
     ).all(limit);
 }
 
 function getGameDetail(gameId) {
     const game = db.prepare(
-        'SELECT * FROM games WHERE game_id = ? ORDER BY created_at DESC LIMIT 1'
+        `SELECT g.*, p1.username as player1_name, p2.username as player2_name
+         FROM games g
+         LEFT JOIN players p1 ON p1.user_id = g.player1_id
+         LEFT JOIN players p2 ON p2.user_id = g.player2_id
+         WHERE g.game_id = ?
+         ORDER BY g.created_at DESC
+         LIMIT 1`
     ).get(gameId);
     if (!game) return null;
 
@@ -181,6 +305,27 @@ function getVisitsPerDay(days = 30) {
     ).all(`-${days} days`);
 }
 
+function getLeaderboard(limit = 20) {
+    return db.prepare(`
+        SELECT
+            user_id as userId,
+            username,
+            rating,
+            games_played as gamesPlayed,
+            wins,
+            losses,
+            draws,
+            total_score as totalScore,
+            CASE
+                WHEN games_played > 0 THEN ROUND((wins * 100.0) / games_played, 1)
+                ELSE 0
+            END as winRate
+        FROM players
+        ORDER BY rating DESC, wins DESC, total_score DESC
+        LIMIT ?
+    `).all(limit);
+}
+
 function close() {
     if (db) {
         db.close();
@@ -191,6 +336,9 @@ function close() {
 module.exports = {
     init,
     recordVisit,
+    upsertPlayerProfile,
+    getPlayerProfile,
+    getDisplayName,
     startGame,
     setPlayer2,
     getActiveGameRowId,
@@ -200,5 +348,6 @@ module.exports = {
     getRecentGames,
     getGameDetail,
     getVisitsPerDay,
+    getLeaderboard,
     close,
 };

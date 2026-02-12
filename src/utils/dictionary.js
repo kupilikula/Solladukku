@@ -100,7 +100,9 @@ const serverValidationCache = new Map();
 
 function getApiBaseUrl() {
     if (process.env.REACT_APP_WS_URL) {
-        return process.env.REACT_APP_WS_URL.replace(/^ws(s?):\/\//, 'http$1://');
+        return process.env.REACT_APP_WS_URL
+            .replace(/^ws(s?):\/\//, 'http$1://')
+            .replace(/\/ws\/?$/, '');
     }
     return window.location.origin;
 }

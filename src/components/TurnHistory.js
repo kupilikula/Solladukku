@@ -3,12 +3,12 @@ import {useLanguage} from "../context/LanguageContext";
 
 export default function TurnHistory() {
     const scoreBoard = useSelector(state => state.ScoreBoard);
-    const myUserId = useSelector(state => state.Game.userId);
+    const { userId: myUserId, playerNames } = useSelector(state => state.Game);
     const { t } = useLanguage();
 
     const getPlayerName = (userId) => {
-        if (userId === myUserId) return t.you;
-        return t.opponent;
+        if (userId === myUserId) return playerNames[myUserId] || t.you;
+        return playerNames[userId] || t.opponent;
     };
 
     // Extract word string from formedWords array
@@ -32,8 +32,8 @@ export default function TurnHistory() {
                     {t.turnHistory}
                 </div>
                 <div style={{
-                    color: '#999',
-                    fontSize: 12,
+                    color: '#666',
+                    fontSize: 13,
                     textAlign: 'center',
                     padding: 20,
                 }}>
@@ -101,16 +101,16 @@ function TurnEntry({ turnNumber, playerName, isMe, turnType, words, wordScores, 
                 marginBottom: isPassOrSwap ? 0 : 4,
             }}>
                 <span style={{
-                    fontSize: 11,
-                    color: '#666',
+                    fontSize: 12,
+                    color: '#555',
                 }}>
                     #{turnNumber} - {playerName}
                 </span>
                 {isPassOrSwap ? (
                     <span style={{
-                        fontSize: 11,
+                        fontSize: 12,
                         fontStyle: 'italic',
-                        color: '#f57c00',
+                        color: '#cc6a00',
                     }}>
                         {actionLabel}
                     </span>
@@ -140,7 +140,7 @@ function TurnEntry({ turnNumber, playerName, isMe, turnType, words, wordScores, 
                             border: '1px solid #ddd',
                         }}>
                             {word}
-                            <span style={{ fontSize: 10, color: '#666', marginLeft: 4 }}>
+                            <span style={{ fontSize: 11, color: '#555', marginLeft: 4 }}>
                                 ({wordScores[i]})
                             </span>
                         </span>

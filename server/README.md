@@ -1,73 +1,56 @@
-# Solmaalai WebSocket Server
+# Solmaalai Server
 
-Simple WebSocket server for testing multiplayer functionality.
+Node.js server that handles:
+
+- HTTP REST API
+- WebSocket multiplayer rooms
+- Server-side FST word validation
+- SQLite analytics
+
+Runs on a single port (default `8000`).
 
 ## Running
 
 ```bash
 npm install
+npm run setup   # downloads FST models
 npm start
 ```
 
-Server runs on `ws://localhost:8000`.
+## WebSocket
 
-## Features
+Connection path:
 
-- Accepts connections at `/{userId}` path
-- Tracks connected players in a single default room
-- Broadcasts turn messages to other players
-- Notifies players when others join/leave
-
-## Message Types
-
-### Incoming (from client)
-
-**Turn**
-```json
-{
-  "messageType": "turn",
-  "turnInfo": { ... }
-}
+```text
+/{gameId}/{userId}?name={username}
 ```
 
-**Chat**
-```json
-{
-  "messageType": "chat",
-  "text": "Hello!"
-}
-```
+Room behavior:
 
-### Outgoing (to clients)
+- Room key = `gameId`
+- Max 2 players per room
+- Broadcast turn/newGame/swap/pass/gameOver/chat events
+- Profile sync events: `setProfile` / `playerProfile`
+- Request-response validation: `validateWords` -> `validateWordsResult`
 
-**Player Joined**
-```json
-{
-  "messageType": "playerJoined",
-  "playerIds": ["uuid-1", "uuid-2"]
-}
-```
+## HTTP Endpoints
 
-**Player Left**
-```json
-{
-  "messageType": "playerLeft",
-  "userId": "uuid-1"
-}
-```
-
-**Turn** (broadcast from another player)
-```json
-{
-  "messageType": "turn",
-  "turnInfo": { ... }
-}
-```
+- `GET /health` - readiness/liveness endpoint
+- `POST /api/visit` - analytics page visit
+- `POST /api/profile` - upsert player profile (`{ userId, username }`)
+- `GET /api/stats` - aggregate analytics stats
+- `GET /api/leaderboard?limit=N` - leaderboard ranked by rating
+- `GET /api/games?limit=N` - recent games
+- `GET /api/games/:gameId` - game detail + turns
+- `GET /api/visits/daily?days=N` - daily visit counts
+- `POST /api/validate-words` - FST validation via HTTP (`{ words: string[] }`, max 20)
+- `POST /api/matchmaking/join` - enter random matchmaking queue
+- `GET /api/matchmaking/status?userId=...` - matchmaking status
+- `POST /api/matchmaking/cancel` - leave matchmaking queue
 
 ## Notes
 
-This is a development server. For production, consider:
-- Room management (multiple games)
-- Authentication
-- Game state persistence
-- Rate limiting
+- FST validation is permissive when `flookup`/models are unavailable.
+- Configure `ALLOWED_ORIGINS` in production for CORS and WebSocket origin checks.
+- For Railway, configure healthcheck path to `/health`.
+- Matchmaking assigns a private `gameId` once two queued users are available.

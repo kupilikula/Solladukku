@@ -89,6 +89,7 @@ sudo certbot --nginx -d yourdomain.com
 ## 7. Verification Checklist
 
 - [ ] `https://yourdomain.com` loads the React app
+- [ ] `curl -f https://yourdomain.com/health` returns 200
 - [ ] Browser console shows WebSocket connecting to `wss://yourdomain.com/ws/...`
 - [ ] Open two tabs — multiplayer works (tiles, turns, chat)
 - [ ] Copy invite link from one tab, open in incognito — joins same game

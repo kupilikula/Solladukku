@@ -324,6 +324,84 @@ function ConfirmDialog({ message, onConfirm, onCancel, t }) {
     );
 }
 
+function InviteModal({ gameId, onClose, onCopyCode, onCopyLink, onShare, language }) {
+    const link = `${window.location.origin}?game=${gameId}`;
+    return (
+        <div style={{
+            position: 'fixed',
+            top: 0, left: 0, right: 0, bottom: 0,
+            backgroundColor: 'rgba(0,0,0,0.4)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 200000,
+        }} onClick={onClose}>
+            <div style={{
+                backgroundColor: 'white',
+                borderRadius: 12,
+                padding: 24,
+                width: 420,
+                maxWidth: '90vw',
+                fontFamily: 'Tamil Sangam MN, sans-serif',
+            }} onClick={e => e.stopPropagation()}>
+                <div style={{ fontSize: 20, color: '#1A5276', fontWeight: 'bold', marginBottom: 14 }}>
+                    {language === 'ta' ? 'நண்பரை அழைக்க' : 'Invite a Friend'}
+                </div>
+                <div style={{ fontSize: 13, color: '#555', marginBottom: 8 }}>
+                    {language === 'ta' ? 'குறியீடு அல்லது இணைப்பை பகிரவும்' : 'Share either the game code or the invite link'}
+                </div>
+
+                <div style={{ marginBottom: 12 }}>
+                    <div style={{ fontSize: 12, color: '#666', marginBottom: 4 }}>
+                        {language === 'ta' ? 'ஆட்ட குறியீடு' : 'Game Code'}
+                    </div>
+                    <div style={{ display: 'flex', gap: 8 }}>
+                        <input readOnly value={gameId} style={{
+                            flex: 1, padding: '9px 10px', borderRadius: 6, border: '1px solid #ddd',
+                            fontFamily: 'monospace', letterSpacing: 2, fontSize: 14,
+                        }} />
+                        <button className="ActionMenuButton" style={{ width: 48 }} onClick={onCopyCode}>
+                            <FaCheck size={18} />
+                        </button>
+                    </div>
+                </div>
+
+                <div style={{ marginBottom: 14 }}>
+                    <div style={{ fontSize: 12, color: '#666', marginBottom: 4 }}>
+                        {language === 'ta' ? 'அழைப்பு இணைப்பு' : 'Invite Link'}
+                    </div>
+                    <div style={{ display: 'flex', gap: 8 }}>
+                        <input readOnly value={link} style={{
+                            flex: 1, padding: '9px 10px', borderRadius: 6, border: '1px solid #ddd',
+                            fontSize: 12,
+                        }} />
+                        <button className="ActionMenuButton" style={{ width: 48 }} onClick={onCopyLink}>
+                            <FaCheck size={18} />
+                        </button>
+                    </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end' }}>
+                    {onShare && (
+                        <button onClick={onShare} style={{
+                            backgroundColor: '#1A5276', color: 'white', border: 'none', borderRadius: 6,
+                            padding: '8px 12px', cursor: 'pointer', fontFamily: 'Tamil Sangam MN, sans-serif',
+                        }}>
+                            {language === 'ta' ? 'பகிர்' : 'Share'}
+                        </button>
+                    )}
+                    <button onClick={onClose} style={{
+                        backgroundColor: '#ddd', color: '#333', border: 'none', borderRadius: 6,
+                        padding: '8px 12px', cursor: 'pointer', fontFamily: 'Tamil Sangam MN, sans-serif',
+                    }}>
+                        {language === 'ta' ? 'மூடு' : 'Close'}
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
 export default function ActionMenu() {
 
     const dispatch = useDispatch();
@@ -346,9 +424,20 @@ export default function ActionMenu() {
     const { language, t } = useLanguage();
     const [invalidWords, setInvalidWords] = useState([]);
     const [isValidating, setIsValidating] = useState(false);
-    const [showCopied, setShowCopied] = useState(false);
+    const [copiedText, setCopiedText] = useState('');
     const [showHelp, setShowHelp] = useState(false);
+    const [showInviteModal, setShowInviteModal] = useState(false);
     const [confirmAction, setConfirmAction] = useState(null); // 'pass' | 'newGame' | null
+
+    // Auto-open invite modal when creator enters a newly created private game.
+    useEffect(() => {
+        if (gameMode === 'singleplayer') return;
+        const url = new URL(window.location.href);
+        if (url.searchParams.get('invite') !== '1') return;
+        setShowInviteModal(true);
+        url.searchParams.delete('invite');
+        window.history.replaceState({}, '', url);
+    }, [gameMode]);
 
     // Clear invalid words feedback after 3 seconds
     useEffect(() => {
@@ -620,22 +709,35 @@ export default function ActionMenu() {
         setShowHelp(prev => !prev);
     }
 
-    function invite() {
-        const link = `${window.location.origin}?game=${gameId}`;
-        navigator.clipboard.writeText(link).then(() => {
-            setShowCopied(true);
-            setTimeout(() => setShowCopied(false), 2000);
+    function copyText(text, label) {
+        navigator.clipboard.writeText(text).then(() => {
+            setCopiedText(label);
+            setTimeout(() => setCopiedText(''), 2000);
         }).catch(() => {
             // Fallback for older browsers
             const textarea = document.createElement('textarea');
-            textarea.value = link;
+            textarea.value = text;
             document.body.appendChild(textarea);
             textarea.select();
             document.execCommand('copy');
             document.body.removeChild(textarea);
-            setShowCopied(true);
-            setTimeout(() => setShowCopied(false), 2000);
+            setCopiedText(label);
+            setTimeout(() => setCopiedText(''), 2000);
         });
+    }
+
+    function invite() {
+        setShowInviteModal(true);
+    }
+
+    function shareInvite() {
+        if (!navigator.share) return;
+        const link = `${window.location.origin}?game=${gameId}`;
+        navigator.share({
+            title: 'Solmaalai',
+            text: language === 'ta' ? `ஆட்ட குறியீடு: ${gameId}` : `Game code: ${gameId}`,
+            url: link,
+        }).catch(() => {});
     }
 
     const swapSelectedCount = swapModeActive
@@ -655,9 +757,9 @@ export default function ActionMenu() {
                     தவறான சொற்கள்: {invalidWords.join(', ')}
                 </div>
             )}
-            {showCopied && (
+            {copiedText && (
                 <div className="ValidatingToast" style={{ animation: 'fadeInOut 2s ease-in-out' }}>
-                    Link copied!
+                    {copiedText}
                 </div>
             )}
             {!swapModeActive && (
@@ -722,6 +824,16 @@ export default function ActionMenu() {
                     onConfirm={newGame}
                     onCancel={() => setConfirmAction(null)}
                     t={t}
+                />
+            )}
+            {showInviteModal && (
+                <InviteModal
+                    gameId={gameId}
+                    language={language}
+                    onClose={() => setShowInviteModal(false)}
+                    onCopyCode={() => copyText(gameId, language === 'ta' ? 'குறியீடு நகலெடுக்கப்பட்டது' : 'Code copied')}
+                    onCopyLink={() => copyText(`${window.location.origin}?game=${gameId}`, language === 'ta' ? 'இணைப்பு நகலெடுக்கப்பட்டது' : 'Link copied')}
+                    onShare={navigator.share ? shareInvite : null}
                 />
             )}
         </div>

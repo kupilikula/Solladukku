@@ -13,6 +13,7 @@ const MAX_CONNECTIONS_PER_IP = 10;
 const MAX_MESSAGE_SIZE = 100 * 1024; // 100KB
 const RATE_LIMIT_WINDOW_MS = 1000;
 const RATE_LIMIT_MAX_MESSAGES = 30;
+const MATCH_ASSIGNMENT_TTL_MS = 10 * 60 * 1000;
 
 // Initialize analytics DB
 analytics.init();
@@ -52,6 +53,21 @@ function parseBody(req) {
     });
 }
 
+function sanitizeUsername(username) {
+    if (typeof username !== 'string') return null;
+    const trimmed = username.trim().slice(0, 24);
+    if (!trimmed) return null;
+    return trimmed;
+}
+
+function generateGameId() {
+    let candidate = '';
+    do {
+        candidate = Math.random().toString(36).slice(2, 8);
+    } while (rooms.has(candidate));
+    return candidate;
+}
+
 function handleHttpRequest(req, res) {
     setCorsHeaders(res, req);
 
@@ -76,6 +92,20 @@ function handleHttpRequest(req, res) {
                 referrer: req.headers.referer || null,
             });
             sendJson(res, 200, { ok: true });
+        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/profile') {
+        parseBody(req).then(body => {
+            const userId = typeof body.userId === 'string' ? body.userId : null;
+            const username = sanitizeUsername(body.username);
+            if (!userId || !username) {
+                sendJson(res, 400, { error: 'Invalid profile payload' });
+                return;
+            }
+            const profile = analytics.upsertPlayerProfile({ userId, username });
+            sendJson(res, 200, { ok: true, profile });
         }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
         return;
     }
@@ -109,6 +139,12 @@ function handleHttpRequest(req, res) {
         return;
     }
 
+    if (req.method === 'GET' && pathname === '/api/leaderboard') {
+        const limit = parseInt(url.searchParams.get('limit')) || 20;
+        sendJson(res, 200, analytics.getLeaderboard(Math.min(limit, 100)));
+        return;
+    }
+
     if (req.method === 'GET' && pathname === '/api/games') {
         const limit = parseInt(url.searchParams.get('limit')) || 20;
         sendJson(res, 200, analytics.getRecentGames(Math.min(limit, 100)));
@@ -127,6 +163,89 @@ function handleHttpRequest(req, res) {
     if (req.method === 'GET' && pathname === '/api/visits/daily') {
         const days = parseInt(url.searchParams.get('days')) || 30;
         sendJson(res, 200, analytics.getVisitsPerDay(Math.min(days, 365)));
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/matchmaking/join') {
+        parseBody(req).then(body => {
+            const userId = typeof body.userId === 'string' ? body.userId : null;
+            const username = sanitizeUsername(body.username);
+            if (!userId || !username) {
+                sendJson(res, 400, { error: 'Invalid matchmaking payload' });
+                return;
+            }
+
+            analytics.upsertPlayerProfile({ userId, username });
+
+            const existingAssignment = getActiveAssignment(userId);
+            if (existingAssignment) {
+                sendJson(res, 200, { status: 'matched', ...existingAssignment });
+                return;
+            }
+
+            removeFromMatchmakingQueue(userId);
+            const opponent = matchmakingQueue.shift();
+
+            if (opponent && opponent.userId !== userId) {
+                const gameId = generateGameId();
+                const matchedAt = Date.now();
+                const starterUserId = opponent.userId; // first queued player starts
+                const opponentAssignment = {
+                    gameId,
+                    opponentUserId: userId,
+                    starterUserId,
+                    matchedAt,
+                };
+                const userAssignment = {
+                    gameId,
+                    opponentUserId: opponent.userId,
+                    starterUserId,
+                    matchedAt,
+                };
+
+                matchAssignments.set(opponent.userId, opponentAssignment);
+                matchAssignments.set(userId, userAssignment);
+                sendJson(res, 200, { status: 'matched', ...userAssignment });
+                return;
+            }
+
+            matchmakingQueue.push({ userId, joinedAt: Date.now() });
+            sendJson(res, 200, { status: 'waiting', position: getQueuePosition(userId) });
+        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        return;
+    }
+
+    if (req.method === 'GET' && pathname === '/api/matchmaking/status') {
+        const userId = url.searchParams.get('userId');
+        if (!userId) {
+            sendJson(res, 400, { error: 'Missing userId' });
+            return;
+        }
+        const assignment = getActiveAssignment(userId);
+        if (assignment) {
+            sendJson(res, 200, { status: 'matched', ...assignment });
+            return;
+        }
+        const position = getQueuePosition(userId);
+        if (position) {
+            sendJson(res, 200, { status: 'waiting', position });
+            return;
+        }
+        sendJson(res, 200, { status: 'idle' });
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/matchmaking/cancel') {
+        parseBody(req).then(body => {
+            const userId = typeof body.userId === 'string' ? body.userId : null;
+            if (!userId) {
+                sendJson(res, 400, { error: 'Invalid cancel payload' });
+                return;
+            }
+            removeFromMatchmakingQueue(userId);
+            matchAssignments.delete(userId);
+            sendJson(res, 200, { ok: true });
+        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
         return;
     }
 
@@ -177,6 +296,36 @@ const rooms = new Map();
 const wsMetadata = new WeakMap();
 // Track connections per IP: Map<ip, number>
 const connectionsPerIp = new Map();
+// Random matchmaking queue and matched assignments.
+const matchmakingQueue = [];
+const matchAssignments = new Map();
+
+function removeFromMatchmakingQueue(userId) {
+    const idx = matchmakingQueue.findIndex(item => item.userId === userId);
+    if (idx >= 0) matchmakingQueue.splice(idx, 1);
+}
+
+function getQueuePosition(userId) {
+    const idx = matchmakingQueue.findIndex(item => item.userId === userId);
+    return idx >= 0 ? (idx + 1) : null;
+}
+
+function getActiveAssignment(userId) {
+    const assignment = matchAssignments.get(userId);
+    if (!assignment) return null;
+    if ((Date.now() - assignment.matchedAt) > MATCH_ASSIGNMENT_TTL_MS) {
+        matchAssignments.delete(userId);
+        return null;
+    }
+    return assignment;
+}
+
+function getPlayerInfo(userId, indexHint = 1) {
+    return {
+        userId,
+        name: analytics.getDisplayName(userId) || `Player ${indexHint}`,
+    };
+}
 
 // ─── FST Validation Setup ────────────────────────────────────────────
 
@@ -487,7 +636,8 @@ wss.on('connection', (ws, req) => {
     connectionsPerIp.set(ip, currentConnections + 1);
 
     // Parse URL as /{gameId}/{userId}
-    const urlParts = req.url.slice(1).split('/');
+    const reqUrl = new URL(req.url, `http://${req.headers.host}`);
+    const urlParts = reqUrl.pathname.slice(1).split('/');
     if (urlParts.length < 2 || !urlParts[0] || !urlParts[1]) {
         console.log(`Rejected connection: malformed URL ${req.url}`);
         connectionsPerIp.set(ip, (connectionsPerIp.get(ip) || 1) - 1);
@@ -497,6 +647,14 @@ wss.on('connection', (ws, req) => {
 
     const gameId = urlParts[0];
     const userId = urlParts[1];
+    const profileName = sanitizeUsername(reqUrl.searchParams.get('name'));
+    if (profileName) {
+        analytics.upsertPlayerProfile({ userId, username: profileName });
+    }
+    const assignment = getActiveAssignment(userId);
+    if (assignment && assignment.gameId === gameId) {
+        matchAssignments.delete(userId);
+    }
 
     console.log(`Client connected: ${userId} to room ${gameId} (IP: ${ip})`);
 
@@ -521,13 +679,15 @@ wss.on('connection', (ws, req) => {
 
     // Get list of other players
     const otherPlayerIds = Array.from(room.players.keys()).filter(id => id !== userId);
+    const otherPlayers = otherPlayerIds.map((id, idx) => getPlayerInfo(id, idx + 2));
 
     if (isReconnection) {
         console.log(`Client reconnected: ${userId} in room ${gameId}`);
-        if (otherPlayerIds.length > 0) {
+        if (otherPlayers.length > 0) {
             ws.send(JSON.stringify({
                 messageType: 'roomState',
                 playerIds: otherPlayerIds,
+                players: otherPlayers,
             }));
         }
     } else {
@@ -538,15 +698,18 @@ wss.on('connection', (ws, req) => {
 
         if (otherPlayerIds.length > 0) {
             // Notify existing players about the new player
+            const joiningPlayer = getPlayerInfo(userId, 2);
             broadcastToRoom(gameId, userId, {
                 messageType: 'playerJoined',
                 playerIds: [userId],
+                players: [joiningPlayer],
             });
 
             // Notify new player about existing players (they should wait for their turn)
             ws.send(JSON.stringify({
                 messageType: 'joinedExistingGame',
                 playerIds: otherPlayerIds,
+                players: otherPlayers,
             }));
         }
     }
@@ -679,12 +842,25 @@ wss.on('connection', (ws, req) => {
                     } catch (e) { console.error('Analytics gameOver error:', e.message); }
                     break;
 
+                case 'setProfile': {
+                    const username = sanitizeUsername(message.username);
+                    if (!username) break;
+                    analytics.upsertPlayerProfile({ userId, username });
+                    broadcastToRoom(gameId, userId, {
+                        messageType: 'playerProfile',
+                        userId,
+                        username,
+                    });
+                    break;
+                }
+
                 case 'chat': {
                     // Input validation: text must be a string <= 500 chars
                     if (typeof message.text !== 'string' || message.text.length > 500) break;
                     sendToAllInRoom(gameId, {
                         messageType: 'chat',
                         userId: userId,
+                        username: analytics.getDisplayName(userId) || null,
                         text: message.text,
                         timestamp: Date.now(),
                     });

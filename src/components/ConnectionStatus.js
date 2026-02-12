@@ -32,7 +32,7 @@ export default function ConnectionStatus() {
                             borderRadius: '50%',
                             backgroundColor: '#1A5276',
                         }} />
-                        <span style={{ fontSize: 12, color: '#666' }}>
+                        <span style={{ fontSize: 13, color: '#4f4f4f' }}>
                             {t.vsComputer}
                         </span>
                     </>
@@ -44,16 +44,16 @@ export default function ConnectionStatus() {
                             borderRadius: '50%',
                             backgroundColor: isConnected ? '#1A5276' : '#f44336',
                         }} />
-                        <span style={{ fontSize: 12, color: '#666' }}>
+                        <span style={{ fontSize: 13, color: '#4f4f4f' }}>
                             {isConnected ? t.connected : (connectionError || t.disconnected)}
                         </span>
                     </>
                 )}
             </div>
             <div style={{
-                fontSize: 12,
+                fontSize: 13,
                 fontWeight: 'bold',
-                color: isMyTurn ? '#1A5276' : '#999',
+                color: isMyTurn ? '#1A5276' : '#666',
             }}>
                 {isMyTurn ? t.yourTurn : (isSinglePlayer ? t.computerThinking : t.waiting)}
             </div>

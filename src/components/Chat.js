@@ -7,7 +7,7 @@ export default function Chat() {
     const { chatMessages, sendChat } = useWebSocket();
     const [input, setInput] = useState('');
     const messagesEndRef = useRef(null);
-    const myUserId = useSelector(state => state.Game.userId);
+    const { userId: myUserId, playerNames } = useSelector(state => state.Game);
     const { t } = useLanguage();
 
     useEffect(() => {
@@ -28,9 +28,9 @@ export default function Chat() {
         }
     };
 
-    const getDisplayName = (userId) => {
-        if (userId === myUserId) return t.you;
-        return t.opponent;
+    const getDisplayName = (message) => {
+        if (message.userId === myUserId) return playerNames[myUserId] || t.you;
+        return message.username || playerNames[message.userId] || t.opponent;
     };
 
     const formatTime = (timestamp) => {
@@ -79,7 +79,7 @@ export default function Chat() {
                             fontWeight: 'bold',
                             color: msg.userId === myUserId ? '#1A5276' : '#333',
                         }}>
-                            {getDisplayName(msg.userId)}
+                            {getDisplayName(msg)}
                         </span>
                         <span style={{ color: '#999', fontSize: 10, marginLeft: 6 }}>
                             {formatTime(msg.timestamp)}
