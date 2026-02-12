@@ -58,7 +58,7 @@ src/
 │   ├── useGameSync.js        # Multiplayer game sync (auto-start, initial draw, game-over)
 │   └── useAIGameSync.js      # Single-player AI lifecycle (init, turn orchestration, rack mgmt)
 ├── components/
-│   ├── AnalyticsViewer.js    # Password-protected analytics inspector (`?analytics=1`)
+│   ├── AnalyticsViewer.js    # Password-protected analytics inspector (`?analytics=1`) with session-cached admin header, visible API error messaging, board replay fallback from formed-word tile coordinates, and per-turn Jump controls
 │   ├── GameFrame.js          # Main layout: SinglePlayer/Multiplayer wrappers + GameOverOverlay
 │   ├── PlayingBoard.js       # Game board with DnD provider
 │   ├── WordBoard.js          # 15×15 Scrabble board grid
@@ -116,6 +116,7 @@ The app opens to a landing page before entering any game:
 **Invite link bypass**: If someone arrives via `?game=XYZ` URL, the landing page is skipped entirely — they go straight into the game. The WebSocket connection is only established after entering a game.
 
 **Analytics inspector route**: Visiting `?analytics=1` opens the admin analytics viewer instead of the game UI.
+The password input expects the existing server `ANALYTICS_ADMIN_PASSWORD` secret (it does not create/update server password), stores it only in `sessionStorage`, and sends it via `X-Admin-Password`.
 
 ## Color Scheme
 
@@ -290,6 +291,8 @@ Without `ANALYTICS_ADMIN_PASSWORD`, admin analytics endpoints return `503`.
 | `POST` | `/api/matchmaking/cancel` | Cancel random matchmaking (`{userId}`) |
 | `POST` | `/api/validate-words` | FST validation over HTTP (`{ words: string[] }`, max 20) |
 | `GET` | `/health` | Readiness/liveness endpoint (200 when server is ready) |
+
+Route matching note: In `server/index.js`, `/api/admin/players/countries` is matched before `/api/admin/players/:userId` so `countries` is not misinterpreted as a `userId`.
 
 ### Server-Side Event Hooks
 

@@ -246,6 +246,12 @@ function handleHttpRequest(req, res) {
         return;
     }
 
+    if (req.method === 'GET' && pathname === '/api/admin/players/countries') {
+        const limit = parseInt(url.searchParams.get('limit')) || 20;
+        sendJson(res, 200, analytics.getPlayersByCountry(Math.min(limit, 100)));
+        return;
+    }
+
     if (req.method === 'GET' && pathname.startsWith('/api/admin/players/')) {
         const userId = pathname.slice('/api/admin/players/'.length);
         if (!userId) { sendJson(res, 400, { error: 'Missing userId' }); return; }
@@ -265,12 +271,6 @@ function handleHttpRequest(req, res) {
         const days = parseInt(url.searchParams.get('days')) || 30;
         const limit = parseInt(url.searchParams.get('limit')) || 20;
         sendJson(res, 200, analytics.getVisitsByCountry(Math.min(days, 365), Math.min(limit, 100)));
-        return;
-    }
-
-    if (req.method === 'GET' && pathname === '/api/admin/players/countries') {
-        const limit = parseInt(url.searchParams.get('limit')) || 20;
-        sendJson(res, 200, analytics.getPlayersByCountry(Math.min(limit, 100)));
         return;
     }
 

@@ -17,7 +17,19 @@ function buildBoardStates(turns) {
 
     (turns || []).forEach((turn) => {
         const next = cloneBoard(current);
-        const placedTiles = Array.isArray(turn.placedTiles) ? turn.placedTiles : [];
+        let placedTiles = Array.isArray(turn.placedTiles) ? turn.placedTiles : [];
+        if (!placedTiles.length && Array.isArray(turn.formedWords)) {
+            // Backfill from formedWords for older/missing analytics rows:
+            // only tiles marked as newly placed on that turn.
+            placedTiles = turn.formedWords
+                .flatMap((wordTiles) => (Array.isArray(wordTiles) ? wordTiles : []))
+                .filter((tileInfo) => tileInfo && !tileInfo.alreadyPlayed)
+                .map((tileInfo) => ({
+                    row: tileInfo.row,
+                    col: tileInfo.col,
+                    letter: tileInfo.letter || '',
+                }));
+        }
         placedTiles.forEach((tile) => {
             if (!tile) return;
             const row = Number(tile.row);
@@ -130,6 +142,10 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
         return data;
     }, [apiBaseUrl, authHeaders]);
 
+    const handleAdminError = useCallback((err) => {
+        setAuthError(err?.message || 'Request failed');
+    }, []);
+
     const loadSummary = useCallback(async () => {
         setLoadingSummary(true);
         try {
@@ -145,13 +161,11 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
             setPlayerCountries(Array.isArray(playerCountryResp) ? playerCountryResp : []);
             setAuthError('');
         } catch (err) {
-            if (err.status === 401 || err.status === 503) {
-                setAuthError(err.message);
-            }
+            handleAdminError(err);
         } finally {
             setLoadingSummary(false);
         }
-    }, [fetchAdminJson, visitsDays]);
+    }, [fetchAdminJson, handleAdminError, visitsDays]);
 
     const loadGames = useCallback(async () => {
         try {
@@ -165,9 +179,9 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
             setGamesTotal(Number(data.total || 0));
             setAuthError('');
         } catch (err) {
-            if (err.status === 401 || err.status === 503) setAuthError(err.message);
+            handleAdminError(err);
         }
-    }, [fetchAdminJson, gamesOffset, gamesQuery]);
+    }, [fetchAdminJson, gamesOffset, gamesQuery, handleAdminError]);
 
     const loadPlayers = useCallback(async () => {
         try {
@@ -181,9 +195,9 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
             setPlayersTotal(Number(data.total || 0));
             setAuthError('');
         } catch (err) {
-            if (err.status === 401 || err.status === 503) setAuthError(err.message);
+            handleAdminError(err);
         }
-    }, [fetchAdminJson, playersOffset, playersQuery]);
+    }, [fetchAdminJson, handleAdminError, playersOffset, playersQuery]);
 
     const loadGameDetail = useCallback(async (gameId) => {
         if (!gameId) return;
@@ -240,6 +254,7 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
         [gameDetail]
     );
     const activeBoard = boardStates[Math.max(0, Math.min(boardTurnIndex, boardStates.length - 1))] || buildEmptyBoard();
+    const replayableTurnCount = Math.max(0, boardStates.length - 1);
 
     const visitsMax = useMemo(() => {
         return visits.reduce((max, v) => Math.max(max, Number(v.count || 0)), 0) || 1;
@@ -305,7 +320,9 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
                     type="password"
                     value={passwordInput}
                     onChange={(e) => setPasswordInput(e.target.value)}
-                    placeholder={isAuthenticated ? 'Password is set for this session' : 'Admin password'}
+                    placeholder={isAuthenticated
+                        ? 'Admin password loaded for this session (enter to replace)'
+                        : 'Enter existing analytics admin password'}
                     style={{
                         flex: 1,
                         minWidth: 220,
@@ -315,7 +332,7 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
                     }}
                 />
                 <button onClick={applyPassword} style={{ backgroundColor: '#1A5276', color: 'white', border: 'none', borderRadius: 6, padding: '8px 10px', cursor: 'pointer' }}>
-                    Apply Password
+                    Use Admin Password
                 </button>
                 <button onClick={clearPassword} style={{ backgroundColor: '#6d7f8b', color: 'white', border: 'none', borderRadius: 6, padding: '8px 10px', cursor: 'pointer' }}>
                     Clear
@@ -326,7 +343,7 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
             </div>
 
             {authError ? <div style={{ color: '#C0392B', marginBottom: 12, fontSize: 13 }}>{authError}</div> : null}
-            {!isAuthenticated ? <div style={{ color: '#5d6f7d' }}>Set the analytics admin password to load data.</div> : null}
+            {!isAuthenticated ? <div style={{ color: '#5d6f7d' }}>Enter the existing server analytics admin password to load data.</div> : null}
 
             {isAuthenticated && summary ? (
                 <>
@@ -538,12 +555,17 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
                                             <input
                                                 type="range"
                                                 min={0}
-                                                max={Math.max(0, boardStates.length - 1)}
-                                                value={Math.min(boardTurnIndex, Math.max(0, boardStates.length - 1))}
+                                                max={replayableTurnCount}
+                                                value={Math.min(boardTurnIndex, replayableTurnCount)}
                                                 onChange={(e) => setBoardTurnIndex(Number(e.target.value))}
                                                 style={{ width: '100%' }}
                                             />
-                                            <div style={{ fontSize: 11, color: '#60717f' }}>Board after turn: {Math.min(boardTurnIndex, Math.max(0, boardStates.length - 1))}</div>
+                                            <div style={{ fontSize: 11, color: '#60717f' }}>Board after turn: {Math.min(boardTurnIndex, replayableTurnCount)}</div>
+                                            {gameDetail.turns?.length > 0 && replayableTurnCount === 0 ? (
+                                                <div style={{ fontSize: 11, color: '#C0392B', marginTop: 4 }}>
+                                                    Turns exist but tile coordinates were not saved for replay in this game.
+                                                </div>
+                                            ) : null}
                                         </div>
                                         <div style={{
                                             display: 'grid',
@@ -569,11 +591,44 @@ export default function AnalyticsViewer({ apiBaseUrl, onExit }) {
                                             )))}
                                         </div>
                                         <div style={{ marginTop: 8, maxHeight: 220, overflowY: 'auto', border: '1px solid #ebf0f4', borderRadius: 6 }}>
-                                            {(gameDetail.turns || []).map((turn) => (
-                                                <div key={turn.id} style={{ padding: '6px 8px', borderBottom: '1px solid #eef3f6', fontSize: 12 }}>
-                                                    <b>#{turn.turn_number}</b> {turn.turn_type} | +{turn.score} | <TurnWords turn={turn} />
-                                                </div>
-                                            ))}
+                                            {(gameDetail.turns || []).map((turn) => {
+                                                const targetTurn = Number(turn.turn_number) || 0;
+                                                const canJump = targetTurn >= 0 && targetTurn <= replayableTurnCount;
+                                                return (
+                                                    <div
+                                                        key={turn.id}
+                                                        style={{
+                                                            padding: '6px 8px',
+                                                            borderBottom: '1px solid #eef3f6',
+                                                            fontSize: 12,
+                                                            display: 'flex',
+                                                            alignItems: 'center',
+                                                            justifyContent: 'space-between',
+                                                            gap: 8,
+                                                        }}
+                                                    >
+                                                        <div>
+                                                            <b>#{turn.turn_number}</b> {turn.turn_type} | +{turn.score} | <TurnWords turn={turn} />
+                                                        </div>
+                                                        <button
+                                                            onClick={() => setBoardTurnIndex(Math.min(Math.max(0, targetTurn), replayableTurnCount))}
+                                                            disabled={!canJump}
+                                                            title={canJump ? `Jump board to turn ${targetTurn}` : 'No replay coordinates for this turn'}
+                                                            style={{
+                                                                border: '1px solid #c7d8e5',
+                                                                borderRadius: 6,
+                                                                backgroundColor: canJump ? '#f4f8fb' : '#f2f2f2',
+                                                                color: canJump ? '#1A5276' : '#8a8a8a',
+                                                                padding: '4px 8px',
+                                                                cursor: canJump ? 'pointer' : 'not-allowed',
+                                                                fontSize: 11,
+                                                            }}
+                                                        >
+                                                            Jump
+                                                        </button>
+                                                    </div>
+                                                );
+                                            })}
                                         </div>
                                     </>
                                 )}
