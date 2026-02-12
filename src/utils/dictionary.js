@@ -98,6 +98,13 @@ export function validateWords(words) {
 // Session-level cache: Map<word, boolean> — same word is never re-queried
 const serverValidationCache = new Map();
 
+function getApiBaseUrl() {
+    if (process.env.REACT_APP_WS_URL) {
+        return process.env.REACT_APP_WS_URL.replace(/^ws(s?):\/\//, 'http$1://');
+    }
+    return window.location.origin;
+}
+
 /**
  * Validate words that failed local dictionary lookup by asking the server.
  * Uses the WebSocket sendRequest() for request-response pattern.
@@ -146,6 +153,66 @@ export async function validateWordsWithServer(words, sendRequest) {
         // Cache and merge results
         for (const word of uncachedWords) {
             const isValid = serverResults[word] ?? true; // Permissive if missing
+            serverValidationCache.set(word, isValid);
+            cachedResults[word] = isValid;
+        }
+    }
+
+    const invalidWords = words.filter(w => !cachedResults[w]);
+    return { valid: invalidWords.length === 0, invalidWords };
+}
+
+/**
+ * Validate words via HTTP API (for single-player / no WebSocket mode).
+ * Uses the same session cache as WebSocket validation.
+ *
+ * @param {string[]} words - Words to validate on the server
+ * @returns {Promise<{ valid: boolean, invalidWords: string[] }>}
+ */
+export async function validateWordsWithHttpServer(words) {
+    if (!words || words.length === 0) {
+        return { valid: true, invalidWords: [] };
+    }
+
+    const uncachedWords = [];
+    const cachedResults = {};
+
+    for (const word of words) {
+        if (serverValidationCache.has(word)) {
+            cachedResults[word] = serverValidationCache.get(word);
+        } else {
+            uncachedWords.push(word);
+        }
+    }
+
+    if (uncachedWords.length === 0) {
+        const invalidWords = words.filter(w => !cachedResults[w]);
+        return { valid: invalidWords.length === 0, invalidWords };
+    }
+
+    let apiResults = null;
+    try {
+        const res = await fetch(getApiBaseUrl() + '/api/validate-words', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ words: uncachedWords }),
+        });
+        if (res.ok) {
+            const data = await res.json();
+            apiResults = data?.results || null;
+        }
+    } catch (err) {
+        console.error('HTTP server validation unavailable, accepting words permissively:', err);
+    }
+
+    if (!apiResults) {
+        for (const word of uncachedWords) {
+            serverValidationCache.set(word, true);
+            cachedResults[word] = true;
+        }
+    } else {
+        for (const word of uncachedWords) {
+            const isValid = apiResults[word] ?? true; // permissive if missing
             serverValidationCache.set(word, isValid);
             cachedResults[word] = isValid;
         }

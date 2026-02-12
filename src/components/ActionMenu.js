@@ -25,7 +25,7 @@ import { useWebSocket } from '../context/WebSocketContext';
 import { useLanguage } from '../context/LanguageContext';
 import { squareMultipliers } from '../utils/squareMultipliers';
 import { initialConsonantsBag, initialVowelsBag, initialBonusBag } from '../utils/initialLetterBags';
-import { validateWords, validateWordsWithServer } from '../utils/dictionary';
+import { validateWords, validateWordsWithServer, validateWordsWithHttpServer } from '../utils/dictionary';
 
 
 const computeWords = (main, unplayedTilesWithPositions, playedTilesWithPositions) => {
@@ -411,9 +411,9 @@ export default function ActionMenu() {
 
             if (!dictResult.valid) {
                 // Some words not in local dictionary — try server FST validation
-                if (isConnected) {
-                    setIsValidating(true);
-                    try {
+                setIsValidating(true);
+                try {
+                    if (isConnected) {
                         const serverResult = await validateWordsWithServer(
                             dictResult.invalidWords,
                             sendRequest
@@ -425,16 +425,20 @@ export default function ActionMenu() {
                         }
                         // Server accepted the words — continue with play
                         console.log('Words accepted by server FST:', dictResult.invalidWords);
-                    } catch (err) {
-                        console.error('Server validation error, accepting permissively:', err);
-                    } finally {
-                        setIsValidating(false);
+                    } else {
+                        // Single-player / no WebSocket: use HTTP validation endpoint
+                        const serverResult = await validateWordsWithHttpServer(dictResult.invalidWords);
+                        if (!serverResult.valid) {
+                            console.log('Invalid words (server HTTP confirmed):', serverResult.invalidWords);
+                            setInvalidWords(serverResult.invalidWords);
+                            return;
+                        }
+                        console.log('Words accepted by server HTTP FST:', dictResult.invalidWords);
                     }
-                } else {
-                    // Offline / single player — no server fallback, reject
-                    console.log('Invalid words (offline):', dictResult.invalidWords);
-                    setInvalidWords(dictResult.invalidWords);
-                    return;
+                } catch (err) {
+                    console.error('Server validation error, accepting permissively:', err);
+                } finally {
+                    setIsValidating(false);
                 }
             }
 

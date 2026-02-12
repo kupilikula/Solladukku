@@ -80,6 +80,30 @@ function handleHttpRequest(req, res) {
         return;
     }
 
+    if (req.method === 'POST' && pathname === '/api/validate-words') {
+        parseBody(req).then(async (body) => {
+            const words = Array.isArray(body.words) ? body.words : [];
+            const isValidPayload = words.length <= 20 && words.every(w => typeof w === 'string' && w.length > 0);
+            if (!isValidPayload) {
+                sendJson(res, 400, { error: 'Invalid words payload' });
+                return;
+            }
+
+            try {
+                const results = await validateMultipleWords(words);
+                sendJson(res, 200, { results });
+            } catch (err) {
+                console.error('HTTP validate-words error:', err);
+                const results = {};
+                for (const word of words) {
+                    results[word] = true; // Permissive fallback
+                }
+                sendJson(res, 200, { results });
+            }
+        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        return;
+    }
+
     if (req.method === 'GET' && pathname === '/api/stats') {
         sendJson(res, 200, analytics.getStats());
         return;
