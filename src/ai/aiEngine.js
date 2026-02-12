@@ -10,6 +10,36 @@ import { buildGrid, findAnchors, hasPrefix, isWordValid, countBagTiles, selectWo
 import _ from 'lodash';
 
 const STARRED_SQUARES = [[7, 7], [3, 3], [3, 11], [11, 3], [11, 11]];
+const AI_DEV_LOG = process.env.NODE_ENV === 'development';
+
+function createDebugContext() {
+    return {
+        startedAt: Date.now(),
+        anchors: 0,
+        directions: 0,
+        searchCalls: 0,
+        prefixRejected: 0,
+        crossRejectedAtPlacement: 0,
+        candidateChecks: 0,
+        rejectedShort: 0,
+        rejectedMainWord: 0,
+        rejectedFirstMoveNoStar: 0,
+        rejectedMainWordAfterExtension: 0,
+        rejectedCrossWordAfterPlacement: 0,
+        acceptedCandidates: [],
+        bestMoveUpdates: 0,
+        timedOut: false,
+    };
+}
+
+function pushAcceptedCandidate(debugCtx, candidate) {
+    if (!debugCtx) return;
+    debugCtx.acceptedCandidates.push(candidate);
+    debugCtx.acceptedCandidates.sort((a, b) => b.score - a.score);
+    if (debugCtx.acceptedCandidates.length > 8) {
+        debugCtx.acceptedCandidates.length = 8;
+    }
+}
 
 /**
  * Build tile objects from rack keys for the AI.
@@ -106,11 +136,15 @@ function getCrossWord(grid, row, col, direction, placedTile) {
 /**
  * Check if a cross word at this position would be valid.
  */
-function isCrossWordValid(grid, row, col, direction, placedTile) {
+function isCrossWordValid(grid, row, col, direction, placedTile, debugCtx = null) {
     const crossWord = getCrossWord(grid, row, col, direction, placedTile);
     if (!crossWord) return true;
     const word = crossWord.map(t => getTileLetter(t.tile)).join('');
-    return isWordValid(word);
+    const valid = isWordValid(word);
+    if (!valid && debugCtx) {
+        debugCtx.crossRejectedAtPlacement += 1;
+    }
+    return valid;
 }
 
 /**
@@ -119,41 +153,89 @@ function isCrossWordValid(grid, row, col, direction, placedTile) {
 export function computeAIMove(boardState, aiRackTileKeys, letterBags, aiUserId) {
     const startTime = Date.now();
     const TIME_LIMIT = 2500;
+    const debugCtx = AI_DEV_LOG ? createDebugContext() : null;
 
     const grid = buildGrid(boardState.playedTilesWithPositions);
     const isFirstMove = boardState.playedTilesWithPositions.length === 0;
     const anchors = findAnchors(grid, isFirstMove);
+    if (debugCtx) {
+        debugCtx.anchors = anchors.length;
+    }
 
     const rackTiles = buildRackTiles(aiRackTileKeys);
     if (rackTiles.length === 0) {
+        if (debugCtx) {
+            console.log('[AI] pass: empty rack');
+        }
         return { type: 'pass' };
     }
 
     let bestMove = null;
 
     for (const [anchorRow, anchorCol] of anchors) {
-        if (Date.now() - startTime > TIME_LIMIT && bestMove) break;
+        if (Date.now() - startTime > TIME_LIMIT) {
+            if (debugCtx) debugCtx.timedOut = true;
+            break;
+        }
 
         for (const direction of ['row', 'col']) {
-            if (Date.now() - startTime > TIME_LIMIT && bestMove) break;
+            if (Date.now() - startTime > TIME_LIMIT) {
+                if (debugCtx) debugCtx.timedOut = true;
+                break;
+            }
+            if (debugCtx) debugCtx.directions += 1;
 
             const move = findBestMoveFromAnchor(
                 grid, anchorRow, anchorCol, direction, rackTiles,
-                isFirstMove, startTime, TIME_LIMIT
+                isFirstMove, startTime, TIME_LIMIT, debugCtx
             );
             if (move && (!bestMove || move.score > bestMove.score)) {
                 bestMove = move;
+                if (debugCtx) debugCtx.bestMoveUpdates += 1;
             }
         }
     }
 
     if (bestMove) {
+        if (debugCtx) {
+            console.log('[AI] play summary', {
+                elapsedMs: Date.now() - startTime,
+                anchors: debugCtx.anchors,
+                directionsTried: debugCtx.directions,
+                searchCalls: debugCtx.searchCalls,
+                prefixRejected: debugCtx.prefixRejected,
+                crossRejectedAtPlacement: debugCtx.crossRejectedAtPlacement,
+                candidateChecks: debugCtx.candidateChecks,
+                rejectShort: debugCtx.rejectedShort,
+                rejectMainWord: debugCtx.rejectedMainWord,
+                rejectFirstMoveNoStar: debugCtx.rejectedFirstMoveNoStar,
+                rejectMainWordAfterExtension: debugCtx.rejectedMainWordAfterExtension,
+                rejectCrossWordAfterPlacement: debugCtx.rejectedCrossWordAfterPlacement,
+                bestMoveUpdates: debugCtx.bestMoveUpdates,
+                timedOut: debugCtx.timedOut,
+                topCandidates: debugCtx.acceptedCandidates,
+            });
+        }
         return buildPlayResult(bestMove, aiUserId);
     }
 
     // No valid move found — try swapping
     const bagTileCount = countBagTiles(letterBags);
     if (bagTileCount >= 3) {
+        if (debugCtx) {
+            console.log('[AI] swap summary', {
+                reason: 'no-valid-move',
+                elapsedMs: Date.now() - startTime,
+                timedOut: debugCtx.timedOut,
+                candidateChecks: debugCtx.candidateChecks,
+                prefixRejected: debugCtx.prefixRejected,
+                crossRejectedAtPlacement: debugCtx.crossRejectedAtPlacement,
+                rejectMainWord: debugCtx.rejectedMainWord,
+                rejectMainWordAfterExtension: debugCtx.rejectedMainWordAfterExtension,
+                rejectCrossWordAfterPlacement: debugCtx.rejectedCrossWordAfterPlacement,
+                topCandidates: debugCtx.acceptedCandidates,
+            });
+        }
         const tilesToSwap = selectWorstTiles(aiRackTileKeys, Math.min(3, aiRackTileKeys.length), TileSet);
         const drawnTiles = drawFromBags(tilesToSwap.length, letterBags);
         return {
@@ -163,6 +245,21 @@ export function computeAIMove(boardState, aiRackTileKeys, letterBags, aiUserId) 
                 drawnTiles,
             },
         };
+    }
+
+    if (debugCtx) {
+        console.log('[AI] pass summary', {
+            reason: 'no-valid-move-and-low-bag',
+            elapsedMs: Date.now() - startTime,
+            timedOut: debugCtx.timedOut,
+            candidateChecks: debugCtx.candidateChecks,
+            prefixRejected: debugCtx.prefixRejected,
+            crossRejectedAtPlacement: debugCtx.crossRejectedAtPlacement,
+            rejectMainWord: debugCtx.rejectedMainWord,
+            rejectMainWordAfterExtension: debugCtx.rejectedMainWordAfterExtension,
+            rejectCrossWordAfterPlacement: debugCtx.rejectedCrossWordAfterPlacement,
+            topCandidates: debugCtx.acceptedCandidates,
+        });
     }
 
     return { type: 'pass' };
@@ -189,7 +286,7 @@ function drawFromBags(count, letterBags) {
  * Find the best scoring move from a given anchor in a given direction.
  * direction: 'row' = horizontal, 'col' = vertical
  */
-function findBestMoveFromAnchor(grid, anchorRow, anchorCol, direction, rackTiles, isFirstMove, startTime, timeLimit) {
+function findBestMoveFromAnchor(grid, anchorRow, anchorCol, direction, rackTiles, isFirstMove, startTime, timeLimit, debugCtx = null) {
     const isHorizontal = direction === 'row';
     const fixedLine = isHorizontal ? anchorRow : anchorCol;
     const anchorMain = isHorizontal ? anchorCol : anchorRow;
@@ -235,13 +332,18 @@ function findBestMoveFromAnchor(grid, anchorRow, anchorCol, direction, rackTiles
 
     let bestMove = null;
 
-    // Try different starting positions
+    // Try starting positions closest to anchor first.
+    // This finds short playable words quickly and avoids timeouts on huge branches.
     const earliestStart = prefixStart === anchorMain
         ? anchorMain - maxExtend
         : prefixStart;
+    const startPositions = [];
+    for (let startPos = anchorMain; startPos >= earliestStart; startPos--) {
+        startPositions.push(startPos);
+    }
 
-    for (let startPos = earliestStart; startPos <= anchorMain; startPos++) {
-        if (Date.now() - startTime > timeLimit && bestMove) break;
+    for (const startPos of startPositions) {
+        if (Date.now() - startTime > timeLimit) break;
 
         const placements = [];
         const usedRackIndices = new Set();
@@ -256,7 +358,7 @@ function findBestMoveFromAnchor(grid, anchorRow, anchorCol, direction, rackTiles
                     bestMove = move;
                 }
             },
-            startTime, timeLimit
+            startTime, timeLimit, debugCtx
         );
     }
 
@@ -270,8 +372,11 @@ function findBestMoveFromAnchor(grid, anchorRow, anchorCol, direction, rackTiles
 function searchFromPosition(
     grid, isHorizontal, fixedLine, pos, anchorPos,
     rackTiles, usedRackIndices, placements, currentLetters,
-    isFirstMove, onMoveFound, startTime, timeLimit
+    isFirstMove, onMoveFound, startTime, timeLimit, debugCtx = null
 ) {
+    if (debugCtx) {
+        debugCtx.searchCalls += 1;
+    }
     if (pos >= 15) return;
     if (Date.now() - startTime > timeLimit) return;
 
@@ -286,13 +391,15 @@ function searchFromPosition(
         if (hasPrefix(prefix)) {
             // If we've passed/reached the anchor and placed at least one tile
             if (pos >= anchorPos && placements.length > 0) {
-                tryRecordMove(grid, isHorizontal, fixedLine, placements, currentLetters, isFirstMove, onMoveFound);
+                tryRecordMove(grid, isHorizontal, fixedLine, placements, currentLetters, isFirstMove, onMoveFound, debugCtx);
             }
             searchFromPosition(
                 grid, isHorizontal, fixedLine, pos + 1, anchorPos,
                 rackTiles, usedRackIndices, placements, currentLetters,
-                isFirstMove, onMoveFound, startTime, timeLimit
+                isFirstMove, onMoveFound, startTime, timeLimit, debugCtx
             );
+        } else if (debugCtx) {
+            debugCtx.prefixRejected += 1;
         }
 
         currentLetters.pop();
@@ -314,7 +421,7 @@ function searchFromPosition(
             if (!letter) continue;
 
             // Check cross word validity at this position
-            if (!isCrossWordValid(grid, r, c, isHorizontal ? 'row' : 'col', tryTile)) {
+            if (!isCrossWordValid(grid, r, c, isHorizontal ? 'row' : 'col', tryTile, debugCtx)) {
                 continue;
             }
 
@@ -327,18 +434,21 @@ function searchFromPosition(
 
                 // If we've passed/reached the anchor, check for valid word
                 if (pos >= anchorPos) {
-                    tryRecordMove(grid, isHorizontal, fixedLine, placements, currentLetters, isFirstMove, onMoveFound);
+                    tryRecordMove(grid, isHorizontal, fixedLine, placements, currentLetters, isFirstMove, onMoveFound, debugCtx);
                 }
 
                 // Continue extending rightward/downward
                 searchFromPosition(
                     grid, isHorizontal, fixedLine, pos + 1, anchorPos,
                     rackTiles, usedRackIndices, placements, currentLetters,
-                    isFirstMove, onMoveFound, startTime, timeLimit
+                    isFirstMove, onMoveFound, startTime, timeLimit, debugCtx
                 );
 
                 placements.pop();
                 usedIndices.forEach(idx => usedRackIndices.delete(idx));
+            }
+            else if (debugCtx) {
+                debugCtx.prefixRejected += 1;
             }
 
             currentLetters.pop();
@@ -394,12 +504,21 @@ function buildTileCandidates(tile, tileIdx, rackTiles, usedRackIndices) {
 /**
  * Try to record a valid move from the current placements.
  */
-function tryRecordMove(grid, isHorizontal, fixedLine, placements, currentLetters, isFirstMove, onMoveFound) {
+function tryRecordMove(grid, isHorizontal, fixedLine, placements, currentLetters, isFirstMove, onMoveFound, debugCtx = null) {
     if (placements.length === 0) return;
+    if (debugCtx) {
+        debugCtx.candidateChecks += 1;
+    }
 
     const word = currentLetters.join('');
-    if (word.length < 2) return;
-    if (!isWordValid(word)) return;
+    if (word.length < 2) {
+        if (debugCtx) debugCtx.rejectedShort += 1;
+        return;
+    }
+    if (!isWordValid(word)) {
+        if (debugCtx) debugCtx.rejectedMainWord += 1;
+        return;
+    }
 
     // Check placement rules: must touch existing tile or use starred square
     const newlyPlayed = placements.map(p => ({ row: p.row, col: p.col, tile: p.tile }));
@@ -407,7 +526,10 @@ function tryRecordMove(grid, isHorizontal, fixedLine, placements, currentLetters
         const usesStarred = newlyPlayed.some(t =>
             STARRED_SQUARES.some(([sr, sc]) => t.row === sr && t.col === sc)
         );
-        if (!usesStarred) return;
+        if (!usesStarred) {
+            if (debugCtx) debugCtx.rejectedFirstMoveNoStar += 1;
+            return;
+        }
     }
 
     // Build all formed words for scoring
@@ -454,7 +576,10 @@ function tryRecordMove(grid, isHorizontal, fixedLine, placements, currentLetters
 
     // Verify the full main word is valid
     const mainWordStr = mainWord.map(t => getTileLetter(t.tile)).join('');
-    if (!isWordValid(mainWordStr)) return;
+    if (!isWordValid(mainWordStr)) {
+        if (debugCtx) debugCtx.rejectedMainWordAfterExtension += 1;
+        return;
+    }
     allFormedWords.push(mainWord);
 
     // Collect cross words
@@ -463,12 +588,20 @@ function tryRecordMove(grid, isHorizontal, fixedLine, placements, currentLetters
         const crossWord = getCrossWord(grid, p.row, p.col, mainDir, p.tile);
         if (crossWord) {
             const crossWordStr = crossWord.map(t => getTileLetter(t.tile)).join('');
-            if (!isWordValid(crossWordStr)) return; // invalid cross word, abort entire move
+            if (!isWordValid(crossWordStr)) {
+                if (debugCtx) debugCtx.rejectedCrossWordAfterPlacement += 1;
+                return; // invalid cross word, abort entire move
+            }
             allFormedWords.push(crossWord);
         }
     }
 
     const { turnScore, wordScores } = calculateTurnScore(allFormedWords);
+    pushAcceptedCandidate(debugCtx, {
+        score: turnScore,
+        words: allFormedWords.map(w => w.map(t => getTileLetter(t.tile)).join('')),
+        placements: placements.length,
+    });
 
     onMoveFound({
         score: turnScore,
