@@ -25,6 +25,10 @@ export function loadDictionary() {
         })
         .then(text => {
             const words = text.split('\n').filter(Boolean);
+            if (words.length < 1000) {
+                console.warn(`Dictionary too small (${words.length} entries) — likely an LFS pointer. Falling back to permissive mode.`);
+                return; // leave dictionary as null → permissive fallback
+            }
             dictionary = words; // already sorted by build script
             console.log(`Dictionary loaded: ${dictionary.length} words`);
         })

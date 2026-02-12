@@ -13,7 +13,7 @@ A React-based Tamil Scrabble game with a landing page, real-time multiplayer via
 - **Server**: Node.js with ws library, foma/flookup for FST validation, origin/rate-limit hardening, SQLite analytics
 - **Dictionary Build**: Python 3 scripts, foma toolkit for FST morphological generation
 - **Deployment**: Railway (Dockerfile-based, auto-deploy on push to `main`). Server serves both API/WebSocket and React static build as a single service.
-- **Dictionary Storage**: Git LFS (135MB file exceeds GitHub's 100MB limit)
+- **Dictionary Storage**: Git LFS (135MB file exceeds GitHub's 100MB limit). Dockerfile auto-downloads from GitHub if LFS pointer isn't resolved.
 
 ## Project Structure
 
@@ -87,7 +87,7 @@ src/
 .env                          # Dev defaults (REACT_APP_WS_URL=ws://localhost:8000)
 .env.production               # Production config (REACT_APP_WS_URL=wss://DOMAIN/ws)
 ecosystem.config.js           # PM2 process manager config (legacy DO deploy)
-Dockerfile                    # Combined build: React frontend + Node.js server
+Dockerfile                    # Combined build: React frontend + Node.js server (with LFS fallback)
 .dockerignore                 # Excludes node_modules, env files, wordlists from Docker context
 railway.toml                  # Railway deploy config: watchPatterns to skip doc-only builds
 ```
@@ -184,7 +184,7 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 - **File**: `public/tamil_dictionary.txt` — 2.85M words, sorted (Unicode codepoint order)
 - **Loaded** on app startup via `loadDictionary()` in `src/utils/dictionary.js`
 - **Lookup**: Binary search using `<`/`>` comparison (NOT `localeCompare` — must match Python's `sorted()` codepoint order)
-- **Permissive fallback**: If dictionary fails to load, all words are accepted
+- **Permissive fallback**: If dictionary fails to load or is too small (< 1000 entries, e.g. LFS pointer), all words are accepted
 
 ### Dictionary Sources (built by `wordlists/build_dictionary.py`)
 
@@ -686,7 +686,7 @@ Deployed as a single Dockerfile-based service on Railway:
 - `railway.toml` `watchPatterns` limits rebuilds to code changes (skips doc-only commits)
 - Custom domain: `solmaalai.com` (CNAME → Railway). `சொல்மாலை.com` redirects via Namecheap.
 - FST validation is disabled in production (flookup not available in container) — client-side dictionary still validates
-- Dictionary file (135MB) stored via Git LFS
+- Dictionary file (135MB) stored via Git LFS. Railway's Docker builder doesn't resolve LFS pointers, so the Dockerfile detects this (file < 1KB) and downloads the actual file from GitHub.
 - Railway CLI: `railway up` for manual deploy, `railway logs` to check output
 
 ### Deployment (Legacy - Digital Ocean)
