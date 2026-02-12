@@ -4,6 +4,7 @@ import {validate as isValidUUID} from 'uuid';
 import {useEffect, useMemo, useState, useCallback, useRef} from "react";
 import {useDispatch} from "react-redux";
 import {storeUserId} from "./store/actions";
+import {setAutoStartPending} from "./store/GameSlice";
 import {WebSocketProvider} from "./context/WebSocketContext";
 import {LanguageProvider, useLanguage} from "./context/LanguageContext";
 
@@ -307,8 +308,9 @@ function AppContent() {
         const url = new URL(window.location);
         url.searchParams.set('game', id);
         window.history.replaceState({}, '', url);
+        dispatch(setAutoStartPending(true));
         setGameId(id);
-    }, []);
+    }, [dispatch]);
 
     const handleJoinGame = useCallback((code) => {
         const url = new URL(window.location);

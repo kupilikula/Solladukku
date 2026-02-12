@@ -11,6 +11,8 @@ export const GameSlice = createSlice({
         isMyTurn: true,           // For 2-player: starts as true for first player
         gameStarted: false,
         needsInitialDraw: false,  // Flag to trigger tile draw after sync
+        autoStartPending: false,  // Flag to auto-start game after WS connects
+        myInitialDraw: null,      // Tiles drawn at game start (for re-syncing late joiners)
         playerNames: {},          // Map of {userId: displayName}
         consecutivePasses: 0,     // Track consecutive passes/swaps
         gameOver: false,          // Is the game over?
@@ -35,6 +37,12 @@ export const GameSlice = createSlice({
         clearNeedsInitialDraw: (state) => {
             state.needsInitialDraw = false;
         },
+        setAutoStartPending: (state, action) => {
+            state.autoStartPending = action.payload;
+        },
+        setMyInitialDraw: (state, action) => {
+            state.myInitialDraw = action.payload;
+        },
     },
     extraReducers: builder => {
         builder
@@ -44,6 +52,8 @@ export const GameSlice = createSlice({
                 state.isMyTurn = true;
                 state.gameStarted = true;
                 state.needsInitialDraw = false;
+                state.autoStartPending = false;
+                state.myInitialDraw = null;
                 state.consecutivePasses = 0;
                 state.gameOver = false;
                 state.winner = null;
@@ -126,6 +136,6 @@ export const GameSlice = createSlice({
     }
 })
 
-export const { setMyTurn, setCurrentTurnUserId, setPlayerName, clearNeedsInitialDraw, setSwapMode } = GameSlice.actions
+export const { setMyTurn, setCurrentTurnUserId, setPlayerName, clearNeedsInitialDraw, setAutoStartPending, setMyInitialDraw, setSwapMode } = GameSlice.actions
 
 export default GameSlice.reducer

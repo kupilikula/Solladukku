@@ -90,10 +90,24 @@ export function WebSocketProvider({ userId, gameId, children }) {
                             dispatch(addOtherPlayerTurn({ turnInfo: message.turnInfo }));
                             break;
                         }
-                        case 'playerJoined':
+                        case 'playerJoined': {
                             // Someone joined our game - we keep our turn
                             dispatch(addPlayers({ otherPlayerIds: message.playerIds }));
+                            // If game already started, re-sync the new player
+                            const gameState = store.getState().Game;
+                            if (gameState.gameStarted && gameState.myInitialDraw) {
+                                setTimeout(() => {
+                                    if (wsRef.current?.readyState === WebSocket.OPEN) {
+                                        wsRef.current.send(JSON.stringify({
+                                            messageType: 'newGame',
+                                            startingPlayerId: gameState.userId,
+                                            drawnTiles: gameState.myInitialDraw,
+                                        }));
+                                    }
+                                }, 300);
+                            }
                             break;
+                        }
                         case 'joinedExistingGame':
                             // We joined an existing game - wait for our turn
                             dispatch(addPlayers({ otherPlayerIds: message.playerIds }));

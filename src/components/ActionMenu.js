@@ -12,7 +12,7 @@ import {
     passTurn,
     setGameOver
 } from "../store/actions";
-import { setSwapMode } from "../store/GameSlice";
+import { setSwapMode, setMyInitialDraw } from "../store/GameSlice";
 import constants from "../utils/constants";
 import _ from 'lodash';
 import { FaShuffle } from "react-icons/fa6";
@@ -507,6 +507,7 @@ export default function ActionMenu() {
         };
         let fetchedLetters = fetchNLettersFromBags(14, freshBags);
         dispatch(replenishRack(fetchedLetters));
+        dispatch(setMyInitialDraw(fetchedLetters));
 
         // Broadcast new game to other players
         if (isConnected) {
