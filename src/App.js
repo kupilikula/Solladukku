@@ -1,5 +1,6 @@
 import './App.css';
 import GameFrame from './components/GameFrame';
+import AnalyticsViewer from './components/AnalyticsViewer';
 import {validate as isValidUUID} from 'uuid';
 import {useEffect, useMemo, useState, useCallback, useRef} from "react";
 import {useDispatch} from "react-redux";
@@ -519,6 +520,10 @@ function AppContent() {
         }
         return null;
     }, []);
+    const analyticsMode = useMemo(() => {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('analytics') === '1';
+    }, []);
 
     const [gameId, setGameId] = useState(initialGameId);
     const [mode, setMode] = useState(initialGameId ? 'multiplayer' : null);
@@ -528,9 +533,17 @@ function AppContent() {
     const [matchingPosition, setMatchingPosition] = useState(null);
     const [matchingError, setMatchingError] = useState('');
 
-    useEffect(() => {
-        loadDictionary();
+    const exitAnalytics = useCallback(() => {
+        const url = new URL(window.location);
+        url.searchParams.delete('analytics');
+        window.history.replaceState({}, '', url);
+        window.location.reload();
     }, []);
+
+    useEffect(() => {
+        if (analyticsMode) return;
+        loadDictionary();
+    }, [analyticsMode]);
 
     const enterMultiplayerGame = useCallback((id, starterUserId = null) => {
         const url = new URL(window.location);
@@ -676,6 +689,15 @@ function AppContent() {
             }).catch(() => {});
         }
     }, [gameId, userId]);
+
+    if (analyticsMode) {
+        return (
+            <AnalyticsViewer
+                apiBaseUrl={getApiBaseUrl()}
+                onExit={exitAnalytics}
+            />
+        );
+    }
 
     if (!gameId && mode !== 'singleplayer') {
         return (

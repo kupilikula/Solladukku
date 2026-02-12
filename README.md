@@ -10,6 +10,7 @@ A multiplayer Tamil Scrabble game built with React and WebSockets.
 - Single-player mode with AI opponent
 - Persistent usernames
 - Persistent leaderboard/rating system (SQLite-backed; shown when data exists)
+- Password-protected admin analytics inspector (`?analytics=1`)
 - Tamil/English bilingual UI
 - 2.85M-word Tamil dictionary with server-side FST validation fallback
 - Dictionary preloaded at app startup; Play button stays disabled until dictionary is ready
@@ -63,6 +64,14 @@ The server exposes:
 - `GET /health` → returns `200` JSON (`{ ok: true, service, timestamp }`)
 
 For Railway deployments, set the service **Healthcheck Path** to `/health` to reduce deploy-time 500s during rollouts.
+
+## Admin Analytics
+
+1. Set `ANALYTICS_ADMIN_PASSWORD` in server environment variables.
+2. Open the app with `?analytics=1` (example: `http://localhost:3000/?analytics=1`).
+3. Enter the admin password in the inspector UI.
+
+Protected endpoints are served under `/api/admin/*` and require `X-Admin-Password`.
 
 ## Tech Stack
 

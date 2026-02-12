@@ -84,8 +84,22 @@ function init() {
         CREATE INDEX IF NOT EXISTS idx_games_started_at ON games(started_at);
         CREATE INDEX IF NOT EXISTS idx_turns_game_id ON turns(game_id);
         CREATE INDEX IF NOT EXISTS idx_turns_games_row_id ON turns(games_row_id);
+        CREATE INDEX IF NOT EXISTS idx_turns_user_id ON turns(user_id);
+        CREATE INDEX IF NOT EXISTS idx_games_player1_id ON games(player1_id);
+        CREATE INDEX IF NOT EXISTS idx_games_player2_id ON games(player2_id);
         CREATE INDEX IF NOT EXISTS idx_players_rating ON players(rating DESC);
     `);
+
+    // Lightweight migrations for existing DBs.
+    const turnColumns = new Set(
+        db.prepare(`PRAGMA table_info(turns)`).all().map(col => col.name)
+    );
+    if (!turnColumns.has('placed_tiles_json')) {
+        db.exec(`ALTER TABLE turns ADD COLUMN placed_tiles_json TEXT`);
+    }
+    if (!turnColumns.has('formed_words_json')) {
+        db.exec(`ALTER TABLE turns ADD COLUMN formed_words_json TEXT`);
+    }
 
     console.log('Analytics DB initialized at', DB_PATH);
 }
@@ -158,7 +172,16 @@ function getActiveGameRowId(gameId) {
     return activeGames.get(gameId) || null;
 }
 
-function recordTurn(gameId, { userId, turnType, score, wordsPlayed, wordScores, tilesPlaced }) {
+function recordTurn(gameId, {
+    userId,
+    turnType,
+    score,
+    wordsPlayed,
+    wordScores,
+    tilesPlaced,
+    placedTiles,
+    formedWords,
+}) {
     const rowId = activeGames.get(gameId);
     if (!rowId) return;
 
@@ -166,15 +189,19 @@ function recordTurn(gameId, { userId, turnType, score, wordsPlayed, wordScores, 
     turnCounters.set(rowId, turnNumber);
 
     const stmt = db.prepare(
-        `INSERT INTO turns (game_id, games_row_id, user_id, turn_number, turn_type, score, words_played, word_scores, tiles_placed)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        `INSERT INTO turns (
+            game_id, games_row_id, user_id, turn_number, turn_type, score,
+            words_played, word_scores, tiles_placed, placed_tiles_json, formed_words_json
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
     );
     stmt.run(
         gameId, rowId, userId, turnNumber, turnType,
         score || 0,
         wordsPlayed ? JSON.stringify(wordsPlayed) : null,
         wordScores ? JSON.stringify(wordScores) : null,
-        tilesPlaced || 0
+        tilesPlaced || 0,
+        placedTiles ? JSON.stringify(placedTiles) : null,
+        formedWords ? JSON.stringify(formedWords) : null
     );
 
     // Update cumulative score in games table
@@ -278,15 +305,64 @@ function getStats() {
     return { totalVisits, totalGames, completedGames, totalTurns };
 }
 
-function getRecentGames(limit = 20) {
-    return db.prepare(
+function getRecentGames(limit = 20, offset = 0, query = '') {
+    const hasQuery = typeof query === 'string' && query.trim().length > 0;
+    const like = `%${query.trim()}%`;
+    const whereClause = hasQuery
+        ? `WHERE (
+            g.game_id LIKE ? OR
+            g.player1_id LIKE ? OR
+            g.player2_id LIKE ? OR
+            p1.username LIKE ? OR
+            p2.username LIKE ?
+        )`
+        : '';
+
+    const total = hasQuery
+        ? db.prepare(
+            `SELECT COUNT(*) as count
+             FROM games g
+             LEFT JOIN players p1 ON p1.user_id = g.player1_id
+             LEFT JOIN players p2 ON p2.user_id = g.player2_id
+             ${whereClause}`
+        ).get(like, like, like, like, like).count
+        : db.prepare('SELECT COUNT(*) as count FROM games').get().count;
+
+    const params = hasQuery
+        ? [like, like, like, like, like, limit, offset]
+        : [limit, offset];
+
+    const items = db.prepare(
         `SELECT g.*, p1.username as player1_name, p2.username as player2_name
          FROM games g
          LEFT JOIN players p1 ON p1.user_id = g.player1_id
          LEFT JOIN players p2 ON p2.user_id = g.player2_id
+         ${whereClause}
          ORDER BY g.created_at DESC
-         LIMIT ?`
-    ).all(limit);
+         LIMIT ? OFFSET ?`
+    ).all(...params);
+
+    return { items, total, limit, offset };
+}
+
+function parseJsonSafe(value) {
+    if (!value || typeof value !== 'string') return null;
+    try {
+        return JSON.parse(value);
+    } catch {
+        return null;
+    }
+}
+
+function normalizeTurnRow(turn) {
+    if (!turn) return turn;
+    return {
+        ...turn,
+        wordsPlayed: parseJsonSafe(turn.words_played) || [],
+        wordScores: parseJsonSafe(turn.word_scores) || [],
+        placedTiles: parseJsonSafe(turn.placed_tiles_json) || [],
+        formedWords: parseJsonSafe(turn.formed_words_json) || [],
+    };
 }
 
 function getGameDetail(gameId) {
@@ -302,8 +378,12 @@ function getGameDetail(gameId) {
     if (!game) return null;
 
     const turns = db.prepare(
-        'SELECT * FROM turns WHERE games_row_id = ? ORDER BY turn_number ASC'
-    ).all(game.id);
+        `SELECT id, game_id, games_row_id, user_id, turn_number, turn_type, score,
+                words_played, word_scores, tiles_placed, placed_tiles_json, formed_words_json, created_at
+         FROM turns
+         WHERE games_row_id = ?
+         ORDER BY turn_number ASC`
+    ).all(game.id).map(normalizeTurnRow);
 
     return { game, turns };
 }
@@ -338,6 +418,126 @@ function getLeaderboard(limit = 20) {
     `).all(limit);
 }
 
+function getAdminSummary() {
+    const baseStats = getStats();
+    const gameStats = db.prepare(`
+        SELECT
+            COALESCE(AVG(total_turns), 0) as avgTurnsPerGame,
+            COALESCE(AVG(player1_score + player2_score), 0) as avgCombinedScorePerGame
+        FROM games
+    `).get();
+    const activePlayers30d = db.prepare(`
+        SELECT COUNT(DISTINCT user_id) as count
+        FROM visits
+        WHERE user_id IS NOT NULL AND created_at >= datetime('now', '-30 days')
+    `).get().count;
+    const turnTypeBreakdown = db.prepare(`
+        SELECT turn_type as turnType, COUNT(*) as count
+        FROM turns
+        GROUP BY turn_type
+        ORDER BY count DESC
+    `).all();
+
+    return {
+        ...baseStats,
+        activePlayers30d,
+        avgTurnsPerGame: Number(gameStats.avgTurnsPerGame || 0),
+        avgCombinedScorePerGame: Number(gameStats.avgCombinedScorePerGame || 0),
+        completionRate: baseStats.totalGames > 0
+            ? Number(((baseStats.completedGames * 100) / baseStats.totalGames).toFixed(1))
+            : 0,
+        turnTypeBreakdown,
+    };
+}
+
+function getPlayers(limit = 20, offset = 0, query = '') {
+    const hasQuery = typeof query === 'string' && query.trim().length > 0;
+    const like = `%${query.trim()}%`;
+    const whereClause = hasQuery
+        ? `WHERE (user_id LIKE ? OR username LIKE ?)`
+        : '';
+    const total = hasQuery
+        ? db.prepare(`SELECT COUNT(*) as count FROM players ${whereClause}`).get(like, like).count
+        : db.prepare('SELECT COUNT(*) as count FROM players').get().count;
+    const items = hasQuery
+        ? db.prepare(`
+            SELECT
+                user_id as userId,
+                username,
+                rating,
+                games_played as gamesPlayed,
+                wins,
+                losses,
+                draws,
+                total_score as totalScore,
+                created_at as createdAt,
+                updated_at as updatedAt
+            FROM players
+            ${whereClause}
+            ORDER BY rating DESC, wins DESC, total_score DESC
+            LIMIT ? OFFSET ?
+        `).all(like, like, limit, offset)
+        : db.prepare(`
+            SELECT
+                user_id as userId,
+                username,
+                rating,
+                games_played as gamesPlayed,
+                wins,
+                losses,
+                draws,
+                total_score as totalScore,
+                created_at as createdAt,
+                updated_at as updatedAt
+            FROM players
+            ORDER BY rating DESC, wins DESC, total_score DESC
+            LIMIT ? OFFSET ?
+        `).all(limit, offset);
+
+    return { items, total, limit, offset };
+}
+
+function getPlayerDetail(userId) {
+    if (!userId || typeof userId !== 'string') return null;
+    const profile = db.prepare(`
+        SELECT
+            user_id as userId,
+            username,
+            rating,
+            games_played as gamesPlayed,
+            wins,
+            losses,
+            draws,
+            total_score as totalScore,
+            created_at as createdAt,
+            updated_at as updatedAt
+        FROM players
+        WHERE user_id = ?
+    `).get(userId);
+    if (!profile) return null;
+
+    const recentGames = db.prepare(`
+        SELECT g.*, p1.username as player1_name, p2.username as player2_name
+        FROM games g
+        LEFT JOIN players p1 ON p1.user_id = g.player1_id
+        LEFT JOIN players p2 ON p2.user_id = g.player2_id
+        WHERE g.player1_id = ? OR g.player2_id = ?
+        ORDER BY g.created_at DESC
+        LIMIT 20
+    `).all(userId, userId);
+
+    const recentTurns = db.prepare(`
+        SELECT id, game_id, games_row_id, user_id, turn_number, turn_type, score,
+               words_played, word_scores, tiles_placed, placed_tiles_json, formed_words_json, created_at
+        FROM turns
+        WHERE user_id = ?
+        ORDER BY created_at DESC
+        LIMIT 50
+    `).all(userId).map(normalizeTurnRow);
+
+    return { profile, recentGames, recentTurns };
+}
+
 function close() {
     if (db) {
         db.close();
@@ -361,5 +561,8 @@ module.exports = {
     getGameDetail,
     getVisitsPerDay,
     getLeaderboard,
+    getAdminSummary,
+    getPlayers,
+    getPlayerDetail,
     close,
 };

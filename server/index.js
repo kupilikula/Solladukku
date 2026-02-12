@@ -3,6 +3,7 @@ const http = require('http');
 const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
+const crypto = require('crypto');
 const analytics = require('./analytics');
 
 const PORT = process.env.PORT || 8000;
@@ -17,6 +18,7 @@ const MATCH_ASSIGNMENT_TTL_MS = 10 * 60 * 1000;
 const MATCHMAKING_QUEUE_TTL_MS = 2 * 60 * 1000;
 const STRICT_SERVER_VALIDATION = String(process.env.STRICT_SERVER_VALIDATION || '').toLowerCase() === 'true';
 const ENABLE_GUESS_FSTS = String(process.env.ENABLE_GUESS_FSTS || '').toLowerCase() === 'true';
+const ANALYTICS_ADMIN_PASSWORD = process.env.ANALYTICS_ADMIN_PASSWORD || '';
 
 // Initialize analytics DB
 analytics.init();
@@ -33,7 +35,7 @@ function setCorsHeaders(res, req) {
         res.setHeader('Access-Control-Allow-Origin', '*');
     }
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-Admin-Password');
 }
 
 function sendJson(res, statusCode, data) {
@@ -61,6 +63,35 @@ function sanitizeUsername(username) {
     const trimmed = username.trim().slice(0, 24);
     if (!trimmed) return null;
     return trimmed;
+}
+
+function secureEqual(a, b) {
+    if (typeof a !== 'string' || typeof b !== 'string') return false;
+    const bufA = Buffer.from(a);
+    const bufB = Buffer.from(b);
+    if (bufA.length !== bufB.length) return false;
+    return crypto.timingSafeEqual(bufA, bufB);
+}
+
+function getAdminPasswordFromRequest(req) {
+    const headerPassword = req.headers['x-admin-password'];
+    if (typeof headerPassword === 'string' && headerPassword.trim()) {
+        return headerPassword.trim();
+    }
+    return '';
+}
+
+function requireAnalyticsAdmin(req, res) {
+    if (!ANALYTICS_ADMIN_PASSWORD) {
+        sendJson(res, 503, { error: 'Analytics admin password is not configured on server' });
+        return false;
+    }
+    const provided = getAdminPasswordFromRequest(req);
+    if (!secureEqual(provided, ANALYTICS_ADMIN_PASSWORD)) {
+        sendJson(res, 401, { error: 'Unauthorized' });
+        return false;
+    }
+    return true;
 }
 
 function generateGameId() {
@@ -137,25 +168,31 @@ function handleHttpRequest(req, res) {
         return;
     }
 
-    if (req.method === 'GET' && pathname === '/api/stats') {
-        sendJson(res, 200, analytics.getStats());
-        return;
-    }
-
     if (req.method === 'GET' && pathname === '/api/leaderboard') {
         const limit = parseInt(url.searchParams.get('limit')) || 20;
         sendJson(res, 200, analytics.getLeaderboard(Math.min(limit, 100)));
         return;
     }
 
-    if (req.method === 'GET' && pathname === '/api/games') {
-        const limit = parseInt(url.searchParams.get('limit')) || 20;
-        sendJson(res, 200, analytics.getRecentGames(Math.min(limit, 100)));
+    if (pathname.startsWith('/api/admin/')) {
+        if (!requireAnalyticsAdmin(req, res)) return;
+    }
+
+    if (req.method === 'GET' && pathname === '/api/admin/summary') {
+        sendJson(res, 200, analytics.getAdminSummary());
         return;
     }
 
-    if (req.method === 'GET' && pathname.startsWith('/api/games/')) {
-        const gameId = pathname.slice('/api/games/'.length);
+    if (req.method === 'GET' && pathname === '/api/admin/games') {
+        const limit = parseInt(url.searchParams.get('limit')) || 20;
+        const offset = parseInt(url.searchParams.get('offset')) || 0;
+        const q = url.searchParams.get('q') || '';
+        sendJson(res, 200, analytics.getRecentGames(Math.min(limit, 100), Math.max(0, offset), q));
+        return;
+    }
+
+    if (req.method === 'GET' && pathname.startsWith('/api/admin/games/')) {
+        const gameId = pathname.slice('/api/admin/games/'.length);
         if (!gameId) { sendJson(res, 400, { error: 'Missing gameId' }); return; }
         const detail = analytics.getGameDetail(gameId);
         if (!detail) { sendJson(res, 404, { error: 'Game not found' }); return; }
@@ -163,7 +200,24 @@ function handleHttpRequest(req, res) {
         return;
     }
 
-    if (req.method === 'GET' && pathname === '/api/visits/daily') {
+    if (req.method === 'GET' && pathname === '/api/admin/players') {
+        const limit = parseInt(url.searchParams.get('limit')) || 20;
+        const offset = parseInt(url.searchParams.get('offset')) || 0;
+        const q = url.searchParams.get('q') || '';
+        sendJson(res, 200, analytics.getPlayers(Math.min(limit, 100), Math.max(0, offset), q));
+        return;
+    }
+
+    if (req.method === 'GET' && pathname.startsWith('/api/admin/players/')) {
+        const userId = pathname.slice('/api/admin/players/'.length);
+        if (!userId) { sendJson(res, 400, { error: 'Missing userId' }); return; }
+        const detail = analytics.getPlayerDetail(userId);
+        if (!detail) { sendJson(res, 404, { error: 'Player not found' }); return; }
+        sendJson(res, 200, detail);
+        return;
+    }
+
+    if (req.method === 'GET' && pathname === '/api/admin/visits/daily') {
         const days = parseInt(url.searchParams.get('days')) || 30;
         sendJson(res, 200, analytics.getVisitsPerDay(Math.min(days, 365)));
         return;
@@ -783,17 +837,47 @@ wss.on('connection', (ws, req) => {
                     try {
                         const ti = message.turnInfo;
                         const wordsPlayed = Array.isArray(ti.turnFormedWords)
-                            ? ti.turnFormedWords.map(tiles =>
-                                Array.isArray(tiles) ? tiles.map(t => t.letter || '').join('') : ''
+                            ? ti.turnFormedWords.map((tiles) =>
+                                Array.isArray(tiles)
+                                    ? tiles.map((t) => t?.tile?.letter || t?.letter || '').join('')
+                                    : ''
                             )
+                            : [];
+                        const placedTiles = Array.isArray(ti.newlyPlayedTilesWithPositions)
+                            ? ti.newlyPlayedTilesWithPositions
+                                .map((p) => {
+                                    if (!p || typeof p.row !== 'number' || typeof p.col !== 'number') return null;
+                                    return {
+                                        row: p.row,
+                                        col: p.col,
+                                        letter: p.tile?.letter || p.letter || '',
+                                        points: Number(p.tile?.points || p.points || 0),
+                                        key: p.tile?.key || p.key || null,
+                                    };
+                                })
+                                .filter(Boolean)
+                            : [];
+                        const formedWords = Array.isArray(ti.turnFormedWords)
+                            ? ti.turnFormedWords.map((wordTiles) => (
+                                Array.isArray(wordTiles)
+                                    ? wordTiles.map((tileInfo) => ({
+                                        row: tileInfo?.row,
+                                        col: tileInfo?.col,
+                                        letter: tileInfo?.tile?.letter || tileInfo?.letter || '',
+                                        alreadyPlayed: Boolean(tileInfo?.alreadyPlayed),
+                                    }))
+                                    : []
+                            ))
                             : [];
                         analytics.recordTurn(gameId, {
                             userId,
                             turnType: 'word',
                             score: ti.turnScore || 0,
                             wordsPlayed,
-                            wordScores: ti.turnWordScores || null,
-                            tilesPlaced: ti.turnTilesPlaced || 0,
+                            wordScores: ti.wordScores || null,
+                            tilesPlaced: placedTiles.length || ti.turnTilesPlaced || 0,
+                            placedTiles,
+                            formedWords,
                         });
                     } catch (e) { console.error('Analytics turn error:', e.message); }
                     break;

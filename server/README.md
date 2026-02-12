@@ -38,15 +38,22 @@ Room behavior:
 - `GET /health` - readiness/liveness endpoint
 - `POST /api/visit` - analytics page visit
 - `POST /api/profile` - upsert player profile (`{ userId, username }`)
-- `GET /api/stats` - aggregate analytics stats
 - `GET /api/leaderboard?limit=N` - leaderboard ranked by rating
-- `GET /api/games?limit=N` - recent games
-- `GET /api/games/:gameId` - game detail + turns
-- `GET /api/visits/daily?days=N` - daily visit counts
 - `POST /api/validate-words` - FST validation via HTTP (`{ words: string[] }`, max 20)
 - `POST /api/matchmaking/join` - enter random matchmaking queue
 - `GET /api/matchmaking/status?userId=...` - matchmaking status
 - `POST /api/matchmaking/cancel` - leave matchmaking queue
+
+## Admin Analytics Endpoints
+
+Set `ANALYTICS_ADMIN_PASSWORD` on the server, then pass it as `X-Admin-Password` header.
+
+- `GET /api/admin/summary` - aggregate analytics + derived stats
+- `GET /api/admin/games?limit=N&offset=N&q=...` - paginated/searchable games
+- `GET /api/admin/games/:gameId` - game detail with turns + tile-placement data
+- `GET /api/admin/players?limit=N&offset=N&q=...` - paginated/searchable players
+- `GET /api/admin/players/:userId` - player profile + recent games/turns
+- `GET /api/admin/visits/daily?days=N` - daily visit counts
 
 ## Notes
 
