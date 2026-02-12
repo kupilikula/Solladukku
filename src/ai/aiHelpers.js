@@ -23,11 +23,12 @@ export function buildGrid(playedTilesWithPositions) {
  * Otherwise: empty squares orthogonally adjacent to at least one played tile.
  */
 export function findAnchors(grid, isFirstMove) {
+    const starredSquares = [[7, 7], [3, 3], [3, 11], [11, 3], [11, 11]];
     if (isFirstMove) {
-        return [[7, 7], [3, 3], [3, 11], [11, 3], [11, 11]];
+        return starredSquares;
     }
 
-    const anchors = [];
+    const anchorSet = new Set();
     for (let r = 0; r < 15; r++) {
         for (let c = 0; c < 15; c++) {
             if (grid[r][c] !== null) continue; // occupied, skip
@@ -38,11 +39,19 @@ export function findAnchors(grid, isFirstMove) {
                 (c > 0 && grid[r][c - 1] !== null) ||
                 (c < 14 && grid[r][c + 1] !== null)
             ) {
-                anchors.push([r, c]);
+                anchorSet.add(`${r},${c}`);
             }
         }
     }
-    return anchors;
+
+    // Per game rules, an empty starred square is always a valid anchor, even after turn 1.
+    for (const [r, c] of starredSquares) {
+        if (grid[r][c] === null) {
+            anchorSet.add(`${r},${c}`);
+        }
+    }
+
+    return [...anchorSet].map(key => key.split(',').map(Number));
 }
 
 /**
