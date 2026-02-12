@@ -43,6 +43,10 @@ const translations = {
         gameOverTilesOut: 'Tile bag exhausted',
         gameOverNewGame: 'Start a New Game to play again',
         vs: 'vs',
+        playVsComputer: 'Play vs Computer',
+        computer: 'Computer',
+        computerThinking: 'Thinking...',
+        vsComputer: 'vs Computer',
         helpSections: [
             { title: 'Goal', body: 'Form valid Tamil words on the board to score points. The player with the highest score at the end wins.' },
             { title: 'Tiles', body: 'There are 4 tile types: Vowels (உயிர்), Consonants (மெய்), Combined letters (உயிர்மெய்), and Bonus tiles (மாயம்). Drag tiles from your rack onto the board.' },
@@ -94,6 +98,10 @@ const translations = {
         gameOverTilesOut: 'எழுத்துப் பை காலியானது',
         gameOverNewGame: 'மீண்டும் விளையாட புது விளையாட்டு தொடங்கவும்',
         vs: 'எதிர்',
+        playVsComputer: 'கணினியுடன் விளையாடு',
+        computer: 'கணினி',
+        computerThinking: 'யோசிக்கிறது...',
+        vsComputer: 'கணினி எதிரி',
         helpSections: [
             { title: 'குறிக்கோள்', body: 'பலகையில் சரியான தமிழ் சொற்களை உருவாக்கி புள்ளிகள் பெறுங்கள். அதிக புள்ளிகள் பெறுபவர் வெற்றி.' },
             { title: 'எழுத்துகள்', body: 'நான்கு வகை எழுத்துகள்: உயிர், மெய், உயிர்மெய், மாயம் (போனஸ்). எழுத்துகளை உங்கள் தட்டிலிருந்து பலகைக்கு இழுக்கவும்.' },

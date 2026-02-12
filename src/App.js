@@ -16,7 +16,7 @@ function getApiBaseUrl() {
 }
 
 
-function LandingPage({ onCreateGame, onJoinGame }) {
+function LandingPage({ onCreateGame, onJoinGame, onPlayComputer }) {
     const { language, toggleLanguage, t } = useLanguage();
     const [gameCode, setGameCode] = useState('');
     const [codeError, setCodeError] = useState(false);
@@ -134,6 +134,25 @@ function LandingPage({ onCreateGame, onJoinGame }) {
                         }}
                     >
                         {t.createGame}
+                    </button>
+
+                    {/* Play vs Computer */}
+                    <button
+                        onClick={onPlayComputer}
+                        style={{
+                            backgroundColor: 'white',
+                            color: '#1A5276',
+                            border: '2px solid #1A5276',
+                            borderRadius: 8,
+                            padding: '12px 0',
+                            width: '100%',
+                            fontSize: 16,
+                            fontWeight: 'bold',
+                            cursor: 'pointer',
+                            fontFamily: 'Tamil Sangam MN, sans-serif',
+                        }}
+                    >
+                        {t.playVsComputer}
                     </button>
 
                     {/* Divider */}
@@ -302,6 +321,7 @@ function AppContent() {
     }, []);
 
     const [gameId, setGameId] = useState(initialGameId);
+    const [mode, setMode] = useState(initialGameId ? 'multiplayer' : null);
 
     const handleCreateGame = useCallback(() => {
         const id = crypto.randomUUID().slice(0, 6);
@@ -310,6 +330,7 @@ function AppContent() {
         window.history.replaceState({}, '', url);
         dispatch(setAutoStartPending(true));
         setGameId(id);
+        setMode('multiplayer');
     }, [dispatch]);
 
     const handleJoinGame = useCallback((code) => {
@@ -317,13 +338,19 @@ function AppContent() {
         url.searchParams.set('game', code);
         window.history.replaceState({}, '', url);
         setGameId(code);
+        setMode('multiplayer');
     }, []);
 
+    const handlePlayComputer = useCallback(() => {
+        dispatch(storeUserId({ userId, gameId: 'solo' }));
+        setMode('singleplayer');
+    }, [dispatch, userId]);
+
     useEffect(() => {
-        if (gameId) {
+        if (gameId && mode === 'multiplayer') {
             dispatch(storeUserId({userId, gameId}));
         }
-    }, [dispatch, userId, gameId]);
+    }, [dispatch, userId, gameId, mode]);
 
     // Track game entry visit
     const visitTracked = useRef(false);
@@ -338,9 +365,18 @@ function AppContent() {
         }
     }, [gameId, userId]);
 
-    // Show landing page if no gameId
-    if (!gameId) {
-        return <LandingPage onCreateGame={handleCreateGame} onJoinGame={handleJoinGame} />;
+    // Show landing page if no gameId and not single player
+    if (!gameId && mode !== 'singleplayer') {
+        return <LandingPage onCreateGame={handleCreateGame} onJoinGame={handleJoinGame} onPlayComputer={handlePlayComputer} />;
+    }
+
+    // Single player mode: no WebSocket
+    if (mode === 'singleplayer') {
+        return (
+            <div style={{background: '#EDE8E0', height: '100vh', width: '100vw'}}>
+                <GameFrame singlePlayer={true} />
+            </div>
+        );
     }
 
     return (

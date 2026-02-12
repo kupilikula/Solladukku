@@ -4,9 +4,11 @@ import TurnHistory from "./TurnHistory";
 import ConnectionStatus from "./ConnectionStatus";
 import Chat from "./Chat";
 import {useLanguage} from "../context/LanguageContext";
+import {useSelector} from "react-redux";
 
 export default function InfoBoard() {
     const { language, toggleLanguage } = useLanguage();
+    const gameMode = useSelector(state => state.Game.gameMode);
 
     return (
         <div className="InfoBoard" style={{
@@ -53,7 +55,7 @@ export default function InfoBoard() {
             <ScoreBoard />
             <LetterBags />
             <TurnHistory />
-            <Chat />
+            {gameMode !== 'singleplayer' && <Chat />}
         </div>
     )
 }

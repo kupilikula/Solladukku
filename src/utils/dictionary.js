@@ -41,6 +41,10 @@ export function isDictionaryLoaded() {
     return dictionary !== null;
 }
 
+export function getDictionary() {
+    return dictionary;
+}
+
 export function getDictionaryError() {
     return loadError;
 }

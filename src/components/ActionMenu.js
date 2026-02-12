@@ -342,6 +342,7 @@ export default function ActionMenu() {
     const swapModeActive = useSelector(state => state.Game.swapMode);
 
     const gameId = useSelector(state => state.Game.gameId);
+    const gameMode = useSelector(state => state.Game.gameMode);
     const { language, t } = useLanguage();
     const [invalidWords, setInvalidWords] = useState([]);
     const [isValidating, setIsValidating] = useState(false);
@@ -430,7 +431,7 @@ export default function ActionMenu() {
                         setIsValidating(false);
                     }
                 } else {
-                    // Offline — no server fallback, reject
+                    // Offline / single player — no server fallback, reject
                     console.log('Invalid words (offline):', dictResult.invalidWords);
                     setInvalidWords(dictResult.invalidWords);
                     return;
@@ -676,8 +677,10 @@ export default function ActionMenu() {
                     </button>
                     <button id={'Help'} className={'ActionMenuButton'} onClick={toggleHelp} data-tooltip-id="help-tooltip"><FaQuestion size={26} />
                     </button>
-                    <button id={'Invite'} className={'ActionMenuButton'} onClick={invite} data-tooltip-id="invite-tooltip"><TbMailShare size={26} />
-                    </button>
+                    {gameMode !== 'singleplayer' && (
+                        <button id={'Invite'} className={'ActionMenuButton'} onClick={invite} data-tooltip-id="invite-tooltip"><TbMailShare size={26} />
+                        </button>
+                    )}
                     <button id={'NewGame'} className={'ActionMenuButton'} onClick={requestNewGame} data-tooltip-id="newGame-tooltip" ><MdAutorenew size={26}/>
                     </button>
                 </>

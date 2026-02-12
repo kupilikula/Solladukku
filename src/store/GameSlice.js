@@ -19,6 +19,7 @@ export const GameSlice = createSlice({
         winner: null,             // Winner's userId (or 'tie')
         gameOverReason: null,     // 'tilesOut', 'consecutivePasses'
         swapMode: false,          // Is the player selecting tiles to swap?
+        gameMode: null,           // 'singleplayer' or 'multiplayer'
     },
     reducers: {
         setMyTurn: (state, action) => {
@@ -42,6 +43,9 @@ export const GameSlice = createSlice({
         },
         setMyInitialDraw: (state, action) => {
             state.myInitialDraw = action.payload;
+        },
+        setGameMode: (state, action) => {
+            state.gameMode = action.payload;
         },
     },
     extraReducers: builder => {
@@ -136,6 +140,6 @@ export const GameSlice = createSlice({
     }
 })
 
-export const { setMyTurn, setCurrentTurnUserId, setPlayerName, clearNeedsInitialDraw, setAutoStartPending, setMyInitialDraw, setSwapMode } = GameSlice.actions
+export const { setMyTurn, setCurrentTurnUserId, setPlayerName, clearNeedsInitialDraw, setAutoStartPending, setMyInitialDraw, setSwapMode, setGameMode } = GameSlice.actions
 
 export default GameSlice.reducer

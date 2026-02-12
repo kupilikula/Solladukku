@@ -7,8 +7,9 @@ export default function ScoreBoard() {
     const { userId, otherPlayerIds, isMyTurn } = game;
     const { t } = useLanguage();
 
+    const gameMode = game.gameMode;
     const myName = t.you;
-    const opponentName = otherPlayerIds[0] ? t.opponent : t.opponent;
+    const opponentName = gameMode === 'singleplayer' ? t.computer : t.opponent;
     const opponentScore = scores.otherPlayersTotalScores[0] || 0;
 
     return (

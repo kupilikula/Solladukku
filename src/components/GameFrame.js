@@ -3,12 +3,13 @@ import { useEffect } from 'react';
 import PlayingBoard from "./PlayingBoard";
 import InfoBoard from "./InfoBoard";
 import { useGameSync } from '../hooks/useGameSync';
+import { useAIGameSync } from '../hooks/useAIGameSync';
 import { useSelector } from 'react-redux';
 import { loadDictionary } from '../utils/dictionary';
 import { useLanguage } from '../context/LanguageContext';
 
 function GameOverOverlay() {
-    const { gameOver, gameOverReason, winner, userId } = useSelector(state => state.Game);
+    const { gameOver, gameOverReason, winner, userId, gameMode } = useSelector(state => state.Game);
     const myScore = useSelector(state => state.ScoreBoard.myTotalScore);
     const opponentScore = useSelector(state => state.ScoreBoard.otherPlayersTotalScores[0] || 0);
     const { t } = useLanguage();
@@ -21,6 +22,8 @@ function GameOverOverlay() {
     const reasonText = gameOverReason === 'consecutivePasses'
         ? t.gameOverPasses
         : t.gameOverTilesOut;
+
+    const opponentLabel = gameMode === 'singleplayer' ? t.computer : t.opponent;
 
     return (
         <div style={{
@@ -66,7 +69,7 @@ function GameOverOverlay() {
                     </div>
                     <div style={{ fontSize: 24, alignSelf: 'center', color: '#999' }}>{t.vs}</div>
                     <div>
-                        <div style={{ fontSize: 14, color: '#666' }}>{t.opponent}</div>
+                        <div style={{ fontSize: 14, color: '#666' }}>{opponentLabel}</div>
                         <div style={{ fontSize: 32, fontWeight: 'bold', color: !iWon && !isTie ? '#e53935' : '#333' }}>{opponentScore}</div>
                     </div>
                 </div>
@@ -78,10 +81,7 @@ function GameOverOverlay() {
     );
 }
 
-export default function GameFrame() {
-    // Handle game state synchronization
-    useGameSync();
-
+function GameFrameInner() {
     // Load dictionary on mount
     useEffect(() => {
         loadDictionary();
@@ -93,5 +93,22 @@ export default function GameFrame() {
             <InfoBoard />
             <GameOverOverlay />
         </div>
-    )
+    );
+}
+
+function MultiplayerGameFrame() {
+    useGameSync();
+    return <GameFrameInner />;
+}
+
+function SinglePlayerGameFrame() {
+    useAIGameSync();
+    return <GameFrameInner />;
+}
+
+export default function GameFrame({ singlePlayer }) {
+    if (singlePlayer) {
+        return <SinglePlayerGameFrame />;
+    }
+    return <MultiplayerGameFrame />;
 }

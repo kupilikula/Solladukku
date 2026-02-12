@@ -289,7 +289,15 @@ export function WebSocketProvider({ userId, gameId, children }) {
 export function useWebSocket() {
     const context = useContext(WebSocketContext);
     if (!context) {
-        throw new Error('useWebSocket must be used within a WebSocketProvider');
+        return {
+            isConnected: false,
+            connectionError: null,
+            sendMessage: () => {},
+            sendTurn: () => {},
+            sendRequest: () => Promise.resolve(null),
+            sendChat: () => {},
+            chatMessages: [],
+        };
     }
     return context;
 }

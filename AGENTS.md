@@ -1,6 +1,6 @@
 # Solmaalai (சொல்மாலை) - Tamil Scrabble Game
 
-A React-based Tamil Scrabble game with a landing page, real-time multiplayer via WebSockets, room-based game management, bilingual UI (Tamil/English), and two-tier word validation.
+A React-based Tamil Scrabble game with a landing page, real-time multiplayer via WebSockets, single-player vs computer mode, room-based game management, bilingual UI (Tamil/English), and two-tier word validation.
 
 ## Technology Stack
 
@@ -42,14 +42,18 @@ public/
 ├── index.html                # HTML shell with <title> and meta tags
 └── manifest.json             # PWA manifest with game name
 src/
-├── App.js                    # Landing page + game entry: userId, gameId, conditional routing
+├── App.js                    # Landing page + game entry: userId, gameId, mode routing
+├── ai/
+│   ├── aiEngine.js           # AI move generation: anchor-based search, prefix pruning, scoring
+│   └── aiHelpers.js          # Grid building, anchor finding, dictionary prefix check, utilities
 ├── context/
 │   ├── WebSocketContext.js   # WebSocket: room connection, chat, sendRequest (req-response)
 │   └── LanguageContext.js    # Tamil/English toggle with 50+ translation keys
 ├── hooks/
-│   └── useGameSync.js        # Game state sync hook (auto-start, initial draw, game-over detection)
+│   ├── useGameSync.js        # Multiplayer game sync (auto-start, initial draw, game-over)
+│   └── useAIGameSync.js      # Single-player AI lifecycle (init, turn orchestration, rack mgmt)
 ├── components/
-│   ├── GameFrame.js          # Main layout + GameOverOverlay (translated, peacock blue accent)
+│   ├── GameFrame.js          # Main layout: SinglePlayer/Multiplayer wrappers + GameOverOverlay
 │   ├── PlayingBoard.js       # Game board with DnD provider
 │   ├── WordBoard.js          # 15×15 Scrabble board grid
 │   ├── Square.js             # Individual board square with drop logic
@@ -61,7 +65,7 @@ src/
 │   ├── ScoreBoard.js         # Score display with turn indicator badge
 │   ├── LetterBags.js         # Remaining tile counts (Tamil-only labels: மெய், உயிர், மாயம்)
 │   ├── TurnHistory.js        # Move history with words, scores, passes, swaps
-│   ├── ConnectionStatus.js   # WebSocket status + turn indicator
+│   ├── ConnectionStatus.js   # Connection/turn status (adapts for single-player: "vs Computer")
 │   ├── Chat.js               # Real-time player chat (500 char limit, timestamps)
 │   └── ChooseLetter.js       # Modal for bonus tile letter selection
 ├── store/
@@ -70,7 +74,7 @@ src/
 │   ├── WordBoardSlice.js     # Board tile state (played + unplayed positions)
 │   ├── LetterRackSlice.js    # Player rack state (14 slots, swap/shuffle/split)
 │   ├── ScoreBoardSlice.js    # Scores, turn history, multiplier calculations
-│   ├── GameSlice.js          # Game metadata: userId, gameId, swapMode, turn tracking
+│   ├── GameSlice.js          # Game metadata: userId, gameId, gameMode, swapMode, turn tracking
 │   └── LetterBagsSlice.js    # Tile bag inventory (vowels, consonants, bonus)
 ├── utils/
 │   ├── TileSet.js            # Tamil tile definitions (points, types, merge/split ops)
@@ -94,7 +98,8 @@ The app opens to a landing page before entering any game:
 
 - **Game title**: "சொல்மாலை" in large peacock blue text
 - **Logo**: Renders `public/logo.png` above the title (96px height). Hides gracefully via `onError` if the file is missing.
-- **"Create Game" button**: Generates a 6-char gameId, sets `?game=` in URL, enters the game
+- **"Create Game" button**: Generates a 6-char gameId, sets `?game=` in URL, enters multiplayer game
+- **"Play vs Computer" button**: Starts a single-player game against the AI (no WebSocket, no game code needed)
 - **"Join Game" section**: Text input for a game code (4-8 alphanumeric chars) + join button. Validates input, shows error for invalid codes. Supports Enter key.
 - **"Game Rules" link**: Opens help modal with bilingual game instructions (same content as in-game help)
 - **Language toggle**: Top-right corner ("EN" / "த"), shared with in-game toggle via LanguageContext
@@ -291,6 +296,7 @@ Analytics calls are added **after** existing `broadcastToRoom` calls — no chan
   winner: string | null,       // Winner's userId, 'opponent', or 'tie'
   gameOverReason: string | null, // 'tilesOut' or 'consecutivePasses'
   swapMode: boolean,           // Whether swap tile selection mode is active
+  gameMode: string | null,     // 'singleplayer' or 'multiplayer' (null before game entry)
 }
 ```
 
@@ -361,7 +367,7 @@ Analytics calls are added **after** existing `broadcastToRoom` calls — no chan
 
 ## Action Menu Button Order
 
-Normal mode (left to right): **Pass** | **Swap** | **Return** | **Shuffle** | **Play** | **Help** | **Invite** | **New Game**
+Normal mode (left to right): **Pass** | **Swap** | **Return** | **Shuffle** | **Play** | **Help** | **Invite** (hidden in single-player) | **New Game**
 
 Swap mode: Only **Swap** (red confirm) and **Cancel** buttons visible.
 
@@ -451,7 +457,9 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 
 **UI Labels**: `you`, `opponent`, `yourTurn`, `waiting`, `connected`, `disconnected`, `connectionFailed`, `tilesRemaining`, `total`, `tiles`, `turnHistory`, `noMovesYet`, `chat`, `noMessagesYet`, `typeMessage`, `send`, `turn`, `passed`, `swappedTiles`
 
-**Landing Page**: `tagline`, `createGame`, `joinGame`, `enterGameCode`, `join`, `howToPlay`, `invalidCode`
+**Landing Page**: `tagline`, `createGame`, `joinGame`, `enterGameCode`, `join`, `howToPlay`, `invalidCode`, `playVsComputer`
+
+**Single Player**: `computer`, `computerThinking`, `vsComputer`
 
 **Help Modal**: `helpTitle` ("Game Rules" / "விளையாட்டு முறை"), `helpClose`, `helpSections` (array of 8 `{title, body}` objects covering: Goal, Tiles, Forming Words, Combining Letters, Bonus Tile, Scoring, Swapping Tiles, Passing)
 
@@ -473,9 +481,29 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 
 ### Landing Page → Game Entry
 1. User visits the app → sees landing page with "சொல்மாலை" title
-2. **Create Game**: Click button → generates 6-char gameId → enters game
-3. **Join Game**: Enter code → validates (4-8 alphanum) → enters game
-4. **Invite link** (`?game=XYZ`): Bypasses landing page → enters game directly
+2. **Create Game**: Click button → generates 6-char gameId → enters multiplayer game
+3. **Play vs Computer**: Click button → enters single-player game (no WebSocket)
+4. **Join Game**: Enter code → validates (4-8 alphanum) → enters multiplayer game
+5. **Invite link** (`?game=XYZ`): Bypasses landing page → enters multiplayer game directly
+
+### Single Player Flow
+1. Player clicks "Play vs Computer" on landing page
+2. Game initializes: `storeUserId` dispatched, `GameFrame` rendered without `WebSocketProvider`
+3. `useAIGameSync` hook activates:
+   - Draws 14 player tiles from fresh bags → fills rack
+   - Draws 14 AI tiles from remaining bags → stored in `aiRackRef` (not Redux)
+   - Deducts AI tiles from Redux bags via `syncOpponentDraw`
+   - Sets `gameMode: 'singleplayer'`, adds `'computer-player'` as opponent
+4. Player places tiles and plays → turn switches to AI
+5. AI turn (1-2.5s simulated thinking delay):
+   - `computeAIMove()` runs anchor-based word search on the board
+   - Tries placing rack tiles at anchor positions, pruning with dictionary prefix checks
+   - Handles MEY+UYIR tile merging for UYIRMEY combinations
+   - Validates all cross-words, calculates scores with multipliers
+   - Dispatches `addOtherPlayerTurn` with the best-scoring valid move
+   - Falls back to swap (3 worst tiles) or pass if no valid move found
+6. UI adapts: "vs Computer" status, "Thinking..." indicator, "Computer" name in scoreboard, no Chat, no Invite button
+7. Game ends same as multiplayer: tiles exhausted or 4 consecutive passes/swaps
 
 ### Multiplayer Flow
 1. **Player 1** creates a game from landing page → enters game with new gameId
@@ -546,6 +574,14 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] **Tamil-inspired design**: peacock blue, vermilion, gold, teal, jade color scheme
 - [x] **Deployment config**: PM2 + nginx + TLS setup with DEPLOY.md guide
 - [x] **Analytics**: SQLite tracking for visits, games, and turns with REST API on same port as WebSocket
+
+- [x] **Single Player Mode**: Play vs Computer with client-side AI engine
+  - Anchor-based word generation with dictionary prefix pruning (O(log 2.85M) per check)
+  - Tamil MEY+UYIR tile merging for UYIRMEY combinations
+  - Cross-word validation, score calculation with multipliers
+  - 2.5s time budget with early termination returning best move found
+  - Fallback: swap worst tiles or pass if no valid move found
+  - UI adapts: "vs Computer" status, "Computer" name, no Chat/Invite, "Thinking..." indicator
 
 ### TODO
 - [ ] Tile Bag Optimization: balance distribution for fun gameplay

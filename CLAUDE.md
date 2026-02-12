@@ -37,14 +37,15 @@ To test multiplayer: create a game in one window, use the invite button to copy 
 
 ## Architecture
 
-- **Landing Page**: `App.js` shows create/join game screen; skipped when arriving via invite link (`?game=`)
+- **Landing Page**: `App.js` shows create/join/play-vs-computer screen; skipped when arriving via invite link (`?game=`)
 - **State**: Redux Toolkit with 5 slices (Game, WordBoard, LetterRack, ScoreBoard, LetterBags)
 - **Actions**: Defined centrally in `src/store/actions.js` (28 actions), consumed by multiple slices via `extraReducers`
-- **Networking**: WebSocket context (`src/context/WebSocketContext.js`) manages room-based connections, message dispatch, chat, and request-response pattern for validation. Only connects after entering a game (not on landing page).
+- **Networking**: WebSocket context (`src/context/WebSocketContext.js`) manages room-based connections, message dispatch, chat, and request-response pattern for validation. Only connects after entering a multiplayer game (not on landing page or in single-player mode).
 - **I18n**: Language context (`src/context/LanguageContext.js`) provides Tamil/English toggle across all UI including landing page
-- **Game Sync**: `src/hooks/useGameSync.js` handles initial tile draws and game-over detection
-- **Components**: `GameFrame` wraps `PlayingBoard` (board + rack + actions) and `InfoBoard` (scores + history + bags + chat)
+- **Game Sync**: `src/hooks/useGameSync.js` handles multiplayer initial tile draws and game-over detection. `src/hooks/useAIGameSync.js` handles single-player AI game lifecycle.
+- **Components**: `GameFrame` wraps `PlayingBoard` (board + rack + actions) and `InfoBoard` (scores + history + bags + chat). Splits into `SinglePlayerGameFrame` / `MultiplayerGameFrame` based on mode.
 - **Word Validation**: Two-tier system — client-side binary search on 2.85M-word dictionary, with server-side FST fallback via WebSocket for words not in the static dictionary
+- **Single Player AI**: Client-side AI engine (`src/ai/`) using anchor-based word generation with dictionary prefix pruning. Handles Tamil MEY+UYIR tile merging. No WebSocket needed.
 - **Analytics**: SQLite via `better-sqlite3` (`server/analytics.js`) — tracks visits, games, and turns. REST API on same port as WebSocket. Client fires visit events from `App.js`.
 - **Multiplayer**: Room-based via `?game=` URL query param; max 2 players per room
 - **Deployment**: Railway (Dockerfile-based). Auto-deploys on push to `main`. `railway.toml` limits build triggers to code changes only.
