@@ -25,7 +25,14 @@ import { useWebSocket } from '../context/WebSocketContext';
 import { useLanguage } from '../context/LanguageContext';
 import { squareMultipliers } from '../utils/squareMultipliers';
 import { initialConsonantsBag, initialVowelsBag, initialBonusBag } from '../utils/initialLetterBags';
-import { validateWords, validateWordsWithServer, validateWordsWithHttpServer } from '../utils/dictionary';
+import {
+    loadDictionary,
+    isDictionaryLoaded,
+    getDictionaryError,
+    validateWords,
+    validateWordsWithServer,
+    validateWordsWithHttpServer
+} from '../utils/dictionary';
 
 
 const computeWords = (main, unplayedTilesWithPositions, playedTilesWithPositions) => {
@@ -423,6 +430,7 @@ export default function ActionMenu() {
     const gameMode = useSelector(state => state.Game.gameMode);
     const { t } = useLanguage();
     const [invalidWords, setInvalidWords] = useState([]);
+    const [validationError, setValidationError] = useState('');
     const [isValidating, setIsValidating] = useState(false);
     const [copiedText, setCopiedText] = useState('');
     const [showHelp, setShowHelp] = useState(false);
@@ -446,6 +454,13 @@ export default function ActionMenu() {
             return () => clearTimeout(timer);
         }
     }, [invalidWords]);
+
+    useEffect(() => {
+        if (validationError) {
+            const timer = setTimeout(() => setValidationError(''), 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [validationError]);
 
     const getWordString = (formedWord) => {
         return formedWord.map(t => t.tile.letter).join('');
@@ -492,15 +507,25 @@ export default function ActionMenu() {
             return;
         }
 
-        const result = validateWordBoardAndComputeNewWords(unplayedTilesWithPositions, playedTilesWithPositions);
-        if (result.valid) {
+        setValidationError('');
+        setIsValidating(true);
+        try {
+            await loadDictionary();
+            if (!isDictionaryLoaded()) {
+                console.error('Dictionary unavailable; rejecting submission until loaded.', getDictionaryError());
+                setValidationError('Dictionary unavailable. Please wait and retry.');
+                return;
+            }
+
+            const result = validateWordBoardAndComputeNewWords(unplayedTilesWithPositions, playedTilesWithPositions);
+            if (!result.valid) return;
+
             // Dictionary validation: check all formed words locally first
             const wordStrings = result.formedWords.map(getWordString);
             const dictResult = validateWords(wordStrings);
 
             if (!dictResult.valid) {
                 // Some words not in local dictionary — try server FST validation
-                setIsValidating(true);
                 try {
                     if (isConnected) {
                         const serverResult = await validateWordsWithServer(
@@ -526,8 +551,6 @@ export default function ActionMenu() {
                     }
                 } catch (err) {
                     console.error('Server validation error, accepting permissively:', err);
-                } finally {
-                    setIsValidating(false);
                 }
             }
 
@@ -575,6 +598,8 @@ export default function ActionMenu() {
                     }
                 }
             }
+        } finally {
+            setIsValidating(false);
         }
     }
 
@@ -755,6 +780,11 @@ export default function ActionMenu() {
             {invalidWords.length > 0 && (
                 <div className="InvalidWordsToast">
                     {t.invalidWords}: {invalidWords.join(', ')}
+                </div>
+            )}
+            {validationError && (
+                <div className="InvalidWordsToast">
+                    {validationError}
                 </div>
             )}
             {copiedText && (
