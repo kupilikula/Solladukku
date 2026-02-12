@@ -44,9 +44,9 @@ To test multiplayer: create a game in one window, use the invite button to copy 
 - **I18n**: Language context (`src/context/LanguageContext.js`) provides Tamil/English toggle across all UI including landing page
 - **Game Sync**: `src/hooks/useGameSync.js` handles multiplayer initial tile draws and game-over detection. `src/hooks/useAIGameSync.js` handles single-player AI game lifecycle.
 - **Components**: `GameFrame` wraps `PlayingBoard` (board + rack + actions) and `InfoBoard` (scores + history + bags + chat). Splits into `SinglePlayerGameFrame` / `MultiplayerGameFrame` based on mode.
-- **Word Validation**: Two-tier system — client-side binary search on 2.85M-word dictionary, with server-side FST fallback via WebSocket for words not in the static dictionary
+- **Word Validation**: Two-tier system — client-side binary search on 2.85M-word dictionary, with server-side FST fallback via WebSocket in multiplayer and HTTP (`POST /api/validate-words`) in single-player/no-WebSocket mode
 - **Single Player AI**: Client-side AI engine (`src/ai/`) using anchor-based word generation with dictionary prefix pruning. Handles Tamil MEY+UYIR tile merging. No WebSocket needed.
-- **Analytics**: SQLite via `better-sqlite3` (`server/analytics.js`) — tracks visits, games, and turns. REST API on same port as WebSocket. Client fires visit events from `App.js`.
+- **Analytics**: SQLite via `better-sqlite3` (`server/analytics.js`) — tracks visits, games, and turns (including per-turn tile placements for replay). Admin analytics APIs are password-protected under `/api/admin/*` using `ANALYTICS_ADMIN_PASSWORD` + `X-Admin-Password`. Inspector UI is available at `?analytics=1`.
 - **Multiplayer**: Room-based via `?game=` URL query param; max 2 players per room
 - **Deployment**: Railway (Dockerfile-based). Auto-deploys on push to `main`. `railway.toml` limits build triggers to code changes only.
 - **Custom Domain**: `solmaalai.com` (with `சொல்மாலை.com` redirecting via Namecheap)

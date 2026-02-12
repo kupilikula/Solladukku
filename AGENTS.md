@@ -2,6 +2,10 @@
 
 A React-based Tamil Scrabble game with a landing page, real-time multiplayer via WebSockets, single-player vs computer mode, room-based game management, bilingual UI (Tamil/English), and two-tier word validation.
 
+## Documentation Maintenance
+
+- Always keep `AGENTS.md` up to date with the current codebase status. Any feature, flow, API, schema, deployment, or behavior change must be reflected here in the same PR/commit.
+
 ## Technology Stack
 
 - **Frontend**: React 18.2.0 with Create React App
@@ -53,6 +57,7 @@ src/
 │   ├── useGameSync.js        # Multiplayer game sync (auto-start, initial draw, game-over)
 │   └── useAIGameSync.js      # Single-player AI lifecycle (init, turn orchestration, rack mgmt)
 ├── components/
+│   ├── AnalyticsViewer.js    # Password-protected analytics inspector (`?analytics=1`)
 │   ├── GameFrame.js          # Main layout: SinglePlayer/Multiplayer wrappers + GameOverOverlay
 │   ├── PlayingBoard.js       # Game board with DnD provider
 │   ├── WordBoard.js          # 15×15 Scrabble board grid
@@ -108,6 +113,8 @@ The app opens to a landing page before entering any game:
 - **Language toggle**: Top-right corner ("EN" / "த"), shared with in-game toggle via LanguageContext
 
 **Invite link bypass**: If someone arrives via `?game=XYZ` URL, the landing page is skipped entirely — they go straight into the game. The WebSocket connection is only established after entering a game.
+
+**Analytics inspector route**: Visiting `?analytics=1` opens the admin analytics viewer instead of the game UI.
 
 ## Color Scheme
 
@@ -175,11 +182,13 @@ Used consistently across: buttons, active score borders, turn badges, connected 
 ```
 submitWord() → local dictionary (binary search on sorted array, <1ms)
   ├─ FOUND → accept immediately
-  └─ NOT FOUND → send 'validateWords' to server via WebSocket
+  └─ NOT FOUND → server validation fallback
+                    ├─ Multiplayer: send 'validateWords' via WebSocket (`sendRequest`)
+                    │   └─ Server returns 'validateWordsResult' (unicast to requester only)
+                    ├─ Single-player/no WebSocket: POST `/api/validate-words`
                     ├─ Server runs flookup against 11 core FST models by default
                     ├─ Optional guesser FSTs can be enabled via env
-                    ├─ ANY FST recognizes word → valid
-                    └─ Returns 'validateWordsResult' (unicast to requester only)
+                    └─ ANY FST recognizes word → valid
                   Client caches result → accept or reject
 ```
 
@@ -249,22 +258,30 @@ Four tables with WAL mode enabled:
 |-------|---------|-------------|
 | `visits` | Page view tracking | `page` ('landing'\|'game'), `game_id`, `user_id`, `ip`, `user_agent`, `referrer` |
 | `games` | One row per game session | `game_id`, `player1_id`, `player2_id`, scores, `winner_id`, `game_over_reason`, `total_turns` |
-| `turns` | One row per turn action | `game_id`, `games_row_id` (FK), `user_id`, `turn_type` ('word'\|'pass'\|'swap'), `score`, `words_played` (JSON), `tiles_placed` |
+| `turns` | One row per turn action | `game_id`, `games_row_id` (FK), `user_id`, `turn_type` ('word'\|'pass'\|'swap'), `score`, `words_played` (JSON), `tiles_placed`, `placed_tiles_json` (JSON), `formed_words_json` (JSON) |
 | `players` | Persistent profile + rating | `user_id`, `username`, `rating`, `games_played`, `wins`, `losses`, `draws`, `total_score` |
 
 ### REST API Endpoints
 
 All endpoints served on the same port as WebSocket (default 8000). CORS uses the same `ALLOWED_ORIGINS` config.
 
+Admin analytics endpoints require:
+- Server env var: `ANALYTICS_ADMIN_PASSWORD`
+- Request header: `X-Admin-Password`
+
+Without `ANALYTICS_ADMIN_PASSWORD`, admin analytics endpoints return `503`.
+
 | Method | Path | Description |
 |--------|------|-------------|
 | `POST` | `/api/visit` | Record a page visit (`{page, gameId, userId}`) |
 | `POST` | `/api/profile` | Upsert persistent username/profile (`{userId, username}`) |
-| `GET` | `/api/stats` | Aggregate counts (visits, games, completed, turns) |
 | `GET` | `/api/leaderboard?limit=N` | Top players by rating (default 20, max 100) |
-| `GET` | `/api/games?limit=N` | Recent games list (default 20, max 100) |
-| `GET` | `/api/games/:gameId` | Game detail with all turns |
-| `GET` | `/api/visits/daily?days=N` | Daily visit breakdown (default 30, max 365) |
+| `GET` | `/api/admin/summary` | Protected analytics summary (counts + derived stats) |
+| `GET` | `/api/admin/games?limit=N&offset=N&q=...` | Protected paginated/searchable games |
+| `GET` | `/api/admin/games/:gameId` | Protected game detail with turns + replay fields |
+| `GET` | `/api/admin/players?limit=N&offset=N&q=...` | Protected paginated/searchable players |
+| `GET` | `/api/admin/players/:userId` | Protected player profile + recent games/turns |
+| `GET` | `/api/admin/visits/daily?days=N` | Protected daily visit breakdown (default 30, max 365) |
 | `POST` | `/api/matchmaking/join` | Join random-match queue (`{userId, username}`) |
 | `GET` | `/api/matchmaking/status?userId=...` | Check random-match queue/match status |
 | `POST` | `/api/matchmaking/cancel` | Cancel random matchmaking (`{userId}`) |
@@ -279,7 +296,7 @@ Analytics calls are added **after** existing `broadcastToRoom` calls — no chan
 |------------------|-----------------|
 | `newGame` | `startGame()` + `setPlayer2()` if opponent in room |
 | Player joins (non-reconnection) | `setPlayer2()` if active game exists |
-| `turn` | `recordTurn()` with type 'word', score, formed words |
+| `turn` | `recordTurn()` with type 'word', score, formed words, and placed tile positions for replay |
 | `passTurn` | `recordTurn()` with type 'pass' |
 | `swapTiles` | `recordTurn()` with type 'swap' |
 | `gameOver` | `endGame()` with winner resolution and reason |
@@ -474,9 +491,9 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 
 ### Translation Keys (50+ total)
 
-**UI Labels**: `you`, `opponent`, `yourTurn`, `waiting`, `connected`, `disconnected`, `connectionFailed`, `tilesRemaining`, `total`, `tiles`, `turnHistory`, `noMovesYet`, `chat`, `noMessagesYet`, `typeMessage`, `send`, `turn`, `passed`, `swappedTiles`
+**UI Labels**: `you`, `opponent`, `yourTurn`, `waiting`, `connected`, `disconnected`, `tilesRemaining`, `total`, `tiles`, `turnHistory`, `noMovesYet`, `chat`, `noMessagesYet`, `typeMessage`, `send`, `turn`, `passed`, `swappedTiles`
 
-**Landing Page**: `playVsComputer`, `howToPlay`, `join`, and core shared labels. Several landing strings (new private game label, random match label, join-private helper text) are rendered inline in `App.js`.
+**Landing Page**: `createGame`, `playRandomOpponent`, `playVsComputer`, `joinGame`, `enterGameCode`, `join`, `howToPlay`, and other matchmaking/join helper labels are defined in `LanguageContext` and consumed by `App.js`.
 
 **Single Player**: `computer`, `computerThinking`, `vsComputer`
 
@@ -600,7 +617,8 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] **Confirmation dialogs**: Pass turn and new game (when game in progress) require confirmation
 - [x] **Tamil-inspired design**: peacock blue, vermilion, gold, teal, jade color scheme
 - [x] **Deployment config**: PM2 + nginx + TLS setup with DEPLOY.md guide
-- [x] **Analytics**: SQLite tracking for visits, games, and turns with REST API on same port as WebSocket
+- [x] **Analytics**: SQLite tracking for visits/games/turns with password-protected admin APIs (`/api/admin/*`)
+- [x] **Analytics Inspector UI**: `?analytics=1` view with summary cards, game/user inspection, and board replay slider
 
 - [x] **Single Player Mode**: Play vs Computer with client-side AI engine
   - Anchor-based word generation with dictionary prefix pruning (O(log 2.85M) per check)
@@ -675,10 +693,11 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - `REACT_APP_WS_URL` — WebSocket server URL (set in `.env` for dev, `.env.production` for prod)
 - `PORT` — Server port (default 8000, set in `server/.env` or environment)
 - `ALLOWED_ORIGINS` — Comma-separated allowed origins for WebSocket connections (set in `server/.env`)
+- `ANALYTICS_ADMIN_PASSWORD` — Required to enable protected analytics admin endpoints (`/api/admin/*`)
 
 ### Server (`server/index.js`)
 The server at `server/index.js` is an HTTP + WebSocket server on a single port:
-1. **HTTP server** wraps the WebSocket server — serves REST API for analytics
+1. **HTTP server** wraps the WebSocket server — serves gameplay REST APIs and protected analytics admin APIs
 2. Accepts WebSocket connections at `/{gameId}/{userId}?name={username}` path (rejects malformed URLs)
 3. Validates origin against `ALLOWED_ORIGINS` (permissive in dev when unset)
 4. Enforces per-IP connection limits (max 10)
@@ -690,7 +709,7 @@ The server at `server/index.js` is an HTTP + WebSocket server on a single port:
 10. Manages long-lived core `flookup` child processes with respawn on crash (guesser models optional via env)
 11. Maintains random-opponent matchmaking queue (`/api/matchmaking/join|status|cancel`)
 12. Stores persistent player profiles + leaderboard data (`players` table, `/api/profile`, `/api/leaderboard`)
-13. **Hooks analytics** into game message handlers (newGame, turn, pass, swap, gameOver)
+13. **Hooks analytics** into game message handlers (newGame, turn, pass, swap, gameOver), including tile placement capture for board replay
 14. Cleans up empty rooms after 5 minutes
 15. Gracefully shuts down flookup processes, analytics DB, and HTTP server on SIGINT
 16. Start with: `cd server && npm run setup && npm start`
@@ -717,7 +736,7 @@ Deployed as a single Dockerfile-based service on Railway:
 - Auto-deploys on push to `main` (connected via GitHub integration)
 - `railway.toml` `watchPatterns` limits rebuilds to code changes (skips doc-only commits)
 - Custom domain: `solmaalai.com` (CNAME → Railway). `சொல்மாலை.com` redirects via Namecheap.
-- FST validation is disabled in production (flookup not available in container) — client-side dictionary still validates
+- `Dockerfile` installs `foma`/`flookup`; server-side FST validation is available in production when FST models are present under `server/fst-models/`
 - Dictionary file (135MB) stored via Git LFS. Railway's Docker builder doesn't resolve LFS pointers, so the Dockerfile detects this (file < 1KB) and downloads the actual file from GitHub.
 - Railway CLI: `railway up` for manual deploy, `railway logs` to check output
 
