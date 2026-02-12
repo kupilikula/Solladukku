@@ -16,6 +16,7 @@ const RATE_LIMIT_MAX_MESSAGES = 30;
 const MATCH_ASSIGNMENT_TTL_MS = 10 * 60 * 1000;
 const MATCHMAKING_QUEUE_TTL_MS = 2 * 60 * 1000;
 const STRICT_SERVER_VALIDATION = String(process.env.STRICT_SERVER_VALIDATION || '').toLowerCase() === 'true';
+const ENABLE_GUESS_FSTS = String(process.env.ENABLE_GUESS_FSTS || '').toLowerCase() === 'true';
 
 // Initialize analytics DB
 analytics.init();
@@ -344,14 +345,10 @@ function getPlayerInfo(userId, indexHint = 1) {
 // ─── FST Validation Setup ────────────────────────────────────────────
 
 const FST_DIR = path.join(__dirname, 'fst-models');
-const FST_FILES = [
+const CORE_FST_FILES = [
     'noun.fst',
-    'noun-guess.fst',
     'adj.fst',
-    'adj-guess.fst',
     'adv.fst',
-    'adv-guess.fst',
-    'adverb-guesser.fst',
     'part.fst',
     'pronoun.fst',
     'verb-c3.fst',
@@ -360,6 +357,13 @@ const FST_FILES = [
     'verb-c12.fst',
     'verb-c62.fst',
     'verb-c-rest.fst',
+];
+
+const GUESS_FST_FILES = [
+    'noun-guess.fst',
+    'adj-guess.fst',
+    'adv-guess.fst',
+    'adverb-guesser.fst',
     'verb-guess.fst',
 ];
 
@@ -452,6 +456,12 @@ function spawnFlookupProcess(fstName, attempt = 1) {
 }
 
 function initFstProcesses() {
+    const selectedFstFiles = ENABLE_GUESS_FSTS
+        ? [...CORE_FST_FILES, ...GUESS_FST_FILES]
+        : CORE_FST_FILES;
+
+    console.log(`FST guess models: ${ENABLE_GUESS_FSTS ? 'ENABLED' : 'DISABLED'}`);
+
     if (!checkFlookup()) {
         console.log('WARNING: flookup not found. Install with: brew install foma');
         if (STRICT_SERVER_VALIDATION) {
@@ -471,7 +481,7 @@ function initFstProcesses() {
         return;
     }
 
-    const availableFsts = FST_FILES.filter(f => fs.existsSync(path.join(FST_DIR, f)));
+    const availableFsts = selectedFstFiles.filter(f => fs.existsSync(path.join(FST_DIR, f)));
     if (availableFsts.length === 0) {
         console.log('WARNING: No FST models found. Run: npm run setup');
         if (STRICT_SERVER_VALIDATION) {
