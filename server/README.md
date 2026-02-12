@@ -51,6 +51,7 @@ Room behavior:
 ## Notes
 
 - FST validation is permissive when `flookup`/models are unavailable.
+- Set `STRICT_SERVER_VALIDATION=true` to reject unknown words when server-side validation is unavailable.
 - Configure `ALLOWED_ORIGINS` in production for CORS and WebSocket origin checks.
 - For Railway, configure healthcheck path to `/health`.
 - Matchmaking assigns a private `gameId` once two queued users are available.

@@ -15,6 +15,7 @@ const RATE_LIMIT_WINDOW_MS = 1000;
 const RATE_LIMIT_MAX_MESSAGES = 30;
 const MATCH_ASSIGNMENT_TTL_MS = 10 * 60 * 1000;
 const MATCHMAKING_QUEUE_TTL_MS = 2 * 60 * 1000;
+const STRICT_SERVER_VALIDATION = String(process.env.STRICT_SERVER_VALIDATION || '').toLowerCase() === 'true';
 
 // Initialize analytics DB
 analytics.init();
@@ -127,7 +128,7 @@ function handleHttpRequest(req, res) {
                 console.error('HTTP validate-words error:', err);
                 const results = {};
                 for (const word of words) {
-                    results[word] = true; // Permissive fallback
+                    results[word] = !STRICT_SERVER_VALIDATION;
                 }
                 sendJson(res, 200, { results });
             }
@@ -453,19 +454,29 @@ function spawnFlookupProcess(fstName, attempt = 1) {
 function initFstProcesses() {
     if (!checkFlookup()) {
         console.log('WARNING: flookup not found. Install with: brew install foma');
-        console.log('Server-side FST validation disabled (words will be accepted permissively).');
+        if (STRICT_SERVER_VALIDATION) {
+            console.log('STRICT_SERVER_VALIDATION=true: words not recognized by local dictionary will be rejected.');
+        } else {
+            console.log('Server-side FST validation disabled (words will be accepted permissively).');
+        }
         return;
     }
 
     if (!fs.existsSync(FST_DIR)) {
         console.log(`WARNING: FST models directory not found: ${FST_DIR}`);
         console.log('Run: npm run setup  (to download FST models)');
+        if (STRICT_SERVER_VALIDATION) {
+            console.log('STRICT_SERVER_VALIDATION=true: words not recognized by local dictionary will be rejected.');
+        }
         return;
     }
 
     const availableFsts = FST_FILES.filter(f => fs.existsSync(path.join(FST_DIR, f)));
     if (availableFsts.length === 0) {
         console.log('WARNING: No FST models found. Run: npm run setup');
+        if (STRICT_SERVER_VALIDATION) {
+            console.log('STRICT_SERVER_VALIDATION=true: words not recognized by local dictionary will be rejected.');
+        }
         return;
     }
 
@@ -523,12 +534,12 @@ function lookupWord(fstEntry, word) {
  */
 async function validateWordWithFsts(word) {
     if (!flookupAvailable || fstProcesses.size === 0) {
-        return true; // Permissive fallback
+        return !STRICT_SERVER_VALIDATION; // strict mode rejects on server-validation unavailability
     }
 
     // Check all FSTs in parallel — return true as soon as any recognizes the word
     const entries = Array.from(fstProcesses.values()).filter(e => e.alive);
-    if (entries.length === 0) return true; // Permissive fallback
+    if (entries.length === 0) return !STRICT_SERVER_VALIDATION;
 
     // Use Promise.any-like behavior: resolve true on first recognition
     return new Promise((resolve) => {
@@ -962,7 +973,7 @@ async function handleValidateWords(ws, userId, message) {
         console.error(`Validation error for ${userId}:`, err);
         const results = {};
         for (const word of words) {
-            results[word] = true;
+            results[word] = !STRICT_SERVER_VALIDATION;
         }
         sendToClient(ws, {
             messageType: 'validateWordsResult',

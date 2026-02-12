@@ -148,7 +148,6 @@ export async function validateWordsWithServer(words, sendRequest) {
     if (!serverResults) {
         console.log('Server validation unavailable, accepting words permissively');
         for (const word of uncachedWords) {
-            serverValidationCache.set(word, true);
             cachedResults[word] = true;
         }
     } else {
@@ -209,7 +208,6 @@ export async function validateWordsWithHttpServer(words) {
 
     if (!apiResults) {
         for (const word of uncachedWords) {
-            serverValidationCache.set(word, true);
             cachedResults[word] = true;
         }
     } else {
