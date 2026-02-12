@@ -200,16 +200,28 @@ function endGame(gameId, { winnerId, reason }) {
     const rowId = activeGames.get(gameId);
     if (!rowId) return;
 
+    const game = db.prepare(`
+        SELECT player1_id, player2_id, player1_score, player2_score, ended_at
+        FROM games
+        WHERE id = ?
+    `).get(rowId);
+    if (!game) {
+        activeGames.delete(gameId);
+        turnCounters.delete(rowId);
+        return;
+    }
+    if (game.ended_at) {
+        // Idempotency guard: ratings/stats are already finalized for this game.
+        activeGames.delete(gameId);
+        turnCounters.delete(rowId);
+        return;
+    }
+
     db.prepare(
         `UPDATE games SET winner_id = ?, game_over_reason = ?, ended_at = datetime('now') WHERE id = ?`
     ).run(winnerId || null, reason || null, rowId);
 
     // Update persistent player ratings + record only for human-vs-human games.
-    const game = db.prepare(`
-        SELECT player1_id, player2_id, player1_score, player2_score
-        FROM games
-        WHERE id = ?
-    `).get(rowId);
     if (game && game.player1_id && game.player2_id &&
         game.player1_id !== 'computer-player' && game.player2_id !== 'computer-player') {
         const p1 = ensurePlayer(game.player1_id);

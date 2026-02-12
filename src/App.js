@@ -28,6 +28,20 @@ function getDefaultUsername() {
     return `Player${Math.floor(1000 + Math.random() * 9000)}`;
 }
 
+async function readJsonSafe(resp) {
+    try {
+        return await resp.json();
+    } catch {
+        return null;
+    }
+}
+
+function getApiErrorMessage(resp, data, fallbackLabel) {
+    if (data?.error) return data.error;
+    if (data?.message) return data.message;
+    return `${fallbackLabel} (${resp.status})`;
+}
+
 function parseGameIdFromInput(input) {
     const trimmed = (input || '').trim();
     if (!trimmed) return null;
@@ -56,7 +70,7 @@ function parseGameIdFromInput(input) {
     return null;
 }
 
-function LeaderboardCard({ leaderboard, loading, language }) {
+function LeaderboardCard({ leaderboard, loading, t }) {
     return (
         <div style={{
             width: '100%',
@@ -68,16 +82,16 @@ function LeaderboardCard({ leaderboard, loading, language }) {
             boxSizing: 'border-box',
         }}>
             <div style={{ fontSize: 16, fontWeight: 'bold', color: '#1A5276', marginBottom: 10 }}>
-                {language === 'ta' ? 'முன்னணி பட்டியல்' : 'Leaderboard'}
+                {t.leaderboard}
             </div>
             {loading && (
                 <div style={{ fontSize: 13, color: '#777' }}>
-                    {language === 'ta' ? 'ஏற்றுகிறது...' : 'Loading...'}
+                    {t.loading}
                 </div>
             )}
             {!loading && leaderboard.length === 0 && (
                 <div style={{ fontSize: 13, color: '#777' }}>
-                    {language === 'ta' ? 'இன்னும் தரவு இல்லை' : 'No games yet'}
+                    {t.noGamesYet}
                 </div>
             )}
             {!loading && leaderboard.length > 0 && (
@@ -226,7 +240,7 @@ function LandingPage({
                 }}>
                     <div>
                         <div style={{ fontSize: 13, color: '#444', marginBottom: 6 }}>
-                            {language === 'ta' ? 'உங்கள் பெயர்' : 'Your Username'}
+                            {t.usernameLabel}
                         </div>
                         <input
                             type="text"
@@ -264,7 +278,7 @@ function LandingPage({
                             fontFamily: 'Tamil Sangam MN, sans-serif',
                         }}
                     >
-                        {language === 'ta' ? 'புது ஆட்டம் அழைப்புடன்' : 'New Game With Invited Opponent'}
+                        {t.createGame}
                     </button>
 
                     <button
@@ -284,8 +298,8 @@ function LandingPage({
                         }}
                     >
                         {isMatching
-                            ? (language === 'ta' ? 'எதிரியை தேடுகிறது...' : 'Finding Opponent...')
-                            : (language === 'ta' ? 'யாவொருவருடன் விளையாடு' : 'Play Random Opponent')}
+                            ? t.findingOpponent
+                            : t.playRandomOpponent}
                     </button>
 
                     {isMatching && (
@@ -300,8 +314,8 @@ function LandingPage({
                             gap: 10,
                         }}>
                             <div style={{ fontSize: 12, color: '#345' }}>
-                                {language === 'ta' ? 'மற்ற வீரரை காத்திருக்கிறது' : 'Waiting for another player'}
-                                {matchingPosition ? ` (${language === 'ta' ? 'வரிசை' : 'Queue'} #${matchingPosition})` : ''}
+                                {t.waitingForPlayer}
+                                {matchingPosition ? ` (${t.queue} #${matchingPosition})` : ''}
                             </div>
                             <button
                                 onClick={onCancelRandomMatch}
@@ -316,7 +330,7 @@ function LandingPage({
                                     fontFamily: 'Tamil Sangam MN, sans-serif',
                                 }}
                             >
-                                {language === 'ta' ? 'ரத்து செய்' : 'Cancel'}
+                                {t.cancel}
                             </button>
                         </div>
                     )}
@@ -352,7 +366,7 @@ function LandingPage({
                             color: '#333',
                             marginBottom: 8,
                         }}>
-                            {language === 'ta' ? 'தனிப்பட்ட ஆட்டத்தில் சேர' : 'Join Private Game'}
+                            {t.joinGame}
                         </div>
                         <div style={{ display: 'flex', gap: 8 }}>
                             <input
@@ -360,7 +374,7 @@ function LandingPage({
                                 value={joinInput}
                                 onChange={e => { setJoinInput(e.target.value); setCodeError(false); }}
                                 onKeyDown={handleKeyDown}
-                                placeholder={language === 'ta' ? 'குறியீடு அல்லது அழைப்பு இணைப்பு' : 'Code or invite link'}
+                                placeholder={t.enterGameCode}
                                 style={{
                                     flex: 1,
                                     padding: '10px 12px',
@@ -391,16 +405,14 @@ function LandingPage({
                         </div>
                         {codeError && (
                             <div style={{ fontSize: 12, color: '#e53935', marginTop: 6 }}>
-                                {language === 'ta'
-                                    ? 'சரியான குறியீடு அல்லது அழைப்பு இணைப்பு உள்ளிடவும்'
-                                    : 'Enter a valid code or invite link'}
+                                {t.invalidCode}
                             </div>
                         )}
                     </div>
                 </div>
 
                 {leaderboard.length > 0 && (
-                    <LeaderboardCard leaderboard={leaderboard} loading={leaderboardLoading} language={language} />
+                    <LeaderboardCard leaderboard={leaderboard} loading={leaderboardLoading} t={t} />
                 )}
 
                 <button
@@ -475,6 +487,7 @@ function LandingPage({
 
 function AppContent() {
     const dispatch = useDispatch();
+    const { t } = useLanguage();
     const fallbackUsernameRef = useRef(getDefaultUsername());
 
     const userId = useMemo(() => {
@@ -557,17 +570,20 @@ function AppContent() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userId, username: effectiveUsername }),
             });
-            const data = await resp.json();
+            const data = await readJsonSafe(resp);
+            if (!resp.ok) {
+                throw new Error(getApiErrorMessage(resp, data, t.failedToStartMatchmaking));
+            }
             if (data.status === 'matched' && data.gameId) {
                 enterMultiplayerGame(data.gameId, data.starterUserId || null);
                 return;
             }
             setMatchingPosition(data.position || null);
-        } catch {
+        } catch (err) {
             setIsMatching(false);
-            setMatchingError('Failed to start matchmaking');
+            setMatchingError(err?.message || t.failedToStartMatchmaking);
         }
-    }, [enterMultiplayerGame, userId, effectiveUsername]);
+    }, [enterMultiplayerGame, userId, effectiveUsername, t]);
 
     const handleCancelRandomMatch = useCallback(async () => {
         setIsMatching(false);
@@ -589,7 +605,10 @@ function AppContent() {
         const poll = async () => {
             try {
                 const resp = await fetch(`${getApiBaseUrl()}/api/matchmaking/status?userId=${encodeURIComponent(userId)}`);
-                const data = await resp.json();
+                const data = await readJsonSafe(resp);
+                if (!resp.ok) {
+                    throw new Error(getApiErrorMessage(resp, data, t.matchmakingCheckFailed));
+                }
                 if (cancelled) return;
                 if (data.status === 'matched' && data.gameId) {
                     enterMultiplayerGame(data.gameId, data.starterUserId || null);
@@ -602,9 +621,9 @@ function AppContent() {
                 if (data.status === 'idle') {
                     setIsMatching(false);
                 }
-            } catch {
+            } catch (err) {
                 if (!cancelled) {
-                    setMatchingError('Matchmaking check failed');
+                    setMatchingError(err?.message || t.matchmakingCheckFailed);
                 }
             }
         };
@@ -615,7 +634,7 @@ function AppContent() {
             cancelled = true;
             clearInterval(interval);
         };
-    }, [isMatching, userId, enterMultiplayerGame]);
+    }, [isMatching, userId, enterMultiplayerGame, t]);
 
     useEffect(() => {
         fetch(getApiBaseUrl() + '/api/leaderboard?limit=10')

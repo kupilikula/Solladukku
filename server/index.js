@@ -14,6 +14,7 @@ const MAX_MESSAGE_SIZE = 100 * 1024; // 100KB
 const RATE_LIMIT_WINDOW_MS = 1000;
 const RATE_LIMIT_MAX_MESSAGES = 30;
 const MATCH_ASSIGNMENT_TTL_MS = 10 * 60 * 1000;
+const MATCHMAKING_QUEUE_TTL_MS = 2 * 60 * 1000;
 
 // Initialize analytics DB
 analytics.init();
@@ -183,6 +184,7 @@ function handleHttpRequest(req, res) {
                 return;
             }
 
+            pruneMatchmakingQueue();
             removeFromMatchmakingQueue(userId);
             const opponent = matchmakingQueue.shift();
 
@@ -221,6 +223,7 @@ function handleHttpRequest(req, res) {
             sendJson(res, 400, { error: 'Missing userId' });
             return;
         }
+        pruneMatchmakingQueue();
         const assignment = getActiveAssignment(userId);
         if (assignment) {
             sendJson(res, 200, { status: 'matched', ...assignment });
@@ -242,6 +245,7 @@ function handleHttpRequest(req, res) {
                 sendJson(res, 400, { error: 'Invalid cancel payload' });
                 return;
             }
+            pruneMatchmakingQueue();
             removeFromMatchmakingQueue(userId);
             matchAssignments.delete(userId);
             sendJson(res, 200, { ok: true });
@@ -305,7 +309,16 @@ function removeFromMatchmakingQueue(userId) {
     if (idx >= 0) matchmakingQueue.splice(idx, 1);
 }
 
+function pruneMatchmakingQueue(now = Date.now()) {
+    for (let i = matchmakingQueue.length - 1; i >= 0; i -= 1) {
+        if ((now - matchmakingQueue[i].joinedAt) > MATCHMAKING_QUEUE_TTL_MS) {
+            matchmakingQueue.splice(i, 1);
+        }
+    }
+}
+
 function getQueuePosition(userId) {
+    pruneMatchmakingQueue();
     const idx = matchmakingQueue.findIndex(item => item.userId === userId);
     return idx >= 0 ? (idx + 1) : null;
 }

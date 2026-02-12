@@ -324,7 +324,7 @@ function ConfirmDialog({ message, onConfirm, onCancel, t }) {
     );
 }
 
-function InviteModal({ gameId, onClose, onCopyCode, onCopyLink, onShare, language }) {
+function InviteModal({ gameId, onClose, onCopyCode, onCopyLink, onShare, t }) {
     const link = `${window.location.origin}?game=${gameId}`;
     return (
         <div style={{
@@ -345,15 +345,15 @@ function InviteModal({ gameId, onClose, onCopyCode, onCopyLink, onShare, languag
                 fontFamily: 'Tamil Sangam MN, sans-serif',
             }} onClick={e => e.stopPropagation()}>
                 <div style={{ fontSize: 20, color: '#1A5276', fontWeight: 'bold', marginBottom: 14 }}>
-                    {language === 'ta' ? 'நண்பரை அழைக்க' : 'Invite a Friend'}
+                    {t.inviteFriend}
                 </div>
                 <div style={{ fontSize: 13, color: '#555', marginBottom: 8 }}>
-                    {language === 'ta' ? 'குறியீடு அல்லது இணைப்பை பகிரவும்' : 'Share either the game code or the invite link'}
+                    {t.shareCodeOrLink}
                 </div>
 
                 <div style={{ marginBottom: 12 }}>
                     <div style={{ fontSize: 12, color: '#666', marginBottom: 4 }}>
-                        {language === 'ta' ? 'ஆட்ட குறியீடு' : 'Game Code'}
+                        {t.gameCodeLabel}
                     </div>
                     <div style={{ display: 'flex', gap: 8 }}>
                         <input readOnly value={gameId} style={{
@@ -368,7 +368,7 @@ function InviteModal({ gameId, onClose, onCopyCode, onCopyLink, onShare, languag
 
                 <div style={{ marginBottom: 14 }}>
                     <div style={{ fontSize: 12, color: '#666', marginBottom: 4 }}>
-                        {language === 'ta' ? 'அழைப்பு இணைப்பு' : 'Invite Link'}
+                        {t.inviteLinkLabel}
                     </div>
                     <div style={{ display: 'flex', gap: 8 }}>
                         <input readOnly value={link} style={{
@@ -387,14 +387,14 @@ function InviteModal({ gameId, onClose, onCopyCode, onCopyLink, onShare, languag
                             backgroundColor: '#1A5276', color: 'white', border: 'none', borderRadius: 6,
                             padding: '8px 12px', cursor: 'pointer', fontFamily: 'Tamil Sangam MN, sans-serif',
                         }}>
-                            {language === 'ta' ? 'பகிர்' : 'Share'}
+                            {t.share}
                         </button>
                     )}
                     <button onClick={onClose} style={{
                         backgroundColor: '#ddd', color: '#333', border: 'none', borderRadius: 6,
                         padding: '8px 12px', cursor: 'pointer', fontFamily: 'Tamil Sangam MN, sans-serif',
                     }}>
-                        {language === 'ta' ? 'மூடு' : 'Close'}
+                        {t.helpClose}
                     </button>
                 </div>
             </div>
@@ -421,7 +421,7 @@ export default function ActionMenu() {
 
     const gameId = useSelector(state => state.Game.gameId);
     const gameMode = useSelector(state => state.Game.gameMode);
-    const { language, t } = useLanguage();
+    const { t } = useLanguage();
     const [invalidWords, setInvalidWords] = useState([]);
     const [isValidating, setIsValidating] = useState(false);
     const [copiedText, setCopiedText] = useState('');
@@ -735,7 +735,7 @@ export default function ActionMenu() {
         const link = `${window.location.origin}?game=${gameId}`;
         navigator.share({
             title: 'Solmaalai',
-            text: language === 'ta' ? `ஆட்ட குறியீடு: ${gameId}` : `Game code: ${gameId}`,
+            text: `${t.gameCodeLabel}: ${gameId}`,
             url: link,
         }).catch(() => {});
     }
@@ -749,12 +749,12 @@ export default function ActionMenu() {
             {isValidating && (
                 <div className="ValidatingToast">
                     <span className="Spinner" />
-                    சரிபார்க்கிறது...
+                    {t.validating}
                 </div>
             )}
             {invalidWords.length > 0 && (
                 <div className="InvalidWordsToast">
-                    தவறான சொற்கள்: {invalidWords.join(', ')}
+                    {t.invalidWords}: {invalidWords.join(', ')}
                 </div>
             )}
             {copiedText && (
@@ -799,16 +799,16 @@ export default function ActionMenu() {
                     marginBottom: 0,
                     marginTop: 8,
                 }}>
-                    {language === 'ta' ? `எழுத்துகளைத் தேர்வு செய்யவும் (${swapSelectedCount})` : `Select tiles to swap (${swapSelectedCount})`}
+                    {t.selectTilesToSwap.replace('{count}', swapSelectedCount)}
                 </div>
             )}
-            <Tooltip id="newGame-tooltip" content="புது விளையாட்டு" delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
-            <Tooltip id="help-tooltip" content="உதவி" delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
-            <Tooltip id="invite-tooltip" content="அழைப்பு" delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
-            <Tooltip id="shuffle-tooltip" content="வரிசையை மாற்று" delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
-            <Tooltip id="swap-tooltip" content="எழுத்துகளை மாற்று" delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
-            <Tooltip id="pass-tooltip" content="தவிர்" delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
-            <Tooltip id="return-tooltip" content="எழுத்துகளை மீட்டெடு" delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
+            <Tooltip id="newGame-tooltip" content={t.tooltipNewGame} delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
+            <Tooltip id="help-tooltip" content={t.tooltipHelp} delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
+            <Tooltip id="invite-tooltip" content={t.tooltipInvite} delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
+            <Tooltip id="shuffle-tooltip" content={t.tooltipShuffle} delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
+            <Tooltip id="swap-tooltip" content={t.tooltipSwap} delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
+            <Tooltip id="pass-tooltip" content={t.tooltipPass} delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
+            <Tooltip id="return-tooltip" content={t.tooltipReturn} delayShow={500} style={{backgroundColor: 'black', color: 'white', zIndex: 100}}/>
             {showHelp && <HelpModal onClose={() => setShowHelp(false)} t={t} />}
             {confirmAction === 'pass' && (
                 <ConfirmDialog
@@ -829,10 +829,10 @@ export default function ActionMenu() {
             {showInviteModal && (
                 <InviteModal
                     gameId={gameId}
-                    language={language}
+                    t={t}
                     onClose={() => setShowInviteModal(false)}
-                    onCopyCode={() => copyText(gameId, language === 'ta' ? 'குறியீடு நகலெடுக்கப்பட்டது' : 'Code copied')}
-                    onCopyLink={() => copyText(`${window.location.origin}?game=${gameId}`, language === 'ta' ? 'இணைப்பு நகலெடுக்கப்பட்டது' : 'Link copied')}
+                    onCopyCode={() => copyText(gameId, t.codeCopied)}
+                    onCopyLink={() => copyText(`${window.location.origin}?game=${gameId}`, t.linkCopied)}
                     onShare={navigator.share ? shareInvite : null}
                 />
             )}
