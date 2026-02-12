@@ -130,6 +130,16 @@ function handleHttpRequest(req, res) {
         return;
     }
 
+    // Lightweight health endpoint for deployment readiness checks
+    if (req.method === 'GET' && pathname === '/health') {
+        sendJson(res, 200, {
+            ok: true,
+            service: 'solmaalai',
+            timestamp: Date.now(),
+        });
+        return;
+    }
+
     // Serve static React build if available
     const buildDir = path.join(__dirname, '..', 'build');
     if (fs.existsSync(buildDir)) {
