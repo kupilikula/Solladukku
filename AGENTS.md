@@ -27,7 +27,7 @@ server/
 ├── download-fsts.js          # Script to download FST models from ThamizhiMorph
 ├── package.json              # Server deps (ws, better-sqlite3); scripts: start, setup
 ├── analytics.db              # SQLite database (auto-created, gitignored)
-└── fst-models/               # Runtime FST model files (16 .fst files)
+└── fst-models/               # Runtime FST model files (16 downloaded; 11 core loaded by default)
 wordlists/
 ├── build_dictionary.py       # Builds combined dictionary from all sources
 ├── generate_fst_forms.py     # Generates noun/adj/adv inflections via flookup
@@ -176,7 +176,8 @@ Used consistently across: buttons, active score borders, turn badges, connected 
 submitWord() → local dictionary (binary search on sorted array, <1ms)
   ├─ FOUND → accept immediately
   └─ NOT FOUND → send 'validateWords' to server via WebSocket
-                    ├─ Server runs flookup against 16 FST models in parallel
+                    ├─ Server runs flookup against 11 core FST models by default
+                    ├─ Optional guesser FSTs can be enabled via env
                     ├─ ANY FST recognizes word → valid
                     └─ Returns 'validateWordsResult' (unicast to requester only)
                   Client caches result → accept or reject
@@ -186,6 +187,7 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 
 - **File**: `public/tamil_dictionary.txt` — 2.85M words, sorted (Unicode codepoint order)
 - **Loaded** on app startup via `loadDictionary()` in `src/utils/dictionary.js`
+- **Gameplay guard**: Play submission is blocked until dictionary load completes (loading toast + disabled Play button)
 - **Lookup**: Binary search using `<`/`>` comparison (NOT `localeCompare` — must match Python's `sorted()` codepoint order)
 - **Permissive fallback**: If dictionary fails to load or is too small (< 1000 entries, e.g. LFS pointer), all words are accepted
 
@@ -211,11 +213,12 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 
 ### Server-Side FST Validation (`server/index.js`)
 
-- **16 long-lived `flookup` child processes** (one per FST model), stdin/stdout pipes kept open
+- **11 long-lived core `flookup` child processes** by default (noun/adj/adv/part/pronoun + verb classes), stdin/stdout pipes kept open
+- **Optional guess models** (`*-guess.fst`) are disabled by default and enabled only with `ENABLE_GUESS_FSTS=true`
 - **FIFO callback queue** per process for concurrent lookups
 - **Parallel validation**: word checked against all FSTs simultaneously, accepted if ANY recognizes it
 - **Respawn logic**: crashed processes restart after 5s delay, max 3 attempts
-- **Permissive fallbacks**: flookup not installed → accept; FST models missing → accept; timeout → accept
+- **Strict mode option**: set `STRICT_SERVER_VALIDATION=true` to reject when server-side validation is unavailable
 - **Request-response pattern**: `requestId` field matches requests to responses (unicast, not broadcast)
 
 ### Server Validation Cache (`src/utils/dictionary.js`)
@@ -228,6 +231,8 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 
 - `isValidating` state prevents double-submission during server check
 - Blue `.ValidatingToast` with spinner shown during server validation
+- Blue `.ValidatingToast` also indicates dictionary preload in progress
+- Play button is disabled until dictionary is loaded
 - Red `.InvalidWordsToast` shown for rejected words (auto-fades after 3s)
 
 ## Analytics System
@@ -588,8 +593,8 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] **Dictionary Validation (client-side)**: 2.85M-word dictionary with binary search (<1ms lookup)
 - [x] **Dictionary Build Pipeline**: Python scripts combining Tamil Lexicon + Wiktionary + ThamizhiMorph verbs + FST noun/adj/adv forms
 - [x] **FST Form Generation**: Generates 1.16M noun inflections from 97K lemmas using foma/flookup
-- [x] **Server-side FST Validation**: 16 long-lived flookup processes for real-time word validation via WebSocket
-- [x] **Validation UI**: Async submit with spinner during server check, error toasts for invalid words
+- [x] **Server-side FST Validation**: 11 core long-lived flookup processes by default (guesser models opt-in)
+- [x] **Validation UI**: Async submit with spinner during server check, dictionary-loading toast, disabled Play until ready, error toasts for invalid words
 - [x] **Bilingual UI**: Tamil/English language toggle across all components including landing page
 - [x] **Help modal**: bilingual game instructions (8 sections), available on landing page and in-game
 - [x] **Confirmation dialogs**: Pass turn and new game (when game in progress) require confirmation
@@ -682,7 +687,7 @@ The server at `server/index.js` is an HTTP + WebSocket server on a single port:
 7. Rate-limits messages (30/sec sliding window) and rejects oversized messages (>100KB)
 8. Validates input per message type (chat text ≤ 500, validateWords ≤ 20, etc.)
 9. Handles `validateWords` requests via FST process pool (unicast response)
-10. Manages 16 long-lived `flookup` child processes with respawn on crash
+10. Manages long-lived core `flookup` child processes with respawn on crash (guesser models optional via env)
 11. Maintains random-opponent matchmaking queue (`/api/matchmaking/join|status|cancel`)
 12. Stores persistent player profiles + leaderboard data (`players` table, `/api/profile`, `/api/leaderboard`)
 13. **Hooks analytics** into game message handlers (newGame, turn, pass, swap, gameOver)

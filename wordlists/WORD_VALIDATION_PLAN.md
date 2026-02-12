@@ -119,13 +119,14 @@ Key finding: `noun.fst` uses tags like `+noun+acc`, `+noun+pl+nom`; `noun-guess.
 #### Phase 3: Server-side FST validation ✅ COMPLETE
 Server-side fallback for words not in the static dictionary, using Node.js (no Python needed):
 1. `server/download-fsts.js` downloads all 16 FST models to `server/fst-models/`
-2. `server/index.js` spawns 16 long-lived `flookup` child processes at startup
+2. `server/index.js` now loads 11 core long-lived `flookup` child processes by default (`ENABLE_GUESS_FSTS=true` opt-in for guesser models)
 3. Client sends `validateWords` request via WebSocket with `requestId`
 4. Server validates against all FSTs in parallel, unicasts result back
 5. Client caches results in session-level Map — same word never re-queried
-6. Permissive fallbacks: flookup missing → accept; timeout → accept; disconnect → accept
+6. Strict fallback supported: `STRICT_SERVER_VALIDATION=true` rejects unknown words when server-side validation is unavailable
 
 **Request-response pattern** (new for this codebase): `sendRequest()` in WebSocketContext returns a Promise, matched by `requestId`. All other messages remain fire-and-forget broadcasts.
+**UX note:** dictionary preload now starts at app startup, and Play is disabled until dictionary load completes.
 
 #### Phase 4: Bloom filter optimization (deferred)
 Not needed — the 2.85M-word dictionary loads fine as a sorted array with binary search.

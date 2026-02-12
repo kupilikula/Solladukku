@@ -1,11 +1,9 @@
 import '../styles/Styles.css';
-import { useEffect } from 'react';
 import PlayingBoard from "./PlayingBoard";
 import InfoBoard from "./InfoBoard";
 import { useGameSync } from '../hooks/useGameSync';
 import { useAIGameSync } from '../hooks/useAIGameSync';
 import { useSelector } from 'react-redux';
-import { loadDictionary } from '../utils/dictionary';
 import { useLanguage } from '../context/LanguageContext';
 
 function GameOverOverlay() {
@@ -82,11 +80,6 @@ function GameOverOverlay() {
 }
 
 function GameFrameInner() {
-    // Load dictionary on mount
-    useEffect(() => {
-        loadDictionary();
-    }, []);
-
     return (
         <div className="GameFrame">
             <PlayingBoard />

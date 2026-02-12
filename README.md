@@ -12,6 +12,7 @@ A multiplayer Tamil Scrabble game built with React and WebSockets.
 - Persistent leaderboard/rating system (SQLite-backed; shown when data exists)
 - Tamil/English bilingual UI
 - 2.85M-word Tamil dictionary with server-side FST validation fallback
+- Dictionary preloaded at app startup; Play button stays disabled until dictionary is ready
 - HTTP fallback FST validation for single-player (`POST /api/validate-words`)
 - Drag-and-drop tile placement
 - In-game chat

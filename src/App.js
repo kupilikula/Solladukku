@@ -7,6 +7,7 @@ import {storeUserId} from "./store/actions";
 import {setAutoStartPending} from "./store/GameSlice";
 import {WebSocketProvider} from "./context/WebSocketContext";
 import {LanguageProvider, useLanguage} from "./context/LanguageContext";
+import { loadDictionary } from './utils/dictionary';
 
 const USERNAME_STORAGE_KEY = 'solladukku_username';
 
@@ -526,6 +527,10 @@ function AppContent() {
     const [isMatching, setIsMatching] = useState(false);
     const [matchingPosition, setMatchingPosition] = useState(null);
     const [matchingError, setMatchingError] = useState('');
+
+    useEffect(() => {
+        loadDictionary();
+    }, []);
 
     const enterMultiplayerGame = useCallback((id, starterUserId = null) => {
         const url = new URL(window.location);

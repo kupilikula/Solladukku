@@ -431,6 +431,7 @@ export default function ActionMenu() {
     const { t } = useLanguage();
     const [invalidWords, setInvalidWords] = useState([]);
     const [validationError, setValidationError] = useState('');
+    const [dictionaryReady, setDictionaryReady] = useState(isDictionaryLoaded());
     const [isValidating, setIsValidating] = useState(false);
     const [copiedText, setCopiedText] = useState('');
     const [showHelp, setShowHelp] = useState(false);
@@ -461,6 +462,21 @@ export default function ActionMenu() {
             return () => clearTimeout(timer);
         }
     }, [validationError]);
+
+    useEffect(() => {
+        let cancelled = false;
+        const ensureDictionary = async () => {
+            await loadDictionary();
+            if (!cancelled) {
+                setDictionaryReady(isDictionaryLoaded());
+            }
+        };
+        if (!isDictionaryLoaded()) {
+            setDictionaryReady(false);
+            ensureDictionary();
+        }
+        return () => { cancelled = true; };
+    }, []);
 
     const getWordString = (formedWord) => {
         return formedWord.map(t => t.tile.letter).join('');
@@ -511,9 +527,10 @@ export default function ActionMenu() {
         setIsValidating(true);
         try {
             await loadDictionary();
+            setDictionaryReady(isDictionaryLoaded());
             if (!isDictionaryLoaded()) {
                 console.error('Dictionary unavailable; rejecting submission until loaded.', getDictionaryError());
-                setValidationError('Dictionary unavailable. Please wait and retry.');
+                setValidationError(t.dictionaryUnavailable);
                 return;
             }
 
@@ -777,6 +794,12 @@ export default function ActionMenu() {
                     {t.validating}
                 </div>
             )}
+            {!dictionaryReady && !isValidating && (
+                <div className="ValidatingToast">
+                    <span className="Spinner" />
+                    {t.dictionaryLoading}
+                </div>
+            )}
             {invalidWords.length > 0 && (
                 <div className="InvalidWordsToast">
                     {t.invalidWords}: {invalidWords.join(', ')}
@@ -809,7 +832,13 @@ export default function ActionMenu() {
                     <button id={'ReturnAllTilesToRack'} className={'ActionMenuButton'} onClick={returnAllTilesToRack} data-tooltip-id="return-tooltip"><FaAngleDoubleDown size={26}/>
                     </button>
                     <button id={'Shuffle'} className={'ActionMenuButton'} onClick={shuffleRackButton} data-tooltip-id="shuffle-tooltip"><FaShuffle size={26}/></button>
-                    <button id={'SubmitButton'} className={'ActionMenuButton'} onClick={submitWord}><FaPlay size={26}/>
+                    <button
+                        id={'SubmitButton'}
+                        className={'ActionMenuButton'}
+                        onClick={submitWord}
+                        disabled={!dictionaryReady}
+                        style={!dictionaryReady ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
+                    ><FaPlay size={26}/>
                     </button>
                     <button id={'Help'} className={'ActionMenuButton'} onClick={toggleHelp} data-tooltip-id="help-tooltip"><FaQuestion size={26} />
                     </button>
