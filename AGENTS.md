@@ -47,7 +47,7 @@ src/
 │   ├── WebSocketContext.js   # WebSocket: room connection, chat, sendRequest (req-response)
 │   └── LanguageContext.js    # Tamil/English toggle with 50+ translation keys
 ├── hooks/
-│   └── useGameSync.js        # Game state sync hook (initial draw, game-over detection)
+│   └── useGameSync.js        # Game state sync hook (auto-start, initial draw, game-over detection)
 ├── components/
 │   ├── GameFrame.js          # Main layout + GameOverOverlay (translated, peacock blue accent)
 │   ├── PlayingBoard.js       # Game board with DnD provider
@@ -281,6 +281,8 @@ Analytics calls are added **after** existing `broadcastToRoom` calls — no chan
   isMyTurn: boolean,           // Whether it's this player's turn
   gameStarted: boolean,        // Whether the game has started
   needsInitialDraw: boolean,   // Flag to trigger tile draw after sync
+  autoStartPending: boolean,   // Flag to auto-start game after WS connects (set on Create Game)
+  myInitialDraw: string[],     // Tiles drawn at game start (for re-syncing late joiners)
   playerNames: {               // Map of userId to display name
     [userId]: string
   },
@@ -477,15 +479,16 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 
 ### Multiplayer Flow
 1. **Player 1** creates a game from landing page → enters game with new gameId
-2. WebSocket connects to `/{gameId}/{userId}`
+2. WebSocket connects to `/{gameId}/{userId}` → game auto-starts: tiles drawn, rack filled, `newGame` broadcast
 3. **Player 2** opens invite link (`?game=abc123`) → joins same room (landing page skipped)
 4. Server sends `playerJoined` to Player 1, `joinedExistingGame` to Player 2
-5. Player 1 draws tiles, broadcasts `drewTiles`; Player 2 syncs and draws own tiles
-6. Players alternate turns, broadcasting `turn` messages with word positions and scores
-7. Game ends when:
+5. Player 1 re-sends `newGame` (with their drawn tiles) to sync the late joiner
+6. Player 2 receives `newGame` → `syncNewGame` deducts Player 1's tiles from bags, sets `needsInitialDraw` → `useGameSync` auto-draws Player 2's tiles and broadcasts `drewTiles`
+7. Both players now have full racks. Players alternate turns, broadcasting `turn` messages with word positions and scores
+8. Game ends when:
    - Tile bag exhausted + player's rack empty → `gameOverReason = 'tilesOut'`
    - 4 consecutive passes/swaps (2 per player) → `gameOverReason = 'consecutivePasses'`
-8. Winner determined by score; `gameOver` message syncs result
+9. Winner determined by score; `gameOver` message syncs result
 
 ### Invite System
 - Invite button in ActionMenu copies `{origin}?game={gameId}` to clipboard
@@ -517,6 +520,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] Bonus tile letter selection modal
 - [x] Redux state management (5 slices, 28 actions)
 - [x] New game initialization with confirmation dialog
+- [x] Auto-start on game creation: tiles drawn automatically when creating a game; late-joining players also get auto-drawn tiles via re-sync
 - [x] **Room-based multiplayer**: gameId in URL, 2-player rooms, invite links
 - [x] **WebSocket server**: turn, newGame, drewTiles, swapTiles, passTurn, gameOver, chat
 - [x] **WebSocket client**: auto-reconnect, request-response pattern, chat
