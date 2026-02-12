@@ -13,4 +13,3 @@ TILE_BAG_DESIGN.md
 *.db
 *.db-shm
 *.db-wal
-server/fst-models
