@@ -6,13 +6,17 @@
 
 import { TileSet, TileMethods } from '../utils/TileSet';
 import { squareMultipliers } from '../utils/squareMultipliers';
-import { buildGrid, findAnchors, hasPrefix, isWordValid, countBagTiles, selectWorstTiles } from './aiHelpers';
+import { validateWordsWithHttpServer } from '../utils/dictionary';
+import { buildGrid, findAnchors, hasPrefix, isWordValid, countBagTiles, selectAdaptiveSwapTiles } from './aiHelpers';
 import _ from 'lodash';
 
 const STARRED_SQUARES = [[7, 7], [3, 3], [3, 11], [11, 3], [11, 11]];
 const AI_DEV_LOG = process.env.NODE_ENV === 'development';
 const EARLY_EXIT_SCORE_FIRST_MOVE = 24;
 const EARLY_EXIT_SCORE_NORMAL = 34;
+const DEFAULT_SEARCH_TIME_LIMIT_MS = 5000;
+const SERVER_WORD_VALIDATION_LIMIT = 120;
+const SERVER_WORD_VALIDATION_CHUNK = 20;
 const ALL_NON_BONUS_LETTERS = [...new Set(
     Object.values(TileSet)
         .map(t => t?.letter)
@@ -38,6 +42,9 @@ function createDebugContext() {
         timedOut: false,
         earlyExitTriggered: false,
         crossMaskRejected: 0,
+        serverValidatedWords: 0,
+        serverValidatedHits: 0,
+        fallbackSearchUsed: false,
     };
 }
 
@@ -54,6 +61,9 @@ function getWordValidCached(word, aiCtx) {
     const cached = aiCtx.wordCache.get(word);
     if (cached !== undefined) return cached;
     const valid = isWordValid(word);
+    if (!valid && aiCtx.serverValidationEnabled && aiCtx.pendingServerWords.size < SERVER_WORD_VALIDATION_LIMIT) {
+        aiCtx.pendingServerWords.add(word);
+    }
     aiCtx.wordCache.set(word, valid);
     return valid;
 }
@@ -268,12 +278,90 @@ function getCrossWord(grid, row, col, direction, placedTile) {
     return crossTiles;
 }
 
+function findBestMoveAcrossAnchors(grid, anchors, rackTiles, isFirstMove, startTime, timeLimit, aiCtx, debugCtx = null, anchorLimit = anchors.length) {
+    let bestMove = null;
+    let timedOut = false;
+    const earlyExitScore = isFirstMove ? EARLY_EXIT_SCORE_FIRST_MOVE : EARLY_EXIT_SCORE_NORMAL;
+    const boundedAnchors = anchors.slice(0, anchorLimit);
+
+    anchorLoop:
+    for (const [anchorRow, anchorCol] of boundedAnchors) {
+        if (Date.now() - startTime > timeLimit) {
+            timedOut = true;
+            if (debugCtx) debugCtx.timedOut = true;
+            break;
+        }
+
+        for (const direction of ['row', 'col']) {
+            if (Date.now() - startTime > timeLimit) {
+                timedOut = true;
+                if (debugCtx) debugCtx.timedOut = true;
+                break;
+            }
+            if (debugCtx) debugCtx.directions += 1;
+
+            const move = findBestMoveFromAnchor(
+                grid, anchorRow, anchorCol, direction, rackTiles,
+                isFirstMove, startTime, timeLimit, aiCtx, debugCtx
+            );
+            if (move && (!bestMove || move.score > bestMove.score)) {
+                bestMove = move;
+                if (debugCtx) debugCtx.bestMoveUpdates += 1;
+                if (bestMove.score >= earlyExitScore) {
+                    if (debugCtx) debugCtx.earlyExitTriggered = true;
+                    break anchorLoop;
+                }
+            }
+        }
+    }
+
+    return { bestMove, timedOut };
+}
+
+async function resolvePendingServerWords(aiCtx, debugCtx = null) {
+    if (!aiCtx.serverValidationEnabled || aiCtx.pendingServerWords.size === 0) {
+        return 0;
+    }
+
+    const words = [...aiCtx.pendingServerWords].slice(0, SERVER_WORD_VALIDATION_LIMIT);
+    aiCtx.pendingServerWords.clear();
+    let newlyValid = 0;
+
+    for (let i = 0; i < words.length; i += SERVER_WORD_VALIDATION_CHUNK) {
+        const chunk = words.slice(i, i + SERVER_WORD_VALIDATION_CHUNK);
+        const result = await validateWordsWithHttpServer(chunk);
+        const invalidSet = new Set(result.invalidWords || []);
+        for (const word of chunk) {
+            const isValid = !invalidSet.has(word);
+            aiCtx.wordCache.set(word, isValid);
+            if (isValid) newlyValid += 1;
+        }
+    }
+
+    if (debugCtx) {
+        debugCtx.serverValidatedWords += words.length;
+        debugCtx.serverValidatedHits += newlyValid;
+    }
+
+    return newlyValid;
+}
+
+function getQuickSearchRack(rackTiles) {
+    return [...rackTiles]
+        .sort((a, b) => {
+            const pa = a?.points || 0;
+            const pb = b?.points || 0;
+            return pa - pb;
+        })
+        .slice(0, Math.min(8, rackTiles.length));
+}
+
 /**
  * Main AI move computation.
  */
-export function computeAIMove(boardState, aiRackTileKeys, letterBags, aiUserId) {
+export async function computeAIMove(boardState, aiRackTileKeys, letterBags, aiUserId, options = {}) {
     const startTime = Date.now();
-    const TIME_LIMIT = 2500;
+    const TIME_LIMIT = options.timeLimitMs || DEFAULT_SEARCH_TIME_LIMIT_MS;
     const debugCtx = AI_DEV_LOG ? createDebugContext() : null;
 
     const grid = buildGrid(boardState.playedTilesWithPositions);
@@ -285,6 +373,8 @@ export function computeAIMove(boardState, aiRackTileKeys, letterBags, aiUserId) 
         crossCheckCache: new Map(),
         bonusLetterOptionsCache: new Map(),
         letterUniverse: [],
+        pendingServerWords: new Set(),
+        serverValidationEnabled: options.serverValidationEnabled !== false,
     };
     const anchors = findAnchors(grid, isFirstMove)
         .sort((a, b) => rankAnchor(grid, b[0], b[1]) - rankAnchor(grid, a[0], a[1]));
@@ -309,36 +399,36 @@ export function computeAIMove(boardState, aiRackTileKeys, letterBags, aiUserId) 
         }).concat(ALL_NON_BONUS_LETTERS)
     )];
 
-    let bestMove = null;
-    const earlyExitScore = isFirstMove ? EARLY_EXIT_SCORE_FIRST_MOVE : EARLY_EXIT_SCORE_NORMAL;
+    let { bestMove, timedOut } = findBestMoveAcrossAnchors(
+        grid, anchors, rackTiles, isFirstMove, startTime, TIME_LIMIT, aiCtx, debugCtx
+    );
 
-    anchorLoop:
-    for (const [anchorRow, anchorCol] of anchors) {
-        if (Date.now() - startTime > TIME_LIMIT) {
-            if (debugCtx) debugCtx.timedOut = true;
-            break;
-        }
-
-        for (const direction of ['row', 'col']) {
-            if (Date.now() - startTime > TIME_LIMIT) {
-                if (debugCtx) debugCtx.timedOut = true;
-                break;
-            }
-            if (debugCtx) debugCtx.directions += 1;
-
-            const move = findBestMoveFromAnchor(
-                grid, anchorRow, anchorCol, direction, rackTiles,
-                isFirstMove, startTime, TIME_LIMIT, aiCtx, debugCtx
+    // Server-assisted rescue: validate unknown words and re-run search.
+    if (!bestMove && aiCtx.serverValidationEnabled && aiCtx.pendingServerWords.size > 0) {
+        const newlyValid = await resolvePendingServerWords(aiCtx, debugCtx);
+        if (newlyValid > 0) {
+            const retryStart = Date.now();
+            const retryLimit = Math.min(1800, TIME_LIMIT);
+            const retrySearch = findBestMoveAcrossAnchors(
+                grid, anchors, rackTiles, isFirstMove, retryStart, retryLimit, aiCtx, debugCtx
             );
-            if (move && (!bestMove || move.score > bestMove.score)) {
-                bestMove = move;
-                if (debugCtx) debugCtx.bestMoveUpdates += 1;
-                if (bestMove.score >= earlyExitScore) {
-                    if (debugCtx) debugCtx.earlyExitTriggered = true;
-                    break anchorLoop;
-                }
-            }
+            bestMove = retrySearch.bestMove;
+            timedOut = timedOut || retrySearch.timedOut;
         }
+    }
+
+    // Timeout-aware fallback search before swapping:
+    // Search a small, low-branch subset to avoid giving up too early on dense boards.
+    if (!bestMove && timedOut) {
+        if (debugCtx) debugCtx.fallbackSearchUsed = true;
+        const quickRack = getQuickSearchRack(rackTiles);
+        const quickStart = Date.now();
+        const quickLimit = 600;
+        const quickAnchorLimit = Math.min(10, anchors.length);
+        const quickSearch = findBestMoveAcrossAnchors(
+            grid, anchors, quickRack, isFirstMove, quickStart, quickLimit, aiCtx, debugCtx, quickAnchorLimit
+        );
+        bestMove = quickSearch.bestMove;
     }
 
     if (bestMove) {
@@ -360,6 +450,9 @@ export function computeAIMove(boardState, aiRackTileKeys, letterBags, aiUserId) 
                 bestMoveUpdates: debugCtx.bestMoveUpdates,
                 timedOut: debugCtx.timedOut,
                 earlyExitTriggered: debugCtx.earlyExitTriggered,
+                fallbackSearchUsed: debugCtx.fallbackSearchUsed,
+                serverValidatedWords: debugCtx.serverValidatedWords,
+                serverValidatedHits: debugCtx.serverValidatedHits,
                 topCandidates: debugCtx.acceptedCandidates,
             });
         }
@@ -382,16 +475,34 @@ export function computeAIMove(boardState, aiRackTileKeys, letterBags, aiUserId) 
                 rejectMainWordAfterExtension: debugCtx.rejectedMainWordAfterExtension,
                 rejectCrossWordAfterPlacement: debugCtx.rejectedCrossWordAfterPlacement,
                 earlyExitTriggered: debugCtx.earlyExitTriggered,
+                fallbackSearchUsed: debugCtx.fallbackSearchUsed,
+                serverValidatedWords: debugCtx.serverValidatedWords,
+                serverValidatedHits: debugCtx.serverValidatedHits,
                 topCandidates: debugCtx.acceptedCandidates,
             });
         }
-        const tilesToSwap = selectWorstTiles(aiRackTileKeys, Math.min(3, aiRackTileKeys.length), TileSet);
+        const duplicates = aiRackTileKeys.length - new Set(aiRackTileKeys).size;
+        const recentSwapSignatures = new Set(options.recentSwapSignatures || []);
+        let swapCount = 3;
+        if (bagTileCount >= 20 && duplicates >= 3) swapCount = 4;
+        if (bagTileCount <= 5) swapCount = 2;
+        if (typeof options.consecutiveAISwaps === 'number' && options.consecutiveAISwaps >= 2 && bagTileCount >= 12) {
+            swapCount = Math.min(4, aiRackTileKeys.length);
+        }
+        const tilesToSwap = selectAdaptiveSwapTiles(
+            aiRackTileKeys,
+            Math.min(swapCount, aiRackTileKeys.length),
+            TileSet,
+            { avoidSignatures: recentSwapSignatures, maxCount: Math.min(5, aiRackTileKeys.length) }
+        );
+        const swapSignature = [...tilesToSwap].sort().join('|');
         const drawnTiles = drawFromBags(tilesToSwap.length, letterBags);
         return {
             type: 'swap',
             swapInfo: {
                 originalReturnedTiles: tilesToSwap,
                 drawnTiles,
+                swapSignature,
             },
         };
     }
@@ -409,6 +520,9 @@ export function computeAIMove(boardState, aiRackTileKeys, letterBags, aiUserId) 
             rejectMainWordAfterExtension: debugCtx.rejectedMainWordAfterExtension,
             rejectCrossWordAfterPlacement: debugCtx.rejectedCrossWordAfterPlacement,
             earlyExitTriggered: debugCtx.earlyExitTriggered,
+            fallbackSearchUsed: debugCtx.fallbackSearchUsed,
+            serverValidatedWords: debugCtx.serverValidatedWords,
+            serverValidatedHits: debugCtx.serverValidatedHits,
             topCandidates: debugCtx.acceptedCandidates,
         });
     }
@@ -462,22 +576,8 @@ function findBestMoveFromAnchor(grid, anchorRow, anchorCol, direction, rackTiles
             const r = isHorizontal ? fixedLine : pos;
             const c = isHorizontal ? pos : fixedLine;
             if (grid[r][c] !== null) break;
-            // Don't extend past positions with perpendicular neighbors (other anchors)
-            let hasCrossNeighbor = false;
-            if (isHorizontal) {
-                if ((fixedLine > 0 && grid[fixedLine - 1][pos] !== null) ||
-                    (fixedLine < 14 && grid[fixedLine + 1][pos] !== null)) {
-                    hasCrossNeighbor = true;
-                }
-            } else {
-                if ((pos > 0 && grid[pos][fixedLine - 1] !== null) ||
-                    (pos < 14 && grid[pos][fixedLine + 1] !== null)) {
-                    hasCrossNeighbor = true;
-                }
-            }
             maxExtend++;
             pos--;
-            if (hasCrossNeighbor) break;
         }
     }
 
@@ -492,6 +592,11 @@ function findBestMoveFromAnchor(grid, anchorRow, anchorCol, direction, rackTiles
     for (let startPos = anchorMain; startPos >= earliestStart; startPos--) {
         startPositions.push(startPos);
     }
+    const onMoveFound = (move) => {
+        if (!bestMove || move.score > bestMove.score) {
+            bestMove = move;
+        }
+    };
 
     for (const startPos of startPositions) {
         if (Date.now() - startTime > timeLimit) break;
@@ -504,11 +609,7 @@ function findBestMoveFromAnchor(grid, anchorRow, anchorCol, direction, rackTiles
         searchFromPosition(
             grid, isHorizontal, fixedLine, startPos, anchorMain,
             rackTiles, usedRackIndices, placements, currentWord,
-            isFirstMove, (move) => {
-                if (!bestMove || move.score > bestMove.score) {
-                    bestMove = move;
-                }
-            },
+            isFirstMove, onMoveFound,
             startTime, timeLimit, aiCtx, debugCtx
         );
     }

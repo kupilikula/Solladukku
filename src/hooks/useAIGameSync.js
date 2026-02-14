@@ -57,6 +57,10 @@ export function useAIGameSync() {
     const dispatch = useDispatch();
     const store = useStore();
     const aiRackRef = useRef([]);
+    const aiDecisionRef = useRef({
+        recentSwapSignatures: [],
+        consecutiveAISwaps: 0,
+    });
     const initializedRef = useRef(false);
     const aiTurnTimeoutRef = useRef(null);
     const prevMyInitialDrawRef = useRef(null);
@@ -86,6 +90,7 @@ export function useAIGameSync() {
         dispatch(replenishRack(playerTiles));
 
         const aiTileKeys = drawAITiles(playerTiles, dispatch, aiRackRef);
+        aiDecisionRef.current = { recentSwapSignatures: [], consecutiveAISwaps: 0 };
 
         dispatch(addPlayers({ otherPlayerIds: [AI_USER_ID] }));
         dispatch(setGameMode('singleplayer'));
@@ -105,6 +110,7 @@ export function useAIGameSync() {
 
         // Player started a new game — draw AI tiles from remaining bags
         const aiTileKeys = drawAITiles(myInitialDraw, dispatch, aiRackRef);
+        aiDecisionRef.current = { recentSwapSignatures: [], consecutiveAISwaps: 0 };
 
         // Re-add computer as opponent (otherPlayerIds persists, but just in case)
         const state = store.getState();
@@ -123,18 +129,32 @@ export function useAIGameSync() {
         }
     }, [consecutivePasses, gameOver, myScore, opponentScore, myUserId, dispatch]);
 
-    const executeAITurn = useCallback(() => {
+    const executeAITurn = useCallback(async () => {
         const state = store.getState();
         const boardState = state.WordBoard;
         const letterBags = state.LetterBags;
         const currentMyUserId = state.Game.userId;
 
-        const result = computeAIMove(
-            boardState,
-            aiRackRef.current,
-            letterBags,
-            AI_USER_ID
-        );
+        let result;
+        try {
+            result = await computeAIMove(
+                boardState,
+                aiRackRef.current,
+                letterBags,
+                AI_USER_ID,
+                {
+                    recentSwapSignatures: aiDecisionRef.current.recentSwapSignatures,
+                    consecutiveAISwaps: aiDecisionRef.current.consecutiveAISwaps,
+                    serverValidationEnabled: true,
+                    timeLimitMs: 5000,
+                }
+            );
+        } catch (err) {
+            console.error('AI move computation failed, defaulting to pass:', err);
+            dispatch(syncPassTurn());
+            aiDecisionRef.current.consecutiveAISwaps = 0;
+            return;
+        }
 
         if (result.type === 'play') {
             const turnInfo = result.turnInfo;
@@ -163,6 +183,7 @@ export function useAIGameSync() {
             };
 
             dispatch(addOtherPlayerTurn({ turnInfo: cleanTurnInfo }));
+            aiDecisionRef.current.consecutiveAISwaps = 0;
 
             // Check for game end: bag empty + rack empty
             const bagsAfter = store.getState().LetterBags;
@@ -197,10 +218,15 @@ export function useAIGameSync() {
                 returnedTiles: originalReturnedTiles,
                 drawnTiles: drawnTiles,
             }));
+            const swapSignature = result.swapInfo.swapSignature || [...originalReturnedTiles].sort().join('|');
+            const updatedRecent = [...aiDecisionRef.current.recentSwapSignatures, swapSignature].slice(-4);
+            aiDecisionRef.current.recentSwapSignatures = updatedRecent;
+            aiDecisionRef.current.consecutiveAISwaps += 1;
 
             console.log('AI swapped tiles');
         } else {
             dispatch(syncPassTurn());
+            aiDecisionRef.current.consecutiveAISwaps = 0;
             console.log('AI passed');
         }
     }, [dispatch, store]);

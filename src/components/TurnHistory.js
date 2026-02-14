@@ -75,6 +75,7 @@ export default function TurnHistory() {
                         words={turn.turnFormedWords ? turn.turnFormedWords.map(getWordString) : []}
                         wordScores={turn.wordScores || []}
                         totalScore={turn.turnScore}
+                        swappedTileCount={turn.swappedTileCount || 0}
                         t={t}
                     />
                 ))}
@@ -83,9 +84,13 @@ export default function TurnHistory() {
     );
 }
 
-function TurnEntry({ turnNumber, playerName, isMe, turnType, words, wordScores, totalScore, t }) {
+function TurnEntry({ turnNumber, playerName, isMe, turnType, words, wordScores, totalScore, swappedTileCount, t }) {
     const isPassOrSwap = turnType === 'pass' || turnType === 'swap';
-    const actionLabel = turnType === 'pass' ? t.passed : turnType === 'swap' ? t.swappedTiles : null;
+    const actionLabel = turnType === 'pass'
+        ? t.passed
+        : turnType === 'swap'
+            ? `${t.swappedTiles} (${swappedTileCount} ${t.tiles})`
+            : null;
 
     return (
         <div style={{

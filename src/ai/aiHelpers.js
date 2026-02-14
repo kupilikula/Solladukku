@@ -123,3 +123,66 @@ export function selectWorstTiles(rackTileKeys, count, TileSet) {
     scored.sort((a, b) => b.points - a.points);
     return scored.slice(0, count).map(s => s.key);
 }
+
+/**
+ * Adaptive swap selector to avoid repeated dead-loop swaps.
+ * Scores tiles by "replace value" (high points, duplicates, rack imbalance)
+ * while trying to preserve bonus tiles and avoid repeating the same swap set.
+ */
+export function selectAdaptiveSwapTiles(rackTileKeys, count, TileSet, options = {}) {
+    const {
+        avoidSignatures = new Set(),
+        maxCount = Math.min(5, rackTileKeys.length),
+    } = options;
+
+    if (!Array.isArray(rackTileKeys) || rackTileKeys.length === 0) return [];
+    const cappedCount = Math.max(1, Math.min(count, maxCount, rackTileKeys.length));
+
+    const typeCounts = rackTileKeys.reduce((acc, key) => {
+        const tile = TileSet[key];
+        const type = tile?.letterType || 'UNKNOWN';
+        acc[type] = (acc[type] || 0) + 1;
+        return acc;
+    }, {});
+    const keyCounts = rackTileKeys.reduce((acc, key) => {
+        acc[key] = (acc[key] || 0) + 1;
+        return acc;
+    }, {});
+
+    const scored = rackTileKeys.map((key, idx) => {
+        const tile = TileSet[key];
+        const points = tile?.points || 0;
+        const letterType = tile?.letterType || 'UNKNOWN';
+        const duplicates = (keyCounts[key] || 1) - 1;
+        const isBonus = letterType === 'BONUS';
+
+        let score = points * 2 + duplicates * 1.5;
+        if (letterType === 'UYIR' && (typeCounts.UYIR || 0) > 7) score += 2;
+        if (letterType === 'MEY' && (typeCounts.MEY || 0) > 7) score += 2;
+        if (isBonus) score -= 6; // Keep wildcard unless rack is very poor.
+
+        return { key, idx, score, points };
+    }).sort((a, b) => b.score - a.score || b.points - a.points);
+
+    // Build best candidate set first.
+    const top = scored.slice(0, cappedCount).map(s => s.key);
+    const signature = [...top].sort().join('|');
+    if (!avoidSignatures.has(signature)) return top;
+
+    // If that set was used recently, rotate in nearby candidates to diversify.
+    const candidatePool = scored.slice(0, Math.min(scored.length, cappedCount + 4)).map(s => s.key);
+    let best = top;
+    for (let i = 0; i < candidatePool.length; i++) {
+        const trial = [...top];
+        const replacement = candidatePool[i];
+        if (trial.includes(replacement)) continue;
+        trial[trial.length - 1] = replacement;
+        const trialSig = [...trial].sort().join('|');
+        if (!avoidSignatures.has(trialSig)) {
+            best = trial;
+            break;
+        }
+    }
+
+    return best;
+}

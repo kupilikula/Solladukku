@@ -49,8 +49,8 @@ public/
 src/
 ├── App.js                    # Landing page + game entry: userId, gameId, mode routing
 ├── ai/
-│   ├── aiEngine.js           # AI move generation: anchor-based search, prefix pruning, scoring
-│   └── aiHelpers.js          # Grid building, anchor finding, dictionary prefix check, utilities
+│   ├── aiEngine.js           # AI move generation: anchor-based search, prefix pruning, timeout/server-assisted fallback validation, scoring
+│   └── aiHelpers.js          # Grid building, anchor finding, dictionary/prefix checks, adaptive swap utilities
 ├── context/
 │   ├── WebSocketContext.js   # WebSocket: room connection, chat, sendRequest (req-response)
 │   └── LanguageContext.js    # Tamil/English toggle with 50+ translation keys
@@ -70,7 +70,7 @@ src/
 │   ├── InfoBoard.js          # Right sidebar: scores, bags, history, chat, language toggle
 │   ├── ScoreBoard.js         # Score display with turn indicator badge
 │   ├── LetterBags.js         # Remaining tile counts (Tamil-only labels: மெய், உயிர், மாயம்)
-│   ├── TurnHistory.js        # Move history with words, scores, passes, swaps
+│   ├── TurnHistory.js        # Move history with words, scores, passes, swaps (+ swap tile count)
 │   ├── ConnectionStatus.js   # Connection/turn status (adapts for single-player: "vs Computer")
 │   ├── Chat.js               # Real-time player chat (500 char limit, timestamps)
 │   └── ChooseLetter.js       # Modal for bonus tile letter selection
@@ -514,7 +514,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - `App.js` — landing page: title, mode actions, join-private input, leaderboard, help modal, language toggle
 - `ScoreBoard.js` — role labels (`t.you`, `t.opponent`), turn badge (`t.turn`), usernames from Redux `playerNames`
 - `ConnectionStatus.js` — status text, turn indicator
-- `TurnHistory.js` — header, empty state, pass/swap labels
+- `TurnHistory.js` — header, empty state, pass/swap labels (swap entries include swapped tile count)
 - `LetterBags.js` — header, total label (tile type labels are Tamil-only: மெய், உயிர், மாயம்)
 - `Chat.js` — header, empty state, input placeholder, send button
 - `GameFrame.js` — GameOverOverlay result/reason text, player labels
@@ -544,9 +544,11 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
    - `computeAIMove()` runs anchor-based word search on the board
    - Tries placing rack tiles at anchor positions, pruning with dictionary prefix checks
    - Handles MEY+UYIR tile merging for UYIRMEY combinations
+   - Uses a 5s search budget, then runs a timeout-aware quick fallback search before giving up
+   - On no-move paths, validates a bounded set of unknown words via HTTP FST (`/api/validate-words`) and retries search
    - Validates all cross-words, calculates scores with multipliers
    - Dispatches `addOtherPlayerTurn` with the best-scoring valid move
-   - Falls back to swap (3 worst tiles) or pass if no valid move found
+   - Falls back to adaptive swap (2-4 tiles, with repeat-avoidance using recent swap signatures) or pass if no valid move found
 6. UI adapts: "vs Computer" status, "Thinking..." indicator, "Computer" name in scoreboard, no Chat, no Invite button
 7. Game ends same as multiplayer: tiles exhausted or 4 consecutive passes/swaps
 
@@ -607,7 +609,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] **Chat UI**: real-time messages with timestamps, 500-char limit
 - [x] **Invite system**: auto-open invite modal after new invited game; copy code, copy link, and native share support
 - [x] LetterBags UI: remaining tile counts with Tamil-only labels (மெய், உயிர், மாயம்)
-- [x] TurnHistory UI: move history with words, scores, passes, and swaps
+- [x] TurnHistory UI: move history with words, scores, passes, and swaps (including swapped tile count)
 - [x] ScoreBoard: role labels (You/Opponent) + usernames, scores, and turn indicator
 - [x] ConnectionStatus: WebSocket connection state and whose turn it is
 - [x] **Swap mode UX**: sticky swap button, auto-return board tiles, single-click selection, red border, cancel
@@ -632,8 +634,9 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
   - Anchor-based word generation with dictionary prefix pruning (O(log 2.85M) per check)
   - Tamil MEY+UYIR tile merging for UYIRMEY combinations
   - Cross-word validation, score calculation with multipliers
-  - 2.5s time budget with early termination returning best move found
-  - Fallback: swap worst tiles or pass if no valid move found
+  - 5s search budget + timeout-aware quick fallback search before swap/pass fallback
+  - Server-assisted rescue validation: bounded unknown-word batches validated via HTTP FST and cached before retrying search
+  - Adaptive swap strategy (2-4 tiles based on rack/bag state) with recent-signature avoidance to reduce repeated swap loops
   - UI adapts: "vs Computer" status, "Computer" name, no Chat/Invite, "Thinking..." indicator
 
 ### TODO

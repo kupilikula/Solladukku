@@ -86,6 +86,7 @@ export const ScoreBoardSlice = createSlice({
                     turnType: 'swap',
                     turnUserId: 'me',
                     turnScore: 0,
+                    swappedTileCount: (action.payload?.returnedTiles || []).length,
                 });
             })
             .addCase(syncSwapTiles, (state, action) => {
@@ -93,6 +94,7 @@ export const ScoreBoardSlice = createSlice({
                     turnType: 'swap',
                     turnUserId: 'opponent',
                     turnScore: 0,
+                    swappedTileCount: (action.payload?.returnedTiles || []).length,
                 });
             })
             .addCase(addOtherPlayerTurn, (state, action) => {
