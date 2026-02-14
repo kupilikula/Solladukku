@@ -22,6 +22,7 @@ const WebSocket = require('ws');
 const http = require('http');
 const { spawn } = require('child_process');
 const crypto = require('crypto');
+const nodemailer = require('nodemailer');
 const analytics = require('./analytics');
 const geo = require('./geo');
 const AUTH_FEATURE_FLAG = String(process.env.AUTH_ENABLED || 'false').toLowerCase() === 'true';
@@ -61,6 +62,11 @@ const GUEST_MODE_ENABLED = String(process.env.GUEST_MODE_ENABLED || 'true').toLo
 const APP_BASE_URL = process.env.APP_BASE_URL || '';
 const EMAIL_PROVIDER = String(process.env.EMAIL_PROVIDER || '').trim().toLowerCase();
 const EMAIL_FROM = process.env.EMAIL_FROM || '';
+const EMAIL_SMTP_HOST = process.env.EMAIL_SMTP_HOST || 'smtp.zoho.com';
+const EMAIL_SMTP_PORT = Math.max(1, Number(process.env.EMAIL_SMTP_PORT || 465));
+const EMAIL_SMTP_SECURE = String(process.env.EMAIL_SMTP_SECURE || 'true').toLowerCase() !== 'false';
+const EMAIL_SMTP_USER = process.env.EMAIL_SMTP_USER || '';
+const EMAIL_SMTP_PASS = process.env.EMAIL_SMTP_PASS || '';
 const EMAIL_VERIFICATION_TTL_HOURS = Math.max(1, Number(process.env.AUTH_EMAIL_VERIFICATION_TTL_HOURS || 24));
 const PASSWORD_RESET_TTL_MINUTES = Math.max(5, Number(process.env.AUTH_PASSWORD_RESET_TTL_MINUTES || 30));
 
@@ -241,6 +247,22 @@ function buildEmailTokenLink(pathname, token) {
     return url.toString();
 }
 
+let smtpTransporter = null;
+
+function getSmtpTransporter() {
+    if (smtpTransporter) return smtpTransporter;
+    smtpTransporter = nodemailer.createTransport({
+        host: EMAIL_SMTP_HOST,
+        port: EMAIL_SMTP_PORT,
+        secure: EMAIL_SMTP_SECURE,
+        auth: {
+            user: EMAIL_SMTP_USER,
+            pass: EMAIL_SMTP_PASS,
+        },
+    });
+    return smtpTransporter;
+}
+
 async function sendAuthEmail({ type, toEmail, token, accountId }) {
     // Phase E: provider integration is optional. Return explicit fallback details when missing.
     if (!EMAIL_PROVIDER) {
@@ -254,19 +276,74 @@ async function sendAuthEmail({ type, toEmail, token, accountId }) {
         };
     }
 
-    // Placeholder for real provider integration.
-    console.log('[auth email] provider configured but delivery adapter not implemented', {
-        provider: EMAIL_PROVIDER,
-        fromConfigured: Boolean(EMAIL_FROM),
-        type,
-        toEmail,
-        accountId,
-    });
-    return {
-        delivered: false,
-        providerConfigured: true,
-        emailFromConfigured: Boolean(EMAIL_FROM),
-    };
+    if (EMAIL_PROVIDER !== 'zoho_smtp') {
+        return {
+            delivered: false,
+            providerConfigured: false,
+            emailFromConfigured: Boolean(EMAIL_FROM),
+            error: 'Unsupported EMAIL_PROVIDER. Use zoho_smtp or leave empty for fallback.',
+        };
+    }
+
+    if (!EMAIL_FROM || !EMAIL_SMTP_USER || !EMAIL_SMTP_PASS) {
+        return {
+            delivered: false,
+            providerConfigured: false,
+            emailFromConfigured: Boolean(EMAIL_FROM),
+            error: 'Missing SMTP configuration',
+        };
+    }
+
+    const verifyUrl = buildEmailTokenLink('/verify-email', token);
+    const resetUrl = buildEmailTokenLink('/reset-password', token);
+    const displayAppUrl = APP_BASE_URL || 'this app';
+    const isVerify = type === 'verify-email';
+    const subject = isVerify ? 'Verify your Solmaalai account email' : 'Reset your Solmaalai password';
+    const text = isVerify
+        ? [
+            'Welcome to Solmaalai.',
+            'Please verify your email to secure your account.',
+            verifyUrl ? `Verify link: ${verifyUrl}` : `Open ${displayAppUrl} and use this token: ${token}`,
+            !verifyUrl ? `Token: ${token}` : null,
+            '',
+            'If you did not create this account, you can ignore this email.',
+        ].filter(Boolean).join('\n')
+        : [
+            'A password reset was requested for your Solmaalai account.',
+            resetUrl ? `Reset link: ${resetUrl}` : `Open ${displayAppUrl} and use this reset token: ${token}`,
+            !resetUrl ? `Reset token: ${token}` : null,
+            '',
+            'If you did not request this reset, you can ignore this email.',
+        ].filter(Boolean).join('\n');
+
+    try {
+        const transporter = getSmtpTransporter();
+        await transporter.sendMail({
+            from: EMAIL_FROM,
+            to: toEmail,
+            subject,
+            text,
+        });
+        return {
+            delivered: true,
+            providerConfigured: true,
+            emailFromConfigured: true,
+        };
+    } catch (error) {
+        console.error('[auth email] send failed', {
+            provider: EMAIL_PROVIDER,
+            type,
+            toEmail,
+            accountId,
+            message: error?.message || String(error),
+        });
+        return {
+            delivered: false,
+            providerConfigured: true,
+            emailFromConfigured: Boolean(EMAIL_FROM),
+            error: 'Email send failed',
+        };
+    }
 }
 
 function requireAuthContext(req, res) {

@@ -14,7 +14,7 @@ A React-based Tamil Scrabble game with a landing page, real-time multiplayer via
 - **Real-time**: WebSockets with room-based multiplayer (runtime URL auto-derived; localhost dev defaults to port 8000)
 - **I18n**: React Context-based Tamil/English language toggle
 - **UI**: react-icons, react-tooltip, react-select, react-fitty
-- **Server**: Node.js with ws library, foma/flookup for FST validation, origin/rate-limit hardening, SQLite analytics, and feature-flagged account auth (access token + HttpOnly refresh cookie sessions, Argon2id password hashing via `argon2`)
+- **Server**: Node.js with ws library, foma/flookup for FST validation, origin/rate-limit hardening, SQLite analytics, and feature-flagged account auth (access token + HttpOnly refresh cookie sessions, Argon2id password hashing via `argon2`), plus Zoho SMTP email delivery integration via `nodemailer` for verification/reset flows
 - **Dictionary Build**: Python 3 scripts, foma toolkit for FST morphological generation
 - **Deployment**: Railway (Dockerfile-based, auto-deploy on push to `main`). Server serves both API/WebSocket and React static build as a single service.
 - **Dictionary Storage**: Git LFS (135MB file exceeds GitHub's 100MB limit). Dockerfile auto-downloads from GitHub if LFS pointer isn't resolved.
@@ -799,8 +799,13 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - `AUTH_EMAIL_VERIFICATION_TTL_HOURS` — Verification token TTL in hours (default `24`)
 - `AUTH_PASSWORD_RESET_TTL_MINUTES` — Password reset token TTL in minutes (default `30`)
 - `APP_BASE_URL` — App origin used for auth token audience metadata
-- `EMAIL_PROVIDER` — Optional outbound email provider selector; empty enables safe dev fallback responses
+- `EMAIL_PROVIDER` — Optional outbound email provider selector. `zoho_smtp` enables real SMTP delivery; empty enables safe dev fallback responses
 - `EMAIL_FROM` — Optional from-address when email provider integration is enabled
+- `EMAIL_SMTP_HOST` — SMTP host for provider (`smtp.zoho.com` for Zoho)
+- `EMAIL_SMTP_PORT` — SMTP port (Zoho SSL default `465`)
+- `EMAIL_SMTP_SECURE` — SMTP secure flag (`true` for Zoho 465)
+- `EMAIL_SMTP_USER` — SMTP auth username (typically full sender email)
+- `EMAIL_SMTP_PASS` — SMTP auth password/app-password
 - `GEO_PROVIDER` — Geo lookup provider: `none` (default), `ipwhois`, or `ipapi`
 - `GEO_LOOKUP_TIMEOUT_MS` — Geo lookup timeout in milliseconds (default `800`)
 - `GEO_CACHE_TTL_MS` — In-memory geo cache TTL in milliseconds (default `86400000`)
