@@ -12,6 +12,32 @@ const turnCounters = new Map();
 
 const RATING_K = 24;
 
+function ensureSchemaMigrationsTable() {
+    db.exec(`
+        CREATE TABLE IF NOT EXISTS schema_migrations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL UNIQUE,
+            applied_at TEXT DEFAULT (datetime('now'))
+        );
+    `);
+}
+
+function hasAppliedMigration(name) {
+    const row = db.prepare('SELECT 1 FROM schema_migrations WHERE name = ? LIMIT 1').get(name);
+    return Boolean(row);
+}
+
+function applyMigration(name, sqlStatements) {
+    if (hasAppliedMigration(name)) return;
+    const tx = db.transaction(() => {
+        for (const sql of sqlStatements) {
+            db.exec(sql);
+        }
+        db.prepare('INSERT INTO schema_migrations (name) VALUES (?)').run(name);
+    });
+    tx();
+}
+
 function addColumnsIfMissing(tableName, columns) {
     const existing = new Set(
         db.prepare(`PRAGMA table_info(${tableName})`).all().map(col => col.name)
@@ -132,6 +158,7 @@ function init() {
     db = new Database(DB_PATH);
     db.pragma('journal_mode = WAL');
     db.pragma('foreign_keys = ON');
+    ensureSchemaMigrationsTable();
 
     db.exec(`
         CREATE TABLE IF NOT EXISTS visits (
@@ -139,6 +166,7 @@ function init() {
             page TEXT NOT NULL,
             game_id TEXT,
             user_id TEXT,
+            account_id TEXT,
             ip TEXT,
             user_agent TEXT,
             referrer TEXT,
@@ -156,6 +184,7 @@ function init() {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             game_id TEXT NOT NULL,
             game_type TEXT DEFAULT 'multiplayer',
+            account_id TEXT,
             player1_id TEXT,
             player2_id TEXT,
             player1_score INTEGER DEFAULT 0,
@@ -177,6 +206,7 @@ function init() {
             game_id TEXT NOT NULL,
             games_row_id INTEGER REFERENCES games(id),
             user_id TEXT,
+            account_id TEXT,
             turn_number INTEGER,
             turn_type TEXT NOT NULL,
             score INTEGER DEFAULT 0,
@@ -210,6 +240,7 @@ function init() {
             game_id TEXT NOT NULL,
             games_row_id INTEGER NOT NULL REFERENCES games(id),
             user_id TEXT NOT NULL,
+            account_id TEXT,
             state_json TEXT NOT NULL,
             created_at TEXT DEFAULT (datetime('now')),
             updated_at TEXT DEFAULT (datetime('now')),
@@ -256,10 +287,87 @@ function init() {
     ]);
     addColumnsIfMissing('games', [
         { name: 'game_type', definition: `game_type TEXT DEFAULT 'multiplayer'` },
+        { name: 'account_id', definition: 'account_id TEXT' },
         { name: 'player1_country_code', definition: 'player1_country_code TEXT' },
         { name: 'player2_country_code', definition: 'player2_country_code TEXT' },
         { name: 'started_country_code', definition: 'started_country_code TEXT' },
         { name: 'ended_country_code', definition: 'ended_country_code TEXT' },
+    ]);
+    addColumnsIfMissing('turns', [
+        { name: 'account_id', definition: 'account_id TEXT' },
+    ]);
+    addColumnsIfMissing('game_state_snapshots', [
+        { name: 'account_id', definition: 'account_id TEXT' },
+    ]);
+    addColumnsIfMissing('visits', [
+        { name: 'account_id', definition: 'account_id TEXT' },
+    ]);
+
+    applyMigration('2026-02-14-auth-core', [
+        `CREATE TABLE IF NOT EXISTS accounts (
+            id TEXT PRIMARY KEY,
+            email TEXT NOT NULL UNIQUE,
+            password_hash TEXT NOT NULL,
+            email_verified_at TEXT,
+            status TEXT NOT NULL DEFAULT 'active',
+            created_at TEXT DEFAULT (datetime('now')),
+            updated_at TEXT DEFAULT (datetime('now'))
+        )`,
+        `CREATE TABLE IF NOT EXISTS account_profiles (
+            account_id TEXT PRIMARY KEY REFERENCES accounts(id),
+            username TEXT NOT NULL,
+            rating INTEGER NOT NULL DEFAULT 1000,
+            games_played INTEGER NOT NULL DEFAULT 0,
+            wins INTEGER NOT NULL DEFAULT 0,
+            losses INTEGER NOT NULL DEFAULT 0,
+            draws INTEGER NOT NULL DEFAULT 0,
+            total_score INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT DEFAULT (datetime('now')),
+            updated_at TEXT DEFAULT (datetime('now'))
+        )`,
+        `CREATE UNIQUE INDEX IF NOT EXISTS idx_account_profiles_username_ci_unique ON account_profiles(lower(username))`,
+        `CREATE TABLE IF NOT EXISTS account_sessions (
+            id TEXT PRIMARY KEY,
+            account_id TEXT NOT NULL REFERENCES accounts(id),
+            refresh_token_hash TEXT NOT NULL,
+            expires_at TEXT NOT NULL,
+            revoked_at TEXT,
+            ip_hash TEXT,
+            user_agent_hash TEXT,
+            created_at TEXT DEFAULT (datetime('now')),
+            updated_at TEXT DEFAULT (datetime('now'))
+        )`,
+        `CREATE INDEX IF NOT EXISTS idx_account_sessions_account_id ON account_sessions(account_id)`,
+        `CREATE INDEX IF NOT EXISTS idx_account_sessions_refresh_hash ON account_sessions(refresh_token_hash)`,
+        `CREATE TABLE IF NOT EXISTS email_verification_tokens (
+            id TEXT PRIMARY KEY,
+            account_id TEXT NOT NULL REFERENCES accounts(id),
+            token_hash TEXT NOT NULL,
+            expires_at TEXT NOT NULL,
+            used_at TEXT,
+            created_at TEXT DEFAULT (datetime('now')),
+            updated_at TEXT DEFAULT (datetime('now'))
+        )`,
+        `CREATE TABLE IF NOT EXISTS password_reset_tokens (
+            id TEXT PRIMARY KEY,
+            account_id TEXT NOT NULL REFERENCES accounts(id),
+            token_hash TEXT NOT NULL,
+            expires_at TEXT NOT NULL,
+            used_at TEXT,
+            created_at TEXT DEFAULT (datetime('now')),
+            updated_at TEXT DEFAULT (datetime('now'))
+        )`,
+        `CREATE TABLE IF NOT EXISTS account_player_links (
+            account_id TEXT NOT NULL REFERENCES accounts(id),
+            player_user_id TEXT NOT NULL,
+            linked_at TEXT DEFAULT (datetime('now')),
+            UNIQUE(account_id, player_user_id),
+            UNIQUE(player_user_id)
+        )`,
+        `CREATE INDEX IF NOT EXISTS idx_games_account_id ON games(account_id)`,
+        `CREATE INDEX IF NOT EXISTS idx_turns_account_id ON turns(account_id)`,
+        `CREATE INDEX IF NOT EXISTS idx_snapshots_account_id ON game_state_snapshots(account_id)`,
+        `CREATE INDEX IF NOT EXISTS idx_visits_account_id ON visits(account_id)`,
     ]);
 
     // Ensure existing rows are deduplicated before creating unique username index.
@@ -275,20 +383,21 @@ function init() {
     console.log('Analytics DB initialized at', DB_PATH);
 }
 
-function recordVisit({ page, gameId, userId, ip, userAgent, referrer, geo }) {
+function recordVisit({ page, gameId, userId, accountId, ip, userAgent, referrer, geo }) {
     const geoResolvedAt = geo
         ? new Date().toISOString().slice(0, 19).replace('T', ' ')
         : null;
     const stmt = db.prepare(
         `INSERT INTO visits (
-            page, game_id, user_id, ip, user_agent, referrer,
+            page, game_id, user_id, account_id, ip, user_agent, referrer,
             country_code, country, region, city, timezone, geo_source, geo_resolved_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
     );
     stmt.run(
         page,
         gameId || null,
         userId || null,
+        accountId || null,
         ip || null,
         userAgent || null,
         referrer || null,
@@ -375,18 +484,178 @@ function ensurePlayer(userId, fallbackName) {
     return upsertPlayerProfile({ userId, username: fallback });
 }
 
+function getAccountByEmail(email) {
+    if (!email || typeof email !== 'string') return null;
+    return db.prepare(`
+        SELECT id, email, password_hash as passwordHash, email_verified_at as emailVerifiedAt, status
+        FROM accounts
+        WHERE email = ?
+        LIMIT 1
+    `).get(email) || null;
+}
+
+function getAccountById(accountId) {
+    if (!accountId || typeof accountId !== 'string') return null;
+    return db.prepare(`
+        SELECT id, email, password_hash as passwordHash, email_verified_at as emailVerifiedAt, status
+        FROM accounts
+        WHERE id = ?
+        LIMIT 1
+    `).get(accountId) || null;
+}
+
+function getAccountProfile(accountId) {
+    if (!accountId || typeof accountId !== 'string') return null;
+    return db.prepare(`
+        SELECT
+            ap.account_id as accountId,
+            ap.username,
+            ap.rating,
+            ap.games_played as gamesPlayed,
+            ap.wins,
+            ap.losses,
+            ap.draws,
+            ap.total_score as totalScore,
+            a.email,
+            a.email_verified_at as emailVerifiedAt,
+            a.status
+        FROM account_profiles ap
+        JOIN accounts a ON a.id = ap.account_id
+        WHERE ap.account_id = ?
+        LIMIT 1
+    `).get(accountId) || null;
+}
+
+function claimUniqueAccountUsernameOrSuggest(accountId, desiredUsername) {
+    const clean = sanitizeUsername(desiredUsername);
+    const baseKey = normalizeUsernameKey(desiredUsername);
+    if (!accountId || typeof accountId !== 'string' || !clean || !baseKey) {
+        return { ok: false, reason: 'invalid' };
+    }
+
+    const existing = db.prepare(`
+        SELECT account_id as accountId, username
+        FROM account_profiles
+        WHERE lower(username) = ?
+        LIMIT 1
+    `).get(baseKey);
+
+    if (!existing || existing.accountId === accountId) {
+        return { ok: true, username: clean };
+    }
+
+    const makeCandidate = (suffixNumber) => {
+        const suffix = String(suffixNumber);
+        const maxBaseLen = Math.max(1, 24 - suffix.length);
+        return `${clean.slice(0, maxBaseLen)}${suffix}`;
+    };
+
+    let suggestion = null;
+    for (let i = 1; i <= 9999; i += 1) {
+        const candidate = makeCandidate(i);
+        const clash = db.prepare('SELECT 1 FROM account_profiles WHERE lower(username) = ? LIMIT 1')
+            .get(candidate.toLowerCase());
+        if (!clash) {
+            suggestion = candidate;
+            break;
+        }
+    }
+    return { ok: false, reason: 'taken', suggestion };
+}
+
+function createAccountWithProfile({ accountId, email, passwordHash, username, linkedGuestUserId = null }) {
+    if (!accountId || !email || !passwordHash || !username) return null;
+    const cleanUsername = sanitizeUsername(username);
+    if (!cleanUsername) return null;
+
+    const result = db.transaction(() => {
+        db.prepare(`
+            INSERT INTO accounts (id, email, password_hash)
+            VALUES (?, ?, ?)
+        `).run(accountId, email, passwordHash);
+        db.prepare(`
+            INSERT INTO account_profiles (account_id, username)
+            VALUES (?, ?)
+        `).run(accountId, cleanUsername);
+
+        if (linkedGuestUserId && typeof linkedGuestUserId === 'string') {
+            db.prepare(`
+                INSERT INTO account_player_links (account_id, player_user_id)
+                VALUES (?, ?)
+                ON CONFLICT(player_user_id) DO NOTHING
+            `).run(accountId, linkedGuestUserId);
+        }
+    });
+    result();
+    return getAccountProfile(accountId);
+}
+
+function updateAccountProfileUsername(accountId, username) {
+    const clean = sanitizeUsername(username);
+    if (!accountId || typeof accountId !== 'string' || !clean) return null;
+    db.prepare(`
+        UPDATE account_profiles
+        SET username = ?, updated_at = datetime('now')
+        WHERE account_id = ?
+    `).run(clean, accountId);
+    return getAccountProfile(accountId);
+}
+
+function createAccountSession({ sessionId, accountId, refreshTokenHash, expiresAt, ipHash = null, userAgentHash = null }) {
+    db.prepare(`
+        INSERT INTO account_sessions (
+            id, account_id, refresh_token_hash, expires_at, ip_hash, user_agent_hash
+        ) VALUES (?, ?, ?, ?, ?, ?)
+    `).run(sessionId, accountId, refreshTokenHash, expiresAt, ipHash, userAgentHash);
+}
+
+function findAccountSessionById(sessionId) {
+    if (!sessionId || typeof sessionId !== 'string') return null;
+    return db.prepare(`
+        SELECT id, account_id as accountId, refresh_token_hash as refreshTokenHash,
+               expires_at as expiresAt, revoked_at as revokedAt, ip_hash as ipHash, user_agent_hash as userAgentHash
+        FROM account_sessions
+        WHERE id = ?
+        LIMIT 1
+    `).get(sessionId) || null;
+}
+
+function rotateAccountSession({ sessionId, refreshTokenHash, expiresAt, ipHash = null, userAgentHash = null }) {
+    db.prepare(`
+        UPDATE account_sessions
+        SET
+            refresh_token_hash = ?,
+            expires_at = ?,
+            revoked_at = NULL,
+            ip_hash = COALESCE(?, ip_hash),
+            user_agent_hash = COALESCE(?, user_agent_hash),
+            updated_at = datetime('now')
+        WHERE id = ?
+    `).run(refreshTokenHash, expiresAt, ipHash, userAgentHash, sessionId);
+}
+
+function revokeAccountSession(sessionId) {
+    if (!sessionId || typeof sessionId !== 'string') return;
+    db.prepare(`
+        UPDATE account_sessions
+        SET revoked_at = datetime('now'), updated_at = datetime('now')
+        WHERE id = ? AND revoked_at IS NULL
+    `).run(sessionId);
+}
+
 function startGame(gameId, player1Id, options = {}) {
     const {
         gameType = 'multiplayer',
+        accountId = null,
         player1CountryCode = null,
         startedCountryCode = null,
     } = options;
     const stmt = db.prepare(
         `INSERT INTO games (
-            game_id, game_type, player1_id, player1_country_code, started_country_code
-        ) VALUES (?, ?, ?, ?, ?)`
+            game_id, game_type, account_id, player1_id, player1_country_code, started_country_code
+        ) VALUES (?, ?, ?, ?, ?, ?)`
     );
-    const result = stmt.run(gameId, gameType, player1Id, player1CountryCode, startedCountryCode);
+    const result = stmt.run(gameId, gameType, accountId, player1Id, player1CountryCode, startedCountryCode);
     const rowId = result.lastInsertRowid;
     activeGames.set(gameId, rowId);
     turnCounters.set(rowId, 0);
@@ -435,6 +704,7 @@ function ensureGameSession(gameId, player1Id, options = {}) {
 
 function recordTurn(gameId, {
     userId,
+    accountId = null,
     turnType,
     score,
     wordsPlayed,
@@ -470,12 +740,12 @@ function recordTurn(gameId, {
 
     const stmt = db.prepare(
         `INSERT INTO turns (
-            game_id, games_row_id, user_id, turn_number, turn_type, score,
+            game_id, games_row_id, user_id, account_id, turn_number, turn_type, score,
             words_played, word_scores, tiles_placed, placed_tiles_json, formed_words_json
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
     );
     stmt.run(
-        gameId, rowId, userId, turnNumber, turnType,
+        gameId, rowId, userId, accountId, turnNumber, turnType,
         score || 0,
         wordsPlayed ? JSON.stringify(wordsPlayed) : null,
         wordScores ? JSON.stringify(wordScores) : null,
@@ -813,7 +1083,7 @@ function getUserGameDetail(userId, gameId) {
     };
 }
 
-function saveGameStateSnapshot({ gameId, userId, state }) {
+function saveGameStateSnapshot({ gameId, userId, accountId = null, state }) {
     if (!gameId || typeof gameId !== 'string') {
         console.log('[analytics snapshot] invalid gameId', { gameId, userId });
         return false;
@@ -855,14 +1125,15 @@ function saveGameStateSnapshot({ gameId, userId, state }) {
     }
 
     db.prepare(`
-        INSERT INTO game_state_snapshots (game_id, games_row_id, user_id, state_json)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO game_state_snapshots (game_id, games_row_id, user_id, account_id, state_json)
+        VALUES (?, ?, ?, ?, ?)
         ON CONFLICT(games_row_id, user_id)
         DO UPDATE SET
             game_id = excluded.game_id,
+            account_id = COALESCE(excluded.account_id, game_state_snapshots.account_id),
             state_json = excluded.state_json,
             updated_at = datetime('now')
-    `).run(gameId, rowId, userId, stateJson);
+    `).run(gameId, rowId, userId, accountId, stateJson);
 
     return true;
 }
@@ -1073,9 +1344,19 @@ module.exports = {
     recordVisit,
     upsertPlayerProfile,
     claimUniqueUsernameOrSuggest,
+    claimUniqueAccountUsernameOrSuggest,
     getPlayerProfile,
     getDisplayName,
     getPlayerLastCountryCode,
+    getAccountByEmail,
+    getAccountById,
+    getAccountProfile,
+    createAccountWithProfile,
+    updateAccountProfileUsername,
+    createAccountSession,
+    findAccountSessionById,
+    rotateAccountSession,
+    revokeAccountSession,
     startGame,
     ensureGameSession,
     setPlayer2,

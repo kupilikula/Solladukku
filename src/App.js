@@ -2,6 +2,7 @@ import './App.css';
 import GameFrame from './components/GameFrame';
 import AnalyticsViewer from './components/AnalyticsViewer';
 import GameReviewViewer from './components/GameReviewViewer';
+import AuthPanel from './components/AuthPanel';
 import {validate as isValidUUID} from 'uuid';
 import {useEffect, useMemo, useState, useCallback, useRef} from "react";
 import {useDispatch} from "react-redux";
@@ -12,6 +13,7 @@ import {LanguageProvider, useLanguage} from "./context/LanguageContext";
 import { loadDictionary } from './utils/dictionary';
 import { getApiBaseUrl } from './utils/runtimeUrls';
 import { useWebSocket } from './context/WebSocketContext';
+import { getMe, login, logout, refreshSession, signup } from './utils/authClient';
 
 const USERNAME_STORAGE_KEY = 'solladukku_username';
 
@@ -381,11 +383,19 @@ function LandingPage({
     onReviewGame,
     usernameError,
     usernameBlocked,
+    authEnabled,
+    authLoading,
+    authError,
+    authAccount,
+    onLogin,
+    onSignup,
+    onLogout,
 }) {
     const { language, toggleLanguage, t } = useLanguage();
     const [joinInput, setJoinInput] = useState('');
     const [codeError, setCodeError] = useState(false);
     const [showHelp, setShowHelp] = useState(false);
+    const [isCompactLayout, setIsCompactLayout] = useState(() => window.innerWidth < 980);
 
     // Track landing page visit
     useEffect(() => {
@@ -394,6 +404,12 @@ function LandingPage({
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ page: 'landing' }),
         }).catch(() => {});
+    }, []);
+
+    useEffect(() => {
+        const onResize = () => setIsCompactLayout(window.innerWidth < 980);
+        window.addEventListener('resize', onResize);
+        return () => window.removeEventListener('resize', onResize);
     }, []);
 
     const handleJoin = () => {
@@ -416,22 +432,47 @@ function LandingPage({
             background: '#EDE8E0',
             minHeight: '100vh',
             width: '100vw',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             fontFamily: 'Tamil Sangam MN, sans-serif',
-            padding: '24px 16px',
+            padding: '24px 16px 20px',
             boxSizing: 'border-box',
         }}>
             <div style={{
+                width: '100%',
+                maxWidth: 1120,
+                margin: '0 auto',
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'center',
-                gap: 20,
-                width: '100%',
-                maxWidth: 460,
+                gap: 16,
             }}>
-                <div style={{ position: 'absolute', top: 16, right: 20 }}>
+                <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'flex-start',
+                    gap: 12,
+                }}>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: isCompactLayout ? 'center' : 'flex-start',
+                        gap: 12,
+                        flex: 1,
+                    }}>
+                        <img
+                            src={process.env.PUBLIC_URL + '/logo.png'}
+                            alt=""
+                            style={{ height: isCompactLayout ? 64 : 78, flexShrink: 0 }}
+                            onError={e => { e.target.style.display = 'none'; }}
+                        />
+                        <div style={{
+                            fontSize: isCompactLayout ? 40 : 54,
+                            fontWeight: 'bold',
+                            color: '#1A5276',
+                            letterSpacing: 1.5,
+                            lineHeight: 1.2,
+                        }}>
+                            சொல்மாலை
+                        </div>
+                    </div>
                     <button
                         onClick={toggleLanguage}
                         style={{
@@ -449,63 +490,45 @@ function LandingPage({
                             fontFamily: 'Tamil Sangam MN, sans-serif',
                             padding: 0,
                             lineHeight: 1,
+                            marginTop: 6,
                         }}
                     >
                         {language === 'ta' ? 'EN' : 'த'}
                     </button>
                 </div>
 
-                <div style={{ textAlign: 'center' }}>
-                    <img
-                        src={process.env.PUBLIC_URL + '/logo.png'}
-                        alt=""
-                        style={{ height: 96, marginBottom: 12 }}
-                        onError={e => { e.target.style.display = 'none'; }}
-                    />
-                    <div style={{
-                        fontSize: 56,
-                        fontWeight: 'bold',
-                        color: '#1A5276',
-                        letterSpacing: 2,
-                        lineHeight: 1.2,
-                    }}>
-                        சொல்மாலை
-                    </div>
-                </div>
-
                 <div style={{
-                    backgroundColor: 'white',
-                    borderRadius: 12,
-                    padding: '24px 22px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'stretch',
-                    gap: 14,
-                    width: '100%',
-                    boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
-                    boxSizing: 'border-box',
+                    display: 'grid',
+                    gridTemplateColumns: isCompactLayout ? '1fr' : 'minmax(0, 1.25fr) minmax(320px, 0.75fr)',
+                    gap: 16,
+                    alignItems: 'start',
                 }}>
-                    <div>
+                    <div style={{
+                        backgroundColor: 'white',
+                        borderRadius: 12,
+                        padding: '24px 22px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: 14,
+                        width: '100%',
+                        maxWidth: 560,
+                        justifySelf: 'start',
+                        boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+                        boxSizing: 'border-box',
+                    }}>
+                    <div style={{ width: '100%', maxWidth: 360 }}>
                         <div style={{ fontSize: 13, color: '#444', marginBottom: 6 }}>
                             {t.usernameLabel}
                         </div>
                         <input
+                            className="TamilInput"
                             type="text"
                             value={username}
                             onChange={(e) => onUsernameChange(e.target.value)}
                             maxLength={24}
                             style={{
-                                width: '100%',
-                                padding: '11px 12px',
-                                borderRadius: 6,
-                                border: '1px solid #ddd',
-                                boxSizing: 'border-box',
-                                fontSize: 16,
-                                lineHeight: '24px',
-                                height: 'auto',
-                                WebkitAppearance: 'none',
-                                fontFamily: 'Tamil Sangam MN, sans-serif',
-                                display: 'block',
+                                outline: 'none',
                             }}
                         />
                         {usernameError ? (
@@ -525,6 +548,8 @@ function LandingPage({
                             borderRadius: 8,
                             padding: '12px 0',
                             width: '100%',
+                            maxWidth: 360,
+                            alignSelf: 'center',
                             fontSize: 17,
                             fontWeight: 'bold',
                             cursor: usernameBlocked ? 'default' : 'pointer',
@@ -544,6 +569,8 @@ function LandingPage({
                             borderRadius: 8,
                             padding: '11px 0',
                             width: '100%',
+                            maxWidth: 360,
+                            alignSelf: 'center',
                             fontSize: 16,
                             fontWeight: 'bold',
                             cursor: (isMatching || usernameBlocked) ? 'default' : 'pointer',
@@ -565,6 +592,9 @@ function LandingPage({
                             justifyContent: 'space-between',
                             alignItems: 'center',
                             gap: 10,
+                            width: '100%',
+                            maxWidth: 360,
+                            alignSelf: 'center',
                         }}>
                             <div style={{ fontSize: 12, color: '#345' }}>
                                 {t.waitingForPlayer}
@@ -604,6 +634,8 @@ function LandingPage({
                             borderRadius: 8,
                             padding: '11px 0',
                             width: '100%',
+                            maxWidth: 360,
+                            alignSelf: 'center',
                             fontSize: 15,
                             fontWeight: 'bold',
                             cursor: usernameBlocked ? 'default' : 'pointer',
@@ -613,7 +645,7 @@ function LandingPage({
                         {t.playVsComputer}
                     </button>
 
-                    <div style={{ borderTop: '1px solid #e6e6e6', marginTop: 4, paddingTop: 12 }}>
+                    <div style={{ borderTop: '1px solid #e6e6e6', marginTop: 4, paddingTop: 12, width: '100%', maxWidth: 360, alignSelf: 'center' }}>
                         <div style={{
                             fontSize: 14,
                             fontWeight: '500',
@@ -624,6 +656,7 @@ function LandingPage({
                         </div>
                         <div style={{ display: 'flex', gap: 8 }}>
                             <input
+                                className="TamilInput"
                                 type="text"
                                 value={joinInput}
                                 onChange={e => { setJoinInput(e.target.value); setCodeError(false); }}
@@ -631,12 +664,7 @@ function LandingPage({
                                 placeholder={t.enterGameCode}
                                 style={{
                                     flex: 1,
-                                    padding: '10px 12px',
-                                    borderRadius: 6,
                                     border: `1px solid ${codeError ? '#e53935' : '#ddd'}`,
-                                    fontSize: 14,
-                                    lineHeight: 1.5,
-                                    fontFamily: 'Tamil Sangam MN, sans-serif',
                                     outline: 'none',
                                 }}
                             />
@@ -664,36 +692,90 @@ function LandingPage({
                             </div>
                         )}
                     </div>
+                    <button
+                        onClick={() => setShowHelp(true)}
+                        style={{
+                            background: 'none',
+                            border: 'none',
+                            color: '#1A5276',
+                            fontSize: 14,
+                            cursor: 'pointer',
+                            fontFamily: 'Tamil Sangam MN, sans-serif',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'flex-start',
+                            padding: 0,
+                        }}
+                    >
+                        {t.howToPlay}
+                    </button>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                        {authEnabled ? (
+                            <div style={{
+                                width: '100%',
+                                backgroundColor: 'white',
+                                borderRadius: 10,
+                                boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+                                padding: 12,
+                                boxSizing: 'border-box',
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                gap: 12,
+                                alignItems: 'center',
+                            }}>
+                                <div style={{ fontSize: 12, color: '#365468', overflowWrap: 'anywhere' }}>
+                                    {authAccount
+                                        ? `${t.authSignedInAs}: ${authAccount.email}`
+                                        : t.authAsGuest}
+                                </div>
+                                {authAccount ? (
+                                    <button
+                                        onClick={onLogout}
+                                        disabled={authLoading}
+                                        style={{
+                                            backgroundColor: '#1A5276',
+                                            color: 'white',
+                                            border: 'none',
+                                            borderRadius: 6,
+                                            padding: '6px 10px',
+                                            fontSize: 12,
+                                            cursor: authLoading ? 'default' : 'pointer',
+                                            fontFamily: 'Tamil Sangam MN, sans-serif',
+                                            flexShrink: 0,
+                                        }}
+                                    >
+                                        {t.logout}
+                                    </button>
+                                ) : null}
+                            </div>
+                        ) : null}
+
+                        {authEnabled && !authAccount ? (
+                            <AuthPanel
+                                t={t}
+                                loading={authLoading}
+                                error={authError}
+                                onLogin={onLogin}
+                                onSignup={onSignup}
+                            />
+                        ) : null}
+
+                        <MyGamesCard
+                            myGames={myGames}
+                            loading={myGamesLoading}
+                            error={myGamesError}
+                            onContinue={onContinueGame}
+                            onReview={onReviewGame}
+                            t={t}
+                        />
+
+                        {leaderboard.length > 0 && (
+                            <LeaderboardCard leaderboard={leaderboard} loading={leaderboardLoading} t={t} />
+                        )}
+                    </div>
                 </div>
-
-                {leaderboard.length > 0 && (
-                    <LeaderboardCard leaderboard={leaderboard} loading={leaderboardLoading} t={t} />
-                )}
-                <MyGamesCard
-                    myGames={myGames}
-                    loading={myGamesLoading}
-                    error={myGamesError}
-                    onContinue={onContinueGame}
-                    onReview={onReviewGame}
-                    t={t}
-                />
-
-                <button
-                    onClick={() => setShowHelp(true)}
-                    style={{
-                        background: 'none',
-                        border: 'none',
-                        color: '#1A5276',
-                        fontSize: 14,
-                        cursor: 'pointer',
-                        fontFamily: 'Tamil Sangam MN, sans-serif',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 6,
-                    }}
-                >
-                    {t.howToPlay}
-                </button>
             </div>
 
             {showHelp && (
@@ -825,6 +907,11 @@ function AppContent() {
     const [singlePlayerResumeMode, setSinglePlayerResumeMode] = useState(() => Boolean(initialGameId && initialGameId.startsWith('solo-')));
     const [usernameError, setUsernameError] = useState('');
     const [usernameAvailable, setUsernameAvailable] = useState(true);
+    const [authAvailable, setAuthAvailable] = useState(true);
+    const [authLoading, setAuthLoading] = useState(false);
+    const [authError, setAuthError] = useState('');
+    const [accessToken, setAccessToken] = useState(null);
+    const [authAccount, setAuthAccount] = useState(null);
     const initialGameIdRef = useRef(initialGameId);
 
     const exitAnalytics = useCallback(() => {
@@ -834,10 +921,142 @@ function AppContent() {
         window.location.reload();
     }, []);
 
+    const applyAuthPayload = useCallback((data) => {
+        if (!data?.account || !data?.accessToken) return false;
+        setAccessToken(data.accessToken);
+        setAuthAccount(data.account);
+        if (data.account.username) {
+            setUsername(data.account.username);
+        }
+        setAuthError('');
+        return true;
+    }, []);
+
+    const handleSignup = useCallback(async ({ email, password }) => {
+        setAuthLoading(true);
+        setAuthError('');
+        try {
+            const { resp, data } = await signup({
+                email,
+                password,
+                username: effectiveUsername,
+                userId,
+            });
+            if (!resp.ok || !applyAuthPayload(data)) {
+                if (resp.status === 409 && data?.error) {
+                    throw new Error(data.error);
+                }
+                throw new Error(data?.error || t.authSignupFailed);
+            }
+        } catch (err) {
+            setAuthError(err?.message || t.authSignupFailed);
+        } finally {
+            setAuthLoading(false);
+        }
+    }, [applyAuthPayload, effectiveUsername, t, userId]);
+
+    const handleLogin = useCallback(async ({ email, password }) => {
+        setAuthLoading(true);
+        setAuthError('');
+        try {
+            const { resp, data } = await login({ email, password });
+            if (!resp.ok || !applyAuthPayload(data)) {
+                if (resp.status === 401) {
+                    throw new Error(t.authInvalidCredentials);
+                }
+                throw new Error(data?.error || t.authLoginFailed);
+            }
+        } catch (err) {
+            setAuthError(err?.message || t.authLoginFailed);
+        } finally {
+            setAuthLoading(false);
+        }
+    }, [applyAuthPayload, t]);
+
+    const handleLogout = useCallback(async () => {
+        setAuthLoading(true);
+        try {
+            const { resp } = await logout();
+            if (!resp.ok) throw new Error(t.authLogoutFailed);
+            setAccessToken(null);
+            setAuthAccount(null);
+            setAuthError('');
+        } catch (err) {
+            setAuthError(err?.message || t.authLogoutFailed);
+        } finally {
+            setAuthLoading(false);
+        }
+    }, [t]);
+
     useEffect(() => {
         if (analyticsMode) return;
         loadDictionary();
     }, [analyticsMode]);
+
+    useEffect(() => {
+        if (analyticsMode) return;
+        let cancelled = false;
+        const bootstrap = async () => {
+            setAuthLoading(true);
+            setAuthError('');
+            try {
+                let token = accessToken;
+                if (token) {
+                    const meResp = await getMe(token);
+                    if (cancelled) return;
+                    if (meResp.resp.ok && meResp.data?.account) {
+                        setAuthAccount(meResp.data.account);
+                        if (meResp.data.account.username) {
+                            setUsername(meResp.data.account.username);
+                        }
+                        setAuthAvailable(true);
+                        return;
+                    }
+                }
+
+                const refreshed = await refreshSession();
+                if (cancelled) return;
+                if (refreshed.resp.status === 503 || refreshed.resp.status === 404) {
+                    setAuthAvailable(false);
+                    setAccessToken(null);
+                    setAuthAccount(null);
+                    return;
+                }
+                if (!refreshed.resp.ok || !refreshed.data?.accessToken) {
+                    setAuthAvailable(true);
+                    setAccessToken(null);
+                    setAuthAccount(null);
+                    return;
+                }
+                token = refreshed.data.accessToken;
+                setAccessToken(token);
+                const meResp = await getMe(token);
+                if (cancelled) return;
+                if (meResp.resp.ok && meResp.data?.account) {
+                    setAuthAccount(meResp.data.account);
+                    if (meResp.data.account.username) {
+                        setUsername(meResp.data.account.username);
+                    }
+                } else {
+                    setAccessToken(null);
+                    setAuthAccount(null);
+                }
+                setAuthAvailable(true);
+            } catch {
+                if (!cancelled) {
+                    setAuthAvailable(true);
+                    setAccessToken(null);
+                    setAuthAccount(null);
+                }
+            } finally {
+                if (!cancelled) setAuthLoading(false);
+            }
+        };
+        bootstrap();
+        return () => {
+            cancelled = true;
+        };
+    }, [analyticsMode, accessToken]);
 
     const exitGameLinkToLanding = useCallback((errorMessage) => {
         const url = new URL(window.location);
@@ -1104,18 +1323,28 @@ function AppContent() {
     }, [analyticsMode, gameId, mode, userId, t]);
 
     useEffect(() => {
+        const headers = { 'Content-Type': 'application/json' };
+        if (accessToken) {
+            headers.Authorization = `Bearer ${accessToken}`;
+        }
         fetch(getApiBaseUrl() + '/api/profile', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers,
+            credentials: 'include',
             body: JSON.stringify({ userId, username: effectiveUsername }),
         })
             .then(async (resp) => {
+                const data = await readJsonSafe(resp);
                 if (resp.ok) {
                     setUsernameError('');
                     setUsernameAvailable(true);
+                    if (data?.authenticated && data?.profile?.username) {
+                        setAuthAccount((prev) => (
+                            prev ? { ...prev, username: data.profile.username } : prev
+                        ));
+                    }
                     return;
                 }
-                const data = await readJsonSafe(resp);
                 if (resp.status === 409) {
                     const suggestion = data?.suggestion;
                     setUsernameError(suggestion
@@ -1130,7 +1359,7 @@ function AppContent() {
             .catch(() => {
                 setUsernameAvailable(true);
             });
-    }, [userId, effectiveUsername, t]);
+    }, [userId, effectiveUsername, t, accessToken]);
 
     useEffect(() => {
         if (gameId && mode === 'multiplayer') {
@@ -1316,6 +1545,13 @@ function AppContent() {
                 myGamesError={myGamesError}
                 usernameError={usernameError}
                 usernameBlocked={!usernameAvailable}
+                authEnabled={authAvailable}
+                authLoading={authLoading}
+                authError={authError}
+                authAccount={authAccount}
+                onLogin={handleLogin}
+                onSignup={handleSignup}
+                onLogout={handleLogout}
             />
         );
     }

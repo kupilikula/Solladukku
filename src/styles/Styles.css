@@ -195,6 +195,25 @@
     flex-direction: row;
 }
 
+.TamilInput {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 46px;
+    min-height: 46px;
+    padding: 0 12px;
+    -webkit-appearance: none;
+    font-family: "Noto Sans Tamil", "Tamil Sangam MN", sans-serif;
+    display: block;
+}
+
+.TamilInput::placeholder {
+    line-height: normal;
+    font-size: 14px;
+}
+
 @keyframes tilt-shaking {
     0% {
         transform: rotate(5deg);

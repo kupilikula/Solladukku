@@ -24,6 +24,23 @@ const { spawn } = require('child_process');
 const crypto = require('crypto');
 const analytics = require('./analytics');
 const geo = require('./geo');
+const AUTH_FEATURE_FLAG = String(process.env.AUTH_ENABLED || 'false').toLowerCase() === 'true';
+
+let auth;
+try {
+    auth = require('./auth');
+} catch (err) {
+    if (AUTH_FEATURE_FLAG) {
+        console.error('[auth] Failed to initialize auth module while AUTH_ENABLED=true.');
+        console.error('[auth] Ensure server dependencies are installed (including argon2).');
+        console.error('[auth] Startup error:', err?.message || err);
+        process.exit(1);
+    }
+    console.warn('[auth] Auth module unavailable; continuing with auth disabled.', err?.message || err);
+    auth = {
+        isAuthEnabled: () => false,
+    };
+}
 
 const PORT = process.env.PORT || 8000;
 const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS
@@ -39,6 +56,8 @@ const STRICT_SERVER_VALIDATION = String(process.env.STRICT_SERVER_VALIDATION || 
 const ENABLE_GUESS_FSTS = String(process.env.ENABLE_GUESS_FSTS || '').toLowerCase() === 'true';
 const ANALYTICS_ADMIN_PASSWORD = process.env.ANALYTICS_ADMIN_PASSWORD || '';
 const ANALYTICS_STORE_RAW_IP = String(process.env.ANALYTICS_STORE_RAW_IP || 'true').toLowerCase() !== 'false';
+const AUTH_ENABLED = auth.isAuthEnabled();
+const GUEST_MODE_ENABLED = String(process.env.GUEST_MODE_ENABLED || 'true').toLowerCase() !== 'false';
 
 // Initialize analytics DB
 analytics.init();
@@ -47,15 +66,24 @@ analytics.init();
 
 function setCorsHeaders(res, req) {
     const origin = req.headers.origin;
+    let allowOrigin = null;
     if (ALLOWED_ORIGINS) {
         if (origin && ALLOWED_ORIGINS.includes(origin)) {
-            res.setHeader('Access-Control-Allow-Origin', origin);
+            allowOrigin = origin;
         }
+    } else if (origin) {
+        // Dev/default: echo caller origin so credentialed requests can work.
+        allowOrigin = origin;
     } else {
         res.setHeader('Access-Control-Allow-Origin', '*');
     }
+    if (allowOrigin) {
+        res.setHeader('Access-Control-Allow-Origin', allowOrigin);
+        res.setHeader('Access-Control-Allow-Credentials', 'true');
+        res.setHeader('Vary', 'Origin');
+    }
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-Admin-Password');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Admin-Password');
 }
 
 function sendJson(res, statusCode, data) {
@@ -150,6 +178,66 @@ function requireAnalyticsAdmin(req, res) {
     return true;
 }
 
+function toSqliteDateFromEpochSeconds(epochSeconds) {
+    return new Date(epochSeconds * 1000).toISOString().slice(0, 19).replace('T', ' ');
+}
+
+function extractAuthContext(req) {
+    if (!AUTH_ENABLED) return { accountId: null, sessionId: null, email: null };
+    const bearer = auth.getBearerToken(req);
+    if (!bearer) return { accountId: null, sessionId: null, email: null };
+    const verified = auth.verifyAccessToken(bearer);
+    if (!verified) return { accountId: null, sessionId: null, email: null };
+    return {
+        accountId: verified.accountId,
+        sessionId: verified.sessionId,
+        email: verified.email,
+    };
+}
+
+function requireAuthContext(req, res) {
+    if (!AUTH_ENABLED) {
+        sendJson(res, 503, { error: 'Authentication is disabled on server' });
+        return null;
+    }
+    const ctx = extractAuthContext(req);
+    if (!ctx.accountId) {
+        sendJson(res, 401, { error: 'Unauthenticated' });
+        return null;
+    }
+    const account = analytics.getAccountById(ctx.accountId);
+    if (!account || account.status !== 'active') {
+        sendJson(res, 401, { error: 'Unauthenticated' });
+        return null;
+    }
+    return {
+        ...ctx,
+        account,
+    };
+}
+
+function sendAuthResponse(res, {
+    accountId,
+    email,
+    username,
+    emailVerifiedAt = null,
+    accessToken,
+    refreshToken,
+    refreshExpiresAt,
+}) {
+    res.setHeader('Set-Cookie', auth.buildRefreshCookie(refreshToken, refreshExpiresAt));
+    sendJson(res, 200, {
+        ok: true,
+        account: {
+            id: accountId,
+            email,
+            username,
+            emailVerifiedAt,
+        },
+        accessToken,
+    });
+}
+
 function generateGameId() {
     let candidate = '';
     do {
@@ -170,14 +258,258 @@ function handleHttpRequest(req, res) {
     const url = new URL(req.url, `http://${req.headers.host}`);
     const pathname = url.pathname;
 
+    if (req.method === 'POST' && pathname === '/api/auth/signup') {
+        if (!AUTH_ENABLED) {
+            sendJson(res, 503, { error: 'Authentication is disabled on server' });
+            return;
+        }
+        parseBody(req).then(async (body) => {
+            const email = auth.normalizeEmail(body.email);
+            const password = typeof body.password === 'string' ? body.password : '';
+            const username = sanitizeUsername(body.username);
+            const guestUserId = typeof body.userId === 'string' ? body.userId : null;
+            if (!email || !username || !password) {
+                sendJson(res, 400, { error: 'Invalid signup payload' });
+                return;
+            }
+
+            if (auth.isRateLimited(`signup:${email}`, 10, 60_000)) {
+                sendJson(res, 429, { error: 'Too many attempts. Try again later.' });
+                return;
+            }
+
+            if (analytics.getAccountByEmail(email)) {
+                sendJson(res, 409, { error: 'Email is already in use' });
+                return;
+            }
+
+            const accountId = auth.generateId();
+            const usernameClaim = analytics.claimUniqueAccountUsernameOrSuggest(accountId, username);
+            if (!usernameClaim.ok) {
+                sendJson(res, 409, {
+                    error: 'Username is already taken',
+                    suggestion: usernameClaim.suggestion || null,
+                });
+                return;
+            }
+
+            const passwordHash = await auth.hashPassword(password);
+            if (!passwordHash) {
+                sendJson(res, 400, { error: 'Password must be at least 8 characters' });
+                return;
+            }
+
+            const profile = analytics.createAccountWithProfile({
+                accountId,
+                email,
+                passwordHash,
+                username: usernameClaim.username,
+                linkedGuestUserId: guestUserId,
+            });
+            if (!profile) {
+                sendJson(res, 500, { error: 'Failed to create account' });
+                return;
+            }
+
+            const sessionId = auth.generateId();
+            const refreshToken = auth.issueRefreshToken({ accountId, sessionId });
+            const refreshVerified = auth.verifyRefreshToken(refreshToken);
+            const refreshExpiresAt = toSqliteDateFromEpochSeconds(refreshVerified.exp);
+            const meta = auth.getClientMeta(req);
+            analytics.createAccountSession({
+                sessionId,
+                accountId,
+                refreshTokenHash: refreshVerified.tokenHash,
+                expiresAt: refreshExpiresAt,
+                ipHash: meta.ipHash,
+                userAgentHash: meta.userAgentHash,
+            });
+
+            const accessToken = auth.issueAccessToken({ accountId, email, sessionId });
+            sendAuthResponse(res, {
+                accountId,
+                email,
+                username: profile.username,
+                emailVerifiedAt: null,
+                accessToken,
+                refreshToken,
+                refreshExpiresAt,
+            });
+        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/auth/login') {
+        if (!AUTH_ENABLED) {
+            sendJson(res, 503, { error: 'Authentication is disabled on server' });
+            return;
+        }
+        parseBody(req).then(async (body) => {
+            const email = auth.normalizeEmail(body.email);
+            const password = typeof body.password === 'string' ? body.password : '';
+            if (!email || !password) {
+                sendJson(res, 400, { error: 'Invalid login payload' });
+                return;
+            }
+
+            const ip = getClientIp(req);
+            if (auth.isRateLimited(`login:${email}:${ip}`, 12, 60_000)) {
+                sendJson(res, 429, { error: 'Too many attempts. Try again later.' });
+                return;
+            }
+
+            const account = analytics.getAccountByEmail(email);
+            const valid = account ? await auth.verifyPassword(password, account.passwordHash) : false;
+            if (!account || !valid) {
+                sendJson(res, 401, { error: 'Invalid credentials' });
+                return;
+            }
+            if (account.status !== 'active') {
+                sendJson(res, 403, { error: 'Account is disabled' });
+                return;
+            }
+
+            const sessionId = auth.generateId();
+            const refreshToken = auth.issueRefreshToken({ accountId: account.id, sessionId });
+            const refreshVerified = auth.verifyRefreshToken(refreshToken);
+            const refreshExpiresAt = toSqliteDateFromEpochSeconds(refreshVerified.exp);
+            const meta = auth.getClientMeta(req);
+            analytics.createAccountSession({
+                sessionId,
+                accountId: account.id,
+                refreshTokenHash: refreshVerified.tokenHash,
+                expiresAt: refreshExpiresAt,
+                ipHash: meta.ipHash,
+                userAgentHash: meta.userAgentHash,
+            });
+
+            const profile = analytics.getAccountProfile(account.id);
+            const accessToken = auth.issueAccessToken({
+                accountId: account.id,
+                email: account.email,
+                sessionId,
+            });
+            sendAuthResponse(res, {
+                accountId: account.id,
+                email: account.email,
+                username: profile?.username || null,
+                emailVerifiedAt: account.emailVerifiedAt || null,
+                accessToken,
+                refreshToken,
+                refreshExpiresAt,
+            });
+        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/auth/logout') {
+        if (!AUTH_ENABLED) {
+            sendJson(res, 503, { error: 'Authentication is disabled on server' });
+            return;
+        }
+        const refreshToken = auth.getRefreshCookieFromReq(req);
+        if (refreshToken) {
+            const verified = auth.verifyRefreshToken(refreshToken);
+            if (verified?.sessionId) {
+                analytics.revokeAccountSession(verified.sessionId);
+            }
+        }
+        res.setHeader('Set-Cookie', auth.buildRefreshCookieClear());
+        sendJson(res, 200, { ok: true });
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/auth/refresh') {
+        if (!AUTH_ENABLED) {
+            sendJson(res, 503, { error: 'Authentication is disabled on server' });
+            return;
+        }
+        const refreshToken = auth.getRefreshCookieFromReq(req);
+        if (!refreshToken) {
+            sendJson(res, 401, { error: 'Unauthenticated' });
+            return;
+        }
+        const parsed = auth.verifyRefreshToken(refreshToken);
+        if (!parsed) {
+            sendJson(res, 401, { error: 'Unauthenticated' });
+            return;
+        }
+        const session = analytics.findAccountSessionById(parsed.sessionId);
+        if (!session || session.accountId !== parsed.accountId || session.revokedAt) {
+            sendJson(res, 401, { error: 'Unauthenticated' });
+            return;
+        }
+        if (session.refreshTokenHash !== parsed.tokenHash) {
+            sendJson(res, 401, { error: 'Unauthenticated' });
+            return;
+        }
+        const nowSql = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        if (session.expiresAt < nowSql) {
+            analytics.revokeAccountSession(session.id);
+            sendJson(res, 401, { error: 'Session expired' });
+            return;
+        }
+        const account = analytics.getAccountById(session.accountId);
+        if (!account || account.status !== 'active') {
+            sendJson(res, 403, { error: 'Account is disabled' });
+            return;
+        }
+
+        const nextRefreshToken = auth.issueRefreshToken({ accountId: session.accountId, sessionId: session.id });
+        const nextParsed = auth.verifyRefreshToken(nextRefreshToken);
+        const nextExpiresAt = toSqliteDateFromEpochSeconds(nextParsed.exp);
+        const meta = auth.getClientMeta(req);
+        analytics.rotateAccountSession({
+            sessionId: session.id,
+            refreshTokenHash: nextParsed.tokenHash,
+            expiresAt: nextExpiresAt,
+            ipHash: meta.ipHash,
+            userAgentHash: meta.userAgentHash,
+        });
+        const profile = analytics.getAccountProfile(session.accountId);
+        const accessToken = auth.issueAccessToken({
+            accountId: session.accountId,
+            email: account.email,
+            sessionId: session.id,
+        });
+        sendAuthResponse(res, {
+            accountId: session.accountId,
+            email: account.email,
+            username: profile?.username || null,
+            emailVerifiedAt: account.emailVerifiedAt || null,
+            accessToken,
+            refreshToken: nextRefreshToken,
+            refreshExpiresAt: nextExpiresAt,
+        });
+        return;
+    }
+
+    if (req.method === 'GET' && pathname === '/api/auth/me') {
+        const authCtx = requireAuthContext(req, res);
+        if (!authCtx) return;
+        const profile = analytics.getAccountProfile(authCtx.account.id);
+        sendJson(res, 200, {
+            ok: true,
+            account: {
+                id: authCtx.account.id,
+                email: authCtx.account.email,
+                username: profile?.username || null,
+                emailVerifiedAt: authCtx.account.emailVerifiedAt || null,
+            },
+        });
+        return;
+    }
+
     if (req.method === 'POST' && pathname === '/api/visit') {
         parseBody(req).then(async body => {
             const ip = getClientIp(req);
+            const authCtx = extractAuthContext(req);
             const resolvedGeo = await geo.resolveGeoForIp(ip);
             analytics.recordVisit({
                 page: body.page || 'unknown',
                 gameId: body.gameId || null,
                 userId: body.userId || null,
+                accountId: authCtx.accountId || null,
                 ip: ANALYTICS_STORE_RAW_IP ? ip : null,
                 userAgent: req.headers['user-agent'] || null,
                 referrer: req.headers.referer || null,
@@ -190,9 +522,37 @@ function handleHttpRequest(req, res) {
 
     if (req.method === 'POST' && pathname === '/api/profile') {
         parseBody(req).then(async body => {
+            const authCtx = extractAuthContext(req);
             const userId = typeof body.userId === 'string' ? body.userId : null;
             const username = sanitizeUsername(body.username);
-            if (!userId || !username) {
+            if (!username) {
+                sendJson(res, 400, { error: 'Invalid profile payload' });
+                return;
+            }
+
+            if (authCtx.accountId) {
+                const usernameClaim = analytics.claimUniqueAccountUsernameOrSuggest(authCtx.accountId, username);
+                if (!usernameClaim.ok) {
+                    if (usernameClaim.reason === 'taken') {
+                        sendJson(res, 409, {
+                            error: 'Username is already taken',
+                            suggestion: usernameClaim.suggestion || null,
+                        });
+                        return;
+                    }
+                    sendJson(res, 400, { error: 'Invalid profile payload' });
+                    return;
+                }
+                const profile = analytics.updateAccountProfileUsername(authCtx.accountId, usernameClaim.username);
+                sendJson(res, 200, { ok: true, profile, authenticated: true });
+                return;
+            }
+
+            if (!GUEST_MODE_ENABLED) {
+                sendJson(res, 401, { error: 'Authentication required' });
+                return;
+            }
+            if (!userId) {
                 sendJson(res, 400, { error: 'Invalid profile payload' });
                 return;
             }
@@ -224,6 +584,7 @@ function handleHttpRequest(req, res) {
 
     if (req.method === 'POST' && pathname === '/api/solo/start') {
         parseBody(req).then((body) => {
+            const authCtx = extractAuthContext(req);
             const userId = typeof body.userId === 'string' ? body.userId : null;
             const username = sanitizeUsername(body.username);
             const gameId = normalizeSoloGameId(body.gameId);
@@ -232,7 +593,10 @@ function handleHttpRequest(req, res) {
                 return;
             }
             analytics.upsertPlayerProfile({ userId, username });
-            analytics.ensureGameSession(gameId, userId, { gameType: 'singleplayer' });
+            analytics.ensureGameSession(gameId, userId, {
+                gameType: 'singleplayer',
+                accountId: authCtx.accountId || null,
+            });
             analytics.setPlayer2(gameId, 'computer-player');
             sendJson(res, 200, { ok: true, gameId });
         }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
@@ -241,6 +605,7 @@ function handleHttpRequest(req, res) {
 
     if (req.method === 'POST' && pathname === '/api/solo/turn') {
         parseBody(req).then((body) => {
+            const authCtx = extractAuthContext(req);
             const userId = typeof body.userId === 'string' ? body.userId : null;
             const gameId = normalizeSoloGameId(body.gameId);
             const turnType = typeof body.turnType === 'string' ? body.turnType : null;
@@ -250,6 +615,7 @@ function handleHttpRequest(req, res) {
             }
             analytics.recordTurn(gameId, {
                 userId,
+                accountId: authCtx.accountId || null,
                 turnType,
                 score: Number(body.score || 0),
                 wordsPlayed: Array.isArray(body.wordsPlayed) ? body.wordsPlayed : null,
@@ -282,6 +648,7 @@ function handleHttpRequest(req, res) {
 
     if (req.method === 'POST' && pathname === '/api/solo/snapshot') {
         parseBody(req).then((body) => {
+            const authCtx = extractAuthContext(req);
             const userId = typeof body.userId === 'string' ? body.userId : null;
             const gameId = normalizeSoloGameId(body.gameId);
             const snapshot = body.snapshot;
@@ -292,6 +659,7 @@ function handleHttpRequest(req, res) {
             const saved = analytics.saveGameStateSnapshot({
                 gameId,
                 userId,
+                accountId: authCtx.accountId || null,
                 state: snapshot,
             });
             sendJson(res, 200, { ok: Boolean(saved) });

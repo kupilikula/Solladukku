@@ -14,7 +14,7 @@ A React-based Tamil Scrabble game with a landing page, real-time multiplayer via
 - **Real-time**: WebSockets with room-based multiplayer (runtime URL auto-derived; localhost dev defaults to port 8000)
 - **I18n**: React Context-based Tamil/English language toggle
 - **UI**: react-icons, react-tooltip, react-select, react-fitty
-- **Server**: Node.js with ws library, foma/flookup for FST validation, origin/rate-limit hardening, SQLite analytics
+- **Server**: Node.js with ws library, foma/flookup for FST validation, origin/rate-limit hardening, SQLite analytics, and feature-flagged account auth (access token + HttpOnly refresh cookie sessions, Argon2id password hashing via `argon2`)
 - **Dictionary Build**: Python 3 scripts, foma toolkit for FST morphological generation
 - **Deployment**: Railway (Dockerfile-based, auto-deploy on push to `main`). Server serves both API/WebSocket and React static build as a single service.
 - **Dictionary Storage**: Git LFS (135MB file exceeds GitHub's 100MB limit). Dockerfile auto-downloads from GitHub if LFS pointer isn't resolved.
@@ -28,6 +28,7 @@ deploy/
 server/
 ├── index.js                  # HTTP + WebSocket server: rooms, hardening, FST validation, REST API
 ├── analytics.js              # SQLite analytics: visits, games, turns tracking
+├── auth.js                   # Auth helpers: access/refresh tokens, password hashing, cookie/session utilities
 ├── geo.js                    # Geo-IP resolver (provider + cache + IP hashing)
 ├── download-fsts.js          # Script to download FST models from ThamizhiMorph
 ├── package.json              # Server deps (ws, better-sqlite3); scripts: start, setup
@@ -60,6 +61,7 @@ src/
 │   ├── useGameSnapshotSync.js # Debounced multiplayer snapshot persistence for refresh-safe resume
 │   └── useSoloGamePersistence.js # Single-player DB persistence (start/turn/end/snapshot) for My Games resume/review
 ├── components/
+│   ├── AuthPanel.js          # Landing-page login/signup panel (phase-A/B account auth)
 │   ├── AnalyticsViewer.js    # Password-protected analytics inspector (`?analytics=1`) with session-cached admin header, visible API error messaging, board replay fallback from formed-word tile coordinates, and per-turn Jump controls
 │   ├── GameFrame.js          # Main layout: SinglePlayer/Multiplayer wrappers + GameOverOverlay
 │   ├── GameReviewViewer.js   # Read-only game review screen with board replay slider + jump-to-turn
@@ -86,6 +88,7 @@ src/
 │   ├── GameSlice.js          # Game metadata: userId, gameId, gameMode, swapMode, turn tracking
 │   └── LetterBagsSlice.js    # Tile bag inventory (vowels, consonants, bonus)
 ├── utils/
+│   ├── authClient.js         # Auth API client (`/api/auth/*`) with credentialed refresh-cookie requests
 │   ├── TileSet.js            # Tamil tile definitions (points, types, merge/split ops)
 │   ├── constants.js          # Game constants and helpers
 │   ├── dictionary.js         # Dictionary loader, binary search, server validation cache
@@ -108,6 +111,8 @@ The app opens to a landing page before entering any game:
 - **Game title**: "சொல்மாலை" in large peacock blue text
 - **Logo**: Renders `public/logo.png` above the title (96px height). Hides gracefully via `onError` if the file is missing.
 - **Persistent username**: Editable username input (saved in `localStorage` and synced to server profile)
+- **Account auth panel (feature-flagged)**: Landing page shows login/signup card when server auth is enabled and no active session; on success, refresh-cookie session is established and account identity is shown
+- **Identity header**: Displays guest/authenticated status with logout action for signed-in accounts
 - **Username gate**: If `/api/profile` reports username conflict (`409`), game entry actions are disabled until user picks an available name
 - **"New Game With Invited Opponent" button** (`புது ஆட்டம் அழைப்புடன்`): Creates a private multiplayer room, sets `?game=` in URL, and auto-opens invite modal in-game
 - **"Play Random Opponent" button** (`யாவொருவருடன் விளையாடு`): Joins queue-based matchmaking; on match, navigates to matched `gameId`
@@ -117,6 +122,7 @@ The app opens to a landing page before entering any game:
 - **My Games card**: Shows recent games for this `userId` (in-progress + finished) with **Continue** and **Review** actions
 - **"Game Rules" link**: Opens help modal with bilingual game instructions (same content as in-game help)
 - **Language toggle**: Top-right corner ("EN" / "த"), shared with in-game toggle via LanguageContext
+- **Landing layout (desktop)**: Two-column composition — left column prioritizes game actions; right column contains account/auth card, My Games, and Leaderboard. On mobile, sections stack into a single-column flow.
 
 **URL game bypass**: If someone arrives via `?game=XYZ` (multiplayer) or `?game=solo-...` (single-player), the landing page is skipped entirely and the app attempts direct game resume.
 The WebSocket connection is only established for multiplayer entries.
@@ -265,15 +271,21 @@ Server-side analytics using SQLite (`better-sqlite3`) with a REST API. The HTTP 
 
 ### Database (`server/analytics.db`)
 
-Five tables with WAL mode enabled:
+Core gameplay analytics tables with WAL mode enabled, plus auth/session tables via idempotent migrations (`schema_migrations`):
 
 | Table | Purpose | Key Columns |
 |-------|---------|-------------|
-| `visits` | Page view tracking + geo | `page` ('landing'\|'game'), `game_id`, `user_id`, `ip`, `user_agent`, `referrer`, `country_code`, `country`, `region`, `city`, `timezone`, `geo_source`, `geo_resolved_at`, `created_at` |
-| `games` | One row per game session + type + country snapshot | `game_id`, `game_type` ('multiplayer'\|'singleplayer'), `player1_id`, `player2_id` (`computer-player` for solo), scores, `winner_id`, `game_over_reason`, `total_turns`, `player1_country_code`, `player2_country_code`, `started_country_code`, `ended_country_code`, `started_at`, `ended_at` |
-| `turns` | One row per turn action | `game_id`, `games_row_id` (FK), `user_id`, `turn_type` ('word'\|'pass'\|'swap'), `score`, `words_played` (JSON), `tiles_placed`, `placed_tiles_json` (JSON), `formed_words_json` (JSON) |
+| `visits` | Page view tracking + geo | `page` ('landing'\|'game'), `game_id`, `user_id`, nullable `account_id`, `ip`, `user_agent`, `referrer`, `country_code`, `country`, `region`, `city`, `timezone`, `geo_source`, `geo_resolved_at`, `created_at` |
+| `games` | One row per game session + type + country snapshot | `game_id`, `game_type` ('multiplayer'\|'singleplayer'), nullable `account_id`, `player1_id`, `player2_id` (`computer-player` for solo), scores, `winner_id`, `game_over_reason`, `total_turns`, `player1_country_code`, `player2_country_code`, `started_country_code`, `ended_country_code`, `started_at`, `ended_at` |
+| `turns` | One row per turn action | `game_id`, `games_row_id` (FK), `user_id`, nullable `account_id`, `turn_type` ('word'\|'pass'\|'swap'), `score`, `words_played` (JSON), `tiles_placed`, `placed_tiles_json` (JSON), `formed_words_json` (JSON) |
 | `players` | Persistent profile + rating + last seen geo | `user_id`, `username`, `rating`, `games_played`, `wins`, `losses`, `draws`, `total_score`, `last_country_code`, `last_country`, `last_region`, `last_city`, `last_seen_ip_hash`, `last_seen_at`, `created_at`, `updated_at` |
-| `game_state_snapshots` | Per-user resumable multiplayer state snapshots | `game_id`, `games_row_id` (FK), `user_id`, `state_json` (JSON), `updated_at` |
+| `game_state_snapshots` | Per-user resumable multiplayer state snapshots | `game_id`, `games_row_id` (FK), `user_id`, nullable `account_id`, `state_json` (JSON), `updated_at` |
+| `accounts` | Email/password auth accounts | `id`, unique `email`, `password_hash`, `email_verified_at`, `status`, timestamps |
+| `account_profiles` | Account-owned profile (username + stats mirror) | `account_id` (PK/FK), `username`, rating/stats, timestamps, unique `lower(username)` |
+| `account_sessions` | Refresh-token sessions | `id`, `account_id`, `refresh_token_hash`, `expires_at`, `revoked_at`, client hashes, timestamps |
+| `email_verification_tokens` | Verification token storage | `id`, `account_id`, `token_hash`, `expires_at`, `used_at`, timestamps |
+| `password_reset_tokens` | Reset token storage | `id`, `account_id`, `token_hash`, `expires_at`, `used_at`, timestamps |
+| `account_player_links` | Guest-to-account link bridge | `account_id`, `player_user_id`, `linked_at`, unique pair + unique `player_user_id` |
 
 ### REST API Endpoints
 
@@ -287,8 +299,13 @@ Without `ANALYTICS_ADMIN_PASSWORD`, admin analytics endpoints return `503`.
 
 | Method | Path | Description |
 |--------|------|-------------|
+| `POST` | `/api/auth/signup` | Create account + profile and start session (`{email,password,username,userId?}`) |
+| `POST` | `/api/auth/login` | Login with email/password; returns access token + sets refresh cookie |
+| `POST` | `/api/auth/logout` | Revoke current refresh session and clear refresh cookie |
+| `POST` | `/api/auth/refresh` | Rotate refresh session, return new access token + refreshed cookie |
+| `GET` | `/api/auth/me` | Return authenticated account/profile from bearer access token |
 | `POST` | `/api/visit` | Record a page visit (`{page, gameId, userId}`) |
-| `POST` | `/api/profile` | Upsert persistent username/profile (`{userId, username}`) |
+| `POST` | `/api/profile` | Update username (`Authorization` bearer updates `account_profiles`; guest fallback still uses `{userId, username}` when guest mode is enabled) |
 | `GET` | `/api/leaderboard?limit=N` | Top players by rating (default 20, max 100) |
 | `GET` | `/api/games?userId=...&limit=N` | User-scoped recent games list (in-progress first) |
 | `GET` | `/api/games/:gameId?userId=...` | User-scoped game detail with turns + snapshots for resume/review |
@@ -764,6 +781,15 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - `ALLOWED_ORIGINS` — Comma-separated allowed origins for WebSocket connections (set in `server/.env`)
 - `ANALYTICS_ADMIN_PASSWORD` — Required to enable protected analytics admin endpoints (`/api/admin/*`)
 - `ANALYTICS_STORE_RAW_IP` — Set `false` to avoid storing raw visit IP in `visits.ip` (default `true`)
+- `AUTH_ENABLED` — Enables account auth endpoints/session flow (`false` by default; requires token secrets)
+- `GUEST_MODE_ENABLED` — Keeps legacy guest identity/profile flow active (`true` default; set `false` to require auth for profile updates)
+- `AUTH_ACCESS_TOKEN_SECRET` — HMAC secret for short-lived access tokens
+- `AUTH_REFRESH_TOKEN_SECRET` — HMAC secret for refresh token signing
+- `AUTH_ACCESS_TTL_MINUTES` — Access token TTL (default `15`)
+- `AUTH_REFRESH_TTL_DAYS` — Refresh token/session TTL (default `30`)
+- `AUTH_COOKIE_NAME` — Refresh cookie name (default `solmaalai_rt`)
+- `AUTH_COOKIE_SECURE` — Set `true` in HTTPS production to mark refresh cookie Secure
+- `APP_BASE_URL` — App origin used for auth token audience metadata
 - `GEO_PROVIDER` — Geo lookup provider: `none` (default), `ipwhois`, or `ipapi`
 - `GEO_LOOKUP_TIMEOUT_MS` — Geo lookup timeout in milliseconds (default `800`)
 - `GEO_CACHE_TTL_MS` — In-memory geo cache TTL in milliseconds (default `86400000`)
@@ -813,6 +839,7 @@ Deployed as a single Dockerfile-based service on Railway:
 - `railway.toml` `watchPatterns` limits rebuilds to code changes (skips doc-only commits)
 - Custom domain: `solmaalai.com` (CNAME → Railway). `சொல்மாலை.com` redirects via Namecheap.
 - `Dockerfile` installs `foma`/`flookup`; server-side FST validation is available in production when FST models are present under `server/fst-models/`
+- `Dockerfile` also installs native build prerequisites (`python3`, `make`, `g++`) so `argon2` can compile if prebuilt binaries are unavailable
 - Dictionary file (135MB) stored via Git LFS. Railway's Docker builder doesn't resolve LFS pointers, so the Dockerfile detects this (file < 1KB) and downloads the actual file from GitHub.
 - Railway CLI: `railway up` for manual deploy, `railway logs` to check output
 
