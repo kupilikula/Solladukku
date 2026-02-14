@@ -802,7 +802,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - `APP_BASE_URL` — App origin used for auth token audience metadata
 - `EMAIL_PROVIDER` — Optional outbound email provider selector. `zoho_smtp` enables real SMTP delivery; empty enables safe dev fallback responses
 - `EMAIL_FROM` — Optional from-address when email provider integration is enabled
-- `EMAIL_SMTP_HOST` — SMTP host for provider (`smtp.zoho.com` for Zoho)
+- `EMAIL_SMTP_HOST` — SMTP host for provider (Zoho is region-specific; e.g. `smtppro.zoho.in`, `smtppro.zoho.com`, `smtp.zoho.com`)
 - `EMAIL_SMTP_PORT` — SMTP port (Zoho SSL default `465`)
 - `EMAIL_SMTP_SECURE` — SMTP secure flag (`true` for Zoho 465)
 - `EMAIL_SMTP_USER` — SMTP auth username (typically full sender email)
