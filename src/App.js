@@ -399,7 +399,8 @@ function LandingPage({
     authError,
     authStatusMessage,
     authAccount,
-    authTokenFromUrl,
+    authLinkToken,
+    authLinkMode,
     onLogin,
     onSignup,
     onForgotPassword,
@@ -776,7 +777,8 @@ function LandingPage({
                                 error={authError}
                                 statusMessage={authStatusMessage}
                                 authAccount={authAccount}
-                                initialToken={authTokenFromUrl}
+                                initialToken={authLinkToken}
+                                linkMode={authLinkMode}
                                 currentUsername={username}
                                 onLogin={onLogin}
                                 onSignup={onSignup}
@@ -919,6 +921,12 @@ function AppContent() {
         const raw = params.get('token');
         return raw ? raw.trim() : '';
     }, []);
+    const authLinkModeFromUrl = useMemo(() => {
+        const pathname = window.location.pathname || '/';
+        if (pathname === '/verify-email') return 'verify';
+        if (pathname === '/reset-password') return 'reset';
+        return null;
+    }, []);
 
     const [gameId, setGameId] = useState(initialGameId);
     const [mode, setMode] = useState(() => {
@@ -944,6 +952,9 @@ function AppContent() {
     const [accessToken, setAccessToken] = useState(null);
     const [authAccount, setAuthAccount] = useState(null);
     const initialGameIdRef = useRef(initialGameId);
+    const autoVerifyAttemptedRef = useRef(false);
+    const [authLinkToken, setAuthLinkToken] = useState(authTokenFromUrl);
+    const [authLinkMode, setAuthLinkMode] = useState(authLinkModeFromUrl);
 
     useEffect(() => {
         setAuthSessionToken(accessToken);
@@ -1069,9 +1080,9 @@ function AppContent() {
                 throw new Error(data?.error || t.authResetPasswordFailed);
             }
             setAuthStatusMessage(t.authResetPasswordSuccess);
-            const url = new URL(window.location);
-            url.searchParams.delete('token');
-            window.history.replaceState({}, '', url);
+            setAuthLinkToken('');
+            setAuthLinkMode(null);
+            window.history.replaceState({}, '', '/');
         } catch (err) {
             setAuthError(err?.message || t.authResetPasswordFailed);
         } finally {
@@ -1079,19 +1090,20 @@ function AppContent() {
         }
     }, [t]);
 
-    const handleVerifyEmail = useCallback(async ({ token }) => {
+    const handleVerifyEmail = useCallback(async ({ token }, options = {}) => {
+        const autoTriggered = Boolean(options.autoTriggered);
         setAuthLoading(true);
         setAuthError('');
-        setAuthStatusMessage('');
+        setAuthStatusMessage(autoTriggered ? t.authVerifyingFromLink : '');
         try {
             const { resp, data } = await verifyEmail({ token });
             if (!resp.ok) {
                 throw new Error(data?.error || t.authVerifyEmailFailed);
             }
             setAuthStatusMessage(t.authVerifyEmailSuccess);
-            const url = new URL(window.location);
-            url.searchParams.delete('token');
-            window.history.replaceState({}, '', url);
+            setAuthLinkToken('');
+            setAuthLinkMode(null);
+            window.history.replaceState({}, '', '/');
             if (accessToken) {
                 const meResp = await getMe(accessToken);
                 if (meResp.resp.ok && meResp.data?.account) {
@@ -1104,6 +1116,14 @@ function AppContent() {
             setAuthLoading(false);
         }
     }, [t, accessToken]);
+
+    useEffect(() => {
+        if (authLinkMode !== 'verify') return;
+        if (!authLinkToken) return;
+        if (autoVerifyAttemptedRef.current) return;
+        autoVerifyAttemptedRef.current = true;
+        handleVerifyEmail({ token: authLinkToken }, { autoTriggered: true });
+    }, [authLinkMode, authLinkToken, handleVerifyEmail]);
 
     const handleResendVerification = useCallback(async () => {
         if (!accessToken) {
@@ -1708,7 +1728,8 @@ function AppContent() {
                 authError={authError}
                 authStatusMessage={authStatusMessage}
                 authAccount={authAccount}
-                authTokenFromUrl={authTokenFromUrl}
+                authLinkToken={authLinkToken}
+                authLinkMode={authLinkMode}
                 onLogin={handleLogin}
                 onSignup={handleSignup}
                 onForgotPassword={handleForgotPassword}

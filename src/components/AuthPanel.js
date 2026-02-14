@@ -20,6 +20,7 @@ export default function AuthPanel({
     authAccount,
     initialToken = '',
     currentUsername = '',
+    linkMode = null,
 }) {
     const [mode, setMode] = useState('login');
     const [email, setEmail] = useState('');
@@ -31,7 +32,12 @@ export default function AuthPanel({
         if (initialToken) {
             setToken(initialToken);
         }
-    }, [initialToken]);
+        if (linkMode === 'verify') {
+            setMode('verify');
+        } else if (linkMode === 'reset') {
+            setMode('reset');
+        }
+    }, [initialToken, linkMode]);
 
     useEffect(() => {
         setSignupUsername(currentUsername || '');
@@ -58,6 +64,11 @@ export default function AuthPanel({
             await onVerifyEmail({ token });
         }
     };
+
+    const showForgotSelector = true;
+    const showResetSelector = linkMode === 'reset';
+    const showVerifySelector = linkMode === 'verify';
+    const hasLinkToken = Boolean(initialToken);
 
     return (
         <div style={{
@@ -102,54 +113,60 @@ export default function AuthPanel({
             </div>
 
             <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
-                <button
-                    onClick={() => setMode('forgot')}
-                    style={{
-                        flex: 1,
-                        border: '1px solid #bfd3e2',
-                        backgroundColor: mode === 'forgot' ? '#1A5276' : '#f4f9fc',
-                        color: mode === 'forgot' ? 'white' : '#1A5276',
-                        borderRadius: 6,
-                        padding: '7px 0',
-                        cursor: 'pointer',
-                        fontFamily: 'Tamil Sangam MN, sans-serif',
-                        fontSize: 12,
-                    }}
-                >
-                    {t.authForgotPassword}
-                </button>
-                <button
-                    onClick={() => setMode('reset')}
-                    style={{
-                        flex: 1,
-                        border: '1px solid #bfd3e2',
-                        backgroundColor: mode === 'reset' ? '#1A5276' : '#f4f9fc',
-                        color: mode === 'reset' ? 'white' : '#1A5276',
-                        borderRadius: 6,
-                        padding: '7px 0',
-                        cursor: 'pointer',
-                        fontFamily: 'Tamil Sangam MN, sans-serif',
-                        fontSize: 12,
-                    }}
-                >
-                    {t.authResetPassword}
-                </button>
-                <button
-                    onClick={() => setMode('verify')}
-                    style={{
-                        flex: 1,
-                        border: '1px solid #bfd3e2',
-                        backgroundColor: mode === 'verify' ? '#1A5276' : '#f4f9fc',
-                        color: mode === 'verify' ? 'white' : '#1A5276',
-                        borderRadius: 6,
-                        padding: '7px 0',
-                        cursor: 'pointer',
-                        fontFamily: 'Tamil Sangam MN, sans-serif',
-                        fontSize: 12,
-                    }}
-                >
-                    {t.authVerifyEmail}
-                </button>
+                {showForgotSelector ? (
+                    <button
+                        onClick={() => setMode('forgot')}
+                        style={{
+                            flex: 1,
+                            border: '1px solid #bfd3e2',
+                            backgroundColor: mode === 'forgot' ? '#1A5276' : '#f4f9fc',
+                            color: mode === 'forgot' ? 'white' : '#1A5276',
+                            borderRadius: 6,
+                            padding: '7px 0',
+                            cursor: 'pointer',
+                            fontFamily: 'Tamil Sangam MN, sans-serif',
+                            fontSize: 12,
+                        }}
+                    >
+                        {t.authForgotPassword}
+                    </button>
+                ) : null}
+                {showResetSelector ? (
+                    <button
+                        onClick={() => setMode('reset')}
+                        style={{
+                            flex: 1,
+                            border: '1px solid #bfd3e2',
+                            backgroundColor: mode === 'reset' ? '#1A5276' : '#f4f9fc',
+                            color: mode === 'reset' ? 'white' : '#1A5276',
+                            borderRadius: 6,
+                            padding: '7px 0',
+                            cursor: 'pointer',
+                            fontFamily: 'Tamil Sangam MN, sans-serif',
+                            fontSize: 12,
+                        }}
+                    >
+                        {t.authResetPassword}
+                    </button>
+                ) : null}
+                {showVerifySelector ? (
+                    <button
+                        onClick={() => setMode('verify')}
+                        style={{
+                            flex: 1,
+                            border: '1px solid #bfd3e2',
+                            backgroundColor: mode === 'verify' ? '#1A5276' : '#f4f9fc',
+                            color: mode === 'verify' ? 'white' : '#1A5276',
+                            borderRadius: 6,
+                            padding: '7px 0',
+                            cursor: 'pointer',
+                            fontFamily: 'Tamil Sangam MN, sans-serif',
+                            fontSize: 12,
+                        }}
+                    >
+                        {t.authVerifyEmail}
+                    </button>
+                ) : null}
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -184,7 +201,7 @@ export default function AuthPanel({
                         style={inputStyle()}
                     />
                 ) : null}
-                {(mode === 'verify' || mode === 'reset') ? (
+                {(mode === 'verify' || (mode === 'reset' && !hasLinkToken)) ? (
                     <input
                         className="TamilInput"
                         value={token}
