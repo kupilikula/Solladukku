@@ -774,6 +774,7 @@ The server at `server/index.js` is an HTTP + WebSocket server on a single port:
 14. Cleans up empty rooms after 5 minutes
 15. Gracefully shuts down flookup processes, analytics DB, and HTTP server on SIGINT
 16. Start with: `cd server && npm run setup && npm start`
+17. Serves React static assets with HTTP cache headers and conditional request handling (`ETag` + `Last-Modified`): hashed build assets are immutable for 1 year, `tamil_dictionary.txt` is cached for 24h, and fresh conditional requests return `304 Not Modified`
 
 ### FST Models
 - **Build-time** (`wordlists/fst-models/`): Used by `generate_fst_forms.py` to pre-generate noun inflections
@@ -794,6 +795,7 @@ Usernames are stored in `localStorage` (`solladukku_username`) and synced to ser
 Deployed as a single Dockerfile-based service on Railway:
 - `Dockerfile` builds the React frontend, then sets up the Node.js server
 - Server serves the static React build for non-API routes + handles WebSocket/API on the same port
+- Static file caching is handled in `server/index.js` (not nginx): `ETag`/`Last-Modified` are emitted and respected so unchanged assets (including `tamil_dictionary.txt`) are revalidated and not re-downloaded on refresh
 - Auto-deploys on push to `main` (connected via GitHub integration)
 - `railway.toml` `watchPatterns` limits rebuilds to code changes (skips doc-only commits)
 - Custom domain: `solmaalai.com` (CNAME → Railway). `சொல்மாலை.com` redirects via Namecheap.

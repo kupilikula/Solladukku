@@ -63,6 +63,28 @@ function sendJson(res, statusCode, data) {
     res.end(JSON.stringify(data));
 }
 
+function buildWeakEtag(stat) {
+    return `W/"${Number(stat.size || 0)}-${Number(stat.mtimeMs || 0)}"`;
+}
+
+function isConditionalRequestFresh(req, etag, lastModified) {
+    const ifNoneMatch = req.headers['if-none-match'];
+    if (typeof ifNoneMatch === 'string' && ifNoneMatch.trim()) {
+        return ifNoneMatch.split(',').map(v => v.trim()).includes(etag);
+    }
+
+    const ifModifiedSince = req.headers['if-modified-since'];
+    if (typeof ifModifiedSince === 'string' && ifModifiedSince.trim()) {
+        const sinceMs = Date.parse(ifModifiedSince);
+        const lastMs = Date.parse(lastModified);
+        if (!Number.isNaN(sinceMs) && !Number.isNaN(lastMs) && lastMs <= sinceMs) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 function getClientIp(req) {
     const forwardedRaw = req.headers['x-forwarded-for'];
     const forwarded = typeof forwardedRaw === 'string'
@@ -513,13 +535,39 @@ function handleHttpRequest(req, res) {
             '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.txt': 'text/plain',
             '.woff': 'font/woff', '.woff2': 'font/woff2', '.map': 'application/json',
         };
+        const IMMUTABLE_ASSET_REGEX = /\.[0-9a-f]{8,}\.(js|css|png|jpg|svg|woff2?|map)$/i;
         let filePath = path.join(buildDir, pathname);
+        let isSpaFallback = false;
         if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
             filePath = path.join(buildDir, 'index.html');
+            isSpaFallback = true;
         }
         const ext = path.extname(filePath);
         const contentType = MIME_TYPES[ext] || 'application/octet-stream';
         try {
+            const stat = fs.statSync(filePath);
+            const etag = buildWeakEtag(stat);
+            const lastModified = stat.mtime.toUTCString();
+            const filename = path.basename(filePath);
+            let cacheControl = 'public, max-age=300';
+            if (IMMUTABLE_ASSET_REGEX.test(filename)) {
+                cacheControl = 'public, max-age=31536000, immutable';
+            } else if (filename === 'tamil_dictionary.txt') {
+                cacheControl = 'public, max-age=86400';
+            } else if (isSpaFallback || filename === 'index.html') {
+                cacheControl = 'no-cache';
+            }
+
+            res.setHeader('ETag', etag);
+            res.setHeader('Last-Modified', lastModified);
+            res.setHeader('Cache-Control', cacheControl);
+
+            if (isConditionalRequestFresh(req, etag, lastModified)) {
+                res.writeHead(304);
+                res.end();
+                return;
+            }
+
             const content = fs.readFileSync(filePath);
             res.writeHead(200, { 'Content-Type': contentType });
             res.end(content);
