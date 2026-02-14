@@ -8,7 +8,7 @@ const WebSocketContext = createContext(null);
 
 let requestIdCounter = 0;
 
-export function WebSocketProvider({ userId, gameId, username, children }) {
+export function WebSocketProvider({ userId, gameId, username, accessToken = null, children }) {
     const dispatch = useDispatch();
     const store = useStore();
     const [isConnected, setIsConnected] = useState(false);
@@ -22,7 +22,8 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
     const closeEventRef = useRef(null);
 
     const WS_BASE = getWsBaseUrl();
-    const WS_URL = `${WS_BASE}/${gameId}/${userId}?name=${encodeURIComponent(username || '')}`;
+    const tokenQuery = accessToken ? `&token=${encodeURIComponent(accessToken)}` : '';
+    const WS_URL = `${WS_BASE}/${gameId}/${userId}?name=${encodeURIComponent(username || '')}${tokenQuery}`;
 
     const connect = useCallback(() => {
         // Don't connect if we've been cleaned up (StrictMode unmount)
@@ -42,7 +43,8 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
 
         try {
             console.log('Attempting WebSocket connection to:', WS_URL);
-            const ws = new WebSocket(WS_URL);
+            const wsProtocols = accessToken ? ['bearer', accessToken] : undefined;
+            const ws = wsProtocols ? new WebSocket(WS_URL, wsProtocols) : new WebSocket(WS_URL);
 
             ws.onopen = () => {
                 if (isCleanedUpRef.current) {
@@ -73,7 +75,9 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
                     event.code === 4000 ||
                     event.code === 4001 ||
                     event.code === 4002 ||
-                    event.code === 4003;
+                    event.code === 4003 ||
+                    event.code === 4004 ||
+                    event.code === 4005;
 
                 // Only attempt to reconnect if not cleaned up and close is recoverable
                 if (!isFatalClose && !isCleanedUpRef.current && !reconnectTimeoutRef.current) {
@@ -269,7 +273,7 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
             console.error('Failed to create WebSocket:', err);
             setConnectionError('Failed to connect');
         }
-    }, [WS_URL, dispatch, username, store, gameId, userId]);
+    }, [WS_URL, accessToken, dispatch, username, store, gameId, userId]);
 
     useEffect(() => {
         isCleanedUpRef.current = false;

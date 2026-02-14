@@ -590,6 +590,40 @@ function createAccountWithProfile({ accountId, email, passwordHash, username, li
     return getAccountProfile(accountId);
 }
 
+function linkAccountToPlayer(accountId, playerUserId) {
+    if (!accountId || typeof accountId !== 'string') return { ok: false, reason: 'invalid' };
+    if (!playerUserId || typeof playerUserId !== 'string') return { ok: false, reason: 'invalid' };
+
+    const existing = db.prepare(`
+        SELECT account_id as accountId
+        FROM account_player_links
+        WHERE player_user_id = ?
+        LIMIT 1
+    `).get(playerUserId);
+
+    if (existing && existing.accountId && existing.accountId !== accountId) {
+        return { ok: false, reason: 'already_linked' };
+    }
+
+    db.prepare(`
+        INSERT INTO account_player_links (account_id, player_user_id)
+        VALUES (?, ?)
+        ON CONFLICT(player_user_id) DO NOTHING
+    `).run(accountId, playerUserId);
+
+    return { ok: true };
+}
+
+function getLinkedPlayerUserIds(accountId) {
+    if (!accountId || typeof accountId !== 'string') return [];
+    const rows = db.prepare(`
+        SELECT player_user_id as playerUserId
+        FROM account_player_links
+        WHERE account_id = ?
+    `).all(accountId);
+    return rows.map((row) => row.playerUserId).filter(Boolean);
+}
+
 function updateAccountProfileUsername(accountId, username) {
     const clean = sanitizeUsername(username);
     if (!accountId || typeof accountId !== 'string' || !clean) return null;
@@ -641,6 +675,84 @@ function revokeAccountSession(sessionId) {
         SET revoked_at = datetime('now'), updated_at = datetime('now')
         WHERE id = ? AND revoked_at IS NULL
     `).run(sessionId);
+}
+
+function createEmailVerificationToken({ id, accountId, tokenHash, expiresAt }) {
+    if (!id || !accountId || !tokenHash || !expiresAt) return false;
+    db.prepare(`
+        INSERT INTO email_verification_tokens (id, account_id, token_hash, expires_at)
+        VALUES (?, ?, ?, ?)
+    `).run(id, accountId, tokenHash, expiresAt);
+    return true;
+}
+
+function consumeEmailVerificationToken({ id, tokenHash }) {
+    if (!id || !tokenHash) return null;
+    const nowSql = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    const row = db.prepare(`
+        SELECT id, account_id as accountId
+        FROM email_verification_tokens
+        WHERE id = ? AND token_hash = ? AND used_at IS NULL AND expires_at >= ?
+        LIMIT 1
+    `).get(id, tokenHash, nowSql);
+    if (!row) return null;
+    const result = db.prepare(`
+        UPDATE email_verification_tokens
+        SET used_at = datetime('now'), updated_at = datetime('now')
+        WHERE id = ? AND used_at IS NULL
+    `).run(id);
+    if (!result.changes) return null;
+    return row;
+}
+
+function createPasswordResetToken({ id, accountId, tokenHash, expiresAt }) {
+    if (!id || !accountId || !tokenHash || !expiresAt) return false;
+    db.prepare(`
+        INSERT INTO password_reset_tokens (id, account_id, token_hash, expires_at)
+        VALUES (?, ?, ?, ?)
+    `).run(id, accountId, tokenHash, expiresAt);
+    return true;
+}
+
+function consumePasswordResetToken({ id, tokenHash }) {
+    if (!id || !tokenHash) return null;
+    const nowSql = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    const row = db.prepare(`
+        SELECT id, account_id as accountId
+        FROM password_reset_tokens
+        WHERE id = ? AND token_hash = ? AND used_at IS NULL AND expires_at >= ?
+        LIMIT 1
+    `).get(id, tokenHash, nowSql);
+    if (!row) return null;
+    const result = db.prepare(`
+        UPDATE password_reset_tokens
+        SET used_at = datetime('now'), updated_at = datetime('now')
+        WHERE id = ? AND used_at IS NULL
+    `).run(id);
+    if (!result.changes) return null;
+    return row;
+}
+
+function markAccountEmailVerified(accountId) {
+    if (!accountId || typeof accountId !== 'string') return false;
+    const result = db.prepare(`
+        UPDATE accounts
+        SET email_verified_at = COALESCE(email_verified_at, datetime('now')),
+            updated_at = datetime('now')
+        WHERE id = ?
+    `).run(accountId);
+    return Boolean(result.changes);
+}
+
+function updateAccountPasswordHash(accountId, passwordHash) {
+    if (!accountId || typeof accountId !== 'string') return false;
+    if (!passwordHash || typeof passwordHash !== 'string') return false;
+    const result = db.prepare(`
+        UPDATE accounts
+        SET password_hash = ?, updated_at = datetime('now')
+        WHERE id = ?
+    `).run(passwordHash, accountId);
+    return Boolean(result.changes);
 }
 
 function startGame(gameId, player1Id, options = {}) {
@@ -1025,6 +1137,69 @@ function getUserGames(userId, limit = 20) {
     };
 }
 
+function getAccountGames(accountId, linkedUserIds = [], limit = 20) {
+    if (!accountId || typeof accountId !== 'string') {
+        return { items: [], total: 0, limit: 0 };
+    }
+    const safeLimit = Math.max(1, Math.min(limit || 20, 100));
+    const userIds = Array.from(new Set((linkedUserIds || []).filter((id) => typeof id === 'string' && id)));
+    const userClause = userIds.length
+        ? ` OR g.player1_id IN (${userIds.map(() => '?').join(',')}) OR g.player2_id IN (${userIds.map(() => '?').join(',')})`
+        : '';
+    const totalParams = [accountId, ...userIds, ...userIds];
+    const total = db.prepare(`
+        SELECT COUNT(*) as count
+        FROM games g
+        WHERE g.account_id = ?${userClause}
+    `).get(...totalParams).count;
+
+    const snapshotClause = userIds.length
+        ? `s.account_id = ? OR s.user_id IN (${userIds.map(() => '?').join(',')})`
+        : `s.account_id = ?`;
+    const snapshotParams = [accountId, ...userIds];
+    const itemParams = [...snapshotParams, accountId, ...userIds, ...userIds, safeLimit];
+    const items = db.prepare(`
+        SELECT
+            g.id,
+            g.game_id as gameId,
+            g.game_type as gameType,
+            g.player1_id as player1Id,
+            g.player2_id as player2Id,
+            g.player1_score as player1Score,
+            g.player2_score as player2Score,
+            g.winner_id as winnerId,
+            g.game_over_reason as gameOverReason,
+            g.total_turns as totalTurns,
+            g.started_at as startedAt,
+            g.ended_at as endedAt,
+            p1.username as player1Name,
+            p2.username as player2Name,
+            (
+                SELECT MAX(s.updated_at)
+                FROM game_state_snapshots s
+                WHERE s.games_row_id = g.id AND (${snapshotClause})
+            ) as snapshotUpdatedAt
+        FROM games g
+        LEFT JOIN players p1 ON p1.user_id = g.player1_id
+        LEFT JOIN players p2 ON p2.user_id = g.player2_id
+        WHERE g.account_id = ?${userClause}
+        ORDER BY
+            CASE WHEN g.ended_at IS NULL THEN 0 ELSE 1 END,
+            COALESCE(g.ended_at, g.started_at, g.created_at) DESC
+        LIMIT ?
+    `).all(...itemParams);
+
+    return {
+        items: items.map((item) => ({
+            ...item,
+            status: item.endedAt ? 'finished' : 'in_progress',
+            hasSnapshotForUser: Boolean(item.snapshotUpdatedAt),
+        })),
+        total,
+        limit: safeLimit,
+    };
+}
+
 function getUserGameDetail(userId, gameId) {
     if (!userId || typeof userId !== 'string') return null;
     if (!gameId || typeof gameId !== 'string') return null;
@@ -1071,6 +1246,75 @@ function getUserGameDetail(userId, gameId) {
                 userId: snapshotForUser.user_id,
                 updatedAt: snapshotForUser.updated_at,
                 state: parseJsonSafe(snapshotForUser.state_json),
+            }
+            : null,
+        latestSnapshot: latestSnapshot
+            ? {
+                userId: latestSnapshot.user_id,
+                updatedAt: latestSnapshot.updated_at,
+                state: parseJsonSafe(latestSnapshot.state_json),
+            }
+            : null,
+    };
+}
+
+function getAccountGameDetail(accountId, gameId, linkedUserIds = []) {
+    if (!accountId || typeof accountId !== 'string') return null;
+    if (!gameId || typeof gameId !== 'string') return null;
+    const userIds = Array.from(new Set((linkedUserIds || []).filter((id) => typeof id === 'string' && id)));
+    const userClause = userIds.length
+        ? ` OR g.player1_id IN (${userIds.map(() => '?').join(',')}) OR g.player2_id IN (${userIds.map(() => '?').join(',')})`
+        : '';
+    const gameParams = [gameId, accountId, ...userIds, ...userIds];
+    const game = db.prepare(`
+        SELECT g.*, p1.username as player1_name, p2.username as player2_name
+        FROM games g
+        LEFT JOIN players p1 ON p1.user_id = g.player1_id
+        LEFT JOIN players p2 ON p2.user_id = g.player2_id
+        WHERE g.game_id = ? AND (g.account_id = ?${userClause})
+        ORDER BY g.created_at DESC
+        LIMIT 1
+    `).get(...gameParams);
+    if (!game) return null;
+
+    const turns = db.prepare(
+        `SELECT id, game_id, games_row_id, user_id, turn_number, turn_type, score,
+                words_played, word_scores, tiles_placed, placed_tiles_json, formed_words_json, created_at
+         FROM turns
+         WHERE games_row_id = ?
+         ORDER BY turn_number ASC`
+    ).all(game.id).map(normalizeTurnRow);
+
+    const snapshotClause = userIds.length
+        ? `account_id = ? OR user_id IN (${userIds.map(() => '?').join(',')})`
+        : `account_id = ?`;
+    const snapshotParams = [game.id, accountId, ...userIds];
+    const snapshotForAccount = db.prepare(
+        `SELECT user_id, state_json, updated_at
+         FROM game_state_snapshots
+         WHERE games_row_id = ? AND (${snapshotClause})
+         ORDER BY
+            CASE WHEN account_id = ? THEN 0 ELSE 1 END,
+            updated_at DESC
+         LIMIT 1`
+    ).get(...snapshotParams, accountId);
+
+    const latestSnapshot = db.prepare(
+        `SELECT user_id, state_json, updated_at
+         FROM game_state_snapshots
+         WHERE games_row_id = ?
+         ORDER BY updated_at DESC
+         LIMIT 1`
+    ).get(game.id);
+
+    return {
+        game,
+        turns,
+        snapshotForUser: snapshotForAccount
+            ? {
+                userId: snapshotForAccount.user_id,
+                updatedAt: snapshotForAccount.updated_at,
+                state: parseJsonSafe(snapshotForAccount.state_json),
             }
             : null,
         latestSnapshot: latestSnapshot
@@ -1352,11 +1596,19 @@ module.exports = {
     getAccountById,
     getAccountProfile,
     createAccountWithProfile,
+    linkAccountToPlayer,
+    getLinkedPlayerUserIds,
     updateAccountProfileUsername,
     createAccountSession,
     findAccountSessionById,
     rotateAccountSession,
     revokeAccountSession,
+    createEmailVerificationToken,
+    consumeEmailVerificationToken,
+    createPasswordResetToken,
+    consumePasswordResetToken,
+    markAccountEmailVerified,
+    updateAccountPasswordHash,
     startGame,
     ensureGameSession,
     setPlayer2,
@@ -1367,7 +1619,9 @@ module.exports = {
     getRecentGames,
     getGameDetail,
     getUserGames,
+    getAccountGames,
     getUserGameDetail,
+    getAccountGameDetail,
     saveGameStateSnapshot,
     getVisitsPerDay,
     getVisitsByCountry,

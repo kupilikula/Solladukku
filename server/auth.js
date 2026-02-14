@@ -42,6 +42,29 @@ function randomToken() {
     return crypto.randomBytes(32).toString('hex');
 }
 
+function issueOpaqueToken() {
+    const tokenId = generateId();
+    const tokenSecret = randomToken();
+    const token = `${tokenId}.${tokenSecret}`;
+    return {
+        tokenId,
+        token,
+        tokenHash: hashToken(token),
+    };
+}
+
+function parseOpaqueToken(rawToken) {
+    if (typeof rawToken !== 'string') return null;
+    const trimmed = rawToken.trim();
+    const dotIndex = trimmed.indexOf('.');
+    if (dotIndex <= 0 || dotIndex >= trimmed.length - 1) return null;
+    const tokenId = trimmed.slice(0, dotIndex);
+    return {
+        tokenId,
+        tokenHash: hashToken(trimmed),
+    };
+}
+
 function base64UrlEncode(value) {
     return Buffer.from(value)
         .toString('base64')
@@ -268,9 +291,12 @@ function isRateLimited(key, limit = 10, windowMs = 60_000) {
 module.exports = {
     isAuthEnabled,
     normalizeEmail,
+    hashToken,
     hashPassword,
     verifyPassword,
     generateId,
+    issueOpaqueToken,
+    parseOpaqueToken,
     issueAccessToken,
     issueRefreshToken,
     verifyAccessToken,

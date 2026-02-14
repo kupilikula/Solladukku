@@ -61,7 +61,7 @@ src/
 │   ├── useGameSnapshotSync.js # Debounced multiplayer snapshot persistence for refresh-safe resume
 │   └── useSoloGamePersistence.js # Single-player DB persistence (start/turn/end/snapshot) for My Games resume/review
 ├── components/
-│   ├── AuthPanel.js          # Landing-page login/signup panel (phase-A/B account auth)
+│   ├── AuthPanel.js          # Landing-page auth panel: login/signup + verify-email + forgot/reset password
 │   ├── AnalyticsViewer.js    # Password-protected analytics inspector (`?analytics=1`) with session-cached admin header, visible API error messaging, board replay fallback from formed-word tile coordinates, and per-turn Jump controls
 │   ├── GameFrame.js          # Main layout: SinglePlayer/Multiplayer wrappers + GameOverOverlay
 │   ├── GameReviewViewer.js   # Read-only game review screen with board replay slider + jump-to-turn
@@ -89,6 +89,7 @@ src/
 │   └── LetterBagsSlice.js    # Tile bag inventory (vowels, consonants, bonus)
 ├── utils/
 │   ├── authClient.js         # Auth API client (`/api/auth/*`) with credentialed refresh-cookie requests
+│   ├── authSession.js        # In-memory access-token holder shared by app/hooks for authenticated API writes
 │   ├── TileSet.js            # Tamil tile definitions (points, types, merge/split ops)
 │   ├── constants.js          # Game constants and helpers
 │   ├── dictionary.js         # Dictionary loader, binary search, server validation cache
@@ -111,7 +112,7 @@ The app opens to a landing page before entering any game:
 - **Game title**: "சொல்மாலை" in large peacock blue text
 - **Logo**: Renders `public/logo.png` above the title (96px height). Hides gracefully via `onError` if the file is missing.
 - **Persistent username**: Editable username input (saved in `localStorage` and synced to server profile)
-- **Account auth panel (feature-flagged)**: Landing page shows login/signup card when server auth is enabled and no active session; on success, refresh-cookie session is established and account identity is shown
+- **Account auth panel (feature-flagged)**: Landing page supports login/signup plus verify-email and forgot/reset password flows; when auth is enabled, access token is kept in-memory, refresh session uses HttpOnly cookie
 - **Identity header**: Displays guest/authenticated status with logout action for signed-in accounts
 - **Username gate**: If `/api/profile` reports username conflict (`409`), game entry actions are disabled until user picks an available name
 - **"New Game With Invited Opponent" button** (`புது ஆட்டம் அழைப்புடன்`): Creates a private multiplayer room, sets `?game=` in URL, and auto-opens invite modal in-game
@@ -119,7 +120,7 @@ The app opens to a landing page before entering any game:
 - **"Play vs Computer" button**: Starts a single-player game against the AI (no WebSocket, no game code needed)
 - **"Join Private Game" section**: Accepts either room code (4-8 alphanumeric) or full invite URL containing `?game=...`
 - **Leaderboard card**: Shows top rated players when data exists (hidden when empty)
-- **My Games card**: Shows recent games for this `userId` (in-progress + finished) with **Continue** and **Review** actions
+- **My Games card**: Authenticated users get account-scoped games across linked devices/browsers (with guest fallback when needed); supports **Continue** and **Review**
 - **"Game Rules" link**: Opens help modal with bilingual game instructions (same content as in-game help)
 - **Language toggle**: Top-right corner ("EN" / "த"), shared with in-game toggle via LanguageContext
 - **Landing layout (desktop)**: Two-column composition — left column prioritizes game actions; right column contains account/auth card, My Games, and Leaderboard. On mobile, sections stack into a single-column flow.
@@ -127,7 +128,7 @@ The app opens to a landing page before entering any game:
 **URL game bypass**: If someone arrives via `?game=XYZ` (multiplayer) or `?game=solo-...` (single-player), the landing page is skipped entirely and the app attempts direct game resume.
 The WebSocket connection is only established for multiplayer entries.
 - **Access guard on shared links**:
-  - Solo links are user-scoped (`/api/games/:gameId?userId=...`). If another browser profile/session opens a solo link and receives `404`, the app clears `?game`, returns to landing, and shows a friendly "link not available for this user session" error instead of silently starting a fresh game with the same code.
+  - Solo links are account/user scoped (`/api/games/:gameId?userId=...` with account-first authorization). If another browser profile/session opens a solo link and receives access denial (`403`/`404`), the app clears `?game`, returns to landing, and shows a friendly "link not available for this user session" error instead of silently starting a fresh game with the same code.
   - Multiplayer links remain joinable by other users, but if the room is already full (3rd join attempt), the server rejects with WebSocket close code `4001`; the client now exits to landing and shows a localized room-full message.
 
 **Analytics inspector route**: Visiting `?analytics=1` opens the admin analytics viewer instead of the game UI.
@@ -304,11 +305,15 @@ Without `ANALYTICS_ADMIN_PASSWORD`, admin analytics endpoints return `503`.
 | `POST` | `/api/auth/logout` | Revoke current refresh session and clear refresh cookie |
 | `POST` | `/api/auth/refresh` | Rotate refresh session, return new access token + refreshed cookie |
 | `GET` | `/api/auth/me` | Return authenticated account/profile from bearer access token |
+| `POST` | `/api/auth/verify-email` | Consume verification token and mark account email verified |
+| `POST` | `/api/auth/resend-verification` | Authenticated resend for verification token/email |
+| `POST` | `/api/auth/forgot-password` | Request password reset token/email (safe non-enumerating response) |
+| `POST` | `/api/auth/reset-password` | Consume reset token and set new Argon2id password hash |
 | `POST` | `/api/visit` | Record a page visit (`{page, gameId, userId}`) |
 | `POST` | `/api/profile` | Update username (`Authorization` bearer updates `account_profiles`; guest fallback still uses `{userId, username}` when guest mode is enabled) |
 | `GET` | `/api/leaderboard?limit=N` | Top players by rating (default 20, max 100) |
-| `GET` | `/api/games?userId=...&limit=N` | User-scoped recent games list (in-progress first) |
-| `GET` | `/api/games/:gameId?userId=...` | User-scoped game detail with turns + snapshots for resume/review |
+| `GET` | `/api/games?userId=...&limit=N` | Account-first games list (authenticated account scope first; guest fallback for legacy sessions) |
+| `GET` | `/api/games/:gameId?userId=...` | Account-first game detail authorization with guest fallback for legacy rows |
 | `POST` | `/api/solo/start` | Start/ensure single-player session (`{gameId, userId, username}`) |
 | `POST` | `/api/solo/turn` | Record single-player turn (`{gameId, userId, turnType, ...}`) |
 | `POST` | `/api/solo/end` | End single-player game (`{gameId, userId, winnerId, reason}`) |
@@ -341,13 +346,13 @@ Analytics calls are added **after** existing `broadcastToRoom` calls — no chan
 
 | WebSocket Message | Analytics Action |
 |------------------|-----------------|
-| `newGame` | `startGame()` + `setPlayer2()` if opponent in room |
+| `newGame` | `startGame()` (account-aware when WS auth present) + `setPlayer2()` if opponent in room |
 | Player joins (non-reconnection) | `setPlayer2()` if active game exists |
-| `turn` | `recordTurn()` with type 'word', score, formed words, and placed tile positions for replay |
-| `passTurn` | `recordTurn()` with type 'pass' |
-| `swapTiles` | `recordTurn()` with type 'swap' |
+| `turn` | `recordTurn()` with type 'word', score, formed words, and placed tile positions for replay (account-aware when WS auth present) |
+| `passTurn` | `recordTurn()` with type 'pass' (account-aware when WS auth present) |
+| `swapTiles` | `recordTurn()` with type 'swap' (account-aware when WS auth present) |
 | `gameOver` | `endGame()` with winner resolution and reason |
-| `stateSnapshot` | `saveGameStateSnapshot()` upsert per `(games_row_id, user_id)` for resumable state |
+| `stateSnapshot` | `saveGameStateSnapshot()` upsert per `(games_row_id, user_id)` with account stamping when available |
 
 ### Client-Side Visit Tracking (`src/App.js`)
 
@@ -463,7 +468,7 @@ Swap mode: Only **Swap** (red confirm) and **Cancel** buttons visible.
 
 ### Connection
 ```
-{WS_BASE_URL}/{gameId}/{userId}?name={username}
+{WS_BASE_URL}/{gameId}/{userId}?name={username}[&token=...]
 ```
 
 `WS_BASE_URL` is derived at runtime. In localhost dev (ports `3000/5173/4173`), it targets `ws://{host}:8000`; otherwise it uses same-origin `ws(s)://{host}`.
@@ -482,7 +487,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - Rooms are keyed by `gameId`, created on first connection
 - Max 2 players per room (additional connections rejected)
 - Empty rooms cleaned up after 5-minute delay
-- `wsMetadata` WeakMap provides reverse lookup from WebSocket to `{gameId, userId}`
+- `wsMetadata` WeakMap provides reverse lookup from WebSocket to `{gameId, userId, accountId}`
 - `broadcastToRoom(gameId, senderId, message)` sends to all OTHER players
 - `sendToAllInRoom(gameId, message)` sends to ALL players (used for chat)
 - Fatal WebSocket close codes:
@@ -490,6 +495,8 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
   - `4001`: room full (max 2 players)
   - `4002`: too many connections from IP
   - `4003`: origin not allowed
+  - `4004`: invalid/expired auth token (or missing token when guest mode is disabled)
+  - `4005`: disabled account
 
 ### Message Types
 
@@ -789,7 +796,11 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - `AUTH_REFRESH_TTL_DAYS` — Refresh token/session TTL (default `30`)
 - `AUTH_COOKIE_NAME` — Refresh cookie name (default `solmaalai_rt`)
 - `AUTH_COOKIE_SECURE` — Set `true` in HTTPS production to mark refresh cookie Secure
+- `AUTH_EMAIL_VERIFICATION_TTL_HOURS` — Verification token TTL in hours (default `24`)
+- `AUTH_PASSWORD_RESET_TTL_MINUTES` — Password reset token TTL in minutes (default `30`)
 - `APP_BASE_URL` — App origin used for auth token audience metadata
+- `EMAIL_PROVIDER` — Optional outbound email provider selector; empty enables safe dev fallback responses
+- `EMAIL_FROM` — Optional from-address when email provider integration is enabled
 - `GEO_PROVIDER` — Geo lookup provider: `none` (default), `ipwhois`, or `ipapi`
 - `GEO_LOOKUP_TIMEOUT_MS` — Geo lookup timeout in milliseconds (default `800`)
 - `GEO_CACHE_TTL_MS` — In-memory geo cache TTL in milliseconds (default `86400000`)
@@ -798,7 +809,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 ### Server (`server/index.js`)
 The server at `server/index.js` is an HTTP + WebSocket server on a single port:
 1. **HTTP server** wraps the WebSocket server — serves gameplay REST APIs and protected analytics admin APIs
-2. Accepts WebSocket connections at `/{gameId}/{userId}?name={username}` path (rejects malformed URLs)
+2. Accepts WebSocket connections at `/{gameId}/{userId}?name={username}` path (optionally with `token` query fallback). Client sends access token via WebSocket subprotocol (`bearer`, `<token>`) when authenticated.
 3. Validates origin against `ALLOWED_ORIGINS` (permissive in dev when unset)
 4. Enforces per-IP connection limits (max 10)
 5. Manages rooms (Map of gameId → players Map, max 2 per room)

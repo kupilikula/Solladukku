@@ -34,10 +34,10 @@ export async function signup({ email, password, username, userId }) {
     });
 }
 
-export async function login({ email, password }) {
+export async function login({ email, password, userId }) {
     return authRequest('/api/auth/login', {
         method: 'POST',
-        body: { email, password },
+        body: { email, password, userId },
     });
 }
 
@@ -53,5 +53,33 @@ export async function getMe(accessToken) {
     return authRequest('/api/auth/me', {
         method: 'GET',
         accessToken,
+    });
+}
+
+export async function verifyEmail({ token }) {
+    return authRequest('/api/auth/verify-email', {
+        method: 'POST',
+        body: { token },
+    });
+}
+
+export async function resendVerification(accessToken) {
+    return authRequest('/api/auth/resend-verification', {
+        method: 'POST',
+        accessToken,
+    });
+}
+
+export async function forgotPassword({ email }) {
+    return authRequest('/api/auth/forgot-password', {
+        method: 'POST',
+        body: { email },
+    });
+}
+
+export async function resetPassword({ token, password }) {
+    return authRequest('/api/auth/reset-password', {
+        method: 'POST',
+        body: { token, password },
     });
 }

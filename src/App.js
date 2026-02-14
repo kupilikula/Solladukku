@@ -13,7 +13,18 @@ import {LanguageProvider, useLanguage} from "./context/LanguageContext";
 import { loadDictionary } from './utils/dictionary';
 import { getApiBaseUrl } from './utils/runtimeUrls';
 import { useWebSocket } from './context/WebSocketContext';
-import { getMe, login, logout, refreshSession, signup } from './utils/authClient';
+import { setAuthSessionToken } from './utils/authSession';
+import {
+    forgotPassword,
+    getMe,
+    login,
+    logout,
+    refreshSession,
+    resendVerification,
+    resetPassword,
+    signup,
+    verifyEmail,
+} from './utils/authClient';
 
 const USERNAME_STORAGE_KEY = 'solladukku_username';
 
@@ -386,9 +397,15 @@ function LandingPage({
     authEnabled,
     authLoading,
     authError,
+    authStatusMessage,
     authAccount,
+    authTokenFromUrl,
     onLogin,
     onSignup,
+    onForgotPassword,
+    onResetPassword,
+    onVerifyEmail,
+    onResendVerification,
     onLogout,
 }) {
     const { language, toggleLanguage, t } = useLanguage();
@@ -752,13 +769,20 @@ function LandingPage({
                             </div>
                         ) : null}
 
-                        {authEnabled && !authAccount ? (
+                        {authEnabled && (!authAccount || !authAccount.emailVerifiedAt) ? (
                             <AuthPanel
                                 t={t}
                                 loading={authLoading}
                                 error={authError}
+                                statusMessage={authStatusMessage}
+                                authAccount={authAccount}
+                                initialToken={authTokenFromUrl}
                                 onLogin={onLogin}
                                 onSignup={onSignup}
+                                onForgotPassword={onForgotPassword}
+                                onResetPassword={onResetPassword}
+                                onVerifyEmail={onVerifyEmail}
+                                onResendVerification={onResendVerification}
                             />
                         ) : null}
 
@@ -840,7 +864,7 @@ function MultiplayerGuard({ initialGameId, onBlocked }) {
         if (!closeEvent) return;
 
         const code = Number(closeEvent.code);
-        if (code === 4000 || code === 4001 || code === 4002 || code === 4003) {
+        if (code === 4000 || code === 4001 || code === 4002 || code === 4003 || code === 4004 || code === 4005) {
             handledRef.current = true;
             onBlocked(closeEvent);
         }
@@ -889,6 +913,11 @@ function AppContent() {
         const params = new URLSearchParams(window.location.search);
         return params.get('analytics') === '1';
     }, []);
+    const authTokenFromUrl = useMemo(() => {
+        const params = new URLSearchParams(window.location.search);
+        const raw = params.get('token');
+        return raw ? raw.trim() : '';
+    }, []);
 
     const [gameId, setGameId] = useState(initialGameId);
     const [mode, setMode] = useState(() => {
@@ -910,9 +939,14 @@ function AppContent() {
     const [authAvailable, setAuthAvailable] = useState(true);
     const [authLoading, setAuthLoading] = useState(false);
     const [authError, setAuthError] = useState('');
+    const [authStatusMessage, setAuthStatusMessage] = useState('');
     const [accessToken, setAccessToken] = useState(null);
     const [authAccount, setAuthAccount] = useState(null);
     const initialGameIdRef = useRef(initialGameId);
+
+    useEffect(() => {
+        setAuthSessionToken(accessToken);
+    }, [accessToken]);
 
     const exitAnalytics = useCallback(() => {
         const url = new URL(window.location);
@@ -925,6 +959,7 @@ function AppContent() {
         if (!data?.account || !data?.accessToken) return false;
         setAccessToken(data.accessToken);
         setAuthAccount(data.account);
+        setAuthStatusMessage('');
         if (data.account.username) {
             setUsername(data.account.username);
         }
@@ -935,6 +970,7 @@ function AppContent() {
     const handleSignup = useCallback(async ({ email, password }) => {
         setAuthLoading(true);
         setAuthError('');
+        setAuthStatusMessage('');
         try {
             const { resp, data } = await signup({
                 email,
@@ -948,6 +984,13 @@ function AppContent() {
                 }
                 throw new Error(data?.error || t.authSignupFailed);
             }
+            if (data?.verification?.required) {
+                if (data.verification.providerConfigured === false) {
+                    setAuthStatusMessage(t.authVerificationSentDevFallback);
+                } else {
+                    setAuthStatusMessage(t.authVerificationSent);
+                }
+            }
         } catch (err) {
             setAuthError(err?.message || t.authSignupFailed);
         } finally {
@@ -958,20 +1001,24 @@ function AppContent() {
     const handleLogin = useCallback(async ({ email, password }) => {
         setAuthLoading(true);
         setAuthError('');
+        setAuthStatusMessage('');
         try {
-            const { resp, data } = await login({ email, password });
+            const { resp, data } = await login({ email, password, userId });
             if (!resp.ok || !applyAuthPayload(data)) {
                 if (resp.status === 401) {
                     throw new Error(t.authInvalidCredentials);
                 }
                 throw new Error(data?.error || t.authLoginFailed);
             }
+            if (!data?.account?.emailVerifiedAt) {
+                setAuthStatusMessage(t.authEmailNotVerified);
+            }
         } catch (err) {
             setAuthError(err?.message || t.authLoginFailed);
         } finally {
             setAuthLoading(false);
         }
-    }, [applyAuthPayload, t]);
+    }, [applyAuthPayload, t, userId]);
 
     const handleLogout = useCallback(async () => {
         setAuthLoading(true);
@@ -981,12 +1028,107 @@ function AppContent() {
             setAccessToken(null);
             setAuthAccount(null);
             setAuthError('');
+            setAuthStatusMessage('');
         } catch (err) {
             setAuthError(err?.message || t.authLogoutFailed);
         } finally {
             setAuthLoading(false);
         }
     }, [t]);
+
+    const handleForgotPassword = useCallback(async ({ email }) => {
+        setAuthLoading(true);
+        setAuthError('');
+        setAuthStatusMessage('');
+        try {
+            const { resp, data } = await forgotPassword({ email });
+            if (!resp.ok) {
+                throw new Error(data?.error || t.authForgotPasswordFailed);
+            }
+            if (data?.providerConfigured === false) {
+                setAuthStatusMessage(t.authResetSentDevFallback);
+            } else {
+                setAuthStatusMessage(t.authResetSent);
+            }
+        } catch (err) {
+            setAuthError(err?.message || t.authForgotPasswordFailed);
+        } finally {
+            setAuthLoading(false);
+        }
+    }, [t]);
+
+    const handleResetPassword = useCallback(async ({ token, password }) => {
+        setAuthLoading(true);
+        setAuthError('');
+        setAuthStatusMessage('');
+        try {
+            const { resp, data } = await resetPassword({ token, password });
+            if (!resp.ok) {
+                throw new Error(data?.error || t.authResetPasswordFailed);
+            }
+            setAuthStatusMessage(t.authResetPasswordSuccess);
+            const url = new URL(window.location);
+            url.searchParams.delete('token');
+            window.history.replaceState({}, '', url);
+        } catch (err) {
+            setAuthError(err?.message || t.authResetPasswordFailed);
+        } finally {
+            setAuthLoading(false);
+        }
+    }, [t]);
+
+    const handleVerifyEmail = useCallback(async ({ token }) => {
+        setAuthLoading(true);
+        setAuthError('');
+        setAuthStatusMessage('');
+        try {
+            const { resp, data } = await verifyEmail({ token });
+            if (!resp.ok) {
+                throw new Error(data?.error || t.authVerifyEmailFailed);
+            }
+            setAuthStatusMessage(t.authVerifyEmailSuccess);
+            const url = new URL(window.location);
+            url.searchParams.delete('token');
+            window.history.replaceState({}, '', url);
+            if (accessToken) {
+                const meResp = await getMe(accessToken);
+                if (meResp.resp.ok && meResp.data?.account) {
+                    setAuthAccount(meResp.data.account);
+                }
+            }
+        } catch (err) {
+            setAuthError(err?.message || t.authVerifyEmailFailed);
+        } finally {
+            setAuthLoading(false);
+        }
+    }, [t, accessToken]);
+
+    const handleResendVerification = useCallback(async () => {
+        if (!accessToken) {
+            setAuthError(t.authSessionExpired);
+            return;
+        }
+        setAuthLoading(true);
+        setAuthError('');
+        setAuthStatusMessage('');
+        try {
+            const { resp, data } = await resendVerification(accessToken);
+            if (!resp.ok) {
+                throw new Error(data?.error || t.authResendVerificationFailed);
+            }
+            if (data?.alreadyVerified) {
+                setAuthStatusMessage(t.authAlreadyVerified);
+            } else if (data?.providerConfigured === false) {
+                setAuthStatusMessage(t.authVerificationSentDevFallback);
+            } else {
+                setAuthStatusMessage(t.authVerificationSent);
+            }
+        } catch (err) {
+            setAuthError(err?.message || t.authResendVerificationFailed);
+        } finally {
+            setAuthLoading(false);
+        }
+    }, [accessToken, t]);
 
     useEffect(() => {
         if (analyticsMode) return;
@@ -1081,6 +1223,10 @@ function AppContent() {
             message = t.originNotAllowed;
         } else if (code === 4002) {
             message = t.tooManyConnections;
+        } else if (code === 4004) {
+            message = t.wsAuthInvalid;
+        } else if (code === 4005) {
+            message = t.wsAccountDisabled;
         } else if (code === 4000) {
             message = t.malformedGameLink;
         } else if (closeEvent?.reason) {
@@ -1137,8 +1283,10 @@ function AppContent() {
     const handleReviewGame = useCallback(async (targetGameId) => {
         if (!targetGameId) return;
         try {
+            const headers = accessToken ? { Authorization: `Bearer ${accessToken}` } : undefined;
             const resp = await fetch(
-                `${getApiBaseUrl()}/api/games/${encodeURIComponent(targetGameId)}?userId=${encodeURIComponent(userId)}`
+                `${getApiBaseUrl()}/api/games/${encodeURIComponent(targetGameId)}?userId=${encodeURIComponent(userId)}`,
+                { headers }
             );
             const data = await readJsonSafe(resp);
             if (!resp.ok) {
@@ -1149,13 +1297,15 @@ function AppContent() {
         } catch (err) {
             setMyGamesError(err?.message || t.reviewLoadFailed);
         }
-    }, [userId, t]);
+    }, [userId, t, accessToken]);
 
     const handleContinueGame = useCallback((targetGameId) => {
         if (!targetGameId) return;
         const selected = myGames.find((g) => g.gameId === targetGameId);
         if (selected?.gameType === 'singleplayer' || selected?.player2Id === 'computer-player') {
-            fetch(`${getApiBaseUrl()}/api/games/${encodeURIComponent(targetGameId)}?userId=${encodeURIComponent(userId)}`)
+            fetch(`${getApiBaseUrl()}/api/games/${encodeURIComponent(targetGameId)}?userId=${encodeURIComponent(userId)}`, {
+                headers: accessToken ? { Authorization: `Bearer ${accessToken}` } : undefined,
+            })
                 .then(async (resp) => {
                     const data = await readJsonSafe(resp);
                     if (!resp.ok) {
@@ -1188,7 +1338,7 @@ function AppContent() {
 
         dispatch(setAutoStartPending(false));
         enterMultiplayerGame(targetGameId, null);
-    }, [dispatch, enterMultiplayerGame, myGames, userId, effectiveUsername, t]);
+    }, [dispatch, enterMultiplayerGame, myGames, userId, effectiveUsername, t, accessToken]);
 
     const handleFindRandomOpponent = useCallback(async () => {
         if (!usernameAvailable) return;
@@ -1283,7 +1433,9 @@ function AppContent() {
         setMyGamesLoading(true);
         setMyGamesError('');
 
-        fetch(`${getApiBaseUrl()}/api/games?userId=${encodeURIComponent(userId)}&limit=20`)
+        fetch(`${getApiBaseUrl()}/api/games?userId=${encodeURIComponent(userId)}&limit=20`, {
+            headers: accessToken ? { Authorization: `Bearer ${accessToken}` } : undefined,
+        })
             .then(async (resp) => {
                 const data = await readJsonSafe(resp);
                 if (!resp.ok) {
@@ -1320,7 +1472,7 @@ function AppContent() {
         return () => {
             cancelled = true;
         };
-    }, [analyticsMode, gameId, mode, userId, t]);
+    }, [analyticsMode, gameId, mode, userId, t, accessToken]);
 
     useEffect(() => {
         const headers = { 'Content-Type': 'application/json' };
@@ -1377,7 +1529,9 @@ function AppContent() {
         if (!gameId || mode !== 'multiplayer') return;
         let cancelled = false;
         console.log('[resume] loading game detail', { gameId, userId });
-        fetch(`${getApiBaseUrl()}/api/games/${encodeURIComponent(gameId)}?userId=${encodeURIComponent(userId)}`)
+        fetch(`${getApiBaseUrl()}/api/games/${encodeURIComponent(gameId)}?userId=${encodeURIComponent(userId)}`, {
+            headers: accessToken ? { Authorization: `Bearer ${accessToken}` } : undefined,
+        })
             .then(async (resp) => {
                 const data = await readJsonSafe(resp);
                 if (!resp.ok) {
@@ -1437,13 +1591,15 @@ function AppContent() {
         return () => {
             cancelled = true;
         };
-    }, [dispatch, gameId, mode, userId, t]);
+    }, [dispatch, gameId, mode, userId, t, accessToken]);
 
     useEffect(() => {
         if (!gameId || mode !== 'singleplayer' || !gameId.startsWith('solo-')) return;
         let cancelled = false;
         dispatch(setSoloResumePending(true));
-        fetch(`${getApiBaseUrl()}/api/games/${encodeURIComponent(gameId)}?userId=${encodeURIComponent(userId)}`)
+        fetch(`${getApiBaseUrl()}/api/games/${encodeURIComponent(gameId)}?userId=${encodeURIComponent(userId)}`, {
+            headers: accessToken ? { Authorization: `Bearer ${accessToken}` } : undefined,
+        })
             .then(async (resp) => {
                 const data = await readJsonSafe(resp);
                 if (!resp.ok) {
@@ -1483,7 +1639,7 @@ function AppContent() {
         return () => {
             cancelled = true;
         };
-    }, [dispatch, gameId, mode, userId, t, exitGameLinkToLanding]);
+    }, [dispatch, gameId, mode, userId, t, exitGameLinkToLanding, accessToken]);
 
     const visitTracked = useRef(false);
     useEffect(() => {
@@ -1548,9 +1704,15 @@ function AppContent() {
                 authEnabled={authAvailable}
                 authLoading={authLoading}
                 authError={authError}
+                authStatusMessage={authStatusMessage}
                 authAccount={authAccount}
+                authTokenFromUrl={authTokenFromUrl}
                 onLogin={handleLogin}
                 onSignup={handleSignup}
+                onForgotPassword={handleForgotPassword}
+                onResetPassword={handleResetPassword}
+                onVerifyEmail={handleVerifyEmail}
+                onResendVerification={handleResendVerification}
                 onLogout={handleLogout}
             />
         );
@@ -1565,7 +1727,7 @@ function AppContent() {
     }
 
     return (
-        <WebSocketProvider userId={userId} username={effectiveUsername} gameId={gameId}>
+        <WebSocketProvider userId={userId} username={effectiveUsername} gameId={gameId} accessToken={accessToken}>
             <MultiplayerGuard
                 initialGameId={initialGameIdRef.current}
                 onBlocked={handleBlockedMultiplayerLink}

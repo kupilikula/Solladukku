@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { getApiBaseUrl } from '../utils/runtimeUrls';
+import { getAuthSessionToken } from '../utils/authSession';
 
 function wordTilesToWordString(wordTiles) {
     if (!Array.isArray(wordTiles)) return '';
@@ -91,6 +92,15 @@ export function useSoloGamePersistence({ isResume = false }) {
     const sentTurnsRef = useRef(0);
     const lastSnapshotHashRef = useRef('');
 
+    const buildHeaders = () => {
+        const token = getAuthSessionToken();
+        const headers = { 'Content-Type': 'application/json' };
+        if (token) {
+            headers.Authorization = `Bearer ${token}`;
+        }
+        return headers;
+    };
+
     useEffect(() => {
         if (game.gameMode !== 'singleplayer') return;
         if (!game.gameId || !game.userId || !game.gameStarted) return;
@@ -102,7 +112,7 @@ export function useSoloGamePersistence({ isResume = false }) {
             }
             fetch(getApiBaseUrl() + '/api/solo/start', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: buildHeaders(),
                 body: JSON.stringify({
                     gameId: game.gameId,
                     userId: game.userId,
@@ -131,7 +141,7 @@ export function useSoloGamePersistence({ isResume = false }) {
 
             fetch(getApiBaseUrl() + '/api/solo/turn', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: buildHeaders(),
                 body: JSON.stringify({
                     gameId: game.gameId,
                     userId: turn.turnUserId || game.userId,
@@ -155,7 +165,7 @@ export function useSoloGamePersistence({ isResume = false }) {
         endedRef.current = true;
         fetch(getApiBaseUrl() + '/api/solo/end', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: buildHeaders(),
             body: JSON.stringify({
                 gameId: game.gameId,
                 userId: game.userId,
@@ -178,7 +188,7 @@ export function useSoloGamePersistence({ isResume = false }) {
         const timer = setTimeout(() => {
             fetch(getApiBaseUrl() + '/api/solo/snapshot', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: buildHeaders(),
                 body: JSON.stringify({
                     gameId: game.gameId,
                     userId: game.userId,
