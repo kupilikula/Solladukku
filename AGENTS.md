@@ -120,6 +120,9 @@ The app opens to a landing page before entering any game:
 
 **URL game bypass**: If someone arrives via `?game=XYZ` (multiplayer) or `?game=solo-...` (single-player), the landing page is skipped entirely and the app attempts direct game resume.
 The WebSocket connection is only established for multiplayer entries.
+- **Access guard on shared links**:
+  - Solo links are user-scoped (`/api/games/:gameId?userId=...`). If another browser profile/session opens a solo link and receives `404`, the app clears `?game`, returns to landing, and shows a friendly "link not available for this user session" error instead of silently starting a fresh game with the same code.
+  - Multiplayer links remain joinable by other users, but if the room is already full (3rd join attempt), the server rejects with WebSocket close code `4001`; the client now exits to landing and shows a localized room-full message.
 
 **Analytics inspector route**: Visiting `?analytics=1` opens the admin analytics viewer instead of the game UI.
 The password input expects the existing server `ANALYTICS_ADMIN_PASSWORD` secret (it does not create/update server password), stores it only in `sessionStorage`, and sends it via `X-Admin-Password`.
@@ -449,8 +452,9 @@ Swap mode: Only **Swap** (red confirm) and **Cancel** buttons visible.
 `WS_BASE_URL` is derived at runtime. In localhost dev (ports `3000/5173/4173`), it targets `ws://{host}:8000`; otherwise it uses same-origin `ws(s)://{host}`.
 
 The WebSocket connection is managed via React Context (`WebSocketContext.js`), providing:
-- Auto-reconnect on disconnect (3-second delay)
+- Auto-reconnect on recoverable disconnects (3-second delay)
 - Connection state tracking (`isConnected`, `connectionError`)
+- Exposed close metadata (`closeEvent`) for fatal join handling in `App.js`
 - `sendTurn(turnInfo)` — broadcast turn to other players in room
 - `sendMessage(message)` — generic fire-and-forget broadcast to room
 - `sendRequest(message, timeoutMs)` — request-response with `requestId` matching, returns Promise
@@ -464,6 +468,11 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - `wsMetadata` WeakMap provides reverse lookup from WebSocket to `{gameId, userId}`
 - `broadcastToRoom(gameId, senderId, message)` sends to all OTHER players
 - `sendToAllInRoom(gameId, message)` sends to ALL players (used for chat)
+- Fatal WebSocket close codes:
+  - `4000`: malformed URL path
+  - `4001`: room full (max 2 players)
+  - `4002`: too many connections from IP
+  - `4003`: origin not allowed
 
 ### Message Types
 
@@ -563,6 +572,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 8. **My Games → Continue**: Re-enters an in-progress multiplayer game without remembering the code
 9. **My Games → Review**: Opens read-only board replay/final board for a finished game
 10. **Solo URL resume** (`?game=solo-...`): Opens single-player game directly and hydrates saved state
+11. **Shared solo URL in different browser profile/session**: If user-scoped lookup fails (`404`), app returns to landing with an access message (no accidental new game with same solo code).
 
 ### Single Player Flow
 1. Player clicks "Play vs Computer" on landing page
@@ -599,6 +609,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
    - 4 consecutive passes/swaps (2 per player) → `gameOverReason = 'consecutivePasses'`
 9. Winner determined by score; `gameOver` message syncs result
 10. Game-over overlay can be closed to inspect the final board + turn history without refreshing
+11. If a third user opens the same multiplayer link while 2 players are already in room, join is rejected (`4001`) and client routes back to landing with a room-full error.
 
 ### Multiplayer Resume + Review
 1. Multiplayer clients persist debounced snapshots via `useGameSnapshotSync` (`stateSnapshot` WebSocket message).

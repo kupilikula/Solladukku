@@ -11,6 +11,7 @@ import {WebSocketProvider} from "./context/WebSocketContext";
 import {LanguageProvider, useLanguage} from "./context/LanguageContext";
 import { loadDictionary } from './utils/dictionary';
 import { getApiBaseUrl } from './utils/runtimeUrls';
+import { useWebSocket } from './context/WebSocketContext';
 
 const USERNAME_STORAGE_KEY = 'solladukku_username';
 
@@ -747,6 +748,25 @@ function LandingPage({
     );
 }
 
+function MultiplayerGuard({ initialGameId, onBlocked }) {
+    const { closeEvent } = useWebSocket();
+    const handledRef = useRef(false);
+
+    useEffect(() => {
+        if (handledRef.current) return;
+        if (!initialGameId || initialGameId.startsWith('solo-')) return;
+        if (!closeEvent) return;
+
+        const code = Number(closeEvent.code);
+        if (code === 4000 || code === 4001 || code === 4002 || code === 4003) {
+            handledRef.current = true;
+            onBlocked(closeEvent);
+        }
+    }, [closeEvent, onBlocked, initialGameId]);
+
+    return null;
+}
+
 function AppContent() {
     const dispatch = useDispatch();
     const { t } = useLanguage();
@@ -832,6 +852,23 @@ function AppContent() {
             setMyGamesError(errorMessage);
         }
     }, [dispatch]);
+
+    const handleBlockedMultiplayerLink = useCallback((closeEvent) => {
+        const code = Number(closeEvent?.code || 0);
+        let message = t.multiplayerJoinFailed;
+        if (code === 4001) {
+            message = t.roomFull;
+        } else if (code === 4003) {
+            message = t.originNotAllowed;
+        } else if (code === 4002) {
+            message = t.tooManyConnections;
+        } else if (code === 4000) {
+            message = t.malformedGameLink;
+        } else if (closeEvent?.reason) {
+            message = closeEvent.reason;
+        }
+        exitGameLinkToLanding(message);
+    }, [exitGameLinkToLanding, t]);
 
     const enterMultiplayerGame = useCallback((id, starterUserId = null) => {
         const url = new URL(window.location);
@@ -1293,6 +1330,10 @@ function AppContent() {
 
     return (
         <WebSocketProvider userId={userId} username={effectiveUsername} gameId={gameId}>
+            <MultiplayerGuard
+                initialGameId={initialGameIdRef.current}
+                onBlocked={handleBlockedMultiplayerLink}
+            />
             <div style={{background: '#EDE8E0', height: '100vh', width: '100vw'}}>
                 <GameFrame />
             </div>

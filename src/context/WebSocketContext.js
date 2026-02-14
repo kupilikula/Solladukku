@@ -19,6 +19,7 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
     const isCleanedUpRef = useRef(false);
     // Map<requestId, { resolve, timer }> for request-response pattern
     const pendingRequestsRef = useRef(new Map());
+    const closeEventRef = useRef(null);
 
     const WS_BASE = getWsBaseUrl();
     const WS_URL = `${WS_BASE}/${gameId}/${userId}?name=${encodeURIComponent(username || '')}`;
@@ -51,6 +52,7 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
                 console.log('WebSocket connected');
                 setIsConnected(true);
                 setConnectionError(null);
+                closeEventRef.current = null;
                 if (username) {
                     ws.send(JSON.stringify({
                         messageType: 'setProfile',
@@ -62,9 +64,19 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
             ws.onclose = (event) => {
                 console.log('WebSocket closed:', event.code, event.reason);
                 setIsConnected(false);
+                closeEventRef.current = { code: event.code, reason: event.reason || '' };
+                if (event.reason) {
+                    setConnectionError(event.reason);
+                }
 
-                // Only attempt to reconnect if not cleaned up
-                if (!isCleanedUpRef.current && !reconnectTimeoutRef.current) {
+                const isFatalClose =
+                    event.code === 4000 ||
+                    event.code === 4001 ||
+                    event.code === 4002 ||
+                    event.code === 4003;
+
+                // Only attempt to reconnect if not cleaned up and close is recoverable
+                if (!isFatalClose && !isCleanedUpRef.current && !reconnectTimeoutRef.current) {
                     reconnectTimeoutRef.current = setTimeout(() => {
                         reconnectTimeoutRef.current = null;
                         connect();
@@ -341,6 +353,7 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
     const value = {
         isConnected,
         connectionError,
+        closeEvent: closeEventRef.current,
         sendMessage,
         sendTurn,
         sendRequest,
@@ -361,6 +374,7 @@ export function useWebSocket() {
         return {
             isConnected: false,
             connectionError: null,
+            closeEvent: null,
             sendMessage: () => {},
             sendTurn: () => {},
             sendRequest: () => Promise.resolve(null),
