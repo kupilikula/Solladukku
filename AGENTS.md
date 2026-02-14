@@ -56,10 +56,13 @@ src/
 │   └── LanguageContext.js    # Tamil/English toggle with 50+ translation keys
 ├── hooks/
 │   ├── useGameSync.js        # Multiplayer game sync (auto-start, initial draw, game-over)
-│   └── useAIGameSync.js      # Single-player AI lifecycle (init, turn orchestration, rack mgmt)
+│   ├── useAIGameSync.js      # Single-player AI lifecycle (init, turn orchestration, rack mgmt)
+│   ├── useGameSnapshotSync.js # Debounced multiplayer snapshot persistence for refresh-safe resume
+│   └── useSoloGamePersistence.js # Single-player DB persistence (start/turn/end/snapshot) for My Games resume/review
 ├── components/
 │   ├── AnalyticsViewer.js    # Password-protected analytics inspector (`?analytics=1`) with session-cached admin header, visible API error messaging, board replay fallback from formed-word tile coordinates, and per-turn Jump controls
 │   ├── GameFrame.js          # Main layout: SinglePlayer/Multiplayer wrappers + GameOverOverlay
+│   ├── GameReviewViewer.js   # Read-only game review screen with board replay slider + jump-to-turn
 │   ├── PlayingBoard.js       # Game board with DnD provider
 │   ├── WordBoard.js          # 15×15 Scrabble board grid
 │   ├── Square.js             # Individual board square with drop logic
@@ -76,7 +79,7 @@ src/
 │   └── ChooseLetter.js       # Modal for bonus tile letter selection
 ├── store/
 │   ├── store.js              # Redux store configuration (5 reducers)
-│   ├── actions.js            # 28 action creators
+│   ├── actions.js            # 29 action creators (includes `hydrateGameSnapshot`)
 │   ├── WordBoardSlice.js     # Board tile state (played + unplayed positions)
 │   ├── LetterRackSlice.js    # Player rack state (14 slots, swap/shuffle/split)
 │   ├── ScoreBoardSlice.js    # Scores, turn history, multiplier calculations
@@ -105,15 +108,18 @@ The app opens to a landing page before entering any game:
 - **Game title**: "சொல்மாலை" in large peacock blue text
 - **Logo**: Renders `public/logo.png` above the title (96px height). Hides gracefully via `onError` if the file is missing.
 - **Persistent username**: Editable username input (saved in `localStorage` and synced to server profile)
+- **Username gate**: If `/api/profile` reports username conflict (`409`), game entry actions are disabled until user picks an available name
 - **"New Game With Invited Opponent" button** (`புது ஆட்டம் அழைப்புடன்`): Creates a private multiplayer room, sets `?game=` in URL, and auto-opens invite modal in-game
 - **"Play Random Opponent" button** (`யாவொருவருடன் விளையாடு`): Joins queue-based matchmaking; on match, navigates to matched `gameId`
 - **"Play vs Computer" button**: Starts a single-player game against the AI (no WebSocket, no game code needed)
 - **"Join Private Game" section**: Accepts either room code (4-8 alphanumeric) or full invite URL containing `?game=...`
 - **Leaderboard card**: Shows top rated players when data exists (hidden when empty)
+- **My Games card**: Shows recent games for this `userId` (in-progress + finished) with **Continue** and **Review** actions
 - **"Game Rules" link**: Opens help modal with bilingual game instructions (same content as in-game help)
 - **Language toggle**: Top-right corner ("EN" / "த"), shared with in-game toggle via LanguageContext
 
-**Invite link bypass**: If someone arrives via `?game=XYZ` URL, the landing page is skipped entirely — they go straight into the game. The WebSocket connection is only established after entering a game.
+**URL game bypass**: If someone arrives via `?game=XYZ` (multiplayer) or `?game=solo-...` (single-player), the landing page is skipped entirely and the app attempts direct game resume.
+The WebSocket connection is only established for multiplayer entries.
 
 **Analytics inspector route**: Visiting `?analytics=1` opens the admin analytics viewer instead of the game UI.
 The password input expects the existing server `ANALYTICS_ADMIN_PASSWORD` secret (it does not create/update server password), stores it only in `sessionStorage`, and sends it via `X-Admin-Password`.
@@ -254,14 +260,15 @@ Server-side analytics using SQLite (`better-sqlite3`) with a REST API. The HTTP 
 
 ### Database (`server/analytics.db`)
 
-Four tables with WAL mode enabled:
+Five tables with WAL mode enabled:
 
 | Table | Purpose | Key Columns |
 |-------|---------|-------------|
 | `visits` | Page view tracking + geo | `page` ('landing'\|'game'), `game_id`, `user_id`, `ip`, `user_agent`, `referrer`, `country_code`, `country`, `region`, `city`, `timezone`, `geo_source`, `geo_resolved_at`, `created_at` |
-| `games` | One row per game session + country snapshot | `game_id`, `player1_id`, `player2_id`, scores, `winner_id`, `game_over_reason`, `total_turns`, `player1_country_code`, `player2_country_code`, `started_country_code`, `ended_country_code`, `started_at`, `ended_at` |
+| `games` | One row per game session + type + country snapshot | `game_id`, `game_type` ('multiplayer'\|'singleplayer'), `player1_id`, `player2_id` (`computer-player` for solo), scores, `winner_id`, `game_over_reason`, `total_turns`, `player1_country_code`, `player2_country_code`, `started_country_code`, `ended_country_code`, `started_at`, `ended_at` |
 | `turns` | One row per turn action | `game_id`, `games_row_id` (FK), `user_id`, `turn_type` ('word'\|'pass'\|'swap'), `score`, `words_played` (JSON), `tiles_placed`, `placed_tiles_json` (JSON), `formed_words_json` (JSON) |
 | `players` | Persistent profile + rating + last seen geo | `user_id`, `username`, `rating`, `games_played`, `wins`, `losses`, `draws`, `total_score`, `last_country_code`, `last_country`, `last_region`, `last_city`, `last_seen_ip_hash`, `last_seen_at`, `created_at`, `updated_at` |
+| `game_state_snapshots` | Per-user resumable multiplayer state snapshots | `game_id`, `games_row_id` (FK), `user_id`, `state_json` (JSON), `updated_at` |
 
 ### REST API Endpoints
 
@@ -278,6 +285,12 @@ Without `ANALYTICS_ADMIN_PASSWORD`, admin analytics endpoints return `503`.
 | `POST` | `/api/visit` | Record a page visit (`{page, gameId, userId}`) |
 | `POST` | `/api/profile` | Upsert persistent username/profile (`{userId, username}`) |
 | `GET` | `/api/leaderboard?limit=N` | Top players by rating (default 20, max 100) |
+| `GET` | `/api/games?userId=...&limit=N` | User-scoped recent games list (in-progress first) |
+| `GET` | `/api/games/:gameId?userId=...` | User-scoped game detail with turns + snapshots for resume/review |
+| `POST` | `/api/solo/start` | Start/ensure single-player session (`{gameId, userId, username}`) |
+| `POST` | `/api/solo/turn` | Record single-player turn (`{gameId, userId, turnType, ...}`) |
+| `POST` | `/api/solo/end` | End single-player game (`{gameId, userId, winnerId, reason}`) |
+| `POST` | `/api/solo/snapshot` | Save single-player resume snapshot (`{gameId, userId, snapshot}`) |
 | `GET` | `/api/admin/summary` | Protected analytics summary (counts + derived stats) |
 | `GET` | `/api/admin/games?limit=N&offset=N&q=...` | Protected paginated/searchable games |
 | `GET` | `/api/admin/games/:gameId` | Protected game detail with turns + replay fields |
@@ -294,6 +307,11 @@ Without `ANALYTICS_ADMIN_PASSWORD`, admin analytics endpoints return `503`.
 
 Route matching note: In `server/index.js`, `/api/admin/players/countries` is matched before `/api/admin/players/:userId` so `countries` is not misinterpreted as a `userId`.
 
+Username uniqueness note:
+- Usernames are now case-insensitive unique across all users (`UNIQUE INDEX` on `lower(username)`).
+- `/api/profile` returns `409` when a username is taken, with optional `suggestion`.
+- Client shows inline error under username input when the chosen name is unavailable.
+
 ### Server-Side Event Hooks
 
 Analytics calls are added **after** existing `broadcastToRoom` calls — no change to game behavior:
@@ -306,6 +324,7 @@ Analytics calls are added **after** existing `broadcastToRoom` calls — no chan
 | `passTurn` | `recordTurn()` with type 'pass' |
 | `swapTiles` | `recordTurn()` with type 'swap' |
 | `gameOver` | `endGame()` with winner resolution and reason |
+| `stateSnapshot` | `saveGameStateSnapshot()` upsert per `(games_row_id, user_id)` for resumable state |
 
 ### Client-Side Visit Tracking (`src/App.js`)
 
@@ -338,6 +357,7 @@ Analytics calls are added **after** existing `broadcastToRoom` calls — no chan
   gameOverReason: string | null, // 'tilesOut' or 'consecutivePasses'
   swapMode: boolean,           // Whether swap tile selection mode is active
   gameMode: string | null,     // 'singleplayer' or 'multiplayer' (null before game entry)
+  soloResumePending: boolean,  // True while URL-based solo resume hydration is in progress
 }
 ```
 
@@ -474,6 +494,12 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 | `validateWords` | client→server | Words to validate via FST (`requestId`, `words[]`, max 20) |
 | `validateWordsResult` | server→client | Validation results (`requestId`, `results: {word: bool}`) |
 
+**Client → Server (persist-only, no broadcast)**
+
+| Type | Direction | Description |
+|------|-----------|-------------|
+| `stateSnapshot` | client→server | Debounced resumable state snapshot (`snapshot` object) persisted in SQLite per user |
+
 ### Server Hardening (`server/index.js`)
 
 | Protection | Details |
@@ -500,7 +526,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 
 **UI Labels**: `you`, `opponent`, `yourTurn`, `waiting`, `connected`, `disconnected`, `tilesRemaining`, `total`, `tiles`, `turnHistory`, `noMovesYet`, `chat`, `noMessagesYet`, `typeMessage`, `send`, `turn`, `passed`, `swappedTiles`
 
-**Landing Page**: `createGame`, `playRandomOpponent`, `playVsComputer`, `joinGame`, `enterGameCode`, `join`, `howToPlay`, and other matchmaking/join helper labels are defined in `LanguageContext` and consumed by `App.js`.
+**Landing Page**: `createGame`, `playRandomOpponent`, `playVsComputer`, `joinGame`, `enterGameCode`, `join`, `howToPlay`, `myGames`, `continueGame`, `reviewGame`, and other matchmaking/join helper labels are defined in `LanguageContext` and consumed by `App.js`.
 
 **Single Player**: `computer`, `computerThinking`, `vsComputer`
 
@@ -512,6 +538,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 
 ### Components Using Translations
 - `App.js` — landing page: title, mode actions, join-private input, leaderboard, help modal, language toggle
+- `App.js` — landing page: title, mode actions, join-private input, leaderboard, My Games list, help modal, language toggle
 - `ScoreBoard.js` — role labels (`t.you`, `t.opponent`), turn badge (`t.turn`), usernames from Redux `playerNames`
 - `ConnectionStatus.js` — status text, turn indicator
 - `TurnHistory.js` — header, empty state, pass/swap labels (swap entries include swapped tile count)
@@ -530,6 +557,9 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 5. **Play vs Computer**: Enters single-player game (no WebSocket)
 6. **Join Private Game**: Enter code or full invite URL (`?game=...`) → enters multiplayer game
 7. **Invite link** (`?game=XYZ`): Bypasses landing page → enters multiplayer game directly
+8. **My Games → Continue**: Re-enters an in-progress multiplayer game without remembering the code
+9. **My Games → Review**: Opens read-only board replay/final board for a finished game
+10. **Solo URL resume** (`?game=solo-...`): Opens single-player game directly and hydrates saved state
 
 ### Single Player Flow
 1. Player clicks "Play vs Computer" on landing page
@@ -551,6 +581,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
    - Falls back to adaptive swap (2-4 tiles, with repeat-avoidance using recent swap signatures) or pass if no valid move found
 6. UI adapts: "vs Computer" status, "Thinking..." indicator, "Computer" name in scoreboard, no Chat, no Invite button
 7. Game ends same as multiplayer: tiles exhausted or 4 consecutive passes/swaps
+8. Single-player sessions are persisted to SQLite (start/turn/end + snapshots) and appear in Landing **My Games** for Continue/Review.
 
 ### Multiplayer Flow
 1. **Player 1** creates a game from landing page → enters game with new gameId
@@ -564,6 +595,15 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
    - Tile bag exhausted + player's rack empty → `gameOverReason = 'tilesOut'`
    - 4 consecutive passes/swaps (2 per player) → `gameOverReason = 'consecutivePasses'`
 9. Winner determined by score; `gameOver` message syncs result
+10. Game-over overlay can be closed to inspect the final board + turn history without refreshing
+
+### Multiplayer Resume + Review
+1. Multiplayer clients persist debounced snapshots via `useGameSnapshotSync` (`stateSnapshot` WebSocket message).
+2. Server stores snapshots in SQLite per `(games_row_id, user_id)`.
+3. On multiplayer entry, `App.js` loads `/api/games/:gameId?userId=...` and hydrates Redux via `hydrateGameSnapshot` when snapshot data is available.
+4. Landing-page **My Games** list enables:
+   - **Continue** in-progress games without manually re-entering code.
+   - **Review** finished games in read-only `GameReviewViewer` (turn slider + Jump controls).
 
 ### Invite System
 - Creating an invited game sets `?invite=1` and opens invite modal automatically after game entry
@@ -599,9 +639,12 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] Score calculation with all multiplier types
 - [x] 14-slot player rack with shuffle
 - [x] Bonus tile letter selection modal
-- [x] Redux state management (5 slices, 28 actions)
+- [x] Redux state management (5 slices, 29 actions; includes snapshot hydration)
 - [x] New game initialization with confirmation dialog
 - [x] Auto-start on game creation: tiles drawn automatically when creating a game; late-joining players also get auto-drawn tiles via re-sync
+- [x] Landing-page My Games list: continue in-progress games + review finished games
+- [x] Closeable game-over modal: users can dismiss overlay and inspect final board/history
+- [x] Resumable multiplayer snapshots persisted in SQLite + restored on re-entry
 - [x] **Room-based multiplayer**: gameId in URL, 2-player rooms, invite links
 - [x] **WebSocket server**: turn, newGame, drewTiles, swapTiles, passTurn, gameOver, chat
 - [x] **WebSocket client**: auto-reconnect, request-response pattern, chat

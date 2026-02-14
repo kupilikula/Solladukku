@@ -28,5 +28,6 @@ const splitUyirMeyTile = createAction('game/splitUyirMeyTile');
 const shuffleRack = createAction('game/shuffleRack');
 const bonusTileLetterSelected = createAction('game/bonusTileLetterSelected');
 const deactivateAllRackTiles = createAction('game/deactivateAllRackTiles');
+const hydrateGameSnapshot = createAction('game/hydrateGameSnapshot');
 
-export {storeUserId, addPlayers, addOtherPlayerTurn, replenishRack, shuffleRack, mergeTiles, splitUyirMeyTile, bonusTileLetterSelected, toggleActivatedOfTile, deactivateAllUnplayedTilesOnBoard, deactivateAllRackTiles, placeTileOnBoardFromRack, moveTileOnBoardFromBoard, placeTileOnRackFromBoard, returnAllUnplayedTilesToRackFromBoard, moveTileOnRack, playWord, createUyirMeyTileOnRack, updateScoreBoard, initializeNewGameState, syncNewGame, syncOpponentDraw, swapTiles, passTurn, syncPassTurn, syncSwapTiles, setGameOver, endGame};
+export {storeUserId, addPlayers, addOtherPlayerTurn, replenishRack, shuffleRack, mergeTiles, splitUyirMeyTile, bonusTileLetterSelected, toggleActivatedOfTile, deactivateAllUnplayedTilesOnBoard, deactivateAllRackTiles, placeTileOnBoardFromRack, moveTileOnBoardFromBoard, placeTileOnRackFromBoard, returnAllUnplayedTilesToRackFromBoard, moveTileOnRack, playWord, createUyirMeyTileOnRack, updateScoreBoard, initializeNewGameState, syncNewGame, syncOpponentDraw, swapTiles, passTurn, syncPassTurn, syncSwapTiles, setGameOver, endGame, hydrateGameSnapshot};

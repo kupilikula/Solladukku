@@ -73,11 +73,19 @@ export function useAIGameSync() {
     const myScore = useSelector(state => state.ScoreBoard.myTotalScore);
     const opponentScore = useSelector(state => state.ScoreBoard.otherPlayersTotalScores[0] || 0);
     const myInitialDraw = useSelector(state => state.Game.myInitialDraw);
+    const soloResumePending = useSelector(state => state.Game.soloResumePending);
 
     // Initialize game on mount
     useEffect(() => {
         if (initializedRef.current) return;
+        if (soloResumePending) return;
         initializedRef.current = true;
+
+        const preloadedState = store.getState();
+        if (preloadedState.Game.gameStarted && preloadedState.Game.gameMode === 'singleplayer') {
+            console.log('Single player resume detected, skipping fresh initialization');
+            return;
+        }
 
         dispatch(initializeNewGameState());
 
@@ -99,7 +107,7 @@ export function useAIGameSync() {
         prevMyInitialDrawRef.current = playerTiles;
 
         console.log('Single player game initialized. Player tiles:', playerTiles, 'AI tiles:', aiTileKeys);
-    }, [dispatch]);
+    }, [dispatch, store, soloResumePending]);
 
     // Handle "New Game" from ActionMenu: when player starts a new game,
     // myInitialDraw changes — draw new AI tiles from the fresh bags

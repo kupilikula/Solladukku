@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit'
 import {initialConsonantsBag, initialVowelsBag, initialBonusBag} from "../utils/initialLetterBags";
-import {initializeNewGameState, syncNewGame, syncOpponentDraw, syncSwapTiles, swapTiles, replenishRack, playWord, addOtherPlayerTurn} from "./actions";
+import {initializeNewGameState, syncNewGame, syncOpponentDraw, syncSwapTiles, swapTiles, replenishRack, playWord, addOtherPlayerTurn, hydrateGameSnapshot} from "./actions";
 import {TileMethods} from "../utils/TileSet";
 
 // Create fresh copies for initial state
@@ -121,6 +121,14 @@ export const LetterBagsSlice = createSlice({
                         state.bonusBag[l] -= 1;
                     }
                 });
+            })
+            .addCase(hydrateGameSnapshot, (state, action) => {
+                const snapshotBags = action.payload?.snapshot?.letterBags || {};
+                if (snapshotBags.consonantsBag && snapshotBags.vowelsBag && snapshotBags.bonusBag) {
+                    state.consonantsBag = { ...snapshotBags.consonantsBag };
+                    state.vowelsBag = { ...snapshotBags.vowelsBag };
+                    state.bonusBag = { ...snapshotBags.bonusBag };
+                }
             })
     }
 })

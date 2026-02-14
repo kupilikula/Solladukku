@@ -93,6 +93,12 @@ function sanitizeUsername(username) {
     return trimmed;
 }
 
+function normalizeSoloGameId(value) {
+    if (typeof value !== 'string') return null;
+    const trimmed = value.trim();
+    return trimmed ? trimmed.slice(0, 64) : null;
+}
+
 function secureEqual(a, b) {
     if (typeof a !== 'string' || typeof b !== 'string') return false;
     const bufA = Buffer.from(a);
@@ -168,16 +174,105 @@ function handleHttpRequest(req, res) {
                 sendJson(res, 400, { error: 'Invalid profile payload' });
                 return;
             }
+            const usernameClaim = analytics.claimUniqueUsernameOrSuggest(userId, username);
+            if (!usernameClaim.ok) {
+                if (usernameClaim.reason === 'taken') {
+                    sendJson(res, 409, {
+                        error: 'Username is already taken',
+                        suggestion: usernameClaim.suggestion || null,
+                    });
+                    return;
+                }
+                sendJson(res, 400, { error: 'Invalid profile payload' });
+                return;
+            }
             const ip = getClientIp(req);
             const resolvedGeo = await geo.resolveGeoForIp(ip);
             const ipHash = geo.hashIp(ip);
             const profile = analytics.upsertPlayerProfile({
                 userId,
-                username,
+                username: usernameClaim.username,
                 geo: resolvedGeo,
                 ipHash,
             });
             sendJson(res, 200, { ok: true, profile });
+        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/solo/start') {
+        parseBody(req).then((body) => {
+            const userId = typeof body.userId === 'string' ? body.userId : null;
+            const username = sanitizeUsername(body.username);
+            const gameId = normalizeSoloGameId(body.gameId);
+            if (!userId || !username || !gameId) {
+                sendJson(res, 400, { error: 'Invalid solo start payload' });
+                return;
+            }
+            analytics.upsertPlayerProfile({ userId, username });
+            analytics.ensureGameSession(gameId, userId, { gameType: 'singleplayer' });
+            analytics.setPlayer2(gameId, 'computer-player');
+            sendJson(res, 200, { ok: true, gameId });
+        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/solo/turn') {
+        parseBody(req).then((body) => {
+            const userId = typeof body.userId === 'string' ? body.userId : null;
+            const gameId = normalizeSoloGameId(body.gameId);
+            const turnType = typeof body.turnType === 'string' ? body.turnType : null;
+            if (!userId || !gameId || !turnType) {
+                sendJson(res, 400, { error: 'Invalid solo turn payload' });
+                return;
+            }
+            analytics.recordTurn(gameId, {
+                userId,
+                turnType,
+                score: Number(body.score || 0),
+                wordsPlayed: Array.isArray(body.wordsPlayed) ? body.wordsPlayed : null,
+                wordScores: Array.isArray(body.wordScores) ? body.wordScores : null,
+                tilesPlaced: Number(body.tilesPlaced || 0),
+                placedTiles: Array.isArray(body.placedTiles) ? body.placedTiles : null,
+                formedWords: Array.isArray(body.formedWords) ? body.formedWords : null,
+            });
+            sendJson(res, 200, { ok: true });
+        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/solo/end') {
+        parseBody(req).then((body) => {
+            const gameId = normalizeSoloGameId(body.gameId);
+            let winnerId = typeof body.winnerId === 'string' ? body.winnerId : null;
+            if (winnerId === 'opponent') winnerId = 'computer-player';
+            if (winnerId === 'me') winnerId = typeof body.userId === 'string' ? body.userId : null;
+            const reason = typeof body.reason === 'string' ? body.reason : null;
+            if (!gameId) {
+                sendJson(res, 400, { error: 'Invalid solo end payload' });
+                return;
+            }
+            analytics.endGame(gameId, { winnerId, reason });
+            sendJson(res, 200, { ok: true });
+        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/solo/snapshot') {
+        parseBody(req).then((body) => {
+            const userId = typeof body.userId === 'string' ? body.userId : null;
+            const gameId = normalizeSoloGameId(body.gameId);
+            const snapshot = body.snapshot;
+            if (!userId || !gameId || !snapshot || typeof snapshot !== 'object') {
+                sendJson(res, 400, { error: 'Invalid solo snapshot payload' });
+                return;
+            }
+            const saved = analytics.saveGameStateSnapshot({
+                gameId,
+                userId,
+                state: snapshot,
+            });
+            sendJson(res, 200, { ok: Boolean(saved) });
         }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
         return;
     }
@@ -209,6 +304,45 @@ function handleHttpRequest(req, res) {
     if (req.method === 'GET' && pathname === '/api/leaderboard') {
         const limit = parseInt(url.searchParams.get('limit')) || 20;
         sendJson(res, 200, analytics.getLeaderboard(Math.min(limit, 100)));
+        return;
+    }
+
+    if (req.method === 'GET' && pathname === '/api/games') {
+        const userId = url.searchParams.get('userId');
+        if (!userId) {
+            sendJson(res, 400, { error: 'Missing userId' });
+            return;
+        }
+        const limit = parseInt(url.searchParams.get('limit')) || 20;
+        sendJson(res, 200, analytics.getUserGames(userId, Math.min(limit, 100)));
+        return;
+    }
+
+    if (req.method === 'GET' && pathname.startsWith('/api/games/')) {
+        const userId = url.searchParams.get('userId');
+        const gameId = pathname.slice('/api/games/'.length);
+        if (!userId) {
+            sendJson(res, 400, { error: 'Missing userId' });
+            return;
+        }
+        if (!gameId) {
+            sendJson(res, 400, { error: 'Missing gameId' });
+            return;
+        }
+        const detail = analytics.getUserGameDetail(userId, gameId);
+        if (!detail) {
+            sendJson(res, 404, { error: 'Game not found' });
+            return;
+        }
+        console.log('[api /api/games/:gameId] detail', {
+            gameId,
+            userId,
+            turns: Array.isArray(detail.turns) ? detail.turns.length : 0,
+            hasSnapshotForUser: Boolean(detail.snapshotForUser?.state),
+            latestSnapshotUserId: detail.latestSnapshot?.userId || null,
+            hasLatestSnapshot: Boolean(detail.latestSnapshot?.state),
+        });
+        sendJson(res, 200, detail);
         return;
     }
 
@@ -1066,6 +1200,33 @@ wss.on('connection', (ws, req) => {
                 case 'validateWords':
                     if (!Array.isArray(message.words) || message.words.length > 20) break;
                     handleValidateWords(ws, userId, message);
+                    break;
+
+                case 'stateSnapshot':
+                    if (!message.snapshot || typeof message.snapshot !== 'object') break;
+                    try {
+                        const saved = analytics.saveGameStateSnapshot({
+                            gameId,
+                            userId,
+                            state: message.snapshot,
+                        });
+                        if (!saved) {
+                            console.log('[ws stateSnapshot] not saved', { gameId, userId });
+                        } else {
+                            console.log('[ws stateSnapshot] saved', {
+                                gameId,
+                                userId,
+                                playedTiles: Array.isArray(message.snapshot?.wordBoard?.playedTilesWithPositions)
+                                    ? message.snapshot.wordBoard.playedTilesWithPositions.length
+                                    : 0,
+                                turns: Array.isArray(message.snapshot?.scoreBoard?.allTurns)
+                                    ? message.snapshot.scoreBoard.allTurns.length
+                                    : 0,
+                            });
+                        }
+                    } catch (e) {
+                        console.error('Analytics stateSnapshot error:', e.message);
+                    }
                     break;
 
                 default:

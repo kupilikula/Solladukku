@@ -30,6 +30,50 @@ function sanitizeUsername(username) {
     return trimmed;
 }
 
+function normalizeUsernameKey(username) {
+    const clean = sanitizeUsername(username);
+    if (!clean) return null;
+    return clean.toLowerCase();
+}
+
+function claimUniqueUsernameOrSuggest(userId, desiredUsername) {
+    const clean = sanitizeUsername(desiredUsername);
+    const baseKey = normalizeUsernameKey(desiredUsername);
+    if (!userId || typeof userId !== 'string' || !clean || !baseKey) {
+        return { ok: false, reason: 'invalid' };
+    }
+
+    const existing = db.prepare(`
+        SELECT user_id as userId, username
+        FROM players
+        WHERE lower(username) = ?
+        LIMIT 1
+    `).get(baseKey);
+
+    if (!existing || existing.userId === userId) {
+        return { ok: true, username: clean };
+    }
+
+    const makeCandidate = (suffixNumber) => {
+        const suffix = String(suffixNumber);
+        const maxBaseLen = Math.max(1, 24 - suffix.length);
+        return `${clean.slice(0, maxBaseLen)}${suffix}`;
+    };
+
+    let suggestion = null;
+    for (let i = 1; i <= 9999; i += 1) {
+        const candidate = makeCandidate(i);
+        const candidateKey = candidate.toLowerCase();
+        const clash = db.prepare('SELECT 1 FROM players WHERE lower(username) = ? LIMIT 1').get(candidateKey);
+        if (!clash) {
+            suggestion = candidate;
+            break;
+        }
+    }
+
+    return { ok: false, reason: 'taken', suggestion };
+}
+
 function init() {
     db = new Database(DB_PATH);
     db.pragma('journal_mode = WAL');
@@ -57,6 +101,7 @@ function init() {
         CREATE TABLE IF NOT EXISTS games (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             game_id TEXT NOT NULL,
+            game_type TEXT DEFAULT 'multiplayer',
             player1_id TEXT,
             player2_id TEXT,
             player1_score INTEGER DEFAULT 0,
@@ -106,6 +151,17 @@ function init() {
             updated_at TEXT DEFAULT (datetime('now'))
         );
 
+        CREATE TABLE IF NOT EXISTS game_state_snapshots (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            game_id TEXT NOT NULL,
+            games_row_id INTEGER NOT NULL REFERENCES games(id),
+            user_id TEXT NOT NULL,
+            state_json TEXT NOT NULL,
+            created_at TEXT DEFAULT (datetime('now')),
+            updated_at TEXT DEFAULT (datetime('now')),
+            UNIQUE(games_row_id, user_id)
+        );
+
         CREATE INDEX IF NOT EXISTS idx_visits_created_at ON visits(created_at);
         CREATE INDEX IF NOT EXISTS idx_visits_page ON visits(page);
         CREATE INDEX IF NOT EXISTS idx_games_game_id ON games(game_id);
@@ -116,6 +172,10 @@ function init() {
         CREATE INDEX IF NOT EXISTS idx_games_player1_id ON games(player1_id);
         CREATE INDEX IF NOT EXISTS idx_games_player2_id ON games(player2_id);
         CREATE INDEX IF NOT EXISTS idx_players_rating ON players(rating DESC);
+        CREATE INDEX IF NOT EXISTS idx_snapshots_game_id ON game_state_snapshots(game_id);
+        CREATE INDEX IF NOT EXISTS idx_snapshots_games_row_id ON game_state_snapshots(games_row_id);
+        CREATE INDEX IF NOT EXISTS idx_snapshots_user_id ON game_state_snapshots(user_id);
+        CREATE INDEX IF NOT EXISTS idx_snapshots_updated_at ON game_state_snapshots(updated_at DESC);
     `);
 
     // Lightweight migrations for existing DBs.
@@ -141,6 +201,7 @@ function init() {
         { name: 'last_seen_at', definition: 'last_seen_at TEXT' },
     ]);
     addColumnsIfMissing('games', [
+        { name: 'game_type', definition: `game_type TEXT DEFAULT 'multiplayer'` },
         { name: 'player1_country_code', definition: 'player1_country_code TEXT' },
         { name: 'player2_country_code', definition: 'player2_country_code TEXT' },
         { name: 'started_country_code', definition: 'started_country_code TEXT' },
@@ -150,6 +211,7 @@ function init() {
         CREATE INDEX IF NOT EXISTS idx_visits_country_code ON visits(country_code);
         CREATE INDEX IF NOT EXISTS idx_games_started_country_code ON games(started_country_code);
         CREATE INDEX IF NOT EXISTS idx_players_last_country_code ON players(last_country_code);
+        CREATE UNIQUE INDEX IF NOT EXISTS idx_players_username_ci_unique ON players(lower(username));
     `);
 
     console.log('Analytics DB initialized at', DB_PATH);
@@ -257,15 +319,16 @@ function ensurePlayer(userId, fallbackName) {
 
 function startGame(gameId, player1Id, options = {}) {
     const {
+        gameType = 'multiplayer',
         player1CountryCode = null,
         startedCountryCode = null,
     } = options;
     const stmt = db.prepare(
         `INSERT INTO games (
-            game_id, player1_id, player1_country_code, started_country_code
-        ) VALUES (?, ?, ?, ?)`
+            game_id, game_type, player1_id, player1_country_code, started_country_code
+        ) VALUES (?, ?, ?, ?, ?)`
     );
-    const result = stmt.run(gameId, player1Id, player1CountryCode, startedCountryCode);
+    const result = stmt.run(gameId, gameType, player1Id, player1CountryCode, startedCountryCode);
     const rowId = result.lastInsertRowid;
     activeGames.set(gameId, rowId);
     turnCounters.set(rowId, 0);
@@ -289,6 +352,29 @@ function getActiveGameRowId(gameId) {
     return activeGames.get(gameId) || null;
 }
 
+function ensureGameSession(gameId, player1Id, options = {}) {
+    const existing = db.prepare(`
+        SELECT id, ended_at
+        FROM games
+        WHERE game_id = ?
+        ORDER BY created_at DESC
+        LIMIT 1
+    `).get(gameId);
+
+    if (existing && !existing.ended_at) {
+        activeGames.set(gameId, existing.id);
+        const turnCount = db.prepare(`
+            SELECT COALESCE(MAX(turn_number), 0) as maxTurn
+            FROM turns
+            WHERE games_row_id = ?
+        `).get(existing.id)?.maxTurn || 0;
+        turnCounters.set(existing.id, Number(turnCount || 0));
+        return existing.id;
+    }
+
+    return startGame(gameId, player1Id, options);
+}
+
 function recordTurn(gameId, {
     userId,
     turnType,
@@ -299,8 +385,27 @@ function recordTurn(gameId, {
     placedTiles,
     formedWords,
 }) {
-    const rowId = activeGames.get(gameId);
-    if (!rowId) return;
+    let rowId = activeGames.get(gameId);
+    if (!rowId) {
+        const row = db.prepare(`
+            SELECT id, ended_at
+            FROM games
+            WHERE game_id = ?
+            ORDER BY
+                CASE WHEN ended_at IS NULL THEN 0 ELSE 1 END,
+                created_at DESC
+            LIMIT 1
+        `).get(gameId);
+        if (!row) return;
+        rowId = row.id;
+        activeGames.set(gameId, rowId);
+        const turnCount = db.prepare(`
+            SELECT COALESCE(MAX(turn_number), 0) as maxTurn
+            FROM turns
+            WHERE games_row_id = ?
+        `).get(rowId)?.maxTurn || 0;
+        turnCounters.set(rowId, Number(turnCount || 0));
+    }
 
     const turnNumber = (turnCounters.get(rowId) || 0) + 1;
     turnCounters.set(rowId, turnNumber);
@@ -341,8 +446,20 @@ function recordTurn(gameId, {
 }
 
 function endGame(gameId, { winnerId, reason, endedCountryCode = null }) {
-    const rowId = activeGames.get(gameId);
-    if (!rowId) return;
+    let rowId = activeGames.get(gameId);
+    if (!rowId) {
+        const row = db.prepare(`
+            SELECT id
+            FROM games
+            WHERE game_id = ?
+            ORDER BY
+                CASE WHEN ended_at IS NULL THEN 0 ELSE 1 END,
+                created_at DESC
+            LIMIT 1
+        `).get(gameId);
+        if (!row) return;
+        rowId = row.id;
+    }
 
     const game = db.prepare(`
         SELECT player1_id, player2_id, player1_score, player2_score, ended_at
@@ -508,7 +625,188 @@ function getGameDetail(gameId) {
          ORDER BY turn_number ASC`
     ).all(game.id).map(normalizeTurnRow);
 
-    return { game, turns };
+    const latestSnapshot = db.prepare(
+        `SELECT user_id, state_json, updated_at
+         FROM game_state_snapshots
+         WHERE games_row_id = ?
+         ORDER BY updated_at DESC
+         LIMIT 1`
+    ).get(game.id);
+
+    return {
+        game,
+        turns,
+        latestSnapshot: latestSnapshot
+            ? {
+                userId: latestSnapshot.user_id,
+                updatedAt: latestSnapshot.updated_at,
+                state: parseJsonSafe(latestSnapshot.state_json),
+            }
+            : null,
+    };
+}
+
+function getUserGames(userId, limit = 20) {
+    if (!userId || typeof userId !== 'string') {
+        return { items: [], total: 0, limit: 0 };
+    }
+    const safeLimit = Math.max(1, Math.min(limit || 20, 100));
+    const total = db.prepare(`
+        SELECT COUNT(*) as count
+        FROM games g
+        WHERE g.player1_id = ? OR g.player2_id = ?
+    `).get(userId, userId).count;
+
+    const items = db.prepare(`
+        SELECT
+            g.id,
+            g.game_id as gameId,
+            g.game_type as gameType,
+            g.player1_id as player1Id,
+            g.player2_id as player2Id,
+            g.player1_score as player1Score,
+            g.player2_score as player2Score,
+            g.winner_id as winnerId,
+            g.game_over_reason as gameOverReason,
+            g.total_turns as totalTurns,
+            g.started_at as startedAt,
+            g.ended_at as endedAt,
+            p1.username as player1Name,
+            p2.username as player2Name,
+            s.updated_at as snapshotUpdatedAt
+        FROM games g
+        LEFT JOIN players p1 ON p1.user_id = g.player1_id
+        LEFT JOIN players p2 ON p2.user_id = g.player2_id
+        LEFT JOIN game_state_snapshots s
+            ON s.games_row_id = g.id AND s.user_id = ?
+        WHERE g.player1_id = ? OR g.player2_id = ?
+        ORDER BY
+            CASE WHEN g.ended_at IS NULL THEN 0 ELSE 1 END,
+            COALESCE(g.ended_at, g.started_at, g.created_at) DESC
+        LIMIT ?
+    `).all(userId, userId, userId, safeLimit);
+
+    return {
+        items: items.map((item) => ({
+            ...item,
+            status: item.endedAt ? 'finished' : 'in_progress',
+            hasSnapshotForUser: Boolean(item.snapshotUpdatedAt),
+        })),
+        total,
+        limit: safeLimit,
+    };
+}
+
+function getUserGameDetail(userId, gameId) {
+    if (!userId || typeof userId !== 'string') return null;
+    if (!gameId || typeof gameId !== 'string') return null;
+
+    const game = db.prepare(`
+        SELECT g.*, p1.username as player1_name, p2.username as player2_name
+        FROM games g
+        LEFT JOIN players p1 ON p1.user_id = g.player1_id
+        LEFT JOIN players p2 ON p2.user_id = g.player2_id
+        WHERE g.game_id = ? AND (g.player1_id = ? OR g.player2_id = ?)
+        ORDER BY g.created_at DESC
+        LIMIT 1
+    `).get(gameId, userId, userId);
+    if (!game) return null;
+
+    const turns = db.prepare(
+        `SELECT id, game_id, games_row_id, user_id, turn_number, turn_type, score,
+                words_played, word_scores, tiles_placed, placed_tiles_json, formed_words_json, created_at
+         FROM turns
+         WHERE games_row_id = ?
+         ORDER BY turn_number ASC`
+    ).all(game.id).map(normalizeTurnRow);
+
+    const snapshotForUser = db.prepare(
+        `SELECT user_id, state_json, updated_at
+         FROM game_state_snapshots
+         WHERE games_row_id = ? AND user_id = ?
+         LIMIT 1`
+    ).get(game.id, userId);
+
+    const latestSnapshot = db.prepare(
+        `SELECT user_id, state_json, updated_at
+         FROM game_state_snapshots
+         WHERE games_row_id = ?
+         ORDER BY updated_at DESC
+         LIMIT 1`
+    ).get(game.id);
+
+    return {
+        game,
+        turns,
+        snapshotForUser: snapshotForUser
+            ? {
+                userId: snapshotForUser.user_id,
+                updatedAt: snapshotForUser.updated_at,
+                state: parseJsonSafe(snapshotForUser.state_json),
+            }
+            : null,
+        latestSnapshot: latestSnapshot
+            ? {
+                userId: latestSnapshot.user_id,
+                updatedAt: latestSnapshot.updated_at,
+                state: parseJsonSafe(latestSnapshot.state_json),
+            }
+            : null,
+    };
+}
+
+function saveGameStateSnapshot({ gameId, userId, state }) {
+    if (!gameId || typeof gameId !== 'string') {
+        console.log('[analytics snapshot] invalid gameId', { gameId, userId });
+        return false;
+    }
+    if (!userId || typeof userId !== 'string') {
+        console.log('[analytics snapshot] invalid userId', { gameId, userId });
+        return false;
+    }
+    if (!state || typeof state !== 'object') {
+        console.log('[analytics snapshot] invalid state payload', { gameId, userId });
+        return false;
+    }
+
+    let stateJson;
+    try {
+        stateJson = JSON.stringify(state);
+    } catch {
+        console.log('[analytics snapshot] state stringify failed', { gameId, userId });
+        return false;
+    }
+
+    const activeRowId = activeGames.get(gameId);
+    let rowId = activeRowId || null;
+    if (!rowId) {
+        const row = db.prepare(`
+            SELECT id
+            FROM games
+            WHERE game_id = ?
+            ORDER BY
+                CASE WHEN ended_at IS NULL THEN 0 ELSE 1 END,
+                created_at DESC
+            LIMIT 1
+        `).get(gameId);
+        rowId = row?.id || null;
+    }
+    if (!rowId) {
+        console.log('[analytics snapshot] no game row found', { gameId, userId });
+        return false;
+    }
+
+    db.prepare(`
+        INSERT INTO game_state_snapshots (game_id, games_row_id, user_id, state_json)
+        VALUES (?, ?, ?, ?)
+        ON CONFLICT(games_row_id, user_id)
+        DO UPDATE SET
+            game_id = excluded.game_id,
+            state_json = excluded.state_json,
+            updated_at = datetime('now')
+    `).run(gameId, rowId, userId, stateJson);
+
+    return true;
 }
 
 function getVisitsPerDay(days = 30) {
@@ -716,10 +1014,12 @@ module.exports = {
     init,
     recordVisit,
     upsertPlayerProfile,
+    claimUniqueUsernameOrSuggest,
     getPlayerProfile,
     getDisplayName,
     getPlayerLastCountryCode,
     startGame,
+    ensureGameSession,
     setPlayer2,
     getActiveGameRowId,
     recordTurn,
@@ -727,6 +1027,9 @@ module.exports = {
     getStats,
     getRecentGames,
     getGameDetail,
+    getUserGames,
+    getUserGameDetail,
+    saveGameStateSnapshot,
     getVisitsPerDay,
     getVisitsByCountry,
     getPlayersByCountry,

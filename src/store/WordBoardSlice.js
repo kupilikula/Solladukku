@@ -12,7 +12,7 @@ import {
     playWord,
     returnAllUnplayedTilesToRackFromBoard,
     splitUyirMeyTile,
-    toggleActivatedOfTile,
+    toggleActivatedOfTile, hydrateGameSnapshot,
     toggleActivatedOfTileOnBoard
 } from "./actions";
 import constants from "../utils/constants";
@@ -102,6 +102,12 @@ export const WordBoardSlice = createSlice({
                     let ind = state.unplayedTilesWithPositions.findIndex(t => t.row===action.payload.location.pos.row && t.col===action.payload.location.pos.col);
                     state.unplayedTilesWithPositions[ind].tile.letter = action.payload.selectedLetter;
                 }
+            })
+            .addCase(hydrateGameSnapshot, (state, action) => {
+                const snapshot = action.payload?.snapshot || {};
+                const nextPlayed = snapshot.wordBoard?.playedTilesWithPositions;
+                state.playedTilesWithPositions = Array.isArray(nextPlayed) ? nextPlayed : [];
+                state.unplayedTilesWithPositions = [];
             })
 
 

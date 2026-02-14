@@ -100,11 +100,31 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
                                 otherPlayerIds: message.playerIds,
                                 players: message.players,
                             }));
-                            // If game already started, re-sync the new player
+                            // Re-sync only for initial draw phase (before any turns are played).
+                            // If gameplay has progressed, sending newGame would incorrectly reset state.
                             const gameState = store.getState().Game;
-                            if (gameState.gameStarted && gameState.myInitialDraw) {
+                            const boardState = store.getState().WordBoard;
+                            const scoreState = store.getState().ScoreBoard;
+                            const hasProgress =
+                                (boardState.playedTilesWithPositions?.length || 0) > 0 ||
+                                (scoreState.allTurns?.length || 0) > 0;
+                            console.log('[ws playerJoined] resync check', {
+                                gameId,
+                                userId,
+                                joinedPlayerIds: message.playerIds,
+                                gameStarted: gameState.gameStarted,
+                                hasMyInitialDraw: Boolean(gameState.myInitialDraw),
+                                playedTiles: boardState.playedTilesWithPositions?.length || 0,
+                                turns: scoreState.allTurns?.length || 0,
+                                hasProgress,
+                            });
+                            if (gameState.gameStarted && gameState.myInitialDraw && !hasProgress) {
                                 setTimeout(() => {
                                     if (wsRef.current?.readyState === WebSocket.OPEN) {
+                                        console.log('[ws playerJoined] sending newGame re-sync', {
+                                            gameId,
+                                            userId,
+                                        });
                                         wsRef.current.send(JSON.stringify({
                                             messageType: 'newGame',
                                             startingPlayerId: gameState.userId,
@@ -116,13 +136,23 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
                             break;
                         }
                         case 'joinedExistingGame':
-                            // We joined an existing game - wait for our turn
+                            // We joined an existing game.
+                            // Do not force turn=false here because resume hydration may already
+                            // know the real currentTurnUserId.
                             dispatch(addPlayers({
                                 otherPlayerIds: message.playerIds,
                                 players: message.players,
                             }));
-                            dispatch(setMyTurn(false));
-                            console.log('Joined existing game, waiting for turn');
+                            {
+                                const currentTurnUserId = store.getState().Game.currentTurnUserId;
+                                if (currentTurnUserId) {
+                                    dispatch(setMyTurn(currentTurnUserId === userId));
+                                    console.log('Joined existing game, preserving turn from state:', currentTurnUserId);
+                                } else {
+                                    dispatch(setMyTurn(false));
+                                    console.log('Joined existing game, waiting for turn (no current turn state yet)');
+                                }
+                            }
                             break;
                         case 'roomState':
                             // Reconnection - just update who's in the room, don't change turn
@@ -133,6 +163,25 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
                             console.log('Reconnected, other players:', message.playerIds);
                             break;
                         case 'newGame':
+                            // Ignore stale/re-sync newGame packets once gameplay has progressed.
+                            // This prevents accidental resets during refresh/reconnection.
+                            {
+                                const boardState = store.getState().WordBoard;
+                                const scoreState = store.getState().ScoreBoard;
+                                const hasProgress =
+                                    (boardState.playedTilesWithPositions?.length || 0) > 0 ||
+                                    (scoreState.allTurns?.length || 0) > 0;
+                                if (hasProgress) {
+                                    console.log('[ws newGame] ignored due to local progress', {
+                                        gameId,
+                                        userId,
+                                        playedTiles: boardState.playedTilesWithPositions?.length || 0,
+                                        turns: scoreState.allTurns?.length || 0,
+                                        incomingStartingPlayerId: message.startingPlayerId,
+                                    });
+                                    break;
+                                }
+                            }
                             // Other player started a new game
                             dispatch(syncNewGame({
                                 startingPlayerId: message.startingPlayerId,
@@ -208,7 +257,7 @@ export function WebSocketProvider({ userId, gameId, username, children }) {
             console.error('Failed to create WebSocket:', err);
             setConnectionError('Failed to connect');
         }
-    }, [WS_URL, dispatch, username, store]);
+    }, [WS_URL, dispatch, username, store, gameId, userId]);
 
     useEffect(() => {
         isCleanedUpRef.current = false;

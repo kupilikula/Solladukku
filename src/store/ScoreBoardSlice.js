@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {addOtherPlayerTurn, endGame, initializeNewGameState, swapTiles, syncNewGame, passTurn, syncPassTurn, syncSwapTiles, playWord, updateScoreBoard} from "./actions";
+import {addOtherPlayerTurn, endGame, hydrateGameSnapshot, initializeNewGameState, swapTiles, syncNewGame, passTurn, syncPassTurn, syncSwapTiles, playWord, updateScoreBoard} from "./actions";
 import {squareMultipliers} from "../utils/squareMultipliers";
 
 export const ScoreBoardSlice = createSlice({
@@ -119,6 +119,17 @@ export const ScoreBoardSlice = createSlice({
                 } else {
                     state.otherPlayersTotalScores[0] += turnInfo.turnScore;
                 }
+            })
+            .addCase(hydrateGameSnapshot, (state, action) => {
+                const snapshotScore = action.payload?.snapshot?.scoreBoard || {};
+                state.myCompletedTurns = Number(snapshotScore.myCompletedTurns || 0);
+                state.myTotalScore = Number(snapshotScore.myTotalScore || 0);
+                state.otherPlayersTotalScores = Array.isArray(snapshotScore.otherPlayersTotalScores)
+                    ? snapshotScore.otherPlayersTotalScores
+                    : [];
+                state.allTurns = Array.isArray(snapshotScore.allTurns)
+                    ? snapshotScore.allTurns
+                    : [];
             })
     }
 })

@@ -3,10 +3,13 @@ import PlayingBoard from "./PlayingBoard";
 import InfoBoard from "./InfoBoard";
 import { useGameSync } from '../hooks/useGameSync';
 import { useAIGameSync } from '../hooks/useAIGameSync';
+import { useSoloGamePersistence } from '../hooks/useSoloGamePersistence';
 import { useSelector } from 'react-redux';
 import { useLanguage } from '../context/LanguageContext';
+import { useEffect, useState } from 'react';
+import { useGameSnapshotSync } from '../hooks/useGameSnapshotSync';
 
-function GameOverOverlay() {
+function GameOverOverlay({ onClose }) {
     const { gameOver, gameOverReason, winner, userId, gameMode } = useSelector(state => state.Game);
     const myScore = useSelector(state => state.ScoreBoard.myTotalScore);
     const opponentScore = useSelector(state => state.ScoreBoard.otherPlayersTotalScores[0] || 0);
@@ -74,34 +77,60 @@ function GameOverOverlay() {
                 <div style={{ fontSize: 12, color: '#999' }}>
                     {t.gameOverNewGame}
                 </div>
+                <button
+                    onClick={onClose}
+                    style={{
+                        marginTop: 18,
+                        backgroundColor: '#1A5276',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: 6,
+                        padding: '8px 18px',
+                        cursor: 'pointer',
+                        fontFamily: 'Tamil Sangam MN, sans-serif',
+                    }}
+                >
+                    {t.helpClose}
+                </button>
             </div>
         </div>
     );
 }
 
 function GameFrameInner() {
+    const gameOver = useSelector(state => state.Game.gameOver);
+    const [showGameOverOverlay, setShowGameOverOverlay] = useState(false);
+
+    useEffect(() => {
+        if (gameOver) {
+            setShowGameOverOverlay(true);
+        }
+    }, [gameOver]);
+
     return (
         <div className="GameFrame">
             <PlayingBoard />
             <InfoBoard />
-            <GameOverOverlay />
+            {showGameOverOverlay && <GameOverOverlay onClose={() => setShowGameOverOverlay(false)} />}
         </div>
     );
 }
 
 function MultiplayerGameFrame() {
     useGameSync();
+    useGameSnapshotSync();
     return <GameFrameInner />;
 }
 
-function SinglePlayerGameFrame() {
+function SinglePlayerGameFrame({ resumeMode }) {
     useAIGameSync();
+    useSoloGamePersistence({ isResume: resumeMode });
     return <GameFrameInner />;
 }
 
-export default function GameFrame({ singlePlayer }) {
+export default function GameFrame({ singlePlayer, resumeMode = false }) {
     if (singlePlayer) {
-        return <SinglePlayerGameFrame />;
+        return <SinglePlayerGameFrame resumeMode={resumeMode} />;
     }
     return <MultiplayerGameFrame />;
 }

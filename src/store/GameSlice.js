@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {addOtherPlayerTurn, addPlayers, endGame, initializeNewGameState, swapTiles, syncNewGame, syncPassTurn, syncSwapTiles, passTurn, setGameOver, playWord, storeUserId, updateScoreBoard} from "./actions";
+import {addOtherPlayerTurn, addPlayers, endGame, hydrateGameSnapshot, initializeNewGameState, swapTiles, syncNewGame, syncPassTurn, syncSwapTiles, passTurn, setGameOver, playWord, storeUserId, updateScoreBoard} from "./actions";
 
 export const GameSlice = createSlice({
     name: 'Game',
@@ -21,6 +21,7 @@ export const GameSlice = createSlice({
         gameOverReason: null,     // 'tilesOut', 'consecutivePasses'
         swapMode: false,          // Is the player selecting tiles to swap?
         gameMode: null,           // 'singleplayer' or 'multiplayer'
+        soloResumePending: false, // Waiting for solo resume hydration
     },
     reducers: {
         setMyTurn: (state, action) => {
@@ -42,11 +43,17 @@ export const GameSlice = createSlice({
         setAutoStartPending: (state, action) => {
             state.autoStartPending = action.payload;
         },
+        setNeedsInitialDraw: (state, action) => {
+            state.needsInitialDraw = Boolean(action.payload);
+        },
         setMyInitialDraw: (state, action) => {
             state.myInitialDraw = action.payload;
         },
         setGameMode: (state, action) => {
             state.gameMode = action.payload;
+        },
+        setSoloResumePending: (state, action) => {
+            state.soloResumePending = Boolean(action.payload);
         },
     },
     extraReducers: builder => {
@@ -69,6 +76,9 @@ export const GameSlice = createSlice({
                 state.username = action.payload.username || state.username;
                 state.gameId = action.payload.gameId || null;
                 state.currentTurnUserId = action.payload.userId;
+                if (action.payload.gameId && action.payload.gameId !== 'solo' && !String(action.payload.gameId).startsWith('solo-')) {
+                    state.gameMode = 'multiplayer';
+                }
                 if (action.payload.userId && action.payload.username) {
                     state.playerNames[action.payload.userId] = action.payload.username;
                 }
@@ -88,6 +98,10 @@ export const GameSlice = createSlice({
                         state.playerNames[id] = `Player ${index + 2}`;
                     }
                 });
+                // If a turn was handed off before opponent joined, bind it now.
+                if (state.gameStarted && !state.isMyTurn && !state.currentTurnUserId && state.otherPlayerIds.length > 0) {
+                    state.currentTurnUserId = state.otherPlayerIds[0];
+                }
             })
             .addCase(updateScoreBoard, (state, action) => {
                 // A word was played - reset consecutive passes
@@ -95,6 +109,10 @@ export const GameSlice = createSlice({
                 // After my turn, it becomes the other player's turn
                 if (state.otherPlayerIds.length > 0) {
                     state.currentTurnUserId = state.otherPlayerIds[0];
+                    state.isMyTurn = false;
+                } else {
+                    // Opponent not in room yet: still hand off turn and wait.
+                    state.currentTurnUserId = null;
                     state.isMyTurn = false;
                 }
             })
@@ -122,6 +140,9 @@ export const GameSlice = createSlice({
                 if (state.otherPlayerIds.length > 0) {
                     state.currentTurnUserId = state.otherPlayerIds[0];
                     state.isMyTurn = false;
+                } else {
+                    state.currentTurnUserId = null;
+                    state.isMyTurn = false;
                 }
             })
             .addCase(swapTiles, (state, action) => {
@@ -129,6 +150,9 @@ export const GameSlice = createSlice({
                 state.consecutivePasses += 1;
                 if (state.otherPlayerIds.length > 0) {
                     state.currentTurnUserId = state.otherPlayerIds[0];
+                    state.isMyTurn = false;
+                } else {
+                    state.currentTurnUserId = null;
                     state.isMyTurn = false;
                 }
             })
@@ -149,9 +173,36 @@ export const GameSlice = createSlice({
                 state.winner = action.payload.winner;
                 state.gameOverReason = action.payload.reason;
             })
+            .addCase(hydrateGameSnapshot, (state, action) => {
+                const snapshot = action.payload?.snapshot || {};
+                const game = snapshot.game || {};
+                const targetMode = action.payload?.mode || 'multiplayer';
+
+                state.gameId = action.payload?.gameId || state.gameId;
+                state.gameStarted = Boolean(game.gameStarted);
+                state.currentTurnUserId = game.currentTurnUserId || state.currentTurnUserId;
+                state.isMyTurn = state.currentTurnUserId === state.userId;
+                state.otherPlayerIds = Array.isArray(game.otherPlayerIds)
+                    ? game.otherPlayerIds.filter((id) => id && id !== state.userId)
+                    : state.otherPlayerIds;
+                state.playerNames = {
+                    ...state.playerNames,
+                    ...(game.playerNames || {}),
+                };
+                state.consecutivePasses = Number(game.consecutivePasses || 0);
+                state.gameOver = Boolean(game.gameOver);
+                state.winner = game.winner || null;
+                state.gameOverReason = game.gameOverReason || null;
+                state.myInitialDraw = Array.isArray(game.myInitialDraw) ? game.myInitialDraw : null;
+                state.needsInitialDraw = false;
+                state.autoStartPending = false;
+                state.swapMode = false;
+                state.gameMode = targetMode;
+                state.soloResumePending = false;
+            })
     }
 })
 
-export const { setMyTurn, setCurrentTurnUserId, setPlayerName, clearNeedsInitialDraw, setAutoStartPending, setMyInitialDraw, setSwapMode, setGameMode } = GameSlice.actions
+export const { setMyTurn, setCurrentTurnUserId, setPlayerName, clearNeedsInitialDraw, setAutoStartPending, setNeedsInitialDraw, setMyInitialDraw, setSwapMode, setGameMode, setSoloResumePending } = GameSlice.actions
 
 export default GameSlice.reducer

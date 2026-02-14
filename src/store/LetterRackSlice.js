@@ -12,7 +12,8 @@ import {
     toggleActivatedOfTileOnRack,
     mergeTiles, splitUyirMeyTile, shuffleRack, bonusTileLetterSelected, toggleActivatedOfTile,
     deactivateAllRackTiles,
-    swapTiles
+    swapTiles,
+    hydrateGameSnapshot
 } from "./actions";
 import {TileMethods, TileSet} from "../utils/TileSet";
 import constants from "../utils/constants";
@@ -153,6 +154,12 @@ export const LetterRackSlice = createSlice({
                 indicesToSwap.forEach(idx => {
                     state.tilesList[idx] = null;
                 });
+            })
+            .addCase(hydrateGameSnapshot, (state, action) => {
+                const snapshotTiles = action.payload?.snapshot?.letterRack?.tilesList;
+                if (Array.isArray(snapshotTiles) && snapshotTiles.length === 14) {
+                    state.tilesList = snapshotTiles;
+                }
             })
     }
 })
