@@ -74,6 +74,60 @@ function claimUniqueUsernameOrSuggest(userId, desiredUsername) {
     return { ok: false, reason: 'taken', suggestion };
 }
 
+function ensureUniquePlayerUsernames() {
+    const rows = db.prepare(`
+        SELECT user_id as userId, username, created_at as createdAt
+        FROM players
+        ORDER BY datetime(created_at) ASC, user_id ASC
+    `).all();
+    if (!rows.length) return;
+
+    const used = new Set();
+    const updates = [];
+
+    const buildCandidate = (baseName, suffixNumber) => {
+        const suffix = String(suffixNumber);
+        const maxBaseLen = Math.max(1, 24 - suffix.length);
+        return `${baseName.slice(0, maxBaseLen)}${suffix}`;
+    };
+
+    for (const row of rows) {
+        const clean = sanitizeUsername(row.username) || `player${row.userId.slice(0, 4)}`;
+        let candidate = clean;
+        let key = candidate.toLowerCase();
+        if (used.has(key)) {
+            let i = 1;
+            while (i <= 99999) {
+                const next = buildCandidate(clean, i);
+                const nextKey = next.toLowerCase();
+                if (!used.has(nextKey)) {
+                    candidate = next;
+                    key = nextKey;
+                    break;
+                }
+                i += 1;
+            }
+        }
+        used.add(key);
+        if (candidate !== row.username) {
+            updates.push({ userId: row.userId, username: candidate });
+        }
+    }
+
+    if (!updates.length) return;
+
+    const tx = db.transaction((pending) => {
+        const stmt = db.prepare(`
+            UPDATE players
+            SET username = ?, updated_at = datetime('now')
+            WHERE user_id = ?
+        `);
+        pending.forEach((u) => stmt.run(u.username, u.userId));
+    });
+    tx(updates);
+    console.log(`[analytics] normalized ${updates.length} duplicate username(s) before unique index migration`);
+}
+
 function init() {
     db = new Database(DB_PATH);
     db.pragma('journal_mode = WAL');
@@ -207,6 +261,10 @@ function init() {
         { name: 'started_country_code', definition: 'started_country_code TEXT' },
         { name: 'ended_country_code', definition: 'ended_country_code TEXT' },
     ]);
+
+    // Ensure existing rows are deduplicated before creating unique username index.
+    ensureUniquePlayerUsernames();
+
     db.exec(`
         CREATE INDEX IF NOT EXISTS idx_visits_country_code ON visits(country_code);
         CREATE INDEX IF NOT EXISTS idx_games_started_country_code ON games(started_country_code);

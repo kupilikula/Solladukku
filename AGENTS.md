@@ -311,6 +311,7 @@ Username uniqueness note:
 - Usernames are now case-insensitive unique across all users (`UNIQUE INDEX` on `lower(username)`).
 - `/api/profile` returns `409` when a username is taken, with optional `suggestion`.
 - Client shows inline error under username input when the chosen name is unavailable.
+- Startup migration auto-normalizes legacy duplicate usernames (suffixing conflicts) before creating the unique index.
 
 ### Server-Side Event Hooks
 
