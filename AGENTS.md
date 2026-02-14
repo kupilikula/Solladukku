@@ -305,6 +305,7 @@ Without `ANALYTICS_ADMIN_PASSWORD`, admin analytics endpoints return `503`.
 | `POST` | `/api/auth/logout` | Revoke current refresh session and clear refresh cookie |
 | `POST` | `/api/auth/refresh` | Rotate refresh session, return new access token + refreshed cookie |
 | `GET` | `/api/auth/me` | Return authenticated account/profile from bearer access token |
+| `GET` | `/api/auth/email-health` | Admin-protected SMTP/fallback health check (`X-Admin-Password`) |
 | `POST` | `/api/auth/verify-email` | Consume verification token and mark account email verified |
 | `POST` | `/api/auth/resend-verification` | Authenticated resend for verification token/email |
 | `POST` | `/api/auth/forgot-password` | Request password reset token/email (safe non-enumerating response) |

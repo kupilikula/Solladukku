@@ -263,6 +263,60 @@ function getSmtpTransporter() {
     return smtpTransporter;
 }
 
+async function verifyEmailProviderHealth() {
+    const startedAt = Date.now();
+    if (!EMAIL_PROVIDER) {
+        return {
+            ok: true,
+            mode: 'fallback',
+            provider: null,
+            configured: false,
+            latencyMs: Date.now() - startedAt,
+        };
+    }
+    if (EMAIL_PROVIDER !== 'zoho_smtp') {
+        return {
+            ok: false,
+            mode: 'provider',
+            provider: EMAIL_PROVIDER,
+            configured: false,
+            error: 'Unsupported EMAIL_PROVIDER',
+            latencyMs: Date.now() - startedAt,
+        };
+    }
+    if (!EMAIL_FROM || !EMAIL_SMTP_USER || !EMAIL_SMTP_PASS || !EMAIL_SMTP_HOST || !EMAIL_SMTP_PORT) {
+        return {
+            ok: false,
+            mode: 'provider',
+            provider: EMAIL_PROVIDER,
+            configured: false,
+            error: 'Missing SMTP configuration',
+            latencyMs: Date.now() - startedAt,
+        };
+    }
+
+    try {
+        const transporter = getSmtpTransporter();
+        await transporter.verify();
+        return {
+            ok: true,
+            mode: 'provider',
+            provider: EMAIL_PROVIDER,
+            configured: true,
+            latencyMs: Date.now() - startedAt,
+        };
+    } catch (error) {
+        return {
+            ok: false,
+            mode: 'provider',
+            provider: EMAIL_PROVIDER,
+            configured: true,
+            error: error?.message || 'SMTP verify failed',
+            latencyMs: Date.now() - startedAt,
+        };
+    }
+}
+
 async function sendAuthEmail({ type, toEmail, token, accountId }) {
     // Phase E: provider integration is optional. Return explicit fallback details when missing.
     if (!EMAIL_PROVIDER) {
@@ -689,6 +743,21 @@ function handleHttpRequest(req, res) {
                 emailVerifiedAt: authCtx.account.emailVerifiedAt || null,
             },
         });
+        return;
+    }
+
+    if (req.method === 'GET' && pathname === '/api/auth/email-health') {
+        if (!requireAnalyticsAdmin(req, res)) return;
+        verifyEmailProviderHealth()
+            .then((result) => {
+                sendJson(res, result.ok ? 200 : 503, result);
+            })
+            .catch((err) => {
+                sendJson(res, 503, {
+                    ok: false,
+                    error: err?.message || 'Email health check failed',
+                });
+            });
         return;
     }
 
