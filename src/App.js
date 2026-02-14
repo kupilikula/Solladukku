@@ -805,6 +805,7 @@ function AppContent() {
     const [singlePlayerResumeMode, setSinglePlayerResumeMode] = useState(() => Boolean(initialGameId && initialGameId.startsWith('solo-')));
     const [usernameError, setUsernameError] = useState('');
     const [usernameAvailable, setUsernameAvailable] = useState(true);
+    const initialGameIdRef = useRef(initialGameId);
 
     const exitAnalytics = useCallback(() => {
         const url = new URL(window.location);
@@ -817,6 +818,20 @@ function AppContent() {
         if (analyticsMode) return;
         loadDictionary();
     }, [analyticsMode]);
+
+    const exitGameLinkToLanding = useCallback((errorMessage) => {
+        const url = new URL(window.location);
+        url.searchParams.delete('game');
+        url.searchParams.delete('invite');
+        window.history.replaceState({}, '', url);
+        setGameId(null);
+        setMode(null);
+        setSinglePlayerResumeMode(false);
+        dispatch(setSoloResumePending(false));
+        if (errorMessage) {
+            setMyGamesError(errorMessage);
+        }
+    }, [dispatch]);
 
     const enterMultiplayerGame = useCallback((id, starterUserId = null) => {
         const url = new URL(window.location);
@@ -1166,7 +1181,13 @@ function AppContent() {
             .then(async (resp) => {
                 const data = await readJsonSafe(resp);
                 if (!resp.ok) {
-                    if (resp.status === 404) return null;
+                    if (resp.status === 404) {
+                        const fromInitialUrl = initialGameIdRef.current === gameId;
+                        if (fromInitialUrl) {
+                            throw new Error(t.gameLinkNotAccessible || t.resumeLoadFailed);
+                        }
+                        return null;
+                    }
                     throw new Error(getApiErrorMessage(resp, data, t.resumeLoadFailed));
                 }
                 return data;
@@ -1183,7 +1204,11 @@ function AppContent() {
                     setSinglePlayerResumeMode(true);
                 }
             })
-            .catch(() => {})
+            .catch((err) => {
+                if (cancelled) return;
+                const message = err?.message || t.resumeLoadFailed;
+                exitGameLinkToLanding(message);
+            })
             .finally(() => {
                 if (!cancelled) {
                     dispatch(setSoloResumePending(false));
@@ -1192,7 +1217,7 @@ function AppContent() {
         return () => {
             cancelled = true;
         };
-    }, [dispatch, gameId, mode, userId, t]);
+    }, [dispatch, gameId, mode, userId, t, exitGameLinkToLanding]);
 
     const visitTracked = useRef(false);
     useEffect(() => {

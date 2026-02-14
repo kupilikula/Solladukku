@@ -204,9 +204,11 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 
 - **File**: `public/tamil_dictionary.txt` — 2.85M words, sorted (Unicode codepoint order)
 - **Loaded** on app startup via `loadDictionary()` in `src/utils/dictionary.js`
+- **Client persistence**: `loadDictionary()` now caches the dictionary text in IndexedDB (`solmaalai-cache/assets`) and reuses it on refresh to avoid repeated 135MB downloads (including private/incognito sessions while storage remains available)
 - **Gameplay guard**: Play submission is blocked until dictionary load completes (loading toast + disabled Play button)
 - **Lookup**: Binary search using `<`/`>` comparison (NOT `localeCompare` — must match Python's `sorted()` codepoint order)
 - **Permissive fallback**: If dictionary fails to load or is too small (< 1000 entries, e.g. LFS pointer), all words are accepted
+- **Cache invalidation knob**: `REACT_APP_DICTIONARY_CACHE_VERSION` (frontend build env) can be bumped when dictionary content changes to force a one-time refetch
 
 ### Dictionary Sources (built by `wordlists/build_dictionary.py`)
 

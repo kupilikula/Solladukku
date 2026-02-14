@@ -11,6 +11,92 @@ import { getApiBaseUrl } from './runtimeUrls';
 let dictionary = null;    // sorted string array once loaded
 let loadingPromise = null; // dedup concurrent calls
 let loadError = null;
+const DICTIONARY_CACHE_VERSION = process.env.REACT_APP_DICTIONARY_CACHE_VERSION || '2026-02-14-1';
+const DICT_DB_NAME = 'solmaalai-cache';
+const DICT_DB_VERSION = 1;
+const DICT_STORE_NAME = 'assets';
+const DICT_CACHE_KEY = 'tamil_dictionary.txt';
+
+function openDictionaryDb() {
+    if (typeof window === 'undefined' || !window.indexedDB) {
+        return Promise.resolve(null);
+    }
+    return new Promise(resolve => {
+        try {
+            const request = window.indexedDB.open(DICT_DB_NAME, DICT_DB_VERSION);
+            request.onerror = () => resolve(null);
+            request.onupgradeneeded = () => {
+                const db = request.result;
+                if (!db.objectStoreNames.contains(DICT_STORE_NAME)) {
+                    db.createObjectStore(DICT_STORE_NAME, { keyPath: 'key' });
+                }
+            };
+            request.onsuccess = () => resolve(request.result);
+        } catch (err) {
+            console.warn('IndexedDB unavailable for dictionary cache:', err);
+            resolve(null);
+        }
+    });
+}
+
+async function readCachedDictionaryRecord() {
+    const db = await openDictionaryDb();
+    if (!db) return null;
+    return new Promise(resolve => {
+        try {
+            const tx = db.transaction(DICT_STORE_NAME, 'readonly');
+            const store = tx.objectStore(DICT_STORE_NAME);
+            const request = store.get(DICT_CACHE_KEY);
+            request.onerror = () => {
+                db.close();
+                resolve(null);
+            };
+            request.onsuccess = () => {
+                db.close();
+                resolve(request.result || null);
+            };
+        } catch (err) {
+            db.close();
+            console.warn('Failed reading dictionary cache:', err);
+            resolve(null);
+        }
+    });
+}
+
+async function writeCachedDictionaryRecord(record) {
+    const db = await openDictionaryDb();
+    if (!db) return false;
+    return new Promise(resolve => {
+        try {
+            const tx = db.transaction(DICT_STORE_NAME, 'readwrite');
+            const store = tx.objectStore(DICT_STORE_NAME);
+            const request = store.put(record);
+            request.onerror = () => {
+                db.close();
+                resolve(false);
+            };
+            request.onsuccess = () => {
+                db.close();
+                resolve(true);
+            };
+        } catch (err) {
+            db.close();
+            console.warn('Failed writing dictionary cache:', err);
+            resolve(false);
+        }
+    });
+}
+
+function hydrateDictionary(text, sourceLabel) {
+    const words = text.split('\n').filter(Boolean);
+    if (words.length < 1000) {
+        console.warn(`Dictionary too small (${words.length} entries) from ${sourceLabel} — likely an LFS pointer. Falling back to permissive mode.`);
+        return false;
+    }
+    dictionary = words; // already sorted by build script
+    console.log(`Dictionary loaded from ${sourceLabel}: ${dictionary.length} words`);
+    return true;
+}
 
 /**
  * Load the dictionary file. Safe to call multiple times; subsequent calls
@@ -20,25 +106,55 @@ export function loadDictionary() {
     if (dictionary) return Promise.resolve();
     if (loadingPromise) return loadingPromise;
 
-    loadingPromise = fetch('/tamil_dictionary.txt')
-        .then(res => {
-            if (!res.ok) throw new Error(`Dictionary fetch failed: ${res.status}`);
-            return res.text();
-        })
-        .then(text => {
-            const words = text.split('\n').filter(Boolean);
-            if (words.length < 1000) {
-                console.warn(`Dictionary too small (${words.length} entries) — likely an LFS pointer. Falling back to permissive mode.`);
-                return; // leave dictionary as null → permissive fallback
+    loadingPromise = (async () => {
+        let cachedRecord = null;
+        try {
+            try {
+                cachedRecord = await readCachedDictionaryRecord();
+                if (cachedRecord?.version === DICTIONARY_CACHE_VERSION && typeof cachedRecord.text === 'string') {
+                    const loaded = hydrateDictionary(cachedRecord.text, 'IndexedDB cache');
+                    if (loaded) return;
+                }
+            } catch (err) {
+                console.warn('Dictionary cache read failed, falling back to network:', err);
             }
-            dictionary = words; // already sorted by build script
-            console.log(`Dictionary loaded: ${dictionary.length} words`);
-        })
-        .catch(err => {
-            loadError = err;
-            loadingPromise = null; // allow retry
-            console.error('Failed to load dictionary:', err);
-        });
+
+            const res = await fetch('/tamil_dictionary.txt');
+            if (!res.ok) {
+                throw new Error(`Dictionary fetch failed: ${res.status}`);
+            }
+            const text = await res.text();
+            const loadedFromNetwork = hydrateDictionary(text, 'network');
+
+            if (loadedFromNetwork) {
+                const cached = await writeCachedDictionaryRecord({
+                    key: DICT_CACHE_KEY,
+                    version: DICTIONARY_CACHE_VERSION,
+                    text,
+                    cachedAt: Date.now(),
+                });
+                if (!cached) {
+                    console.warn('Dictionary cache write skipped/failed.');
+                }
+                return;
+            }
+
+            if (cachedRecord?.text && hydrateDictionary(cachedRecord.text, 'stale IndexedDB cache')) {
+                console.warn('Using stale cached dictionary because network payload was invalid.');
+                return;
+            }
+        } catch (err) {
+            if (cachedRecord?.text && hydrateDictionary(cachedRecord.text, 'stale IndexedDB cache')) {
+                console.warn('Dictionary network load failed, using stale cached dictionary.');
+                return;
+            }
+            throw err;
+        }
+    })().catch(err => {
+        loadError = err;
+        loadingPromise = null; // allow retry
+        console.error('Failed to load dictionary:', err);
+    });
 
     return loadingPromise;
 }
