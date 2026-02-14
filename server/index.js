@@ -67,6 +67,7 @@ const EMAIL_SMTP_PORT = Math.max(1, Number(process.env.EMAIL_SMTP_PORT || 465));
 const EMAIL_SMTP_SECURE = String(process.env.EMAIL_SMTP_SECURE || 'true').toLowerCase() !== 'false';
 const EMAIL_SMTP_USER = process.env.EMAIL_SMTP_USER || '';
 const EMAIL_SMTP_PASS = process.env.EMAIL_SMTP_PASS || '';
+const EMAIL_DEBUG = String(process.env.EMAIL_DEBUG || '').toLowerCase() === 'true';
 const EMAIL_VERIFICATION_TTL_HOURS = Math.max(1, Number(process.env.AUTH_EMAIL_VERIFICATION_TTL_HOURS || 24));
 const PASSWORD_RESET_TTL_MINUTES = Math.max(5, Number(process.env.AUTH_PASSWORD_RESET_TTL_MINUTES || 30));
 
@@ -247,10 +248,33 @@ function buildEmailTokenLink(pathname, token) {
     return url.toString();
 }
 
+function maskEmailAddress(value) {
+    if (!value || typeof value !== 'string') return null;
+    const parts = value.split('@');
+    if (parts.length !== 2) return value;
+    const [localPart, domain] = parts;
+    if (!localPart) return `***@${domain}`;
+    if (localPart.length <= 2) return `${localPart[0] || '*'}***@${domain}`;
+    return `${localPart[0]}***${localPart[localPart.length - 1]}@${domain}`;
+}
+
+function logEmailDebug(message, payload = {}) {
+    if (!EMAIL_DEBUG) return;
+    console.log(`[email-debug] ${message}`, payload);
+}
+
 let smtpTransporter = null;
 
 function getSmtpTransporter() {
     if (smtpTransporter) return smtpTransporter;
+    logEmailDebug('creating smtp transporter', {
+        provider: EMAIL_PROVIDER || null,
+        host: EMAIL_SMTP_HOST,
+        port: EMAIL_SMTP_PORT,
+        secure: EMAIL_SMTP_SECURE,
+        user: maskEmailAddress(EMAIL_SMTP_USER),
+        from: maskEmailAddress(EMAIL_FROM),
+    });
     smtpTransporter = nodemailer.createTransport({
         host: EMAIL_SMTP_HOST,
         port: EMAIL_SMTP_PORT,
@@ -296,8 +320,18 @@ async function verifyEmailProviderHealth() {
     }
 
     try {
+        logEmailDebug('smtp verify start', {
+            host: EMAIL_SMTP_HOST,
+            port: EMAIL_SMTP_PORT,
+            secure: EMAIL_SMTP_SECURE,
+            user: maskEmailAddress(EMAIL_SMTP_USER),
+        });
         const transporter = getSmtpTransporter();
         await transporter.verify();
+        logEmailDebug('smtp verify success', {
+            provider: EMAIL_PROVIDER,
+            user: maskEmailAddress(EMAIL_SMTP_USER),
+        });
         return {
             ok: true,
             mode: 'provider',
@@ -306,6 +340,14 @@ async function verifyEmailProviderHealth() {
             latencyMs: Date.now() - startedAt,
         };
     } catch (error) {
+        logEmailDebug('smtp verify failed', {
+            provider: EMAIL_PROVIDER,
+            host: EMAIL_SMTP_HOST,
+            port: EMAIL_SMTP_PORT,
+            secure: EMAIL_SMTP_SECURE,
+            user: maskEmailAddress(EMAIL_SMTP_USER),
+            error: error?.message || 'SMTP verify failed',
+        });
         return {
             ok: false,
             mode: 'provider',
@@ -371,6 +413,13 @@ async function sendAuthEmail({ type, toEmail, token, accountId }) {
         ].filter(Boolean).join('\n');
 
     try {
+        logEmailDebug('smtp send start', {
+            type,
+            to: maskEmailAddress(toEmail),
+            from: maskEmailAddress(EMAIL_FROM),
+            user: maskEmailAddress(EMAIL_SMTP_USER),
+            provider: EMAIL_PROVIDER,
+        });
         const transporter = getSmtpTransporter();
         await transporter.sendMail({
             from: EMAIL_FROM,
@@ -378,12 +427,25 @@ async function sendAuthEmail({ type, toEmail, token, accountId }) {
             subject,
             text,
         });
+        logEmailDebug('smtp send success', {
+            type,
+            to: maskEmailAddress(toEmail),
+            provider: EMAIL_PROVIDER,
+        });
         return {
             delivered: true,
             providerConfigured: true,
             emailFromConfigured: true,
         };
     } catch (error) {
+        logEmailDebug('smtp send failed', {
+            type,
+            to: maskEmailAddress(toEmail),
+            from: maskEmailAddress(EMAIL_FROM),
+            user: maskEmailAddress(EMAIL_SMTP_USER),
+            provider: EMAIL_PROVIDER,
+            error: error?.message || String(error),
+        });
         console.error('[auth email] send failed', {
             provider: EMAIL_PROVIDER,
             type,

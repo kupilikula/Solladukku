@@ -807,6 +807,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - `EMAIL_SMTP_SECURE` — SMTP secure flag (`true` for Zoho 465)
 - `EMAIL_SMTP_USER` — SMTP auth username (typically full sender email)
 - `EMAIL_SMTP_PASS` — SMTP auth password/app-password
+- `EMAIL_DEBUG` — Optional safe SMTP debug logging (masks emails, never logs passwords/tokens)
 - `GEO_PROVIDER` — Geo lookup provider: `none` (default), `ipwhois`, or `ipapi`
 - `GEO_LOOKUP_TIMEOUT_MS` — Geo lookup timeout in milliseconds (default `800`)
 - `GEO_CACHE_TTL_MS` — In-memory geo cache TTL in milliseconds (default `86400000`)
