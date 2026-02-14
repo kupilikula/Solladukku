@@ -68,6 +68,9 @@ const EMAIL_SMTP_SECURE = String(process.env.EMAIL_SMTP_SECURE || 'true').toLowe
 const EMAIL_SMTP_USER = process.env.EMAIL_SMTP_USER || '';
 const EMAIL_SMTP_PASS = process.env.EMAIL_SMTP_PASS || '';
 const EMAIL_DEBUG = String(process.env.EMAIL_DEBUG || '').toLowerCase() === 'true';
+const EMAIL_SMTP_CONNECTION_TIMEOUT_MS = Math.max(1000, Number(process.env.EMAIL_SMTP_CONNECTION_TIMEOUT_MS || 10000));
+const EMAIL_SMTP_GREETING_TIMEOUT_MS = Math.max(1000, Number(process.env.EMAIL_SMTP_GREETING_TIMEOUT_MS || 10000));
+const EMAIL_SMTP_SOCKET_TIMEOUT_MS = Math.max(2000, Number(process.env.EMAIL_SMTP_SOCKET_TIMEOUT_MS || 15000));
 const EMAIL_VERIFICATION_TTL_HOURS = Math.max(1, Number(process.env.AUTH_EMAIL_VERIFICATION_TTL_HOURS || 24));
 const PASSWORD_RESET_TTL_MINUTES = Math.max(5, Number(process.env.AUTH_PASSWORD_RESET_TTL_MINUTES || 30));
 
@@ -279,6 +282,9 @@ function getSmtpTransporter() {
         host: EMAIL_SMTP_HOST,
         port: EMAIL_SMTP_PORT,
         secure: EMAIL_SMTP_SECURE,
+        connectionTimeout: EMAIL_SMTP_CONNECTION_TIMEOUT_MS,
+        greetingTimeout: EMAIL_SMTP_GREETING_TIMEOUT_MS,
+        socketTimeout: EMAIL_SMTP_SOCKET_TIMEOUT_MS,
         auth: {
             user: EMAIL_SMTP_USER,
             pass: EMAIL_SMTP_PASS,
@@ -593,11 +599,17 @@ function handleHttpRequest(req, res) {
                 tokenHash: verificationOpaque.tokenHash,
                 expiresAt: verificationExpiresAt,
             });
-            const verificationDelivery = await sendAuthEmail({
+            sendAuthEmail({
                 type: 'verify-email',
                 toEmail: email,
                 token: verificationOpaque.token,
                 accountId,
+            }).catch((error) => {
+                console.error('[auth signup] verification email send failed', {
+                    accountId,
+                    email,
+                    message: error?.message || String(error),
+                });
             });
 
             const sessionId = auth.generateId();
@@ -628,7 +640,7 @@ function handleHttpRequest(req, res) {
                 verification: {
                     required: true,
                     expiresAt: verificationExpiresAt,
-                    ...verificationDelivery,
+                    delivery: 'queued',
                 },
             });
         }).catch(() => sendJson(res, 400, { error: 'Bad request' }));

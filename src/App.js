@@ -777,6 +777,7 @@ function LandingPage({
                                 statusMessage={authStatusMessage}
                                 authAccount={authAccount}
                                 initialToken={authTokenFromUrl}
+                                currentUsername={username}
                                 onLogin={onLogin}
                                 onSignup={onSignup}
                                 onForgotPassword={onForgotPassword}
@@ -967,15 +968,16 @@ function AppContent() {
         return true;
     }, []);
 
-    const handleSignup = useCallback(async ({ email, password }) => {
+    const handleSignup = useCallback(async ({ email, password, username }) => {
         setAuthLoading(true);
         setAuthError('');
         setAuthStatusMessage('');
         try {
+            const signupUsername = normalizeUsername(username) || effectiveUsername;
             const { resp, data } = await signup({
                 email,
                 password,
-                username: effectiveUsername,
+                username: signupUsername,
                 userId,
             });
             if (!resp.ok || !applyAuthPayload(data)) {

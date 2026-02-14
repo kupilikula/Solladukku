@@ -19,11 +19,13 @@ export default function AuthPanel({
     onResendVerification,
     authAccount,
     initialToken = '',
+    currentUsername = '',
 }) {
     const [mode, setMode] = useState('login');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [token, setToken] = useState('');
+    const [signupUsername, setSignupUsername] = useState(currentUsername || '');
 
     useEffect(() => {
         if (initialToken) {
@@ -31,13 +33,17 @@ export default function AuthPanel({
         }
     }, [initialToken]);
 
+    useEffect(() => {
+        setSignupUsername(currentUsername || '');
+    }, [currentUsername]);
+
     const submit = async () => {
         if (mode === 'login') {
             await onLogin({ email, password });
             return;
         }
         if (mode === 'signup') {
-            await onSignup({ email, password });
+            await onSignup({ email, password, username: signupUsername });
             return;
         }
         if (mode === 'forgot') {
@@ -154,6 +160,17 @@ export default function AuthPanel({
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder={t.emailLabel}
+                        style={inputStyle()}
+                    />
+                ) : null}
+                {mode === 'signup' ? (
+                    <input
+                        className="TamilInput"
+                        type="text"
+                        value={signupUsername}
+                        onChange={(e) => setSignupUsername(e.target.value)}
+                        placeholder={t.usernameLabel}
+                        maxLength={24}
                         style={inputStyle()}
                     />
                 ) : null}

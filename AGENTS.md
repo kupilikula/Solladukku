@@ -61,7 +61,7 @@ src/
 │   ├── useGameSnapshotSync.js # Debounced multiplayer snapshot persistence for refresh-safe resume
 │   └── useSoloGamePersistence.js # Single-player DB persistence (start/turn/end/snapshot) for My Games resume/review
 ├── components/
-│   ├── AuthPanel.js          # Landing-page auth panel: login/signup + verify-email + forgot/reset password
+│   ├── AuthPanel.js          # Landing-page auth panel: login/signup (with explicit signup username) + verify-email + forgot/reset password
 │   ├── AnalyticsViewer.js    # Password-protected analytics inspector (`?analytics=1`) with session-cached admin header, visible API error messaging, board replay fallback from formed-word tile coordinates, and per-turn Jump controls
 │   ├── GameFrame.js          # Main layout: SinglePlayer/Multiplayer wrappers + GameOverOverlay
 │   ├── GameReviewViewer.js   # Read-only game review screen with board replay slider + jump-to-turn
@@ -112,7 +112,7 @@ The app opens to a landing page before entering any game:
 - **Game title**: "சொல்மாலை" in large peacock blue text
 - **Logo**: Renders `public/logo.png` above the title (96px height). Hides gracefully via `onError` if the file is missing.
 - **Persistent username**: Editable username input (saved in `localStorage` and synced to server profile)
-- **Account auth panel (feature-flagged)**: Landing page supports login/signup plus verify-email and forgot/reset password flows; when auth is enabled, access token is kept in-memory, refresh session uses HttpOnly cookie
+- **Account auth panel (feature-flagged)**: Landing page supports login/signup plus verify-email and forgot/reset password flows; signup now includes an explicit username field in the auth card. When auth is enabled, access token is kept in-memory, refresh session uses HttpOnly cookie.
 - **Identity header**: Displays guest/authenticated status with logout action for signed-in accounts
 - **Username gate**: If `/api/profile` reports username conflict (`409`), game entry actions are disabled until user picks an available name
 - **"New Game With Invited Opponent" button** (`புது ஆட்டம் அழைப்புடன்`): Creates a private multiplayer room, sets `?game=` in URL, and auto-opens invite modal in-game
@@ -807,6 +807,9 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - `EMAIL_SMTP_SECURE` — SMTP secure flag (`true` for Zoho 465)
 - `EMAIL_SMTP_USER` — SMTP auth username (typically full sender email)
 - `EMAIL_SMTP_PASS` — SMTP auth password/app-password
+- `EMAIL_SMTP_CONNECTION_TIMEOUT_MS` — SMTP connect timeout in ms (default `10000`)
+- `EMAIL_SMTP_GREETING_TIMEOUT_MS` — SMTP greeting timeout in ms (default `10000`)
+- `EMAIL_SMTP_SOCKET_TIMEOUT_MS` — SMTP socket timeout in ms (default `15000`)
 - `EMAIL_DEBUG` — Optional safe SMTP debug logging (masks emails, never logs passwords/tokens)
 - `GEO_PROVIDER` — Geo lookup provider: `none` (default), `ipwhois`, or `ipapi`
 - `GEO_LOOKUP_TIMEOUT_MS` — Geo lookup timeout in milliseconds (default `800`)
