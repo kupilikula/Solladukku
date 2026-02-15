@@ -65,7 +65,7 @@ src/
 ├── components/
 │   ├── AuthPanel.js          # Landing-page auth panel: login/signup (with explicit signup username) + verify-email + forgot/reset password
 │   ├── AnalyticsViewer.js    # Password-protected analytics inspector (`?analytics=1`) with session-cached admin header, visible API error messaging, board replay fallback from formed-word tile coordinates, and per-turn Jump controls
-│   ├── GameFrame.js          # Main layout: SinglePlayer/Multiplayer wrappers + GameOverOverlay
+│   ├── GameFrame.js          # Main layout: top branded Home link, SinglePlayer/Multiplayer wrappers + GameOverOverlay
 │   ├── GameReviewViewer.js   # Read-only game review screen with board replay slider + jump-to-turn
 │   ├── PlayingBoard.js       # Game board with DnD provider
 │   ├── WordBoard.js          # 15×15 Scrabble board grid
@@ -130,6 +130,7 @@ The app opens to a landing page before entering any game:
 
 **URL game bypass**: If someone arrives via `?game=XYZ` (multiplayer) or `?game=solo-...` (single-player), the landing page is skipped entirely and the app attempts direct game resume.
 The WebSocket connection is only established for multiplayer entries.
+- **In-game Home navigation**: Game page shows a compact top bar with optional logo + "சொல்மாலை" title and a branded clickable link that returns to landing by clearing query params (navigates to current pathname) without an additional confirmation prompt.
 - **Fresh solo start guard**: Clicking **Play vs Computer** now skips the `/api/games/:gameId` resume fetch for newly generated `solo-*` ids and only runs resume-detail fetches when resume mode is active (URL-resume or My Games Continue). This avoids transient first-click `403` responses before `/api/solo/start` persists the new solo game row.
 - **Access guard on shared links**:
   - Solo links are account/user scoped (`/api/games/:gameId?userId=...` with account-first authorization). If an unauthenticated user opens a protected solo link and initial resume receives access denial (`401`/`403`/`404`), the app clears `?game`, returns to landing, prompts login, and retries the same link once after successful login.
@@ -579,6 +580,8 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 
 **Confirmation Dialogs**: `confirmNewGame`, `confirmPass`, `yes`, `no`
 
+**In-Game Navigation**: `home`, `backToLanding`
+
 **Game Over**: `gameOverTie`, `gameOverWon`, `gameOverLost`, `gameOverPasses`, `gameOverTilesOut`, `gameOverNewGame`, `vs`
 
 ### Components Using Translations
@@ -589,7 +592,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - `TurnHistory.js` — header, empty state, pass/swap labels (swap entries include swapped tile count)
 - `LetterBags.js` — header, total label (tile type labels are Tamil-only: மெய், உயிர், மாயம்)
 - `Chat.js` — header, empty state, input placeholder, send button
-- `GameFrame.js` — GameOverOverlay result/reason text, player labels
+- `GameFrame.js` — top bar brand link/aria text + GameOverOverlay result/reason text, player labels
 - `ActionMenu.js` — swap mode toast, HelpModal content, ConfirmDialog text
 
 ## User Flow

@@ -99,7 +99,16 @@ function GameOverOverlay({ onClose }) {
 
 function GameFrameInner() {
     const gameOver = useSelector(state => state.Game.gameOver);
+    const { t } = useLanguage();
     const [showGameOverOverlay, setShowGameOverOverlay] = useState(false);
+    const [showLogo, setShowLogo] = useState(true);
+
+    const landingPath = window.location.pathname || '/';
+
+    const handleLandingNavigation = (event) => {
+        event.preventDefault();
+        window.location.assign(landingPath);
+    };
 
     useEffect(() => {
         if (gameOver) {
@@ -108,10 +117,31 @@ function GameFrameInner() {
     }, [gameOver]);
 
     return (
-        <div className="GameFrame">
-            <PlayingBoard />
-            <InfoBoard />
-            {showGameOverOverlay && <GameOverOverlay onClose={() => setShowGameOverOverlay(false)} />}
+        <div className="GamePage">
+            <div className="GameTopBar">
+                <a
+                    href={landingPath}
+                    onClick={handleLandingNavigation}
+                    className="GameTopBarLink"
+                    aria-label={t.backToLanding}
+                    title={t.backToLanding}
+                >
+                    {showLogo && (
+                        <img
+                            src={process.env.PUBLIC_URL + '/logo.png'}
+                            alt=""
+                            className="GameTopBarLogo"
+                            onError={() => setShowLogo(false)}
+                        />
+                    )}
+                    <span className="GameTopBarTitle">சொல்மாலை</span>
+                </a>
+            </div>
+            <div className="GameFrame">
+                <PlayingBoard />
+                <InfoBoard />
+                {showGameOverOverlay && <GameOverOverlay onClose={() => setShowGameOverOverlay(false)} />}
+            </div>
         </div>
     );
 }
