@@ -8,6 +8,12 @@ This is the canonical reference for Solmaalai FST source-of-truth, patching, bui
   - Vendored upstream source (git submodule pinned to a commit).
   - Contains upstream `foma/*.zip` bundles and upstream prebuilt `FST-Models/*`.
 
+- `fst/upstream-zips/`
+  - Pinned local fallback source zips used when submodule contents are unavailable in CI/container checkouts.
+
+- `fst/upstream-models/`
+  - Pinned local fallback prebuilt assets used when corresponding vendored files are unavailable.
+
 - `fst/`
   - Local tooling only (patches, deterministic build scripts, regressions, reports).
   - Does **not** store runtime model copies for application usage.
@@ -36,6 +42,7 @@ Keeping both avoids fragile cross-directory assumptions and keeps each consumer 
 `npm run fst:build` runs `fst/build/build_fsts.py`, which:
 
 1. Extracts upstream source zips from `vendor/thamizhi-morph/foma/*.zip`.
+   - Fallback source: `fst/upstream-zips/*.zip` (no network download).
 2. Applies local patches from `fst/patches/` in order.
 3. Compiles FST binaries with `foma`.
 4. Writes canonical outputs to:

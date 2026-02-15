@@ -21,6 +21,8 @@ MANIFEST_PATH = ROOT / "fst" / "build" / "manifest.json"
 CANONICAL_MODELS = ROOT / "build" / "fst-models"
 WORDLIST_MODELS = ROOT / "static-word-list" / "fst-models"
 SERVER_MODELS = ROOT / "server" / "fst-models"
+PINNED_UPSTREAM_ZIPS = ROOT / "fst" / "upstream-zips"
+PINNED_UPSTREAM_MODELS = ROOT / "fst" / "upstream-models"
 
 COMPONENTS = [
     {
@@ -138,6 +140,30 @@ def resolve_vendor_commit() -> str:
         return "unknown (non-git vendor copy)"
 
 
+def resolve_zip_path(zip_name: str) -> Path:
+    vendored = VENDOR / "foma" / zip_name
+    if vendored.exists():
+        return vendored
+    pinned = PINNED_UPSTREAM_ZIPS / zip_name
+    if pinned.exists():
+        return pinned
+    raise FileNotFoundError(
+        f"Missing upstream source zip: {vendored} (also not found at {pinned})"
+    )
+
+
+def resolve_prebuilt_model(source_rel_path: str) -> Path:
+    vendored = VENDOR / source_rel_path
+    if vendored.exists():
+        return vendored
+    pinned = PINNED_UPSTREAM_MODELS / Path(source_rel_path).name
+    if pinned.exists():
+        return pinned
+    raise FileNotFoundError(
+        f"Missing prebuilt model: {vendored} (also not found at {pinned})"
+    )
+
+
 def ensure_tools() -> None:
     for tool in ("foma", "flookup", "git"):
         if shutil.which(tool) is None:
@@ -145,9 +171,7 @@ def ensure_tools() -> None:
 
 
 def extract_zip(zip_name: str, out_dir: Path) -> None:
-    zip_path = VENDOR / "foma" / zip_name
-    if not zip_path.exists():
-        raise FileNotFoundError(f"Missing upstream source zip: {zip_path}")
+    zip_path = resolve_zip_path(zip_name)
     with ZipFile(zip_path, "r") as zf:
         zf.extractall(out_dir)
 
@@ -244,9 +268,7 @@ def build_all(clean: bool) -> dict:
 
         mode = component.get("mode", "compile")
         if mode == "copy-prebuilt":
-            src = VENDOR / component["source"]
-            if not src.exists():
-                raise FileNotFoundError(f"Missing prebuilt source: {src}")
+            src = resolve_prebuilt_model(component["source"])
             out = comp_dir / component["output"]
             shutil.copy2(src, out)
             built_paths[component["output"]] = out

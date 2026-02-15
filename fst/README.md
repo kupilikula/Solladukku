@@ -15,6 +15,8 @@ Canonical architecture reference: `Docs/FST_ARCHITECTURE.md`
 Related directories:
 
 - `vendor/thamizhi-morph/`: upstream source snapshot (submodule)
+- `fst/upstream-zips/`: pinned local fallback copies of required upstream source zips
+- `fst/upstream-models/`: pinned local fallback prebuilt assets (currently `pronoun.fst`)
 - `build/fst-models/`: canonical generated FST artifacts
 - `static-word-list/fst-models/`: synced copy for dictionary generation
 - `server/fst-models/`: synced copy for runtime validation
@@ -36,6 +38,7 @@ npm run fst:build
 This will:
 
 1. Extract upstream `foma/*.zip` source bundles into `fst/build/.work/`
+   - Source priority: `vendor/thamizhi-morph/foma/*.zip` then `fst/upstream-zips/*.zip`
 2. Apply local patches from `fst/patches/`
 3. Compile FST binaries with `foma`
 4. Write canonical artifacts to:
@@ -45,7 +48,7 @@ This will:
    - `server/fst-models/`
 6. Write `fst/build/manifest.json` with upstream commit, patches, and SHA256 checksums
 
-Note: upstream `foma/*.zip` currently does not include a standalone pronoun compile script, so `pronoun.fst` is copied from `vendor/thamizhi-morph/FST-Models/` and recorded in the manifest as `copy-prebuilt`.
+Note: upstream `foma/*.zip` currently does not include a standalone pronoun compile script, so `pronoun.fst` is copied from `vendor/thamizhi-morph/FST-Models/` (or `fst/upstream-models/pronoun.fst` fallback) and recorded in the manifest as `copy-prebuilt`.
 
 ## Tests
 
