@@ -127,6 +127,7 @@ The app opens to a landing page before entering any game:
 
 **URL game bypass**: If someone arrives via `?game=XYZ` (multiplayer) or `?game=solo-...` (single-player), the landing page is skipped entirely and the app attempts direct game resume.
 The WebSocket connection is only established for multiplayer entries.
+- **Fresh solo start guard**: Clicking **Play vs Computer** now skips the `/api/games/:gameId` resume fetch for newly generated `solo-*` ids and only runs resume-detail fetches when resume mode is active (URL-resume or My Games Continue). This avoids transient first-click `403` responses before `/api/solo/start` persists the new solo game row.
 - **Access guard on shared links**:
   - Solo links are account/user scoped (`/api/games/:gameId?userId=...` with account-first authorization). If another browser profile/session opens a solo link and receives access denial (`403`/`404`), the app clears `?game`, returns to landing, and shows a friendly "link not available for this user session" error instead of silently starting a fresh game with the same code.
   - Multiplayer links remain joinable by other users, but if the room is already full (3rd join attempt), the server rejects with WebSocket close code `4001`; the client now exits to landing and shows a localized room-full message.
@@ -724,6 +725,30 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 ### TODO
 - [ ] Tile Bag Optimization: balance distribution for fun gameplay
 - [ ] Rendering & Code Optimization
+- [ ] **Prod Email Delivery Migration (ZeptoMail API)**
+  Context:
+  - Railway Free plan blocks outbound SMTP, so `zoho_smtp` mode can fail in production with connection timeouts even when credentials are valid.
+  Scope:
+  - Add `EMAIL_PROVIDER=zeptomail_api` mode in `server/index.js`.
+  - Implement verification/reset transactional email delivery via ZeptoMail HTTPS API (port 443), not SMTP.
+  - Keep `zoho_smtp` + dev fallback modes for local/testing compatibility.
+  Suggested environment variables:
+  - `EMAIL_PROVIDER=zeptomail_api`
+  - `ZEPTOMAIL_API_BASE_URL` (region-specific API base URL)
+  - `ZEPTOMAIL_API_KEY` (secret API token/key from ZeptoMail)
+  - `ZEPTOMAIL_SENDER_ADDRESS` (or reuse `EMAIL_FROM`)
+  - Optional: verify/reset template IDs when switching to template-driven sends
+  Related follow-ups:
+  - Extend `GET /api/auth/email-health` to validate ZeptoMail API config/connectivity.
+  - Keep signup non-blocking (already implemented): email send should remain queued/asynchronous.
+  Security requirements:
+  - Never log ZeptoMail secrets/tokens.
+  - Never log raw verification/reset tokens.
+  - Keep masked email debug behavior.
+  Acceptance criteria:
+  - Verify/reset emails deliver in production with `EMAIL_PROVIDER=zeptomail_api`.
+  - `/api/auth/email-health` reports healthy in ZeptoMail mode.
+  - Auth flows (signup, verify, forgot/reset) continue to work without UI regressions.
 
 ## Key Files for Common Tasks
 

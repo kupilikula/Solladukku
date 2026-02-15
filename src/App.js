@@ -1617,6 +1617,7 @@ function AppContent() {
 
     useEffect(() => {
         if (!gameId || mode !== 'singleplayer' || !gameId.startsWith('solo-')) return;
+        if (!singlePlayerResumeMode) return;
         let cancelled = false;
         dispatch(setSoloResumePending(true));
         fetch(`${getApiBaseUrl()}/api/games/${encodeURIComponent(gameId)}?userId=${encodeURIComponent(userId)}`, {
@@ -1661,7 +1662,7 @@ function AppContent() {
         return () => {
             cancelled = true;
         };
-    }, [dispatch, gameId, mode, userId, t, exitGameLinkToLanding, accessToken]);
+    }, [dispatch, gameId, mode, userId, t, exitGameLinkToLanding, accessToken, singlePlayerResumeMode]);
 
     const visitTracked = useRef(false);
     useEffect(() => {
