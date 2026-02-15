@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import shutil
 import subprocess
 from datetime import datetime, timezone
@@ -116,6 +117,27 @@ def run(cmd: list[str], cwd: Path | None = None, stdin: str | None = None) -> st
     return completed.stdout
 
 
+def resolve_vendor_commit() -> str:
+    """
+    Resolve vendored upstream commit for manifest metadata.
+
+    In local/dev this is read from submodule git metadata.
+    In Docker builds the copied vendor directory may not be a git worktree, so
+    fall back to parsing the pinned commit from vendor README, then to a stable
+    placeholder string.
+    """
+    try:
+        return run(["git", "-C", str(VENDOR), "rev-parse", "HEAD"]).strip()
+    except Exception:
+        readme_path = VENDOR / "README.md"
+        if readme_path.exists():
+            text = readme_path.read_text(encoding="utf-8", errors="replace")
+            match = re.search(r"([0-9a-f]{40})", text)
+            if match:
+                return match.group(1)
+        return "unknown (non-git vendor copy)"
+
+
 def ensure_tools() -> None:
     for tool in ("foma", "flookup", "git"):
         if shutil.which(tool) is None:
@@ -207,7 +229,7 @@ def build_all(clean: bool) -> dict:
         shutil.rmtree(WORK_ROOT)
     WORK_ROOT.mkdir(parents=True, exist_ok=True)
 
-    submodule_commit = run(["git", "-C", str(VENDOR), "rev-parse", "HEAD"]).strip()
+    submodule_commit = resolve_vendor_commit()
 
     built_paths: dict[str, Path] = {}
     patch_records: list[dict] = []
