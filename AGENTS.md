@@ -114,6 +114,7 @@ The app opens to a landing page before entering any game:
 - **Persistent username**: Editable username input (saved in `localStorage` and synced to server profile)
 - **Account auth panel (feature-flagged)**: Landing page supports login/signup plus verify-email and forgot/reset password flows; signup includes an explicit username field in the auth card. By default only **Forgot Password** selector is shown; **Reset Password** and **Verify Email** selectors appear only when arriving via `/reset-password?token=...` or `/verify-email?token=...` links. Verify links auto-submit once; reset links auto-select reset mode and reuse URL token (manual token input only when token is missing). When auth is enabled, access token is kept in-memory, refresh session uses HttpOnly cookie.
 - **Identity header**: Displays guest/authenticated status with logout action for signed-in accounts
+- **Auth panel visibility**: Login/Signup/Forgot/Reset/Verify auth card now renders only for guests (`!authAccount`). Signed-in users only see the identity header + logout UI.
 - **Username gate**: If `/api/profile` reports username conflict (`409`), game entry actions are disabled until user picks an available name
 - **"New Game With Invited Opponent" button** (`புது ஆட்டம் அழைப்புடன்`): Creates a private multiplayer room, sets `?game=` in URL, and auto-opens invite modal in-game
 - **"Play Random Opponent" button** (`யாவொருவருடன் விளையாடு`): Joins queue-based matchmaking; on match, navigates to matched `gameId`

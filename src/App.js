@@ -770,7 +770,7 @@ function LandingPage({
                             </div>
                         ) : null}
 
-                        {authEnabled && (!authAccount || !authAccount.emailVerifiedAt) ? (
+                        {authEnabled && !authAccount ? (
                             <AuthPanel
                                 t={t}
                                 loading={authLoading}
