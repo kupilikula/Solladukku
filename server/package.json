@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "setup": "node download-fsts.js"
+    "setup": "node download-fsts.js",
+    "test": "node --test test/*.test.js"
   },
   "dependencies": {
     "argon2": "^0.44.0",

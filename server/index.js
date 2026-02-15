@@ -73,9 +73,40 @@ const EMAIL_SMTP_GREETING_TIMEOUT_MS = Math.max(1000, Number(process.env.EMAIL_S
 const EMAIL_SMTP_SOCKET_TIMEOUT_MS = Math.max(2000, Number(process.env.EMAIL_SMTP_SOCKET_TIMEOUT_MS || 15000));
 const EMAIL_VERIFICATION_TTL_HOURS = Math.max(1, Number(process.env.AUTH_EMAIL_VERIFICATION_TTL_HOURS || 24));
 const PASSWORD_RESET_TTL_MINUTES = Math.max(5, Number(process.env.AUTH_PASSWORD_RESET_TTL_MINUTES || 30));
+const AUTH_CLEANUP_INTERVAL_MINUTES = Math.max(1, Number(process.env.AUTH_CLEANUP_INTERVAL_MINUTES || 30));
 
 // Initialize analytics DB
 analytics.init();
+
+function runAuthArtifactCleanup(reason = 'scheduled') {
+    if (!AUTH_ENABLED) return;
+    try {
+        const result = analytics.cleanupExpiredAuthArtifacts();
+        const totalDeleted = (result.sessionsDeleted || 0)
+            + (result.verificationTokensDeleted || 0)
+            + (result.resetTokensDeleted || 0);
+        if (totalDeleted > 0) {
+            console.log('[auth cleanup]', {
+                reason,
+                ...result,
+            });
+        }
+    } catch (error) {
+        console.error('[auth cleanup] failed', {
+            reason,
+            message: error?.message || String(error),
+        });
+    }
+}
+
+runAuthArtifactCleanup('startup');
+const authCleanupTimer = setInterval(
+    () => runAuthArtifactCleanup('interval'),
+    AUTH_CLEANUP_INTERVAL_MINUTES * 60 * 1000
+);
+if (typeof authCleanupTimer.unref === 'function') {
+    authCleanupTimer.unref();
+}
 
 // ─── HTTP Server + REST API ──────────────────────────────────────────
 
@@ -98,7 +129,7 @@ function setCorsHeaders(res, req) {
         res.setHeader('Vary', 'Origin');
     }
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Admin-Password');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Admin-Password, X-CSRF-Token');
 }
 
 function sendJson(res, statusCode, data) {
@@ -493,6 +524,23 @@ function requireAuthContext(req, res) {
     };
 }
 
+function requireCsrfToken(req, res) {
+    if (!AUTH_ENABLED) {
+        sendJson(res, 503, { error: 'Authentication is disabled on server' });
+        return false;
+    }
+    const refreshToken = auth.getRefreshCookieFromReq(req);
+    if (!refreshToken) return true;
+    const csrfCookie = auth.getCsrfCookieFromReq(req);
+    const csrfHeaderRaw = req.headers['x-csrf-token'];
+    const csrfHeader = typeof csrfHeaderRaw === 'string' ? csrfHeaderRaw.trim() : '';
+    if (!csrfCookie || !csrfHeader || !secureEqual(csrfCookie, csrfHeader)) {
+        sendJson(res, 403, { error: 'CSRF token mismatch' });
+        return false;
+    }
+    return true;
+}
+
 function sendAuthResponse(res, {
     accountId,
     email,
@@ -502,7 +550,11 @@ function sendAuthResponse(res, {
     refreshToken,
     refreshExpiresAt,
 }) {
-    res.setHeader('Set-Cookie', auth.buildRefreshCookie(refreshToken, refreshExpiresAt));
+    const csrfToken = auth.issueCsrfToken();
+    res.setHeader('Set-Cookie', [
+        auth.buildRefreshCookie(refreshToken, refreshExpiresAt),
+        auth.buildCsrfCookie(csrfToken, refreshExpiresAt),
+    ]);
     sendJson(res, 200, {
         ok: true,
         account: {
@@ -627,7 +679,11 @@ function handleHttpRequest(req, res) {
             });
 
             const accessToken = auth.issueAccessToken({ accountId, email, sessionId });
-            res.setHeader('Set-Cookie', auth.buildRefreshCookie(refreshToken, refreshExpiresAt));
+            const csrfToken = auth.issueCsrfToken();
+            res.setHeader('Set-Cookie', [
+                auth.buildRefreshCookie(refreshToken, refreshExpiresAt),
+                auth.buildCsrfCookie(csrfToken, refreshExpiresAt),
+            ]);
             sendJson(res, 200, {
                 ok: true,
                 account: {
@@ -719,6 +775,7 @@ function handleHttpRequest(req, res) {
             sendJson(res, 503, { error: 'Authentication is disabled on server' });
             return;
         }
+        if (!requireCsrfToken(req, res)) return;
         if (auth.isRateLimited(`logout:${getClientIp(req)}`, 40, 60_000)) {
             sendJson(res, 429, { error: 'Too many attempts. Try again later.' });
             return;
@@ -730,7 +787,10 @@ function handleHttpRequest(req, res) {
                 analytics.revokeAccountSession(verified.sessionId);
             }
         }
-        res.setHeader('Set-Cookie', auth.buildRefreshCookieClear());
+        res.setHeader('Set-Cookie', [
+            auth.buildRefreshCookieClear(),
+            auth.buildCsrfCookieClear(),
+        ]);
         sendJson(res, 200, { ok: true });
         return;
     }
@@ -740,6 +800,7 @@ function handleHttpRequest(req, res) {
             sendJson(res, 503, { error: 'Authentication is disabled on server' });
             return;
         }
+        if (!requireCsrfToken(req, res)) return;
         if (auth.isRateLimited(`refresh:${getClientIp(req)}`, 60, 60_000)) {
             sendJson(res, 429, { error: 'Too many attempts. Try again later.' });
             return;
@@ -2343,6 +2404,7 @@ async function handleValidateWords(ws, userId, message) {
 // Graceful shutdown
 process.on('SIGINT', () => {
     console.log('\nShutting down server...');
+    clearInterval(authCleanupTimer);
 
     // Kill all flookup processes
     for (const [name, entry] of fstProcesses) {

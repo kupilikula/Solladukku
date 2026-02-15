@@ -6,6 +6,7 @@ const REFRESH_TTL_DAYS = Math.max(1, Number(process.env.AUTH_REFRESH_TTL_DAYS ||
 const ACCESS_SECRET = process.env.AUTH_ACCESS_TOKEN_SECRET || '';
 const REFRESH_SECRET = process.env.AUTH_REFRESH_TOKEN_SECRET || '';
 const COOKIE_NAME = process.env.AUTH_COOKIE_NAME || 'solmaalai_rt';
+const CSRF_COOKIE_NAME = process.env.AUTH_CSRF_COOKIE_NAME || 'solmaalai_csrf';
 const COOKIE_SECURE = String(process.env.AUTH_COOKIE_SECURE || '').toLowerCase() === 'true';
 const APP_BASE_URL = process.env.APP_BASE_URL || '';
 const AUTH_ENABLED = String(process.env.AUTH_ENABLED || 'false').toLowerCase() === 'true';
@@ -40,6 +41,10 @@ function generateId() {
 
 function randomToken() {
     return crypto.randomBytes(32).toString('hex');
+}
+
+function issueCsrfToken() {
+    return randomToken();
 }
 
 function issueOpaqueToken() {
@@ -162,6 +167,11 @@ function getRefreshCookieFromReq(req) {
     return cookies[COOKIE_NAME] || null;
 }
 
+function getCsrfCookieFromReq(req) {
+    const cookies = parseCookies(req);
+    return cookies[CSRF_COOKIE_NAME] || null;
+}
+
 function buildRefreshCookie(token, expiresAt) {
     const parts = [
         `${COOKIE_NAME}=${encodeURIComponent(token)}`,
@@ -178,6 +188,28 @@ function buildRefreshCookieClear() {
     const parts = [
         `${COOKIE_NAME}=`,
         'HttpOnly',
+        'Path=/',
+        'SameSite=Lax',
+        'Max-Age=0',
+    ];
+    if (COOKIE_SECURE) parts.push('Secure');
+    return parts.join('; ');
+}
+
+function buildCsrfCookie(token, expiresAt) {
+    const parts = [
+        `${CSRF_COOKIE_NAME}=${encodeURIComponent(token)}`,
+        'Path=/',
+        'SameSite=Lax',
+        `Expires=${new Date(expiresAt).toUTCString()}`,
+    ];
+    if (COOKIE_SECURE) parts.push('Secure');
+    return parts.join('; ');
+}
+
+function buildCsrfCookieClear() {
+    const parts = [
+        `${CSRF_COOKIE_NAME}=`,
         'Path=/',
         'SameSite=Lax',
         'Max-Age=0',
@@ -295,6 +327,7 @@ module.exports = {
     hashPassword,
     verifyPassword,
     generateId,
+    issueCsrfToken,
     issueOpaqueToken,
     parseOpaqueToken,
     issueAccessToken,
@@ -302,8 +335,11 @@ module.exports = {
     verifyAccessToken,
     verifyRefreshToken,
     getRefreshCookieFromReq,
+    getCsrfCookieFromReq,
     buildRefreshCookie,
     buildRefreshCookieClear,
+    buildCsrfCookie,
+    buildCsrfCookieClear,
     getBearerToken,
     getClientMeta,
     isRateLimited,

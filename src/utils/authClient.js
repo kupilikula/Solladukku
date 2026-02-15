@@ -13,7 +13,23 @@ function buildHeaders(accessToken) {
     if (accessToken) {
         headers.Authorization = `Bearer ${accessToken}`;
     }
+    const csrfToken = readCookie('solmaalai_csrf');
+    if (csrfToken) {
+        headers['X-CSRF-Token'] = csrfToken;
+    }
     return headers;
+}
+
+function readCookie(name) {
+    const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const pattern = new RegExp(`(?:^|; )${escapedName}=([^;]*)`);
+    const match = document.cookie.match(pattern);
+    if (!match) return '';
+    try {
+        return decodeURIComponent(match[1] || '');
+    } catch {
+        return match[1] || '';
+    }
 }
 
 export async function authRequest(path, { method = 'GET', body, accessToken } = {}) {

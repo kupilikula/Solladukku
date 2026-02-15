@@ -401,6 +401,7 @@ function LandingPage({
     authAccount,
     authLinkToken,
     authLinkMode,
+    authPreferredMode,
     onLogin,
     onSignup,
     onForgotPassword,
@@ -779,6 +780,7 @@ function LandingPage({
                                 authAccount={authAccount}
                                 initialToken={authLinkToken}
                                 linkMode={authLinkMode}
+                                preferredMode={authPreferredMode}
                                 currentUsername={username}
                                 onLogin={onLogin}
                                 onSignup={onSignup}
@@ -951,6 +953,8 @@ function AppContent() {
     const [authStatusMessage, setAuthStatusMessage] = useState('');
     const [accessToken, setAccessToken] = useState(null);
     const [authAccount, setAuthAccount] = useState(null);
+    const [pendingProtectedLinkGameId, setPendingProtectedLinkGameId] = useState(null);
+    const [protectedLinkRetryGameId, setProtectedLinkRetryGameId] = useState(null);
     const initialGameIdRef = useRef(initialGameId);
     const autoVerifyAttemptedRef = useRef(false);
     const [authLinkToken, setAuthLinkToken] = useState(authTokenFromUrl);
@@ -1026,12 +1030,25 @@ function AppContent() {
             if (!data?.account?.emailVerifiedAt) {
                 setAuthStatusMessage(t.authEmailNotVerified);
             }
+            if (pendingProtectedLinkGameId) {
+                const retryGameId = pendingProtectedLinkGameId;
+                setPendingProtectedLinkGameId(null);
+                setProtectedLinkRetryGameId(retryGameId);
+                setAuthStatusMessage(t.authRetryingProtectedLink);
+                const url = new URL(window.location);
+                url.searchParams.set('game', retryGameId);
+                url.searchParams.delete('invite');
+                window.history.replaceState({}, '', url);
+                setSinglePlayerResumeMode(true);
+                setGameId(retryGameId);
+                setMode('singleplayer');
+            }
         } catch (err) {
             setAuthError(err?.message || t.authLoginFailed);
         } finally {
             setAuthLoading(false);
         }
-    }, [applyAuthPayload, t, userId]);
+    }, [applyAuthPayload, pendingProtectedLinkGameId, t, userId]);
 
     const handleLogout = useCallback(async () => {
         setAuthLoading(true);
@@ -1619,6 +1636,8 @@ function AppContent() {
         if (!gameId || mode !== 'singleplayer' || !gameId.startsWith('solo-')) return;
         if (!singlePlayerResumeMode) return;
         let cancelled = false;
+        const fromInitialUrl = initialGameIdRef.current === gameId;
+        const isProtectedRetry = protectedLinkRetryGameId === gameId;
         dispatch(setSoloResumePending(true));
         fetch(`${getApiBaseUrl()}/api/games/${encodeURIComponent(gameId)}?userId=${encodeURIComponent(userId)}`, {
             headers: accessToken ? { Authorization: `Bearer ${accessToken}` } : undefined,
@@ -1626,9 +1645,25 @@ function AppContent() {
             .then(async (resp) => {
                 const data = await readJsonSafe(resp);
                 if (!resp.ok) {
+                    if ((resp.status === 401 || resp.status === 403 || resp.status === 404)
+                        && fromInitialUrl
+                        && authAvailable
+                        && !authAccount
+                        && !authLoading) {
+                        if (!cancelled) {
+                            setPendingProtectedLinkGameId(gameId);
+                            setAuthError('');
+                            setAuthStatusMessage(t.authLoginToOpenLink);
+                            setSinglePlayerResumeMode(false);
+                            exitGameLinkToLanding('');
+                        }
+                        return null;
+                    }
+                    if ((resp.status === 401 || resp.status === 403) && (fromInitialUrl || isProtectedRetry)) {
+                        throw new Error(t.gameLinkNotAccessible || t.resumeLoadFailed);
+                    }
                     if (resp.status === 404) {
-                        const fromInitialUrl = initialGameIdRef.current === gameId;
-                        if (fromInitialUrl) {
+                        if (fromInitialUrl || isProtectedRetry) {
                             throw new Error(t.gameLinkNotAccessible || t.resumeLoadFailed);
                         }
                         return null;
@@ -1657,12 +1692,28 @@ function AppContent() {
             .finally(() => {
                 if (!cancelled) {
                     dispatch(setSoloResumePending(false));
+                    if (isProtectedRetry) {
+                        setProtectedLinkRetryGameId(null);
+                    }
                 }
             });
         return () => {
             cancelled = true;
         };
-    }, [dispatch, gameId, mode, userId, t, exitGameLinkToLanding, accessToken, singlePlayerResumeMode]);
+    }, [
+        dispatch,
+        gameId,
+        mode,
+        userId,
+        t,
+        exitGameLinkToLanding,
+        accessToken,
+        singlePlayerResumeMode,
+        authAvailable,
+        authAccount,
+        authLoading,
+        protectedLinkRetryGameId,
+    ]);
 
     const visitTracked = useRef(false);
     useEffect(() => {
@@ -1731,6 +1782,7 @@ function AppContent() {
                 authAccount={authAccount}
                 authLinkToken={authLinkToken}
                 authLinkMode={authLinkMode}
+                authPreferredMode={pendingProtectedLinkGameId ? 'login' : ''}
                 onLogin={handleLogin}
                 onSignup={handleSignup}
                 onForgotPassword={handleForgotPassword}

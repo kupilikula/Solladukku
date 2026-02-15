@@ -14,7 +14,7 @@ A React-based Tamil Scrabble game with a landing page, real-time multiplayer via
 - **Real-time**: WebSockets with room-based multiplayer (runtime URL auto-derived; localhost dev defaults to port 8000)
 - **I18n**: React Context-based Tamil/English language toggle
 - **UI**: react-icons, react-tooltip, react-select, react-fitty
-- **Server**: Node.js with ws library, foma/flookup for FST validation, origin/rate-limit hardening, SQLite analytics, and feature-flagged account auth (access token + HttpOnly refresh cookie sessions, Argon2id password hashing via `argon2`), plus Zoho SMTP email delivery integration via `nodemailer` for verification/reset flows
+- **Server**: Node.js with ws library, foma/flookup for FST validation, origin/rate-limit hardening, SQLite analytics, and feature-flagged account auth (access token + HttpOnly refresh cookie sessions, double-submit CSRF token cookie/header protection for cookie-auth routes, Argon2id password hashing via `argon2`), plus Zoho SMTP email delivery integration via `nodemailer` for verification/reset flows
 - **Dictionary Build**: Python 3 scripts, foma toolkit for FST morphological generation
 - **Deployment**: Railway (Dockerfile-based, auto-deploy on push to `main`). Server serves both API/WebSocket and React static build as a single service.
 - **Dictionary Storage**: Git LFS (135MB file exceeds GitHub's 100MB limit). Dockerfile auto-downloads from GitHub if LFS pointer isn't resolved.
@@ -31,7 +31,9 @@ server/
 ├── auth.js                   # Auth helpers: access/refresh tokens, password hashing, cookie/session utilities
 ├── geo.js                    # Geo-IP resolver (provider + cache + IP hashing)
 ├── download-fsts.js          # Script to download FST models from ThamizhiMorph
-├── package.json              # Server deps (ws, better-sqlite3); scripts: start, setup
+├── package.json              # Server deps (ws, better-sqlite3); scripts: start, setup, test
+├── test/
+│   └── auth-integration.test.js # Node integration tests: auth lifecycle, /api/games authz, WS auth close codes
 ├── analytics.db              # SQLite database (auto-created, gitignored)
 └── fst-models/               # Runtime FST model files (16 downloaded; 11 core loaded by default)
 wordlists/
@@ -112,7 +114,7 @@ The app opens to a landing page before entering any game:
 - **Game title**: "சொல்மாலை" in large peacock blue text
 - **Logo**: Renders `public/logo.png` above the title (96px height). Hides gracefully via `onError` if the file is missing.
 - **Persistent username**: Editable username input (saved in `localStorage` and synced to server profile)
-- **Account auth panel (feature-flagged)**: Landing page supports login/signup plus verify-email and forgot/reset password flows; signup includes an explicit username field in the auth card. By default only **Forgot Password** selector is shown; **Reset Password** and **Verify Email** selectors appear only when arriving via `/reset-password?token=...` or `/verify-email?token=...` links. Verify links auto-submit once; reset links auto-select reset mode and reuse URL token (manual token input only when token is missing). When auth is enabled, access token is kept in-memory, refresh session uses HttpOnly cookie.
+- **Account auth panel (feature-flagged)**: Landing page supports login/signup plus verify-email and forgot/reset password flows; signup includes an explicit username field in the auth card. By default only **Forgot Password** selector is shown; **Reset Password** and **Verify Email** selectors appear only when arriving via `/reset-password?token=...` or `/verify-email?token=...` links. Verify links auto-submit once; reset links auto-select reset mode and reuse URL token (manual token input only when token is missing). When auth is enabled, access token is kept in-memory, refresh session uses HttpOnly cookie, and CSRF token is sent via `X-CSRF-Token` from `solmaalai_csrf` cookie.
 - **Identity header**: Displays guest/authenticated status with logout action for signed-in accounts
 - **Auth panel visibility**: Login/Signup/Forgot/Reset/Verify auth card now renders only for guests (`!authAccount`). Signed-in users only see the identity header + logout UI.
 - **Username gate**: If `/api/profile` reports username conflict (`409`), game entry actions are disabled until user picks an available name
@@ -130,7 +132,8 @@ The app opens to a landing page before entering any game:
 The WebSocket connection is only established for multiplayer entries.
 - **Fresh solo start guard**: Clicking **Play vs Computer** now skips the `/api/games/:gameId` resume fetch for newly generated `solo-*` ids and only runs resume-detail fetches when resume mode is active (URL-resume or My Games Continue). This avoids transient first-click `403` responses before `/api/solo/start` persists the new solo game row.
 - **Access guard on shared links**:
-  - Solo links are account/user scoped (`/api/games/:gameId?userId=...` with account-first authorization). If another browser profile/session opens a solo link and receives access denial (`403`/`404`), the app clears `?game`, returns to landing, and shows a friendly "link not available for this user session" error instead of silently starting a fresh game with the same code.
+  - Solo links are account/user scoped (`/api/games/:gameId?userId=...` with account-first authorization). If an unauthenticated user opens a protected solo link and initial resume receives access denial (`401`/`403`/`404`), the app clears `?game`, returns to landing, prompts login, and retries the same link once after successful login.
+  - If a foreign profile/session still fails authorization after retry (or an already-authenticated user opens a foreign solo link and gets `403`/`404`), the app clears `?game`, returns to landing, and shows "link not available for this user session" instead of silently starting a fresh game with the same code.
   - Multiplayer links remain joinable by other users, but if the room is already full (3rd join attempt), the server rejects with WebSocket close code `4001`; the client now exits to landing and shows a localized room-full message.
 
 **Analytics inspector route**: Visiting `?analytics=1` opens the admin analytics viewer instead of the game UI.
@@ -300,12 +303,15 @@ Admin analytics endpoints require:
 
 Without `ANALYTICS_ADMIN_PASSWORD`, admin analytics endpoints return `503`.
 
+Cookie-auth CSRF requirement:
+- `POST /api/auth/refresh` and `POST /api/auth/logout` use double-submit CSRF validation (`solmaalai_csrf` cookie must match `X-CSRF-Token` header) whenever a refresh cookie is present.
+
 | Method | Path | Description |
 |--------|------|-------------|
 | `POST` | `/api/auth/signup` | Create account + profile and start session (`{email,password,username,userId?}`) |
 | `POST` | `/api/auth/login` | Login with email/password; returns access token + sets refresh cookie |
-| `POST` | `/api/auth/logout` | Revoke current refresh session and clear refresh cookie |
-| `POST` | `/api/auth/refresh` | Rotate refresh session, return new access token + refreshed cookie |
+| `POST` | `/api/auth/logout` | Revoke current refresh session and clear refresh + CSRF cookies (requires `X-CSRF-Token` when refresh cookie is present) |
+| `POST` | `/api/auth/refresh` | Rotate refresh session, return new access token + refreshed refresh/CSRF cookies (requires `X-CSRF-Token` match) |
 | `GET` | `/api/auth/me` | Return authenticated account/profile from bearer access token |
 | `GET` | `/api/auth/email-health` | Admin-protected SMTP/fallback health check (`X-Admin-Password`) |
 | `POST` | `/api/auth/verify-email` | Consume verification token and mark account email verified |
@@ -713,6 +719,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] **Analytics**: SQLite tracking for visits/games/turns with password-protected admin APIs (`/api/admin/*`)
 - [x] **Geo analytics**: coarse Geo-IP enrichment for visits/profiles/games, hashed player IP tracking, and country breakdown admin endpoints
 - [x] **Analytics Inspector UI**: `?analytics=1` view with summary cards, country breakdowns, game/user inspection, and board replay slider
+- [x] **Auth integration test suite** (`cd server && npm test`): covers auth lifecycle with CSRF enforcement, account-scoped `/api/games/:gameId` authorization, and WS close codes `4004`/`4005` plus room-full `4001`
 
 - [x] **Single Player Mode**: Play vs Computer with client-side AI engine
   - Anchor-based word generation with dictionary prefix pruning (O(log 2.85M) per check)
@@ -822,7 +829,9 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - `AUTH_ACCESS_TTL_MINUTES` — Access token TTL (default `15`)
 - `AUTH_REFRESH_TTL_DAYS` — Refresh token/session TTL (default `30`)
 - `AUTH_COOKIE_NAME` — Refresh cookie name (default `solmaalai_rt`)
+- `AUTH_CSRF_COOKIE_NAME` — CSRF cookie name for double-submit protection (default `solmaalai_csrf`)
 - `AUTH_COOKIE_SECURE` — Set `true` in HTTPS production to mark refresh cookie Secure
+- `AUTH_CLEANUP_INTERVAL_MINUTES` — Interval for deleting expired/revoked auth sessions and used/expired auth tokens (default `30`)
 - `AUTH_EMAIL_VERIFICATION_TTL_HOURS` — Verification token TTL in hours (default `24`)
 - `AUTH_PASSWORD_RESET_TTL_MINUTES` — Password reset token TTL in minutes (default `30`)
 - `APP_BASE_URL` — App origin used for auth token audience metadata
@@ -857,10 +866,11 @@ The server at `server/index.js` is an HTTP + WebSocket server on a single port:
 11. Maintains random-opponent matchmaking queue (`/api/matchmaking/join|status|cancel`)
 12. Stores persistent player profiles + leaderboard data (`players` table, `/api/profile`, `/api/leaderboard`)
 13. **Hooks analytics** into game message handlers (newGame, turn, pass, swap, gameOver), including tile placement capture for board replay
-14. Cleans up empty rooms after 5 minutes
-15. Gracefully shuts down flookup processes, analytics DB, and HTTP server on SIGINT
-16. Start with: `cd server && npm run setup && npm start`
-17. Serves React static assets with HTTP cache headers and conditional request handling (`ETag` + `Last-Modified`): hashed build assets are immutable for 1 year, `tamil_dictionary.txt` is cached for 24h, and fresh conditional requests return `304 Not Modified`
+14. Periodically cleans expired/revoked auth sessions and consumed/expired verification/reset tokens (`AUTH_CLEANUP_INTERVAL_MINUTES`, default 30)
+15. Cleans up empty rooms after 5 minutes
+16. Gracefully shuts down flookup processes, analytics DB, and HTTP server on SIGINT
+17. Start with: `cd server && npm run setup && npm start`
+18. Serves React static assets with HTTP cache headers and conditional request handling (`ETag` + `Last-Modified`): hashed build assets are immutable for 1 year, `tamil_dictionary.txt` is cached for 24h, and fresh conditional requests return `304 Not Modified`
 
 ### FST Models
 - **Build-time** (`wordlists/fst-models/`): Used by `generate_fst_forms.py` to pre-generate noun inflections

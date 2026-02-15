@@ -21,6 +21,7 @@ export default function AuthPanel({
     initialToken = '',
     currentUsername = '',
     linkMode = null,
+    preferredMode = '',
 }) {
     const [mode, setMode] = useState('login');
     const [email, setEmail] = useState('');
@@ -42,6 +43,12 @@ export default function AuthPanel({
     useEffect(() => {
         setSignupUsername(currentUsername || '');
     }, [currentUsername]);
+
+    useEffect(() => {
+        if (preferredMode === 'login' || preferredMode === 'signup') {
+            setMode(preferredMode);
+        }
+    }, [preferredMode]);
 
     const submit = async () => {
         if (mode === 'login') {

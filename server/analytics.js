@@ -755,6 +755,32 @@ function updateAccountPasswordHash(accountId, passwordHash) {
     return Boolean(result.changes);
 }
 
+function cleanupExpiredAuthArtifacts() {
+    const result = db.transaction(() => {
+        const sessions = db.prepare(`
+            DELETE FROM account_sessions
+            WHERE revoked_at IS NOT NULL
+               OR expires_at < datetime('now')
+        `).run();
+        const verifyTokens = db.prepare(`
+            DELETE FROM email_verification_tokens
+            WHERE used_at IS NOT NULL
+               OR expires_at < datetime('now')
+        `).run();
+        const resetTokens = db.prepare(`
+            DELETE FROM password_reset_tokens
+            WHERE used_at IS NOT NULL
+               OR expires_at < datetime('now')
+        `).run();
+        return {
+            sessionsDeleted: sessions.changes || 0,
+            verificationTokensDeleted: verifyTokens.changes || 0,
+            resetTokensDeleted: resetTokens.changes || 0,
+        };
+    });
+    return result();
+}
+
 function startGame(gameId, player1Id, options = {}) {
     const {
         gameType = 'multiplayer',
@@ -1609,6 +1635,7 @@ module.exports = {
     consumePasswordResetToken,
     markAccountEmailVerified,
     updateAccountPasswordHash,
+    cleanupExpiredAuthArtifacts,
     startGame,
     ensureGameSession,
     setPlayer2,
