@@ -76,8 +76,11 @@ export const GameSlice = createSlice({
                 state.username = action.payload.username || state.username;
                 state.gameId = action.payload.gameId || null;
                 state.currentTurnUserId = action.payload.userId;
-                if (action.payload.gameId && action.payload.gameId !== 'solo' && !String(action.payload.gameId).startsWith('solo-')) {
-                    state.gameMode = 'multiplayer';
+                if (action.payload.gameId) {
+                    const normalizedGameId = String(action.payload.gameId).trim().toUpperCase();
+                    state.gameMode = (normalizedGameId === 'SOLO' || normalizedGameId.startsWith('SOLO-'))
+                        ? 'singleplayer'
+                        : 'multiplayer';
                 }
                 if (action.payload.userId && action.payload.username) {
                     state.playerNames[action.payload.userId] = action.payload.username;
