@@ -1,5 +1,10 @@
 import { getApiBaseUrl } from './runtimeUrls';
 
+let inFlightRefreshRequest = null;
+let recentRefreshResult = null;
+let recentRefreshAt = 0;
+const RECENT_REFRESH_DEDUPE_MS = 5000;
+
 async function readJsonSafe(resp) {
     try {
         return await resp.json();
@@ -62,7 +67,23 @@ export async function logout() {
 }
 
 export async function refreshSession() {
-    return authRequest('/api/auth/refresh', { method: 'POST' });
+    const now = Date.now();
+    if (recentRefreshResult && now - recentRefreshAt <= RECENT_REFRESH_DEDUPE_MS) {
+        return recentRefreshResult;
+    }
+    if (inFlightRefreshRequest) {
+        return inFlightRefreshRequest;
+    }
+    inFlightRefreshRequest = authRequest('/api/auth/refresh', { method: 'POST' })
+        .then((result) => {
+            recentRefreshResult = result;
+            recentRefreshAt = Date.now();
+            return result;
+        })
+        .finally(() => {
+            inFlightRefreshRequest = null;
+        });
+    return inFlightRefreshRequest;
 }
 
 export async function getMe(accessToken) {
