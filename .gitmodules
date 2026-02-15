@@ -1,0 +1,3 @@
+[submodule "vendor/thamizhi-morph"]
+	path = vendor/thamizhi-morph
+	url = https://github.com/sarves/thamizhi-morph

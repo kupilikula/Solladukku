@@ -33,8 +33,13 @@ server/analytics.db
 server/analytics.db-shm
 server/analytics.db-wal
 
-# local/generated wordlist artifacts (do not commit)
-wordlists/cache/
-wordlists/fst-models/
-wordlists/fst_generated_forms.txt
-wordlists/tamillexicon_headwords.txt
+# local/generated static word-list artifacts (do not commit)
+static-word-list/cache/
+static-word-list/fst-models/
+static-word-list/fst_generated_forms.txt
+static-word-list/tamillexicon_headwords.txt
+
+# local FST build/audit artifacts
+fst/build/.work/
+fst/reports/*
+!fst/reports/.gitkeep

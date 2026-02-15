@@ -12,7 +12,7 @@ Tamil is agglutinative: a single verb root can produce 2,000+ inflected forms, a
 ## Available Data Sources
 
 ### 1. Tamil Lexicon Headwords (already have)
-- **File:** `wordlists/tamillexicon_headwords.txt`
+- **File:** `static-word-list/tamillexicon_headwords.txt`
 - **Size:** 107,448 unique headwords (117,803 lines with duplicates)
 - **Coverage:** Comprehensive classical Tamil headwords from University of Madras Tamil Lexicon
 - **Limitations:** Headwords only — no inflected forms. Contains ~12K verb entries with hyphens (e.g., "அஃகு-தல்"), ~877 entries with spaces, some entries with brackets/commas
@@ -98,7 +98,7 @@ Build a combined word list from existing sources:
 5. Store as `public/tamil_dictionary.txt`, load with binary search on client
 
 **Implemented in:**
-- `wordlists/build_dictionary.py` — builds combined word list
+- `static-word-list/build_dictionary.py` — builds combined word list
 - `public/tamil_dictionary.txt` — dictionary served to browser
 - `src/utils/dictionary.js` — loads dictionary, binary search lookup, server validation cache
 - `src/components/ActionMenu.js` — validation in `submitWord()`, invalid word toasts
@@ -106,18 +106,18 @@ Build a combined word list from existing sources:
 
 #### Phase 2: Morphological expansion ✅ COMPLETE
 Used ThamizhiMorph FST models to generate noun inflections for all Tamil Lexicon headwords:
-1. `wordlists/generate_fst_forms.py` downloads FST models from GitHub
+1. `static-word-list/generate_fst_forms.py` reads canonical models from `build/fst-models/` (built from vendored upstream)
 2. Feeds 116K headwords through `flookup noun.fst` → identifies 3.5K recognized noun lemmas
 3. Generates all case/number inflections via `flookup -i` with 16 morphological tags
 4. Also processes adj, adv, part, pronoun FSTs
-5. Total: 1.16M new surface forms (mostly noun inflections)
-6. `build_dictionary.py` merges them as Step 4 → final dictionary: **2.85M words**
+5. Total: large generated surface-form expansion (count depends on current FST build and sources)
+6. `build_dictionary.py` merges them as Step 4 → final dictionary size is build-dependent
 
 Key finding: `noun.fst` uses tags like `+noun+acc`, `+noun+pl+nom`.
 
 #### Phase 3: Server-side FST validation ✅ COMPLETE
 Server-side fallback for words not in the static dictionary, using Node.js (no Python needed):
-1. `server/download-fsts.js` downloads 11 core FST models to `server/fst-models/`
+1. `server/download-fsts.js` is a compatibility wrapper that runs vendored FST build (`fst/build/build_fsts.py`)
 2. `server/index.js` now loads 11 core long-lived `flookup` child processes by default
 3. Client sends `validateWords` request via WebSocket with `requestId`
 4. Server validates against all FSTs in parallel, unicasts result back
@@ -128,8 +128,22 @@ Server-side fallback for words not in the static dictionary, using Node.js (no P
 **UX note:** dictionary preload now starts at app startup, and Play is disabled until dictionary load completes.
 
 #### Phase 4: Bloom filter optimization (deferred)
-Not needed — the 2.85M-word dictionary loads fine as a sorted array with binary search.
+Not needed — the current generated dictionary loads fine as a sorted array with binary search.
 The 134MB raw file compresses well via gzip (dev server handles this automatically).
+
+#### Phase 5: Vendored upstream + patch/regression framework ✅ COMPLETE
+To prevent upstream drift and silent morphology regressions, FSTs are now managed via a pinned submodule and deterministic local build:
+1. Upstream is vendored as `vendor/thamizhi-morph` (git submodule pinned to a commit)
+2. Local patches are applied from `fst/patches/` during build
+3. `fst/build/build_fsts.py` extracts source zips, applies patches, compiles via `foma`, writes canonical outputs to `build/fst-models/`, and syncs outputs to:
+   - `static-word-list/fst-models/`
+   - `server/fst-models/`
+4. Build metadata is recorded in `fst/build/manifest.json` (submodule commit, patch hashes, output checksums)
+5. Regression tests in `fst/tests/run_fst_regressions.py` gate key morphology and dictionary cases
+
+Initial patch:
+- `0001-fix-c11-acc.patch`: Class 11 noun accusative changed from `+noun+acc:^னை` to `+noun+acc:^ை` in `LEXICON C11Inflections`
+- This fixes overgeneration like `மாணவன்னை` / `திருமகன்னை` while preserving C10 behavior such as `பொன் -> பொன்னை`
 
 ## Current Code Integration Details
 

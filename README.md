@@ -12,7 +12,7 @@ A multiplayer Tamil Scrabble game built with React and WebSockets.
 - Persistent leaderboard/rating system (SQLite-backed; shown when data exists)
 - Password-protected admin analytics inspector (`?analytics=1`)
 - Tamil/English bilingual UI
-- 2.85M-word Tamil dictionary with server-side FST validation fallback
+- Large Tamil dictionary (`public/tamil_dictionary.txt`) with server-side FST validation fallback
 - Dictionary preloaded at app startup; Play button stays disabled until dictionary is ready
 - HTTP fallback FST validation for single-player (`POST /api/validate-words`)
 - Drag-and-drop tile placement
@@ -24,17 +24,16 @@ A multiplayer Tamil Scrabble game built with React and WebSockets.
 ### Prerequisites
 
 - Node.js 18+
-- `foma` (optional, for rebuilding dictionary FST models): `brew install foma`
+- `foma` + `flookup` (required only when rebuilding patched FST models and dictionary artifacts): `brew install foma`
 
 ### Running Locally
 
 **Start the WebSocket server:**
 
 ```bash
-cd server
 npm install
-npm run setup    # Downloads FST models for word validation
-npm start
+npm run fst:build   # builds patched FST artifacts (canonical build/fst-models + synced copies)
+cd server && npm install && npm start
 ```
 
 **Start the React app (in a separate terminal):**
@@ -45,6 +44,13 @@ npm start
 ```
 
 Open http://localhost:3000.
+
+## FST and Dictionary Workflow
+
+- Canonical FST architecture doc: `Docs/FST_ARCHITECTURE.md`
+- FST patch/build/test workflow: `fst/README.md`
+- One-command refresh (patched FSTs + dictionary + checks): `npm run dict:build`
+- Full docs index: `Docs/README.md`
 
 Landing page modes:
 - `New Game With Invited Opponent` (creates a private room and auto-opens invite modal)

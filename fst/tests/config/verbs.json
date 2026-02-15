@@ -1,0 +1,13 @@
+{
+  "fst": "build/fst-models/verb-c-rest.fst",
+  "mode": "inverse",
+  "tags": [
+    "+verb+past+1sg",
+    "+verb+pres+1sg",
+    "+verb+fut+1sg"
+  ],
+  "suspicious_patterns": [
+    "\u0b99\u0bcd\u0b99",
+    "\u0ba3\u0bcd\u0ba3\u0bcd\u0ba3"
+  ]
+}

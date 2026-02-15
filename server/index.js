@@ -1761,7 +1761,7 @@ function initFstProcesses() {
 
     if (!fs.existsSync(FST_DIR)) {
         console.log(`WARNING: FST models directory not found: ${FST_DIR}`);
-        console.log('Run: npm run setup  (to download FST models)');
+        console.log('Run: npm run setup  (build from vendored ThamizhiMorph + local patches)');
         if (STRICT_SERVER_VALIDATION) {
             console.log('STRICT_SERVER_VALIDATION=true: words not recognized by local dictionary will be rejected.');
         }

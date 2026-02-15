@@ -1,0 +1,37 @@
+{
+  "inverse_must_include": [
+    {"analysis": "திருமகன்+noun+acc", "surface": "திருமகனை"},
+    {"analysis": "மாணவன்+noun+acc", "surface": "மாணவனை"},
+    {"analysis": "பொன்+noun+acc", "surface": "பொன்னை"},
+    {"analysis": "மடு+noun+loc", "surface": "மடுவிடம்"},
+    {"analysis": "காடு+noun+loc", "surface": "காட்டில்"}
+  ],
+  "analysis_must_recognize": [
+    "திருமகனை",
+    "மாணவனை",
+    "பொன்னை",
+    "மடுவிடம்",
+    "காட்டில்"
+  ],
+  "analysis_should_reject": [
+    "திருமகன்னை",
+    "மாணவன்னை",
+    "பொனை",
+    "காடுடிடம்",
+    "தகடுடிடம்",
+    "உதடுடிடம்",
+    "அகச்சிட்ட்டில்"
+  ],
+  "dictionary_must_include": [
+    "திருமகனை",
+    "மாணவனை"
+  ],
+  "dictionary_must_exclude": [
+    "திருமகன்னை",
+    "மாணவன்னை",
+    "காடுடிடம்",
+    "தகடுடிடம்",
+    "உதடுடிடம்",
+    "அகச்சிட்ட்டில்"
+  ]
+}

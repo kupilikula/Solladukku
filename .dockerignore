@@ -4,7 +4,7 @@ build
 .env
 .env.production
 .git
-wordlists
+static-word-list
 deploy
 AGENTS.md
 CLAUDE.md

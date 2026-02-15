@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate Tamil word forms using FST models from ThamizhiMorph.
+Generate Tamil word forms using locally built ThamizhiMorph FST models.
 
 Strategy:
 1. Feed Tamil Lexicon headwords through forward flookup on each FST to find
@@ -8,27 +8,24 @@ Strategy:
 2. For recognized lemmas, generate all inflected surface forms via inverse
    flookup with morphological tags (case, number, etc.)
 
-Output: wordlists/fst_generated_forms.txt (one word per line, sorted, deduplicated)
-Cached FST models stored in: wordlists/fst-models/
+Output: static-word-list/fst_generated_forms.txt (one word per line, sorted, deduplicated)
+Canonical built FST models stored in: build/fst-models/
 
-Requires: foma toolkit (`brew install foma`)
+Requires: foma toolkit and prebuilt local models (`npm run fst:build`)
 """
 
 import re
 import subprocess
 import sys
-import urllib.request
 import unicodedata
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).parent
-FST_MODELS_DIR = SCRIPT_DIR / "fst-models"
+PROJECT_ROOT = SCRIPT_DIR.parent
+FST_MODELS_DIR = PROJECT_ROOT / "build" / "fst-models"
 OUTPUT_FILE = SCRIPT_DIR / "fst_generated_forms.txt"
 LEXICON_FILE = SCRIPT_DIR / "tamillexicon_headwords.txt"
 
-GITHUB_BASE = "https://raw.githubusercontent.com/sarves/thamizhi-morph/master/FST-Models/"
-
-# FST models to download
 ALL_FSTS = [
     "noun.fst",
     "adj.fst",
@@ -81,27 +78,6 @@ def check_foma_installed() -> bool:
         return False
     except (subprocess.TimeoutExpired, Exception):
         return True
-
-
-def download_fst_models():
-    """Download FST models from GitHub if not already cached."""
-    FST_MODELS_DIR.mkdir(exist_ok=True)
-    for fname in ALL_FSTS:
-        local_path = FST_MODELS_DIR / fname
-        if local_path.exists() and local_path.stat().st_size > 0:
-            print(f"  Cached: {fname}")
-            continue
-        url = GITHUB_BASE + fname
-        print(f"  Downloading {fname}...", end="", flush=True)
-        try:
-            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            with urllib.request.urlopen(req, timeout=60) as resp:
-                data = resp.read()
-            with open(local_path, 'wb') as f:
-                f.write(data)
-            print(f" {len(data)} bytes")
-        except Exception as e:
-            print(f" ERROR: {e}")
 
 
 def load_headwords() -> list:
@@ -261,9 +237,16 @@ def main():
         sys.exit(1)
     print("foma toolkit found.\n")
 
-    # Step 1: Download FST models
-    print("Step 1: Downloading FST models...")
-    download_fst_models()
+    # Step 1: Validate local FST models (built by fst/build/build_fsts.py)
+    print("Step 1: Checking local FST models...")
+    missing = [name for name in ALL_FSTS if not (FST_MODELS_DIR / name).exists()]
+    if missing:
+        print("ERROR: Missing local FST models:")
+        for name in missing:
+            print(f"  - {name}")
+        print("Run from repo root: npm run fst:build")
+        sys.exit(1)
+    print(f"  Found {len(ALL_FSTS)} local models in {FST_MODELS_DIR}")
 
     # Step 2: Load headwords
     print("\nStep 2: Loading headwords...")

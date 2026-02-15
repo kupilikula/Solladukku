@@ -1,0 +1,11 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -41207,7 +41207,7 @@
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^ர்கள் #;
+ 
+-+noun+acc:^னை #;
+++noun+acc:^ை #;
+ +noun+pl+acc:^ர்களினை #;
+ 
+ +noun+inst:^னால் #;

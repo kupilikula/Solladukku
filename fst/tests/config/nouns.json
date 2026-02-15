@@ -1,0 +1,21 @@
+{
+  "fst": "build/fst-models/noun.fst",
+  "mode": "inverse",
+  "tags": [
+    "+noun+nom",
+    "+noun+acc",
+    "+noun+dat",
+    "+noun+loc",
+    "+noun+abl",
+    "+noun+gen",
+    "+noun+inst",
+    "+noun+soc",
+    "+noun+pl+nom",
+    "+noun+pl+acc"
+  ],
+  "suspicious_patterns": [
+    "ன்னை$",
+    "வன்னை$",
+    "கன்னை$"
+  ]
+}

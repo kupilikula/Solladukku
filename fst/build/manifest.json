@@ -1,0 +1,225 @@
+{
+  "built_at_utc": "2026-02-15T13:33:23.093215+00:00",
+  "submodule": {
+    "path": "vendor/thamizhi-morph",
+    "commit": "a296417ac603fd44eda35645369f1257d96bed89"
+  },
+  "components": [
+    {
+      "name": "noun",
+      "mode": "compile",
+      "zip": "ThamizhiMorph-Nouns.zip",
+      "entry": "tamil-noun.foma",
+      "output": "noun.fst",
+      "patches": [
+        "0001-fix-c11-acc.patch",
+        "0002-fix-noun-class-duplicates.patch",
+        "0003-fix-noun-malformed-locatives.patch"
+      ]
+    },
+    {
+      "name": "adj",
+      "mode": "compile",
+      "zip": "ThamizhiMorph-Adjectives.zip",
+      "entry": "__generated_adj_build.foma",
+      "output": "adj.fst",
+      "patches": []
+    },
+    {
+      "name": "adv",
+      "mode": "compile",
+      "zip": "ThamizhiMorph-Adverbs.zip",
+      "entry": "tamil-adverbs.foma",
+      "output": "adv.fst",
+      "patches": []
+    },
+    {
+      "name": "part",
+      "mode": "compile",
+      "zip": "ThamizhiMorph-Particles.zip",
+      "entry": "tamil-part.foma",
+      "output": "part.fst",
+      "patches": []
+    },
+    {
+      "name": "verb-c3",
+      "mode": "compile",
+      "zip": "ThamizhiMorph-Verbs.zip",
+      "entry": "ThamizhiFST-C3.foma",
+      "output": "verb-c3.fst",
+      "patches": []
+    },
+    {
+      "name": "verb-c4",
+      "mode": "compile",
+      "zip": "ThamizhiMorph-Verbs.zip",
+      "entry": "ThamizhiFST-C4.foma",
+      "output": "verb-c4.fst",
+      "patches": []
+    },
+    {
+      "name": "verb-c11",
+      "mode": "compile",
+      "zip": "ThamizhiMorph-Verbs.zip",
+      "entry": "ThamizhiFST-C11.foma",
+      "output": "verb-c11.fst",
+      "patches": []
+    },
+    {
+      "name": "verb-c12",
+      "mode": "compile",
+      "zip": "ThamizhiMorph-Verbs.zip",
+      "entry": "ThamizhiFST-C12.foma",
+      "output": "verb-c12.fst",
+      "patches": []
+    },
+    {
+      "name": "verb-c62",
+      "mode": "compile",
+      "zip": "ThamizhiMorph-Verbs.zip",
+      "entry": "ThamizhiFST-C62.foma",
+      "output": "verb-c62.fst",
+      "patches": []
+    },
+    {
+      "name": "verb-c-rest",
+      "mode": "compile",
+      "zip": "ThamizhiMorph-Verbs.zip",
+      "entry": "ThamizhiFST-otherthan-3-4-62-11-12.foma",
+      "output": "verb-c-rest.fst",
+      "patches": []
+    },
+    {
+      "name": "pronoun",
+      "mode": "copy-prebuilt",
+      "source": "FST-Models/pronoun.fst",
+      "output": "pronoun.fst"
+    }
+  ],
+  "patches": [
+    {
+      "file": "fst/patches/0001-fix-c11-acc.patch",
+      "sha256": "9c77c171a19e36124d838d55a78134d26e1b12d14f2c742f9c21a8479f98ec3e"
+    },
+    {
+      "file": "fst/patches/0002-fix-noun-class-duplicates.patch",
+      "sha256": "0f6c36f2d4072f07dcdab47c0f7cf2835d57fcf61ae267e454185de286704f2f"
+    },
+    {
+      "file": "fst/patches/0003-fix-noun-malformed-locatives.patch",
+      "sha256": "b8606777279d8c288ab95388931d8c54fae7a7a5e1ab61b7eb8e77ed1492b0e3"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "adj.fst",
+      "sha256": "7be62fb5c91c42e820c577bc3e95e3c08f23e7a30f64620237029cfcec72dc81",
+      "size_bytes": 7510,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    },
+    {
+      "file": "adv.fst",
+      "sha256": "ba1ef0a61650a1ca9e363d43a087d86021575159d44be14aca2efe1998170978",
+      "size_bytes": 13553,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    },
+    {
+      "file": "noun.fst",
+      "sha256": "c52e64181cf5033790bec15bc9b3c4fc60c7b2dfdaafec839c6282af98c13255",
+      "size_bytes": 164188,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    },
+    {
+      "file": "part.fst",
+      "sha256": "00a4dc5b0adaf25e0bdb26ff78d71c3aedb651e10420c42106eb4eb64ef3b297",
+      "size_bytes": 4499,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    },
+    {
+      "file": "pronoun.fst",
+      "sha256": "508f4ce52c6af4beade4ea3e7d8278cc136e2090d8318cf6fd0f32e372b2ae15",
+      "size_bytes": 15958,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    },
+    {
+      "file": "verb-c-rest.fst",
+      "sha256": "4eb836cc97ade18019b1c9a0250b968d26a791fd803462e9b49e7070a01b6964",
+      "size_bytes": 123654,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    },
+    {
+      "file": "verb-c11.fst",
+      "sha256": "f1207a081ed80b702c486674f3b08b3f5f91f54ba0e718857464133adae6f978",
+      "size_bytes": 66925,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    },
+    {
+      "file": "verb-c12.fst",
+      "sha256": "4ec136e3639098b6d89895eeeea892aac27ef3d5a3ee82746426494f00462dae",
+      "size_bytes": 43762,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    },
+    {
+      "file": "verb-c3.fst",
+      "sha256": "9ea5a4a32679af966d4e2dd33d2d26f67a3c8d0f88925e1fa0e1466dcc1a13f8",
+      "size_bytes": 12757,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    },
+    {
+      "file": "verb-c4.fst",
+      "sha256": "ac8f54010547c6b54891ba22e3341a1d32c7a52f852270e4ada8a1ae8de4d42a",
+      "size_bytes": 39157,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    },
+    {
+      "file": "verb-c62.fst",
+      "sha256": "d41b6d26516c03caaf66019e0825887b6f39214bf57378b4f71733548e17dcdb",
+      "size_bytes": 12418,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    }
+  ]
+}

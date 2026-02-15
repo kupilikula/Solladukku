@@ -1,0 +1,173 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -20218,7 +20218,6 @@
+ சேழவேந்தல்	C4SgRoot; 
+ சொரிதல்	C4SgRoot; 
+ சொரிதல்சிந்துதல்	C4SgRoot; 
+-சொல்	C4SgRoot; 
+ சொல்லாற்றல்	C4SgRoot; 
+ சொல்வள்ளல்	C4SgRoot; 
+ சொல்வேல்	C4SgRoot; 
+@@ -21219,7 +21218,6 @@
+ நெய்தன்மயில்	C4SgRoot; 
+ நெய்தன்முறுவல்	C4SgRoot; 
+ நெரியாசிப்பால்	C4SgRoot; 
+-நெல்	C4SgRoot; 
+ நெல்வயல்	C4SgRoot; 
+ நெறிக்குழல்	C4SgRoot; 
+ நெறிச்செம்மல்	C4SgRoot; 
+@@ -22826,7 +22824,6 @@
+ விண்மயில்	C4SgRoot; 
+ விண்முகில்	C4SgRoot; 
+ விண்வில்	C4SgRoot; 
+-வில்	C4SgRoot; 
+ வில்லண்ணல்	C4SgRoot; 
+ வில்லாற்றல்	C4SgRoot; 
+ விழிக்கடல்	C4SgRoot; 
+@@ -23618,7 +23615,6 @@
+ மகிழ்மொட்டு	C6SgRoot;
+ மங்கைமொட்டு	C6SgRoot;
+ மடந்தைமொட்டு	C6SgRoot;
+-மடு	C6SgRoot;
+ மணமொட்டு	C6SgRoot;
+ மணிப்பொட்டு	C6SgRoot;
+ மணிமொட்டு	C6SgRoot;
+@@ -37801,7 +37797,6 @@
+ தேனினியன்	C11SgRoot ;
+ தேனின்பன்	C11SgRoot ;
+ தேனூரன்	C11SgRoot ;
+-தேன்	C11SgRoot ;
+ தேன்குன்றன்	C11SgRoot ;
+ தேன்பொழிலன்	C11SgRoot ;
+ தேன்மொழியன்	C11SgRoot ;
+@@ -39123,7 +39118,6 @@
+ பொற்செழியன்	C11SgRoot ;
+ பொற்சேரன்	C11SgRoot ;
+ பொற்சோழன்	C11SgRoot ;
+-பொன்	C11SgRoot ;
+ பொன்மலையன்	C11SgRoot ;
+ பொன்மாண்பன்	C11SgRoot ;
+ பொன்மாறன்	C11SgRoot ;
+@@ -39698,7 +39692,6 @@
+ மானவேலன்	C11SgRoot ;
+ மானவேலோன்	C11SgRoot ;
+ மானன்	C11SgRoot ;
+-மான்	C11SgRoot ;
+ மான்மாறன்	C11SgRoot ;
+ மான்முகிலன்	C11SgRoot ;
+ மான்முத்தன்	C11SgRoot ;
+@@ -39724,7 +39717,6 @@
+ மீனூரோன்	C11SgRoot ;
+ மீனெழிலன்	C11SgRoot ;
+ மீனெழிலோன்	C11SgRoot ;
+-மீன்	C11SgRoot ;
+ மீன்விண்மீன்	C11SgRoot ;
+ முகன்	C11SgRoot ;
+ முகன்முகத்தையுடையவன்	C11SgRoot ;
+@@ -40693,7 +40685,6 @@
+ வானவரம்பன்	C11SgRoot ;
+ வானவன்	C11SgRoot ;
+ வானிலவன்	C11SgRoot ;
+-வான்	C11SgRoot ;
+ வான்மீன்	C11SgRoot ;
+ வான்முகிலன்	C11SgRoot ;
+ விடியலூரன்	C11SgRoot ;
+@@ -41134,8 +41125,6 @@
+ வோங்குவேலோன்	C11SgRoot ;
+ பேரன்	C11SgRoot ;
+ பைத்தியக்காரன்	C11SgRoot ;
+-பையன்	C11SgRoot ;
+-பொன்	C11SgRoot ;
+ மகன்	C11SgRoot ;
+ மகாராஜன்	C11SgRoot ;
+ மகான்	C11SgRoot ;
+@@ -41155,7 +41144,6 @@
+ மாமன்	C11SgRoot ;
+ மாரியம்மன்	C11SgRoot ;
+ மாறபாண்டியன்	C11SgRoot ;
+-மான்	C11SgRoot ;
+ முதற்பகைவன்	C11SgRoot ;
+ முதற்பராந்தகன்	C11SgRoot ;
+ முதற்புதல்வன்	C11SgRoot ;
+@@ -42570,7 +42558,6 @@
+ தாமரையாள்	C14SgRoot ; 
+ தாயாள்	C14SgRoot ; 
+ தார்மகள்	C14SgRoot ; 
+-தாள்	C14SgRoot ; 
+ தானைமகள்	C14SgRoot ; 
+ தானையாள்	C14SgRoot ; 
+ திகழினியள்	C14SgRoot ; 
+@@ -42663,7 +42650,6 @@
+ தோகைநல்லாள்	C14SgRoot ; 
+ தோகையாள்	C14SgRoot ; 
+ தோணல்லள்	C14SgRoot ; 
+-தோள்	C14SgRoot ; 
+ நகைநல்லாள்	C14SgRoot ; 
+ நகைமகள்	C14SgRoot ; 
+ நகையாள்	C14SgRoot ; 
+@@ -43429,7 +43415,6 @@
+ வாழ்தகையள்	C14SgRoot ; 
+ வாழ்நல்லள்	C14SgRoot ; 
+ வாழ்மகள்	C14SgRoot ; 
+-வாள்	C14SgRoot ; 
+ வாள்வல்லாள்	C14SgRoot ; 
+ வானவள்	C14SgRoot ; 
+ வானாடள்	C14SgRoot ; 
+@@ -43511,9 +43496,7 @@
+ மான்விழியாள்	C14SgRoot ; 
+ முகத்தாள்	C14SgRoot ; 
+ முட்கள்	C14SgRoot ; 
+-முள்	C14SgRoot ; 
+ வாழ்நாள்	C14SgRoot ; 
+-வாள்	C14SgRoot ; 
+ விநோதங்கள்	C14SgRoot ; 
+ விளாமரங்கள்	C14SgRoot ; 
+ வெட்டரிவாள்	C14SgRoot ; 
+@@ -44077,7 +44060,6 @@
+ கடம்பம்	C15SgRoot ; 
+ கடம்புஒருமரம்	C15SgRoot ; 
+ கடலமுதம்	C15SgRoot ; 
+-கடல்	C15SgRoot ; 
+ கணிக்கலம்	C15SgRoot ; 
+ கணிச்செல்வம்	C15SgRoot ; 
+ கணித்தங்கம்	C15SgRoot ; 
+@@ -47094,7 +47076,6 @@
+ தென்சுடர்	C16SgRoot ; 
+ தென்மலர்	C16SgRoot ; 
+ தேமலர்	C16SgRoot ; 
+-தேர்	C16SgRoot ; 
+ தேர்மலர்	C16SgRoot ; 
+ தேன்மலர்	C16SgRoot ; 
+ தொல்கதிர்	C16SgRoot ; 
+@@ -47318,7 +47299,6 @@
+ பொன்மலர்	C16SgRoot ; 
+ பொன்முடியார்	C16SgRoot ; 
+ பொன்னிமலர்	C16SgRoot ; 
+-போர்	C16SgRoot ; 
+ போர்க்கதிர்	C16SgRoot ; 
+ போர்மலர்	C16SgRoot ; 
+ மகிழ்கதிர்	C16SgRoot ; 
+@@ -47547,7 +47527,6 @@
+ பொய்யர்	C16SgRoot ;
+ பொல்லாதவர்	C16SgRoot ;
+ போடுகிறவர்	C16SgRoot ;
+-போர்	C16SgRoot ;
+ போவோர்	C16SgRoot ;
+ போன்றவர்	C16SgRoot ;
+ பௌத்தர்	C16SgRoot ;
+@@ -47567,7 +47546,6 @@
+ மழவரையர்	C16SgRoot ;
+ மழுவரையர்	C16SgRoot ;
+ மற்றவர்	C16SgRoot ;
+-மனிதர்	C16SgRoot ;
+ மன்னர்	C16SgRoot ;
+ மாதர்	C16SgRoot ;
+ மாதேவியார்	C16SgRoot ;
+@@ -47626,7 +47604,6 @@
+ வெளியூர்	C16SgRoot ;
+ வேட்டைக்காரர்	C16SgRoot ;
+ வேந்தர்	C16SgRoot ;
+-வேர்	C16SgRoot ;
+ வேளக்காரர்	C16SgRoot ;
+ வேளார்	C16SgRoot ;
+ வேறொருவர்	C16SgRoot ;

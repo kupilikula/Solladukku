@@ -24,29 +24,55 @@ A React-based Tamil Scrabble game with a landing page, real-time multiplayer via
 ```
 deploy/
 ├── nginx.conf                # nginx config (static files + WebSocket proxy + gzip + TLS)
-└── DEPLOY.md                 # Step-by-step deployment guide for Digital Ocean
+└── DEPLOY.md                 # Step-by-step deployment guide for Railway
+Docs/
+├── README.md                 # Docs index and navigation
+├── FST_ARCHITECTURE.md       # Canonical FST source/build/patch/deploy architecture
+└── WORD_VALIDATION_PLAN.md   # Canonical word-validation research and phased plan
 server/
 ├── index.js                  # HTTP + WebSocket server: rooms, hardening, FST validation, REST API
 ├── analytics.js              # SQLite analytics: visits, games, turns tracking
 ├── auth.js                   # Auth helpers: access/refresh tokens, password hashing, cookie/session utilities
 ├── geo.js                    # Geo-IP resolver (provider + cache + IP hashing)
-├── download-fsts.js          # Script to download FST models from ThamizhiMorph
+├── download-fsts.js          # Backward-compatible setup wrapper that runs deterministic vendored FST build
 ├── package.json              # Server deps (ws, better-sqlite3); scripts: start, setup, test
 ├── test/
 │   └── auth-integration.test.js # Node integration tests: auth lifecycle, /api/games authz, WS auth close codes
 ├── analytics.db              # SQLite database (auto-created, gitignored)
 └── fst-models/               # Runtime FST model files (11 core models)
-wordlists/
+static-word-list/
 ├── build_dictionary.py       # Builds combined dictionary from all sources
-├── generate_fst_forms.py     # Generates noun/adj/adv inflections via flookup
+├── generate_fst_forms.py     # Generates noun/adj/adv inflections via local built flookup models
 ├── tamillexicon_headwords.txt # Tamil Lexicon source headwords (107K)
-├── fst-models/               # Cached FST models for offline generation
-├── fst_generated_forms.txt   # Output: 1.16M FST-generated surface forms
+├── fst_generated_forms.txt   # Output: generated FST surface forms (count depends on current model build)
 ├── cache/                    # Cached downloads (verb files, Wiktionary TSV)
-└── WORD_VALIDATION_PLAN.md   # Original research & phased implementation plan
+└── fst-models/               # Synced FST consumer copy for dictionary tooling compatibility
+build/
+└── fst-models/               # Canonical generated FST artifacts (synced to server/static-word-list)
+fst/
+├── README.md                 # Vendored upstream + patch/build/test workflow documentation
+├── patches/                  # Ordered local source patches applied to upstream foma sources
+├── build/
+│   ├── build_fsts.py         # Deterministic extractor/patcher/compiler/copier + manifest generator
+│   └── manifest.json         # Last build metadata: submodule commit, patch hashes, output checksums
+├── reports/                  # Analysis outputs, including upstream-vs-patched diff audits
+│   ├── THAMIZHIMORPH_FST_AUDIT.md      # Prior single-build audit report
+│   ├── THAMIZHIMORPH_FST_AUDIT_DIFF.md # Differential audit: upstream vs Solmaalai patched
+│   ├── THAMIZHIMORPH_FST_SHORTCOMINGS.md # Patch-discovery audit over shipped models
+│   ├── NOUN_CLASS_DUPLICATES.md         # Noun class duplication audit (baseline vs patched)
+│   └── artifacts/
+│       ├── diff/             # Diff harness + generated upstream/patched artifacts and TSVs
+│       └── shortcomings/     # Shortcomings harness + probe outputs + golden probes
+└── tests/
+    ├── run_fst_regressions.py # CI-friendly morphology + dictionary regression checks
+    ├── analyze_fst.py        # Audit harness for suspicious pattern and coverage analysis
+    ├── config/               # Analysis config presets (nouns, verbs)
+    └── fixtures/             # known-good/known-bad/regression fixtures
+vendor/
+└── thamizhi-morph/           # Git submodule pinned to upstream commit (currently a296417ac603fd44eda35645369f1257d96bed89)
 public/
 ├── logo.png                  # Game logo (optional — landing page hides slot if missing)
-├── tamil_dictionary.txt      # 2.85M-word dictionary served to browser
+├── tamil_dictionary.txt      # Generated Tamil dictionary served to browser (size/count depends on latest build)
 ├── index.html                # HTML shell with <title> and meta tags
 └── manifest.json             # PWA manifest with game name
 src/
@@ -103,7 +129,7 @@ src/
 .env.production               # Optional frontend production overrides (usually empty)
 ecosystem.config.js           # PM2 process manager config (legacy DO deploy)
 Dockerfile                    # Combined build: React frontend + Node.js server (with LFS fallback)
-.dockerignore                 # Excludes node_modules, env files, wordlists from Docker context
+.dockerignore                 # Excludes node_modules, env files, static-word-list from Docker context
 railway.toml                  # Railway deploy config: watchPatterns to skip doc-only builds
 ```
 
@@ -220,7 +246,7 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 
 ### Client-Side Dictionary
 
-- **File**: `public/tamil_dictionary.txt` — 2.85M words, sorted (Unicode codepoint order)
+- **File**: `public/tamil_dictionary.txt` — generated word list, sorted (Unicode codepoint order)
 - **Loaded** on app startup via `loadDictionary()` in `src/utils/dictionary.js`
 - **Client persistence**: `loadDictionary()` now caches the dictionary text in IndexedDB (`solmaalai-cache/assets`) and reuses it on refresh to avoid repeated 135MB downloads (including private/incognito sessions while storage remains available)
 - **Gameplay guard**: Play submission is blocked until dictionary load completes (loading toast + disabled Play button)
@@ -228,24 +254,40 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 - **Permissive fallback**: If dictionary fails to load or is too small (< 1000 entries, e.g. LFS pointer), all words are accepted
 - **Cache invalidation knob**: `REACT_APP_DICTIONARY_CACHE_VERSION` (frontend build env) can be bumped when dictionary content changes to force a one-time refetch
 
-### Dictionary Sources (built by `wordlists/build_dictionary.py`)
+### Dictionary Sources (built by `static-word-list/build_dictionary.py`)
 
 | Source | Words | Description |
 |--------|-------|-------------|
 | Tamil Lexicon headwords | 106K | Classical Tamil headwords from University of Madras |
 | Vuizur Wiktionary TSV | 5.5K | Modern Tamil headwords from Wiktionary |
 | ThamizhiMorph Generated-Verbs | 1.69M | Pre-generated verb inflections (18 conjugation classes) |
-| FST-generated forms | 1.16M | Noun inflections (case × number), adjectives, adverbs |
-| **Total (deduplicated)** | **2.85M** | Filtered to ≤15 Tamil letters |
+| FST-generated forms | Build-dependent | Noun inflections (case × number), adjectives, adverbs |
+| **Total (deduplicated)** | **Build-dependent** | Filtered to ≤15 Tamil letters |
 
-### FST Form Generation (`wordlists/generate_fst_forms.py`)
+### FST Form Generation (`static-word-list/generate_fst_forms.py`)
 
-1. Downloads FST models from `sarves/thamizhi-morph/FST-Models/` on GitHub
+1. Uses canonical built FST models from `build/fst-models/` (built by `npm run fst:build`)
 2. Feeds 116K Tamil Lexicon headwords through forward `flookup` to identify recognized nouns
 3. Generates all inflected forms via inverse `flookup -i` with morphological tags:
    - `noun.fst`: 16 tags (nom/acc/dat/loc/abl/gen/inst/soc × sg/pl)
 4. Also processes adj, adv, part, pronoun FSTs for forward recognition
-5. Requires: `brew install foma`
+5. Requires: `foma`/`flookup` installed and vendored submodule sources present
+
+### Vendored FST Build Pipeline (`fst/build/build_fsts.py`)
+
+1. Reads sources from pinned submodule `vendor/thamizhi-morph`
+2. Extracts relevant upstream zip bundles (`foma/*.zip`) into `fst/build/.work/<component>/`
+3. Applies local patches from `fst/patches/` in deterministic order
+4. Compiles FST binaries with `foma` and writes canonical outputs to:
+   - `build/fst-models/`
+5. Syncs generated outputs to:
+   - `static-word-list/fst-models/` (dictionary compatibility copy)
+   - `server/fst-models/` (runtime validation copy)
+6. Emits `fst/build/manifest.json` with submodule commit, patch SHA256 hashes, UTC build timestamp, output SHA256 checksums
+6. Current noun patches:
+   - `0001-fix-c11-acc.patch` (Class 11 noun accusative `^னை -> ^ை`)
+   - `0002-fix-noun-class-duplicates.patch` (removes cross-class duplicate noun roots to prevent class leakage)
+   - `0003-fix-noun-malformed-locatives.patch` (fixes C6 locative behavior, including `-ட்டு` subclass handling and malformed `^டிடம்` path)
 
 ### Server-Side FST Validation (`server/index.js`)
 
@@ -709,23 +751,24 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] **Pass Turn**: skip turn with confirmation dialog, broadcast to opponent
 - [x] Game End Logic: consecutive passes/swaps (4 total) or tiles exhausted
 - [x] **Game Over overlay**: translated scores, winner display, play-again prompt
-- [x] **Dictionary Validation (client-side)**: 2.85M-word dictionary with binary search (<1ms lookup)
+- [x] **Dictionary Validation (client-side)**: Generated large Tamil dictionary with binary search (<1ms lookup)
 - [x] **Dictionary Build Pipeline**: Python scripts combining Tamil Lexicon + Wiktionary + ThamizhiMorph verbs + FST noun/adj/adv forms
-- [x] **FST Form Generation**: Generates 1.16M noun inflections from 97K lemmas using foma/flookup
+- [x] **FST Form Generation**: Generates noun/adj/adv/part/pronoun-derived forms using local foma/flookup models
 - [x] **Server-side FST Validation**: 11 core long-lived flookup processes by default
+- [x] **Vendored FST Upstream Management**: pinned `vendor/thamizhi-morph` submodule + local patch/build/manifest/regression framework under `fst/`
 - [x] **Validation UI**: Async submit with spinner during server check, dictionary-loading toast, disabled Play until ready, error toasts for invalid words
 - [x] **Bilingual UI**: Tamil/English language toggle across all components including landing page
 - [x] **Help modal**: bilingual game instructions (8 sections), available on landing page and in-game
 - [x] **Confirmation dialogs**: Pass turn and new game (when game in progress) require confirmation
 - [x] **Tamil-inspired design**: peacock blue, vermilion, gold, teal, jade color scheme
-- [x] **Deployment config**: PM2 + nginx + TLS setup with DEPLOY.md guide
+- [x] **Deployment config**: Railway Docker deployment workflow documented in `deploy/DEPLOY.md`
 - [x] **Analytics**: SQLite tracking for visits/games/turns with password-protected admin APIs (`/api/admin/*`)
 - [x] **Geo analytics**: coarse Geo-IP enrichment for visits/profiles/games, hashed player IP tracking, and country breakdown admin endpoints
 - [x] **Analytics Inspector UI**: `?analytics=1` view with summary cards, country breakdowns, game/user inspection, and board replay slider
 - [x] **Auth integration test suite** (`cd server && npm test`): covers auth lifecycle with CSRF enforcement, account-scoped `/api/games/:gameId` authorization, and WS close codes `4004`/`4005` plus room-full `4001`
 
 - [x] **Single Player Mode**: Play vs Computer with client-side AI engine
-  - Anchor-based word generation with dictionary prefix pruning (O(log 2.85M) per check)
+  - Anchor-based word generation with dictionary prefix pruning (O(log N) per check against sorted dictionary)
   - Tamil MEY+UYIR tile merging for UYIRMEY combinations
   - Cross-word validation, score calculation with multipliers
   - 5s search budget + timeout-aware quick fallback search before swap/pass fallback
@@ -789,9 +832,14 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - Landing page: inline styles in `App.js` `LandingPage` component
 
 ### Rebuilding the Dictionary
-1. (Optional) Regenerate FST forms: `cd wordlists && python3 generate_fst_forms.py`
-2. Build combined dictionary: `cd wordlists && python3 build_dictionary.py`
-3. Output: `public/tamil_dictionary.txt` (served to browser)
+1. Build/refresh local FST binaries from pinned upstream + patches: `npm run fst:build`
+2. Regenerate FST surface forms: `python3 static-word-list/generate_fst_forms.py`
+3. Build combined dictionary: `python3 static-word-list/build_dictionary.py`
+4. Run regression checks (including dictionary include/exclude assertions): `python3 fst/tests/run_fst_regressions.py --check-dictionary`
+5. Output: `public/tamil_dictionary.txt` (served to browser)
+
+Shortcut:
+- `npm run dict:build` executes the full sequence above (`fst:build` + form generation + dictionary build + regression check).
 
 ### Adding a New WebSocket Message Type
 1. Add handler in `server/index.js` switch statement
@@ -872,14 +920,17 @@ The server at `server/index.js` is an HTTP + WebSocket server on a single port:
 14. Periodically cleans expired/revoked auth sessions and consumed/expired verification/reset tokens (`AUTH_CLEANUP_INTERVAL_MINUTES`, default 30)
 15. Cleans up empty rooms after 5 minutes
 16. Gracefully shuts down flookup processes, analytics DB, and HTTP server on SIGINT
-17. Start with: `cd server && npm run setup && npm start`
+17. Start with: `npm run fst:build && cd server && npm start` (or `cd server && npm run setup && npm start` via compatibility wrapper)
 18. Serves React static assets with HTTP cache headers and conditional request handling (`ETag` + `Last-Modified`): hashed build assets are immutable for 1 year, `tamil_dictionary.txt` is cached for 24h, and fresh conditional requests return `304 Not Modified`
 
 ### FST Models
-- **Build-time** (`wordlists/fst-models/`): Used by `generate_fst_forms.py` to pre-generate noun inflections
+- **Canonical output** (`build/fst-models/`): Generated by `npm run fst:build`
+- **Build-time consumer copy** (`static-word-list/fst-models/`): Used by dictionary tooling compatibility paths
 - **Runtime** (`server/fst-models/`): Used by server's flookup processes for real-time validation
-- Download commands: `cd wordlists && python3 generate_fst_forms.py` (build) or `cd server && npm run setup` (runtime)
-- Source: `github.com/sarves/thamizhi-morph/FST-Models/`
+- Build command: `npm run fst:build` (also invoked by `cd server && npm run setup`)
+- Source of truth: pinned submodule `vendor/thamizhi-morph` + local patches under `fst/patches/`
+- Regression command: `npm run fst:test`
+- Canonical architecture doc: `Docs/FST_ARCHITECTURE.md`
 
 ### Dictionary Binary Search
 The dictionary is sorted with Python's `sorted()` (Unicode codepoint order). The JavaScript binary search MUST use `<`/`>` operators, NOT `localeCompare()`. Locale-aware Tamil sorting differs from codepoint order and will cause lookup failures.
@@ -893,23 +944,16 @@ Usernames are stored in `localStorage` (`solladukku_username`) and synced to ser
 ### Deployment (Railway)
 Deployed as a single Dockerfile-based service on Railway:
 - `Dockerfile` builds the React frontend, then sets up the Node.js server
+- `Dockerfile` builds patched FST models during image build via `npm run fst:build` (using `vendor/thamizhi-morph` + `fst/patches`) before producing the frontend/server runtime image
 - Server serves the static React build for non-API routes + handles WebSocket/API on the same port
 - Static file caching is handled in `server/index.js` (not nginx): `ETag`/`Last-Modified` are emitted and respected so unchanged assets (including `tamil_dictionary.txt`) are revalidated and not re-downloaded on refresh
 - Auto-deploys on push to `main` (connected via GitHub integration)
 - `railway.toml` `watchPatterns` limits rebuilds to code changes (skips doc-only commits)
 - Custom domain: `solmaalai.com` (CNAME → Railway). `சொல்மாலை.com` redirects via Namecheap.
-- `Dockerfile` installs `foma`/`flookup`; server-side FST validation is available in production when FST models are present under `server/fst-models/`
+- `Dockerfile` installs `foma`/`flookup` and `git`; FST patch application/compilation runs in-container so production always uses patched runtime models generated at build time
 - `Dockerfile` also installs native build prerequisites (`python3`, `make`, `g++`) so `argon2` can compile if prebuilt binaries are unavailable
 - Dictionary file (135MB) stored via Git LFS. Railway's Docker builder doesn't resolve LFS pointers, so the Dockerfile detects this (file < 1KB) and downloads the actual file from GitHub.
 - Railway CLI: `railway up` for manual deploy, `railway logs` to check output
-
-### Deployment (Legacy - Digital Ocean)
-See `deploy/DEPLOY.md` for Digital Ocean deployment instructions:
-- Ubuntu 22.04 droplet (2GB+ RAM for flookup processes)
-- nginx serves React build as static files + reverse proxies `/ws/` to WebSocket server
-- PM2 manages server process with auto-restart
-- Let's Encrypt for TLS via certbot
-- Dictionary file (~135MB) served with gzip compression (~25MB)
 
 ### Debugging
 Console logs are present throughout for debugging. Key areas:
