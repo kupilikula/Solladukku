@@ -817,6 +817,15 @@ function getActiveGameRowId(gameId) {
     return activeGames.get(gameId) || null;
 }
 
+function backfillGameAccountIdByRowId(rowId, accountId) {
+    if (!rowId || !accountId) return;
+    db.prepare(`
+        UPDATE games
+        SET account_id = ?
+        WHERE id = ? AND (account_id IS NULL OR account_id = '')
+    `).run(accountId, rowId);
+}
+
 function ensureGameSession(gameId, player1Id, options = {}) {
     const existing = db.prepare(`
         SELECT id, ended_at
@@ -871,6 +880,10 @@ function recordTurn(gameId, {
             WHERE games_row_id = ?
         `).get(rowId)?.maxTurn || 0;
         turnCounters.set(rowId, Number(turnCount || 0));
+    }
+
+    if (accountId) {
+        backfillGameAccountIdByRowId(rowId, accountId);
     }
 
     const turnNumber = (turnCounters.get(rowId) || 0) + 1;
@@ -1172,18 +1185,30 @@ function getAccountGames(accountId, linkedUserIds = [], limit = 20) {
     const userClause = userIds.length
         ? ` OR g.player1_id IN (${userIds.map(() => '?').join(',')}) OR g.player2_id IN (${userIds.map(() => '?').join(',')})`
         : '';
-    const totalParams = [accountId, ...userIds, ...userIds];
+    const activityClause = `
+        OR EXISTS (
+            SELECT 1
+            FROM turns t
+            WHERE t.games_row_id = g.id AND t.account_id = ?
+        )
+        OR EXISTS (
+            SELECT 1
+            FROM game_state_snapshots s
+            WHERE s.games_row_id = g.id AND s.account_id = ?
+        )
+    `;
+    const totalParams = [accountId, ...userIds, ...userIds, accountId, accountId];
     const total = db.prepare(`
         SELECT COUNT(*) as count
         FROM games g
-        WHERE g.account_id = ?${userClause}
+        WHERE g.account_id = ?${userClause}${activityClause}
     `).get(...totalParams).count;
 
     const snapshotClause = userIds.length
         ? `s.account_id = ? OR s.user_id IN (${userIds.map(() => '?').join(',')})`
         : `s.account_id = ?`;
     const snapshotParams = [accountId, ...userIds];
-    const itemParams = [...snapshotParams, accountId, ...userIds, ...userIds, safeLimit];
+    const itemParams = [...snapshotParams, accountId, ...userIds, ...userIds, accountId, accountId, safeLimit];
     const items = db.prepare(`
         SELECT
             g.id,
@@ -1208,7 +1233,7 @@ function getAccountGames(accountId, linkedUserIds = [], limit = 20) {
         FROM games g
         LEFT JOIN players p1 ON p1.user_id = g.player1_id
         LEFT JOIN players p2 ON p2.user_id = g.player2_id
-        WHERE g.account_id = ?${userClause}
+        WHERE g.account_id = ?${userClause}${activityClause}
         ORDER BY
             CASE WHEN g.ended_at IS NULL THEN 0 ELSE 1 END,
             COALESCE(g.ended_at, g.started_at, g.created_at) DESC
@@ -1291,13 +1316,25 @@ function getAccountGameDetail(accountId, gameId, linkedUserIds = []) {
     const userClause = userIds.length
         ? ` OR g.player1_id IN (${userIds.map(() => '?').join(',')}) OR g.player2_id IN (${userIds.map(() => '?').join(',')})`
         : '';
-    const gameParams = [gameId, accountId, ...userIds, ...userIds];
+    const activityClause = `
+        OR EXISTS (
+            SELECT 1
+            FROM turns t
+            WHERE t.games_row_id = g.id AND t.account_id = ?
+        )
+        OR EXISTS (
+            SELECT 1
+            FROM game_state_snapshots s
+            WHERE s.games_row_id = g.id AND s.account_id = ?
+        )
+    `;
+    const gameParams = [gameId, accountId, ...userIds, ...userIds, accountId, accountId];
     const game = db.prepare(`
         SELECT g.*, p1.username as player1_name, p2.username as player2_name
         FROM games g
         LEFT JOIN players p1 ON p1.user_id = g.player1_id
         LEFT JOIN players p2 ON p2.user_id = g.player2_id
-        WHERE g.game_id = ? AND (g.account_id = ?${userClause})
+        WHERE g.game_id = ? AND (g.account_id = ?${userClause}${activityClause})
         ORDER BY g.created_at DESC
         LIMIT 1
     `).get(...gameParams);
@@ -1392,6 +1429,10 @@ function saveGameStateSnapshot({ gameId, userId, accountId = null, state }) {
     if (!rowId) {
         console.log('[analytics snapshot] no game row found', { gameId, userId });
         return false;
+    }
+
+    if (accountId) {
+        backfillGameAccountIdByRowId(rowId, accountId);
     }
 
     db.prepare(`
