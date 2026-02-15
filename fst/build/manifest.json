@@ -1,5 +1,5 @@
 {
-  "built_at_utc": "2026-02-15T13:33:23.093215+00:00",
+  "built_at_utc": "2026-02-15T13:58:44.289543+00:00",
   "submodule": {
     "path": "vendor/thamizhi-morph",
     "commit": "a296417ac603fd44eda35645369f1257d96bed89"
@@ -113,8 +113,8 @@
   "outputs": [
     {
       "file": "adj.fst",
-      "sha256": "7be62fb5c91c42e820c577bc3e95e3c08f23e7a30f64620237029cfcec72dc81",
-      "size_bytes": 7510,
+      "sha256": "6f782b3e1bc478cf6ac73bac36245747e0dfee5471406171a66ed448e5a35bcf",
+      "size_bytes": 7508,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -123,8 +123,8 @@
     },
     {
       "file": "adv.fst",
-      "sha256": "ba1ef0a61650a1ca9e363d43a087d86021575159d44be14aca2efe1998170978",
-      "size_bytes": 13553,
+      "sha256": "d58949af0739889e1f53d4847bb163164c20118e784c1a4afd94e58a1cece5c6",
+      "size_bytes": 13551,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -133,8 +133,8 @@
     },
     {
       "file": "noun.fst",
-      "sha256": "c52e64181cf5033790bec15bc9b3c4fc60c7b2dfdaafec839c6282af98c13255",
-      "size_bytes": 164188,
+      "sha256": "89c99644487cd206555e9a7da84151e34b1aafb8b930d4acb98b3f52545e88a2",
+      "size_bytes": 164186,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -143,8 +143,8 @@
     },
     {
       "file": "part.fst",
-      "sha256": "00a4dc5b0adaf25e0bdb26ff78d71c3aedb651e10420c42106eb4eb64ef3b297",
-      "size_bytes": 4499,
+      "sha256": "e97542881013da730c3733edb5538a8047af634fea182069ae4f6d18eae3e161",
+      "size_bytes": 4498,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -163,8 +163,8 @@
     },
     {
       "file": "verb-c-rest.fst",
-      "sha256": "4eb836cc97ade18019b1c9a0250b968d26a791fd803462e9b49e7070a01b6964",
-      "size_bytes": 123654,
+      "sha256": "14e620bd862941fb1233527c5ffb8bdec404521ab2d44d5b886b7129210aeb74",
+      "size_bytes": 123651,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -173,8 +173,8 @@
     },
     {
       "file": "verb-c11.fst",
-      "sha256": "f1207a081ed80b702c486674f3b08b3f5f91f54ba0e718857464133adae6f978",
-      "size_bytes": 66925,
+      "sha256": "e6dee660e0dcd3e46b944712ed41b74bce6f7b8488c7af86f6b36c4dad2710a7",
+      "size_bytes": 66923,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -183,8 +183,8 @@
     },
     {
       "file": "verb-c12.fst",
-      "sha256": "4ec136e3639098b6d89895eeeea892aac27ef3d5a3ee82746426494f00462dae",
-      "size_bytes": 43762,
+      "sha256": "7f9d521f9fc56005c391923909d1d28e1d32eb7e46aaef29c36cad1cc538f7dd",
+      "size_bytes": 43759,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -193,8 +193,8 @@
     },
     {
       "file": "verb-c3.fst",
-      "sha256": "9ea5a4a32679af966d4e2dd33d2d26f67a3c8d0f88925e1fa0e1466dcc1a13f8",
-      "size_bytes": 12757,
+      "sha256": "f385cfdba77a051eaf03904aade689e0306117e5814f01b1a3885fcfda3233c2",
+      "size_bytes": 12756,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -203,8 +203,8 @@
     },
     {
       "file": "verb-c4.fst",
-      "sha256": "ac8f54010547c6b54891ba22e3341a1d32c7a52f852270e4ada8a1ae8de4d42a",
-      "size_bytes": 39157,
+      "sha256": "83fd2c57d610a0d2db266fd2ae10f08bd4c2f7679df3a8f0e66954e49a77290e",
+      "size_bytes": 39150,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -213,8 +213,8 @@
     },
     {
       "file": "verb-c62.fst",
-      "sha256": "d41b6d26516c03caaf66019e0825887b6f39214bf57378b4f71733548e17dcdb",
-      "size_bytes": 12418,
+      "sha256": "4a4c1a50edc50b186460aaf8109b5165ac4067917e17469a3ddce05946ad06b5",
+      "size_bytes": 12416,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",

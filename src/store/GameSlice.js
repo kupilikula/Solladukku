@@ -22,6 +22,7 @@ export const GameSlice = createSlice({
         swapMode: false,          // Is the player selecting tiles to swap?
         gameMode: null,           // 'singleplayer' or 'multiplayer'
         soloResumePending: false, // Waiting for solo resume hydration
+        soloAiRack: [],           // AI rack for single-player snapshot/restore
     },
     reducers: {
         setMyTurn: (state, action) => {
@@ -55,6 +56,9 @@ export const GameSlice = createSlice({
         setSoloResumePending: (state, action) => {
             state.soloResumePending = Boolean(action.payload);
         },
+        setSoloAiRack: (state, action) => {
+            state.soloAiRack = Array.isArray(action.payload) ? action.payload.slice(0, 14) : [];
+        },
     },
     extraReducers: builder => {
         builder
@@ -70,6 +74,7 @@ export const GameSlice = createSlice({
                 state.gameOver = false;
                 state.winner = null;
                 state.gameOverReason = null;
+                state.soloAiRack = [];
             })
             .addCase(storeUserId, (state, action) => {
                 state.userId = action.payload.userId;
@@ -136,6 +141,7 @@ export const GameSlice = createSlice({
                 state.gameOver = false;
                 state.winner = null;
                 state.gameOverReason = null;
+                state.soloAiRack = [];
             })
             .addCase(passTurn, (state, action) => {
                 // Player passed - increment counter and switch turns
@@ -202,10 +208,13 @@ export const GameSlice = createSlice({
                 state.swapMode = false;
                 state.gameMode = targetMode;
                 state.soloResumePending = false;
+                state.soloAiRack = Array.isArray(game.soloAiRack)
+                    ? game.soloAiRack.slice(0, 14)
+                    : [];
             })
     }
 })
 
-export const { setMyTurn, setCurrentTurnUserId, setPlayerName, clearNeedsInitialDraw, setAutoStartPending, setNeedsInitialDraw, setMyInitialDraw, setSwapMode, setGameMode, setSoloResumePending } = GameSlice.actions
+export const { setMyTurn, setCurrentTurnUserId, setPlayerName, clearNeedsInitialDraw, setAutoStartPending, setNeedsInitialDraw, setMyInitialDraw, setSwapMode, setGameMode, setSoloResumePending, setSoloAiRack } = GameSlice.actions
 
 export default GameSlice.reducer

@@ -153,7 +153,7 @@ function MultiplayerGameFrame() {
 }
 
 function SinglePlayerGameFrame({ resumeMode }) {
-    useAIGameSync();
+    useAIGameSync({ resumeMode });
     useSoloGamePersistence({ isResume: resumeMode });
     return <GameFrameInner />;
 }

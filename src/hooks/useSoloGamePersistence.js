@@ -55,6 +55,7 @@ function buildSoloSnapshot({ game, wordBoard, letterRack, letterBags, scoreBoard
             winner: game.winner || null,
             gameOverReason: game.gameOverReason || null,
             myInitialDraw: Array.isArray(game.myInitialDraw) ? game.myInitialDraw.slice() : null,
+            soloAiRack: Array.isArray(game.soloAiRack) ? game.soloAiRack.slice(0, 14) : [],
         },
         wordBoard: {
             playedTilesWithPositions: Array.isArray(wordBoard.playedTilesWithPositions)
@@ -118,7 +119,9 @@ export function useSoloGamePersistence({ isResume = false }) {
                     userId: game.userId,
                     username: game.username || 'Player',
                 }),
-            }).catch(() => {});
+            }).catch((err) => {
+                console.warn('[solo persistence] /api/solo/start failed', err?.message || err);
+            });
         }
     }, [game.gameMode, game.gameId, game.userId, game.username, game.gameStarted, isResume, scoreBoard.allTurns]);
 
@@ -153,7 +156,9 @@ export function useSoloGamePersistence({ isResume = false }) {
                     placedTiles,
                     formedWords,
                 }),
-            }).catch(() => {});
+            }).catch((err) => {
+                console.warn('[solo persistence] /api/solo/turn failed', err?.message || err);
+            });
         });
     }, [game.gameMode, game.gameId, game.userId, game.gameStarted, scoreBoard.allTurns]);
 
@@ -172,7 +177,9 @@ export function useSoloGamePersistence({ isResume = false }) {
                 winnerId: game.winner,
                 reason: game.gameOverReason,
             }),
-        }).catch(() => {});
+        }).catch((err) => {
+            console.warn('[solo persistence] /api/solo/end failed', err?.message || err);
+        });
     }, [game.gameMode, game.gameId, game.userId, game.gameStarted, game.gameOver, game.winner, game.gameOverReason]);
 
     const snapshot = useMemo(() => {
@@ -196,7 +203,9 @@ export function useSoloGamePersistence({ isResume = false }) {
                 }),
             }).then(() => {
                 lastSnapshotHashRef.current = hash;
-            }).catch(() => {});
+            }).catch((err) => {
+                console.warn('[solo persistence] /api/solo/snapshot failed', err?.message || err);
+            });
         }, 300);
 
         return () => clearTimeout(timer);

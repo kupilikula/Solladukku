@@ -2,7 +2,7 @@ import { useEffect, useRef, useCallback } from 'react';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import { replenishRack, initializeNewGameState, addOtherPlayerTurn, setGameOver, syncOpponentDraw, syncPassTurn, syncSwapTiles } from '../store/actions';
 import { addPlayers } from '../store/actions';
-import { setGameMode } from '../store/GameSlice';
+import { setGameMode, setSoloAiRack } from '../store/GameSlice';
 import { initialConsonantsBag, initialVowelsBag, initialBonusBag } from '../utils/initialLetterBags';
 import { computeAIMove } from '../ai/aiEngine';
 import { isDictionaryLoaded } from '../utils/dictionary';
@@ -53,7 +53,7 @@ function drawAITiles(playerTileKeys, dispatch, aiRackRef) {
     return aiTileKeys;
 }
 
-export function useAIGameSync() {
+export function useAIGameSync({ resumeMode = false } = {}) {
     const dispatch = useDispatch();
     const store = useStore();
     const aiRackRef = useRef([]);
@@ -74,16 +74,37 @@ export function useAIGameSync() {
     const opponentScore = useSelector(state => state.ScoreBoard.otherPlayersTotalScores[0] || 0);
     const myInitialDraw = useSelector(state => state.Game.myInitialDraw);
     const soloResumePending = useSelector(state => state.Game.soloResumePending);
+    const persistedAiRack = useSelector(state => state.Game.soloAiRack);
+
+    const syncAiRack = useCallback((nextRack) => {
+        aiRackRef.current = Array.isArray(nextRack) ? nextRack.slice(0, 14) : [];
+        dispatch(setSoloAiRack(aiRackRef.current));
+    }, [dispatch]);
 
     // Initialize game on mount
     useEffect(() => {
         if (initializedRef.current) return;
+        if (resumeMode) return;
         if (soloResumePending) return;
         initializedRef.current = true;
 
         const preloadedState = store.getState();
         if (preloadedState.Game.gameStarted && preloadedState.Game.gameMode === 'singleplayer') {
             console.log('Single player resume detected, skipping fresh initialization');
+            const restoredRack = Array.isArray(preloadedState.Game.soloAiRack)
+                ? preloadedState.Game.soloAiRack.filter(Boolean)
+                : [];
+            if (restoredRack.length > 0) {
+                syncAiRack(restoredRack);
+            } else {
+                // Backward compatibility for old snapshots that did not persist AI rack.
+                const fallbackRack = fetchNLettersFromBags(14, preloadedState.LetterBags || {
+                    consonantsBag: {},
+                    vowelsBag: {},
+                    bonusBag: {},
+                });
+                syncAiRack(fallbackRack);
+            }
             return;
         }
 
@@ -98,6 +119,7 @@ export function useAIGameSync() {
         dispatch(replenishRack(playerTiles));
 
         const aiTileKeys = drawAITiles(playerTiles, dispatch, aiRackRef);
+        dispatch(setSoloAiRack(aiTileKeys));
         aiDecisionRef.current = { recentSwapSignatures: [], consecutiveAISwaps: 0 };
 
         dispatch(addPlayers({ otherPlayerIds: [AI_USER_ID] }));
@@ -107,7 +129,7 @@ export function useAIGameSync() {
         prevMyInitialDrawRef.current = playerTiles;
 
         console.log('Single player game initialized. Player tiles:', playerTiles, 'AI tiles:', aiTileKeys);
-    }, [dispatch, store, soloResumePending]);
+    }, [dispatch, store, resumeMode, soloResumePending, syncAiRack]);
 
     // Handle "New Game" from ActionMenu: when player starts a new game,
     // myInitialDraw changes — draw new AI tiles from the fresh bags
@@ -118,6 +140,7 @@ export function useAIGameSync() {
 
         // Player started a new game — draw AI tiles from remaining bags
         const aiTileKeys = drawAITiles(myInitialDraw, dispatch, aiRackRef);
+        dispatch(setSoloAiRack(aiTileKeys));
         aiDecisionRef.current = { recentSwapSignatures: [], consecutiveAISwaps: 0 };
 
         // Re-add computer as opponent (otherPlayerIds persists, but just in case)
@@ -128,6 +151,12 @@ export function useAIGameSync() {
 
         console.log('New game: AI re-drew tiles:', aiTileKeys);
     }, [myInitialDraw, dispatch, store]);
+
+    useEffect(() => {
+        if (!Array.isArray(persistedAiRack) || persistedAiRack.length === 0) return;
+        if (aiRackRef.current.length > 0) return;
+        aiRackRef.current = persistedAiRack.slice(0, 14);
+    }, [persistedAiRack]);
 
     // Watch for consecutive passes reaching the threshold
     useEffect(() => {
@@ -179,7 +208,7 @@ export function useAIGameSync() {
             const tilesNeeded = 14 - newRack.length;
             const drawnTiles = tilesNeeded > 0 ? fetchNLettersFromBags(tilesNeeded, currentBags) : [];
             newRack.push(...drawnTiles);
-            aiRackRef.current = newRack;
+            syncAiRack(newRack);
 
             const cleanTurnInfo = {
                 turnUserId: turnInfo.turnUserId,
@@ -220,7 +249,7 @@ export function useAIGameSync() {
                 }
             }
             newRack.push(...drawnTiles);
-            aiRackRef.current = newRack;
+            syncAiRack(newRack);
 
             dispatch(syncSwapTiles({
                 returnedTiles: originalReturnedTiles,
@@ -237,7 +266,7 @@ export function useAIGameSync() {
             aiDecisionRef.current.consecutiveAISwaps = 0;
             console.log('AI passed');
         }
-    }, [dispatch, store]);
+    }, [dispatch, store, syncAiRack]);
 
     // Watch for AI turn
     useEffect(() => {

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useWebSocket } from '../context/WebSocketContext';
 
@@ -108,6 +108,32 @@ export function useGameSnapshotSync() {
     }, [game, wordBoard.playedTilesWithPositions, letterRack.tilesList, letterBags, scoreBoard]);
 
     const lastSentHashRef = useRef('');
+    const lastTurnCountRef = useRef(0);
+    const lastGameOverRef = useRef(false);
+
+    const sendSnapshot = useCallback((nextSnapshot, hash, reason) => {
+        const ok = sendMessage({
+            messageType: 'stateSnapshot',
+            snapshot: nextSnapshot,
+        });
+        if (ok) {
+            lastSentHashRef.current = hash;
+            lastTurnCountRef.current = nextSnapshot?.scoreBoard?.allTurns?.length || 0;
+            lastGameOverRef.current = Boolean(nextSnapshot?.game?.gameOver);
+            console.log('[snapshot] sent', {
+                gameId: nextSnapshot.gameId,
+                reason,
+                playedTiles: nextSnapshot.wordBoard?.playedTilesWithPositions?.length || 0,
+                turns: nextSnapshot.scoreBoard?.allTurns?.length || 0,
+                myScore: nextSnapshot.scoreBoard?.myTotalScore || 0,
+            });
+        } else {
+            console.log('[snapshot] skipped (socket not ready)', {
+                gameId: nextSnapshot.gameId,
+                reason,
+            });
+        }
+    }, [sendMessage]);
 
     useEffect(() => {
         if (!snapshot || !isConnected) return;
@@ -115,26 +141,21 @@ export function useGameSnapshotSync() {
         const hash = JSON.stringify(snapshot);
         if (hash === lastSentHashRef.current) return;
 
+        const turnCount = snapshot?.scoreBoard?.allTurns?.length || 0;
+        const gameOver = Boolean(snapshot?.game?.gameOver);
+        const turnAdvanced = turnCount > lastTurnCountRef.current;
+        const gameJustEnded = gameOver && !lastGameOverRef.current;
+        const shouldFlushNow = turnAdvanced || gameJustEnded;
+
+        if (shouldFlushNow) {
+            sendSnapshot(snapshot, hash, turnAdvanced ? 'turn-advanced' : 'game-over');
+            return;
+        }
+
         const timer = setTimeout(() => {
-            const ok = sendMessage({
-                messageType: 'stateSnapshot',
-                snapshot,
-            });
-            if (ok) {
-                lastSentHashRef.current = hash;
-                console.log('[snapshot] sent', {
-                    gameId: snapshot.gameId,
-                    playedTiles: snapshot.wordBoard?.playedTilesWithPositions?.length || 0,
-                    turns: snapshot.scoreBoard?.allTurns?.length || 0,
-                    myScore: snapshot.scoreBoard?.myTotalScore || 0,
-                });
-            } else {
-                console.log('[snapshot] skipped (socket not ready)', {
-                    gameId: snapshot.gameId,
-                });
-            }
+            sendSnapshot(snapshot, hash, 'debounced');
         }, 250);
 
         return () => clearTimeout(timer);
-    }, [snapshot, isConnected, sendMessage]);
+    }, [snapshot, isConnected, sendSnapshot]);
 }

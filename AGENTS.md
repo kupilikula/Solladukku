@@ -85,8 +85,8 @@ src/
 │   └── LanguageContext.js    # Tamil/English toggle with 50+ translation keys
 ├── hooks/
 │   ├── useGameSync.js        # Multiplayer game sync (auto-start, initial draw, game-over)
-│   ├── useAIGameSync.js      # Single-player AI lifecycle (init, turn orchestration, rack mgmt)
-│   ├── useGameSnapshotSync.js # Debounced multiplayer snapshot persistence for refresh-safe resume
+│   ├── useAIGameSync.js      # Single-player AI lifecycle (init, turn orchestration, persisted AI rack restore)
+│   ├── useGameSnapshotSync.js # Multiplayer snapshot persistence: immediate flush on turn/game-over + debounced steady-state sync
 │   └── useSoloGamePersistence.js # Single-player DB persistence (start/turn/end/snapshot) for My Games continue/final-board view
 ├── components/
 │   ├── AuthPanel.js          # Landing-page auth panel: login/signup (with explicit signup username) + verify-email + forgot/reset password
@@ -161,6 +161,7 @@ The app opens to a landing page before entering any game:
 The WebSocket connection is only established for multiplayer entries.
 - **In-game Home navigation**: Game page shows a compact top bar with optional logo + "சொல்மாலை" title and a branded clickable link that returns to landing by clearing query params (navigates to current pathname) without an additional confirmation prompt.
 - **Fresh solo start guard**: Clicking **Play vs Computer** now skips the `/api/games/:gameId` resume fetch for newly generated `SOLO-*` ids and only runs resume-detail fetches when resume mode is active (URL-resume or My Games Continue). This avoids transient first-click `403` responses before `/api/solo/start` persists the new solo game row.
+- **Solo resume init guard**: In single-player resume mode, `useAIGameSync` now defers fresh game initialization until resume hydration is resolved, preventing accidental fresh-state overwrite of an existing solo snapshot during page refresh.
 - **Access guard on shared links**:
   - Solo links are account/user scoped (`/api/games/:gameId?userId=...` with account-first authorization). If an unauthenticated user opens a protected solo link and initial resume receives access denial (`401`/`403`/`404`), the app clears `?game`, returns to landing, prompts login, and retries the same link once after successful login.
   - If a foreign profile/session still fails authorization after retry (or an already-authenticated user opens a foreign solo link and gets `403`/`404`), the app clears `?game`, returns to landing, and shows "link not available for this user session" instead of silently starting a fresh game with the same code.
@@ -438,6 +439,7 @@ Analytics calls are added **after** existing `broadcastToRoom` calls — no chan
   swapMode: boolean,           // Whether swap tile selection mode is active
   gameMode: string | null,     // 'singleplayer' or 'multiplayer' (null before game entry)
   soloResumePending: boolean,  // True while URL-based solo resume hydration is in progress
+  soloAiRack: string[],        // Persisted AI rack for solo refresh-safe resume
 }
 ```
 
@@ -657,7 +659,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 2. Game initializes: `storeUserId` dispatched, `GameFrame` rendered without `WebSocketProvider`
 3. `useAIGameSync` hook activates:
    - Draws 14 player tiles from fresh bags → fills rack
-   - Draws 14 AI tiles from remaining bags → stored in `aiRackRef` (not Redux)
+   - Draws 14 AI tiles from remaining bags → mirrored to Redux `Game.soloAiRack` and restored from snapshot on resume
    - Deducts AI tiles from Redux bags via `syncOpponentDraw`
    - Sets `gameMode: 'singleplayer'`, adds `'computer-player'` as opponent
 4. Player places tiles and plays → turn switches to AI
@@ -690,7 +692,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 11. If a third user opens the same multiplayer link while 2 players are already in room, join is rejected (`4001`) and client routes back to landing with a room-full error.
 
 ### Multiplayer Resume + Final Board View
-1. Multiplayer clients persist debounced snapshots via `useGameSnapshotSync` (`stateSnapshot` WebSocket message).
+1. Multiplayer clients persist snapshots via `useGameSnapshotSync` (`stateSnapshot` WebSocket message), with immediate flush on turn-advance/game-over and debounced sync for non-critical state updates.
 2. Server stores snapshots in SQLite per `(games_row_id, user_id)`.
 3. On multiplayer entry, `App.js` loads `/api/games/:gameId?userId=...` and hydrates Redux via `hydrateGameSnapshot` when snapshot data is available.
 4. Landing-page **My Games** list enables:
