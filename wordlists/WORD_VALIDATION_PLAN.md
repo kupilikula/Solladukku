@@ -109,17 +109,16 @@ Used ThamizhiMorph FST models to generate noun inflections for all Tamil Lexicon
 1. `wordlists/generate_fst_forms.py` downloads FST models from GitHub
 2. Feeds 116K headwords through `flookup noun.fst` → identifies 3.5K recognized noun lemmas
 3. Generates all case/number inflections via `flookup -i` with 16 morphological tags
-4. `noun-guess.fst` handles 94K additional lemmas not in the main noun FST
-5. Also processes adj, adv, part, pronoun FSTs
-6. Total: 1.16M new surface forms (mostly noun inflections)
-7. `build_dictionary.py` merges them as Step 4 → final dictionary: **2.85M words**
+4. Also processes adj, adv, part, pronoun FSTs
+5. Total: 1.16M new surface forms (mostly noun inflections)
+6. `build_dictionary.py` merges them as Step 4 → final dictionary: **2.85M words**
 
-Key finding: `noun.fst` uses tags like `+noun+acc`, `+noun+pl+nom`; `noun-guess.fst` uses `+noun+sg+acc`, `+noun+pl+nom`.
+Key finding: `noun.fst` uses tags like `+noun+acc`, `+noun+pl+nom`.
 
 #### Phase 3: Server-side FST validation ✅ COMPLETE
 Server-side fallback for words not in the static dictionary, using Node.js (no Python needed):
-1. `server/download-fsts.js` downloads all 16 FST models to `server/fst-models/`
-2. `server/index.js` now loads 11 core long-lived `flookup` child processes by default (`ENABLE_GUESS_FSTS=true` opt-in for guesser models)
+1. `server/download-fsts.js` downloads 11 core FST models to `server/fst-models/`
+2. `server/index.js` now loads 11 core long-lived `flookup` child processes by default
 3. Client sends `validateWords` request via WebSocket with `requestId`
 4. Server validates against all FSTs in parallel, unicasts result back
 5. Client caches results in session-level Map — same word never re-queried

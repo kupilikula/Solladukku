@@ -54,7 +54,6 @@ const RATE_LIMIT_MAX_MESSAGES = 30;
 const MATCH_ASSIGNMENT_TTL_MS = 10 * 60 * 1000;
 const MATCHMAKING_QUEUE_TTL_MS = 2 * 60 * 1000;
 const STRICT_SERVER_VALIDATION = String(process.env.STRICT_SERVER_VALIDATION || '').toLowerCase() === 'true';
-const ENABLE_GUESS_FSTS = String(process.env.ENABLE_GUESS_FSTS || '').toLowerCase() === 'true';
 const ANALYTICS_ADMIN_PASSWORD = process.env.ANALYTICS_ADMIN_PASSWORD || '';
 const ANALYTICS_STORE_RAW_IP = String(process.env.ANALYTICS_STORE_RAW_IP || 'true').toLowerCase() !== 'false';
 const AUTH_ENABLED = auth.isAuthEnabled();
@@ -1661,14 +1660,6 @@ const CORE_FST_FILES = [
     'verb-c-rest.fst',
 ];
 
-const GUESS_FST_FILES = [
-    'noun-guess.fst',
-    'adj-guess.fst',
-    'adv-guess.fst',
-    'adverb-guesser.fst',
-    'verb-guess.fst',
-];
-
 // Long-lived flookup child processes: Map<fstName, { process, callbackQueue, alive }>
 const fstProcesses = new Map();
 let flookupAvailable = false;
@@ -1758,12 +1749,6 @@ function spawnFlookupProcess(fstName, attempt = 1) {
 }
 
 function initFstProcesses() {
-    const selectedFstFiles = ENABLE_GUESS_FSTS
-        ? [...CORE_FST_FILES, ...GUESS_FST_FILES]
-        : CORE_FST_FILES;
-
-    console.log(`FST guess models: ${ENABLE_GUESS_FSTS ? 'ENABLED' : 'DISABLED'}`);
-
     if (!checkFlookup()) {
         console.log('WARNING: flookup not found. Install with: brew install foma');
         if (STRICT_SERVER_VALIDATION) {
@@ -1783,7 +1768,7 @@ function initFstProcesses() {
         return;
     }
 
-    const availableFsts = selectedFstFiles.filter(f => fs.existsSync(path.join(FST_DIR, f)));
+    const availableFsts = CORE_FST_FILES.filter(f => fs.existsSync(path.join(FST_DIR, f)));
     if (availableFsts.length === 0) {
         console.log('WARNING: No FST models found. Run: npm run setup');
         if (STRICT_SERVER_VALIDATION) {

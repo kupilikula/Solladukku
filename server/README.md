@@ -62,7 +62,6 @@ Set `ANALYTICS_ADMIN_PASSWORD` on the server, then pass it as `X-Admin-Password`
 - Local development env defaults can be placed in `server/.env` (auto-loaded by `index.js`). Start from `server/.env.example`.
 - FST validation is permissive when `flookup`/models are unavailable.
 - Set `STRICT_SERVER_VALIDATION=true` to reject unknown words when server-side validation is unavailable.
-- Set `ENABLE_GUESS_FSTS=true` to include permissive `*-guess.fst` models (default is disabled for stricter validation).
 - Configure `ALLOWED_ORIGINS` in production for CORS and WebSocket origin checks.
 - Geo analytics is controlled by `GEO_PROVIDER=none|ipwhois|ipapi` (default `none`).
 - For Railway, configure healthcheck path to `/health`.

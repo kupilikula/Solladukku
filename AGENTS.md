@@ -35,7 +35,7 @@ server/
 ├── test/
 │   └── auth-integration.test.js # Node integration tests: auth lifecycle, /api/games authz, WS auth close codes
 ├── analytics.db              # SQLite database (auto-created, gitignored)
-└── fst-models/               # Runtime FST model files (16 downloaded; 11 core loaded by default)
+└── fst-models/               # Runtime FST model files (11 core models)
 wordlists/
 ├── build_dictionary.py       # Builds combined dictionary from all sources
 ├── generate_fst_forms.py     # Generates noun/adj/adv inflections via flookup
@@ -214,7 +214,6 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
                     │   └─ Server returns 'validateWordsResult' (unicast to requester only)
                     ├─ Single-player/no WebSocket: POST `/api/validate-words`
                     ├─ Server runs flookup against 11 core FST models by default
-                    ├─ Optional guesser FSTs can be enabled via env
                     └─ ANY FST recognizes word → valid
                   Client caches result → accept or reject
 ```
@@ -244,15 +243,13 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 1. Downloads FST models from `sarves/thamizhi-morph/FST-Models/` on GitHub
 2. Feeds 116K Tamil Lexicon headwords through forward `flookup` to identify recognized nouns
 3. Generates all inflected forms via inverse `flookup -i` with morphological tags:
-   - `noun.fst`: 16 tags (nom/acc/dat/loc/abl/gen/inst/soc × sg/pl) — 3.5K lemmas → 60K forms
-   - `noun-guess.fst`: 16 tags with `+sg`/`+pl` prefix — 94K lemmas → 1.1M forms
+   - `noun.fst`: 16 tags (nom/acc/dat/loc/abl/gen/inst/soc × sg/pl)
 4. Also processes adj, adv, part, pronoun FSTs for forward recognition
 5. Requires: `brew install foma`
 
 ### Server-Side FST Validation (`server/index.js`)
 
 - **11 long-lived core `flookup` child processes** by default (noun/adj/adv/part/pronoun + verb classes), stdin/stdout pipes kept open
-- **Optional guess models** (`*-guess.fst`) are disabled by default and enabled only with `ENABLE_GUESS_FSTS=true`
 - **FIFO callback queue** per process for concurrent lookups
 - **Parallel validation**: word checked against all FSTs simultaneously, accepted if ANY recognizes it
 - **Respawn logic**: crashed processes restart after 5s delay, max 3 attempts
@@ -715,7 +712,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] **Dictionary Validation (client-side)**: 2.85M-word dictionary with binary search (<1ms lookup)
 - [x] **Dictionary Build Pipeline**: Python scripts combining Tamil Lexicon + Wiktionary + ThamizhiMorph verbs + FST noun/adj/adv forms
 - [x] **FST Form Generation**: Generates 1.16M noun inflections from 97K lemmas using foma/flookup
-- [x] **Server-side FST Validation**: 11 core long-lived flookup processes by default (guesser models opt-in)
+- [x] **Server-side FST Validation**: 11 core long-lived flookup processes by default
 - [x] **Validation UI**: Async submit with spinner during server check, dictionary-loading toast, disabled Play until ready, error toasts for invalid words
 - [x] **Bilingual UI**: Tamil/English language toggle across all components including landing page
 - [x] **Help modal**: bilingual game instructions (8 sections), available on landing page and in-game
@@ -868,7 +865,7 @@ The server at `server/index.js` is an HTTP + WebSocket server on a single port:
 7. Rate-limits messages (30/sec sliding window) and rejects oversized messages (>100KB)
 8. Validates input per message type (chat text ≤ 500, validateWords ≤ 20, etc.)
 9. Handles `validateWords` requests via FST process pool (unicast response)
-10. Manages long-lived core `flookup` child processes with respawn on crash (guesser models optional via env)
+10. Manages long-lived core `flookup` child processes with respawn on crash
 11. Maintains random-opponent matchmaking queue (`/api/matchmaking/join|status|cancel`)
 12. Stores persistent player profiles + leaderboard data (`players` table, `/api/profile`, `/api/leaderboard`)
 13. **Hooks analytics** into game message handlers (newGame, turn, pass, swap, gameOver), including tile placement capture for board replay

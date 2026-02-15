@@ -7,7 +7,6 @@ Strategy:
    which headwords are recognized (e.g., as nouns, adjectives, etc.)
 2. For recognized lemmas, generate all inflected surface forms via inverse
    flookup with morphological tags (case, number, etc.)
-3. Also process headwords through guesser FSTs for broader coverage.
 
 Output: wordlists/fst_generated_forms.txt (one word per line, sorted, deduplicated)
 Cached FST models stored in: wordlists/fst-models/
@@ -32,15 +31,10 @@ GITHUB_BASE = "https://raw.githubusercontent.com/sarves/thamizhi-morph/master/FS
 # FST models to download
 ALL_FSTS = [
     "noun.fst",
-    "noun-guess.fst",
     "adj.fst",
-    "adj-guess.fst",
     "adv.fst",
-    "adv-guess.fst",
-    "adverb-guesser.fst",
     "part.fst",
     "pronoun.fst",
-    "verb-guess.fst",
 ]
 
 # Morphological tags for inverse generation per FST type.
@@ -48,14 +42,6 @@ ALL_FSTS = [
 NOUN_TAGS = [
     "+noun+nom", "+noun+acc", "+noun+dat", "+noun+loc",
     "+noun+abl", "+noun+gen", "+noun+inst", "+noun+soc",
-    "+noun+pl+nom", "+noun+pl+acc", "+noun+pl+dat", "+noun+pl+loc",
-    "+noun+pl+abl", "+noun+pl+gen", "+noun+pl+inst", "+noun+pl+soc",
-]
-
-# noun-guess.fst uses: lemma+noun+sg+{case} and lemma+noun+pl+{case}
-NOUN_GUESS_TAGS = [
-    "+noun+sg+nom", "+noun+sg+acc", "+noun+sg+dat", "+noun+sg+loc",
-    "+noun+sg+abl", "+noun+sg+gen", "+noun+sg+inst", "+noun+sg+soc",
     "+noun+pl+nom", "+noun+pl+acc", "+noun+pl+dat", "+noun+pl+loc",
     "+noun+pl+abl", "+noun+pl+gen", "+noun+pl+inst", "+noun+pl+soc",
 ]
@@ -231,36 +217,6 @@ def process_noun_fst(headwords: list) -> set:
     return forms
 
 
-def process_noun_guess_fst(headwords: list, already_recognized: set) -> set:
-    """Process noun-guess.fst for headwords not recognized by noun.fst."""
-    fst_path = FST_MODELS_DIR / "noun-guess.fst"
-    if not fst_path.exists():
-        return set()
-
-    print(f"\n  === noun-guess.fst ===")
-
-    # Only process headwords NOT already recognized by noun.fst
-    unrecognized = [hw for hw in headwords if hw not in already_recognized]
-    print(f"  {len(unrecognized)} headwords not recognized by noun.fst")
-
-    # Step 1: Find which are recognized by the guesser
-    print(f"  Forward lookup...")
-    recognized = forward_lookup_recognized(fst_path, unrecognized)
-    lemmas = list(set(r[0] for r in recognized))
-    print(f"  Recognized {len(lemmas)} additional noun lemmas")
-
-    # Step 2: Generate inflected forms with guesser tags
-    if not lemmas:
-        return set()
-    print(f"  Inverse generation...")
-    forms = inverse_generate_forms(fst_path, lemmas, NOUN_GUESS_TAGS)
-    for lemma in lemmas:
-        if is_valid_form(lemma):
-            forms.add(lemma)
-    print(f"  Total noun-guess forms: {len(forms)}")
-    return forms
-
-
 def process_simple_fst(fst_name: str, headwords: list) -> set:
     """
     Process adj/adv/part/pronoun FSTs. These don't have as many inflection
@@ -320,23 +276,11 @@ def main():
 
     # 3a: Noun FSTs (biggest payoff — noun inflections are the main gap)
     noun_forms = process_noun_fst(headwords)
-    noun_lemmas = set()
-    # Track which lemmas noun.fst recognized for noun-guess dedup
-    fst_path = FST_MODELS_DIR / "noun.fst"
-    if fst_path.exists():
-        recognized = forward_lookup_recognized(fst_path, headwords)
-        noun_lemmas = set(r[0] for r in recognized)
     all_forms |= noun_forms
     print(f"  Running total: {len(all_forms)} forms")
 
-    # 3b: Noun guesser (for headwords not in main noun FST)
-    guess_forms = process_noun_guess_fst(headwords, noun_lemmas)
-    all_forms |= guess_forms
-    print(f"  Running total: {len(all_forms)} forms")
-
-    # 3c: Other FSTs
-    for fst_name in ["adj.fst", "adj-guess.fst", "adv.fst", "adv-guess.fst",
-                      "adverb-guesser.fst", "part.fst", "pronoun.fst"]:
+    # 3b: Other FSTs
+    for fst_name in ["adj.fst", "adv.fst", "part.fst", "pronoun.fst"]:
         forms = process_simple_fst(fst_name, headwords)
         new = forms - all_forms
         print(f"  {fst_name}: {len(forms)} forms, {len(new)} new")

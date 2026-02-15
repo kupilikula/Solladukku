@@ -15,12 +15,8 @@ const GITHUB_BASE = 'https://raw.githubusercontent.com/sarves/thamizhi-morph/mas
 
 const FST_FILES = [
     'noun.fst',
-    'noun-guess.fst',
     'adj.fst',
-    'adj-guess.fst',
     'adv.fst',
-    'adv-guess.fst',
-    'adverb-guesser.fst',
     'part.fst',
     'pronoun.fst',
     'verb-c3.fst',
@@ -29,7 +25,6 @@ const FST_FILES = [
     'verb-c12.fst',
     'verb-c62.fst',
     'verb-c-rest.fst',
-    'verb-guess.fst',
 ];
 
 function download(url, destPath) {
