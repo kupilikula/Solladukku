@@ -61,7 +61,7 @@ src/
 │   ├── useGameSync.js        # Multiplayer game sync (auto-start, initial draw, game-over)
 │   ├── useAIGameSync.js      # Single-player AI lifecycle (init, turn orchestration, rack mgmt)
 │   ├── useGameSnapshotSync.js # Debounced multiplayer snapshot persistence for refresh-safe resume
-│   └── useSoloGamePersistence.js # Single-player DB persistence (start/turn/end/snapshot) for My Games resume/review
+│   └── useSoloGamePersistence.js # Single-player DB persistence (start/turn/end/snapshot) for My Games continue/final-board view
 ├── components/
 │   ├── AuthPanel.js          # Landing-page auth panel: login/signup (with explicit signup username) + verify-email + forgot/reset password
 │   ├── AnalyticsViewer.js    # Password-protected analytics inspector (`?analytics=1`) with session-cached admin header, visible API error messaging, board replay fallback from formed-word tile coordinates, and per-turn Jump controls
@@ -121,17 +121,17 @@ The app opens to a landing page before entering any game:
 - **"New Game With Invited Opponent" button** (`புது ஆட்டம் அழைப்புடன்`): Creates a private multiplayer room, sets `?game=` in URL, and auto-opens invite modal in-game
 - **"Play Random Opponent" button** (`யாவொருவருடன் விளையாடு`): Joins queue-based matchmaking; on match, navigates to matched `gameId`
 - **"Play vs Computer" button**: Starts a single-player game against the AI (no WebSocket, no game code needed)
-- **"Join Private Game" section**: Accepts either room code (4-8 alphanumeric) or full invite URL containing `?game=...`
-- **Leaderboard card**: Shows top rated players when data exists (hidden when empty)
-- **My Games card**: Authenticated users get account-scoped games across linked devices/browsers (with guest fallback when needed); supports **Continue** and **Review**
+- **"Join Private Game" section**: Accepts either room code (4-8 alphanumeric, canonical uppercase) or full invite URL containing `?game=...`
+- **Leaderboard card**: Shows top rated players when data exists (hidden when empty), fetched with landing-page limit `10`, and stays visible on desktop via sticky positioning
+- **My Games card**: Authenticated users get account-scoped games across linked devices/browsers (with guest fallback when needed); supports **Continue** for in-progress games and **View Final Board** for finished games, includes status filter (All/In Progress/Finished), sort (Recent/Oldest), finished-games collapse toggle, and desktop internal scrolling (max-height) so long lists do not push leaderboard below the fold
 - **"Game Rules" link**: Opens help modal with bilingual game instructions (same content as in-game help)
 - **Language toggle**: Top-right corner ("EN" / "த"), shared with in-game toggle via LanguageContext
-- **Landing layout (desktop)**: Two-column composition — left column prioritizes game actions; right column contains account/auth card, My Games, and Leaderboard. On mobile, sections stack into a single-column flow.
+- **Landing layout (desktop)**: Two-column composition — left column prioritizes game actions and places a horizontally-centered Leaderboard directly below those actions, with matching card width between the actions card and leaderboard card; right column contains account/auth card and My Games. Desktop columns align to matching bottom edges using measured left-column height with a minimum desktop floor so My Games can show ~4-5 rows before scrolling internally. On mobile, sections stack into a single-column flow.
 
-**URL game bypass**: If someone arrives via `?game=XYZ` (multiplayer) or `?game=solo-...` (single-player), the landing page is skipped entirely and the app attempts direct game resume.
+**URL game bypass**: If someone arrives via `?game=XYZ` (multiplayer) or `?game=SOLO-...` (single-player), the landing page is skipped entirely and the app attempts direct game resume.
 The WebSocket connection is only established for multiplayer entries.
 - **In-game Home navigation**: Game page shows a compact top bar with optional logo + "சொல்மாலை" title and a branded clickable link that returns to landing by clearing query params (navigates to current pathname) without an additional confirmation prompt.
-- **Fresh solo start guard**: Clicking **Play vs Computer** now skips the `/api/games/:gameId` resume fetch for newly generated `solo-*` ids and only runs resume-detail fetches when resume mode is active (URL-resume or My Games Continue). This avoids transient first-click `403` responses before `/api/solo/start` persists the new solo game row.
+- **Fresh solo start guard**: Clicking **Play vs Computer** now skips the `/api/games/:gameId` resume fetch for newly generated `SOLO-*` ids and only runs resume-detail fetches when resume mode is active (URL-resume or My Games Continue). This avoids transient first-click `403` responses before `/api/solo/start` persists the new solo game row.
 - **Access guard on shared links**:
   - Solo links are account/user scoped (`/api/games/:gameId?userId=...` with account-first authorization). If an unauthenticated user opens a protected solo link and initial resume receives access denial (`401`/`403`/`404`), the app clears `?game`, returns to landing, prompts login, and retries the same link once after successful login.
   - If a foreign profile/session still fails authorization after retry (or an already-authenticated user opens a foreign solo link and gets `403`/`404`), the app clears `?game`, returns to landing, and shows "link not available for this user session" instead of silently starting a fresh game with the same code.
@@ -572,7 +572,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 
 **UI Labels**: `you`, `opponent`, `yourTurn`, `waiting`, `connected`, `disconnected`, `tilesRemaining`, `total`, `tiles`, `turnHistory`, `noMovesYet`, `chat`, `noMessagesYet`, `typeMessage`, `send`, `turn`, `passed`, `swappedTiles`
 
-**Landing Page**: `createGame`, `playRandomOpponent`, `playVsComputer`, `joinGame`, `enterGameCode`, `join`, `howToPlay`, `myGames`, `continueGame`, `reviewGame`, and other matchmaking/join helper labels are defined in `LanguageContext` and consumed by `App.js`.
+**Landing Page**: `createGame`, `playRandomOpponent`, `playVsComputer`, `joinGame`, `enterGameCode`, `join`, `howToPlay`, `myGames`, `continueGame`, `viewFinalBoard`, and other matchmaking/join helper labels are defined in `LanguageContext` and consumed by `App.js`.
 
 **Single Player**: `computer`, `computerThinking`, `vsComputer`
 
@@ -600,14 +600,14 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 ### Landing Page → Game Entry
 1. User visits the app → sees landing page with "சொல்மாலை" title
 2. User sets/edits username (persisted locally and synced to `/api/profile`)
-3. **New Game With Invited Opponent**: Creates 6-char room `gameId` → enters multiplayer game → invite modal auto-opens
+3. **New Game With Invited Opponent**: Creates 6-char uppercase room `gameId` → enters multiplayer game → invite modal auto-opens
 4. **Play Random Opponent**: Joins matchmaking queue; once matched, auto-enters assigned `gameId`
 5. **Play vs Computer**: Enters single-player game (no WebSocket)
 6. **Join Private Game**: Enter code or full invite URL (`?game=...`) → enters multiplayer game
 7. **Invite link** (`?game=XYZ`): Bypasses landing page → enters multiplayer game directly
 8. **My Games → Continue**: Re-enters an in-progress multiplayer game without remembering the code
-9. **My Games → Review**: Opens read-only board replay/final board for a finished game
-10. **Solo URL resume** (`?game=solo-...`): Opens single-player game directly and hydrates saved state
+9. **My Games → View Final Board**: Opens finished games in the normal board UI using a static/read-only game frame (no dedicated review viewer)
+10. **Solo URL resume** (`?game=SOLO-...`): Opens single-player game directly and hydrates saved state
 11. **Shared solo URL in different browser profile/session**: If user-scoped lookup fails (`404`), app returns to landing with an access message (no accidental new game with same solo code).
 
 ### Single Player Flow
@@ -630,12 +630,12 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
    - Falls back to adaptive swap (2-4 tiles, with repeat-avoidance using recent swap signatures) or pass if no valid move found
 6. UI adapts: "vs Computer" status, "Thinking..." indicator, "Computer" name in scoreboard, no Chat, no Invite button
 7. Game ends same as multiplayer: tiles exhausted or 4 consecutive passes/swaps
-8. Single-player sessions are persisted to SQLite (start/turn/end + snapshots) and appear in Landing **My Games** for Continue/Review.
+8. Single-player sessions are persisted to SQLite (start/turn/end + snapshots) and appear in Landing **My Games** for Continue/View Final Board.
 
 ### Multiplayer Flow
 1. **Player 1** creates a game from landing page → enters game with new gameId
 2. WebSocket connects to `/{gameId}/{userId}` → game auto-starts: tiles drawn, rack filled, `newGame` broadcast
-3. **Player 2** opens invite link (`?game=abc123`) → joins same room (landing page skipped)
+3. **Player 2** opens invite link (`?game=ABC123`) → joins same room (landing page skipped)
 4. Server sends `playerJoined` to Player 1, `joinedExistingGame` to Player 2
 5. Player 1 re-sends `newGame` (with their drawn tiles) to sync the late joiner
 6. Player 2 receives `newGame` → `syncNewGame` deducts Player 1's tiles from bags, sets `needsInitialDraw` → `useGameSync` auto-draws Player 2's tiles and broadcasts `drewTiles`
@@ -647,13 +647,13 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 10. Game-over overlay can be closed to inspect the final board + turn history without refreshing
 11. If a third user opens the same multiplayer link while 2 players are already in room, join is rejected (`4001`) and client routes back to landing with a room-full error.
 
-### Multiplayer Resume + Review
+### Multiplayer Resume + Final Board View
 1. Multiplayer clients persist debounced snapshots via `useGameSnapshotSync` (`stateSnapshot` WebSocket message).
 2. Server stores snapshots in SQLite per `(games_row_id, user_id)`.
 3. On multiplayer entry, `App.js` loads `/api/games/:gameId?userId=...` and hydrates Redux via `hydrateGameSnapshot` when snapshot data is available.
 4. Landing-page **My Games** list enables:
    - **Continue** in-progress games without manually re-entering code.
-   - **Review** finished games in read-only `GameReviewViewer` (turn slider + Jump controls).
+  - **View Final Board** for finished games in a static/read-only `GameFrame` (no sync hooks, no ActionMenu controls).
 
 ### Invite System
 - Creating an invited game sets `?invite=1` and opens invite modal automatically after game entry
@@ -692,7 +692,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] Redux state management (5 slices, 29 actions; includes snapshot hydration)
 - [x] New game initialization with confirmation dialog
 - [x] Auto-start on game creation: tiles drawn automatically when creating a game; late-joining players also get auto-drawn tiles via re-sync
-- [x] Landing-page My Games list: continue in-progress games + review finished games
+- [x] Landing-page My Games list: continue in-progress games + view final board for finished games
 - [x] Closeable game-over modal: users can dismiss overlay and inspect final board/history
 - [x] Resumable multiplayer snapshots persisted in SQLite + restored on re-entry
 - [x] **Room-based multiplayer**: gameId in URL, 2-player rooms, invite links

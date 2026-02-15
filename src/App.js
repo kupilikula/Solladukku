@@ -1,7 +1,6 @@
 import './App.css';
 import GameFrame from './components/GameFrame';
 import AnalyticsViewer from './components/AnalyticsViewer';
-import GameReviewViewer from './components/GameReviewViewer';
 import AuthPanel from './components/AuthPanel';
 import {validate as isValidUUID} from 'uuid';
 import {useEffect, useMemo, useState, useCallback, useRef} from "react";
@@ -55,7 +54,7 @@ function parseGameIdFromInput(input) {
     const trimmed = (input || '').trim();
     if (!trimmed) return null;
 
-    const directCode = trimmed.toLowerCase();
+    const directCode = trimmed.toUpperCase();
     if (/^[a-zA-Z0-9]{4,8}$/.test(directCode)) {
         return directCode;
     }
@@ -69,7 +68,7 @@ function parseGameIdFromInput(input) {
             const url = new URL(candidate);
             const code = url.searchParams.get('game');
             if (code && /^[a-zA-Z0-9]{4,8}$/.test(code)) {
-                return code.toLowerCase();
+                return code.toUpperCase();
             }
         } catch {
             // ignore invalid URL parse
@@ -286,7 +285,29 @@ function formatDateTime(value) {
     return date.toLocaleString();
 }
 
-function MyGamesCard({ myGames, loading, error, onContinue, onReview, t }) {
+function MyGamesCard({ myGames, loading, error, onContinue, onViewFinalBoard, t, isCompactLayout, fillHeight }) {
+    const [statusFilter, setStatusFilter] = useState('all');
+    const [sortOrder, setSortOrder] = useState('recent');
+    const [showFinished, setShowFinished] = useState(false);
+
+    const filteredGames = myGames.filter((game) => {
+        if (statusFilter === 'all') return true;
+        return game.status === statusFilter;
+    });
+
+    const sortedGames = [...filteredGames].sort((a, b) => {
+        const aTime = new Date(`${a.endedAt || a.startedAt || ''}Z`).getTime() || 0;
+        const bTime = new Date(`${b.endedAt || b.startedAt || ''}Z`).getTime() || 0;
+        return sortOrder === 'oldest' ? (aTime - bTime) : (bTime - aTime);
+    });
+
+    const inProgressGames = sortedGames.filter((game) => game.status === 'in_progress');
+    const finishedGames = sortedGames.filter((game) => game.status === 'finished');
+    const shouldShowFinishedToggle = statusFilter === 'all' && finishedGames.length > 0;
+    const visibleGames = shouldShowFinishedToggle && !showFinished
+        ? inProgressGames
+        : sortedGames;
+
     return (
         <div style={{
             width: '100%',
@@ -296,42 +317,110 @@ function MyGamesCard({ myGames, loading, error, onContinue, onReview, t }) {
             boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
             padding: 16,
             boxSizing: 'border-box',
+            display: 'flex',
+            flexDirection: 'column',
+            flex: fillHeight ? 1 : '0 1 auto',
+            height: fillHeight ? '100%' : 'auto',
+            minHeight: 0,
         }}>
-            <div style={{ fontSize: 16, fontWeight: 'bold', color: '#1A5276', marginBottom: 10 }}>
-                {t.myGames}
+            <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                gap: 10,
+                marginBottom: 10,
+            }}>
+                <div style={{ fontSize: 16, fontWeight: 'bold', color: '#1A5276' }}>
+                    {t.myGames}
+                </div>
+                {myGames.length > 0 && (
+                    <div style={{ fontSize: 11, color: '#617989' }}>
+                        {myGames.length} {t.items}
+                    </div>
+                )}
             </div>
+            {!loading && !error && myGames.length > 0 ? (
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: 8,
+                    marginBottom: 10,
+                }}>
+                    <select
+                        value={statusFilter}
+                        onChange={(e) => setStatusFilter(e.target.value)}
+                        style={{
+                            border: '1px solid #c7d7e3',
+                            borderRadius: 6,
+                            padding: '6px 8px',
+                            fontSize: 12,
+                            fontFamily: 'Tamil Sangam MN, sans-serif',
+                            color: '#244252',
+                            backgroundColor: 'white',
+                        }}
+                    >
+                        <option value="all">{t.myGamesFilterAll}</option>
+                        <option value="in_progress">{t.inProgress}</option>
+                        <option value="finished">{t.finished}</option>
+                    </select>
+                    <select
+                        value={sortOrder}
+                        onChange={(e) => setSortOrder(e.target.value)}
+                        style={{
+                            border: '1px solid #c7d7e3',
+                            borderRadius: 6,
+                            padding: '6px 8px',
+                            fontSize: 12,
+                            fontFamily: 'Tamil Sangam MN, sans-serif',
+                            color: '#244252',
+                            backgroundColor: 'white',
+                        }}
+                    >
+                        <option value="recent">{t.myGamesSortRecent}</option>
+                        <option value="oldest">{t.myGamesSortOldest}</option>
+                    </select>
+                </div>
+            ) : null}
             {loading ? (
                 <div style={{ fontSize: 13, color: '#777' }}>{t.loading}</div>
             ) : null}
             {!loading && error ? (
                 <div style={{ fontSize: 12, color: '#e53935' }}>{error}</div>
             ) : null}
-            {!loading && !error && myGames.length === 0 ? (
+            {!loading && !error && filteredGames.length === 0 ? (
                 <div style={{ fontSize: 13, color: '#777' }}>{t.noGamesYet}</div>
             ) : null}
-            {!loading && !error && myGames.length > 0 ? (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                    {myGames.map((game) => {
+            {!loading && !error && filteredGames.length > 0 ? (
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 8,
+                    flex: fillHeight ? 1 : '0 1 auto',
+                    minHeight: 0,
+                    overflowY: isCompactLayout ? 'visible' : 'auto',
+                    paddingRight: isCompactLayout ? 0 : 4,
+                }}>
+                    {visibleGames.map((game) => {
                         const statusColor = game.status === 'in_progress' ? '#0D6E5C' : '#60717f';
                         return (
                             <div key={`${game.gameId}-${game.id}`} style={{
                                 border: '1px solid #e5edf3',
                                 borderRadius: 8,
-                                padding: '8px 10px',
+                                padding: '7px 10px',
                             }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8 }}>
-                                    <div style={{ fontFamily: 'monospace', fontSize: 12, color: '#244252' }}>{game.gameId}</div>
+                                    <div style={{ fontFamily: 'monospace', fontSize: 12, color: '#244252' }}>{String(game.gameId || '').toUpperCase()}</div>
                                     <div style={{ fontSize: 11, color: statusColor, fontWeight: 'bold' }}>
                                         {game.status === 'in_progress' ? t.inProgress : t.finished}
                                     </div>
                                 </div>
-                                <div style={{ fontSize: 12, color: '#4c5e6b', marginTop: 2 }}>
+                                <div style={{ fontSize: 12, color: '#4c5e6b', marginTop: 1 }}>
                                     {game.opponentName || t.opponent}
                                 </div>
-                                <div style={{ fontSize: 11, color: '#73838f', marginTop: 2 }}>
+                                <div style={{ fontSize: 12, color: '#4c5e6b', marginTop: 1 }}>
                                     {formatDateTime(game.endedAt || game.startedAt)}
                                 </div>
-                                <div style={{ marginTop: 6, display: 'flex', gap: 8 }}>
+                                <div style={{ marginTop: 5, display: 'flex', gap: 8 }}>
                                     {game.status === 'in_progress' ? (
                                         <button
                                             onClick={() => onContinue(game.gameId)}
@@ -349,25 +438,47 @@ function MyGamesCard({ myGames, loading, error, onContinue, onReview, t }) {
                                             {t.continueGame}
                                         </button>
                                     ) : null}
-                                    <button
-                                        onClick={() => onReview(game.gameId)}
-                                        style={{
-                                            backgroundColor: '#f4f9fc',
-                                            color: '#1A5276',
-                                            border: '1px solid #bfd3e2',
-                                            borderRadius: 6,
-                                            padding: '5px 10px',
-                                            fontSize: 12,
-                                            cursor: 'pointer',
-                                            fontFamily: 'Tamil Sangam MN, sans-serif',
-                                        }}
-                                    >
-                                        {t.reviewGame}
-                                    </button>
+                                    {game.status === 'finished' ? (
+                                        <button
+                                            onClick={() => onViewFinalBoard(game.gameId)}
+                                            style={{
+                                                backgroundColor: '#f4f9fc',
+                                                color: '#1A5276',
+                                                border: '1px solid #bfd3e2',
+                                                borderRadius: 6,
+                                                padding: '5px 10px',
+                                                fontSize: 12,
+                                                cursor: 'pointer',
+                                                fontFamily: 'Tamil Sangam MN, sans-serif',
+                                            }}
+                                        >
+                                            {t.viewFinalBoard}
+                                        </button>
+                                    ) : null}
                                 </div>
                             </div>
                         );
                     })}
+                    {shouldShowFinishedToggle ? (
+                        <button
+                            onClick={() => setShowFinished(prev => !prev)}
+                            style={{
+                                backgroundColor: '#f4f9fc',
+                                color: '#1A5276',
+                                border: '1px solid #bfd3e2',
+                                borderRadius: 6,
+                                padding: '6px 10px',
+                                fontSize: 12,
+                                cursor: 'pointer',
+                                fontFamily: 'Tamil Sangam MN, sans-serif',
+                                alignSelf: 'flex-start',
+                            }}
+                        >
+                            {showFinished
+                                ? `${t.hideFinishedGames} (${finishedGames.length})`
+                                : `${t.showFinishedGames} (${finishedGames.length})`}
+                        </button>
+                    ) : null}
                 </div>
             ) : null}
         </div>
@@ -391,7 +502,7 @@ function LandingPage({
     myGamesLoading,
     myGamesError,
     onContinueGame,
-    onReviewGame,
+    onViewFinalBoard,
     usernameError,
     usernameBlocked,
     authEnabled,
@@ -411,10 +522,13 @@ function LandingPage({
     onLogout,
 }) {
     const { language, toggleLanguage, t } = useLanguage();
+    const DESKTOP_MIN_COLUMN_HEIGHT = 780;
     const [joinInput, setJoinInput] = useState('');
     const [codeError, setCodeError] = useState(false);
     const [showHelp, setShowHelp] = useState(false);
     const [isCompactLayout, setIsCompactLayout] = useState(() => window.innerWidth < 980);
+    const [leftColumnHeight, setLeftColumnHeight] = useState(null);
+    const leftColumnRef = useRef(null);
 
     // Track landing page visit
     useEffect(() => {
@@ -430,6 +544,37 @@ function LandingPage({
         window.addEventListener('resize', onResize);
         return () => window.removeEventListener('resize', onResize);
     }, []);
+
+    useEffect(() => {
+        if (isCompactLayout) {
+            setLeftColumnHeight(null);
+            return;
+        }
+        const node = leftColumnRef.current;
+        if (!node) return;
+
+        const updateHeight = () => {
+            const nextHeight = Math.ceil(node.getBoundingClientRect().height);
+            setLeftColumnHeight((prev) => (prev === nextHeight ? prev : nextHeight));
+        };
+
+        updateHeight();
+
+        let observer = null;
+        if (typeof ResizeObserver !== 'undefined') {
+            observer = new ResizeObserver(() => updateHeight());
+            observer.observe(node);
+        } else {
+            window.addEventListener('resize', updateHeight);
+        }
+
+        return () => {
+            if (observer) observer.disconnect();
+            if (typeof ResizeObserver === 'undefined') {
+                window.removeEventListener('resize', updateHeight);
+            }
+        };
+    }, [isCompactLayout, myGames.length, leaderboard.length, authAccount, authEnabled, authLoading]);
 
     const handleJoin = () => {
         if (usernameBlocked) return;
@@ -488,6 +633,7 @@ function LandingPage({
                             color: '#1A5276',
                             letterSpacing: 1.5,
                             lineHeight: 1.2,
+                            transform: 'translateY(5px)',
                         }}>
                             சொல்மாலை
                         </div>
@@ -520,8 +666,18 @@ function LandingPage({
                     display: 'grid',
                     gridTemplateColumns: isCompactLayout ? '1fr' : 'minmax(0, 1.25fr) minmax(320px, 0.75fr)',
                     gap: 16,
-                    alignItems: 'start',
+                    alignItems: isCompactLayout ? 'start' : 'stretch',
                 }}>
+                    <div
+                        ref={leftColumnRef}
+                        style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 16,
+                        width: '100%',
+                        maxWidth: 560,
+                        height: 'auto',
+                    }}>
                     <div style={{
                         backgroundColor: 'white',
                         borderRadius: 12,
@@ -531,7 +687,8 @@ function LandingPage({
                         alignItems: 'center',
                         gap: 14,
                         width: '100%',
-                        maxWidth: 560,
+                        maxWidth: 420,
+                        alignSelf: 'center',
                         justifySelf: 'start',
                         boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
                         boxSizing: 'border-box',
@@ -730,7 +887,27 @@ function LandingPage({
                     </button>
                     </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                    {leaderboard.length > 0 && (
+                        <div style={{
+                            width: '100%',
+                            display: 'flex',
+                            justifyContent: 'center',
+                        }}>
+                            <LeaderboardCard leaderboard={leaderboard} loading={leaderboardLoading} t={t} />
+                        </div>
+                    )}
+                    </div>
+
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 16,
+                        height: isCompactLayout
+                            ? 'auto'
+                            : `${Math.max(leftColumnHeight || 0, DESKTOP_MIN_COLUMN_HEIGHT)}px`,
+                        minHeight: 0,
+                        overflow: isCompactLayout ? 'visible' : 'hidden',
+                    }}>
                         {authEnabled ? (
                             <div style={{
                                 width: '100%',
@@ -796,13 +973,12 @@ function LandingPage({
                             loading={myGamesLoading}
                             error={myGamesError}
                             onContinue={onContinueGame}
-                            onReview={onReviewGame}
+                            onViewFinalBoard={onViewFinalBoard}
                             t={t}
+                            isCompactLayout={isCompactLayout}
+                            fillHeight={!isCompactLayout}
                         />
 
-                        {leaderboard.length > 0 && (
-                            <LeaderboardCard leaderboard={leaderboard} loading={leaderboardLoading} t={t} />
-                        )}
                     </div>
                 </div>
             </div>
@@ -865,7 +1041,7 @@ function MultiplayerGuard({ initialGameId, onBlocked }) {
 
     useEffect(() => {
         if (handledRef.current) return;
-        if (!initialGameId || initialGameId.startsWith('solo-')) return;
+        if (!initialGameId || initialGameId.startsWith('SOLO-')) return;
         if (!closeEvent) return;
 
         const code = Number(closeEvent.code);
@@ -905,12 +1081,13 @@ function AppContent() {
 
     const initialGameId = useMemo(() => {
         const params = new URLSearchParams(window.location.search);
-        const id = params.get('game');
-        if (id && /^solo-[a-zA-Z0-9]{4,32}$/.test(id)) {
-            return id.toLowerCase();
+        const rawId = params.get('game');
+        const id = rawId ? rawId.toUpperCase() : '';
+        if (id && /^SOLO-[A-Z0-9]{4,32}$/.test(id)) {
+            return id;
         }
         if (id && /^[a-zA-Z0-9]{4,8}$/.test(id)) {
-            return id.toLowerCase();
+            return id;
         }
         return null;
     }, []);
@@ -933,7 +1110,7 @@ function AppContent() {
     const [gameId, setGameId] = useState(initialGameId);
     const [mode, setMode] = useState(() => {
         if (!initialGameId) return null;
-        return initialGameId.startsWith('solo-') ? 'singleplayer' : 'multiplayer';
+        return initialGameId.startsWith('SOLO-') ? 'singleplayer' : 'multiplayer';
     });
     const [leaderboard, setLeaderboard] = useState([]);
     const [leaderboardLoading, setLeaderboardLoading] = useState(true);
@@ -943,8 +1120,7 @@ function AppContent() {
     const [myGames, setMyGames] = useState([]);
     const [myGamesLoading, setMyGamesLoading] = useState(false);
     const [myGamesError, setMyGamesError] = useState('');
-    const [reviewDetail, setReviewDetail] = useState(null);
-    const [singlePlayerResumeMode, setSinglePlayerResumeMode] = useState(() => Boolean(initialGameId && initialGameId.startsWith('solo-')));
+    const [singlePlayerResumeMode, setSinglePlayerResumeMode] = useState(() => Boolean(initialGameId && initialGameId.startsWith('SOLO-')));
     const [usernameError, setUsernameError] = useState('');
     const [usernameAvailable, setUsernameAvailable] = useState(true);
     const [authAvailable, setAuthAvailable] = useState(true);
@@ -1275,8 +1451,10 @@ function AppContent() {
     }, [exitGameLinkToLanding, t]);
 
     const enterMultiplayerGame = useCallback((id, starterUserId = null) => {
+        const normalizedId = String(id || '').toUpperCase();
+        if (!normalizedId) return;
         const url = new URL(window.location);
-        url.searchParams.set('game', id);
+        url.searchParams.set('game', normalizedId);
         if (starterUserId === userId) {
             url.searchParams.set('invite', '1');
         } else {
@@ -1288,13 +1466,13 @@ function AppContent() {
         }
         setIsMatching(false);
         setMatchingPosition(null);
-        setGameId(id);
+        setGameId(normalizedId);
         setMode('multiplayer');
     }, [dispatch, userId]);
 
     const handleCreatePrivateGame = useCallback(() => {
         if (!usernameAvailable) return;
-        const id = crypto.randomUUID().slice(0, 6).toLowerCase();
+        const id = crypto.randomUUID().slice(0, 6).toUpperCase();
         dispatch(setAutoStartPending(true));
         enterMultiplayerGame(id, userId);
     }, [dispatch, enterMultiplayerGame, userId, usernameAvailable]);
@@ -1307,7 +1485,7 @@ function AppContent() {
 
     const handlePlayComputer = useCallback(() => {
         if (!usernameAvailable) return;
-        const soloGameId = `solo-${crypto.randomUUID().slice(0, 8)}`;
+        const soloGameId = `SOLO-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
         const url = new URL(window.location);
         url.searchParams.set('game', soloGameId);
         url.searchParams.delete('invite');
@@ -1319,7 +1497,7 @@ function AppContent() {
         setMode('singleplayer');
     }, [dispatch, userId, effectiveUsername, usernameAvailable]);
 
-    const handleReviewGame = useCallback(async (targetGameId) => {
+    const handleViewFinalBoard = useCallback(async (targetGameId) => {
         if (!targetGameId) return;
         try {
             const headers = accessToken ? { Authorization: `Bearer ${accessToken}` } : undefined;
@@ -1329,14 +1507,35 @@ function AppContent() {
             );
             const data = await readJsonSafe(resp);
             if (!resp.ok) {
-                throw new Error(getApiErrorMessage(resp, data, t.reviewLoadFailed));
+                throw new Error(getApiErrorMessage(resp, data, t.finalBoardLoadFailed));
             }
-            setReviewDetail(data);
-            setMode('review');
+
+            const selected = myGames.find((g) => g.gameId === targetGameId);
+            const isSinglePlayer = selected?.gameType === 'singleplayer'
+                || data?.game?.game_type === 'singleplayer'
+                || data?.game?.player2_id === 'computer-player';
+            let snapshot = isSinglePlayer
+                ? buildSinglePlayerSnapshotFromDetail(data, userId)
+                : buildSnapshotFromTurns(data, userId);
+
+            if (!snapshot || typeof snapshot !== 'object') {
+                snapshot = data.snapshotForUser?.state || data.latestSnapshot?.state || null;
+            }
+            if (!snapshot || typeof snapshot !== 'object') {
+                throw new Error(t.finalBoardLoadFailed);
+            }
+
+            dispatch(hydrateGameSnapshot({
+                gameId: targetGameId,
+                snapshot,
+                mode: isSinglePlayer ? 'singleplayer' : 'multiplayer',
+            }));
+            setGameId(targetGameId);
+            setMode('finalstate');
         } catch (err) {
-            setMyGamesError(err?.message || t.reviewLoadFailed);
+            setMyGamesError(err?.message || t.finalBoardLoadFailed);
         }
-    }, [userId, t, accessToken]);
+    }, [accessToken, dispatch, myGames, t, userId]);
 
     const handleContinueGame = useCallback((targetGameId) => {
         if (!targetGameId) return;
@@ -1559,7 +1758,7 @@ function AppContent() {
     }, [dispatch, userId, effectiveUsername, gameId, mode]);
 
     useEffect(() => {
-        if (mode === 'singleplayer' && gameId && gameId.startsWith('solo-')) {
+        if (mode === 'singleplayer' && gameId && gameId.startsWith('SOLO-')) {
             dispatch(storeUserId({ userId, username: effectiveUsername, gameId }));
         }
     }, [dispatch, userId, effectiveUsername, gameId, mode]);
@@ -1633,7 +1832,7 @@ function AppContent() {
     }, [dispatch, gameId, mode, userId, t, accessToken]);
 
     useEffect(() => {
-        if (!gameId || mode !== 'singleplayer' || !gameId.startsWith('solo-')) return;
+        if (!gameId || mode !== 'singleplayer' || !gameId.startsWith('SOLO-')) return;
         if (!singlePlayerResumeMode) return;
         let cancelled = false;
         const fromInitialUrl = initialGameIdRef.current === gameId;
@@ -1736,20 +1935,11 @@ function AppContent() {
         );
     }
 
-    if (mode === 'review' && reviewDetail) {
+    if (mode === 'finalstate' && gameId) {
         return (
-            <GameReviewViewer
-                detail={reviewDetail}
-                t={t}
-                onBack={() => {
-                    setReviewDetail(null);
-                    const url = new URL(window.location);
-                    url.searchParams.delete('game');
-                    url.searchParams.delete('invite');
-                    window.history.replaceState({}, '', url);
-                    setMode(null);
-                }}
-            />
+            <div style={{background: '#EDE8E0', height: '100vh', width: '100vw'}}>
+                <GameFrame staticView={true} />
+            </div>
         );
     }
 
@@ -1760,7 +1950,7 @@ function AppContent() {
                 onJoinGame={handleJoinGame}
                 onPlayComputer={handlePlayComputer}
                 onContinueGame={handleContinueGame}
-                onReviewGame={handleReviewGame}
+                onViewFinalBoard={handleViewFinalBoard}
                 onFindRandomOpponent={handleFindRandomOpponent}
                 onCancelRandomMatch={handleCancelRandomMatch}
                 isMatching={isMatching}

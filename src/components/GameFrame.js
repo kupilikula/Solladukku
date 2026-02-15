@@ -97,7 +97,7 @@ function GameOverOverlay({ onClose }) {
     );
 }
 
-function GameFrameInner() {
+function GameFrameInner({ staticView = false }) {
     const gameOver = useSelector(state => state.Game.gameOver);
     const { t } = useLanguage();
     const [showGameOverOverlay, setShowGameOverOverlay] = useState(false);
@@ -111,10 +111,10 @@ function GameFrameInner() {
     };
 
     useEffect(() => {
-        if (gameOver) {
+        if (!staticView && gameOver) {
             setShowGameOverOverlay(true);
         }
-    }, [gameOver]);
+    }, [gameOver, staticView]);
 
     return (
         <div className="GamePage">
@@ -138,9 +138,9 @@ function GameFrameInner() {
                 </a>
             </div>
             <div className="GameFrame">
-                <PlayingBoard />
+                <PlayingBoard showActionMenu={!staticView} />
                 <InfoBoard />
-                {showGameOverOverlay && <GameOverOverlay onClose={() => setShowGameOverOverlay(false)} />}
+                {!staticView && showGameOverOverlay && <GameOverOverlay onClose={() => setShowGameOverOverlay(false)} />}
             </div>
         </div>
     );
@@ -158,7 +158,14 @@ function SinglePlayerGameFrame({ resumeMode }) {
     return <GameFrameInner />;
 }
 
-export default function GameFrame({ singlePlayer, resumeMode = false }) {
+function StaticGameFrame() {
+    return <GameFrameInner staticView={true} />;
+}
+
+export default function GameFrame({ singlePlayer, resumeMode = false, staticView = false }) {
+    if (staticView) {
+        return <StaticGameFrame />;
+    }
     if (singlePlayer) {
         return <SinglePlayerGameFrame resumeMode={resumeMode} />;
     }

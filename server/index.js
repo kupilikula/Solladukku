@@ -570,7 +570,7 @@ function sendAuthResponse(res, {
 function generateGameId() {
     let candidate = '';
     do {
-        candidate = Math.random().toString(36).slice(2, 8);
+        candidate = Math.random().toString(36).slice(2, 8).toUpperCase();
     } while (rooms.has(candidate));
     return candidate;
 }
