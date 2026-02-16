@@ -15,6 +15,7 @@
 ## Validation and Dictionary
 
 - `Docs/WORD_VALIDATION_PLAN.md`: canonical validation evolution and design notes
+- `Docs/TamilSpellingValidationShortcutRules.md`: implemented client-side safe-mode shortcut rules and exception policy
 
 ## Historical / Audit Reports
 

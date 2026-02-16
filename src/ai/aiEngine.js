@@ -7,6 +7,7 @@
 import { TileSet, TileMethods } from '../utils/TileSet';
 import { squareMultipliers } from '../utils/squareMultipliers';
 import { validateWordsWithHttpServer } from '../utils/dictionary';
+import { isTamilOrthographyDefinitelyInvalid } from '../utils/tamilOrthography';
 import { buildGrid, findAnchors, hasPrefix, isWordValid, countBagTiles, selectAdaptiveSwapTiles } from './aiHelpers';
 import _ from 'lodash';
 
@@ -61,7 +62,11 @@ function getWordValidCached(word, aiCtx) {
     const cached = aiCtx.wordCache.get(word);
     if (cached !== undefined) return cached;
     const valid = isWordValid(word);
-    if (!valid && aiCtx.serverValidationEnabled && aiCtx.pendingServerWords.size < SERVER_WORD_VALIDATION_LIMIT) {
+    if (!valid &&
+        aiCtx.serverValidationEnabled &&
+        !isTamilOrthographyDefinitelyInvalid(word) &&
+        aiCtx.pendingServerWords.size < SERVER_WORD_VALIDATION_LIMIT
+    ) {
         aiCtx.pendingServerWords.add(word);
     }
     aiCtx.wordCache.set(word, valid);

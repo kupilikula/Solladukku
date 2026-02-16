@@ -28,6 +28,7 @@ deploy/
 Docs/
 ├── README.md                 # Docs index and navigation
 ├── FST_ARCHITECTURE.md       # Canonical FST source/build/patch/deploy architecture
+├── TamilSpellingValidationShortcutRules.md # Client-side safe-mode Tamil spelling shortcut rules + exceptions
 └── WORD_VALIDATION_PLAN.md   # Canonical word-validation research and phased plan
 server/
 ├── index.js                  # HTTP + WebSocket server: rooms, hardening, FST validation, REST API
@@ -121,6 +122,7 @@ src/
 │   ├── TileSet.js            # Tamil tile definitions (points, types, merge/split ops)
 │   ├── constants.js          # Game constants and helpers
 │   ├── dictionary.js         # Dictionary loader, binary search, server validation cache
+│   ├── tamilOrthography.js   # Conservative Tamil word-start shortcut checks for client-side server-fallback filtering
 │   ├── initialLetterBags.js  # Initial tile distribution counts
 │   └── squareMultipliers.js  # 15×15 board multiplier map
 └── styles/
@@ -236,7 +238,9 @@ Used consistently across: buttons, active score borders, turn badges, connected 
 ```
 submitWord() → local dictionary (binary search on sorted array, <1ms)
   ├─ FOUND → accept immediately
-  └─ NOT FOUND → server validation fallback
+  └─ NOT FOUND → client orthography shortcut precheck (`tamilOrthography.js`)
+                  ├─ definitely invalid start → reject locally (no server call)
+                  └─ otherwise → server validation fallback
                     ├─ Multiplayer: send 'validateWords' via WebSocket (`sendRequest`)
                     │   └─ Server returns 'validateWordsResult' (unicast to requester only)
                     ├─ Single-player/no WebSocket: POST `/api/validate-words`
@@ -303,6 +307,7 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 
 - Session-level `Map<word, boolean>` — same word never re-queried
 - Checks cache before sending to server
+- Conservative Tamil orthography shortcut prefilter runs before server fallback for local-dictionary misses; current disallowed initial bases are `ங`, `ன`, `ற`, `ழ`, `ள`, plus direct leading Tamil combining marks (including pulli)
 - Permissive on timeout (5s) or disconnect
 
 ### Validation UI (`src/components/ActionMenu.js`)
@@ -668,7 +673,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
    - Tries placing rack tiles at anchor positions, pruning with dictionary prefix checks
    - Handles MEY+UYIR tile merging for UYIRMEY combinations
    - Uses a 5s search budget, then runs a timeout-aware quick fallback search before giving up
-   - On no-move paths, validates a bounded set of unknown words via HTTP FST (`/api/validate-words`) and retries search
+   - On no-move paths, validates a bounded set of unknown words via HTTP FST (`/api/validate-words`) and retries search; conservative Tamil orthography start shortcuts prefilter impossible starts client-side before queueing fallback validation
    - Validates all cross-words, calculates scores with multipliers
    - Dispatches `addOtherPlayerTurn` with the best-scoring valid move
    - Falls back to adaptive swap (2-4 tiles, with repeat-avoidance using recent swap signatures) or pass if no valid move found

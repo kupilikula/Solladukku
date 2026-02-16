@@ -1,4 +1,5 @@
 import { getApiBaseUrl } from './runtimeUrls';
+import { isTamilOrthographyDefinitelyInvalid } from './tamilOrthography';
 
 /**
  * Tamil dictionary for word validation.
@@ -236,6 +237,11 @@ export async function validateWordsWithServer(words, sendRequest) {
     for (const word of words) {
         if (serverValidationCache.has(word)) {
             cachedResults[word] = serverValidationCache.get(word);
+        } else if (isTamilOrthographyDefinitelyInvalid(word)) {
+            // Safe shortcut: avoid unnecessary server round-trips for
+            // high-confidence invalid starts after local dictionary miss.
+            serverValidationCache.set(word, false);
+            cachedResults[word] = false;
         } else {
             uncachedWords.push(word);
         }
@@ -290,6 +296,11 @@ export async function validateWordsWithHttpServer(words) {
     for (const word of words) {
         if (serverValidationCache.has(word)) {
             cachedResults[word] = serverValidationCache.get(word);
+        } else if (isTamilOrthographyDefinitelyInvalid(word)) {
+            // Safe shortcut: avoid unnecessary HTTP validation calls for
+            // high-confidence invalid starts after local dictionary miss.
+            serverValidationCache.set(word, false);
+            cachedResults[word] = false;
         } else {
             uncachedWords.push(word);
         }
