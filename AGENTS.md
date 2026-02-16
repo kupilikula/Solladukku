@@ -356,6 +356,11 @@ Without `ANALYTICS_ADMIN_PASSWORD`, admin analytics endpoints return `503`.
 Cookie-auth CSRF requirement:
 - `POST /api/auth/refresh` and `POST /api/auth/logout` use double-submit CSRF validation (`solmaalai_csrf` cookie must match `X-CSRF-Token` header) whenever a refresh cookie is present.
 
+JSON request body limits:
+- Server JSON POST parsing defaults to `10KB` max body size.
+- `POST /api/solo/snapshot` has an elevated `256KB` max body size for persisted board snapshots.
+- Oversized JSON payloads now return HTTP `413 Payload Too Large` (instead of resetting the upstream connection).
+
 | Method | Path | Description |
 |--------|------|-------------|
 | `POST` | `/api/auth/signup` | Create account + profile and start session (`{email,password,username,userId?}`) |

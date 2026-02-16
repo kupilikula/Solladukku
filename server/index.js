@@ -166,18 +166,60 @@ function getClientIp(req) {
     return geo.normalizeIp(forwarded || req.socket.remoteAddress);
 }
 
-function parseBody(req) {
+const DEFAULT_MAX_JSON_BODY_BYTES = 10 * 1024;
+const SOLO_SNAPSHOT_MAX_JSON_BODY_BYTES = 256 * 1024;
+
+class BodyParseError extends Error {
+    constructor(message, statusCode = 400) {
+        super(message);
+        this.name = 'BodyParseError';
+        this.statusCode = statusCode;
+    }
+}
+
+function handleBodyParseError(res, err) {
+    if (err?.statusCode === 413) {
+        sendJson(res, 413, { error: 'Payload too large' });
+        return;
+    }
+    sendJson(res, 400, { error: 'Bad request' });
+}
+
+function parseBody(req, options = {}) {
+    const maxBytes = Number.isInteger(options.maxBytes) && options.maxBytes > 0
+        ? options.maxBytes
+        : DEFAULT_MAX_JSON_BODY_BYTES;
     return new Promise((resolve, reject) => {
+        let receivedBytes = 0;
         let body = '';
-        req.on('data', chunk => {
-            body += chunk;
-            if (body.length > 10000) { reject(new Error('Body too large')); req.destroy(); }
+        let finished = false;
+
+        const onError = (error) => {
+            if (finished) return;
+            finished = true;
+            reject(error);
+        };
+
+        req.on('data', (chunk) => {
+            if (finished) return;
+            const bytes = Buffer.isBuffer(chunk) ? chunk.length : Buffer.byteLength(String(chunk));
+            receivedBytes += bytes;
+            if (receivedBytes > maxBytes) {
+                onError(new BodyParseError('Body too large', 413));
+                return;
+            }
+            body += Buffer.isBuffer(chunk) ? chunk.toString('utf8') : String(chunk);
         });
         req.on('end', () => {
-            try { resolve(body ? JSON.parse(body) : {}); }
-            catch { resolve({}); }
+            if (finished) return;
+            finished = true;
+            try {
+                resolve(body ? JSON.parse(body) : {});
+            } catch {
+                resolve({});
+            }
         });
-        req.on('error', reject);
+        req.on('error', onError);
     });
 }
 
@@ -698,7 +740,7 @@ function handleHttpRequest(req, res) {
                     delivery: 'queued',
                 },
             });
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
@@ -765,7 +807,7 @@ function handleHttpRequest(req, res) {
                 refreshToken,
                 refreshExpiresAt,
             });
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
@@ -925,7 +967,7 @@ function handleHttpRequest(req, res) {
             }
             analytics.markAccountEmailVerified(consumed.accountId);
             sendJson(res, 200, { ok: true });
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
@@ -1006,7 +1048,7 @@ function handleHttpRequest(req, res) {
                     ...delivery,
                 });
             }).catch(() => sendJson(res, 500, { error: 'Failed to process reset request' }));
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
@@ -1046,7 +1088,7 @@ function handleHttpRequest(req, res) {
             }
             analytics.updateAccountPasswordHash(consumed.accountId, passwordHash);
             sendJson(res, 200, { ok: true });
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
@@ -1066,7 +1108,7 @@ function handleHttpRequest(req, res) {
                 geo: resolvedGeo,
             });
             sendJson(res, 200, { ok: true });
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
@@ -1131,7 +1173,7 @@ function handleHttpRequest(req, res) {
                 ipHash,
             });
             sendJson(res, 200, { ok: true, profile });
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
@@ -1155,7 +1197,7 @@ function handleHttpRequest(req, res) {
             });
             analytics.setPlayer2(gameId, 'computer-player');
             sendJson(res, 200, { ok: true, gameId });
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
@@ -1184,7 +1226,7 @@ function handleHttpRequest(req, res) {
                 formedWords: Array.isArray(body.formedWords) ? body.formedWords : null,
             });
             sendJson(res, 200, { ok: true });
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
@@ -1201,12 +1243,12 @@ function handleHttpRequest(req, res) {
             }
             analytics.endGame(gameId, { winnerId, reason });
             sendJson(res, 200, { ok: true });
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
     if (req.method === 'POST' && pathname === '/api/solo/snapshot') {
-        parseBody(req).then((body) => {
+        parseBody(req, { maxBytes: SOLO_SNAPSHOT_MAX_JSON_BODY_BYTES }).then((body) => {
             const authCtx = extractAuthContext(req);
             const userId = typeof body.userId === 'string' ? body.userId : null;
             const gameId = normalizeSoloGameId(body.gameId);
@@ -1225,7 +1267,7 @@ function handleHttpRequest(req, res) {
                 state: snapshot,
             });
             sendJson(res, 200, { ok: Boolean(saved) });
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
@@ -1249,7 +1291,7 @@ function handleHttpRequest(req, res) {
                 }
                 sendJson(res, 200, { results });
             }
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
@@ -1476,7 +1518,7 @@ function handleHttpRequest(req, res) {
 
             matchmakingQueue.push({ userId, joinedAt: Date.now() });
             sendJson(res, 200, { status: 'waiting', position: getQueuePosition(userId) });
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
@@ -1512,7 +1554,7 @@ function handleHttpRequest(req, res) {
             removeFromMatchmakingQueue(userId);
             matchAssignments.delete(userId);
             sendJson(res, 200, { ok: true });
-        }).catch(() => sendJson(res, 400, { error: 'Bad request' }));
+        }).catch((err) => handleBodyParseError(res, err));
         return;
     }
 
