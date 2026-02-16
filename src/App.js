@@ -507,6 +507,7 @@ function LandingPage({
     usernameBlocked,
     authEnabled,
     authLoading,
+    authBootstrapPending,
     authError,
     authStatusMessage,
     authAccount,
@@ -924,7 +925,7 @@ function LandingPage({
                                 <div style={{ fontSize: 12, color: '#365468', overflowWrap: 'anywhere' }}>
                                     {authAccount
                                         ? `${t.authSignedInAs}: ${authAccount.email}`
-                                        : t.authAsGuest}
+                                        : (authBootstrapPending ? t.loading : t.authAsGuest)}
                                 </div>
                                 {authAccount ? (
                                     <button
@@ -948,7 +949,7 @@ function LandingPage({
                             </div>
                         ) : null}
 
-                        {authEnabled && !authAccount ? (
+                        {authEnabled && !authAccount && !authBootstrapPending ? (
                             <AuthPanel
                                 t={t}
                                 loading={authLoading}
@@ -1125,6 +1126,8 @@ function AppContent() {
     const [usernameAvailable, setUsernameAvailable] = useState(true);
     const [authAvailable, setAuthAvailable] = useState(true);
     const [authLoading, setAuthLoading] = useState(false);
+    const initialAuthBootstrapDoneRef = useRef(false);
+    const [authBootstrapPending, setAuthBootstrapPending] = useState(() => !analyticsMode);
     const [authError, setAuthError] = useState('');
     const [authStatusMessage, setAuthStatusMessage] = useState('');
     const [accessToken, setAccessToken] = useState(null);
@@ -1354,6 +1357,9 @@ function AppContent() {
         if (analyticsMode) return;
         let cancelled = false;
         const bootstrap = async () => {
+            if (!initialAuthBootstrapDoneRef.current) {
+                setAuthBootstrapPending(true);
+            }
             setAuthLoading(true);
             setAuthError('');
             try {
@@ -1406,7 +1412,13 @@ function AppContent() {
                     setAuthAccount(null);
                 }
             } finally {
-                if (!cancelled) setAuthLoading(false);
+                if (!cancelled) {
+                    setAuthLoading(false);
+                    if (!initialAuthBootstrapDoneRef.current) {
+                        initialAuthBootstrapDoneRef.current = true;
+                        setAuthBootstrapPending(false);
+                    }
+                }
             }
         };
         bootstrap();
@@ -1967,6 +1979,7 @@ function AppContent() {
                 usernameBlocked={!usernameAvailable}
                 authEnabled={authAvailable}
                 authLoading={authLoading}
+                authBootstrapPending={authBootstrapPending}
                 authError={authError}
                 authStatusMessage={authStatusMessage}
                 authAccount={authAccount}

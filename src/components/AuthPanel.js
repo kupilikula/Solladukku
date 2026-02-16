@@ -88,6 +88,7 @@ export default function AuthPanel({
         }}>
             <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
                 <button
+                    type="button"
                     onClick={() => setMode('login')}
                     style={{
                         flex: 1,
@@ -103,6 +104,7 @@ export default function AuthPanel({
                     {t.login}
                 </button>
                 <button
+                    type="button"
                     onClick={() => setMode('signup')}
                     style={{
                         flex: 1,
@@ -122,6 +124,7 @@ export default function AuthPanel({
             <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
                 {showForgotSelector ? (
                     <button
+                        type="button"
                         onClick={() => setMode('forgot')}
                         style={{
                             flex: 1,
@@ -140,6 +143,7 @@ export default function AuthPanel({
                 ) : null}
                 {showResetSelector ? (
                     <button
+                        type="button"
                         onClick={() => setMode('reset')}
                         style={{
                             flex: 1,
@@ -158,6 +162,7 @@ export default function AuthPanel({
                 ) : null}
                 {showVerifySelector ? (
                     <button
+                        type="button"
                         onClick={() => setMode('verify')}
                         style={{
                             flex: 1,
@@ -176,7 +181,14 @@ export default function AuthPanel({
                 ) : null}
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    if (loading) return;
+                    submit();
+                }}
+                style={{ display: 'flex', flexDirection: 'column', gap: 8 }}
+            >
                 {(mode === 'login' || mode === 'signup' || mode === 'forgot') ? (
                     <input
                         className="TamilInput"
@@ -218,7 +230,7 @@ export default function AuthPanel({
                     />
                 ) : null}
                 <button
-                    onClick={submit}
+                    type="submit"
                     disabled={loading}
                     style={{
                         backgroundColor: loading ? '#9fb4c2' : '#1A5276',
@@ -239,6 +251,7 @@ export default function AuthPanel({
                 </button>
                 {mode === 'verify' && authAccount && !authAccount.emailVerifiedAt && onResendVerification ? (
                     <button
+                        type="button"
                         onClick={onResendVerification}
                         disabled={loading}
                         style={{
@@ -255,7 +268,7 @@ export default function AuthPanel({
                         {t.authResendVerification}
                     </button>
                 ) : null}
-            </div>
+            </form>
 
             {error ? (
                 <div style={{ fontSize: 12, color: '#e53935', marginTop: 8 }}>{error}</div>
