@@ -797,6 +797,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] **Chat UI**: real-time messages with timestamps, 500-char limit
 - [x] **Invite system**: auto-open invite modal after new invited game; copy code, copy link, and native share support
 - [x] LetterBags UI: remaining tile counts with Tamil-only labels (மெய், உயிர், மாயம்)
+- [x] Frequency-optimized tile bag rebalance: 212 total tiles (`120` Mey, `88` Uyir, `4` bonus) with a more vowel-friendly mix for Mey+Uyir merge gameplay
 - [x] TurnHistory UI: move history with words, scores, passes, and swaps (including swapped tile count)
 - [x] ScoreBoard: role labels (You/Opponent) + usernames, scores, and turn indicator
 - [x] ConnectionStatus: WebSocket connection state and whose turn it is
@@ -830,7 +831,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
   - UI adapts: "vs Computer" status, "Computer" name, no Chat/Invite, "Thinking..." indicator
 
 ### TODO
-- [ ] Tile Bag Optimization: balance distribution for fun gameplay
+- [x] Tile Bag Optimization: balance distribution for fun gameplay
 - [ ] Rendering & Code Optimization
 - [ ] **Prod Email Delivery Migration (ZeptoMail API)**
   Context:

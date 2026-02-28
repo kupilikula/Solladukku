@@ -127,26 +127,26 @@ Bonus: ? 10
 
 1. **Blended frequency allocation** — Tile counts use the 50/50 average of full-dictionary and headword-only frequencies, balancing morphological patterns with root vocabulary diversity.
 2. **Inverse frequency scoring** — Rarer tiles score more points. Organized into tiers with clear frequency boundaries.
-3. **60:40 consonant:vowel ratio** — Matches the natural ratio from the language.
+3. **~58:42 consonant:vowel ratio** — Better supports Mey+Uyir merge gameplay while staying close to observed language frequencies.
 4. **Minimum 2 tiles per letter** — Even the rarest letters appear in the game, creating strategic opportunities.
-5. **Target ~236 total tiles** — Produces ~18-22 turn games with 14-tile racks and 2 players.
+5. **Target ~212 total tiles** — Produces shorter games with 14-tile racks and 2 players, reducing board lock-up from overlong sessions.
 
-### New Consonant Tiles and Points (140 total)
+### New Consonant Tiles and Points (120 total)
 
 | Tier | Letter | Blended % | Tiles | Points | Rationale |
 |------|--------|-----------|-------|--------|-----------|
-| **Very Common (>10%)** | க் | 15.82 | 21 | 1 | Most common consonant |
-| | த் | 11.35 | 15 | 1 | Common in root words |
-| **Common (7-10%)** | ப் | 9.86 | 14 | 1 | |
-| | ம் | 7.49 | 10 | 1 | Very common in roots (underestimated by dict-only) |
-| | ர் | 7.45 | 10 | 1 | Stable across both analyses |
-| | ட் | 7.30 | 9 | 1 | |
-| **Medium (4-7%)** | வ் | 6.21 | 8 | 2 | |
-| | ச் | 5.15 | 7 | 2 | Much more common in roots than inflections suggest |
-| | ல் | 5.04 | 7 | 2 | Same — root-heavy letter |
-| | ன் | 5.01 | 6 | 2 | |
-| | ற் | 4.63 | 6 | 2 | Less common in roots than inflections suggest |
-| | ள் | 4.44 | 5 | 2 | Same — inflated by -கள் suffix |
+| **Very Common (>10%)** | க் | 15.82 | 17 | 1 | Most common consonant |
+| | த் | 11.35 | 12 | 1 | Common in root words |
+| **Common (7-10%)** | ப் | 9.86 | 12 | 1 | |
+| | ம் | 7.49 | 8 | 1 | Very common in roots (underestimated by dict-only) |
+| | ர் | 7.45 | 8 | 1 | Stable across both analyses |
+| | ட் | 7.30 | 8 | 1 | |
+| **Medium (4-7%)** | வ் | 6.21 | 7 | 2 | |
+| | ச் | 5.15 | 6 | 2 | Much more common in roots than inflections suggest |
+| | ல் | 5.04 | 6 | 2 | Same — root-heavy letter |
+| | ன் | 5.01 | 5 | 2 | |
+| | ற் | 4.63 | 5 | 2 | Less common in roots than inflections suggest |
+| | ள் | 4.44 | 4 | 2 | Same — inflated by -கள் suffix |
 | **Low (2-3%)** | ய் | 2.87 | 3 | 3 | |
 | | ந் | 2.73 | 3 | 3 | |
 | **Scarce (1-2%)** | ண் | 1.88 | 2 | 4 | |
@@ -158,13 +158,13 @@ Bonus: ? 10
 | | ஜ் | 0.12 | 2 | 8 | |
 | | ஹ் | 0.04 | 2 | 8 | Rarest consonant |
 
-### New Vowel Tiles and Points (92 total)
+### New Vowel Tiles and Points (88 total)
 
 | Tier | Letter | Blended % | Tiles | Points | Rationale |
 |------|--------|-----------|-------|--------|-----------|
-| **Dominant (>15%)** | அ | 36.55 | 31 | 1 | Most common letter in Tamil |
-| | இ | 21.24 | 19 | 1 | Second most common vowel |
-| | உ | 17.10 | 15 | 1 | Third most common vowel |
+| **Dominant (>15%)** | அ | 36.55 | 29 | 1 | Most common letter in Tamil |
+| | இ | 21.24 | 18 | 1 | Second most common vowel |
+| | உ | 17.10 | 14 | 1 | Third most common vowel |
 | **Common (5-10%)** | ஆ | 9.54 | 8 | 2 | Common long vowel |
 | **Medium (2-5%)** | ஐ | 4.30 | 4 | 2 | More common in roots than dict suggested |
 | | எ | 2.84 | 3 | 3 | |
@@ -181,14 +181,14 @@ Bonus: ? 10
 |------|-------|--------|
 | ? | 4 | 0 |
 
-### Grand Total: 236 tiles
+### Grand Total: 212 tiles
 
 | Category | New | Old | Change |
 |----------|-----|-----|--------|
-| Consonants | 140 | 530 | -73.6% |
-| Vowels | 92 | 350 | -73.7% |
+| Consonants | 120 | 530 | -77.4% |
+| Vowels | 88 | 350 | -74.9% |
 | Bonus | 4 | 10 | -60.0% |
-| **Total** | **236** | **890** | **-73.5%** |
+| **Total** | **212** | **890** | **-76.2%** |
 
 ## Scoring Examples
 
@@ -217,37 +217,37 @@ Since Uyirmey tiles score Mey points + Uyir points automatically, here are repre
 
 ## Game Length Analysis
 
-| Metric | Old (890 tiles) | New (236 tiles) |
+| Metric | Old (890 tiles) | New (212 tiles) |
 |--------|-----------------|-----------------|
 | Initial draw (2 players) | 28 tiles | 28 tiles |
-| Tiles remaining after draw | 862 | 208 |
+| Tiles remaining after draw | 862 | 184 |
 | Avg tiles played per turn | ~5 | ~5 |
-| Estimated turns per player | ~86 | ~20 |
-| Typical game duration | Very long | 30-45 minutes |
+| Estimated turns per player | ~86 | ~18 |
+| Typical game duration | Very long | 25-40 minutes |
 
 ## Comparison with English Scrabble
 
 | Property | English Scrabble | Old Tamil Bag | New Tamil Bag |
 |----------|-----------------|---------------|---------------|
-| Total tiles | 100 | 890 | 236 |
+| Total tiles | 100 | 890 | 212 |
 | Rack size | 7 | 14 | 14 |
 | Tiles per word | 3-7 | 5-10 (Mey+Uyir) | 5-10 (Mey+Uyir) |
-| Turns per player | ~15-20 | ~80+ | ~18-22 |
+| Turns per player | ~15-20 | ~80+ | ~17-20 |
 | Point range | 1-10 | 1-5 | 1-8 (tiles), 2-16 (Uyirmey) |
 | Rarest letter | Z (0.07%, 1 tile, 10pts) | ஹ் (0.01%, 3 tiles, 5pts) | ஹ் (0.01%, 2 tiles, 8pts) |
 
 ## Key Corrections from Blended Analysis
 
 ### Letters that rose significantly after headword correction
-- **ம்** : 7 → 10 tiles (+43%) — was 4.83% in dict, but 10.14% in headwords. Very common in root vocabulary.
-- **ச்** : 5 → 7 tiles (+40%) — was 3.23% in dict, but 7.07% in headwords. Common roots like செய், சொல்.
-- **ல்** : 5 → 7 tiles (+40%) — was 3.53% in dict, but 6.55% in headwords. Common in root vocabulary.
+- **ம்** : 7 → 8 tiles (+14%) — was 4.83% in dict, but 10.14% in headwords. Very common in root vocabulary.
+- **ச்** : 5 → 6 tiles (+20%) — was 3.23% in dict, but 7.07% in headwords. Common roots like செய், சொல்.
+- **ல்** : 5 → 6 tiles (+20%) — was 3.53% in dict, but 6.55% in headwords. Common in root vocabulary.
 - **ஐ** : 3 → 4 tiles — was 2.69% in dict, but 5.90% in headwords. Common in accusative case.
 
 ### Letters that fell after headword correction
-- **ள்** : 9 → 5 tiles (-44%) — was 6.73% in dict, but only 2.14% in headwords. Inflated by -கள் plural.
-- **ற்** : 9 → 6 tiles (-33%) — was 6.55% in dict, but only 2.70% in headwords. Inflated by past tense suffixes.
-- **க்** : 25 → 21 tiles (-16%) — was 18.75% in dict, but 12.89% in headwords. Inflated by -கள், -கிற suffixes.
+- **ள்** : 9 → 4 tiles (-56%) — was 6.73% in dict, but only 2.14% in headwords. Inflated by -கள் plural.
+- **ற்** : 9 → 5 tiles (-44%) — was 6.55% in dict, but only 2.70% in headwords. Inflated by past tense suffixes.
+- **க்** : 25 → 17 tiles (-32%) — was 18.75% in dict, but 12.89% in headwords. Inflated by -கள், -கிற suffixes.
 
 ### Point value adjustments from blending
 - **ச்** : 3 → 2 pts (now medium at 5.15%, not uncommon)
