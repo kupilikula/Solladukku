@@ -53,7 +53,8 @@ const RATE_LIMIT_WINDOW_MS = 1000;
 const RATE_LIMIT_MAX_MESSAGES = 30;
 const MATCH_ASSIGNMENT_TTL_MS = 10 * 60 * 1000;
 const MATCHMAKING_QUEUE_TTL_MS = 2 * 60 * 1000;
-const STRICT_SERVER_VALIDATION = String(process.env.STRICT_SERVER_VALIDATION || '').toLowerCase() === 'true';
+const STRICT_SERVER_VALIDATION = String(process.env.STRICT_SERVER_VALIDATION || 'true').toLowerCase() === 'true';
+const STRICT_GENERATED_WORD_GATE = String(process.env.STRICT_GENERATED_WORD_GATE || 'true').toLowerCase() === 'true';
 const ANALYTICS_ADMIN_PASSWORD = process.env.ANALYTICS_ADMIN_PASSWORD || '';
 const ANALYTICS_STORE_RAW_IP = String(process.env.ANALYTICS_STORE_RAW_IP || 'true').toLowerCase() !== 'false';
 const AUTH_ENABLED = auth.isAuthEnabled();
@@ -73,6 +74,13 @@ const EMAIL_SMTP_SOCKET_TIMEOUT_MS = Math.max(2000, Number(process.env.EMAIL_SMT
 const EMAIL_VERIFICATION_TTL_HOURS = Math.max(1, Number(process.env.AUTH_EMAIL_VERIFICATION_TTL_HOURS || 24));
 const PASSWORD_RESET_TTL_MINUTES = Math.max(5, Number(process.env.AUTH_PASSWORD_RESET_TTL_MINUTES || 30));
 const AUTH_CLEANUP_INTERVAL_MINUTES = Math.max(1, Number(process.env.AUTH_CLEANUP_INTERVAL_MINUTES || 30));
+const GENERATED_DICTIONARY_CANDIDATES = [
+    path.join(__dirname, '..', 'public', 'tamil_dictionary.txt'),
+    path.join(__dirname, '..', 'build', 'tamil_dictionary.txt'),
+];
+
+let generatedDictionaryWords = null;
+let generatedDictionaryReady = false;
 
 // Initialize analytics DB
 analytics.init();
@@ -105,6 +113,45 @@ const authCleanupTimer = setInterval(
 );
 if (typeof authCleanupTimer.unref === 'function') {
     authCleanupTimer.unref();
+}
+
+function initGeneratedDictionaryGate() {
+    if (!STRICT_GENERATED_WORD_GATE) return;
+
+    let loadedPath = null;
+    for (const candidate of GENERATED_DICTIONARY_CANDIDATES) {
+        if (fs.existsSync(candidate)) {
+            loadedPath = candidate;
+            break;
+        }
+    }
+
+    if (!loadedPath) {
+        console.log('WARNING: STRICT_GENERATED_WORD_GATE=true but tamil_dictionary.txt was not found.');
+        console.log('Expected one of:');
+        for (const candidate of GENERATED_DICTIONARY_CANDIDATES) {
+            console.log(`  - ${candidate}`);
+        }
+        generatedDictionaryWords = new Set();
+        generatedDictionaryReady = false;
+        return;
+    }
+
+    try {
+        const text = fs.readFileSync(loadedPath, 'utf8');
+        const words = new Set();
+        for (const rawLine of text.split(/\r?\n/)) {
+            const word = rawLine.trim();
+            if (word) words.add(word);
+        }
+        generatedDictionaryWords = words;
+        generatedDictionaryReady = true;
+        console.log(`Loaded generated-word gate dictionary (${words.size} words) from ${loadedPath}`);
+    } catch (err) {
+        console.error('Failed to load generated-word gate dictionary:', err?.message || err);
+        generatedDictionaryWords = new Set();
+        generatedDictionaryReady = false;
+    }
 }
 
 // ─── HTTP Server + REST API ──────────────────────────────────────────
@@ -1872,6 +1919,15 @@ function lookupWord(fstEntry, word) {
  * Returns true if ANY FST recognizes the word.
  */
 async function validateWordWithFsts(word) {
+    if (STRICT_GENERATED_WORD_GATE) {
+        if (!generatedDictionaryReady || !generatedDictionaryWords) {
+            return false;
+        }
+        if (!generatedDictionaryWords.has(word)) {
+            return false;
+        }
+    }
+
     if (!flookupAvailable || fstProcesses.size === 0) {
         return !STRICT_SERVER_VALIDATION; // strict mode rejects on server-validation unavailability
     }
@@ -1915,6 +1971,7 @@ async function validateMultipleWords(words) {
 }
 
 // Initialize FST processes at startup
+initGeneratedDictionaryGate();
 initFstProcesses();
 
 // ─── Room Helpers ─────────────────────────────────────────────────────

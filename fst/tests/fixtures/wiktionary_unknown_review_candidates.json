@@ -1,0 +1,384 @@
+{
+  "candidates": [
+    {
+      "lemma": "அஃகியஔ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "orthographic/noise-like pattern from dump title extraction",
+      "recommended_action": "exclude_candidate",
+      "source": "dump"
+    },
+    {
+      "lemma": "அஆ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "orthographic/noise-like pattern from dump title extraction",
+      "recommended_action": "exclude_candidate",
+      "source": "dump"
+    },
+    {
+      "lemma": "அம்மாஆ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "அளைஇ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "அழிதூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "ஆஅ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "orthographic/noise-like pattern from dump title extraction",
+      "recommended_action": "exclude_candidate",
+      "source": "dump"
+    },
+    {
+      "lemma": "ஆஆ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "orthographic/noise-like pattern from dump title extraction",
+      "recommended_action": "exclude_candidate",
+      "source": "dump"
+    },
+    {
+      "lemma": "ஆடுஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "ஆடூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "இகூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "எலெ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "ஏஎ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "orthographic/noise-like pattern from dump title extraction",
+      "recommended_action": "exclude_candidate",
+      "source": "dump"
+    },
+    {
+      "lemma": "ஏஏ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "orthographic/noise-like pattern from dump title extraction",
+      "recommended_action": "exclude_candidate",
+      "source": "dump"
+    },
+    {
+      "lemma": "ஒரூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "ஓஒ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "orthographic/noise-like pattern from dump title extraction",
+      "recommended_action": "exclude_candidate",
+      "source": "dump"
+    },
+    {
+      "lemma": "குரீஇ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "குழூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "கொமெ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "க்ஷ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "possible lexical/loan or classical form; needs human decision",
+      "recommended_action": "manual_review_keep_candidate",
+      "source": "dump+vuizur"
+    },
+    {
+      "lemma": "க்ஷெ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "possible lexical/loan or classical form; needs human decision",
+      "recommended_action": "manual_review_keep_candidate",
+      "source": "dump"
+    },
+    {
+      "lemma": "க்ஷொ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "possible lexical/loan or classical form; needs human decision",
+      "recommended_action": "manual_review_keep_candidate",
+      "source": "dump"
+    },
+    {
+      "lemma": "க்ஷௌ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "possible lexical/loan or classical form; needs human decision",
+      "recommended_action": "manual_review_keep_candidate",
+      "source": "dump"
+    },
+    {
+      "lemma": "செவியறிவுறூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "தகுந",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "possible lexical/loan or classical form; needs human decision",
+      "recommended_action": "manual_review_keep_candidate",
+      "source": "dump"
+    },
+    {
+      "lemma": "தழூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "தாபவஎ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "தூக்கணங்குரீஇ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "தைஇ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "தொழீஇ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "நப்புந",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "நாஇ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "பரூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "பழூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "பாடன்மகடூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "புருஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "புலௌ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "மரூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "வழூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "விரீஇ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "வெரீஇ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "வெரூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "ஸஹ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "possible lexical/loan or classical form; needs human decision",
+      "recommended_action": "manual_review_keep_candidate",
+      "source": "dump"
+    }
+  ],
+  "generated_from": "static-word-list/fst_unclassified_vuizur_headwords.json",
+  "total": 42
+}

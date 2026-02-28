@@ -1,0 +1,28 @@
+{
+  "must_include_class": {
+    "புழு": "noun.fst",
+    "புழுத்தல்": "verb-c-rest.fst",
+    "குரு": "noun.fst",
+    "போண்டி": "adj.fst",
+    "வத்தல்": "noun.fst",
+    "பித்தல்": "noun.fst"
+  },
+  "must_exclude_classes": {
+    "வத்தல்": [
+      "verb-c3.fst",
+      "verb-c4.fst",
+      "verb-c11.fst",
+      "verb-c12.fst",
+      "verb-c62.fst",
+      "verb-c-rest.fst"
+    ],
+    "பித்தல்": [
+      "verb-c3.fst",
+      "verb-c4.fst",
+      "verb-c11.fst",
+      "verb-c12.fst",
+      "verb-c62.fst",
+      "verb-c-rest.fst"
+    ]
+  }
+}

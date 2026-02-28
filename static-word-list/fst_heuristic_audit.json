@@ -1,0 +1,86 @@
+[
+  {
+    "accepted_added": 0,
+    "class": "adj.fst",
+    "forward_validated": 0,
+    "generated_candidates": 0,
+    "normalized_or_predicted_inputs": 361,
+    "predicted_lemmas": 361,
+    "sample_added": [],
+    "templates_used": 3
+  },
+  {
+    "accepted_added": 0,
+    "class": "adv.fst",
+    "forward_validated": 0,
+    "generated_candidates": 0,
+    "notes": "no controlled analyses for this class",
+    "predicted_lemmas": 30,
+    "templates_used": 0
+  },
+  {
+    "accepted_added": 0,
+    "class": "noun.fst",
+    "forward_validated": 0,
+    "generated_candidates": 0,
+    "normalized_or_predicted_inputs": 77499,
+    "predicted_lemmas": 77499,
+    "sample_added": [],
+    "templates_used": 16
+  },
+  {
+    "accepted_added": 0,
+    "class": "part.fst",
+    "forward_validated": 0,
+    "generated_candidates": 0,
+    "notes": "no controlled analyses for this class",
+    "predicted_lemmas": 21,
+    "templates_used": 0
+  },
+  {
+    "accepted_added": 588556,
+    "class": "verb-c-rest.fst",
+    "forward_validated": 588556,
+    "generated_candidates": 588556,
+    "normalized_or_predicted_inputs": 79325,
+    "predicted_lemmas": 14099,
+    "sample_added": [
+      "அஃக",
+      "அஃகக்",
+      "அஃகச்",
+      "அஃகட்டும்",
+      "அஃகத்",
+      "அஃகப்",
+      "அஃகலாகாது",
+      "அஃகலாம்",
+      "அஃகவில்லை",
+      "அஃகாத",
+      "அஃகாதீர்கள்",
+      "அஃகாது",
+      "அஃகாதே",
+      "அஃகாமல்",
+      "அஃகாவிட்டால்",
+      "அஃகி",
+      "அஃகிக்",
+      "அஃகிச்",
+      "அஃகித்",
+      "அஃகின",
+      "அஃகினது",
+      "அஃகினன",
+      "அஃகினனன்",
+      "அஃகினனள்",
+      "அஃகினன்"
+    ],
+    "templates_used": 1358
+  },
+  {
+    "accepted_added": 0,
+    "class": "verb-c11.fst",
+    "forward_validated": 0,
+    "generated_candidates": 0,
+    "normalized_or_predicted_inputs": 8,
+    "predicted_lemmas": 8,
+    "sample_added": [],
+    "templates_used": 668
+  }
+]

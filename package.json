@@ -31,7 +31,10 @@
     "eject": "react-scripts eject",
     "fst:build": "python3 fst/build/build_fsts.py",
     "fst:test": "python3 fst/tests/run_fst_regressions.py",
-    "dict:build": "npm run fst:build && python3 static-word-list/generate_fst_forms.py && python3 static-word-list/build_dictionary.py && python3 fst/tests/run_fst_regressions.py --check-dictionary"
+    "dict:build": "npm run fst:build && FULL_FST_GENERATION=true python3 static-word-list/generate_fst_forms.py && python3 static-word-list/build_dictionary.py && python3 fst/tests/run_fst_regressions.py --check-dictionary --full-mode",
+    "dict:build:conservative": "npm run fst:build && python3 static-word-list/generate_fst_forms.py && python3 static-word-list/build_dictionary.py && python3 fst/tests/run_fst_regressions.py --check-dictionary",
+    "dict:build:full": "npm run dict:build",
+    "dict:analyze-gap": "python3 static-word-list/analyze_gap_vs_legacy.py"
   },
   "eslintConfig": {
     "extends": [

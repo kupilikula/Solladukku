@@ -42,11 +42,20 @@ server/
 ├── analytics.db              # SQLite database (auto-created, gitignored)
 └── fst-models/               # Runtime FST model files (11 core models)
 static-word-list/
-├── build_dictionary.py       # Builds combined dictionary from all sources
-├── generate_fst_forms.py     # Generates noun/adj/adv inflections via local built flookup models
+├── build_dictionary.py       # Builds combined dictionary from headword sources + local FST-generated forms (no external pre-generated verb list dependency)
+├── extract_tawiktionary_pos.py # Parses Tamil Wiktionary pages dump and emits lemma→POS cache for classification constraints
+├── generate_fst_forms.py     # Classifies headwords against all 11 core FSTs and generates noun/verb (plus adj) forms via local flookup models
+├── analyze_gap_vs_legacy.py  # Quantifies gap between current generated dictionary and legacy external words-C* coverage
+├── wiktionary_exclusions.txt # Manually reviewed lemma exclusions applied globally to Lexicon/Wiktionary headword pools before generation/build
 ├── tamillexicon_headwords.txt # Tamil Lexicon source headwords (107K)
 ├── fst_generated_forms.txt   # Output: generated FST surface forms (count depends on current model build)
-├── cache/                    # Cached downloads (verb files, Wiktionary TSV)
+├── fst_classified_headwords.json # Output: headword -> matched FST classes map
+├── fst_heuristic_classified_headwords.json # Output: suffix-pattern-based class predictions for FST-unclassified headwords
+├── fst_heuristic_forms.txt   # Output: optional heuristic entries (lemmas and/or controlled inflections)
+├── fst_heuristic_audit.json  # Output: controlled heuristic generation audit (per class counts + sample accepted forms)
+├── fst_unclassified_vuizur_headwords.json # Output: unclassified Wiktionary lemmas after FST + heuristic pass (file name retained for compatibility)
+├── fst_unclassified_vuizur_summary.json # Output: unclassified Wiktionary POS/source counts + preview list
+├── cache/                    # Cached dictionary build inputs (official Tamil Wiktionary dumps + POS cache + Vuizur TSV fallback/supplement + legacy artifacts)
 └── fst-models/               # Synced FST consumer copy for dictionary tooling compatibility
 build/
 └── fst-models/               # Canonical generated FST artifacts (synced to server/static-word-list)
@@ -68,7 +77,7 @@ fst/
     ├── run_fst_regressions.py # CI-friendly morphology + dictionary regression checks
     ├── analyze_fst.py        # Audit harness for suspicious pattern and coverage analysis
     ├── config/               # Analysis config presets (nouns, verbs)
-    └── fixtures/             # known-good/known-bad/regression fixtures
+    └── fixtures/             # known-good/known-bad/regression fixtures (noun morphology, heuristic class, Wiktionary-resolution guards, unresolved-lemma review sheet)
 vendor/
 └── thamizhi-morph/           # Git submodule pinned to upstream commit (currently a296417ac603fd44eda35645369f1257d96bed89)
 public/
@@ -265,19 +274,49 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 | Source | Words | Description |
 |--------|-------|-------------|
 | Tamil Lexicon headwords | 106K | Classical Tamil headwords from University of Madras |
-| Vuizur Wiktionary TSV | 5.5K | Modern Tamil headwords from Wiktionary |
-| ThamizhiMorph Generated-Verbs | 1.69M | Pre-generated verb inflections (18 conjugation classes) |
-| FST-generated forms | Build-dependent | Noun inflections (case × number), adjectives, adverbs |
+| Tamil Wiktionary dump (official) | Build-dependent | Headwords from Wikimedia `tawiktionary-latest-all-titles-in-ns0.gz` |
+| Tamil Wiktionary POS cache (official pages dump) | Build-dependent | POS-tagged lemmas extracted from `tawiktionary-latest-pages-articles.xml.bz2` |
+| Vuizur Wiktionary TSV (supplemental) | 5.5K | Supplemental headwords + POS-hint source from Wiktionary extraction |
+| Local FST-generated forms | Build-dependent | Forms generated from classified headwords using local core FSTs (noun inflections + verb class generation + adjective generation) |
 | **Total (deduplicated)** | **Build-dependent** | Filtered to ≤15 Tamil letters |
 
 ### FST Form Generation (`static-word-list/generate_fst_forms.py`)
 
-1. Uses canonical built FST models from `build/fst-models/` (built by `npm run fst:build`)
-2. Feeds 116K Tamil Lexicon headwords through forward `flookup` to identify recognized nouns
-3. Generates all inflected forms via inverse `flookup -i` with morphological tags:
-   - `noun.fst`: 16 tags (nom/acc/dat/loc/abl/gen/inst/soc × sg/pl)
-4. Also processes adj, adv, part, pronoun FSTs for forward recognition
-5. Requires: `foma`/`flookup` installed and vendored submodule sources present
+1. Uses local core FST models (prefers `build/fst-models/`, falls back to `server/fst-models/` / `static-word-list/fst-models`)
+2. Builds a unified lemma pool from Tamil Lexicon + Tamil Wiktionary headwords
+   - Primary Wiktionary source: official Wikimedia Tamil Wiktionary dump (`tawiktionary-latest-all-titles-in-ns0.gz`, cached locally)
+   - `FORCE_REFRESH_TAWIKTIONARY_DUMP=true` forces dump refresh
+   - Optional full POS extraction source: `extract_tawiktionary_pos.py` parses `tawiktionary-latest-pages-articles.xml.bz2` into `cache/tawiktionary_pos_headwords.jsonl`
+   - Vuizur TSV remains as supplemental headword fallback and POS-hint source
+   - Vuizur ingestion is lemma-first (first token before `|`), not all inflected variants
+   - Vuizur lemmas pass a lexical prefilter (drops single-letter/symbol/digit-like entries before classification)
+   - POS hints are merged from (priority by specificity): Tamil Lexicon hyphen verb hints, Tamil Wiktionary pages POS cache, Vuizur `<i>...</i>` hints
+   - Applies `wiktionary_exclusions.txt` globally to remove manually rejected archaic/noise lemmas from source pools before classification
+   - Tamil Lexicon verb-shape hints are also captured from hyphen-marked entries ending in `-தல்`/`-த்தல்` and used as `verb` POS constraints
+3. Classifies each lemma via forward `flookup` across all 11 core models (`noun/adj/adv/part/pronoun` + `verb-c3/c4/c11/c12/c62/rest`)
+4. Generates forms via inverse `flookup -i`:
+   - `noun.fst`: fixed noun tag grid (case × number)
+   - `verb-*`: class-specific templates extracted from local verb `.lexc` sources
+   - `adj.fst`: limited adjective tags (`+adj`, `+adj+comp`, `+adj+super`)
+5. Emits both generated forms (`fst_generated_forms.txt`) and class map (`fst_classified_headwords.json`)
+6. Also emits heuristic class predictions for currently unclassified headwords (`fst_heuristic_classified_headwords.json`)
+7. Controlled heuristic transformation layer (opt-in): generates limited per-class forms for heuristic predictions, then forward-validates them through class FSTs; writes accepted forms to `fst_heuristic_forms.txt` and audit to `fst_heuristic_audit.json`
+   - Uses canonical lemma guesses (no suffix-stripping normalization)
+   - Class prediction is suffix-pattern-based but constrained by merged POS hints (Lexicon + Tamil Wiktionary pages POS + Vuizur)
+   - For unclassified lemmas with explicit POS hints, a conservative POS-default class fallback is applied (e.g., noun→`noun.fst`, adjective→`adj.fst`, verb→`verb-c-rest.fst`)
+   - Verb heuristic inflection synthesis includes controlled infinitive normalization (`...தல்`/`...த்தல்` stem candidates) before inverse+forward validation
+8. Inclusion toggles:
+   - `INCLUDE_HEURISTIC_LEMMAS=true` adds heuristic base lemmas
+   - `INCLUDE_HEURISTIC_INFLECTIONS=true` adds controlled, forward-validated heuristic inflections
+   - `FULL_FST_GENERATION=true` enables non-conservative noun/verb synthesis:
+     - Verb generation uses all class templates extracted from verb `.lexc` (not conservative subset)
+     - Heuristic inflection generation is auto-enabled and uses full noun tags + full verb templates
+   - Full-mode build command: `npm run dict:build:full`
+   - Full-mode regression fixture: `fst/tests/fixtures/full_mode_regressions.json` (checked via `run_fst_regressions.py --full-mode`)
+9. Generation also emits unclassified-modern-word reports from Wiktionary (`fst_unclassified_vuizur_headwords.json`, `fst_unclassified_vuizur_summary.json`) to drive targeted lexicon/FST improvement work
+10. Heuristic classification supports explicit lemma-level class overrides for known ambiguous endings (e.g., noun lemmas ending in `-த்தல்`)
+11. Requires: `foma`/`flookup` installed and vendored submodule sources present
+12. `build_dictionary.py` includes heuristic outputs only when the corresponding toggle(s) are set during both generation and dictionary build
 
 ### Vendored FST Build Pipeline (`fst/build/build_fsts.py`)
 
@@ -301,7 +340,8 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 - **FIFO callback queue** per process for concurrent lookups
 - **Parallel validation**: word checked against all FSTs simultaneously, accepted if ANY recognizes it
 - **Respawn logic**: crashed processes restart after 5s delay, max 3 attempts
-- **Strict mode option**: set `STRICT_SERVER_VALIDATION=true` to reject when server-side validation is unavailable
+- **Strict-by-default runtime**: `STRICT_SERVER_VALIDATION` and `STRICT_GENERATED_WORD_GATE` now default to `true` when unset. Server rejects validation when FST is unavailable and only accepts words present in generated `tamil_dictionary.txt` (plus FST recognition).
+- **Override knobs**: set either env var to `false` only for temporary debugging.
 - **Request-response pattern**: `requestId` field matches requests to responses (unicast, not broadcast)
 
 ### Server Validation Cache (`src/utils/dictionary.js`)
@@ -849,6 +889,9 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 2. Regenerate FST surface forms: `python3 static-word-list/generate_fst_forms.py`
 3. Build combined dictionary: `python3 static-word-list/build_dictionary.py`
 4. Run regression checks (including dictionary include/exclude assertions): `python3 fst/tests/run_fst_regressions.py --check-dictionary`
+5. Canonical full-mode build/check (local + production artifact path): `npm run dict:build`
+6. Conservative fallback build/check (debug only): `npm run dict:build:conservative`
+7. Gap analysis versus legacy external words: `npm run dict:analyze-gap` (writes `static-word-list/gap_vs_legacy_report.json` and `.md`)
 5. Output: `public/tamil_dictionary.txt` (served to browser)
 
 Shortcut:
