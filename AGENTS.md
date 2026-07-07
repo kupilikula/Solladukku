@@ -17,7 +17,7 @@ A React-based Tamil Scrabble game with a landing page, real-time multiplayer via
 - **Server**: Node.js with ws library, foma/flookup for FST validation, origin/rate-limit hardening, SQLite analytics, and feature-flagged account auth (access token + HttpOnly refresh cookie sessions, double-submit CSRF token cookie/header protection for cookie-auth routes, Argon2id password hashing via `argon2`), plus Zoho SMTP email delivery integration via `nodemailer` for verification/reset flows
 - **Dictionary Build**: Python 3 scripts, foma toolkit for FST morphological generation
 - **Deployment**: Railway (Dockerfile-based, auto-deploy on push to `main`). Server serves both API/WebSocket and React static build as a single service.
-- **Dictionary Storage**: Git LFS (current rebuilt artifact is ~45MB; historical/full builds may be larger). Dockerfile auto-downloads from GitHub if LFS pointer isn't resolved.
+- **Dictionary Storage**: `public/tamil_dictionary.txt` has Git LFS attributes, but the current rebuilt artifact is ~45MB and is currently pushed as a normal Git blob when Git LFS is unavailable; historical/full builds may be larger. Dockerfile auto-downloads from GitHub if an LFS pointer is present instead of real contents.
 
 ## Project Structure
 
@@ -1013,7 +1013,7 @@ Deployed as a single Dockerfile-based service on Railway:
 - Custom domain: `solmaalai.com` (CNAME → Railway). `சொல்மாலை.com` redirects via Namecheap.
 - `Dockerfile` installs `foma`/`flookup` and `git`; FST patch application/compilation runs in-container so production always uses patched runtime models generated at build time
 - `Dockerfile` also installs native build prerequisites (`python3`, `make`, `g++`) so `argon2` can compile if prebuilt binaries are unavailable
-- Dictionary file is stored via Git LFS (current rebuilt artifact is ~45MB; historical/full builds may be larger). Railway's Docker builder doesn't resolve LFS pointers, so the Dockerfile detects this (file < 1KB) and downloads the actual file from GitHub.
+- Dictionary file has Git LFS attributes, but the current rebuilt artifact is ~45MB and may be stored as a normal Git blob when Git LFS is unavailable; historical/full builds may be larger. Railway's Docker builder doesn't resolve LFS pointers, so the Dockerfile detects a pointer file (file < 1KB) and downloads the actual file from GitHub.
 - Railway CLI: `railway up` for manual deploy, `railway logs` to check output
 
 ### Debugging

@@ -309,7 +309,7 @@ npm run dict:build:conservative
 
 ## Local Checkout and Docker Caveats
 
-`public/tamil_dictionary.txt` is Git-LFS-managed and may appear as a small pointer file in LFS-light checkouts. In the current rebuilt checkout it is the real generated dictionary artifact. An unresolved pointer contains an LFS object hash and size, not a direct download URL:
+`public/tamil_dictionary.txt` has Git LFS attributes and may appear as a small pointer file in LFS-enabled or LFS-light checkouts. In the current rebuilt checkout and pushed `main` commit, Git LFS is not installed locally and the artifact is the real ~45 MB generated dictionary stored as a normal Git blob. An unresolved pointer contains an LFS object hash and size, not a direct download URL:
 
 ```text
 version https://git-lfs.github.com/spec/v1
