@@ -12,7 +12,7 @@ import { isTamilOrthographyDefinitelyInvalid } from './tamilOrthography';
 let dictionary = null;    // sorted string array once loaded
 let loadingPromise = null; // dedup concurrent calls
 let loadError = null;
-const DICTIONARY_CACHE_VERSION = process.env.REACT_APP_DICTIONARY_CACHE_VERSION || '2026-02-14-1';
+const DICTIONARY_CACHE_VERSION = process.env.REACT_APP_DICTIONARY_CACHE_VERSION || '2026-07-07-verb-fst-1';
 const DICT_DB_NAME = 'solmaalai-cache';
 const DICT_DB_VERSION = 1;
 const DICT_STORE_NAME = 'assets';
