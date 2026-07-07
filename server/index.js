@@ -54,7 +54,6 @@ const RATE_LIMIT_MAX_MESSAGES = 30;
 const MATCH_ASSIGNMENT_TTL_MS = 10 * 60 * 1000;
 const MATCHMAKING_QUEUE_TTL_MS = 2 * 60 * 1000;
 const STRICT_SERVER_VALIDATION = String(process.env.STRICT_SERVER_VALIDATION || 'true').toLowerCase() === 'true';
-const STRICT_GENERATED_WORD_GATE = String(process.env.STRICT_GENERATED_WORD_GATE || 'true').toLowerCase() === 'true';
 const ANALYTICS_ADMIN_PASSWORD = process.env.ANALYTICS_ADMIN_PASSWORD || '';
 const ANALYTICS_STORE_RAW_IP = String(process.env.ANALYTICS_STORE_RAW_IP || 'true').toLowerCase() !== 'false';
 const AUTH_ENABLED = auth.isAuthEnabled();
@@ -74,13 +73,6 @@ const EMAIL_SMTP_SOCKET_TIMEOUT_MS = Math.max(2000, Number(process.env.EMAIL_SMT
 const EMAIL_VERIFICATION_TTL_HOURS = Math.max(1, Number(process.env.AUTH_EMAIL_VERIFICATION_TTL_HOURS || 24));
 const PASSWORD_RESET_TTL_MINUTES = Math.max(5, Number(process.env.AUTH_PASSWORD_RESET_TTL_MINUTES || 30));
 const AUTH_CLEANUP_INTERVAL_MINUTES = Math.max(1, Number(process.env.AUTH_CLEANUP_INTERVAL_MINUTES || 30));
-const GENERATED_DICTIONARY_CANDIDATES = [
-    path.join(__dirname, '..', 'public', 'tamil_dictionary.txt'),
-    path.join(__dirname, '..', 'build', 'tamil_dictionary.txt'),
-];
-
-let generatedDictionaryWords = null;
-let generatedDictionaryReady = false;
 
 // Initialize analytics DB
 analytics.init();
@@ -113,45 +105,6 @@ const authCleanupTimer = setInterval(
 );
 if (typeof authCleanupTimer.unref === 'function') {
     authCleanupTimer.unref();
-}
-
-function initGeneratedDictionaryGate() {
-    if (!STRICT_GENERATED_WORD_GATE) return;
-
-    let loadedPath = null;
-    for (const candidate of GENERATED_DICTIONARY_CANDIDATES) {
-        if (fs.existsSync(candidate)) {
-            loadedPath = candidate;
-            break;
-        }
-    }
-
-    if (!loadedPath) {
-        console.log('WARNING: STRICT_GENERATED_WORD_GATE=true but tamil_dictionary.txt was not found.');
-        console.log('Expected one of:');
-        for (const candidate of GENERATED_DICTIONARY_CANDIDATES) {
-            console.log(`  - ${candidate}`);
-        }
-        generatedDictionaryWords = new Set();
-        generatedDictionaryReady = false;
-        return;
-    }
-
-    try {
-        const text = fs.readFileSync(loadedPath, 'utf8');
-        const words = new Set();
-        for (const rawLine of text.split(/\r?\n/)) {
-            const word = rawLine.trim();
-            if (word) words.add(word);
-        }
-        generatedDictionaryWords = words;
-        generatedDictionaryReady = true;
-        console.log(`Loaded generated-word gate dictionary (${words.size} words) from ${loadedPath}`);
-    } catch (err) {
-        console.error('Failed to load generated-word gate dictionary:', err?.message || err);
-        generatedDictionaryWords = new Set();
-        generatedDictionaryReady = false;
-    }
 }
 
 // ─── HTTP Server + REST API ──────────────────────────────────────────
@@ -1767,7 +1720,7 @@ function spawnFlookupProcess(fstName, attempt = 1) {
     if (!fs.existsSync(fstPath)) return null;
 
     const maxAttempts = 3;
-    const proc = spawn('flookup', [fstPath], {
+    const proc = spawn('flookup', ['-b', fstPath], {
         stdio: ['pipe', 'pipe', 'pipe'],
     });
 
@@ -1788,17 +1741,20 @@ function spawnFlookupProcess(fstName, attempt = 1) {
         buffer = lines.pop(); // Keep incomplete last line in buffer
 
         for (const line of lines) {
-            if (entry.callbackQueue.length > 0) {
-                const cb = entry.callbackQueue[0];
-                cb.lines.push(line);
-                // flookup outputs one line per input word, then we see the next result
-                // Each input produces exactly one output line: "word\tanalysis" or "word\t+?"
-                cb.remaining--;
-                if (cb.remaining <= 0) {
+            if (entry.callbackQueue.length === 0) continue;
+
+            const cb = entry.callbackQueue[0];
+            if (!line.trim()) {
+                // flookup separates each input word's result set with a blank
+                // line. A word may produce multiple analyses before this.
+                if (cb.lines.length > 0) {
                     entry.callbackQueue.shift();
                     cb.resolve(cb.lines);
                 }
+                continue;
             }
+
+            cb.lines.push(line);
         }
     });
 
@@ -1891,14 +1847,8 @@ function lookupWord(fstEntry, word) {
             return;
         }
 
-        const timeoutId = setTimeout(() => {
-            // If we haven't heard back in 3s, assume failure
-            resolve(false);
-        }, 3000);
-
-        fstEntry.callbackQueue.push({
+        const cb = {
             lines: [],
-            remaining: 1,
             resolve: (lines) => {
                 clearTimeout(timeoutId);
                 // Check if any output line shows recognition (not "+?")
@@ -1908,7 +1858,17 @@ function lookupWord(fstEntry, word) {
                 });
                 resolve(recognized);
             },
-        });
+        };
+
+        const timeoutId = setTimeout(() => {
+            const idx = fstEntry.callbackQueue.indexOf(cb);
+            if (idx >= 0) {
+                fstEntry.callbackQueue.splice(idx, 1);
+            }
+            resolve(false);
+        }, 3000);
+
+        fstEntry.callbackQueue.push(cb);
 
         fstEntry.process.stdin.write(word + '\n');
     });
@@ -1919,15 +1879,6 @@ function lookupWord(fstEntry, word) {
  * Returns true if ANY FST recognizes the word.
  */
 async function validateWordWithFsts(word) {
-    if (STRICT_GENERATED_WORD_GATE) {
-        if (!generatedDictionaryReady || !generatedDictionaryWords) {
-            return false;
-        }
-        if (!generatedDictionaryWords.has(word)) {
-            return false;
-        }
-    }
-
     if (!flookupAvailable || fstProcesses.size === 0) {
         return !STRICT_SERVER_VALIDATION; // strict mode rejects on server-validation unavailability
     }
@@ -1971,7 +1922,6 @@ async function validateMultipleWords(words) {
 }
 
 // Initialize FST processes at startup
-initGeneratedDictionaryGate();
 initFstProcesses();
 
 // ─── Room Helpers ─────────────────────────────────────────────────────

@@ -29,6 +29,7 @@ Docs/
 ├── README.md                 # Docs index and navigation
 ├── FST_ARCHITECTURE.md       # Canonical FST source/build/patch/deploy architecture
 ├── TamilSpellingValidationShortcutRules.md # Client-side safe-mode Tamil spelling shortcut rules + exceptions
+├── WORD_VALIDATION_SYSTEM_SUMMARY.md # Current end-to-end dictionary/FST validation summary
 └── WORD_VALIDATION_PLAN.md   # Canonical word-validation research and phased plan
 server/
 ├── index.js                  # HTTP + WebSocket server: rooms, hardening, FST validation, REST API
@@ -336,12 +337,11 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 
 ### Server-Side FST Validation (`server/index.js`)
 
-- **11 long-lived core `flookup` child processes** by default (noun/adj/adv/part/pronoun + verb classes), stdin/stdout pipes kept open
+- **11 long-lived core `flookup -b` child processes** by default (noun/adj/adv/part/pronoun + verb classes), stdin/stdout pipes kept open with unbuffered output
 - **FIFO callback queue** per process for concurrent lookups
 - **Parallel validation**: word checked against all FSTs simultaneously, accepted if ANY recognizes it
 - **Respawn logic**: crashed processes restart after 5s delay, max 3 attempts
-- **Strict-by-default runtime**: `STRICT_SERVER_VALIDATION` and `STRICT_GENERATED_WORD_GATE` now default to `true` when unset. Server rejects validation when FST is unavailable and only accepts words present in generated `tamil_dictionary.txt` (plus FST recognition).
-- **Override knobs**: set either env var to `false` only for temporary debugging.
+- **Strict server fallback**: `STRICT_SERVER_VALIDATION` defaults to `true` when unset, so dictionary misses are rejected if server-side FST validation is unavailable.
 - **Request-response pattern**: `requestId` field matches requests to responses (unicast, not broadcast)
 
 ### Server Validation Cache (`src/utils/dictionary.js`)
@@ -988,6 +988,7 @@ The server at `server/index.js` is an HTTP + WebSocket server on a single port:
 - Source of truth: pinned submodule `vendor/thamizhi-morph` + local patches under `fst/patches/`
 - Regression command: `npm run fst:test`
 - Canonical architecture doc: `Docs/FST_ARCHITECTURE.md`
+- End-to-end validation summary: `Docs/WORD_VALIDATION_SYSTEM_SUMMARY.md`
 
 ### Dictionary Binary Search
 The dictionary is sorted with Python's `sorted()` (Unicode codepoint order). The JavaScript binary search MUST use `<`/`>` operators, NOT `localeCompare()`. Locale-aware Tamil sorting differs from codepoint order and will cause lookup failures.
