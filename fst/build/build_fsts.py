@@ -62,36 +62,54 @@ COMPONENTS = [
         "zip": "ThamizhiMorph-Verbs.zip",
         "entry": "ThamizhiFST-C3.foma",
         "output": "verb-c3.fst",
+        "patches": [
+            "0006-add-common-verb-coverage.patch",
+        ],
     },
     {
         "name": "verb-c4",
         "zip": "ThamizhiMorph-Verbs.zip",
         "entry": "ThamizhiFST-C4.foma",
         "output": "verb-c4.fst",
+        "patches": [
+            "0006-add-common-verb-coverage.patch",
+        ],
     },
     {
         "name": "verb-c11",
         "zip": "ThamizhiMorph-Verbs.zip",
         "entry": "ThamizhiFST-C11.foma",
         "output": "verb-c11.fst",
+        "patches": [
+            "0006-add-common-verb-coverage.patch",
+        ],
     },
     {
         "name": "verb-c12",
         "zip": "ThamizhiMorph-Verbs.zip",
         "entry": "ThamizhiFST-C12.foma",
         "output": "verb-c12.fst",
+        "patches": [
+            "0006-add-common-verb-coverage.patch",
+        ],
     },
     {
         "name": "verb-c62",
         "zip": "ThamizhiMorph-Verbs.zip",
         "entry": "ThamizhiFST-C62.foma",
         "output": "verb-c62.fst",
+        "patches": [
+            "0006-add-common-verb-coverage.patch",
+        ],
     },
     {
         "name": "verb-c-rest",
         "zip": "ThamizhiMorph-Verbs.zip",
         "entry": "ThamizhiFST-otherthan-3-4-62-11-12.foma",
         "output": "verb-c-rest.fst",
+        "patches": [
+            "0006-add-common-verb-coverage.patch",
+        ],
     },
     {
         "name": "pronoun",

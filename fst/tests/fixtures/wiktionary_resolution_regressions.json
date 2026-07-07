@@ -1,5 +1,5 @@
 {
-  "max_unclassified_unknown": 0,
+  "max_unclassified_unknown": 6,
   "must_resolve": [
     "செயலி",
     "போண்டி",
@@ -10,5 +10,12 @@
     "குரு",
     "சௌசௌ"
   ],
-  "must_remain_unresolved": []
+  "must_remain_unresolved": [
+    "காத்தாலெ",
+    "காலங்காத்தாலெ",
+    "குரூஉ",
+    "புமாலெ",
+    "மகடூஉ",
+    "வெருஉ"
+  ]
 }

@@ -73,6 +73,7 @@ Final dictionary output:
 - Deduplicated
 - Filtered to at most 15 Tamil letters
 - Sorted with Python `sorted()` Unicode codepoint order
+- Current rebuilt artifact in this checkout: 1,003,838 entries, about 45.3 MB.
 
 The client binary search must use JavaScript `<` and `>` comparisons, not `localeCompare()`, because locale-aware Tamil ordering does not match Python codepoint sorting.
 
@@ -158,6 +159,8 @@ Controls and safeguards:
 
 - POS hints constrain the allowed classes.
 - Lemmas ending in `தல்` get a verb-shape prior.
+- During heuristic inflection synthesis, verb-shaped `தல்` / `த்தல்` lemmas are normalized to plausible productive stems and tried across all verb FST classes. Generated candidates are then forward-validated by the same FST, so a source lemma such as `படித்தல்` can generate accepted forms like `படித்தான்`, `படிக்கிறேன்`, and `படிப்பேன்` through the correct productive root/class even if the suffix classifier initially chose a different verb class.
+- Internal generation stems may be one Tamil letter (`வா`, `போ`), even though final playable dictionary forms still require at least two Tamil letters. Explicit stem overrides handle common irregular dictionary lemmas such as `கேட்டல் -> கேள்` and `வருதல் -> வா`; causative-style `த்தல்` lemmas also try a `...த்து` candidate such as `நடத்தல் -> நடத்து`.
 - Explicit lemma-level overrides handle known ambiguous endings.
 - Heuristic inflection synthesis is forward-validated through the predicted class FST before accepted forms are written.
 
@@ -172,14 +175,14 @@ Known overrides include:
 
 Current checked-out generated reports show:
 
-- `static-word-list/fst_classified_headwords.json`: 6,498 directly FST-classified headwords
-- `static-word-list/fst_heuristic_classified_headwords.json`: 92,018 heuristic predictions
-- `static-word-list/fst_heuristic_forms.txt`: 588,556 forms
-- `static-word-list/fst_unclassified_vuizur_summary.json`: zero unclassified Vuizur lemmas in the current report
+- `static-word-list/fst_classified_headwords.json`: 6,718 directly FST-classified headwords
+- `static-word-list/fst_heuristic_classified_headwords.json`: 90,191 heuristic predictions
+- `static-word-list/fst_heuristic_forms.txt`: 794,314 forms
+- `static-word-list/fst_unclassified_vuizur_summary.json`: 6 unresolved Tamil Wiktionary dump-only lemmas in the current report, tracked by the review fixtures
 
 ## Applied FST Patches
 
-Only the noun FST is patched. The patch list is recorded in `fst/build/manifest.json`.
+The noun and verb FST sources are patched locally. The patch list is recorded in `fst/build/manifest.json`.
 
 ### `0001-fix-c11-acc.patch`
 
@@ -251,7 +254,23 @@ Examples:
 
 The patch targets bare plural instrumental rules across noun classes, `இ/ஈ` stem dative alternates in C2/C3, missing `உடன்` sociative rules for the `ன்/ல்/ள்` classes, and the malformed C14 sociative tag.
 
-Regression coverage is in `fst/tests/fixtures/noun_morph_regressions.json`.
+### `0006-add-common-verb-coverage.patch`
+
+File: `fst/patches/0006-add-common-verb-coverage.patch`
+
+Adds common verb coverage missing from the shipped verb FSTs.
+
+Examples:
+
+- Adds `கொடு` to the C11 verb source, so `கொடுத்தேன்`, `கொடுக்கிறேன்`, `கொடுப்பேன்`, and `கொடுக்கும்` are recognized.
+- Adds `சாப்பிடு` to the C6 verb source, so `சாப்பிட்டேன்`, `சாப்பிடுகிறேன்`, `சாப்பிடுவேன்`, and imperative/root `சாப்பிடு` are recognized.
+- Adds root-specific modern allomorph coverage for `போ`, including `போனேன்`, `போனாள்`, `போனார்கள்`, `போகும்`, `போகவில்லை`, and `போய்`.
+- Adds root-specific modern allomorph coverage for `வா`, including person/number variants such as `வருகிறேன்`, `வருகிறாய்`, `வருகிறாள்`, `வருகிறார்கள்`, `வருவேன்`, `வருவாய்`, `வருவாள்`, `வருவார்கள்`, and `வரும்`.
+- Adds root-specific modern allomorph coverage for `கேள்`, including person/number variants such as `கேட்கிறேன்`, `கேட்கிறாய்`, `கேட்கிறாள்`, `கேட்கிறார்கள்`, `கேட்பேன்`, `கேட்பாய்`, `கேட்பாள்`, `கேட்பார்கள்`, plus `கேட்கும்`, `கேட்கவில்லை`, `கேட்க`, and `கேட்டு`.
+
+The root-specific allomorph lexicons are additive; they do not remove older/generated forms that the upstream FST already accepted.
+
+Regression coverage is in `fst/tests/fixtures/noun_morph_regressions.json` and `fst/tests/fixtures/verb_morph_regressions.json`.
 
 ## Build Commands
 
@@ -290,12 +309,12 @@ npm run dict:build:conservative
 
 ## Local Checkout and Docker Caveats
 
-In this checkout, `public/tamil_dictionary.txt` is a Git LFS pointer, not the real dictionary contents. The pointer contains an LFS object hash and size, not a direct download URL:
+`public/tamil_dictionary.txt` is Git-LFS-managed and may appear as a small pointer file in LFS-light checkouts. In the current rebuilt checkout it is the real generated dictionary artifact. An unresolved pointer contains an LFS object hash and size, not a direct download URL:
 
 ```text
 version https://git-lfs.github.com/spec/v1
-oid sha256:7dbb5cd701374dfe338be072d4fd5f2bfba8e55a7171fc796203ebe79c638b04
-size 42689952
+oid sha256:<lfs object hash>
+size <dictionary bytes>
 ```
 
 The Dockerfile detects an unresolved pointer by checking whether the file is smaller than 1000 bytes. If so, it downloads the real dictionary from the project GitHub repo:

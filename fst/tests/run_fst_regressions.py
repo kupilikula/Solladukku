@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import argparse
+import importlib.util
 import subprocess
 import sys
 import tempfile
@@ -15,6 +16,7 @@ from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[2]
 FIXTURE_PATH = ROOT / "fst" / "tests" / "fixtures" / "noun_morph_regressions.json"
+VERB_FIXTURE_PATH = ROOT / "fst" / "tests" / "fixtures" / "verb_morph_regressions.json"
 HEURISTIC_FIXTURE_PATH = ROOT / "fst" / "tests" / "fixtures" / "heuristic_class_regressions.json"
 WIKTIONARY_REVIEW_FIXTURE_PATH = ROOT / "fst" / "tests" / "fixtures" / "wiktionary_resolution_regressions.json"
 WIKTIONARY_UNKNOWN_REVIEW_PATH = ROOT / "fst" / "tests" / "fixtures" / "wiktionary_unknown_review_candidates.json"
@@ -23,6 +25,11 @@ NOUN_FST_CANDIDATES = [
     ROOT / "build" / "fst-models" / "noun.fst",
     ROOT / "server" / "fst-models" / "noun.fst",
     ROOT / "static-word-list" / "fst-models" / "noun.fst",
+]
+FST_MODEL_DIR_CANDIDATES = [
+    ROOT / "build" / "fst-models",
+    ROOT / "server" / "fst-models",
+    ROOT / "static-word-list" / "fst-models",
 ]
 DICT_FILE = ROOT / "public" / "tamil_dictionary.txt"
 CLASSIFIED_HEADWORDS_FILE = ROOT / "static-word-list" / "fst_classified_headwords.json"
@@ -33,14 +40,19 @@ NOUN_SOURCE_ZIP_CANDIDATES = [
     ROOT / "fst" / "upstream-zips" / "ThamizhiMorph-Nouns.zip",
 ]
 PATCH_DIR = ROOT / "fst" / "patches"
+GENERATE_FST_FORMS_PATH = ROOT / "static-word-list" / "generate_fst_forms.py"
 
 
 def run_flookup(inputs: list[str], inverse: bool = False) -> dict[str, list[str]]:
     noun_fst = resolve_noun_fst()
+    return run_flookup_with_model(noun_fst, inputs, inverse=inverse)
+
+
+def run_flookup_with_model(model_path: Path, inputs: list[str], inverse: bool = False) -> dict[str, list[str]]:
     cmd = ["flookup"]
     if inverse:
         cmd.append("-i")
-    cmd.append(str(noun_fst))
+    cmd.append(str(model_path))
 
     proc = subprocess.run(
         cmd,
@@ -77,6 +89,17 @@ def resolve_noun_fst() -> Path:
     fail(
         "Missing noun.fst in expected locations: "
         + ", ".join(str(p) for p in NOUN_FST_CANDIDATES)
+    )
+
+
+def resolve_fst_model(model_name: str) -> Path:
+    for model_dir in FST_MODEL_DIR_CANDIDATES:
+        candidate = model_dir / model_name
+        if candidate.exists() and candidate.stat().st_size > 0:
+            return candidate
+    fail(
+        f"Missing {model_name} in expected locations: "
+        + ", ".join(str(p) for p in FST_MODEL_DIR_CANDIDATES)
     )
 
 
@@ -126,7 +149,11 @@ def ensure_no_noun_class_duplicates() -> None:
         with ZipFile(noun_source_zip, "r") as zf:
             zf.extractall(work)
 
-        patches = sorted(PATCH_DIR.glob("000*.patch"))
+        patches = [
+            patch
+            for patch in sorted(PATCH_DIR.glob("000*.patch"))
+            if "Nouns.lexc" in patch.read_text(encoding="utf-8", errors="replace")
+        ]
         for patch in patches:
             subprocess.run(["git", "apply", "--check", str(patch)], cwd=work, check=True, capture_output=True, text=True)
             subprocess.run(["git", "apply", str(patch)], cwd=work, check=True, capture_output=True, text=True)
@@ -161,6 +188,81 @@ def ensure_no_noun_class_duplicates() -> None:
             fail(f"Noun class duplicates detected after patches: {preview}")
 
 
+def ensure_verb_infinitive_generation_expansion() -> None:
+    spec = importlib.util.spec_from_file_location(
+        "generate_fst_forms_regression",
+        GENERATE_FST_FORMS_PATH,
+    )
+    if spec is None or spec.loader is None:
+        fail(f"Unable to load generator module: {GENERATE_FST_FORMS_PATH}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+
+    stems = module.derive_verb_generation_stems("படித்தல்", klass="verb-c11.fst")
+    if "படி" not in stems:
+        fail(f"Verb infinitive normalization missed படித்தல் -> படி (got {sorted(stems)})")
+
+    generation_by_class = module.expand_heuristic_generation_classes({
+        "verb-c-rest.fst": ["படித்தல்"],
+    })
+    missing = sorted(module.VERB_CLASSES - set(generation_by_class))
+    if missing:
+        fail(f"Verb infinitive generation did not expand across verb classes: missing {missing}")
+
+    fst_dir = next(
+        (candidate for candidate in module.FST_MODEL_CANDIDATE_DIRS if candidate.exists()),
+        None,
+    )
+    if fst_dir is None:
+        fail("No FST model directory available for verb infinitive generation regression")
+
+    expected_forms = {
+        "படித்தல்": {"படித்தான்", "படிக்கிறேன்", "படிப்பேன்"},
+        "கொடுத்தல்": {"கொடுத்தேன்", "கொடுக்கிறேன்", "கொடுப்பேன்"},
+        "கேட்டல்": {"கேட்டேன்", "கேட்கிறேன்", "கேட்பேன்"},
+        "நடத்தல்": {"நடத்தினேன்", "நடத்துகிறேன்", "நடத்துவேன்"},
+        "வருதல்": {"வந்தேன்", "வருகிறேன்", "வருவேன்"},
+        "போதல்": {"போனேன்", "போகிறேன்", "போவேன்"},
+    }
+    for lemma, targets in expected_forms.items():
+        generated_forms: set[str] = set()
+        generation_by_class = module.expand_heuristic_generation_classes({
+            "verb-c-rest.fst": [lemma],
+        })
+        for klass in sorted(module.VERB_CLASSES):
+            lexc_path = module.resolve_verb_lexc(klass)
+            if not lexc_path:
+                continue
+            templates = [
+                t for t in module.extract_verb_templates_from_lexc(lexc_path)
+                if module.is_controlled_heuristic_verb_template(t)
+            ]
+            analyses = []
+            expanded = module.expand_heuristic_verb_lemmas(
+                generation_by_class.get(klass, []),
+                klass=klass,
+            )
+            for _source_lemma, stems in expanded.items():
+                for stem in sorted(stems):
+                    stem_templates = module.select_verb_templates_for_stem(
+                        stem,
+                        templates,
+                        full_generation=False,
+                    )
+                    analyses.extend(stem + tag for tag in stem_templates)
+            if not analyses:
+                continue
+            forms = module.inverse_generate_forms(fst_dir / klass, analyses)
+            generated_forms |= module.forward_filter_forms(fst_dir / klass, forms)
+
+        missing_targets = sorted(targets - generated_forms)
+        if missing_targets:
+            fail(
+                f"Verb infinitive generation missed {lemma}: "
+                f"missing {missing_targets}"
+            )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run FST morphology and optional dictionary regressions")
     parser.add_argument(
@@ -176,11 +278,13 @@ def main() -> None:
     args = parser.parse_args()
 
     ensure_file(FIXTURE_PATH, "fixture")
+    ensure_file(VERB_FIXTURE_PATH, "verb fixture")
     ensure_file(HEURISTIC_FIXTURE_PATH, "heuristic fixture")
     ensure_file(WIKTIONARY_REVIEW_FIXTURE_PATH, "wiktionary resolution fixture")
     ensure_file(WIKTIONARY_UNKNOWN_REVIEW_PATH, "wiktionary unknown review fixture")
     resolve_noun_fst()
     ensure_no_noun_class_duplicates()
+    ensure_verb_infinitive_generation_expansion()
 
     fixture = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
 
@@ -213,6 +317,18 @@ def main() -> None:
 
     if leaked_bad:
         fail(f"Forward analysis unexpectedly accepted forbidden forms: {leaked_bad}")
+
+    verb_fixture = json.loads(VERB_FIXTURE_PATH.read_text(encoding="utf-8"))
+    verb_good_count = 0
+    for model_name, model_fixture in verb_fixture["models"].items():
+        model_path = resolve_fst_model(model_name)
+        words = model_fixture.get("analysis_must_recognize", [])
+        results = run_flookup_with_model(model_path, words, inverse=False)
+        for word in words:
+            analyses = results.get(word, [])
+            if not analyses or all(a == "+?" for a in analyses):
+                fail(f"Verb forward analysis miss in {model_name}: {word} returned +?")
+            verb_good_count += 1
 
     if leaked_bad and args.check_dictionary:
         ensure_file(DICT_FILE, "dictionary")
@@ -280,6 +396,7 @@ def main() -> None:
 
     print("PASS: FST regressions")
     print(f"PASS: inverse checks={len(inverse_pairs)} forward-good={len(forward_good)}")
+    print(f"PASS: verb forward-good={verb_good_count}")
     print(f"PASS: rejected-bad={len(rejected_bad)} leaked-bad={len(leaked_bad)}")
     if args.check_dictionary:
         print("PASS: dictionary include/exclude checks")

@@ -17,7 +17,7 @@ A React-based Tamil Scrabble game with a landing page, real-time multiplayer via
 - **Server**: Node.js with ws library, foma/flookup for FST validation, origin/rate-limit hardening, SQLite analytics, and feature-flagged account auth (access token + HttpOnly refresh cookie sessions, double-submit CSRF token cookie/header protection for cookie-auth routes, Argon2id password hashing via `argon2`), plus Zoho SMTP email delivery integration via `nodemailer` for verification/reset flows
 - **Dictionary Build**: Python 3 scripts, foma toolkit for FST morphological generation
 - **Deployment**: Railway (Dockerfile-based, auto-deploy on push to `main`). Server serves both API/WebSocket and React static build as a single service.
-- **Dictionary Storage**: Git LFS (135MB file exceeds GitHub's 100MB limit). Dockerfile auto-downloads from GitHub if LFS pointer isn't resolved.
+- **Dictionary Storage**: Git LFS (current rebuilt artifact is ~45MB; historical/full builds may be larger). Dockerfile auto-downloads from GitHub if LFS pointer isn't resolved.
 
 ## Project Structure
 
@@ -264,7 +264,7 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 
 - **File**: `public/tamil_dictionary.txt` — generated word list, sorted (Unicode codepoint order)
 - **Loaded** on app startup via `loadDictionary()` in `src/utils/dictionary.js`
-- **Client persistence**: `loadDictionary()` now caches the dictionary text in IndexedDB (`solmaalai-cache/assets`) and reuses it on refresh to avoid repeated 135MB downloads (including private/incognito sessions while storage remains available)
+- **Client persistence**: `loadDictionary()` now caches the dictionary text in IndexedDB (`solmaalai-cache/assets`) and reuses it on refresh to avoid repeated large dictionary downloads (including private/incognito sessions while storage remains available)
 - **Gameplay guard**: Play submission is blocked until dictionary load completes (loading toast + disabled Play button)
 - **Lookup**: Binary search using `<`/`>` comparison (NOT `localeCompare` — must match Python's `sorted()` codepoint order)
 - **Permissive fallback**: If dictionary fails to load or is too small (< 1000 entries, e.g. LFS pointer), all words are accepted
@@ -305,7 +305,7 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
    - Uses canonical lemma guesses (no suffix-stripping normalization)
    - Class prediction is suffix-pattern-based but constrained by merged POS hints (Lexicon + Tamil Wiktionary pages POS + Vuizur)
    - For unclassified lemmas with explicit POS hints, a conservative POS-default class fallback is applied (e.g., noun→`noun.fst`, adjective→`adj.fst`, verb→`verb-c-rest.fst`)
-   - Verb heuristic inflection synthesis includes controlled infinitive normalization (`...தல்`/`...த்தல்` stem candidates) before inverse+forward validation
+   - Verb heuristic inflection synthesis includes controlled infinitive normalization (`...தல்`/`...த்தல்` stem candidates); verb-shaped `தல்`/`த்தல்` lemmas are expanded across all verb FST classes during generation and only forward-validated forms are retained, so sources such as `படித்தல்` can still generate `படித்தான்`/`படிப்பேன்` through the correct productive root/class. Internal generation stems can include one-letter productive roots (`வா`, `போ`) and explicit overrides for common irregular lemmas such as `கேட்டல் -> கேள்`, `வருதல் -> வா`, plus causative-style candidates such as `நடத்தல் -> நடத்து`.
 8. Inclusion toggles:
    - `INCLUDE_HEURISTIC_LEMMAS=true` adds heuristic base lemmas
    - `INCLUDE_HEURISTIC_INFLECTIONS=true` adds controlled, forward-validated heuristic inflections
@@ -330,12 +330,13 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
    - `static-word-list/fst-models/` (dictionary compatibility copy)
    - `server/fst-models/` (runtime validation copy)
 6. Emits `fst/build/manifest.json` with submodule commit, patch SHA256 hashes, UTC build timestamp, output SHA256 checksums
-6. Current noun patches:
+6. Current FST patches:
    - `0001-fix-c11-acc.patch` (Class 11 noun accusative `^னை -> ^ை`)
    - `0002-fix-noun-class-duplicates.patch` (removes cross-class duplicate noun roots to prevent class leakage)
    - `0003-fix-noun-malformed-locatives.patch` (fixes C6 locative behavior, including `-ட்டு` subclass handling and malformed `^டிடம்` path)
    - `0004-fix-noun-plural-accusative.patch` (adds common bare plural accusative alternates such as `மரம்+noun+pl+acc -> மரங்களை` while preserving existing `...களினை` variants)
    - `0005-add-common-noun-case-variants.patch` (adds common plural instrumental `...களால்` alternates, short `இ/ஈ`-stem dative forms such as `புலிக்கு`, missing `உடன்` sociative forms for `ன்/ல்/ள்` classes, and fixes a C14 `+noun+so` tag typo to `+noun+soc`)
+   - `0006-add-common-verb-coverage.patch` (adds common missing verb coverage for `கொடு`, `சாப்பிடு`, and modern allomorph forms for `போ`, `வா`, and `கேள்` across representative person/number variants; covered by `fst/tests/fixtures/verb_morph_regressions.json`)
 
 ### Server-Side FST Validation (`server/index.js`)
 
@@ -1012,7 +1013,7 @@ Deployed as a single Dockerfile-based service on Railway:
 - Custom domain: `solmaalai.com` (CNAME → Railway). `சொல்மாலை.com` redirects via Namecheap.
 - `Dockerfile` installs `foma`/`flookup` and `git`; FST patch application/compilation runs in-container so production always uses patched runtime models generated at build time
 - `Dockerfile` also installs native build prerequisites (`python3`, `make`, `g++`) so `argon2` can compile if prebuilt binaries are unavailable
-- Dictionary file (135MB) stored via Git LFS. Railway's Docker builder doesn't resolve LFS pointers, so the Dockerfile detects this (file < 1KB) and downloads the actual file from GitHub.
+- Dictionary file is stored via Git LFS (current rebuilt artifact is ~45MB; historical/full builds may be larger). Railway's Docker builder doesn't resolve LFS pointers, so the Dockerfile detects this (file < 1KB) and downloads the actual file from GitHub.
 - Railway CLI: `railway up` for manual deploy, `railway logs` to check output
 
 ### Debugging

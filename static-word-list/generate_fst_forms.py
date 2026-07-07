@@ -159,6 +159,12 @@ LEMMA_CLASS_OVERRIDES = {
     "வத்தல்": "noun.fst",
     "பித்தல்": "noun.fst",
 }
+VERB_LEMMA_STEM_OVERRIDES = {
+    # Lexical infinitive/headword forms whose productive stem is not recovered
+    # by simply stripping தல்/த்தல்.
+    "கேட்டல்": {"கேள்"},
+    "வருதல்": {"வா"},
+}
 
 
 def is_pure_tamil(word: str) -> bool:
@@ -194,6 +200,17 @@ def is_lexical_headword(word: str) -> bool:
     if first_cat in {"Mn", "Mc", "So"}:
         return False
     return True
+
+
+def is_generation_stem(word: str) -> bool:
+    if not is_pure_tamil(word):
+        return False
+    if tamil_letter_count(word) < 1:
+        return False
+    if TAMIL_DIGIT_RE.search(word):
+        return False
+    first_cat = unicodedata.category(word[0])
+    return first_cat not in {"Mn", "Mc", "So"}
 
 
 def load_wiktionary_exclusions() -> Set[str]:
@@ -490,21 +507,26 @@ def is_controlled_heuristic_verb_template(template: str) -> bool:
         return False
     if "+complex+" in template or "+caus=" in template or "+euph=" in template:
         return False
-    allowed_fragments = [
-        "+strong+pres=கிற்+1sg=",
-        "+strong+pres=கிற்+2sg=",
-        "+strong+pres=கிற்+3sgm=",
-        "+strong+pres=கிற்+3sgf=",
-        "+strong+pres=கிற்+3sge=",
-        "+strong+pres=கின்ற்+1sg=",
-        "+weak+fut=வ்+1sg=",
-        "+weak+fut=வ்+2sg=",
-        "+weak+fut=வ்+3sgm=",
-        "+weak+fut=வ்+3sgf=",
-        "+weak+fut=வ்+3sge=",
-        "+imp=∅+2pl=",
+    allowed_persons = [
+        "+1sg=",
+        "+2sg=",
+        "+3sgm=",
+        "+3sgf=",
+        "+3sge=",
+        "+3sgn=",
     ]
-    return any(frag in template for frag in allowed_fragments)
+    allowed_tenses = [
+        "+strong+past=",
+        "+strong+pres=",
+        "+weak+fut=",
+        "+middle+fut=",
+        "+strong+fut=",
+    ]
+    if any(tense in template for tense in allowed_tenses) and any(
+        person in template for person in allowed_persons
+    ):
+        return True
+    return "+imp=∅+2pl=" in template
 
 
 def write_classification_map(class_map: Dict[str, Set[str]]) -> None:
@@ -593,14 +615,16 @@ def derive_verb_generation_stems(lemma: str, klass: Optional[str] = None) -> Set
     to keep only legal stems/forms.
     """
     stems: Set[str] = {lemma}
+    stems.update(VERB_LEMMA_STEM_OVERRIDES.get(lemma, set()))
 
     # Complex derivations are mostly useful for broad verb classes.
     allow_complex = klass is None or klass in {"verb-c11.fst", "verb-c-rest.fst"}
 
     if lemma.endswith("த்தல்") and len(lemma) > len("த்தல்"):
         base = lemma[: -len("த்தல்")]
-        if is_lexical_headword(base):
+        if is_generation_stem(base):
             stems.add(base)
+            stems.add(base + "த்து")
             # Common causative/passive/aspectal path for many -த்தல் infinitives.
             stems.add(base + "க்க")
             if allow_complex:
@@ -610,7 +634,7 @@ def derive_verb_generation_stems(lemma: str, klass: Optional[str] = None) -> Set
                 stems.add(base + "த்துவிடு")
     elif lemma.endswith("தல்") and len(lemma) > len("தல்"):
         base = lemma[: -len("தல்")]
-        if is_lexical_headword(base):
+        if is_generation_stem(base):
             stems.add(base)
             if allow_complex:
                 stems.add(base + "ப்படு")
@@ -619,7 +643,7 @@ def derive_verb_generation_stems(lemma: str, klass: Optional[str] = None) -> Set
                 stems.add(base + "விடு")
 
     # Keep only lexical-looking Tamil strings.
-    return {s for s in stems if is_lexical_headword(s)}
+    return {s for s in stems if is_generation_stem(s)}
 
 
 def expand_heuristic_verb_lemmas(lemmas: Iterable[str], klass: Optional[str] = None) -> Dict[str, Set[str]]:
@@ -631,6 +655,30 @@ def expand_heuristic_verb_lemmas(lemmas: Iterable[str], klass: Optional[str] = N
     for lemma in lemmas:
         expanded[lemma] = derive_verb_generation_stems(lemma, klass=klass)
     return expanded
+
+
+def expand_heuristic_generation_classes(predicted_by_class: Dict[str, List[str]]) -> Dict[str, Set[str]]:
+    """
+    Map predicted lemmas to the classes used for heuristic inflection synthesis.
+
+    Lexical infinitives such as படித்தல் often imply a productive root (படி)
+    whose FST class differs from the suffix-based class prediction for the
+    infinitive lemma itself. For verb-shaped தல்/த்தல் lemmas, try the
+    normalized stems against every verb model and rely on forward validation to
+    retain only legal outputs.
+    """
+    generation_by_class: Dict[str, Set[str]] = {
+        klass: set(lemmas) for klass, lemmas in predicted_by_class.items()
+    }
+    for klass, lemmas in predicted_by_class.items():
+        if klass not in VERB_CLASSES:
+            continue
+        for lemma in lemmas:
+            if not lemma.endswith("தல்"):
+                continue
+            for verb_class in VERB_CLASSES:
+                generation_by_class.setdefault(verb_class, set()).add(lemma)
+    return generation_by_class
 
 
 def select_verb_templates_for_stem(stem: str, templates: List[str], full_generation: bool) -> List[str]:
@@ -749,6 +797,9 @@ def main() -> None:
         recognized = forward_classify(fst_path, headwords)
         filtered_lemmas: Set[str] = set()
         for lemma, _analysis in recognized:
+            override_class = LEMMA_CLASS_OVERRIDES.get(lemma)
+            if override_class and fst_name != override_class:
+                continue
             pos_hints = source_pos_hints.get(lemma, set())
             if pos_hints:
                 allowed = allowed_classes_from_pos_hints(pos_hints)
@@ -921,7 +972,8 @@ def main() -> None:
 
     if include_heuristic_inflections:
         print("Running controlled heuristic inflection synthesis...")
-        for klass, lemmas in sorted(predicted_by_class.items()):
+        generation_by_class = expand_heuristic_generation_classes(predicted_by_class)
+        for klass, lemmas in sorted(generation_by_class.items()):
             fst_path = fst_dir / klass
             if not fst_path.exists():
                 continue

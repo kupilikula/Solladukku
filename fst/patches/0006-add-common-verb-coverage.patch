@@ -1,0 +1,118 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -34,6 +34,9 @@
+ ClassVai1 ;
+ ClassVendu5 ;
+ ClassVidu61;
++ClassPoModern;
++ClassVaaModern;
++ClassKelModern;
+ 
+ 
+ 
+@@ -1624,6 +1627,7 @@
+ விராவு     C5Vinf;
+ வீங்கு     C5Vinf;
+ போ    C5Vinf;
++சாப்பிடு     C6Vinf;
+ கூடு     C5Vinf;
+ 
+ அறவிடு     C5Vinf;
+@@ -1791,8 +1795,87 @@
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
++
++
++LEXICON ClassPoModern
+ 
++போ:போ PoModernVinf;
+ 
++LEXICON PoModernVinf
+++verb+fin+sim+strong+past%=இன்+1sg%=ஏன்:^னேன் #;
+++verb+fin+sim+strong+past%=இன்+1pl%=ஓம்:^னோம் #;
+++verb+fin+sim+strong+past%=இன்+2sg%=ஆய்:^னாய் #;
+++verb+fin+sim+strong+past%=இன்+2sgh%=ஈர்:^னீர் #;
+++verb+fin+sim+strong+past%=இன்+2pl%=ஈர்கள்:^னீர்கள் #;
+++verb+fin+sim+strong+past%=இன்+3sgm%=ஆன்:^னான் #;
+++verb+fin+sim+strong+past%=இன்+3sgf%=ஆள்:^னாள் #;
+++verb+fin+sim+strong+past%=இன்+3sge%=அர்:^னர் #;
+++verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்:^னார்கள் #;
+++verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்கள்:^னார்கள் #;
+++verb+fin+sim+strong+past%=இன்+3sgn%=அது:^னது #;
+++verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^கும் #;
+++verb+nonfin+sim+inf%=க+negpart%=இல்லை:^கவில்லை #;
+++verb+nonfin+sim+vpart%=உ:^ய் #;
++
++LEXICON ClassVaaModern
++
++வா:வரு VaaModernVinf;
++
++LEXICON VaaModernVinf
+++verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:^கிறேன் #;
+++verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:^கிறோம் #;
+++verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்:^கிறாய் #;
+++verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்:^கிறீர் #;
+++verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்:^கிறீர்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்:^கிறான் #;
+++verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் #;
+++verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் #;
+++verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:^வோம் #;
+++verb+fin+sim+weak+fut%=வ்+2sg%=ஆய்:^வாய் #;
+++verb+fin+sim+weak+fut%=வ்+2sgh%=ஈர்:^வீர் #;
+++verb+fin+sim+weak+fut%=வ்+2pl%=ஈர்கள்:^வீர்கள் #;
+++verb+fin+sim+weak+fut%=வ்+3sgm%=ஆன்:^வான் #;
+++verb+fin+sim+weak+fut%=வ்+3sgf%=ஆள்:^வாள் #;
+++verb+fin+sim+weak+fut%=வ்+3sge%=அர்:^வர் #;
+++verb+fin+sim+weak+fut%=வ்+3ple%=ஆர்கள்:^வார்கள் #;
+++verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்கள்:^வார்கள் #;
+++verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ம் #;
++
++LEXICON ClassKelModern
++
++கேள்:கேட KelModernVinf;
++
++LEXICON KelModernVinf
+++verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:^்கிறேன் #;
+++verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:^்கிறோம் #;
+++verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்:^்கிறாய் #;
+++verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்:^்கிறீர் #;
+++verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்:^்கிறீர்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்:^்கிறான் #;
+++verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^்கிறாள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^்கிறர் #;
+++verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^்கிறார்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^்கிறார்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^்கிறது #;
+++verb+fin+sim+middle+fut%=ப்+1sg%=ஏன்:^்பேன் #;
+++verb+fin+sim+middle+fut%=ப்+1pl%=ஓம்:^்போம் #;
+++verb+fin+sim+middle+fut%=ப்+2sg%=ஆய்:^்பாய் #;
+++verb+fin+sim+middle+fut%=ப்+2sgh%=ஈர்:^்பீர் #;
+++verb+fin+sim+middle+fut%=ப்+2pl%=ஈர்கள்:^்பீர்கள் #;
+++verb+fin+sim+middle+fut%=ப்+3sgm%=ஆன்:^்பான் #;
+++verb+fin+sim+middle+fut%=ப்+3sgf%=ஆள்:^்பாள் #;
+++verb+fin+sim+middle+fut%=ப்+3sge%=அர்:^்பர் #;
+++verb+fin+sim+middle+fut%=ப்+3ple%=ஆர்கள்:^்பார்கள் #;
+++verb+fin+sim+middle+fut%=ப்+3sghe%=ஆர்கள்:^்பார்கள் #;
+++verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^்கும் #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை:^்கவில்லை #;
+++verb+nonfin+sim+inf%=அ:^்க #;
+++verb+nonfin+sim+vpart%=உ:^்டு #;
++
+ LEXICON ClassSixOne
+ 
+ அடு      C6Vinf;
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -1059,6 +1059,7 @@
+ இலை  C11Vinf;
+ சரை  C11Vinf;
+ விடு  C11Vinf;
++கொடு  C11Vinf;
+ இழை  C11Vinf;
+ சவை  C11Vinf;
+ விதுவிது  C11Vinf;

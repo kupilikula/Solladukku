@@ -163,6 +163,33 @@
       "source": "dump"
     },
     {
+      "lemma": "காத்தாலெ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "காலங்காத்தாலெ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "குரூஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
       "lemma": "க்ஷ",
       "pos_hints": [
         "unknown"
@@ -307,6 +334,15 @@
       "source": "dump"
     },
     {
+      "lemma": "புமாலெ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
       "lemma": "புருஉ",
       "pos_hints": [
         "unknown"
@@ -317,6 +353,15 @@
     },
     {
       "lemma": "புலௌ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
+      "lemma": "மகடூஉ",
       "pos_hints": [
         "unknown"
       ],
@@ -361,6 +406,15 @@
       "source": "dump"
     },
     {
+      "lemma": "வெருஉ",
+      "pos_hints": [
+        "unknown"
+      ],
+      "reason": "ambiguous unresolved lemma",
+      "recommended_action": "manual_review",
+      "source": "dump"
+    },
+    {
       "lemma": "வெரூஉ",
       "pos_hints": [
         "unknown"
@@ -380,5 +434,5 @@
     }
   ],
   "generated_from": "static-word-list/fst_unclassified_vuizur_headwords.json",
-  "total": 42
+  "total": 48
 }
