@@ -36,6 +36,7 @@ COMPONENTS = [
             "0002-fix-noun-class-duplicates.patch",
             "0003-fix-noun-malformed-locatives.patch",
             "0004-fix-noun-plural-accusative.patch",
+            "0005-add-common-noun-case-variants.patch",
         ],
     },
     {

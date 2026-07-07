@@ -232,6 +232,25 @@ Examples:
 
 The patch targets the bare `+noun+pl+acc` rules across noun classes C1-C16, plus the C15 plural accusative focus form. Related plural-accusative postposition/particle forms already used common `...களை...` shapes before this patch.
 
+### `0005-add-common-noun-case-variants.patch`
+
+File: `fst/patches/0005-add-common-noun-case-variants.patch`
+
+Adds common noun-case alternates that were missing from the patched upstream noun model while preserving existing longer/formal variants.
+
+Examples:
+
+- `மரம்+noun+pl+inst` now generates and recognizes `மரங்களால்`, while `மரங்களினால்` remains valid.
+- `புலி+noun+pl+inst` now generates and recognizes `புலிகளால்`.
+- `மாணவன்+noun+pl+inst` now generates and recognizes `மாணவர்களால்`.
+- `புலி+noun+dat` now generates and recognizes `புலிக்கு`, while `புலியுக்கு` remains valid.
+- `தீ+noun+dat` now generates and recognizes `தீக்கு`, while `தீயுக்கு` remains valid.
+- `மாணவன்+noun+soc` now generates and recognizes `மாணவனுடன்`.
+- `கல்+noun+soc` now generates and recognizes `கல்லுடன்`.
+- `பொருள்+noun+soc` now analyzes as `+noun+soc`; this fixes a C14 typo that previously emitted `+noun+so` for the `உடன்` variant.
+
+The patch targets bare plural instrumental rules across noun classes, `இ/ஈ` stem dative alternates in C2/C3, missing `உடன்` sociative rules for the `ன்/ல்/ள்` classes, and the malformed C14 sociative tag.
+
 Regression coverage is in `fst/tests/fixtures/noun_morph_regressions.json`.
 
 ## Build Commands

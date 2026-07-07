@@ -1,0 +1,192 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1022,6 +1022,7 @@
+ 
+ +noun+inst:^வால் #;
+ +noun+pl+inst:^க்களினால் #;
+++noun+pl+inst:^க்களால் #;
+ 
+ +noun+dat:^வுக்கு #;
+ +noun+dat+sandhip:^வுக்குப் #;
+@@ -17279,12 +17280,18 @@
+ 
+ +noun+inst:^யால் #;
+ +noun+pl+inst:^களினால் #;
+++noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^யுக்கு #;
+++noun+dat:^க்கு #;
+ +noun+dat+sandhip:^யுக்குப் #;
+++noun+dat+sandhip:^க்குப் #;
+ +noun+dat+sandhic:^யுக்குச் #;
+++noun+dat+sandhic:^க்குச் #;
+ +noun+dat+sandhit:^யுக்குத் #;
+++noun+dat+sandhit:^க்குத் #;
+ +noun+dat+sandhik:^யுக்குக் #;
+++noun+dat+sandhik:^க்குக் #;
+ +noun+dat+pl:^களுக்கு #;
+ +noun+dat+pl+sandhip:^களுக்குப் #;
+ +noun+dat+pl+sandhic:^களுக்குச் #;
+@@ -17519,12 +17526,18 @@
+ 
+ +noun+inst:^யால் #;
+ +noun+pl+inst:^க்களினால் #;
+++noun+pl+inst:^க்களால் #;
+ 
+ +noun+dat:^யுக்கு #;
+++noun+dat:^க்கு #;
+ +noun+dat+sandhip:^யுக்குப் #;
+++noun+dat+sandhip:^க்குப் #;
+ +noun+dat+sandhic:^யுக்குச் #;
+++noun+dat+sandhic:^க்குச் #;
+ +noun+dat+sandhit:^யுக்குத் #;
+++noun+dat+sandhit:^க்குத் #;
+ +noun+dat+sandhik:^யுக்குக் #;
+++noun+dat+sandhik:^க்குக் #;
+ +noun+dat+pl:^க்களுக்கு #;
+ +noun+dat+pl+sandhip:^க்களுக்குப் #;
+ +noun+dat+pl+sandhic:^க்களுக்குச் #;
+@@ -23025,6 +23038,7 @@
+ 
+ +noun+inst:^ால் #;
+ +noun+pl+inst:^களினால் #;
+++noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^ுக்கு #;
+ +noun+dat+sandhip:^ுக்குப் #;
+@@ -23731,6 +23745,7 @@
+ 
+ +noun+inst:^ட்டால் #;
+ +noun+pl+inst:^களினால் #;
+++noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^ட்டுக்கு #;
+ +noun+dat+sandhip:^ட்டுக்குப் #;
+@@ -23961,6 +23976,7 @@
+ 
+ +noun+inst:^ட்டால் #;
+ +noun+pl+inst:^களினால் #;
+++noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^ட்டுக்கு #;
+ +noun+dat+sandhip:^ட்டுக்குப் #;
+@@ -27173,6 +27189,7 @@
+ 
+ +noun+inst:^ஆால் #;
+ +noun+pl+inst:^களினால் #;
+++noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^க்கு #;
+ +noun+dat+sandhip:^க்குப் #;
+@@ -27491,6 +27508,7 @@
+ 
+ +noun+inst:^றால் #;
+ +noun+pl+inst:^களினால் #;
+++noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^க்கு #;
+ +noun+dat+sandhip:^க்குப் #;
+@@ -28007,6 +28025,7 @@
+ 
+ +noun+inst:^ணால் #;
+ +noun+pl+inst:^களினால் #;
+++noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^ணுக்கு #;
+ +noun+dat+sandhip:^ணுக்குப் #;
+@@ -28246,6 +28265,7 @@
+ 
+ +noun+inst:^னால் #;
+ +noun+pl+inst:^களினால் #;
+++noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^னுக்கு #;
+ +noun+dat+sandhip:^னுக்குப் #;
+@@ -41443,6 +41463,7 @@
+ 
+ +noun+inst:^னால் #;
+ +noun+pl+inst:^ர்களினால் #;
+++noun+pl+inst:^ர்களால் #;
+ 
+ +noun+dat:^னுக்கு #;
+ +noun+dat+sandhip:^னுக்குப் #;
+@@ -41457,6 +41478,8 @@
+ 
+ +noun+soc:^னோடு #;
+ +noun+pl+soc:^ர்களோடு #;
+++noun+soc:^னுடன் #;
+++noun+pl+soc:^ர்களுடன் #;
+ 
+ +noun+abl:^னில் #;
+ +noun+pl+abl:^ர்களில் #;
+@@ -41683,6 +41706,7 @@
+ 
+ +noun+inst:^லால் #;
+ +noun+pl+inst:^ற்களினால் #;
+++noun+pl+inst:^ற்களால் #;
+ 
+ +noun+dat:^லுக்கு #;
+ +noun+dat+sandhip:^லுக்குப் #;
+@@ -41697,6 +41721,8 @@
+ 
+ +noun+soc:^லோடு #;
+ +noun+pl+soc:^ற்களோடு #;
+++noun+soc:^லுடன் #;
+++noun+pl+soc:^ற்களுடன் #;
+ 
+ +noun+abl:^லில் #;
+ +noun+pl+abl:^ற்களில் #;
+@@ -41915,6 +41941,7 @@
+ 
+ +noun+inst:^ளால் #;
+ +noun+pl+inst:^ட்களினால் #;
+++noun+pl+inst:^ட்களால் #;
+ 
+ +noun+dat:^ளுக்கு #;
+ +noun+dat+sandhip:^ளுக்குப் #;
+@@ -41929,6 +41956,8 @@
+ 
+ +noun+soc:^ளோடு #;
+ +noun+pl+soc:^ட்களோடு #;
+++noun+soc:^ளுடன் #;
+++noun+pl+soc:^ட்களுடன் #;
+ 
+ +noun+abl:^ளில் #;
+ +noun+pl+abl:^ட்களில் #;
+@@ -43767,6 +43796,7 @@
+ 
+ +noun+inst:^ால் #;
+ +noun+pl+inst:^ட்களினால் #;
+++noun+pl+inst:^ட்களால் #;
+ 
+ +noun+dat:^ுக்கு #;
+ +noun+dat+sandhip:^ுக்குப் #;
+@@ -43781,7 +43811,7 @@
+ 
+ +noun+soc:^ோடு #;
+ +noun+pl+soc:^ட்களோடு #;
+-+noun+so:^ுடன் #;
+++noun+soc:^ுடன் #;
+ +noun+pl+soc:^ட்களுடன் #;
+ 
+ +noun+abl:^ில் #;
+@@ -46553,7 +46583,9 @@
+ +noun+infInc+inst:^த்தால் #;
+ +noun+infInc+inst+foc:^த்தால்தான் #;
+ +noun+pl+inst:^ங்களினால் #;
+++noun+pl+inst:^ங்களால் #;
+ +noun+pl+inst+foc:^ங்களினால்தான் #;
+++noun+pl+inst+foc:^ங்களால்தான் #;
+ 
+ +noun+infInc+dat:^த்துக்கு #;
+ +noun+infInc+dat+foc:^த்துக்குத்தான் #;
+@@ -47885,7 +47917,9 @@
+ +noun+inst:^ால் #;
+ +noun+inst+foc:^ால்தான் #;
+ +noun+pl+inst:^களினால் #;
+++noun+pl+inst:^களால் #;
+ +noun+pl+inst+foc:^களினால்தான் #;
+++noun+pl+inst+foc:^களால்தான் #;
+ 
+ +noun+dat:^ற்றுக்கு #;
+ +noun+dat+foc:^ற்றுக்குத்தான் #;

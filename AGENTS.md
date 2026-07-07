@@ -335,6 +335,7 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
    - `0002-fix-noun-class-duplicates.patch` (removes cross-class duplicate noun roots to prevent class leakage)
    - `0003-fix-noun-malformed-locatives.patch` (fixes C6 locative behavior, including `-ட்டு` subclass handling and malformed `^டிடம்` path)
    - `0004-fix-noun-plural-accusative.patch` (adds common bare plural accusative alternates such as `மரம்+noun+pl+acc -> மரங்களை` while preserving existing `...களினை` variants)
+   - `0005-add-common-noun-case-variants.patch` (adds common plural instrumental `...களால்` alternates, short `இ/ஈ`-stem dative forms such as `புலிக்கு`, missing `உடன்` sociative forms for `ன்/ல்/ள்` classes, and fixes a C14 `+noun+so` tag typo to `+noun+soc`)
 
 ### Server-Side FST Validation (`server/index.js`)
 

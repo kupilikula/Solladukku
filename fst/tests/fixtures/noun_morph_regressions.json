@@ -10,7 +10,19 @@
     {"analysis": "மாணவன்+noun+pl+acc", "surface": "மாணவர்களை"},
     {"analysis": "கல்+noun+pl+acc", "surface": "கற்களை"},
     {"analysis": "பொருள்+noun+pl+acc", "surface": "பொருட்களை"},
-    {"analysis": "மரம்+noun+pl+acc", "surface": "மரங்களை"}
+    {"analysis": "மரம்+noun+pl+acc", "surface": "மரங்களை"},
+    {"analysis": "பூ+noun+pl+inst", "surface": "பூக்களால்"},
+    {"analysis": "புலி+noun+pl+inst", "surface": "புலிகளால்"},
+    {"analysis": "மாணவன்+noun+pl+inst", "surface": "மாணவர்களால்"},
+    {"analysis": "கல்+noun+pl+inst", "surface": "கற்களால்"},
+    {"analysis": "மரம்+noun+pl+inst", "surface": "மரங்களால்"},
+    {"analysis": "புலி+noun+dat", "surface": "புலிக்கு"},
+    {"analysis": "தீ+noun+dat", "surface": "தீக்கு"},
+    {"analysis": "மாணவன்+noun+soc", "surface": "மாணவனுடன்"},
+    {"analysis": "மாணவன்+noun+pl+soc", "surface": "மாணவர்களுடன்"},
+    {"analysis": "கல்+noun+soc", "surface": "கல்லுடன்"},
+    {"analysis": "கல்+noun+pl+soc", "surface": "கற்களுடன்"},
+    {"analysis": "பொருள்+noun+soc", "surface": "பொருளுடன்"}
   ],
   "analysis_must_recognize": [
     "திருமகனை",
@@ -23,7 +35,19 @@
     "மாணவர்களை",
     "கற்களை",
     "பொருட்களை",
-    "மரங்களை"
+    "மரங்களை",
+    "பூக்களால்",
+    "புலிகளால்",
+    "மாணவர்களால்",
+    "கற்களால்",
+    "மரங்களால்",
+    "புலிக்கு",
+    "தீக்கு",
+    "மாணவனுடன்",
+    "மாணவர்களுடன்",
+    "கல்லுடன்",
+    "கற்களுடன்",
+    "பொருளுடன்"
   ],
   "analysis_should_reject": [
     "திருமகன்னை",
