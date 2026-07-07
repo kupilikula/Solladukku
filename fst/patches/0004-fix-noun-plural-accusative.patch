@@ -1,0 +1,132 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1018,6 +1018,7 @@
+ 
+ +noun+acc:^வை #;
+ +noun+pl+acc:^க்களினை #;
+++noun+pl+acc:^க்களை #;
+ 
+ +noun+inst:^வால் #;
+ +noun+pl+inst:^க்களினால் #;
+@@ -17274,6 +17275,7 @@
+ 
+ +noun+acc:^யை #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc:^களை #;
+ 
+ +noun+inst:^யால் #;
+ +noun+pl+inst:^களினால் #;
+@@ -17513,6 +17515,7 @@
+ 
+ +noun+acc:^யை #;
+ +noun+pl+acc:^க்களினை #;
+++noun+pl+acc:^க்களை #;
+ 
+ +noun+inst:^யால் #;
+ +noun+pl+inst:^க்களினால் #;
+@@ -23018,6 +23021,7 @@
+ 
+ +noun+acc:^ை #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc:^களை #;
+ 
+ +noun+inst:^ால் #;
+ +noun+pl+inst:^களினால் #;
+@@ -23723,6 +23727,7 @@
+ 
+ +noun+acc:^ட்டை #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc:^களை #;
+ 
+ +noun+inst:^ட்டால் #;
+ +noun+pl+inst:^களினால் #;
+@@ -23952,6 +23957,7 @@
+ 
+ +noun+acc:^ட்டை #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc:^களை #;
+ 
+ +noun+inst:^ட்டால் #;
+ +noun+pl+inst:^களினால் #;
+@@ -27163,6 +27169,7 @@
+ 
+ +noun+acc:^ஆை #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc:^களை #;
+ 
+ +noun+inst:^ஆால் #;
+ +noun+pl+inst:^களினால் #;
+@@ -27480,6 +27487,7 @@
+ 
+ +noun+acc:^றை #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc:^களை #;
+ 
+ +noun+inst:^றால் #;
+ +noun+pl+inst:^களினால் #;
+@@ -27995,6 +28003,7 @@
+ 
+ +noun+acc:^ணை #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc:^களை #;
+ 
+ +noun+inst:^ணால் #;
+ +noun+pl+inst:^களினால் #;
+@@ -28233,6 +28242,7 @@
+ 
+ +noun+acc:^னை #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc:^களை #;
+ 
+ +noun+inst:^னால் #;
+ +noun+pl+inst:^களினால் #;
+@@ -41429,6 +41439,7 @@
+ 
+ +noun+acc:^ை #;
+ +noun+pl+acc:^ர்களினை #;
+++noun+pl+acc:^ர்களை #;
+ 
+ +noun+inst:^னால் #;
+ +noun+pl+inst:^ர்களினால் #;
+@@ -41668,6 +41679,7 @@
+ 
+ +noun+acc:^லை #;
+ +noun+pl+acc:^ற்களினை #;
+++noun+pl+acc:^ற்களை #;
+ 
+ +noun+inst:^லால் #;
+ +noun+pl+inst:^ற்களினால் #;
+@@ -41899,6 +41911,7 @@
+ 
+ +noun+acc:^ளை #;
+ +noun+pl+acc:^ட்களினை #;
+++noun+pl+acc:^ட்களை #;
+ 
+ +noun+inst:^ளால் #;
+ +noun+pl+inst:^ட்களினால் #;
+@@ -43750,6 +43763,7 @@
+ 
+ +noun+acc:^ை #;
+ +noun+pl+acc:^ட்களினை #;
+++noun+pl+acc:^ட்களை #;
+ 
+ +noun+inst:^ால் #;
+ +noun+pl+inst:^ட்களினால் #;
+@@ -46532,7 +46546,9 @@
+ +noun+infInc+acc:^த்தை #;
+ 
+ +noun+pl+acc:^ங்களினை #;
+++noun+pl+acc:^ங்களை #;
+ +noun+pl+acc+foc:^ங்களினைத்தான் #;
+++noun+pl+acc+foc:^ங்களைத்தான் #;
+ 
+ +noun+infInc+inst:^த்தால் #;
+ +noun+infInc+inst+foc:^த்தால்தான் #;
+@@ -47862,6 +47878,7 @@
+ +noun+acc:^ை #;
+ +noun+acc+foc:^ைத்தான் #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc:^களை #;
+ 
+ +noun+inst:^ற்றால் #;
+ +noun+inst+foc:^ற்றால்தான் #;

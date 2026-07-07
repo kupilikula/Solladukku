@@ -4,14 +4,26 @@
     {"analysis": "மாணவன்+noun+acc", "surface": "மாணவனை"},
     {"analysis": "பொன்+noun+acc", "surface": "பொன்னை"},
     {"analysis": "மடு+noun+loc", "surface": "மடுவிடம்"},
-    {"analysis": "காடு+noun+loc", "surface": "காட்டில்"}
+    {"analysis": "காடு+noun+loc", "surface": "காட்டில்"},
+    {"analysis": "பூ+noun+pl+acc", "surface": "பூக்களை"},
+    {"analysis": "புலி+noun+pl+acc", "surface": "புலிகளை"},
+    {"analysis": "மாணவன்+noun+pl+acc", "surface": "மாணவர்களை"},
+    {"analysis": "கல்+noun+pl+acc", "surface": "கற்களை"},
+    {"analysis": "பொருள்+noun+pl+acc", "surface": "பொருட்களை"},
+    {"analysis": "மரம்+noun+pl+acc", "surface": "மரங்களை"}
   ],
   "analysis_must_recognize": [
     "திருமகனை",
     "மாணவனை",
     "பொன்னை",
     "மடுவிடம்",
-    "காட்டில்"
+    "காட்டில்",
+    "பூக்களை",
+    "புலிகளை",
+    "மாணவர்களை",
+    "கற்களை",
+    "பொருட்களை",
+    "மரங்களை"
   ],
   "analysis_should_reject": [
     "திருமகன்னை",
@@ -25,6 +37,7 @@
   "dictionary_must_include": [
     "திருமகனை",
     "மாணவனை",
+    "மரங்களை",
     "செயலி",
     "போண்டி"
   ],

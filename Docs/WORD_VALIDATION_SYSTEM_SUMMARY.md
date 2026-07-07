@@ -217,6 +217,21 @@ Key changes:
 - Rejects malformed forms like `அகச்சிட்ட்டில்`.
 - Preserves expected forms like `காட்டில்` and `மடுவிடம்`.
 
+### `0004-fix-noun-plural-accusative.patch`
+
+File: `fst/patches/0004-fix-noun-plural-accusative.patch`
+
+Adds common bare plural accusative alternates for singular noun classes while preserving the existing `...களினை` / related variants.
+
+Examples:
+
+- `மரம்+noun+pl+acc` now generates and recognizes `மரங்களை`.
+- `மாணவன்+noun+pl+acc` now generates and recognizes `மாணவர்களை`.
+- `புலி+noun+pl+acc` now generates and recognizes `புலிகளை`.
+- `கல்+noun+pl+acc` now generates and recognizes `கற்களை`.
+
+The patch targets the bare `+noun+pl+acc` rules across noun classes C1-C16, plus the C15 plural accusative focus form. Related plural-accusative postposition/particle forms already used common `...களை...` shapes before this patch.
+
 Regression coverage is in `fst/tests/fixtures/noun_morph_regressions.json`.
 
 ## Build Commands

@@ -28,7 +28,10 @@ DICT_FILE = ROOT / "public" / "tamil_dictionary.txt"
 CLASSIFIED_HEADWORDS_FILE = ROOT / "static-word-list" / "fst_classified_headwords.json"
 HEURISTIC_CLASSIFIED_FILE = ROOT / "static-word-list" / "fst_heuristic_classified_headwords.json"
 UNCLASSIFIED_WIKTIONARY_FILE = ROOT / "static-word-list" / "fst_unclassified_vuizur_headwords.json"
-VENDOR_NOUN_ZIP = ROOT / "vendor" / "thamizhi-morph" / "foma" / "ThamizhiMorph-Nouns.zip"
+NOUN_SOURCE_ZIP_CANDIDATES = [
+    ROOT / "vendor" / "thamizhi-morph" / "foma" / "ThamizhiMorph-Nouns.zip",
+    ROOT / "fst" / "upstream-zips" / "ThamizhiMorph-Nouns.zip",
+]
 PATCH_DIR = ROOT / "fst" / "patches"
 
 
@@ -77,6 +80,16 @@ def resolve_noun_fst() -> Path:
     )
 
 
+def resolve_noun_source_zip() -> Path:
+    for candidate in NOUN_SOURCE_ZIP_CANDIDATES:
+        if candidate.exists() and candidate.stat().st_size > 0:
+            return candidate
+    fail(
+        "Missing noun source zip in expected locations: "
+        + ", ".join(str(p) for p in NOUN_SOURCE_ZIP_CANDIDATES)
+    )
+
+
 def load_combined_classification_map() -> dict[str, set[str]]:
     combined: dict[str, set[str]] = {}
 
@@ -104,13 +117,13 @@ def load_combined_classification_map() -> dict[str, set[str]]:
 
 
 def ensure_no_noun_class_duplicates() -> None:
-    ensure_file(VENDOR_NOUN_ZIP, "noun source zip")
+    noun_source_zip = resolve_noun_source_zip()
     class_names = {f"C{i}Sg" for i in range(1, 17)}
     class_names.add("C5pl")
 
     with tempfile.TemporaryDirectory() as td:
         work = Path(td)
-        with ZipFile(VENDOR_NOUN_ZIP, "r") as zf:
+        with ZipFile(noun_source_zip, "r") as zf:
             zf.extractall(work)
 
         patches = sorted(PATCH_DIR.glob("000*.patch"))

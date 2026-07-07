@@ -23,6 +23,7 @@ WORDLIST_MODELS = ROOT / "static-word-list" / "fst-models"
 SERVER_MODELS = ROOT / "server" / "fst-models"
 PINNED_UPSTREAM_ZIPS = ROOT / "fst" / "upstream-zips"
 PINNED_UPSTREAM_MODELS = ROOT / "fst" / "upstream-models"
+PINNED_FALLBACK_UPSTREAM_COMMIT = "a296417ac603fd44eda35645369f1257d96bed89"
 
 COMPONENTS = [
     {
@@ -34,6 +35,7 @@ COMPONENTS = [
             "0001-fix-c11-acc.patch",
             "0002-fix-noun-class-duplicates.patch",
             "0003-fix-noun-malformed-locatives.patch",
+            "0004-fix-noun-plural-accusative.patch",
         ],
     },
     {
@@ -129,6 +131,9 @@ def resolve_vendor_commit() -> str:
     placeholder string.
     """
     try:
+        top_level = run(["git", "-C", str(VENDOR), "rev-parse", "--show-toplevel"]).strip()
+        if Path(top_level).resolve() != VENDOR.resolve():
+            raise RuntimeError("vendor directory is not an independent git worktree")
         return run(["git", "-C", str(VENDOR), "rev-parse", "HEAD"]).strip()
     except Exception:
         readme_path = VENDOR / "README.md"
@@ -137,7 +142,7 @@ def resolve_vendor_commit() -> str:
             match = re.search(r"([0-9a-f]{40})", text)
             if match:
                 return match.group(1)
-        return "unknown (non-git vendor copy)"
+        return PINNED_FALLBACK_UPSTREAM_COMMIT
 
 
 def resolve_zip_path(zip_name: str) -> Path:

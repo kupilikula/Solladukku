@@ -334,6 +334,7 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
    - `0001-fix-c11-acc.patch` (Class 11 noun accusative `^னை -> ^ை`)
    - `0002-fix-noun-class-duplicates.patch` (removes cross-class duplicate noun roots to prevent class leakage)
    - `0003-fix-noun-malformed-locatives.patch` (fixes C6 locative behavior, including `-ட்டு` subclass handling and malformed `^டிடம்` path)
+   - `0004-fix-noun-plural-accusative.patch` (adds common bare plural accusative alternates such as `மரம்+noun+pl+acc -> மரங்களை` while preserving existing `...களினை` variants)
 
 ### Server-Side FST Validation (`server/index.js`)
 

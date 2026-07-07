@@ -1,5 +1,5 @@
 {
-  "built_at_utc": "2026-02-28T07:54:31.324378+00:00",
+  "built_at_utc": "2026-07-07T09:07:48.592788+00:00",
   "submodule": {
     "path": "vendor/thamizhi-morph",
     "commit": "a296417ac603fd44eda35645369f1257d96bed89"
@@ -14,7 +14,8 @@
       "patches": [
         "0001-fix-c11-acc.patch",
         "0002-fix-noun-class-duplicates.patch",
-        "0003-fix-noun-malformed-locatives.patch"
+        "0003-fix-noun-malformed-locatives.patch",
+        "0004-fix-noun-plural-accusative.patch"
       ]
     },
     {
@@ -108,13 +109,17 @@
     {
       "file": "fst/patches/0003-fix-noun-malformed-locatives.patch",
       "sha256": "b8606777279d8c288ab95388931d8c54fae7a7a5e1ab61b7eb8e77ed1492b0e3"
+    },
+    {
+      "file": "fst/patches/0004-fix-noun-plural-accusative.patch",
+      "sha256": "1dcc66e2cca59f255e336ee8bd6a41191411d1a175a6ed170b8608e04fae2ac7"
     }
   ],
   "outputs": [
     {
       "file": "adj.fst",
-      "sha256": "8d03a7c482959ead8ae72fdcca1230f2465fbf51a884d9ab27cf06e443145840",
-      "size_bytes": 7509,
+      "sha256": "b53ec5f8649119303e792ddcc6b13f84a5389844e67d5ec29aaf5a1bbbce7f24",
+      "size_bytes": 7508,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -123,7 +128,7 @@
     },
     {
       "file": "adv.fst",
-      "sha256": "08826b8abc40f126245e52defa3643efc5d7c3b66a9e37ba828324e7dd8b5367",
+      "sha256": "01b7e3785537fdf228bf1505c4f95b8b93ff2d005a769a31eaf571d52b913a4f",
       "size_bytes": 13551,
       "copied_to": [
         "build/fst-models",
@@ -133,8 +138,8 @@
     },
     {
       "file": "noun.fst",
-      "sha256": "93ea9d74162786adc25978027278672f32dd2826ce27eb0c2899eaf6febe3df2",
-      "size_bytes": 164184,
+      "sha256": "9ebea55590de236c8bf173aaa563feb9062c9b25bdc06f94d7814429922cc6b1",
+      "size_bytes": 164150,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -143,8 +148,8 @@
     },
     {
       "file": "part.fst",
-      "sha256": "fecbd27c14f2dbf5c623ab9ee5e6161dddebf2afb1fb2a757eb97a1419cb64d6",
-      "size_bytes": 4498,
+      "sha256": "e7fe99fbe681371825080a60103770839f275f6572b77c359c5248a7e6225405",
+      "size_bytes": 4497,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -163,8 +168,8 @@
     },
     {
       "file": "verb-c-rest.fst",
-      "sha256": "d875f053d7f27ff6b6a69c5870096da1b40c93944cfbe75703c03115898ab8d2",
-      "size_bytes": 123650,
+      "sha256": "16a620177e0325721e3ee65fbc2854f6bac679b769f573f520bf839ea3a2d982",
+      "size_bytes": 123653,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -173,8 +178,8 @@
     },
     {
       "file": "verb-c11.fst",
-      "sha256": "59aa949283cd9986d259645495b4fef4ad6b8e436dc152d27467fa86391a50a8",
-      "size_bytes": 66922,
+      "sha256": "04e67f7677be93cd8231a8bf7c1c78e1ab11f0684a51c551549f4830ea1d441d",
+      "size_bytes": 66925,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -183,7 +188,7 @@
     },
     {
       "file": "verb-c12.fst",
-      "sha256": "124c74dea089b4d554d8d1ffd24d89adf9697e86feeea31f528dee13cfab487a",
+      "sha256": "21898768fc8dd9d3a9ba4d740472881fa1eb594227953c3f22945db36490bad0",
       "size_bytes": 43758,
       "copied_to": [
         "build/fst-models",
@@ -193,8 +198,8 @@
     },
     {
       "file": "verb-c3.fst",
-      "sha256": "fe53d05513f8a5da7643da2790d1e19e602e615b1a4d80099d029e186beb8132",
-      "size_bytes": 12754,
+      "sha256": "0a54141a1d94b4af834bb5947c40d22780982e933e7986bfbab4e0d6610fdc07",
+      "size_bytes": 12755,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -203,8 +208,8 @@
     },
     {
       "file": "verb-c4.fst",
-      "sha256": "967e877880e1414da8c7c7fa16a0288fb559ff33db1f18ea306685251ec439fe",
-      "size_bytes": 39150,
+      "sha256": "63539423b564bce9bcf5750bf65131cfad1d48b0823870632d13906a7fb54488",
+      "size_bytes": 39152,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -213,7 +218,7 @@
     },
     {
       "file": "verb-c62.fst",
-      "sha256": "c83af84d673724dbf8d3a3bded2e050ac35e56ab1921980aeaae7228610e09c5",
+      "sha256": "1417ee9066b16ff40b41f6387b1333dc092c6510abac0d81c54e73db8f7fc3c0",
       "size_bytes": 12416,
       "copied_to": [
         "build/fst-models",
