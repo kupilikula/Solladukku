@@ -160,6 +160,8 @@ Current patch stack also includes source-backed noun/verb coverage and irregular
 - `0018-add-short-honorific-verb-forms.patch`: adds short `ஆர்` honorific finite verb forms, including coverage for forms such as `கற்றார்` and `சேர்ந்தார்`.
 - `0019-add-participial-person-nominals.patch`: adds productive past adjectival participle + `ஓர்` person nominal forms, including `அடைந்தோர்`.
 - `0020-add-lexicon-adverb-illaakkaattil.patch`: adds lexical adverb `இல்லாக்காட்டில்` (“if not; otherwise”), rather than treating it as a noun root.
+- `0021-add-reviewed-peen-noun.patch`: adds `பேன்` as a reviewed non-human `ன்`-final noun in `C4SgRoot`, matching `மான்` and `தேன்`, not the human/masculine `C11` pattern.
+- `0022-add-peethu-verb-coverage.patch`: covers lexical `பேத்தல்` by adding productive stem `பேத்து` to the C5 verb class, the same paradigm used for `நடத்தல்`, through regular FST generation instead of supplemental surface forms.
 
 ## Current Code Integration Details
 

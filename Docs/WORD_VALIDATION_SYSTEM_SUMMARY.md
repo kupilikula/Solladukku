@@ -379,6 +379,18 @@ File: `fst/patches/0020-add-lexicon-adverb-illaakkaattil.patch`
 
 Adds `இல்லாக்காட்டில்` as a lexical adverb meaning “if not; otherwise” (`இல்லாமை +`, glossed as `இல்லாவிட்டால்` in the lexicon), rather than adding it as a noun root.
 
+### `0021-add-reviewed-peen-noun.patch`
+
+File: `fst/patches/0021-add-reviewed-peen-noun.patch`
+
+Adds `பேன்` as a reviewed non-human `ன்`-final noun meaning lice. It is intentionally assigned to `C4SgRoot`, matching nouns such as `மான்` and `தேன்`, because the generic `C11` human/masculine `ன்` pattern would generate inappropriate plural forms such as `...ர்கள்`. Bare `பேன்` is not analyzed as a verb form.
+
+### `0022-add-peethu-verb-coverage.patch`
+
+File: `fst/patches/0022-add-peethu-verb-coverage.patch`
+
+Covers lexical `பேத்தல்` by adding productive stem `பேத்து` to the C5 verb class, the same paradigm used for `நடத்தல்`. This generates regular C5 forms such as `பேத்தினேன்`, `பேத்துகிறேன்`, `பேத்துவேன்`, and `பேத்தியது` without adding supplemental surface-form exceptions. Like the existing `நடத்தல்` flow, the citation form is used by dictionary generation while the runtime FST class stores the productive stem.
+
 ### `0012-add-source-backed-name-tranche.patch`
 
 File: `fst/patches/0012-add-source-backed-name-tranche.patch`

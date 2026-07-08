@@ -23,8 +23,8 @@
     "class": "noun.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 82136,
-    "predicted_lemmas": 82136,
+    "normalized_or_predicted_inputs": 81992,
+    "predicted_lemmas": 81992,
     "sample_added": [],
     "templates_used": 16
   },
@@ -38,10 +38,10 @@
     "templates_used": 0
   },
   {
-    "accepted_added": 605584,
+    "accepted_added": 605711,
     "class": "verb-c-rest.fst",
-    "forward_validated": 605584,
-    "generated_candidates": 605584,
+    "forward_validated": 605711,
+    "generated_candidates": 605711,
     "normalized_or_predicted_inputs": 82805,
     "predicted_lemmas": 12542,
     "sample_added": [

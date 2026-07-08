@@ -1,0 +1,11 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -616,6 +616,8 @@
+ பிகுவேற்று	C5Vinf;
+ பிசகுசொல்லு	C5Vinf;
+ பிசகுநாறு	C5Vinf;
++! Source-backed C5 verb: பேத்தல்; productive stem பேத்து, same paradigm as நடத்தல்.
++பேத்து	C5Vinf;
+ பிசுக்கொட்டு	C5Vinf;
+ பின்னாடிபேசு	C5Vinf;
+ பின்போடு	C5Vinf;

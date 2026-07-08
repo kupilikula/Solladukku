@@ -1,0 +1,11 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -19052,6 +19052,8 @@
+ வான்			 C4SgRoot; 
+ மான்			 C4SgRoot; 
+ தேன்			 C4SgRoot; 
++! Reviewed non-human ன்-final noun; same paradigm as மான் and தேன்.
++பேன்			 C4SgRoot;
+ தோள்			 C4SgRoot; 
+ தேள்			 C4SgRoot; 
+ வாள்			 C4SgRoot; 

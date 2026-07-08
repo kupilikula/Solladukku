@@ -74,6 +74,8 @@ Covers:
 - short honorific verb forms from `0018-add-short-honorific-verb-forms.patch`, including forms such as `கற்றார்` and `சேர்ந்தார்`
 - participial-person nominal forms from `0019-add-participial-person-nominals.patch`, including forms such as `அடைந்தோர்`
 - the lexical adverb `இல்லாக்காட்டில்` from `0020-add-lexicon-adverb-illaakkaattil.patch`
+- reviewed non-human `ன்`-final noun coverage for `பேன்` from `0021-add-reviewed-peen-noun.patch`, using the same `C4SgRoot` paradigm as `மான்` and `தேன்`
+- source-backed C5 verb coverage for lexical `பேத்தல்` from `0022-add-peethu-verb-coverage.patch`, using productive stem `பேத்து` in the same paradigm as `நடத்தல்`; generated forms include `பேத்தினேன்`, `பேத்துகிறேன்`, and `பேத்துவேன்`
 - irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளார்`, `உள்ளார்கள்`, and ambiguous `உண்டு`
 - Dictionary gold include/exclude checks run with `python3 fst/tests/run_fst_regressions.py --check-dictionary` (included in `npm run dict:build`)
 
