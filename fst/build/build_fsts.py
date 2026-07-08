@@ -48,6 +48,7 @@ COMPONENTS = [
             "0025-add-noun-additive-um.patch",
             "0030-add-corpus-backed-common-nouns.patch",
             "0033-add-selective-loan-nouns.patch",
+            "0040-add-calendar-place-loan-nouns.patch",
         ],
     },
     {

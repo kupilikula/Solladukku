@@ -86,6 +86,7 @@ Covers:
 - selective loanword noun and abbreviation coverage from `0033-add-selective-loan-nouns.patch` and `0034-add-selective-abbreviation-particles.patch`, covering common corpus fallbacks such as `கலெக்டர்`, `குக்கர்`, `வைரஸ்`, and abbreviation letters `பி`, `ஜி`, `டி`, `எஸ்`
 - corpus-backed adjective/adverb and complementizer coverage from `0035-add-corpus-backed-adjectival-stems.patch`, `0036-add-corpus-backed-adverbial-stems.patch`, and `0037-add-complementizer-case-forms.patch`, covering forms such as `தமிழக`, `ஐக்கிய`, `மாவட்ட`, `தேசிய`, `கடுமையாக`, `வலுவின்றி`, `என்பதை`, and `எனக்`
 - productive verb-rule/root coverage from `0038-add-modern-verb-derived-forms.patch` and `0039-add-c11-loan-verb-stems.patch`, covering `பேசிய`, `வருகின்ற`, `என்றார்`, `ஆவார்`, and `விமர்சித்து` through FST classes rather than supplemental surface forms
+- calendar/place/common-loan noun coverage from `0040-add-calendar-place-loan-nouns.patch`, covering reviewed forms such as `டீ`, `மார்ச்`, `ஆகஸ்ட்`, `பிரிட்டன்`, `பெங்களூரு`, `ஹைதராபாத்`, `டிக்கெட்`, `பைக்`, and `மொபைல்`
 - irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளார்`, `உள்ளார்கள்`, and ambiguous `உண்டு`
 - Dictionary gold include/exclude checks run with `python3 fst/tests/run_fst_regressions.py --check-dictionary` (included in `npm run dict:build`)
 

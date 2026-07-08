@@ -1,0 +1,146 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -28,6 +28,64 @@
+ C15Sg;      !மரம்
+ C16Sg;      !சுவர்
+ ForeignFinalSg; ! borrowed consonant-final names
++CalendarPlaceLoanSg; ! reviewed calendar/place/loan nouns
++
++LEXICON CalendarPlaceLoanSg
++! Reviewed common loans, month names, country names, and city names.
++டீ	C2SgRoot;
++ஜூஸ்	ForeignFinalNom;
++ஜூஸ்:ஜூஸ	ForeignSFinalInflections;
++கேக்	ForeignFinalNom;
++கேக்:கேக	ForeignDoubledKKFinalInflections;
++பிஸ்கட்	ForeignFinalNom;
++பிஸ்கட்:பிஸ்கட	ForeignDoubledTTFinalInflections;
++சாக்லேட்	ForeignFinalNom;
++சாக்லேட்:சாக்லேட	ForeignDoubledTTFinalInflections;
++ஐஸ்கிரீம்	C15SgRoot;
++பீட்சா	C1SgRoot;
++பிரியாணி	C2SgRoot;
++ஹோட்டல்	C4SgRoot;
++மார்ச்	ForeignFinalNom;
++மார்ச்:மார்ச	ForeignCHFinalInflections;
++ஏப்ரல்	C4SgRoot;
++மே	C2SgRoot;
++ஜூன்	C4SgRoot;
++ஜூலை	C2SgRoot;
++ஆகஸ்ட்	ForeignFinalNom;
++ஆகஸ்ட்:ஆகஸ்ட	ForeignPlainTTFinalInflections;
++செப்டம்பர்	C16SgRoot;
++அக்டோபர்	C16SgRoot;
++நவம்பர்	C16SgRoot;
++டிசம்பர்	C16SgRoot;
++பிரிட்டன்	C4SgRoot;
++ஜெர்மனி	C2SgRoot;
++இத்தாலி	C2SgRoot;
++பாகிஸ்தான்	C4SgRoot;
++நேபாளம்	C15SgRoot;
++பெங்களூரு	C7SgRoot;
++ஹைதராபாத்	ForeignFinalNom;
++ஹைதராபாத்:ஹைதராபாத	ForeignTFinalInflections;
++கொல்கத்தா	C1SgRoot;
++திருச்சி	C2SgRoot;
++டிக்கெட்	ForeignFinalNom;
++டிக்கெட்:டிக்கெட	ForeignDoubledTTFinalInflections;
++கம்பெனி	C2SgRoot;
++போலீஸ்	ForeignFinalNom;
++போலீஸ்:போலீஸ	ForeignSFinalInflections;
++டாக்டர்	C16SgRoot;
++இன்ஜினியர்	C16SgRoot;
++ஆபீஸ்	ForeignFinalNom;
++ஆபீஸ்:ஆபீஸ	ForeignSFinalInflections;
++ரயில்	C4SgRoot;
++பஸ்	ForeignFinalNom;
++பஸ்:பஸ	ForeignSFinalInflections;
++பைக்	ForeignFinalNom;
++பைக்:பைக	ForeignDoubledKKFinalInflections;
++லாரி	C2SgRoot;
++மொபைல்	C4SgRoot;
++கம்ப்யூட்டர்	C16SgRoot;
++வீடியோ	C1SgRoot;
++போன்	C4SgRoot;
+ 
+ LEXICON ForeignFinalSg
+ ! Borrowed consonant-final names. Nominal forms keep the written final pulli;
+@@ -85,6 +143,78 @@
+ +noun+loc:^ிடம் #;
+ 
+ LEXICON ForeignKFinalInflections
+++noun+acc:^ை #;
+++noun+inst:^ால் #;
+++noun+dat:^ுக்கு #;
+++noun+dat+sandhip:^ுக்குப் #;
+++noun+dat+sandhic:^ுக்குச் #;
+++noun+dat+sandhit:^ுக்குத் #;
+++noun+dat+sandhik:^ுக்குக் #;
+++noun+soc:^ோடு #;
+++noun+soc:^ுடன் #;
+++noun+abl:^ில் #;
+++noun+abl:^ின் #;
+++noun+abl:^ிலிருந்து #;
+++noun+gen:^ின் #;
+++noun+gen:^ுடைய #;
+++noun+loc:^ில் #;
+++noun+loc:^ிடம் #;
++
++LEXICON ForeignDoubledKKFinalInflections
+++noun+acc:^்கை #;
+++noun+inst:^்கால் #;
+++noun+dat:^்குக்கு #;
+++noun+dat+sandhip:^்குக்குப் #;
+++noun+dat+sandhic:^்குக்குச் #;
+++noun+dat+sandhit:^்குக்குத் #;
+++noun+dat+sandhik:^்குக்குக் #;
+++noun+soc:^்கோடு #;
+++noun+soc:^்குடன் #;
+++noun+abl:^்கில் #;
+++noun+abl:^்கின் #;
+++noun+abl:^்கிலிருந்து #;
+++noun+gen:^்கின் #;
+++noun+gen:^்குடைய #;
+++noun+loc:^்கில் #;
+++noun+loc:^்கிடம் #;
++
++LEXICON ForeignCHFinalInflections
+++noun+acc:^்சை #;
+++noun+inst:^்சால் #;
+++noun+dat:^்சுக்கு #;
+++noun+dat+sandhip:^்சுக்குப் #;
+++noun+dat+sandhic:^்சுக்குச் #;
+++noun+dat+sandhit:^்சுக்குத் #;
+++noun+dat+sandhik:^்சுக்குக் #;
+++noun+soc:^்சோடு #;
+++noun+soc:^்சுடன் #;
+++noun+abl:^்சில் #;
+++noun+abl:^்சின் #;
+++noun+abl:^்சிலிருந்து #;
+++noun+gen:^்சின் #;
+++noun+gen:^்சுடைய #;
+++noun+loc:^்சில் #;
+++noun+loc:^்சிடம் #;
++
++LEXICON ForeignDoubledTTFinalInflections
+++noun+acc:^்டை #;
+++noun+inst:^்டால் #;
+++noun+dat:^்டுக்கு #;
+++noun+dat+sandhip:^்டுக்குப் #;
+++noun+dat+sandhic:^்டுக்குச் #;
+++noun+dat+sandhit:^்டுக்குத் #;
+++noun+dat+sandhik:^்டுக்குக் #;
+++noun+soc:^்டோடு #;
+++noun+soc:^்டுடன் #;
+++noun+abl:^்டில் #;
+++noun+abl:^்டின் #;
+++noun+abl:^்டிலிருந்து #;
+++noun+gen:^்டின் #;
+++noun+gen:^்டுடைய #;
+++noun+loc:^்டில் #;
+++noun+loc:^்டிடம் #;
++
++LEXICON ForeignPlainTTFinalInflections
+ +noun+acc:^ை #;
+ +noun+inst:^ால் #;
+ +noun+dat:^ுக்கு #;
