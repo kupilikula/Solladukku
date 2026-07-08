@@ -55,6 +55,8 @@ COMPONENTS = [
             "0051-add-corpus-backed-common-noun-gaps.patch",
             "0054-add-corpus-backed-noun-gap-tranche.patch",
             "0057-add-remaining-corpus-noun-roots.patch",
+            "0058-add-triaged-common-noun-coverage.patch",
+            "0059-add-c15-irkku-dative-variant.patch",
         ],
     },
     {

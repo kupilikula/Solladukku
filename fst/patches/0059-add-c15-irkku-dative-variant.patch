@@ -1,0 +1,15 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -49961,6 +49961,12 @@
+ +noun+pl+inst+foc:^ங்களால்தான் #;
+ 
+ +noun+infInc+dat:^த்துக்கு #;
+++noun+infInc+dat:^த்திற்கு #;
+++noun+infInc+dat+foc:^த்திற்குத்தான் #;
+++noun+infInc+dat+sandhip:^த்திற்குப் #;
+++noun+infInc+dat+sandhic:^த்திற்குச் #;
+++noun+infInc+dat+sandhit:^த்திற்குத் #;
+++noun+infInc+dat+sandhik:^த்திற்குக் #;
+ +noun+infInc+dat+foc:^த்துக்குத்தான் #;
+ +noun+infInc+dat+sandhip:^த்துக்குப் #;
+ +noun+infInc+dat+sandhic:^த்துக்குச் #;

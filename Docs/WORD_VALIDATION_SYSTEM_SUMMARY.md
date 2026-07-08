@@ -685,3 +685,9 @@ Files: `fst/patches/0054-add-corpus-backed-noun-gap-tranche.patch`, `fst/patches
 
 Adds another focused tranche from the tokenizer corpus audit. The noun patches classify dictionary-backed common/place roots into existing noun classes, including `பரங்கிப்பேட்டை`, `சுல்தான்`, `ராமநாதபுரம்`, `உப்பள`, `திருப்புல்லாணி`, `இங்கிலாந்து`, `நகர்`, `சின்னம்`, `கெடிமேடு`, `எடை`, `தாக்குதல்`, `நிறுவனர்`, `தாக்கல்`, `வழங்கல்`, and `ஜல்லிக்கட்டு`. The function patches add explicit FST tags for focused adverb `அதனால்தான்` and indefinite additive quantifier `ஏதேனும்`, preserving semantic tags instead of treating them as unknown surfaces.
 
+### `0058`-`0059` tokenizer-triaged common noun patches
+
+Files: `fst/patches/0058-add-triaged-common-noun-coverage.patch`, `fst/patches/0059-add-c15-irkku-dative-variant.patch`
+
+Adds a curated common-noun tranche from the tokenizer coverage triage workflow, intentionally excluding pronoun/quantifier/adverb forms and name/title-policy rows from the generic noun import. Representative FST-backed forms include `உள்ளடக்கங்களை`, `ஓலை`, `பத்திரிகைகளும்`, `புழக்கத்தில்`, `ஆசிரமத்தில்`, `நீர்ப்பறவைகளில்`, `நடைமுறைக்கு`, `நெறிமுறைகளை`, `வழித்தடங்களும்`, and `விமர்சனங்களும்`. The follow-up rule patch adds the productive C15 formal dative `...த்திற்கு` variant, covering forms such as `சந்தேகத்திற்கு` and `மட்டத்திற்கு` through the noun class rather than surface-specific entries.
+

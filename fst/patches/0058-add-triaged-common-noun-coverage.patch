@@ -1,0 +1,96 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1347,6 +1347,10 @@
+ வினா	C1SgRoot;
+ ! Corpus-backed common noun coverage tranche.
+ சுற்றுலா	C1SgRoot;
++
++! Tokenizer corpus triage common noun coverage.
++தாலுக்கா	C1SgRoot;
++மசோதா	C1SgRoot;
+ LEXICON C1SgRoot
+ !        Root;
+         C1Inflections;
+@@ -18697,6 +18701,19 @@
+ நபி	NapiHonorificPlural;
+ நடவடிக்கை	C2SgRoot;
+ பட்டதாரி	C2SgRoot;
++
++! Tokenizer corpus triage common noun coverage.
++ஓலை	C2SgRoot;
++பத்திரிகை	C2SgRoot;
++எதிர்க்கட்சி	C2SgRoot;
++நீர்ப்பறவை	C2SgRoot;
++கல்விக்கொள்கை	C2SgRoot;
++கழிப்பறை	C2SgRoot;
++குடியுரிமை	C2SgRoot;
++சூழ்நிலை	C2SgRoot;
++நடைமுறை	C2SgRoot;
++நெறிமுறை	C2SgRoot;
++பிரச்சனை	C2SgRoot;
+ LEXICON C2SgRoot
+  !       Root;
+         C2Inflections;
+@@ -24712,6 +24729,12 @@
+ செயற்கைகோள்	C4SgRoot;
+ செயற்கைக்கோள்	C4SgRoot;
+ தேர்தல்	C4SgRoot;
++
++! Tokenizer corpus triage common noun coverage.
++சோம்பல்	C4SgRoot;
++மறியல்	C4SgRoot;
++நேர்காணல்	C4SgRoot;
++பாலியல்	C4SgRoot;
+ LEXICON C4SgRoot
+ !        Root;
+         C4Inflections;
+@@ -49889,6 +49912,26 @@
+ கிராமப்புறம்	C15SgRoot;
+ பிரதானம்	C15SgRoot;
+ வசனம்	C15SgRoot;
++
++! Tokenizer corpus triage common noun coverage.
++உள்ளடக்கம்	C15SgRoot;
++நெருக்கம்	C15SgRoot;
++புழக்கம்	C15SgRoot;
++ஆசிரமம்	C15SgRoot;
++உத்தியோகம்	C15SgRoot;
++குளிர்காலம்	C15SgRoot;
++கோஷம்	C15SgRoot;
++சந்தேகம்	C15SgRoot;
++சாத்தியம்	C15SgRoot;
++சாஸ்திரம்	C15SgRoot;
++தரம்	C15SgRoot;
++நிமிடம்	C15SgRoot;
++மட்டம்	C15SgRoot;
++குடலிறக்கம்	C15SgRoot;
++முஸ்லிம்	C15SgRoot;
++ஆடுகளம்	C15SgRoot;
++வழித்தடம்	C15SgRoot;
++விமர்சனம்	C15SgRoot;
+ LEXICON C15SgRoot
+ !        Root;
+         C15Inflections;
+@@ -51350,6 +51393,22 @@
+ ! Selective corpus-backed loanword nouns.
+ கலெக்டர்	C16SgRoot;
+ குக்கர்	C16SgRoot;
++
++! Tokenizer corpus triage common noun coverage.
++தமிழர்	C16SgRoot;
++நபர்	C16SgRoot;
++புகார்	C16SgRoot;
++முதல்வர்	C16SgRoot;
++அமைப்பாளர்	C16SgRoot;
++ஆட்சியர்	C16SgRoot;
++ஆணையர்	C16SgRoot;
++இளைஞர்	C16SgRoot;
++செயற்பாட்டாளர்	C16SgRoot;
++செயலாளர்	C16SgRoot;
++பணியாளர்	C16SgRoot;
++பிரதமர்	C16SgRoot;
++புரவலர்	C16SgRoot;
++வழக்கறிஞர்	C16SgRoot;
+ LEXICON C16SgRoot
+ !        Root;
+         C16Inflections;
