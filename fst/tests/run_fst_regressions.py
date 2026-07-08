@@ -202,6 +202,14 @@ def ensure_verb_infinitive_generation_expansion() -> None:
     if "படி" not in stems:
         fail(f"Verb infinitive normalization missed படித்தல் -> படி (got {sorted(stems)})")
 
+    stems = module.derive_verb_generation_stems("நடத்தல்", klass="verb-c-rest.fst")
+    if "நடத்து" not in stems:
+        fail(f"Verb infinitive normalization missed நடத்தல் -> நடத்து (got {sorted(stems)})")
+
+    stems = module.derive_verb_generation_stems("பேத்தல்", klass="verb-c-rest.fst")
+    if "பேத்து" not in stems:
+        fail(f"Verb infinitive normalization missed பேத்தல் -> பேத்து (got {sorted(stems)})")
+
     generation_by_class = module.expand_heuristic_generation_classes({
         "verb-c-rest.fst": ["படித்தல்"],
     })
