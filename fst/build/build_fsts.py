@@ -194,6 +194,7 @@ COMPONENTS = [
             "0023-add-source-backed-c5-primary-verb-stems.patch",
             "0024-add-source-backed-c5-primary-verb-stems-2.patch",
             "0038-add-modern-verb-derived-forms.patch",
+            "0041-complete-modern-verb-paradigms.patch",
         ],
     },
     {

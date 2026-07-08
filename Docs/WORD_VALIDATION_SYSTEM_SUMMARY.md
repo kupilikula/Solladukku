@@ -73,7 +73,7 @@ Final dictionary output:
 - Deduplicated
 - Filtered to at most 15 Tamil letters
 - Sorted with Python `sorted()` Unicode codepoint order
-- Current rebuilt artifact in this checkout: 1,666,072 entries, about 77.1 MB.
+- Current rebuilt artifact in this checkout: 1,666,227 entries, about 77.1 MB.
 
 The client binary search must use JavaScript `<` and `>` comparisons, not `localeCompare()`, because locale-aware Tamil ordering does not match Python codepoint sorting.
 
@@ -175,7 +175,7 @@ Known overrides include:
 
 Current checked-out generated reports show:
 
-- `static-word-list/fst_classified_headwords.json`: 10,559 directly FST-classified headwords
+- `static-word-list/fst_classified_headwords.json`: 10,565 directly FST-classified headwords
 - `static-word-list/fst_heuristic_classified_headwords.json`: 86,757 heuristic predictions
 - `static-word-list/fst_heuristic_forms.txt`: 1,387,307 forms
 - `static-word-list/fst_unclassified_vuizur_summary.json`: 3 unresolved summary buckets in the current report, tracked by the review fixtures
@@ -502,6 +502,12 @@ File: `fst/patches/0040-add-calendar-place-loan-nouns.patch`
 Adds reviewed calendar, country/city, and common loan noun coverage in the noun FST. Examples include `டீ`, `ஜூஸ்`, `கேக்`, `பிஸ்கட்`, `சாக்லேட்`, `பீட்சா`, `மார்ச்`, `ஆகஸ்ட்`, `பிரிட்டன்`, `ஜெர்மனி`, `பாகிஸ்தான்`, `நேபாளம்`, `பெங்களூரு`, `ஹைதராபாத்`, `கொல்கத்தா`, `டிக்கெட்`, `போலீஸ்`, `டாக்டர்`, `ரயில்`, `பஸ்`, `பைக்`, `மொபைல்`, `கம்ப்யூட்டர்`, `வீடியோ`, and `போன்`.
 
 The patch uses ordinary noun classes where they fit and adds small reusable foreign-final templates for written-final `க்`, `ச்`, and `ட்` loans. It keeps the earlier policy for single-letter forms: `டி` remains an abbreviation/letter token in the particle FST, while the tea word is represented by the standard long-vowel spelling `டீ` as a noun.
+
+### `0041-complete-modern-verb-paradigms.patch`
+
+File: `fst/patches/0041-complete-modern-verb-paradigms.patch`
+
+Completes high-impact modern verb coverage surfaced by the tokenizer corpus audit. The patch extends the existing `VaaModern` irregular class for forms such as `வந்தார்`, `வந்தனர்`, `வருகிறார்`, `வருகின்றன`, and `வருவார்`; routes the short past `-ஆர்` / `-னர்` forms through a separate `வா:வ` surface stem to avoid malformed `வருந்தார்`-style outputs; adds existential `உள்ளனர்`; and adds reviewed C5 stems `பணியாற்று` and `பயன்படுத்து`, allowing productive analyses such as `பணியாற்றினார்` and `பயன்படுத்தினார்`.
 
 ### `0025-add-noun-additive-um.patch`
 

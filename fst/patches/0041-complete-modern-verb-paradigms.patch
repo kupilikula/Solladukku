@@ -1,0 +1,79 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -1350,6 +1350,8 @@
+ எதிர்க்கெடுத்து	C5Vinf;
+ எதிர்த்துப்பேசு	C5Vinf;
+ எதிர்பார்த்து	C5Vinf;
++பணியாற்று     C5Vinf;
++பயன்படுத்து     C5Vinf;
+ எதிர்ப்படு	C5Vinf;
+ எதுக்களித்து	C5Vinf;
+ எயிறலைத்து	C5Vinf;
+@@ -6544,6 +6546,7 @@
+ +verb+fin+sim+strong+pres%=∅+3sgn%=அது:^ண்டு #;
+ +verb+fin+sim+strong+pres%=∅+3sgn%=அது:^ள்ளது #;
+ +verb+fin+sim+strong+pres%=∅+3pln%=அன:^ள்ளன #;
+++verb+fin+sim+strong+pres%=∅+3sge%=அர்:^ள்ளனர் #;
+ +verb+fin+sim+strong+pres%=∅+3sghe%=ஆர்:^ள்ளார் #;
+ +verb+fin+sim+strong+pres%=∅+3ple%=ஆர்கள்:^ள்ளார்கள் #;
+ 
+@@ -6571,8 +6574,24 @@
+ LEXICON ClassVaaModern
+ 
+ வா:வரு VaaModernVinf;
++வா:வ VaaModernPastShortRVinf;
++
++LEXICON VaaModernPastShortRVinf
+++verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தனர் #;
+++verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^ந்தார் #;
+ 
+ LEXICON VaaModernVinf
+++verb+fin+sim+strong+past%=த்+1sg%=ஏன்:^ந்தேன் #;
+++verb+fin+sim+strong+past%=த்+1pl%=ஓம்:^ந்தோம் #;
+++verb+fin+sim+strong+past%=த்+2sg%=ஆய்:^ந்தாய் #;
+++verb+fin+sim+strong+past%=த்+2sgh%=ஈர்:^ந்தீர் #;
+++verb+fin+sim+strong+past%=த்+2pl%=ஈர்கள்:^ந்தீர்கள் #;
+++verb+fin+sim+strong+past%=த்+3sgm%=ஆன்:^ந்தான் #;
+++verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் #;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது #;
+++verb+fin+sim+strong+past%=த்+3pln%=அன:^ந்தன #;
+ +verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:^கிறேன் #;
+ +verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:^கிறோம் #;
+ +verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்:^கிறாய் #;
+@@ -6582,8 +6601,23 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் #;
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+++verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+++verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+++verb+fin+sim+strong+pres%=கின்ற்+2sg%=ஆய்:^கின்றாய் #;
+++verb+fin+sim+strong+pres%=கின்ற்+2sgh%=ஈர்:^கின்றீர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+2pl%=ஈர்கள்:^கின்றீர்கள் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்:^கின்றார் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+++verb+fin+sim+strong+pres%=கின்ற்+3pln%=அன:^கின்றன #;
+ +verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் #;
+ +verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:^வோம் #;
+ +verb+fin+sim+weak+fut%=வ்+2sg%=ஆய்:^வாய் #;
+@@ -6593,8 +6627,10 @@
+ +verb+fin+sim+weak+fut%=வ்+3sgf%=ஆள்:^வாள் #;
+ +verb+fin+sim+weak+fut%=வ்+3sge%=அர்:^வர் #;
+ +verb+fin+sim+weak+fut%=வ்+3ple%=ஆர்கள்:^வார்கள் #;
+++verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்:^வார் #;
+ +verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்கள்:^வார்கள் #;
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ம் #;
+++verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ம் #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ம் #;
+ 

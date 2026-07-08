@@ -173,6 +173,7 @@ Current patch stack also includes source-backed noun/verb coverage and irregular
 - `0035-add-corpus-backed-adjectival-stems.patch`, `0036-add-corpus-backed-adverbial-stems.patch`, and `0037-add-complementizer-case-forms.patch`: add corpus-backed adjective/adverb and complementizer coverage for forms such as `தமிழக`, `ஐக்கிய`, `மாவட்ட`, `தேசிய`, `கடுமையாக`, `வலுவின்றி`, `என்பதை`, and `எனக்`.
 - `0038-add-modern-verb-derived-forms.patch` and `0039-add-c11-loan-verb-stems.patch`: extend productive verb FST coverage for `பேசிய`, `வருகின்ற`, `என்றார்`, `ஆவார்`, and `விமர்சித்து`.
 - `0040-add-calendar-place-loan-nouns.patch`: adds reviewed calendar/place/common-loan noun coverage such as `டீ`, `மார்ச்`, `ஆகஸ்ட்`, `பிரிட்டன்`, `பெங்களூரு`, `ஹைதராபாத்`, `டிக்கெட்`, `பைக்`, and `மொபைல்`, while keeping `டி` abbreviation-only.
+- `0041-complete-modern-verb-paradigms.patch`: completes high-impact modern verb coverage found by the fresh tokenizer audit, including `வந்தார்`, `வந்தனர்`, `வருகிறார்`, `வருகின்றன`, `வருவார்`, `உள்ளனர்`, and productive C5 analyses for `பணியாற்றினார்` and `பயன்படுத்தினார்`.
 
 ## Current Code Integration Details
 

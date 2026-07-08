@@ -38,10 +38,10 @@
     "templates_used": 0
   },
   {
-    "accepted_added": 1186550,
+    "accepted_added": 1186706,
     "class": "verb-c-rest.fst",
-    "forward_validated": 1186550,
-    "generated_candidates": 1186550,
+    "forward_validated": 1186706,
+    "generated_candidates": 1186706,
     "normalized_or_predicted_inputs": 82825,
     "predicted_lemmas": 12554,
     "sample_added": [
@@ -71,7 +71,7 @@
       "அஃகினனள்",
       "அஃகினன்"
     ],
-    "templates_used": 1366
+    "templates_used": 1367
   },
   {
     "accepted_added": 146815,
