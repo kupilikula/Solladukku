@@ -1,0 +1,17 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -565,5 +565,6 @@
+ உட்கார்த்து     C5Vinf;
+ உருக்கு     C5Vinf;
++உருவாக்கு     C5Vinf;
+ இழித்து     C5Vinf;
+ உட்கு     C5Vinf;
+ உருகு     C5Vinf;
+@@ -1666,6 +1667,7 @@
+ +verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்:^ினார் #;
+ +verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்கள்:^ினார்கள் #;
+ +verb+fin+sim+strong+past%=இன்+3sgn%=அது:^ினது #;
+++verb+fin+sim+strong+past%=இன்+3sgn%=அது:^ியது #;
+ +verb+fin+sim+strong+past%=இன்+3pln%=அன:^ினன #;
+ +verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:^கிறேன் #;
+ +verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:^கிறோம் #;

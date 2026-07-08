@@ -145,6 +145,22 @@ Initial patch:
 - `0001-fix-c11-acc.patch`: Class 11 noun accusative changed from `+noun+acc:^னை` to `+noun+acc:^ை` in `LEXICON C11Inflections`
 - This fixes overgeneration like `மாணவன்னை` / `திருமகன்னை` while preserving C10 behavior such as `பொன் -> பொன்னை`
 
+Current patch stack also includes source-backed noun/verb coverage and irregular existential verb coverage:
+- `0007-expand-source-backed-noun-coverage.patch`: adds source-backed noun lemmas such as `இந்தியா`, `செயற்கை`, `தொகை`, `நிலுவை`, and `நுண்ணறிவு` to appropriate noun classes.
+- `0008-expand-source-backed-verb-coverage.patch`: adds `உருவாக்கு` and a modern C5 past-neuter variant used by forms such as `ஓடியது`.
+- `0009-add-irregular-existential-verb.patch`: adds irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளார்`, `உள்ளார்கள்`, and preserves both existential and eating-verb analyses for ambiguous `உண்டு`.
+- `0010-add-source-backed-noun-tranche.patch`: adds 1,522 high-confidence Tamil Lexicon / Tamil Wiktionary / Vuizur noun candidates to noun classes inferred from the patched noun lexicon.
+- `0011-add-source-backed-c5-verb-tranche.patch`: adds 26 high-confidence source-backed C5 verb roots such as `உதவு`, `தூங்கு`, `திரும்பு`, `காப்பாற்று`, and `பயன்படு`.
+- `0012-add-source-backed-name-tranche.patch`: adds 76 multi-source source-backed name/name+noun candidates using explicit ending-based noun class rules, while deferring Vuizur-only and unsupported foreign-final consonant names.
+- `0013-add-foreign-final-name-template.patch`: adds a dedicated borrowed consonant-final name template for 14 reviewed `ஸ்`, `க்`, and `த்` final names such as `பாரிஸ்`, `லடாக்`, and `மத்ரித்`, with a separate `த்` oblique surface stem for forms such as `மத்ரித்துக்கு`.
+- `0014-add-source-backed-c5-verb-tranche-2.patch`: adds 45 post-dictionary-build Vuizur-backed C5 verb roots such as `பொறு`, `வெறு`, `உண்டாக்கு`, `பயப்படு`, `மேம்படு`, and `களிகூறு`.
+- `0015-add-source-backed-noun-tranche-2.patch`: adds 173 high-confidence Vuizur-backed noun roots such as `இறுதி`, `கிணறு`, `கடன்`, `பயன்`, `இடையூறு`, and `பெரியோன்`, while excluding names, noun/verb homographs, and roots that need template/root-shape fixes.
+- `0016-remove-noun-pronoun-rewrites.patch`: removes pronoun sandhi rewrite rules from the noun FST so ordinary noun roots containing strings such as `நம்` remain reachable; pronouns continue to be handled by `pronoun.fst`.
+- `0017-add-source-backed-noun-tranche-3.patch`: adds 1,301 reviewed source-backed noun roots. Reviewed lexical decisions include `கற்றொழிலோர்` (stone-masons/architects), `பிறந்தவம்` (birth/nativity), `பிறந்தவழிக்கூறல்` (a kind of metonymy), and `பறக்கும்தட்டு` (UFO).
+- `0018-add-short-honorific-verb-forms.patch`: adds short `ஆர்` honorific finite verb forms, including coverage for forms such as `கற்றார்` and `சேர்ந்தார்`.
+- `0019-add-participial-person-nominals.patch`: adds productive past adjectival participle + `ஓர்` person nominal forms, including `அடைந்தோர்`.
+- `0020-add-lexicon-adverb-illaakkaattil.patch`: adds lexical adverb `இல்லாக்காட்டில்` (“if not; otherwise”), rather than treating it as a noun root.
+
 ## Current Code Integration Details
 
 ### Word extraction from tiles

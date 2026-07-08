@@ -1,0 +1,10 @@
+--- tamil-adverbs.lexc
++++ tamil-adverbs.lexc
+@@ -8,6 +8,7 @@
+ 
+ 
+ LEXICON adverbs
++இல்லாக்காட்டில்	 adverb; 
+ சொல்லப்போனால்	 adverb; 
+ கேஷுவலாய்	 adverb; 
+ ஹாயாக	 adverb; 

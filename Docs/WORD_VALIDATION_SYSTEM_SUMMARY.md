@@ -175,9 +175,9 @@ Known overrides include:
 
 Current checked-out generated reports show:
 
-- `static-word-list/fst_classified_headwords.json`: 6,718 directly FST-classified headwords
-- `static-word-list/fst_heuristic_classified_headwords.json`: 90,191 heuristic predictions
-- `static-word-list/fst_heuristic_forms.txt`: 794,314 forms
+- `static-word-list/fst_classified_headwords.json`: 8,689 directly FST-classified headwords
+- `static-word-list/fst_heuristic_classified_headwords.json`: 94,272 heuristic predictions
+- `static-word-list/fst_heuristic_forms.txt`: 803,501 forms
 - `static-word-list/fst_unclassified_vuizur_summary.json`: 6 unresolved Tamil Wiktionary dump-only lemmas in the current report, tracked by the review fixtures
 
 ## Applied FST Patches
@@ -269,6 +269,147 @@ Examples:
 - Adds root-specific modern allomorph coverage for `கேள்`, including person/number variants such as `கேட்கிறேன்`, `கேட்கிறாய்`, `கேட்கிறாள்`, `கேட்கிறார்கள்`, `கேட்பேன்`, `கேட்பாய்`, `கேட்பாள்`, `கேட்பார்கள்`, plus `கேட்கும்`, `கேட்கவில்லை`, `கேட்க`, and `கேட்டு`.
 
 The root-specific allomorph lexicons are additive; they do not remove older/generated forms that the upstream FST already accepted.
+
+### `0007-expand-source-backed-noun-coverage.patch`
+
+File: `fst/patches/0007-expand-source-backed-noun-coverage.patch`
+
+Adds source-backed noun lemmas that were present in Tamil Lexicon, Tamil Wiktionary-derived data, or related source lists but were not classified into a runtime noun FST class.
+
+Examples:
+
+- `இந்தியா` is added to the `ஆ`-ending noun class, so forms such as `இந்தியா`, `இந்தியாவில்`, and `இந்தியாவை` are recognized.
+- `செயற்கை`, `தொகை`, and `நிலுவை` are added to the `ஐ`-ending noun class.
+- `நுண்ணறிவு` is added to the same `உ`-ending noun class as `அறிவு`, so forms such as `நுண்ணறிவு` and `நுண்ணறிவில்` are recognized.
+
+This patch is source-backed lexical coverage, not a tokenizer-side supplemental analysis.
+
+### `0008-expand-source-backed-verb-coverage.patch`
+
+File: `fst/patches/0008-expand-source-backed-verb-coverage.patch`
+
+Adds source-backed verb coverage and a modern C5 past neuter surface variant.
+
+Examples:
+
+- Adds `உருவாக்கு` to the C5 verb source, so `உருவாக்கு` and `உருவாக்குகிறது` are recognized.
+- Adds the C5 `...ியது` past neuter variant, so `ஓடியது` analyzes as `ஓடு+verb+fin+sim+strong+past=இன்+3sgn=அது`.
+
+### `0009-add-irregular-existential-verb.patch`
+
+File: `fst/patches/0009-add-irregular-existential-verb.patch`
+
+Adds a small irregular existential `உள்` lexicon for modern existential forms that are not produced by the regular verb classes.
+
+Examples:
+
+- `உள்ளது` analyzes as `உள்+verb+fin+sim+strong+pres=∅+3sgn=அது`.
+- `உள்ளன` analyzes as `உள்+verb+fin+sim+strong+pres=∅+3pln=அன`.
+- `உள்ளார்` analyzes as `உள்+verb+fin+sim+strong+pres=∅+3sghe=ஆர்`.
+- `உள்ளார்கள்` analyzes as `உள்+verb+fin+sim+strong+pres=∅+3ple=ஆர்கள்`.
+- `உண்டு` now preserves two analyses:
+  - existential `உள்+verb+fin+sim+strong+pres=∅+3sgn=அது`
+  - eating-verb participial `உண்+verb+nonfin+sim+vpart=உ`
+
+The existential analysis is additive; it does not replace the older `உண்` analysis for `உண்டு`.
+
+### `0010-add-source-backed-noun-tranche.patch`
+
+File: `fst/patches/0010-add-source-backed-noun-tranche.patch`
+
+Adds 1,522 high-confidence source-backed noun candidates from Tamil Lexicon, Tamil Wiktionary titles, and Vuizur-derived data. Candidates were selected from the source/FST gap audit using explicit noun/name POS hints, high model confidence, source support, and a noun-class suffix model trained from the patched noun lexicon.
+
+Class distribution:
+
+- `C2SgRoot`: 951 entries
+- `C7SgRoot`: 424 entries
+- `C1SgRoot`: 91 entries
+- `C11SgRoot`: 56 entries
+
+Representative examples include `அஃறிணை`, `அகராதி`, `அமைதி`, `அரிசி`, `அரண்மனை`, `அதிகாரி`, `அக்கா`, and `அகப்பா`.
+
+### `0015-add-source-backed-noun-tranche-2.patch`
+
+File: `fst/patches/0015-add-source-backed-noun-tranche-2.patch`
+
+Adds 173 high-confidence Vuizur-backed noun candidates after the second C5 verb build. Candidates require a noun-containing POS hint, Vuizur source support, high noun-model confidence, and a noun-class suffix prediction from the patched noun lexicon. The tranche excludes `name` and `noun|verb` POS rows. `நம்பிக்கை` / `திருநம்பி` were excluded from this root-addition patch because duplicate root entries did not fix them; the underlying noun-FST rewrite issue is fixed separately in `0016-remove-noun-pronoun-rewrites.patch`.
+
+Class distribution:
+
+- `C11SgRoot`: 110 entries
+- `C7SgRoot`: 60 entries
+- `C2SgRoot`: 3 entries
+
+Representative examples include `இறுதி`, `கிணறு`, `கடன்`, `பயன்`, `இடையூறு`, and `பெரியோன்`.
+
+### `0016-remove-noun-pronoun-rewrites.patch`
+
+File: `fst/patches/0016-remove-noun-pronoun-rewrites.patch`
+
+Removes pronoun-specific sandhi rewrite rules from the noun FST. The noun build previously composed rules such as `"நம்" -> 0` into `tamil-noun.foma`; those rules introduced pronoun multicharacter symbols into the noun analyzer and made ordinary noun roots containing those strings unreachable even when the roots were present in `Nouns.lexc`.
+
+Pronouns remain covered by the separate copied `pronoun.fst`. The noun FST now recognizes affected noun roots such as `நம்பிக்கை`, `திருநம்பி`, `அகநம்பி`, and `நம்பி`; `நம்பி` is intentionally ambiguous in downstream tokenization because it is both a noun and a non-finite form of `நம்பு`.
+
+### `0017-add-source-backed-noun-tranche-3.patch`
+
+File: `fst/patches/0017-add-source-backed-noun-tranche-3.patch`
+
+Adds 1,301 reviewed source-backed noun roots from the third noun tranche. This tranche uses the source/FST gap audit and explicit noun-class suffix rules, while moving forms already handled by verb/adverb patches out of noun-root review. Reviewed lexical noun decisions include:
+
+- `கற்றொழிலோர்`: stone-masons/architects, added to `C16SgRoot`.
+- `பிறந்தவம்`: birth/nativity, added to `C15SgRoot`.
+- `பிறந்தவழிக்கூறல்`: a kind of metonymy, added to `C4SgRoot`.
+- `பறக்கும்தட்டு`: UFO, sourced from Tamil Wiktionary title data and Vuizur TSV, added to `C7SgRoot`.
+
+### `0018-add-short-honorific-verb-forms.patch`
+
+File: `fst/patches/0018-add-short-honorific-verb-forms.patch`
+
+Adds short `ஆர்` honorific finite forms where the source classes already generated longer `ஆர்கள்` forms. This covers forms such as `கற்றார்` and `சேர்ந்தார்` through existing verb roots/classes instead of adding them as bare noun roots.
+
+### `0019-add-participial-person-nominals.patch`
+
+File: `fst/patches/0019-add-participial-person-nominals.patch`
+
+Adds productive past adjectival participle + `ஓர்` person nominal generation for relevant verb classes. This covers forms such as `அடைந்தோர்` through existing verb roots/classes and exposes the existing `PartNoun` morphology tag.
+
+### `0020-add-lexicon-adverb-illaakkaattil.patch`
+
+File: `fst/patches/0020-add-lexicon-adverb-illaakkaattil.patch`
+
+Adds `இல்லாக்காட்டில்` as a lexical adverb meaning “if not; otherwise” (`இல்லாமை +`, glossed as `இல்லாவிட்டால்` in the lexicon), rather than adding it as a noun root.
+
+### `0012-add-source-backed-name-tranche.patch`
+
+File: `fst/patches/0012-add-source-backed-name-tranche.patch`
+
+Adds 76 multi-source source-backed name/name+noun candidates. Candidates require a noun-model prediction, a `name` POS hint, at least two lexical sources, and high model confidence. The tranche uses explicit ending-based noun-class rules rather than the generic suffix-confidence model so that examples such as `கேரளம்` use the neuter `-ம்` paradigm and `தமிழ்நாடு` uses the `-டு` paradigm.
+
+Representative examples include `சீனா`, `கோவா`, `சீதை`, `தமிழ்நாடு`, `ஜப்பான்`, `கேரளம்`, `பிள்ளையார்`, and `சேலம்`. Vuizur-only names and unsupported foreign-final consonant stems such as `பாரிஸ்` are intentionally deferred.
+
+### `0013-add-foreign-final-name-template.patch`
+
+File: `fst/patches/0013-add-foreign-final-name-template.patch`
+
+Adds a dedicated template for borrowed consonant-final names instead of forcing them into existing native noun classes. The first reviewed seed covers 14 `ஸ்`, `க்`, and `த்` final names, including `பாரிஸ்`, `கிறிஸ்துமஸ்`, `பிரான்ஸ்`, `பிலிப்பைன்ஸ்`, `மெட்ராஸ்`, `லாவோஸ்`, `லடாக்`, `மத்ரித்`, and `பக்ரித்`.
+
+The template keeps written nominatives such as `பாரிஸ்` and generates Tamilized oblique forms such as `பாரிஸை`, `பாரிஸில்`, `லடாகை`, `லடாகில்`, `மத்ரித்தை`, and `மத்ரித்தில்`. `த்` finals use a separate oblique surface stem, so forms such as `மத்ரித்துக்கு`, `மத்ரித்துடன்`, and `மத்ரித்துடைய` are generated without malformed double-pulli surfaces.
+
+### `0011-add-source-backed-c5-verb-tranche.patch`
+
+File: `fst/patches/0011-add-source-backed-c5-verb-tranche.patch`
+
+Adds 26 high-confidence source-backed C5 verb roots. Candidates were selected from the source/FST gap audit by requiring a verb POS hint, Vuizur plus at least one other lexical source, high verb-model confidence, and a `C5Vinf` class prediction from a suffix model trained on the patched verb lexicon.
+
+Representative examples include `உதவு`, `தூங்கு`, `திரும்பு`, `காப்பாற்று`, and `பயன்படு`; inflected forms such as `உதவுகிறது`, `தூங்குகிறது`, `திரும்பியது`, `காப்பாற்றுகிறது`, and `பயன்படுகிறது` now analyze through the runtime FSTs.
+
+### `0014-add-source-backed-c5-verb-tranche-2.patch`
+
+File: `fst/patches/0014-add-source-backed-c5-verb-tranche-2.patch`
+
+Adds 45 post-dictionary-build Vuizur-backed C5 verb roots using the same C5 suffix/class rule as the first verb tranche. The candidate report is preserved as `outputs/source_backed_c5_verb_tranche_2_candidates.csv` in the tokenizer demo project.
+
+Representative examples include `பொறு`, `வெறு`, `உண்டாக்கு`, `பயப்படு`, `மேம்படு`, and `களிகூறு`; inflected forms such as `பொறுகிறது`, `வெறுகிறது`, `உண்டாக்குகிறது`, `பயப்படுகிறது`, `மேம்படுகிறது`, and `களிகூறுகிறது` now analyze through the runtime FSTs.
 
 Regression coverage is in `fst/tests/fixtures/noun_morph_regressions.json` and `fst/tests/fixtures/verb_morph_regressions.json`.
 

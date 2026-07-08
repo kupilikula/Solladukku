@@ -1,0 +1,35 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -565,6 +565,32 @@
+ உட்கார்த்து     C5Vinf;
+ உருக்கு     C5Vinf;
+ உருவாக்கு     C5Vinf;
++ஆணையிடு     C5Vinf;
++இலகு     C5Vinf;
++இருமு     C5Vinf;
++ஈட்டு     C5Vinf;
++உதவு     C5Vinf;
++உள்ளிடு     C5Vinf;
++ஏற்படு     C5Vinf;
++கட்டுப்படு     C5Vinf;
++களவாடு     C5Vinf;
++காப்பாற்று     C5Vinf;
++காவு     C5Vinf;
++கும்பிடு     C5Vinf;
++கூத்தாடு     C5Vinf;
++கூப்பிடு     C5Vinf;
++கொண்டாடு     C5Vinf;
++திருடு     C5Vinf;
++திரும்பு     C5Vinf;
++தூக்கு     C5Vinf;
++தூங்கு     C5Vinf;
++பயன்படு     C5Vinf;
++பளிச்சிடு     C5Vinf;
++மின்னு     C5Vinf;
++மிரட்டு     C5Vinf;
++முத்தமிடு     C5Vinf;
++வழிகாட்டு     C5Vinf;
++வேலைவாங்கு     C5Vinf;
+ இழித்து     C5Vinf;
+ உட்கு     C5Vinf;
+ உருகு     C5Vinf;

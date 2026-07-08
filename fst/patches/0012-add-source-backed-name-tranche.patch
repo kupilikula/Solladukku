@@ -1,0 +1,134 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1096,6 +1096,10 @@
+ விசுவகருமா	C1SgRoot;
+ வெள்ளரா	C1SgRoot;
+ ஹக்காசியா	C1SgRoot;
++
++! Source-backed name cleanup tranche: multi-source name/name+noun candidates.
++கோவா	C1SgRoot;
++சீனா	C1SgRoot;
+ LEXICON C1SgRoot
+ !        Root;
+         C1Inflections;
+@@ -18311,6 +18315,11 @@
+ வைணவி	C2SgRoot;
+ ஸ்தாயி	C2SgRoot;
+ ஹிஜிரி	C2SgRoot;
++
++! Source-backed name cleanup tranche: multi-source name/name+noun candidates.
++கோமி	C2SgRoot;
++சீதை	C2SgRoot;
++வையை	C2SgRoot;
+ LEXICON C2SgRoot
+  !       Root;
+         C2Inflections;
+@@ -24070,6 +24079,24 @@
+ வெளிமதில்	C4SgRoot; 
+ வேல்	C4SgRoot; 
+ 
++
++! Source-backed name cleanup tranche: multi-source name/name+noun candidates.
++அளவர்	C4SgRoot;
++ஏவாள்	C4SgRoot;
++கர்த்தர்	C4SgRoot;
++காபூல்	C4SgRoot;
++கொடுந்தமிழ்	C4SgRoot;
++சங்கத்தமிழ்	C4SgRoot;
++சண்டிகர்	C4SgRoot;
++சிங்கப்பூர்	C4SgRoot;
++தஞ்சாவூர்	C4SgRoot;
++பல்லவர்	C4SgRoot;
++பாண்டியர்	C4SgRoot;
++பிள்ளையார்	C4SgRoot;
++பெங்களூர்	C4SgRoot;
++போபால்	C4SgRoot;
++மணிப்பூர்	C4SgRoot;
++முகநூல்	C4SgRoot;
+ LEXICON C4SgRoot
+ !        Root;
+         C4Inflections;
+@@ -24776,6 +24803,12 @@
+ முரட்டு	C6TTUSgRoot;
+ மொட்டு	C6TTUSgRoot;
+ விளையாட்டு	C6TTUSgRoot;
++
++
++! Source-backed name cleanup tranche: multi-source name/name+noun candidates.
++தக்கணநாடு	C6SgRoot;
++தமிழ்நாடு	C6SgRoot;
++பத்துப்பாட்டு	C6SgRoot;
+ 
+ LEXICON C6SgRoot
+ !        Root;
+@@ -42980,6 +43013,35 @@
+ லிஸ்பன்	C11SgRoot;
+ வேலைமினக்கெட்டவன்	C11SgRoot;
+ ஹயக்ரீவன்	C11SgRoot;
++
++! Source-backed name cleanup tranche: multi-source name/name+noun candidates.
++அனுமன்	C11SgRoot;
++இலட்சுமணன்	C11SgRoot;
++இலத்தீன்	C11SgRoot;
++உடலிலான்	C11SgRoot;
++உருத்திரன்	C11SgRoot;
++எமன்	C11SgRoot;
++ஓச்சன்	C11SgRoot;
++கங்காதரன்	C11SgRoot;
++கணேசன்	C11SgRoot;
++கிருட்டிணன்	C11SgRoot;
++குமாரன்	C11SgRoot;
++கோபாலன்	C11SgRoot;
++சங்கரன்	C11SgRoot;
++சதுர்முகன்	C11SgRoot;
++ஜப்பான்	C11SgRoot;
++ஜெர்மன்	C11SgRoot;
++துக்கக்காரன்	C11SgRoot;
++தெஹரான்	C11SgRoot;
++பகன்	C11SgRoot;
++மதுசூதன்	C11SgRoot;
++மீன்காரன்	C11SgRoot;
++முரளீதரன்	C11SgRoot;
++ரங்கநாதன்	C11SgRoot;
++ரமலான்	C11SgRoot;
++வருணன்	C11SgRoot;
++வில்லன்	C11SgRoot;
++வெய்யோன்	C11SgRoot;
+ LEXICON C11SgRoot
+ !        Root;
+         C11Inflections;
+@@ -48097,6 +48159,34 @@
+ வைரம்	C15SgRoot ;
+ வைஷ்ணவம்	C15SgRoot ;
+ 
++
++! Source-backed name cleanup tranche: multi-source name/name+noun candidates.
++அசாம்	C15SgRoot;
++ஆதாம்	C15SgRoot;
++ஆதியாகமம்	C15SgRoot;
++ஆரியம்	C15SgRoot;
++இராமாயணம்	C15SgRoot;
++கடாரம்	C15SgRoot;
++காந்தாரம்	C15SgRoot;
++கேரளம்	C15SgRoot;
++சமசுகிருதம்	C15SgRoot;
++சிலப்பதிகாரம்	C15SgRoot;
++சீயம்	C15SgRoot;
++சேலம்	C15SgRoot;
++திருவனந்தபுரம்	C15SgRoot;
++தொல்காப்பியம்	C15SgRoot;
++பரதநாட்டியம்	C15SgRoot;
++பாரசீகம்	C15SgRoot;
++மகாபாரதம்	C15SgRoot;
++மகாராட்டிரம்	C15SgRoot;
++மக்கம்	C15SgRoot;
++மிசோரம்	C15SgRoot;
++யாகுவம்	C15SgRoot;
++யாழ்ப்பாணம்	C15SgRoot;
++ரோம்	C15SgRoot;
++வங்காளதேசம்	C15SgRoot;
++வங்காளம்	C15SgRoot;
++
+ LEXICON C15SgRoot
+ !        Root;
+         C15Inflections;

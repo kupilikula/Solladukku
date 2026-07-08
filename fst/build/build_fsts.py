@@ -37,6 +37,13 @@ COMPONENTS = [
             "0003-fix-noun-malformed-locatives.patch",
             "0004-fix-noun-plural-accusative.patch",
             "0005-add-common-noun-case-variants.patch",
+            "0007-expand-source-backed-noun-coverage.patch",
+            "0010-add-source-backed-noun-tranche.patch",
+            "0012-add-source-backed-name-tranche.patch",
+            "0013-add-foreign-final-name-template.patch",
+            "0015-add-source-backed-noun-tranche-2.patch",
+            "0016-remove-noun-pronoun-rewrites.patch",
+            "0017-add-source-backed-noun-tranche-3.patch",
         ],
     },
     {
@@ -50,6 +57,9 @@ COMPONENTS = [
         "zip": "ThamizhiMorph-Adverbs.zip",
         "entry": "tamil-adverbs.foma",
         "output": "adv.fst",
+        "patches": [
+            "0020-add-lexicon-adverb-illaakkaattil.patch",
+        ],
     },
     {
         "name": "part",
@@ -64,6 +74,12 @@ COMPONENTS = [
         "output": "verb-c3.fst",
         "patches": [
             "0006-add-common-verb-coverage.patch",
+            "0008-expand-source-backed-verb-coverage.patch",
+            "0009-add-irregular-existential-verb.patch",
+            "0011-add-source-backed-c5-verb-tranche.patch",
+            "0014-add-source-backed-c5-verb-tranche-2.patch",
+            "0018-add-short-honorific-verb-forms.patch",
+            "0019-add-participial-person-nominals.patch",
         ],
     },
     {
@@ -73,6 +89,12 @@ COMPONENTS = [
         "output": "verb-c4.fst",
         "patches": [
             "0006-add-common-verb-coverage.patch",
+            "0008-expand-source-backed-verb-coverage.patch",
+            "0009-add-irregular-existential-verb.patch",
+            "0011-add-source-backed-c5-verb-tranche.patch",
+            "0014-add-source-backed-c5-verb-tranche-2.patch",
+            "0018-add-short-honorific-verb-forms.patch",
+            "0019-add-participial-person-nominals.patch",
         ],
     },
     {
@@ -82,6 +104,12 @@ COMPONENTS = [
         "output": "verb-c11.fst",
         "patches": [
             "0006-add-common-verb-coverage.patch",
+            "0008-expand-source-backed-verb-coverage.patch",
+            "0009-add-irregular-existential-verb.patch",
+            "0011-add-source-backed-c5-verb-tranche.patch",
+            "0014-add-source-backed-c5-verb-tranche-2.patch",
+            "0018-add-short-honorific-verb-forms.patch",
+            "0019-add-participial-person-nominals.patch",
         ],
     },
     {
@@ -91,6 +119,12 @@ COMPONENTS = [
         "output": "verb-c12.fst",
         "patches": [
             "0006-add-common-verb-coverage.patch",
+            "0008-expand-source-backed-verb-coverage.patch",
+            "0009-add-irregular-existential-verb.patch",
+            "0011-add-source-backed-c5-verb-tranche.patch",
+            "0014-add-source-backed-c5-verb-tranche-2.patch",
+            "0018-add-short-honorific-verb-forms.patch",
+            "0019-add-participial-person-nominals.patch",
         ],
     },
     {
@@ -100,6 +134,12 @@ COMPONENTS = [
         "output": "verb-c62.fst",
         "patches": [
             "0006-add-common-verb-coverage.patch",
+            "0008-expand-source-backed-verb-coverage.patch",
+            "0009-add-irregular-existential-verb.patch",
+            "0011-add-source-backed-c5-verb-tranche.patch",
+            "0014-add-source-backed-c5-verb-tranche-2.patch",
+            "0018-add-short-honorific-verb-forms.patch",
+            "0019-add-participial-person-nominals.patch",
         ],
     },
     {
@@ -109,6 +149,12 @@ COMPONENTS = [
         "output": "verb-c-rest.fst",
         "patches": [
             "0006-add-common-verb-coverage.patch",
+            "0008-expand-source-backed-verb-coverage.patch",
+            "0009-add-irregular-existential-verb.patch",
+            "0011-add-source-backed-c5-verb-tranche.patch",
+            "0014-add-source-backed-c5-verb-tranche-2.patch",
+            "0018-add-short-honorific-verb-forms.patch",
+            "0019-add-participial-person-nominals.patch",
         ],
     },
     {

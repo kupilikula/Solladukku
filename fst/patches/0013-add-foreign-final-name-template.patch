@@ -1,0 +1,99 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -27,6 +27,96 @@
+ C14Sg;      !நாள்
+ C15Sg;      !மரம்
+ C16Sg;      !சுவர்
++ForeignFinalSg; ! borrowed consonant-final names
++
++LEXICON ForeignFinalSg
++! Borrowed consonant-final names. Nominal forms keep the written final pulli;
++! case forms use the Tamilized oblique stem appropriate to the final consonant.
++கிறிஸ்துமஸ்	ForeignFinalNom;
++கிறிஸ்துமஸ்:கிறிஸ்துமஸ	ForeignSFinalInflections;
++பாரிஸ்	ForeignFinalNom;
++பாரிஸ்:பாரிஸ	ForeignSFinalInflections;
++பிரான்ஸ்	ForeignFinalNom;
++பிரான்ஸ்:பிரான்ஸ	ForeignSFinalInflections;
++பிலிப்பைன்ஸ்	ForeignFinalNom;
++பிலிப்பைன்ஸ்:பிலிப்பைன்ஸ	ForeignSFinalInflections;
++மெட்ராஸ்	ForeignFinalNom;
++மெட்ராஸ்:மெட்ராஸ	ForeignSFinalInflections;
++லாவோஸ்	ForeignFinalNom;
++லாவோஸ்:லாவோஸ	ForeignSFinalInflections;
++தனாக்	ForeignFinalNom;
++தனாக்:தனாக	ForeignKFinalInflections;
++நொர்ஸ்க்	ForeignFinalNom;
++நொர்ஸ்க்:நொர்ஸ்க	ForeignKFinalInflections;
++லடாக்	ForeignFinalNom;
++லடாக்:லடாக	ForeignKFinalInflections;
++இஸ்லாமாபாத்	ForeignFinalNom;
++இஸ்லாமாபாத்:இஸ்லாமாபாத	ForeignTFinalInflections;
++குசராத்	ForeignFinalNom;
++குசராத்:குசராத	ForeignTFinalInflections;
++பக்ரித்	ForeignFinalNom;
++பக்ரித்:பக்ரித	ForeignTFinalInflections;
++மத்ரித்	ForeignFinalNom;
++மத்ரித்:மத்ரித	ForeignTFinalInflections;
++ரூத்	ForeignFinalNom;
++ரூத்:ரூத	ForeignTFinalInflections;
++
++LEXICON ForeignFinalNom
+++noun+nom: #;
++
++LEXICON ForeignSFinalInflections
+++noun+acc:^ை #;
+++noun+inst:^ால் #;
+++noun+dat:^ுக்கு #;
+++noun+dat+sandhip:^ுக்குப் #;
+++noun+dat+sandhic:^ுக்குச் #;
+++noun+dat+sandhit:^ுக்குத் #;
+++noun+dat+sandhik:^ுக்குக் #;
+++noun+soc:^ோடு #;
+++noun+soc:^ுடன் #;
+++noun+abl:^ில் #;
+++noun+abl:^ின் #;
+++noun+abl:^ிலிருந்து #;
+++noun+gen:^ின் #;
+++noun+gen:^ுடைய #;
+++noun+loc:^ில் #;
+++noun+loc:^ிடம் #;
++
++LEXICON ForeignKFinalInflections
+++noun+acc:^ை #;
+++noun+inst:^ால் #;
+++noun+dat:^ுக்கு #;
+++noun+dat+sandhip:^ுக்குப் #;
+++noun+dat+sandhic:^ுக்குச் #;
+++noun+dat+sandhit:^ுக்குத் #;
+++noun+dat+sandhik:^ுக்குக் #;
+++noun+soc:^ோடு #;
+++noun+soc:^ுடன் #;
+++noun+abl:^ில் #;
+++noun+abl:^ின் #;
+++noun+abl:^ிலிருந்து #;
+++noun+gen:^ின் #;
+++noun+gen:^ுடைய #;
+++noun+loc:^ில் #;
+++noun+loc:^ிடம் #;
++
++LEXICON ForeignTFinalInflections
+++noun+acc:^்தை #;
+++noun+inst:^்தால் #;
+++noun+dat:^்துக்கு #;
+++noun+dat+sandhip:^்துக்குப் #;
+++noun+dat+sandhic:^்துக்குச் #;
+++noun+dat+sandhit:^்துக்குத் #;
+++noun+dat+sandhik:^்துக்குக் #;
+++noun+soc:^்தோடு #;
+++noun+soc:^்துடன் #;
+++noun+abl:^்தில் #;
+++noun+abl:^்தின் #;
+++noun+abl:^்திலிருந்து #;
+++noun+gen:^்தின் #;
+++noun+gen:^்துடைய #;
+++noun+loc:^்தில் #;
+++noun+loc:^்திடம் #;
+ 
+ 
+ LEXICON C1Sg

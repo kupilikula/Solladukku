@@ -1,0 +1,34 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -995,9 +995,10 @@
+ வைகைக்கோ	C1SgRoot;
+ வைகைத்திரு	C1SgRoot;
+ வைகைநிலா	C1SgRoot;
+ வைகையம்மா	C1SgRoot;
+ வைகையுரு	C1SgRoot;
++இந்தியா	C1SgRoot;
+ மகாராஜா	C1SgRoot;
+ மகாவிஷ்ணு	C1SgRoot;
+ முணு	C1SgRoot;
+ முருகா	C1SgRoot;
+@@ -1272,9 +1273,12 @@
+ சந்தை         	C2SgRoot; 
+ மந்தை         	C2SgRoot; 
+ இலை         	C2SgRoot; 
+ மலை         		C2SgRoot; 
+ தலை         		C2SgRoot; 
++செயற்கை	C2SgRoot;
++தொகை	C2SgRoot;
++நிலுவை	C2SgRoot;
+ சாலை       		C2SgRoot; 
+ பொய்         	C2SgRoot; 
+ மெய்         	C2SgRoot; 
+ வெண்ணெய்     	C2SgRoot; 
+@@ -24516,6 +24520,7 @@
+ அறிவமுது	C7SgRoot; 
+ அறிவரசு	C7SgRoot; 
+ அறிவழகு	C7SgRoot; 
+ அறிவன்பு	C7SgRoot; 
+ அறிவு	C7SgRoot; 
++நுண்ணறிவு	C7SgRoot;
+ அறிவுக்கரசு	C7SgRoot; 

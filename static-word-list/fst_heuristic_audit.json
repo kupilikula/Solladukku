@@ -4,8 +4,8 @@
     "class": "adj.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 205,
-    "predicted_lemmas": 205,
+    "normalized_or_predicted_inputs": 204,
+    "predicted_lemmas": 204,
     "sample_added": [],
     "templates_used": 3
   },
@@ -23,8 +23,8 @@
     "class": "noun.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 75766,
-    "predicted_lemmas": 75766,
+    "normalized_or_predicted_inputs": 82136,
+    "predicted_lemmas": 82136,
     "sample_added": [],
     "templates_used": 16
   },
@@ -38,12 +38,12 @@
     "templates_used": 0
   },
   {
-    "accepted_added": 596391,
+    "accepted_added": 605584,
     "class": "verb-c-rest.fst",
-    "forward_validated": 596391,
-    "generated_candidates": 596391,
-    "normalized_or_predicted_inputs": 84314,
-    "predicted_lemmas": 14144,
+    "forward_validated": 605584,
+    "generated_candidates": 605584,
+    "normalized_or_predicted_inputs": 82805,
+    "predicted_lemmas": 12542,
     "sample_added": [
       "அஃக",
       "அஃகக்",
@@ -71,13 +71,13 @@
       "அஃகினனள்",
       "அஃகினன்"
     ],
-    "templates_used": 1358
+    "templates_used": 1365
   },
   {
-    "accepted_added": 145681,
+    "accepted_added": 146815,
     "class": "verb-c11.fst",
-    "forward_validated": 145681,
-    "generated_candidates": 145681,
+    "forward_validated": 146815,
+    "generated_candidates": 146815,
     "normalized_or_predicted_inputs": 82701,
     "predicted_lemmas": 12416,
     "sample_added": [
@@ -107,13 +107,13 @@
       "அகலிக்கின்றாள்",
       "அகலிக்கின்றீர்"
     ],
-    "templates_used": 668
+    "templates_used": 669
   },
   {
-    "accepted_added": 9311,
+    "accepted_added": 9377,
     "class": "verb-c12.fst",
-    "forward_validated": 9311,
-    "generated_candidates": 9311,
+    "forward_validated": 9377,
+    "generated_candidates": 9377,
     "normalized_or_predicted_inputs": 33221,
     "predicted_lemmas": 12416,
     "sample_added": [
@@ -143,7 +143,7 @@
       "அசக்கின்றேன்",
       "அசக்கின்றோம்"
     ],
-    "templates_used": 426
+    "templates_used": 427
   },
   {
     "accepted_added": 1875,
@@ -182,10 +182,10 @@
     "templates_used": 139
   },
   {
-    "accepted_added": 43490,
+    "accepted_added": 45245,
     "class": "verb-c4.fst",
-    "forward_validated": 43490,
-    "generated_candidates": 43490,
+    "forward_validated": 45245,
+    "generated_candidates": 45245,
     "normalized_or_predicted_inputs": 33221,
     "predicted_lemmas": 12416,
     "sample_added": [
@@ -215,7 +215,7 @@
       "அகழ்கின்றன்",
       "அகழ்கின்றர்"
     ],
-    "templates_used": 272
+    "templates_used": 277
   },
   {
     "accepted_added": 868,

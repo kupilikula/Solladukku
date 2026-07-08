@@ -1,5 +1,5 @@
 {
-  "built_at_utc": "2026-07-07T10:44:47.775992+00:00",
+  "built_at_utc": "2026-07-08T05:27:19.252021+00:00",
   "submodule": {
     "path": "vendor/thamizhi-morph",
     "commit": "a296417ac603fd44eda35645369f1257d96bed89"
@@ -16,7 +16,14 @@
         "0002-fix-noun-class-duplicates.patch",
         "0003-fix-noun-malformed-locatives.patch",
         "0004-fix-noun-plural-accusative.patch",
-        "0005-add-common-noun-case-variants.patch"
+        "0005-add-common-noun-case-variants.patch",
+        "0007-expand-source-backed-noun-coverage.patch",
+        "0010-add-source-backed-noun-tranche.patch",
+        "0012-add-source-backed-name-tranche.patch",
+        "0013-add-foreign-final-name-template.patch",
+        "0015-add-source-backed-noun-tranche-2.patch",
+        "0016-remove-noun-pronoun-rewrites.patch",
+        "0017-add-source-backed-noun-tranche-3.patch"
       ]
     },
     {
@@ -33,7 +40,9 @@
       "zip": "ThamizhiMorph-Adverbs.zip",
       "entry": "tamil-adverbs.foma",
       "output": "adv.fst",
-      "patches": []
+      "patches": [
+        "0020-add-lexicon-adverb-illaakkaattil.patch"
+      ]
     },
     {
       "name": "part",
@@ -50,7 +59,13 @@
       "entry": "ThamizhiFST-C3.foma",
       "output": "verb-c3.fst",
       "patches": [
-        "0006-add-common-verb-coverage.patch"
+        "0006-add-common-verb-coverage.patch",
+        "0008-expand-source-backed-verb-coverage.patch",
+        "0009-add-irregular-existential-verb.patch",
+        "0011-add-source-backed-c5-verb-tranche.patch",
+        "0014-add-source-backed-c5-verb-tranche-2.patch",
+        "0018-add-short-honorific-verb-forms.patch",
+        "0019-add-participial-person-nominals.patch"
       ]
     },
     {
@@ -60,7 +75,13 @@
       "entry": "ThamizhiFST-C4.foma",
       "output": "verb-c4.fst",
       "patches": [
-        "0006-add-common-verb-coverage.patch"
+        "0006-add-common-verb-coverage.patch",
+        "0008-expand-source-backed-verb-coverage.patch",
+        "0009-add-irregular-existential-verb.patch",
+        "0011-add-source-backed-c5-verb-tranche.patch",
+        "0014-add-source-backed-c5-verb-tranche-2.patch",
+        "0018-add-short-honorific-verb-forms.patch",
+        "0019-add-participial-person-nominals.patch"
       ]
     },
     {
@@ -70,7 +91,13 @@
       "entry": "ThamizhiFST-C11.foma",
       "output": "verb-c11.fst",
       "patches": [
-        "0006-add-common-verb-coverage.patch"
+        "0006-add-common-verb-coverage.patch",
+        "0008-expand-source-backed-verb-coverage.patch",
+        "0009-add-irregular-existential-verb.patch",
+        "0011-add-source-backed-c5-verb-tranche.patch",
+        "0014-add-source-backed-c5-verb-tranche-2.patch",
+        "0018-add-short-honorific-verb-forms.patch",
+        "0019-add-participial-person-nominals.patch"
       ]
     },
     {
@@ -80,7 +107,13 @@
       "entry": "ThamizhiFST-C12.foma",
       "output": "verb-c12.fst",
       "patches": [
-        "0006-add-common-verb-coverage.patch"
+        "0006-add-common-verb-coverage.patch",
+        "0008-expand-source-backed-verb-coverage.patch",
+        "0009-add-irregular-existential-verb.patch",
+        "0011-add-source-backed-c5-verb-tranche.patch",
+        "0014-add-source-backed-c5-verb-tranche-2.patch",
+        "0018-add-short-honorific-verb-forms.patch",
+        "0019-add-participial-person-nominals.patch"
       ]
     },
     {
@@ -90,7 +123,13 @@
       "entry": "ThamizhiFST-C62.foma",
       "output": "verb-c62.fst",
       "patches": [
-        "0006-add-common-verb-coverage.patch"
+        "0006-add-common-verb-coverage.patch",
+        "0008-expand-source-backed-verb-coverage.patch",
+        "0009-add-irregular-existential-verb.patch",
+        "0011-add-source-backed-c5-verb-tranche.patch",
+        "0014-add-source-backed-c5-verb-tranche-2.patch",
+        "0018-add-short-honorific-verb-forms.patch",
+        "0019-add-participial-person-nominals.patch"
       ]
     },
     {
@@ -100,7 +139,13 @@
       "entry": "ThamizhiFST-otherthan-3-4-62-11-12.foma",
       "output": "verb-c-rest.fst",
       "patches": [
-        "0006-add-common-verb-coverage.patch"
+        "0006-add-common-verb-coverage.patch",
+        "0008-expand-source-backed-verb-coverage.patch",
+        "0009-add-irregular-existential-verb.patch",
+        "0011-add-source-backed-c5-verb-tranche.patch",
+        "0014-add-source-backed-c5-verb-tranche-2.patch",
+        "0018-add-short-honorific-verb-forms.patch",
+        "0019-add-participial-person-nominals.patch"
       ]
     },
     {
@@ -154,13 +199,189 @@
     {
       "file": "fst/patches/0006-add-common-verb-coverage.patch",
       "sha256": "61f4cad3cc42a9c4f0aedace11a5c5b30f618940a409ba9dfe480e03215e28e1"
+    },
+    {
+      "file": "fst/patches/0007-expand-source-backed-noun-coverage.patch",
+      "sha256": "ba5233ae4c4191da787a70d505636701559e231aebad673ecc9b7fbb064fd9e1"
+    },
+    {
+      "file": "fst/patches/0008-expand-source-backed-verb-coverage.patch",
+      "sha256": "9958182add93f56551612f52c7e124c4154c81bfb8d09fa91ccf6616540aa471"
+    },
+    {
+      "file": "fst/patches/0008-expand-source-backed-verb-coverage.patch",
+      "sha256": "9958182add93f56551612f52c7e124c4154c81bfb8d09fa91ccf6616540aa471"
+    },
+    {
+      "file": "fst/patches/0008-expand-source-backed-verb-coverage.patch",
+      "sha256": "9958182add93f56551612f52c7e124c4154c81bfb8d09fa91ccf6616540aa471"
+    },
+    {
+      "file": "fst/patches/0008-expand-source-backed-verb-coverage.patch",
+      "sha256": "9958182add93f56551612f52c7e124c4154c81bfb8d09fa91ccf6616540aa471"
+    },
+    {
+      "file": "fst/patches/0008-expand-source-backed-verb-coverage.patch",
+      "sha256": "9958182add93f56551612f52c7e124c4154c81bfb8d09fa91ccf6616540aa471"
+    },
+    {
+      "file": "fst/patches/0008-expand-source-backed-verb-coverage.patch",
+      "sha256": "9958182add93f56551612f52c7e124c4154c81bfb8d09fa91ccf6616540aa471"
+    },
+    {
+      "file": "fst/patches/0009-add-irregular-existential-verb.patch",
+      "sha256": "def82cfbc8d6ea08fd1c58074747b1bd2723ec4bdd3aa14e3cd2bbfcad34e006"
+    },
+    {
+      "file": "fst/patches/0009-add-irregular-existential-verb.patch",
+      "sha256": "def82cfbc8d6ea08fd1c58074747b1bd2723ec4bdd3aa14e3cd2bbfcad34e006"
+    },
+    {
+      "file": "fst/patches/0009-add-irregular-existential-verb.patch",
+      "sha256": "def82cfbc8d6ea08fd1c58074747b1bd2723ec4bdd3aa14e3cd2bbfcad34e006"
+    },
+    {
+      "file": "fst/patches/0009-add-irregular-existential-verb.patch",
+      "sha256": "def82cfbc8d6ea08fd1c58074747b1bd2723ec4bdd3aa14e3cd2bbfcad34e006"
+    },
+    {
+      "file": "fst/patches/0009-add-irregular-existential-verb.patch",
+      "sha256": "def82cfbc8d6ea08fd1c58074747b1bd2723ec4bdd3aa14e3cd2bbfcad34e006"
+    },
+    {
+      "file": "fst/patches/0009-add-irregular-existential-verb.patch",
+      "sha256": "def82cfbc8d6ea08fd1c58074747b1bd2723ec4bdd3aa14e3cd2bbfcad34e006"
+    },
+    {
+      "file": "fst/patches/0010-add-source-backed-noun-tranche.patch",
+      "sha256": "54a6b16eb5d9b5985e1e255b7ce64ebefeb35f171908e18dec955954aa8111db"
+    },
+    {
+      "file": "fst/patches/0011-add-source-backed-c5-verb-tranche.patch",
+      "sha256": "2e812c63c517cda2d3b5822850d369e4dc0f5c61c1dccca930c3a3ab0c68114e"
+    },
+    {
+      "file": "fst/patches/0011-add-source-backed-c5-verb-tranche.patch",
+      "sha256": "2e812c63c517cda2d3b5822850d369e4dc0f5c61c1dccca930c3a3ab0c68114e"
+    },
+    {
+      "file": "fst/patches/0011-add-source-backed-c5-verb-tranche.patch",
+      "sha256": "2e812c63c517cda2d3b5822850d369e4dc0f5c61c1dccca930c3a3ab0c68114e"
+    },
+    {
+      "file": "fst/patches/0011-add-source-backed-c5-verb-tranche.patch",
+      "sha256": "2e812c63c517cda2d3b5822850d369e4dc0f5c61c1dccca930c3a3ab0c68114e"
+    },
+    {
+      "file": "fst/patches/0011-add-source-backed-c5-verb-tranche.patch",
+      "sha256": "2e812c63c517cda2d3b5822850d369e4dc0f5c61c1dccca930c3a3ab0c68114e"
+    },
+    {
+      "file": "fst/patches/0011-add-source-backed-c5-verb-tranche.patch",
+      "sha256": "2e812c63c517cda2d3b5822850d369e4dc0f5c61c1dccca930c3a3ab0c68114e"
+    },
+    {
+      "file": "fst/patches/0012-add-source-backed-name-tranche.patch",
+      "sha256": "e35640a5c851e3b5852f036e39a0230fdd3e7b7d968e6a168b930d5e4898e31a"
+    },
+    {
+      "file": "fst/patches/0013-add-foreign-final-name-template.patch",
+      "sha256": "e9c72893001b2831a746f11dd074f1a69cd9f9a6bb42d098b25a8d937a89053a"
+    },
+    {
+      "file": "fst/patches/0014-add-source-backed-c5-verb-tranche-2.patch",
+      "sha256": "cfb4a7ab5972f72dcbc84fd93d2df61d6f30a31f149cb5cc39c00499b2bdb5ad"
+    },
+    {
+      "file": "fst/patches/0014-add-source-backed-c5-verb-tranche-2.patch",
+      "sha256": "cfb4a7ab5972f72dcbc84fd93d2df61d6f30a31f149cb5cc39c00499b2bdb5ad"
+    },
+    {
+      "file": "fst/patches/0014-add-source-backed-c5-verb-tranche-2.patch",
+      "sha256": "cfb4a7ab5972f72dcbc84fd93d2df61d6f30a31f149cb5cc39c00499b2bdb5ad"
+    },
+    {
+      "file": "fst/patches/0014-add-source-backed-c5-verb-tranche-2.patch",
+      "sha256": "cfb4a7ab5972f72dcbc84fd93d2df61d6f30a31f149cb5cc39c00499b2bdb5ad"
+    },
+    {
+      "file": "fst/patches/0014-add-source-backed-c5-verb-tranche-2.patch",
+      "sha256": "cfb4a7ab5972f72dcbc84fd93d2df61d6f30a31f149cb5cc39c00499b2bdb5ad"
+    },
+    {
+      "file": "fst/patches/0014-add-source-backed-c5-verb-tranche-2.patch",
+      "sha256": "cfb4a7ab5972f72dcbc84fd93d2df61d6f30a31f149cb5cc39c00499b2bdb5ad"
+    },
+    {
+      "file": "fst/patches/0015-add-source-backed-noun-tranche-2.patch",
+      "sha256": "82656e541928d79f5eca44be832c61398b09089a512c97ba252a8cd035f883a9"
+    },
+    {
+      "file": "fst/patches/0016-remove-noun-pronoun-rewrites.patch",
+      "sha256": "fbb2d87db230f2f857b8f9fc6c945b118b57249339e5df07bfab7c41caa7abd2"
+    },
+    {
+      "file": "fst/patches/0017-add-source-backed-noun-tranche-3.patch",
+      "sha256": "dacbca0a418b3023439cfd9c1c8c6565f71b378648dd5cf420557fb6be00e2c4"
+    },
+    {
+      "file": "fst/patches/0018-add-short-honorific-verb-forms.patch",
+      "sha256": "1dcb7f3726c8ba3f6871fda2cd322b1ac6e95c3a35830e29608594183ce270d0"
+    },
+    {
+      "file": "fst/patches/0018-add-short-honorific-verb-forms.patch",
+      "sha256": "1dcb7f3726c8ba3f6871fda2cd322b1ac6e95c3a35830e29608594183ce270d0"
+    },
+    {
+      "file": "fst/patches/0018-add-short-honorific-verb-forms.patch",
+      "sha256": "1dcb7f3726c8ba3f6871fda2cd322b1ac6e95c3a35830e29608594183ce270d0"
+    },
+    {
+      "file": "fst/patches/0018-add-short-honorific-verb-forms.patch",
+      "sha256": "1dcb7f3726c8ba3f6871fda2cd322b1ac6e95c3a35830e29608594183ce270d0"
+    },
+    {
+      "file": "fst/patches/0018-add-short-honorific-verb-forms.patch",
+      "sha256": "1dcb7f3726c8ba3f6871fda2cd322b1ac6e95c3a35830e29608594183ce270d0"
+    },
+    {
+      "file": "fst/patches/0018-add-short-honorific-verb-forms.patch",
+      "sha256": "1dcb7f3726c8ba3f6871fda2cd322b1ac6e95c3a35830e29608594183ce270d0"
+    },
+    {
+      "file": "fst/patches/0019-add-participial-person-nominals.patch",
+      "sha256": "2cc6ec1a2974ab786875398e21216c7f20138427c744647824624cc1c8587721"
+    },
+    {
+      "file": "fst/patches/0019-add-participial-person-nominals.patch",
+      "sha256": "2cc6ec1a2974ab786875398e21216c7f20138427c744647824624cc1c8587721"
+    },
+    {
+      "file": "fst/patches/0019-add-participial-person-nominals.patch",
+      "sha256": "2cc6ec1a2974ab786875398e21216c7f20138427c744647824624cc1c8587721"
+    },
+    {
+      "file": "fst/patches/0019-add-participial-person-nominals.patch",
+      "sha256": "2cc6ec1a2974ab786875398e21216c7f20138427c744647824624cc1c8587721"
+    },
+    {
+      "file": "fst/patches/0019-add-participial-person-nominals.patch",
+      "sha256": "2cc6ec1a2974ab786875398e21216c7f20138427c744647824624cc1c8587721"
+    },
+    {
+      "file": "fst/patches/0019-add-participial-person-nominals.patch",
+      "sha256": "2cc6ec1a2974ab786875398e21216c7f20138427c744647824624cc1c8587721"
+    },
+    {
+      "file": "fst/patches/0020-add-lexicon-adverb-illaakkaattil.patch",
+      "sha256": "cf7d4f7a0ffa1ed137a52f2affc94e3adf7f08d059f92ddd84963c633ced04e6"
     }
   ],
   "outputs": [
     {
       "file": "adj.fst",
-      "sha256": "ba4683454d92837fb12a4520936b417d6156eaf36395c253018d91086a03094a",
-      "size_bytes": 7508,
+      "sha256": "3c4844e4bb03696fe0d72205036b39be18ea3418f07e8779849c47e08b3e6bdc",
+      "size_bytes": 7509,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -169,8 +390,8 @@
     },
     {
       "file": "adv.fst",
-      "sha256": "7f7d699884d51ed7623b9547b99b3c9e3b96c502d958cbfeb3abb2e61ce47eda",
-      "size_bytes": 13551,
+      "sha256": "745b5b9addfc1c189cb0844c29bb532ffb1a8a02ff39eefbcde2689c5f392e7c",
+      "size_bytes": 13595,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -179,8 +400,8 @@
     },
     {
       "file": "noun.fst",
-      "sha256": "42d71d708eef5f06ea6700848d8b579439a7667faa7c6b23a45a33942278692a",
-      "size_bytes": 164218,
+      "sha256": "55ebca84020b22e4a9682551874d952f2a6d78fccf41eac4f5ac6915217fc992",
+      "size_bytes": 191816,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -189,7 +410,7 @@
     },
     {
       "file": "part.fst",
-      "sha256": "8b920db94f4725d6f1d3f1277c90db73532b9e4d3449634b1f266f5681ab2b75",
+      "sha256": "a2d046e0d7fec2b51e8808cc4a53ac1fb1f7ad21d69b63fa2f0649ad568c299f",
       "size_bytes": 4498,
       "copied_to": [
         "build/fst-models",
@@ -209,8 +430,8 @@
     },
     {
       "file": "verb-c-rest.fst",
-      "sha256": "a757cd13d221ccb3e8b30e8070661fa9c8a70e26899d5d9d7e632b563155a3bf",
-      "size_bytes": 124683,
+      "sha256": "e2063b4974ee2c5c3b838c93328b23eca11cab52c470d5abd931c008cbbb1758",
+      "size_bytes": 126996,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -219,8 +440,8 @@
     },
     {
       "file": "verb-c11.fst",
-      "sha256": "7f4ec631103bd3570764673964fec71d9b09f95d97d4d2aebf425140c6a88d07",
-      "size_bytes": 66992,
+      "sha256": "b3ff792637d0dfa4b3b8219d6d9fe45cecc8630dfb9846726e137bd3c6bf701c",
+      "size_bytes": 67042,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -229,8 +450,8 @@
     },
     {
       "file": "verb-c12.fst",
-      "sha256": "e81b20108ee50677ab90dd9b721f3a998212345f91f89f61fb396ba24e255a25",
-      "size_bytes": 43762,
+      "sha256": "572d0857c3aa3ec16f7e4ec333bac21ae517eff90cb2ad643e4cd4001cd454f2",
+      "size_bytes": 43901,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -239,7 +460,7 @@
     },
     {
       "file": "verb-c3.fst",
-      "sha256": "2512befcb54de347fae9cfac564dff961996300fd050cb9c6bb9905d6753ddfa",
+      "sha256": "a75923c171052313b636e258e3696db692a9b049bb001a388bc40d16a7f8872e",
       "size_bytes": 12755,
       "copied_to": [
         "build/fst-models",
@@ -249,8 +470,8 @@
     },
     {
       "file": "verb-c4.fst",
-      "sha256": "f26e46ded06b81bff75b3d5f4d21c53eb0bd94e6784415ba34c8e373fe678c96",
-      "size_bytes": 39150,
+      "sha256": "362b02bc6c380f1868a307ccbea3378e859bc41def4688a35698937d3935e242",
+      "size_bytes": 39732,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -259,8 +480,8 @@
     },
     {
       "file": "verb-c62.fst",
-      "sha256": "336d13867f2808a389613978c0bcaea63b4bdbade32b876a7afbeaf5fdd96374",
-      "size_bytes": 12416,
+      "sha256": "ac7ff5f494fab49d7150069cdd6435bef9c9a53014d5e9c2f76a582dfeda594a",
+      "size_bytes": 12417,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",

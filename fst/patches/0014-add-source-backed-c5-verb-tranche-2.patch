@@ -1,0 +1,56 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -593,6 +593,53 @@
+ முத்தமிடு     C5Vinf;
+ வழிகாட்டு     C5Vinf;
+ வேலைவாங்கு     C5Vinf;
++
++! Source-backed C5 verb tranche 2: post-dict-build Vuizur-backed candidates.
++அணிவகு	C5Vinf;
++அறிக்கைபண்ணு	C5Vinf;
++இளைப்பாறு	C5Vinf;
++இளைப்பாற்று	C5Vinf;
++இழவுகொண்டாடு	C5Vinf;
++ஈசல்கொட்டு	C5Vinf;
++உண்டாக்கு	C5Vinf;
++உண்டுபடு	C5Vinf;
++உண்டுபண்ணு	C5Vinf;
++உரங்காட்டு	C5Vinf;
++ஊடுதாக்கு	C5Vinf;
++ஒலோவு	C5Vinf;
++களிகூறு	C5Vinf;
++கேள்விப்படு	C5Vinf;
++தெரிபடு	C5Vinf;
++தோணிதள்ளு	C5Vinf;
++பயப்படு	C5Vinf;
++பயிரிடு	C5Vinf;
++பாடம்போற்று	C5Vinf;
++பாதிடு	C5Vinf;
++பிகுபண்ணு	C5Vinf;
++பிகுவேற்று	C5Vinf;
++பிசகுசொல்லு	C5Vinf;
++பிசகுநாறு	C5Vinf;
++பிசுக்கொட்டு	C5Vinf;
++பின்னாடிபேசு	C5Vinf;
++பின்போடு	C5Vinf;
++பிறகிடு	C5Vinf;
++பிறகுகாண்ணு	C5Vinf;
++பிறக்கடியிடு	C5Vinf;
++பிறக்கிடு	C5Vinf;
++பிறிகதிர்ப்படு	C5Vinf;
++பிற்படு	C5Vinf;
++பெயர்ப்படு	C5Vinf;
++பொறு	C5Vinf;
++முத்தாடு	C5Vinf;
++மேம்படு	C5Vinf;
++மேற்படு	C5Vinf;
++மேலிடு	C5Vinf;
++ரெம்பு	C5Vinf;
++ரொம்பு	C5Vinf;
++வரப்பண்ணு	C5Vinf;
++வாக்காடு	C5Vinf;
++வாக்காட்டு	C5Vinf;
++வெறு	C5Vinf;
+ இழித்து     C5Vinf;
+ உட்கு     C5Vinf;
+ உருகு     C5Vinf;

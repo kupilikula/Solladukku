@@ -1,28 +1,125 @@
 {
   "inverse_must_include": [
-    {"analysis": "திருமகன்+noun+acc", "surface": "திருமகனை"},
-    {"analysis": "மாணவன்+noun+acc", "surface": "மாணவனை"},
-    {"analysis": "பொன்+noun+acc", "surface": "பொன்னை"},
-    {"analysis": "மடு+noun+loc", "surface": "மடுவிடம்"},
-    {"analysis": "காடு+noun+loc", "surface": "காட்டில்"},
-    {"analysis": "பூ+noun+pl+acc", "surface": "பூக்களை"},
-    {"analysis": "புலி+noun+pl+acc", "surface": "புலிகளை"},
-    {"analysis": "மாணவன்+noun+pl+acc", "surface": "மாணவர்களை"},
-    {"analysis": "கல்+noun+pl+acc", "surface": "கற்களை"},
-    {"analysis": "பொருள்+noun+pl+acc", "surface": "பொருட்களை"},
-    {"analysis": "மரம்+noun+pl+acc", "surface": "மரங்களை"},
-    {"analysis": "பூ+noun+pl+inst", "surface": "பூக்களால்"},
-    {"analysis": "புலி+noun+pl+inst", "surface": "புலிகளால்"},
-    {"analysis": "மாணவன்+noun+pl+inst", "surface": "மாணவர்களால்"},
-    {"analysis": "கல்+noun+pl+inst", "surface": "கற்களால்"},
-    {"analysis": "மரம்+noun+pl+inst", "surface": "மரங்களால்"},
-    {"analysis": "புலி+noun+dat", "surface": "புலிக்கு"},
-    {"analysis": "தீ+noun+dat", "surface": "தீக்கு"},
-    {"analysis": "மாணவன்+noun+soc", "surface": "மாணவனுடன்"},
-    {"analysis": "மாணவன்+noun+pl+soc", "surface": "மாணவர்களுடன்"},
-    {"analysis": "கல்+noun+soc", "surface": "கல்லுடன்"},
-    {"analysis": "கல்+noun+pl+soc", "surface": "கற்களுடன்"},
-    {"analysis": "பொருள்+noun+soc", "surface": "பொருளுடன்"}
+    {
+      "analysis": "திருமகன்+noun+acc",
+      "surface": "திருமகனை"
+    },
+    {
+      "analysis": "மாணவன்+noun+acc",
+      "surface": "மாணவனை"
+    },
+    {
+      "analysis": "பொன்+noun+acc",
+      "surface": "பொன்னை"
+    },
+    {
+      "analysis": "மடு+noun+loc",
+      "surface": "மடுவிடம்"
+    },
+    {
+      "analysis": "காடு+noun+loc",
+      "surface": "காட்டில்"
+    },
+    {
+      "analysis": "பூ+noun+pl+acc",
+      "surface": "பூக்களை"
+    },
+    {
+      "analysis": "புலி+noun+pl+acc",
+      "surface": "புலிகளை"
+    },
+    {
+      "analysis": "மாணவன்+noun+pl+acc",
+      "surface": "மாணவர்களை"
+    },
+    {
+      "analysis": "கல்+noun+pl+acc",
+      "surface": "கற்களை"
+    },
+    {
+      "analysis": "பொருள்+noun+pl+acc",
+      "surface": "பொருட்களை"
+    },
+    {
+      "analysis": "மரம்+noun+pl+acc",
+      "surface": "மரங்களை"
+    },
+    {
+      "analysis": "பூ+noun+pl+inst",
+      "surface": "பூக்களால்"
+    },
+    {
+      "analysis": "புலி+noun+pl+inst",
+      "surface": "புலிகளால்"
+    },
+    {
+      "analysis": "மாணவன்+noun+pl+inst",
+      "surface": "மாணவர்களால்"
+    },
+    {
+      "analysis": "கல்+noun+pl+inst",
+      "surface": "கற்களால்"
+    },
+    {
+      "analysis": "மரம்+noun+pl+inst",
+      "surface": "மரங்களால்"
+    },
+    {
+      "analysis": "புலி+noun+dat",
+      "surface": "புலிக்கு"
+    },
+    {
+      "analysis": "தீ+noun+dat",
+      "surface": "தீக்கு"
+    },
+    {
+      "analysis": "நம்பிக்கை+noun+acc",
+      "surface": "நம்பிக்கையை"
+    },
+    {
+      "analysis": "திருநம்பி+noun+acc",
+      "surface": "திருநம்பியை"
+    },
+    {
+      "analysis": "நம்பி+noun+acc",
+      "surface": "நம்பியை"
+    },
+    {
+      "analysis": "மாணவன்+noun+soc",
+      "surface": "மாணவனுடன்"
+    },
+    {
+      "analysis": "மாணவன்+noun+pl+soc",
+      "surface": "மாணவர்களுடன்"
+    },
+    {
+      "analysis": "கல்+noun+soc",
+      "surface": "கல்லுடன்"
+    },
+    {
+      "analysis": "கல்+noun+pl+soc",
+      "surface": "கற்களுடன்"
+    },
+    {
+      "analysis": "பொருள்+noun+soc",
+      "surface": "பொருளுடன்"
+    },
+    {
+      "analysis": "கற்றொழிலோர்+noun+acc",
+      "surface": "கற்றொழிலோரை"
+    },
+    {
+      "analysis": "பிறந்தவம்+noun+infInc+acc",
+      "surface": "பிறந்தவத்தை"
+    },
+    {
+      "analysis": "பிறந்தவழிக்கூறல்+noun+acc",
+      "surface": "பிறந்தவழிக்கூறலை"
+    },
+    {
+      "analysis": "பறக்கும்தட்டு+noun+acc",
+      "surface": "பறக்கும்தட்டை"
+    }
   ],
   "analysis_must_recognize": [
     "திருமகனை",
@@ -43,11 +140,26 @@
     "மரங்களால்",
     "புலிக்கு",
     "தீக்கு",
+    "நம்பிக்கை",
+    "நம்பிக்கையை",
+    "நம்பிக்கையில்",
+    "திருநம்பி",
+    "திருநம்பியை",
+    "நம்பி",
+    "நம்பியை",
     "மாணவனுடன்",
     "மாணவர்களுடன்",
     "கல்லுடன்",
     "கற்களுடன்",
-    "பொருளுடன்"
+    "பொருளுடன்",
+    "கற்றொழிலோர்",
+    "கற்றொழிலோரை",
+    "பிறந்தவம்",
+    "பிறந்தவத்தை",
+    "பிறந்தவழிக்கூறல்",
+    "பிறந்தவழிக்கூறலை",
+    "பறக்கும்தட்டு",
+    "பறக்கும்தட்டை"
   ],
   "analysis_should_reject": [
     "திருமகன்னை",
@@ -56,14 +168,27 @@
     "காடுடிடம்",
     "தகடுடிடம்",
     "உதடுடிடம்",
-    "அகச்சிட்ட்டில்"
+    "அகச்சிட்ட்டில்",
+    "நம்",
+    "நமது",
+    "நமக்கு",
+    "அவன்",
+    "அவனை",
+    "இவன்",
+    "இவனை"
   ],
   "dictionary_must_include": [
     "திருமகனை",
     "மாணவனை",
     "மரங்களை",
+    "நம்பிக்கையை",
+    "திருநம்பியை",
     "செயலி",
-    "போண்டி"
+    "போண்டி",
+    "கற்றொழிலோர்",
+    "பிறந்தவம்",
+    "பிறந்தவழிக்கூறல்",
+    "பறக்கும்தட்டு"
   ],
   "dictionary_must_exclude": [
     "திருமகன்னை",

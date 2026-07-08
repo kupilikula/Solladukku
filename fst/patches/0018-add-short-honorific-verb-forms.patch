@@ -1,0 +1,68 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -402,6 +402,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் #;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தர் #;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^ந்தார் #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது #;
+ +verb+fin+sim+strong+past%=த்+3pln%=அன:^ந்தன #;
+@@ -415,6 +416,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் #;
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+@@ -428,6 +430,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்:^கின்றார் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3pln%=அன:^கின்றன #;
+@@ -440,6 +443,7 @@
+ +verb+fin+sim+weak+fut%=வ்+3sgf%=ஆள்:^வாள் #;
+ +verb+fin+sim+weak+fut%=வ்+3sge%=அர்:^வர் #;
+ +verb+fin+sim+weak+fut%=வ்+3ple%=ஆர்கள்:^வார்கள் #;
+++verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்:^வார் #;
+ +verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்கள்:^வார்கள் #;
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+ +verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ும் #;
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -2761,6 +2761,7 @@
+ +verb+fin+sim+strong+past%=ற்+3sgf%=ஆள்:^றாள் #;
+ +verb+fin+sim+strong+past%=ற்+3sge%=அர்:^றர் #;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்:^றார்கள் #;
+++verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்:^ற்றார் #;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்கள்:^றார்கள் #;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது:^றது #;
+ +verb+fin+sim+strong+past%=ற்+3pln%=அன:^றன #;
+@@ -2774,6 +2775,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் #;
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+@@ -2787,6 +2789,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்:^கின்றார் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3pln%=அன:^கின்றன #;
+@@ -2799,6 +2802,7 @@
+ +verb+fin+sim+middle+fut%=ப்+3sgf%=ஆள்:^பாள் #;
+ +verb+fin+sim+middle+fut%=ப்+3sge%=அர்:^பர் #;
+ +verb+fin+sim+middle+fut%=ப்+3ple%=ஆர்கள்:^பார்கள் #;
+++verb+fin+sim+middle+fut%=ப்+3sghe%=ஆர்:^பார் #;
+ +verb+fin+sim+middle+fut%=ப்+3sghe%=ஆர்கள்:^பார்கள் #;
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+ +verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ும் #;

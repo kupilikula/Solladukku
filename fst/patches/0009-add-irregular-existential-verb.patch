@@ -1,0 +1,31 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -31,6 +31,7 @@
+ ClassPoModern;
+ ClassVaaModern;
+ ClassKelModern;
++ClassUlExistential;
+ 
+ 
+ 
+@@ -1799,8 +1800,20 @@
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+ 
++LEXICON ClassUlExistential
++
++உள்:உ UlExistentialVinf;
++
++LEXICON UlExistentialVinf
+++verb+fin+sim+strong+pres%=∅+3sgn%=அது:^ண்டு #;
+++verb+fin+sim+strong+pres%=∅+3sgn%=அது:^ள்ளது #;
+++verb+fin+sim+strong+pres%=∅+3pln%=அன:^ள்ளன #;
+++verb+fin+sim+strong+pres%=∅+3sghe%=ஆர்:^ள்ளார் #;
+++verb+fin+sim+strong+pres%=∅+3ple%=ஆர்கள்:^ள்ளார்கள் #;
++
++
+ LEXICON ClassPoModern
+ 
+ போ:போ PoModernVinf;

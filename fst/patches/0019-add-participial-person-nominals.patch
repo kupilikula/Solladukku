@@ -1,0 +1,40 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -529,6 +529,7 @@
+ +verb+nonfin+sim+con%=ஆல்:^ந்தால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^ந்த #;
+++verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்:^ந்தோர் #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -1440,6 +1440,7 @@
+ +verb+nonfin+sim+con%=ஆல்:^த்தால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^த்த #;
+++verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்:^த்தோர் #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^க்கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -230,6 +230,7 @@
+ +verb+nonfin+sim+con%=ஆல்:^ந்தால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^ந்த #;
+++verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்:^ந்தோர் #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^க்கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -2887,6 +2887,7 @@
+ +verb+nonfin+sim+con%=ஆல்:^றால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^காவிட்டால் #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ற #;
+++verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்:^றோர் #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;

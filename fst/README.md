@@ -62,6 +62,19 @@ Covers:
 
 - C11 noun accusative regression (`திருமகன்`, `மாணவன்`)
 - C10 control case (`பொன் -> பொன்னை`)
+- source-backed noun/verb coverage patches such as `இந்தியா`, `நுண்ணறிவு`, `உருவாக்குகிறது`, and `ஓடியது`
+- the 1,522-entry source-backed noun tranche from `0010-add-source-backed-noun-tranche.patch`
+- the 26-entry source-backed C5 verb tranche from `0011-add-source-backed-c5-verb-tranche.patch`
+- the 76-entry source-backed name cleanup tranche from `0012-add-source-backed-name-tranche.patch`
+- the 14-entry foreign-final borrowed-name template from `0013-add-foreign-final-name-template.patch`
+- the 45-entry second source-backed C5 verb tranche from `0014-add-source-backed-c5-verb-tranche-2.patch`
+- the 173-entry second source-backed noun tranche from `0015-add-source-backed-noun-tranche-2.patch`
+- the noun-side pronoun rewrite removal from `0016-remove-noun-pronoun-rewrites.patch`, which keeps roots such as `நம்பிக்கை` and `திருநம்பி` reachable while pronouns remain in `pronoun.fst`
+- the 1,301-entry third source-backed noun tranche from `0017-add-source-backed-noun-tranche-3.patch`, after reviewed lexical noun decisions such as `கற்றொழிலோர்`, `பிறந்தவம்`, `பிறந்தவழிக்கூறல்`, and `பறக்கும்தட்டு`
+- short honorific verb forms from `0018-add-short-honorific-verb-forms.patch`, including forms such as `கற்றார்` and `சேர்ந்தார்`
+- participial-person nominal forms from `0019-add-participial-person-nominals.patch`, including forms such as `அடைந்தோர்`
+- the lexical adverb `இல்லாக்காட்டில்` from `0020-add-lexicon-adverb-illaakkaattil.patch`
+- irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளார்`, `உள்ளார்கள்`, and ambiguous `உண்டு`
 - Dictionary gold include/exclude checks run with `python3 fst/tests/run_fst_regressions.py --check-dictionary` (included in `npm run dict:build`)
 
 ## Dictionary build flow
