@@ -126,6 +126,7 @@ COMPONENTS = [
             "0023-add-source-backed-c5-primary-verb-stems.patch",
             "0024-add-source-backed-c5-primary-verb-stems-2.patch",
             "0046-add-c4-u-final-future-forms.patch",
+            "0050-add-c4-modern-human-plural-verb-coverage.patch",
         ],
     },
     {
@@ -202,6 +203,7 @@ COMPONENTS = [
             "0038-add-modern-verb-derived-forms.patch",
             "0041-complete-modern-verb-paradigms.patch",
             "0043-add-audit-backed-passive-verb-stems.patch",
+            "0049-add-corpus-backed-modern-verb-coverage.patch",
         ],
     },
     {

@@ -667,3 +667,10 @@ File: `fst/patches/0048-add-noun-oblique-translative-coverage.patch`
 Extends translative/adverbial `+trans` coverage for noun classes whose written stems need existing class-specific morphophonemic handling rather than plain suffix concatenation. C6/C7 nouns use the final short-`ு` replacement marker to generate forms such as `காடு -> காடாக` and `குறைபாடு -> குறைபாடாக`; C8 uses the established `று -> ற` continuation for `ஆறு -> ஆறாக`.
 
 The patch also adds a narrow C10 alternate-stem continuation for additive/translative forms such as `பொன் -> பொன்னும்` and `பொன் -> பொன்னாக`. This avoids the malformed double-pulli surface produced by literal suffixing and avoids broad changes to the existing `மாணவன்`-class rewrite rules.
+
+### `0049-add-corpus-backed-modern-verb-coverage.patch`
+
+Files: `fst/patches/0049-add-corpus-backed-modern-verb-coverage.patch`, `fst/patches/0050-add-c4-modern-human-plural-verb-coverage.patch`
+
+Adds focused runtime verb patches for high-signal verb gaps from the tokenizer corpus audit. The patch set adds source-backed roots such as `செயல்படு` and `உயிரிழ`, modern human-plural surface variants for C4 past and passive `படு` forms, and small reusable continuations for `செயல்பட்டு` and finite-perfect forms for forms such as `ஏற்பட்டுள்ளது`, `வந்துள்ளது`, and `தெரிவித்துள்ளார்`. These remain FST-generated analyses with explicit tags, not supplemental tokenizer-only surfaces.
+

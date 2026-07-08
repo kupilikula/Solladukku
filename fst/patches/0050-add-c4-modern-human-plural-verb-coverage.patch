@@ -1,0 +1,18 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -152,6 +152,7 @@
+ வகு C4Vinf;
+ 
+ விழு C4Vinf;
++உயிரிழ C4Vinf;
+ களை C4Vinf;
+ முழி C4Vinf;
+ விழு:விழ C4UFinalFutureVinf;
+@@ -409,6 +410,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgm%=ஆன்:^ந்தான் #;
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் #;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தர் #;
+++verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தனர் #;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^ந்தார் #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;

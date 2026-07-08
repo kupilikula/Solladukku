@@ -95,6 +95,7 @@ Covers:
 - C4 `உ`-final future/adjectival coverage from `0046-add-c4-u-final-future-forms.patch`, covering forms such as `விழும்` and `எழும்` while preserving existing C4 past forms such as `விழுந்தது`
 - noun singular additive and translative coverage from `0047-add-noun-translative-and-singular-additive.patch`, covering forms such as `மரமும்`, `எண்ணிக்கையும்`, `மரமாக`, `காரணமாக`, and `இயக்குநராக`
 - oblique/final-short-u translative coverage from `0048-add-noun-oblique-translative-coverage.patch`, covering `காடாக`, `குறைபாடாக`, `ஆறாக`, plus C10 alternate-stem additive/translative forms `பொன்னும்` and `பொன்னாக`
+- corpus-backed modern verb coverage from `0049-add-corpus-backed-modern-verb-coverage.patch` and `0050-add-c4-modern-human-plural-verb-coverage.patch`, covering `செயல்பட்டு`, `உயிரிழந்தனர்`, `ஏற்பட்டுள்ளது`, `வந்துள்ளது`, `தெரிவித்துள்ளார்`, and `அனுப்பப்பட்டனர்` through FST roots/rules rather than supplemental surface forms
 - irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளனர்`, `உள்ளார்`, `உள்ளார்கள்`, and ambiguous `உண்டு`
 - Dictionary gold include/exclude checks run with `python3 fst/tests/run_fst_regressions.py --check-dictionary` (included in `npm run dict:build`)
 

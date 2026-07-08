@@ -1,0 +1,41 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -576,6 +576,7 @@
+ உள்ளிடு     C5Vinf;
+ ஏற்படு     C5Vinf;
+ கட்டுப்படு     C5Vinf;
++செயல்படு     C5Vinf;
+ களவாடு     C5Vinf;
+ காப்பாற்று     C5Vinf;
+ காவு     C5Vinf;
+@@ -6575,6 +6576,22 @@
+ 
+ வா:வரு VaaModernVinf;
+ வா:வ VaaModernPastShortRVinf;
++வா:வந்துள்ள ModernPerfectFin;
++ஏற்படு:ஏற்பட்டுள்ள ModernPerfectFin;
++செயல்படு:செயல்பட்டுள்ள ModernPerfectFin;
++செயல்படு:செயல்பட் ModernPattuPart;
++தெரிவி:தெரிவித்துள்ள ModernPerfectFin;
++
++LEXICON ModernPattuPart
+++verb+nonfin+sim+vpart%=உ:^டு #;
+++verb+fin+sim+strong+past%=ட்+3sgn%=அது:^டது #;
+++verb+fin+sim+strong+past%=ட்+3sge%=அர்:^டனர் #;
++
++LEXICON ModernPerfectFin
+++verb+fin+complex+perfect+past%=த்+3sgn%=அது:^து #;
+++verb+fin+complex+perfect+past%=த்+3sge%=அர்:^னர் #;
+++verb+fin+complex+perfect+past%=த்+3sghe%=ஆர்:^ார் #;
+++verb+fin+complex+perfect+past%=த்+3ple%=ஆர்கள்:^ார்கள் #;
+ 
+ LEXICON VaaModernPastShortRVinf
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தனர் #;
+@@ -83764,6 +83775,7 @@
+ +verb+fin+complex+passive+strong+past%=ட்+3sgm%=ஆன்:^ட்டான் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3sgf%=ஆள்:^ட்டாள் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3sge%=அர்:^ட்டர் #;
+++verb+fin+complex+passive+strong+past%=ட்+3sge%=அர்:^ட்டனர் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3sgn%=அது:^ட்டது #;

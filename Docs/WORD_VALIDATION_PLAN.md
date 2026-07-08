@@ -230,3 +230,10 @@ function submitWord() {
 | Kaikki.org Tamil JSONL | https://kaikki.org/dictionary/Tamil/ |
 | Vuizur Wiktionary TSV | https://github.com/Vuizur/Wiktionary-Dictionaries |
 | Tamil Lexicon (DSAL) | https://dsal.uchicago.edu/dictionaries/tamil-lex/ |
+
+### `0049-add-corpus-backed-modern-verb-coverage.patch`
+
+Files: `fst/patches/0049-add-corpus-backed-modern-verb-coverage.patch`, `fst/patches/0050-add-c4-modern-human-plural-verb-coverage.patch`
+
+Adds focused runtime verb patches for high-signal verb gaps from the tokenizer corpus audit. The patch set adds source-backed roots such as `செயல்படு` and `உயிரிழ`, modern human-plural surface variants for C4 past and passive `படு` forms, and small reusable continuations for `செயல்பட்டு` and finite-perfect forms for forms such as `ஏற்பட்டுள்ளது`, `வந்துள்ளது`, and `தெரிவித்துள்ளார்`. These remain FST-generated analyses with explicit tags, not supplemental tokenizer-only surfaces.
+
