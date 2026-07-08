@@ -1,0 +1,19 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +modal +neg +exist +ques +prohib +abbrev +letter +acc
++Multichar_Symbols  +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +modal +neg +exist +ques +prohib +abbrev +letter +acc +comparative +add
+ 
+ LEXICON Root
+ abbreviations;
+@@ -82,6 +82,7 @@
+ என்பது  complimentiser;
+ என்பதை+comp+acc:என்பதை #;
+ எனக்+comp+sandhik:எனக் #;
++க்கும்+pp-particle+comparative+add:க்கும் #;
+ 
+ LEXICON intensifiers
+ மிக		intensifier;

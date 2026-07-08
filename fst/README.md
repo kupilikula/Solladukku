@@ -88,6 +88,8 @@ Covers:
 - productive verb-rule/root coverage from `0038-add-modern-verb-derived-forms.patch` and `0039-add-c11-loan-verb-stems.patch`, covering `பேசிய`, `வருகின்ற`, `என்றார்`, `ஆவார்`, and `விமர்சித்து` through FST classes rather than supplemental surface forms
 - calendar/place/common-loan noun coverage from `0040-add-calendar-place-loan-nouns.patch`, covering reviewed forms such as `டீ`, `மார்ச்`, `ஆகஸ்ட்`, `பிரிட்டன்`, `பெங்களூரு`, `ஹைதராபாத்`, `டிக்கெட்`, `பைக்`, and `மொபைல்`
 - modern verb paradigm completion from `0041-complete-modern-verb-paradigms.patch`, covering `வா` forms such as `வந்தார்`, `வந்தனர்`, `வருகிறார்`, `வருகின்றன`, and `வருவார்`, existential `உள்ளனர்`, and reviewed C5 stems `பணியாற்று` / `பயன்படுத்து`
+- comparative/additive particle coverage from `0042-add-comparative-kkum-particle.patch`, covering standalone `க்கும்` in comparative expressions such as `15 க்கும் குறைவாக`
+- audit-backed passive verb-stem coverage from `0043-add-audit-backed-passive-verb-stems.patch`, covering `பயன்படுத்தப்படு` forms such as `பயன்படுத்தப்படுகிறது`
 - irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளனர்`, `உள்ளார்`, `உள்ளார்கள்`, and ambiguous `உண்டு`
 - Dictionary gold include/exclude checks run with `python3 fst/tests/run_fst_regressions.py --check-dictionary` (included in `npm run dict:build`)
 

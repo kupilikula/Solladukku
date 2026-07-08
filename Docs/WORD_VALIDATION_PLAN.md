@@ -174,6 +174,8 @@ Current patch stack also includes source-backed noun/verb coverage and irregular
 - `0038-add-modern-verb-derived-forms.patch` and `0039-add-c11-loan-verb-stems.patch`: extend productive verb FST coverage for `பேசிய`, `வருகின்ற`, `என்றார்`, `ஆவார்`, and `விமர்சித்து`.
 - `0040-add-calendar-place-loan-nouns.patch`: adds reviewed calendar/place/common-loan noun coverage such as `டீ`, `மார்ச்`, `ஆகஸ்ட்`, `பிரிட்டன்`, `பெங்களூரு`, `ஹைதராபாத்`, `டிக்கெட்`, `பைக்`, and `மொபைல்`, while keeping `டி` abbreviation-only.
 - `0041-complete-modern-verb-paradigms.patch`: completes high-impact modern verb coverage found by the fresh tokenizer audit, including `வந்தார்`, `வந்தனர்`, `வருகிறார்`, `வருகின்றன`, `வருவார்`, `உள்ளனர்`, and productive C5 analyses for `பணியாற்றினார்` and `பயன்படுத்தினார்`.
+- `0042-add-comparative-kkum-particle.patch`: adds standalone comparative/additive particle analysis for `க்கும்`, useful in numeric comparisons such as `15 க்கும் குறைவாக`.
+- `0043-add-audit-backed-passive-verb-stems.patch`: adds `பயன்படுத்தப்படு` to the existing passive `CPadu61Vinf` class so forms such as `பயன்படுத்தப்படுகிறது` analyze through the runtime FST.
 
 ## Current Code Integration Details
 

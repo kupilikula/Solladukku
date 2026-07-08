@@ -509,6 +509,18 @@ File: `fst/patches/0041-complete-modern-verb-paradigms.patch`
 
 Completes high-impact modern verb coverage surfaced by the tokenizer corpus audit. The patch extends the existing `VaaModern` irregular class for forms such as `வந்தார்`, `வந்தனர்`, `வருகிறார்`, `வருகின்றன`, and `வருவார்`; routes the short past `-ஆர்` / `-னர்` forms through a separate `வா:வ` surface stem to avoid malformed `வருந்தார்`-style outputs; adds existential `உள்ளனர்`; and adds reviewed C5 stems `பணியாற்று` and `பயன்படுத்து`, allowing productive analyses such as `பணியாற்றினார்` and `பயன்படுத்தினார்`.
 
+### `0042-add-comparative-kkum-particle.patch`
+
+File: `fst/patches/0042-add-comparative-kkum-particle.patch`
+
+Adds a semantically explicit particle analysis for standalone `க்கும்` as `க்கும்+pp-particle+comparative+add`. This handles comparative/additive uses such as `15 க்கும் குறைவாக` without treating the form as a noun case suffix or falling back to unknown Tamil surface tokenization.
+
+### `0043-add-audit-backed-passive-verb-stems.patch`
+
+File: `fst/patches/0043-add-audit-backed-passive-verb-stems.patch`
+
+Adds `பயன்படுத்தப்படு` to the existing `CPadu61Vinf` passive verb class. The runtime FST now analyzes forms such as `பயன்படுத்தப்படுகிறது`, `பயன்படுத்தப்பட்டது`, and `பயன்படுத்தப்பட்டு` as complex passive verb forms. This is a narrow stem/class coverage fix; broader compound `படு` forms such as `செயல்பட்டு` remain for a separate class-design pass.
+
 ### `0025-add-noun-additive-um.patch`
 
 File: `fst/patches/0025-add-noun-additive-um.patch`

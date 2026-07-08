@@ -84,6 +84,7 @@ COMPONENTS = [
             "0032-add-pronoun-quantifier-function-coverage.patch",
             "0034-add-selective-abbreviation-particles.patch",
             "0037-add-complementizer-case-forms.patch",
+            "0042-add-comparative-kkum-particle.patch",
         ],
     },
     {
@@ -195,6 +196,7 @@ COMPONENTS = [
             "0024-add-source-backed-c5-primary-verb-stems-2.patch",
             "0038-add-modern-verb-derived-forms.patch",
             "0041-complete-modern-verb-paradigms.patch",
+            "0043-add-audit-backed-passive-verb-stems.patch",
         ],
     },
     {
