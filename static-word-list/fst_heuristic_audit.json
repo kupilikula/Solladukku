@@ -4,8 +4,8 @@
     "class": "adj.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 204,
-    "predicted_lemmas": 204,
+    "normalized_or_predicted_inputs": 119,
+    "predicted_lemmas": 119,
     "sample_added": [],
     "templates_used": 3
   },
@@ -23,8 +23,8 @@
     "class": "noun.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 81992,
-    "predicted_lemmas": 81992,
+    "normalized_or_predicted_inputs": 74162,
+    "predicted_lemmas": 74162,
     "sample_added": [],
     "templates_used": 16
   },
@@ -38,12 +38,12 @@
     "templates_used": 0
   },
   {
-    "accepted_added": 605711,
+    "accepted_added": 1143086,
     "class": "verb-c-rest.fst",
-    "forward_validated": 605711,
-    "generated_candidates": 605711,
-    "normalized_or_predicted_inputs": 82805,
-    "predicted_lemmas": 12542,
+    "forward_validated": 1143086,
+    "generated_candidates": 1143086,
+    "normalized_or_predicted_inputs": 82830,
+    "predicted_lemmas": 12558,
     "sample_added": [
       "அஃக",
       "அஃகக்",

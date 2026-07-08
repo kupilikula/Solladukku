@@ -82,6 +82,7 @@ COMPONENTS = [
             "0022-add-peethu-verb-coverage.patch",
             "0018-add-short-honorific-verb-forms.patch",
             "0019-add-participial-person-nominals.patch",
+            "0023-add-source-backed-c5-primary-verb-stems.patch",
         ],
     },
     {
@@ -98,6 +99,7 @@ COMPONENTS = [
             "0022-add-peethu-verb-coverage.patch",
             "0018-add-short-honorific-verb-forms.patch",
             "0019-add-participial-person-nominals.patch",
+            "0023-add-source-backed-c5-primary-verb-stems.patch",
         ],
     },
     {
@@ -114,6 +116,7 @@ COMPONENTS = [
             "0022-add-peethu-verb-coverage.patch",
             "0018-add-short-honorific-verb-forms.patch",
             "0019-add-participial-person-nominals.patch",
+            "0023-add-source-backed-c5-primary-verb-stems.patch",
         ],
     },
     {
@@ -130,6 +133,7 @@ COMPONENTS = [
             "0022-add-peethu-verb-coverage.patch",
             "0018-add-short-honorific-verb-forms.patch",
             "0019-add-participial-person-nominals.patch",
+            "0023-add-source-backed-c5-primary-verb-stems.patch",
         ],
     },
     {
@@ -146,6 +150,7 @@ COMPONENTS = [
             "0022-add-peethu-verb-coverage.patch",
             "0018-add-short-honorific-verb-forms.patch",
             "0019-add-participial-person-nominals.patch",
+            "0023-add-source-backed-c5-primary-verb-stems.patch",
         ],
     },
     {
@@ -162,6 +167,7 @@ COMPONENTS = [
             "0022-add-peethu-verb-coverage.patch",
             "0018-add-short-honorific-verb-forms.patch",
             "0019-add-participial-person-nominals.patch",
+            "0023-add-source-backed-c5-primary-verb-stems.patch",
         ],
     },
     {

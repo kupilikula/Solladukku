@@ -391,6 +391,12 @@ File: `fst/patches/0022-add-peethu-verb-coverage.patch`
 
 Covers lexical `பேத்தல்` by adding productive stem `பேத்து` to the C5 verb class, the same paradigm used for `நடத்தல்`. This generates regular C5 forms such as `பேத்தினேன்`, `பேத்துகிறேன்`, `பேத்துவேன்`, and `பேத்தியது` without adding supplemental surface-form exceptions. Like the existing `நடத்தல்` flow, the citation form is used by dictionary generation while the runtime FST class stores the productive stem.
 
+### `0023-add-source-backed-c5-primary-verb-stems.patch`
+
+File: `fst/patches/0023-add-source-backed-c5-primary-verb-stems.patch`
+
+Adds 4,388 C5 primary stems derived from a fresh `verb_c_rest_candidate` gap triage. The tranche uses lexical `தல்` / `த்தல்` lemmas backed by both Tamil Lexicon and Tamil Wiktionary titles, converts them to primary productive stems, excludes stems already recognized by the runtime FST, and keeps only high-confidence C5 predictions. Representative additions include `திறக்கு`, `உள்ளடக்கு`, `குணமாக்கு`, and `பொறுக்கு`.
+
 ### `0012-add-source-backed-name-tranche.patch`
 
 File: `fst/patches/0012-add-source-backed-name-tranche.patch`
