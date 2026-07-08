@@ -83,6 +83,7 @@ COMPONENTS = [
             "0018-add-short-honorific-verb-forms.patch",
             "0019-add-participial-person-nominals.patch",
             "0023-add-source-backed-c5-primary-verb-stems.patch",
+            "0024-add-source-backed-c5-primary-verb-stems-2.patch",
         ],
     },
     {
@@ -100,6 +101,7 @@ COMPONENTS = [
             "0018-add-short-honorific-verb-forms.patch",
             "0019-add-participial-person-nominals.patch",
             "0023-add-source-backed-c5-primary-verb-stems.patch",
+            "0024-add-source-backed-c5-primary-verb-stems-2.patch",
         ],
     },
     {
@@ -117,6 +119,7 @@ COMPONENTS = [
             "0018-add-short-honorific-verb-forms.patch",
             "0019-add-participial-person-nominals.patch",
             "0023-add-source-backed-c5-primary-verb-stems.patch",
+            "0024-add-source-backed-c5-primary-verb-stems-2.patch",
         ],
     },
     {
@@ -134,6 +137,7 @@ COMPONENTS = [
             "0018-add-short-honorific-verb-forms.patch",
             "0019-add-participial-person-nominals.patch",
             "0023-add-source-backed-c5-primary-verb-stems.patch",
+            "0024-add-source-backed-c5-primary-verb-stems-2.patch",
         ],
     },
     {
@@ -151,6 +155,7 @@ COMPONENTS = [
             "0018-add-short-honorific-verb-forms.patch",
             "0019-add-participial-person-nominals.patch",
             "0023-add-source-backed-c5-primary-verb-stems.patch",
+            "0024-add-source-backed-c5-primary-verb-stems-2.patch",
         ],
     },
     {
@@ -168,6 +173,7 @@ COMPONENTS = [
             "0018-add-short-honorific-verb-forms.patch",
             "0019-add-participial-person-nominals.patch",
             "0023-add-source-backed-c5-primary-verb-stems.patch",
+            "0024-add-source-backed-c5-primary-verb-stems-2.patch",
         ],
     },
     {

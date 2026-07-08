@@ -77,6 +77,7 @@ Covers:
 - reviewed non-human `ன்`-final noun coverage for `பேன்` from `0021-add-reviewed-peen-noun.patch`, using the same `C4SgRoot` paradigm as `மான்` and `தேன்`
 - source-backed C5 verb coverage for lexical `பேத்தல்` from `0022-add-peethu-verb-coverage.patch`, using productive stem `பேத்து` in the same paradigm as `நடத்தல்`; generated forms include `பேத்தினேன்`, `பேத்துகிறேன்`, and `பேத்துவேன்`
 - source-backed C5 primary-stem verb tranche 3 from `0023-add-source-backed-c5-primary-verb-stems.patch`, covering 4,388 reviewed stems derived from lexical `தல்` / `த்தல்` lemmas backed by Tamil Lexicon and Tamil Wiktionary titles, with representatives such as `திறக்கு`, `உள்ளடக்கு`, `குணமாக்கு`, and `பொறுக்கு`
+- source-backed C5 primary-stem verb tranche 4 from `0024-add-source-backed-c5-primary-verb-stems-2.patch`, covering 262 post-`0023` tier-1 stems, with representatives such as `கணக்கிடு`, `உயிர்த்தெழு`, `அறிவுறு`, and `கையைப்பிடித்திழு`
 - irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளார்`, `உள்ளார்கள்`, and ambiguous `உண்டு`
 - Dictionary gold include/exclude checks run with `python3 fst/tests/run_fst_regressions.py --check-dictionary` (included in `npm run dict:build`)
 

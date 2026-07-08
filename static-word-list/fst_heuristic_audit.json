@@ -23,8 +23,8 @@
     "class": "noun.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 74162,
-    "predicted_lemmas": 74162,
+    "normalized_or_predicted_inputs": 74161,
+    "predicted_lemmas": 74161,
     "sample_added": [],
     "templates_used": 16
   },
@@ -38,12 +38,12 @@
     "templates_used": 0
   },
   {
-    "accepted_added": 1143086,
+    "accepted_added": 1174893,
     "class": "verb-c-rest.fst",
-    "forward_validated": 1143086,
-    "generated_candidates": 1143086,
+    "forward_validated": 1174893,
+    "generated_candidates": 1174893,
     "normalized_or_predicted_inputs": 82830,
-    "predicted_lemmas": 12558,
+    "predicted_lemmas": 12555,
     "sample_added": [
       "அஃக",
       "அஃகக்",

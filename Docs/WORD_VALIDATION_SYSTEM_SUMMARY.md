@@ -397,6 +397,12 @@ File: `fst/patches/0023-add-source-backed-c5-primary-verb-stems.patch`
 
 Adds 4,388 C5 primary stems derived from a fresh `verb_c_rest_candidate` gap triage. The tranche uses lexical `தல்` / `த்தல்` lemmas backed by both Tamil Lexicon and Tamil Wiktionary titles, converts them to primary productive stems, excludes stems already recognized by the runtime FST, and keeps only high-confidence C5 predictions. Representative additions include `திறக்கு`, `உள்ளடக்கு`, `குணமாக்கு`, and `பொறுக்கு`.
 
+### `0024-add-source-backed-c5-primary-verb-stems-2.patch`
+
+File: `fst/patches/0024-add-source-backed-c5-primary-verb-stems-2.patch`
+
+Adds 262 C5 primary stems from the post-`0023` tier-1 source-backed verb gap list. The tranche keeps the same policy as `0023`: lexical `தல்` / `த்தல்` lemmas backed by both Tamil Lexicon and Tamil Wiktionary titles, converted to primary productive stems and filtered to high-confidence C5 predictions. Representative additions include `கணக்கிடு`, `உயிர்த்தெழு`, `அறிவுறு`, and `கையைப்பிடித்திழு`.
+
 ### `0012-add-source-backed-name-tranche.patch`
 
 File: `fst/patches/0012-add-source-backed-name-tranche.patch`
