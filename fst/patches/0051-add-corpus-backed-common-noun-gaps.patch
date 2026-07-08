@@ -1,0 +1,54 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -18687,11 +18687,19 @@
+ ! Corpus-backed common noun coverage tranche.
+ உடற்பயிற்சி	C2SgRoot;
+ உற்பத்தி	C2SgRoot;
++உள்ளாட்சி	C2SgRoot;
++ஊராட்சி	C2SgRoot;
++நபி	C2SgRoot;
++நபி	NapiHonorificPlural;
+ நடவடிக்கை	C2SgRoot;
+ பட்டதாரி	C2SgRoot;
+ LEXICON C2SgRoot
+  !       Root;
+         C2Inflections;
++
++LEXICON NapiHonorificPlural
+++noun+pl+nom:^மார்கள் #;
+++noun+pl+acc:^மார்களை #;
+ 
+ LEXICON C2Inflections
+ +noun+nom: #;
+@@ -24693,6 +24701,8 @@
+ வேதியியல்	C4SgRoot;
+ ! Corpus-backed common noun coverage tranche.
+ கொள்முதல்	C4SgRoot;
++செயற்கைகோள்	C4SgRoot;
++செயற்கைக்கோள்	C4SgRoot;
+ தேர்தல்	C4SgRoot;
+ LEXICON C4SgRoot
+ !        Root;
+@@ -49862,6 +49872,11 @@
+ அழுத்தம்	C15SgRoot;
+ நல்லறம்	C15SgRoot;
+ பாலம்	C15SgRoot;
++உப்பளம்	C15SgRoot;
++இவ்வசனம்	C15SgRoot;
++கிராமப்புறம்	C15SgRoot;
++பிரதானம்	C15SgRoot;
++வசனம்	C15SgRoot;
+ LEXICON C15SgRoot
+ !        Root;
+         C15Inflections;
+@@ -51310,6 +51325,10 @@
+ ! Corpus-backed common noun coverage tranche.
+ அலுவலர்	C16SgRoot;
+ ஜனாதிபதி	C16SgRoot;
++இறைத்தூதர்	C16SgRoot;
++குடும்பத்தினர்	C16SgRoot;
++கூட்டத்தொடர்	C16SgRoot;
++ஒருங்கிணைப்பாளர்	C16SgRoot;
+ தனியார்	C16SgRoot;
+ மன்னார்	C16SgRoot;
+ பேப்பர்	C16SgRoot;

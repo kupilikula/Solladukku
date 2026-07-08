@@ -673,4 +673,9 @@ The patch also adds a narrow C10 alternate-stem continuation for additive/transl
 Files: `fst/patches/0049-add-corpus-backed-modern-verb-coverage.patch`, `fst/patches/0050-add-c4-modern-human-plural-verb-coverage.patch`
 
 Adds focused runtime verb patches for high-signal verb gaps from the tokenizer corpus audit. The patch set adds source-backed roots such as `செயல்படு` and `உயிரிழ`, modern human-plural surface variants for C4 past and passive `படு` forms, and small reusable continuations for `செயல்பட்டு` and finite-perfect forms for forms such as `ஏற்பட்டுள்ளது`, `வந்துள்ளது`, and `தெரிவித்துள்ளார்`. These remain FST-generated analyses with explicit tags, not supplemental tokenizer-only surfaces.
+### `0051`-`0053` corpus-backed noun and verb gap patches
+
+Files: `fst/patches/0051-add-corpus-backed-common-noun-gaps.patch`, `fst/patches/0052-add-c4-modern-nonfinite-verb-forms.patch`, `fst/patches/0053-add-c2-koll-modern-infinitive.patch`
+
+Adds a small follow-up tranche from the post-`0050` tokenizer audit. The noun patch classifies common dictionary-backed lemmas such as `வசனம்`, `உள்ளாட்சி`, `ஊராட்சி`, `கிராமப்புறம்`, `பிரதானம்`, `இறைத்தூதர்`, and `ஒருங்கிணைப்பாளர்`, plus a narrow `நபி -> நபிமார்கள்` honorific plural continuation. The verb patches add modern non-finite/participial alternants for `தெரிய`, `நடிக்க`, `கொள்ள`, and `சொன்ன` using explicit FST continuations rather than tokenizer-only supplemental forms.
 

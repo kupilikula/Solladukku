@@ -1,0 +1,28 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -35,6 +35,7 @@
+ இடி C4Vinf;
+ குவி C4Vinf;
+ தெரி C4Vinf;
++தெரி:தெரிய ModernBareInf;
+ இரி C4Vinf;
+ குழி C4Vinf;
+ தெளி C4Vinf;
+@@ -65,6 +66,7 @@
+ எறி C4Vinf;
+ செறி C4Vinf;
+ நெறி C4Vinf;
++நடி:நடிக்க ModernBareInf;
+ ஒசி C4Vinf;
+ சொரி C4Vinf;
+ நொசி C4Vinf;
+@@ -397,6 +399,9 @@
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+ +verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ும் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
++
++LEXICON ModernBareInf
+++verb+nonfin+sim+inf%=அ: #;
+ 
+ LEXICON C4Vinf
+ 

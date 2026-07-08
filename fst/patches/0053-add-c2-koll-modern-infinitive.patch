@@ -1,0 +1,38 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -218,6 +218,7 @@
+ ஞெள்   C2Vinf;
+ இருள்   C2Vinf;
+ கொள்   C2Vinf;
++கொள்:கொள்ள ModernBareInf;
+ திரள்   C2Vinf;
+ திவள்   C2Vinf;
+ நீள்   C2Vinf;
+@@ -393,6 +394,9 @@
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
++LEXICON ModernBareInf
+++verb+nonfin+sim+inf%=அ: #;
++
+ LEXICON ClassFive
+ 
+ அஃகு     C5Vinf;
+@@ -5693,6 +5697,7 @@
+ தருகு     C5Vinf;
+ சுற்று     C5Vinf;
+ சொல்லு     C5Vinf;
++சொல்லு:சொன்ன ModernSonnaAdjPart;
+ தல்லு     C5Vinf;
+ சுறண்டு     C5Vinf;
+ சொறுண்டு     C5Vinf;
+@@ -6571,6 +6576,9 @@
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^கும் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை:^கவில்லை #;
+ +verb+nonfin+sim+vpart%=உ:^ய் #;
++
++LEXICON ModernSonnaAdjPart
+++verb+nonfin+sim+past%=த்+adjpart%=அ: #;
+ 
+ LEXICON ClassVaaModern
+ 

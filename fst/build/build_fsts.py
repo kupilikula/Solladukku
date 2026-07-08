@@ -52,6 +52,7 @@ COMPONENTS = [
             "0044-add-audit-backed-common-noun-coverage.patch",
             "0047-add-noun-translative-and-singular-additive.patch",
             "0048-add-noun-oblique-translative-coverage.patch",
+            "0051-add-corpus-backed-common-noun-gaps.patch",
         ],
     },
     {
@@ -127,6 +128,7 @@ COMPONENTS = [
             "0024-add-source-backed-c5-primary-verb-stems-2.patch",
             "0046-add-c4-u-final-future-forms.patch",
             "0050-add-c4-modern-human-plural-verb-coverage.patch",
+            "0052-add-c4-modern-nonfinite-verb-forms.patch",
         ],
     },
     {
@@ -204,6 +206,7 @@ COMPONENTS = [
             "0041-complete-modern-verb-paradigms.patch",
             "0043-add-audit-backed-passive-verb-stems.patch",
             "0049-add-corpus-backed-modern-verb-coverage.patch",
+            "0053-add-c2-koll-modern-infinitive.patch",
         ],
     },
     {
