@@ -1,5 +1,5 @@
 {
-  "built_at_utc": "2026-07-08T09:26:25.235588+00:00",
+  "built_at_utc": "2026-07-08T09:42:58.954152+00:00",
   "submodule": {
     "path": "vendor/thamizhi-morph",
     "commit": "a296417ac603fd44eda35645369f1257d96bed89"
@@ -25,7 +25,8 @@
         "0016-remove-noun-pronoun-rewrites.patch",
         "0017-add-source-backed-noun-tranche-3.patch",
         "0021-add-reviewed-peen-noun.patch",
-        "0025-add-noun-additive-um.patch"
+        "0025-add-noun-additive-um.patch",
+        "0030-add-corpus-backed-common-nouns.patch"
       ]
     },
     {
@@ -47,7 +48,8 @@
       "patches": [
         "0020-add-lexicon-adverb-illaakkaattil.patch",
         "0027-add-common-adverb-een.patch",
-        "0028-add-deictic-adverb-forms.patch"
+        "0028-add-deictic-adverb-forms.patch",
+        "0031-add-corpus-backed-common-adverbs.patch"
       ]
     },
     {
@@ -497,13 +499,21 @@
     {
       "file": "fst/patches/0029-add-deictic-adjective-forms.patch",
       "sha256": "20f95a83474ab86eff7fb0e20cd8163f0aaf735c88ed236cd366a4171504722e"
+    },
+    {
+      "file": "fst/patches/0030-add-corpus-backed-common-nouns.patch",
+      "sha256": "c1bcfdfa167cce8e889c1cee83d5157b0e945132bc1834a0f3aa0a7e84a4ef5b"
+    },
+    {
+      "file": "fst/patches/0031-add-corpus-backed-common-adverbs.patch",
+      "sha256": "5c4b41939f82a4f20c2e8033b318617f21add838b70117e7aed45ccb370a7524"
     }
   ],
   "outputs": [
     {
       "file": "adj.fst",
-      "sha256": "0be5d5ebf955bcd959df56f81c58d6687e28090cf24023ff56dfa71577649b5e",
-      "size_bytes": 7695,
+      "sha256": "6f2aabf03b575c7bde90a390010210d9faebe5e7607a2347bf011862be11299d",
+      "size_bytes": 7694,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -512,8 +522,8 @@
     },
     {
       "file": "adv.fst",
-      "sha256": "93bfed4726b53a736ad77e480dff68b7dfe63ef239bf169e6dfed3e2915fa7c5",
-      "size_bytes": 14068,
+      "sha256": "ff797dcd0205f0b1ba38eb89ca77cb767f5688c0e4ed418bc1ac756a2ecc4fa4",
+      "size_bytes": 14074,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -522,8 +532,8 @@
     },
     {
       "file": "noun.fst",
-      "sha256": "6e32ba9a61040f2078fa1275f131166b79f93dabdb08815b224c45a88587b9d6",
-      "size_bytes": 191864,
+      "sha256": "d0576023241ece75fed720ceda6a99ad51e84aaa215d18ab32524959cc31be26",
+      "size_bytes": 191910,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -532,8 +542,8 @@
     },
     {
       "file": "part.fst",
-      "sha256": "c2a87c83a439a4c401652626bdc276d4aa31eb41a518f389a41f3ff893becc95",
-      "size_bytes": 4526,
+      "sha256": "63a105e115383d5180e0ceb59edbf62caea94a8d1e5f9f3d4b7aea0cd744b041",
+      "size_bytes": 4521,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -552,7 +562,7 @@
     },
     {
       "file": "verb-c-rest.fst",
-      "sha256": "e3ae2f078d26f98e079e6acfd9b4d07fc04be50981009282ada38c09d116d0e5",
+      "sha256": "7f188ac128981a974528abf0509217f743e3beea4192bc0ef08c99f30fb0030a",
       "size_bytes": 172966,
       "copied_to": [
         "build/fst-models",
@@ -562,8 +572,8 @@
     },
     {
       "file": "verb-c11.fst",
-      "sha256": "3f2b255e4f2e4e664728ac83bbc337b0a8f67ae5017c43c9856523650cb2c04b",
-      "size_bytes": 67041,
+      "sha256": "238e33992678db50043068b2e6b393c49ca45497c41c0897fa38fb9ad4f98a10",
+      "size_bytes": 67043,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -572,7 +582,7 @@
     },
     {
       "file": "verb-c12.fst",
-      "sha256": "3e19bb4a493dd6e950df2bdf9d8214d3e80601f1020d457dc29f22a787c25a31",
+      "sha256": "65da374808ff418f1da3440afffecc207d366ab9c51267bacac689dd96ba42e0",
       "size_bytes": 43901,
       "copied_to": [
         "build/fst-models",
@@ -582,8 +592,8 @@
     },
     {
       "file": "verb-c3.fst",
-      "sha256": "bdea89cfe1a1ea9e6ee3d4eabde6874e48018112aa0818f6babdc267076eac03",
-      "size_bytes": 12758,
+      "sha256": "22080a086991fbb9ad1b80529473126c920d9243ca5af8d58ea8c20d9a308846",
+      "size_bytes": 12757,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -592,8 +602,8 @@
     },
     {
       "file": "verb-c4.fst",
-      "sha256": "08abd8f694741788863479962ae2969abe30273c4fceac518a41215a0ce0ad7e",
-      "size_bytes": 39732,
+      "sha256": "9f983b1fbaa5fac69e3a948e81c2759b656668cb2c7cf47f6aad78b178391216",
+      "size_bytes": 39735,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -602,7 +612,7 @@
     },
     {
       "file": "verb-c62.fst",
-      "sha256": "6d4a938d0bde64a1d648949796c99b395cd1b0ece58572dbcfdbadc4c5057200",
+      "sha256": "a906ef436c5fcd2de8bb0c6af6b10e47d9dddeedfe06d79f6dadbfaa6e74ddec",
       "size_bytes": 12414,
       "copied_to": [
         "build/fst-models",

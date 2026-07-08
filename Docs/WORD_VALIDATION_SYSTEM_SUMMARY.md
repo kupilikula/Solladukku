@@ -435,6 +435,18 @@ File: `fst/patches/0029-add-deictic-adjective-forms.patch`
 
 Adds semantically tagged deictic adjective coverage for type/kind modifiers such as `இவ்வகை`, `அவ்வகை`, and `எவ்வகை`, exposing `dem`, proximity/interrogative, `type`, and `adj` tags.
 
+### `0030-add-corpus-backed-common-nouns.patch`
+
+File: `fst/patches/0030-add-corpus-backed-common-nouns.patch`
+
+Adds a small corpus-backed noun coverage tranche for high-frequency tokenizer audit fallbacks that were already present in the static dictionary or source lexicons but lacked runtime noun FST analyses. Examples include `தேர்தல்`, `பாலம்`, `சுற்றுலா`, `நடவடிக்கை`, `கொள்முதல்`, `உற்பத்தி`, `அலுவலர்`, `உடற்பயிற்சி`, `நல்லறம்`, `ஜனாதிபதி`, `பட்டதாரி`, `மன்னார்`, `பேப்பர்`, and `அழுத்தம்`.
+
+### `0031-add-corpus-backed-common-adverbs.patch`
+
+File: `fst/patches/0031-add-corpus-backed-common-adverbs.patch`
+
+Adds common corpus-backed adverbial/function forms `சுமார்` and `அதனால்` to the adverb FST so they no longer fall back as unknown Tamil surfaces.
+
 ### `0025-add-noun-additive-um.patch`
 
 File: `fst/patches/0025-add-noun-additive-um.patch`

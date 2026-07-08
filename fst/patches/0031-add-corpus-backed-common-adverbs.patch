@@ -1,0 +1,11 @@
+--- tamil-adverbs.lexc
++++ tamil-adverbs.lexc
+@@ -8,6 +8,8 @@
+ 
+ 
+ LEXICON adverbs
++சுமார்	 adverb; 
++அதனால்	 adverb; 
+ இப்பொழுது+dem+prox+time:இப்பொழுது	 adverb; 
+ அப்பொழுது+dem+dist+time:அப்பொழுது	 adverb; 
+ எப்பொழுது+dem+inter+time:எப்பொழுது	 adverb; 

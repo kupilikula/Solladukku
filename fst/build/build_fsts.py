@@ -46,6 +46,7 @@ COMPONENTS = [
             "0017-add-source-backed-noun-tranche-3.patch",
             "0021-add-reviewed-peen-noun.patch",
             "0025-add-noun-additive-um.patch",
+            "0030-add-corpus-backed-common-nouns.patch",
         ],
     },
     {
@@ -66,6 +67,7 @@ COMPONENTS = [
             "0020-add-lexicon-adverb-illaakkaattil.patch",
             "0027-add-common-adverb-een.patch",
             "0028-add-deictic-adverb-forms.patch",
+            "0031-add-corpus-backed-common-adverbs.patch",
         ],
     },
     {

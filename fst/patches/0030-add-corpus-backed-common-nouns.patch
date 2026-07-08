@@ -1,0 +1,57 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1204,6 +1204,8 @@
+ ராஜா	C1SgRoot;
+ ரோஜா	C1SgRoot;
+ வினா	C1SgRoot;
++! Corpus-backed common noun coverage tranche.
++சுற்றுலா	C1SgRoot;
+ LEXICON C1SgRoot
+ !        Root;
+         C1Inflections;
+@@ -18540,6 +18542,11 @@
+ விலை	C2SgRoot;
+ வெறுங்காய்	C2SgRoot;
+ ஸீமை	C2SgRoot;
++! Corpus-backed common noun coverage tranche.
++உடற்பயிற்சி	C2SgRoot;
++உற்பத்தி	C2SgRoot;
++நடவடிக்கை	C2SgRoot;
++பட்டதாரி	C2SgRoot;
+ LEXICON C2SgRoot
+  !       Root;
+         C2Inflections;
+@@ -24538,6 +24545,9 @@
+ வெள்ளக்கால்	C4SgRoot;
+ வெள்ளைமூங்கில்	C4SgRoot;
+ வேதியியல்	C4SgRoot;
++! Corpus-backed common noun coverage tranche.
++கொள்முதல்	C4SgRoot;
++தேர்தல்	C4SgRoot;
+ LEXICON C4SgRoot
+ !        Root;
+         C4Inflections;
+@@ -49675,6 +49685,10 @@
+ ஹம்ஸம்	C15SgRoot;
+ ஹரிஜனம்	C15SgRoot;
+ ஹ்ரஸ்வம்	C15SgRoot;
++! Corpus-backed common noun coverage tranche.
++அழுத்தம்	C15SgRoot;
++நல்லறம்	C15SgRoot;
++பாலம்	C15SgRoot;
+ LEXICON C15SgRoot
+ !        Root;
+         C15Inflections;
+@@ -51118,6 +51132,12 @@
+ விளைஞர்	C16SgRoot;
+ வெந்நீர்	C16SgRoot;
+ ஸாஹுகார்	C16SgRoot;
++! Corpus-backed common noun coverage tranche.
++அலுவலர்	C16SgRoot;
++ஜனாதிபதி	C16SgRoot;
++தனியார்	C16SgRoot;
++மன்னார்	C16SgRoot;
++பேப்பர்	C16SgRoot;
+ LEXICON C16SgRoot
+ !        Root;
+         C16Inflections;
