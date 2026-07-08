@@ -82,6 +82,7 @@ Covers:
 - common function-word FST coverage from `0026-add-common-function-particles.patch` and `0027-add-common-adverb-een.patch`, covering `என`, `மட்டும்`, `இல்லை`, and `ஏன்`
 - deictic adverb/adjective FST coverage from `0028-add-deictic-adverb-forms.patch` and `0029-add-deictic-adjective-forms.patch`, covering forms such as `இப்பொழுது`, `எப்பொழுது`, `இந்நிலையில்`, and `இவ்வகை` with explicit deictic tags
 - corpus-backed common noun/adverb coverage from `0030-add-corpus-backed-common-nouns.patch` and `0031-add-corpus-backed-common-adverbs.patch`, covering high-frequency tokenizer-audit fallbacks such as `தேர்தல்`, `பாலம்`, `நடவடிக்கை`, `சுமார்`, and `அதனால்`
+- pronoun/quantifier/function coverage from `0032-add-pronoun-quantifier-function-coverage.patch`, covering high-frequency tokenizer-audit fallbacks such as `தங்கள்`, `ஒருவர்`, `அனைவரும்`, `எல்லா`, `என்ன`, `எத்தனை`, `வேண்டாம்`, and `உண்டா` with explicit semantic tags
 - irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளார்`, `உள்ளார்கள்`, and ambiguous `உண்டு`
 - Dictionary gold include/exclude checks run with `python3 fst/tests/run_fst_regressions.py --check-dictionary` (included in `npm run dict:build`)
 

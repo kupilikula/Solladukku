@@ -77,6 +77,7 @@ COMPONENTS = [
         "output": "part.fst",
         "patches": [
             "0026-add-common-function-particles.patch",
+            "0032-add-pronoun-quantifier-function-coverage.patch",
         ],
     },
     {

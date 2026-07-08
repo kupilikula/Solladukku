@@ -23,7 +23,19 @@
       "must_analyze": {
         "என": "என+comp",
         "மட்டும்": "மட்டும்+pp-particle",
-        "இல்லை": "இல்லை+cop"
+        "இல்லை": "இல்லை+cop",
+        "தங்கள்": "தங்கள்+pron+poss",
+        "ஒருவர்": "ஒருவர்+pron+human+sg",
+        "அனைவரும்": "அனைவரும்+pron+human+pl+all+add",
+        "எல்லா": "எல்லா+quant+all+det",
+        "என்ன": "என்ன+pron+inter",
+        "எத்தனை": "எத்தனை+quant+inter",
+        "அதே": "அதே+dem+dist+same",
+        "அந்தந்த": "அந்தந்த+dem+dist+distrib",
+        "இவ்வளவு": "இவ்வளவு+dem+prox+degree",
+        "அவ்வளவு": "அவ்வளவு+dem+dist+degree",
+        "வேண்டாம்": "வேண்டாம்+modal+neg+prohib",
+        "உண்டா": "உண்டா+exist+ques"
       }
     },
     "adv.fst": {

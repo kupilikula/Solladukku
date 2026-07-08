@@ -447,6 +447,12 @@ File: `fst/patches/0031-add-corpus-backed-common-adverbs.patch`
 
 Adds common corpus-backed adverbial/function forms `சுமார்` and `அதனால்` to the adverb FST so they no longer fall back as unknown Tamil surfaces.
 
+### `0032-add-pronoun-quantifier-function-coverage.patch`
+
+File: `fst/patches/0032-add-pronoun-quantifier-function-coverage.patch`
+
+Adds a small semantically tagged function-word layer to the compiled particle FST for high-frequency tokenizer audit fallbacks that are pronouns, quantifiers, deictic degree/distributive forms, or modal/existential functions. Examples include `தங்கள்`, `ஒருவர்`, `அனைவரும்`, `எல்லா`, `என்ன`, `எத்தனை`, `அதே`, `அந்தந்த`, `இவ்வளவு`, `அவ்வளவு`, `வேண்டாம்`, and `உண்டா`. This patch intentionally does not modify the copied prebuilt `pronoun.fst`; it keeps the coverage in the source-built particle/function component with explicit tags such as `pron`, `quant`, `all`, `inter`, `poss`, `degree`, `modal`, `neg`, `exist`, and `ques`.
+
 ### `0025-add-noun-additive-um.patch`
 
 File: `fst/patches/0025-add-noun-additive-um.patch`

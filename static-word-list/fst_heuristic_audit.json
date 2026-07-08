@@ -15,7 +15,7 @@
     "forward_validated": 0,
     "generated_candidates": 0,
     "notes": "no controlled analyses for this class",
-    "predicted_lemmas": 72,
+    "predicted_lemmas": 31,
     "templates_used": 0
   },
   {
@@ -23,8 +23,8 @@
     "class": "noun.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 74145,
-    "predicted_lemmas": 74145,
+    "normalized_or_predicted_inputs": 74139,
+    "predicted_lemmas": 74139,
     "sample_added": [],
     "templates_used": 17
   },
