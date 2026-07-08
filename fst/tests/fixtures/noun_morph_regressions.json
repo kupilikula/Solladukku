@@ -179,6 +179,26 @@
     {
       "surface": "எண்ணிக்கையாக",
       "analysis": "எண்ணிக்கை+noun+trans"
+    },
+    {
+      "surface": "காடாக",
+      "analysis": "காடு+noun+trans"
+    },
+    {
+      "surface": "குறைபாடாக",
+      "analysis": "குறைபாடு+noun+trans"
+    },
+    {
+      "surface": "ஆறாக",
+      "analysis": "ஆறு+noun+trans"
+    },
+    {
+      "surface": "பொன்னும்",
+      "analysis": "பொன்+noun+nom+add"
+    },
+    {
+      "surface": "பொன்னாக",
+      "analysis": "பொன்+noun+trans"
     }
   ],
   "analysis_must_recognize": [
@@ -237,7 +257,12 @@
     "மரமாக",
     "காரணமாக",
     "இயக்குநராக",
-    "எண்ணிக்கையாக"
+    "எண்ணிக்கையாக",
+    "காடாக",
+    "குறைபாடாக",
+    "ஆறாக",
+    "பொன்னும்",
+    "பொன்னாக"
   ],
   "analysis_should_reject": [
     "திருமகன்னை",

@@ -51,6 +51,7 @@ COMPONENTS = [
             "0040-add-calendar-place-loan-nouns.patch",
             "0044-add-audit-backed-common-noun-coverage.patch",
             "0047-add-noun-translative-and-singular-additive.patch",
+            "0048-add-noun-oblique-translative-coverage.patch",
         ],
     },
     {

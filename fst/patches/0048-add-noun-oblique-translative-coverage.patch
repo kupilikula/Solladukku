@@ -1,0 +1,46 @@
+--- Nouns.lexc	2026-07-08 20:25:23
++++ Nouns.lexc	2026-07-08 20:27:27
+@@ -25417,6 +25417,7 @@
+ LEXICON C6Inflections
+ +noun+nom: #;
+ +noun+nom+add:^ம் #;
+++noun+trans:^ஆாக #;
+ +noun+nom+sandhip:^ட்டுப் #;
+ +noun+nom+sandhic:^ட்டுச் #;
+ +noun+nom+sandhit:^ட்டுத் #;
+@@ -29446,6 +29447,7 @@
+ LEXICON C7Inflections
+ +noun+nom: #;
+ +noun+nom+add:^ம் #;
+++noun+trans:^ஆாக #;
+ 
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+@@ -29768,6 +29770,7 @@
+ LEXICON C8Inflections
+ +noun+nom: #;
+ +noun+nom+add:^ம் #;
+++noun+trans:^றாக #;
+ +noun+nom+sandhip:^றுப் #;
+ +noun+nom+sandhic:^றுச் #;
+ +noun+nom+sandhit:^றுத் #;
+@@ -30531,11 +30534,19 @@
+ அன்	 C10SgRoot ; 
+ கன்	 C10SgRoot ; 
+ மன்	 C10SgRoot ; 
++பொன்:பொன்ன	C10GeminatedNInflections ;
++அன்:அன்ன	C10GeminatedNInflections ;
++கன்:கன்ன	C10GeminatedNInflections ;
++மன்:மன்ன	C10GeminatedNInflections ;
+ 
+ LEXICON C10SgRoot
+ !        Root;
+         C10Inflections;
+ 
++LEXICON C10GeminatedNInflections
+++noun+nom+add:^ும் #;
+++noun+trans:^ாக #;
++
+ LEXICON C10Inflections
+ +noun+nom: #;
+ +noun+nom+sandhip:^ற்ப் #;

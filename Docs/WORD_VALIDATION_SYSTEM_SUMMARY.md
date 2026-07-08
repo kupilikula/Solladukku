@@ -545,7 +545,7 @@ File: `fst/patches/0047-add-noun-translative-and-singular-additive.patch`
 
 Adds the noun tag `+trans` for translative/adverbial `-ஆக` forms and extends singular nominative additive `+add` coverage beyond the earlier plural-only `0025` patch. Covered audit examples include `மரமும்`, `எண்ணிக்கையும்`, `புலியும்`, `மாணவனும்`, `மரமாக`, `காரணமாக`, `இயக்குநராக`, and `எண்ணிக்கையாக`.
 
-The patch intentionally avoids `உ`-final translative forms such as `காடாக`, `குறைபாடாக`, and `ஆறாக`, because simple suffix addition produced malformed intermediate surfaces. Those need a separate final-vowel replacement rule. C10 forms such as `பொன்னும்` / `பொன்னாக` are also deferred pending a class-specific orthographic rule.
+This patch intentionally handled only class patterns that could be generated without malformed surfaces. Final short-`ு` translatives and C10 `ன்`-doubling forms are covered by the follow-up `0048` patch.
 
 ### `0025-add-noun-additive-um.patch`
 
@@ -659,3 +659,11 @@ The runtime FST copies under `server/fst-models/` are present in the checked-out
 - `fst/README.md`: patch/build/test workflow
 - `fst/build/manifest.json`: current FST build metadata, patch hashes, model hashes
 - `fst/tests/run_fst_regressions.py`: deterministic morphology and dictionary regression checks
+
+### `0048-add-noun-oblique-translative-coverage.patch`
+
+File: `fst/patches/0048-add-noun-oblique-translative-coverage.patch`
+
+Extends translative/adverbial `+trans` coverage for noun classes whose written stems need existing class-specific morphophonemic handling rather than plain suffix concatenation. C6/C7 nouns use the final short-`ு` replacement marker to generate forms such as `காடு -> காடாக` and `குறைபாடு -> குறைபாடாக`; C8 uses the established `று -> ற` continuation for `ஆறு -> ஆறாக`.
+
+The patch also adds a narrow C10 alternate-stem continuation for additive/translative forms such as `பொன் -> பொன்னும்` and `பொன் -> பொன்னாக`. This avoids the malformed double-pulli surface produced by literal suffixing and avoids broad changes to the existing `மாணவன்`-class rewrite rules.
