@@ -164,6 +164,7 @@ Current patch stack also includes source-backed noun/verb coverage and irregular
 - `0022-add-peethu-verb-coverage.patch`: covers lexical `பேத்தல்` by adding productive stem `பேத்து` to the C5 verb class, the same paradigm used for `நடத்தல்`, through regular FST generation instead of supplemental surface forms.
 - `0023-add-source-backed-c5-primary-verb-stems.patch`: adds a 4,388-entry C5 primary-stem tranche derived from fresh gap triage of lexical `தல்` / `த்தல்` verb lemmas backed by both Tamil Lexicon and Tamil Wiktionary titles.
 - `0024-add-source-backed-c5-primary-verb-stems-2.patch`: adds a smaller 262-entry post-`0023` C5 primary-stem tranche from the remaining tier-1 source-backed verb gaps.
+- `0025-add-noun-additive-um.patch`: adds productive plural nominative additive/enclitic `உம்` noun forms such as `பெண்களும்`, `ஆண்களும்`, `மரங்களும்`, and `மாணவர்களும்`.
 
 ## Current Code Integration Details
 

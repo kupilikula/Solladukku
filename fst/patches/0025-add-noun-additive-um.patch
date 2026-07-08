@@ -1,0 +1,138 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1,6 +1,6 @@
+ !!!Header.lexc!!!
+ 
+-Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit
++Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add
+ 
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+@@ -1218,6 +1218,7 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+nom:^க்கள் #;
+++noun+pl+nom+add:^க்களும் #;
+ 
+ +noun+acc:^வை #;
+ +noun+pl+acc:^க்களினை #;
+@@ -18552,6 +18553,7 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+nom:^கள் #;
+++noun+pl+nom+add:^களும் #;
+ 
+ +noun+acc:^யை #;
+ +noun+pl+acc:^களினை #;
+@@ -18798,6 +18800,7 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+nom:^க்கள் #;
+++noun+pl+nom+add:^க்களும் #;
+ 
+ +noun+acc:^யை #;
+ +noun+pl+acc:^க்களினை #;
+@@ -24547,6 +24550,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+nom+add:^களும் #;
+ 
+ +noun+acc:^ை #;
+ +noun+pl+acc:^களினை #;
+@@ -25260,6 +25264,7 @@
+ +noun+nom+sandhit:^ட்டுத் #;
+ +noun+nom+sandhik:^ட்டுக் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+nom+add:^களும் #;
+ 
+ +noun+acc:^ட்டை #;
+ +noun+pl+acc:^களினை #;
+@@ -25491,6 +25496,7 @@
+ +noun+nom+sandhit:^ட்டுத் #;
+ +noun+nom+sandhik:^ட்டுக் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+nom+add:^களும் #;
+ 
+ +noun+acc:^ட்டை #;
+ +noun+pl+acc:^களினை #;
+@@ -29286,6 +29292,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+nom+add:^களும் #;
+ 
+ +noun+acc:^ஆை #;
+ +noun+pl+acc:^களினை #;
+@@ -29605,6 +29612,7 @@
+ +noun+nom+sandhit:^றுத் #;
+ +noun+nom+sandhik:^றுக் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+nom+add:^களும் #;
+ 
+ +noun+acc:^றை #;
+ +noun+pl+acc:^களினை #;
+@@ -30135,6 +30143,7 @@
+ LEXICON C9Inflections
+ +noun+nom: #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+nom+add:^களும் #;
+ 
+ +noun+acc:^ணை #;
+ +noun+pl+acc:^களினை #;
+@@ -30371,6 +30380,7 @@
+ +noun+nom+sandhit:^ற்த் #;
+ +noun+nom+sandhik:^ற்க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+nom+add:^களும் #;
+ 
+ +noun+nom+foc:^தான் #;
+ +noun+nom+cmpr:^போல் #;
+@@ -43772,6 +43782,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^ர்கள் #;
+++noun+pl+nom+add:^ர்களும் #;
+ 
+ +noun+acc:^ை #;
+ +noun+pl+acc:^ர்களினை #;
+@@ -44015,6 +44026,7 @@
+ +noun+nom+sandhit:^ற்த் #;
+ +noun+nom+sandhik:^ற்க் #;
+ +noun+pl+nom:^ற்கள் #;
+++noun+pl+nom+add:^ற்களும் #;
+ 
+ +noun+acc:^லை #;
+ +noun+pl+acc:^ற்களினை #;
+@@ -44250,6 +44262,7 @@
+ +noun+nom+sandhit:^ட்த் #;
+ +noun+nom+sandhik:^ட்க் #;
+ +noun+pl+nom:^ட்கள் #;
+++noun+pl+nom+add:^ட்களும் #;
+ 
+ +noun+acc:^ளை #;
+ +noun+pl+acc:^ட்களினை #;
+@@ -46105,6 +46118,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^ட்கள் #;
+++noun+pl+nom+add:^ட்களும் #;
+ 
+ +noun+acc:^ை #;
+ +noun+pl+acc:^ட்களினை #;
+@@ -49673,6 +49687,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^ங்கள் #;
+++noun+pl+nom+add:^ங்களும் #;
+ +noun+infInc+acc:^த்தை #;
+ 
+ +noun+pl+acc:^ங்களினை #;
+@@ -51115,6 +51130,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+foc:^கள்தான் #;
+ 
+ +noun+acc:^ற்றை #;

@@ -73,7 +73,7 @@ Final dictionary output:
 - Deduplicated
 - Filtered to at most 15 Tamil letters
 - Sorted with Python `sorted()` Unicode codepoint order
-- Current rebuilt artifact in this checkout: 1,003,838 entries, about 45.3 MB.
+- Current rebuilt artifact in this checkout: 1,653,446 entries, about 76.6 MB.
 
 The client binary search must use JavaScript `<` and `>` comparisons, not `localeCompare()`, because locale-aware Tamil ordering does not match Python codepoint sorting.
 
@@ -410,6 +410,12 @@ File: `fst/patches/0012-add-source-backed-name-tranche.patch`
 Adds 76 multi-source source-backed name/name+noun candidates. Candidates require a noun-model prediction, a `name` POS hint, at least two lexical sources, and high model confidence. The tranche uses explicit ending-based noun-class rules rather than the generic suffix-confidence model so that examples such as `கேரளம்` use the neuter `-ம்` paradigm and `தமிழ்நாடு` uses the `-டு` paradigm.
 
 Representative examples include `சீனா`, `கோவா`, `சீதை`, `தமிழ்நாடு`, `ஜப்பான்`, `கேரளம்`, `பிள்ளையார்`, and `சேலம்`. Vuizur-only names and unsupported foreign-final consonant stems such as `பாரிஸ்` are intentionally deferred.
+
+### `0025-add-noun-additive-um.patch`
+
+File: `fst/patches/0025-add-noun-additive-um.patch`
+
+Adds productive plural nominative additive/enclitic `உம்` coverage across noun inflection classes. The patch uses explicit plural-additive surfaces such as `களும்`, `ர்களும்`, `ற்களும்`, `ட்களும்`, and `ங்களும்` rather than chaining `கள் + உம்`, which would produce malformed intermediate surfaces such as `பெண்கள்உம்`. Examples include `பெண்களும்`, `ஆண்களும்`, `மரங்களும்`, and `மாணவர்களும்`. Static generation includes `+noun+pl+nom+add` so these forms enter `fst_generated_forms.txt` and the generated dictionary.
 
 ### `0013-add-foreign-final-name-template.patch`
 

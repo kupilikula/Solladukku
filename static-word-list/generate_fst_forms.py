@@ -96,7 +96,7 @@ VERB_LEXC_CANDIDATES = {
 NOUN_TAGS = [
     "+noun+nom", "+noun+acc", "+noun+dat", "+noun+loc",
     "+noun+abl", "+noun+gen", "+noun+inst", "+noun+soc",
-    "+noun+pl+nom", "+noun+pl+acc", "+noun+pl+dat", "+noun+pl+loc",
+    "+noun+pl+nom", "+noun+pl+nom+add", "+noun+pl+acc", "+noun+pl+dat", "+noun+pl+loc",
     "+noun+pl+abl", "+noun+pl+gen", "+noun+pl+inst", "+noun+pl+soc",
 ]
 CONTROLLED_HEURISTIC_NOUN_TAGS = [
@@ -106,6 +106,7 @@ CONTROLLED_HEURISTIC_NOUN_TAGS = [
     "+noun+loc",
     "+noun+gen",
     "+noun+pl+nom",
+    "+noun+pl+nom+add",
     "+noun+pl+acc",
 ]
 

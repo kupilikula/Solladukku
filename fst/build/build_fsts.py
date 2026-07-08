@@ -45,6 +45,7 @@ COMPONENTS = [
             "0016-remove-noun-pronoun-rewrites.patch",
             "0017-add-source-backed-noun-tranche-3.patch",
             "0021-add-reviewed-peen-noun.patch",
+            "0025-add-noun-additive-um.patch",
         ],
     },
     {
