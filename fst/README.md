@@ -90,6 +90,9 @@ Covers:
 - modern verb paradigm completion from `0041-complete-modern-verb-paradigms.patch`, covering `வா` forms such as `வந்தார்`, `வந்தனர்`, `வருகிறார்`, `வருகின்றன`, and `வருவார்`, existential `உள்ளனர்`, and reviewed C5 stems `பணியாற்று` / `பயன்படுத்து`
 - comparative/additive particle coverage from `0042-add-comparative-kkum-particle.patch`, covering standalone `க்கும்` in comparative expressions such as `15 க்கும் குறைவாக`
 - audit-backed passive verb-stem coverage from `0043-add-audit-backed-passive-verb-stems.patch`, covering `பயன்படுத்தப்படு` forms such as `பயன்படுத்தப்படுகிறது`
+- audit-backed common noun coverage from `0044-add-audit-backed-common-noun-coverage.patch`, covering reviewed tokenizer-audit nouns such as `ஓட்டம்`, `விற்பனை`, `குறைபாடு`, and `இயக்குநர்`
+- audit-backed attributive adjective coverage from `0045-add-audit-backed-adjective-forms.patch`, covering `தேசியக்`, `நீர்வாழ்`, and `துடுப்பாட்ட`
+- C4 `உ`-final future/adjectival coverage from `0046-add-c4-u-final-future-forms.patch`, covering forms such as `விழும்` and `எழும்` while preserving existing C4 past forms such as `விழுந்தது`
 - irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளனர்`, `உள்ளார்`, `உள்ளார்கள்`, and ambiguous `உண்டு`
 - Dictionary gold include/exclude checks run with `python3 fst/tests/run_fst_regressions.py --check-dictionary` (included in `npm run dict:build`)
 

@@ -1,0 +1,23 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -154,6 +154,8 @@
+ விழு C4Vinf;
+ களை C4Vinf;
+ முழி C4Vinf;
++விழு:விழ C4UFinalFutureVinf;
++எழு:எழ C4UFinalFutureVinf;
+ கனை C4Vinf;
+ முளி C4Vinf;
+ அகை C4Vinf;
+@@ -402,6 +404,11 @@
+ தெகிழ் C4Vinf;
+ 
+ 
++LEXICON C4UFinalFutureVinf
+++verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+++verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ும் #;
+++verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
++
+ LEXICON C4Vinf
+ 
+ 

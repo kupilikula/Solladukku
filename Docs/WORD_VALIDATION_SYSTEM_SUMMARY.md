@@ -521,6 +521,24 @@ File: `fst/patches/0043-add-audit-backed-passive-verb-stems.patch`
 
 Adds `பயன்படுத்தப்படு` to the existing `CPadu61Vinf` passive verb class. The runtime FST now analyzes forms such as `பயன்படுத்தப்படுகிறது`, `பயன்படுத்தப்பட்டது`, and `பயன்படுத்தப்பட்டு` as complex passive verb forms. This is a narrow stem/class coverage fix; broader compound `படு` forms such as `செயல்பட்டு` remain for a separate class-design pass.
 
+### `0044-add-audit-backed-common-noun-coverage.patch`
+
+File: `fst/patches/0044-add-audit-backed-common-noun-coverage.patch`
+
+Adds a small reviewed `AuditBackedCommonNounSg` lexicon for high-frequency tokenizer/HF-audit noun fallbacks whose class is straightforward: `ஓட்டம்` (`C15SgRoot`), `விற்பனை` (`C2SgRoot`), `குறைபாடு` (`C7SgRoot`), and `இயக்குநர்` (`C16SgRoot`). This covers forms such as `ஓட்டங்களால்` through existing noun inflection rules. Forms requiring broader rules, such as noun-wide `-ஆக` (`இயக்குநராக`), are not handled in this patch.
+
+### `0045-add-audit-backed-adjective-forms.patch`
+
+File: `fst/patches/0045-add-audit-backed-adjective-forms.patch`
+
+Adds reviewed attributive adjective forms from the tokenizer audit: `தேசியக்`, `நீர்வாழ்`, and `துடுப்பாட்ட`. These are represented as adjective entries rather than tokenizer-side fallbacks, preserving FST-backed POS information for common news/textbook-style modifiers.
+
+### `0046-add-c4-u-final-future-forms.patch`
+
+File: `fst/patches/0046-add-c4-u-final-future-forms.patch`
+
+Adds a narrow C4 helper lexicon for `உ`-final future/adjectival `-உம்` forms where the base C4 past/present paradigm already works but the surface future form was missing. The patch currently covers `விழும்` and `எழும்`, while preserving existing C4 analyses such as `விழுந்தது`, `எழுந்தது`, `சேர்ந்தார்`, and `அடைந்தோர்`.
+
 ### `0025-add-noun-additive-um.patch`
 
 File: `fst/patches/0025-add-noun-additive-um.patch`

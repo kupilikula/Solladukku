@@ -176,6 +176,9 @@ Current patch stack also includes source-backed noun/verb coverage and irregular
 - `0041-complete-modern-verb-paradigms.patch`: completes high-impact modern verb coverage found by the fresh tokenizer audit, including `வந்தார்`, `வந்தனர்`, `வருகிறார்`, `வருகின்றன`, `வருவார்`, `உள்ளனர்`, and productive C5 analyses for `பணியாற்றினார்` and `பயன்படுத்தினார்`.
 - `0042-add-comparative-kkum-particle.patch`: adds standalone comparative/additive particle analysis for `க்கும்`, useful in numeric comparisons such as `15 க்கும் குறைவாக`.
 - `0043-add-audit-backed-passive-verb-stems.patch`: adds `பயன்படுத்தப்படு` to the existing passive `CPadu61Vinf` class so forms such as `பயன்படுத்தப்படுகிறது` analyze through the runtime FST.
+- `0044-add-audit-backed-common-noun-coverage.patch`: adds a small reviewed corpus-audit noun lexicon for high-frequency common nouns such as `ஓட்டம்`, `விற்பனை`, `குறைபாடு`, and `இயக்குநர்`.
+- `0045-add-audit-backed-adjective-forms.patch`: adds reviewed attributive adjective forms found in the tokenizer audit, including `தேசியக்`, `நீர்வாழ்`, and `துடுப்பாட்ட`.
+- `0046-add-c4-u-final-future-forms.patch`: adds a narrow C4 helper lexicon for `உ`-final future/adjectival forms such as `விழும்` and `எழும்`, without replacing the existing C4 past/present paradigm.
 
 ## Current Code Integration Details
 

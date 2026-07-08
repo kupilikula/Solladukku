@@ -49,6 +49,7 @@ COMPONENTS = [
             "0030-add-corpus-backed-common-nouns.patch",
             "0033-add-selective-loan-nouns.patch",
             "0040-add-calendar-place-loan-nouns.patch",
+            "0044-add-audit-backed-common-noun-coverage.patch",
         ],
     },
     {
@@ -59,6 +60,7 @@ COMPONENTS = [
         "patches": [
             "0029-add-deictic-adjective-forms.patch",
             "0035-add-corpus-backed-adjectival-stems.patch",
+            "0045-add-audit-backed-adjective-forms.patch",
         ],
     },
     {
@@ -121,6 +123,7 @@ COMPONENTS = [
             "0019-add-participial-person-nominals.patch",
             "0023-add-source-backed-c5-primary-verb-stems.patch",
             "0024-add-source-backed-c5-primary-verb-stems-2.patch",
+            "0046-add-c4-u-final-future-forms.patch",
         ],
     },
     {

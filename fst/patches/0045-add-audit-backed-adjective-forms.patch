@@ -1,0 +1,13 @@
+--- tamil-adjectives.lexc
++++ tamil-adjectives.lexc
+@@ -20,6 +20,10 @@
+ மாவட்ட	 adjective; 
+ தேசிய	 adjective; 
+ பிரபல	 adjective; 
++! Audit-backed attributive adjective forms.
++தேசியக்	 adjective; 
++நீர்வாழ்	 adjective; 
++துடுப்பாட்ட	 adjective; 
+ பிரபலமான	 adjective; 
+ சரியான	 adjective; 
+ 

@@ -1,0 +1,24 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -29,6 +29,7 @@
+ C16Sg;      !சுவர்
+ ForeignFinalSg; ! borrowed consonant-final names
+ CalendarPlaceLoanSg; ! reviewed calendar/place/loan nouns
++AuditBackedCommonNounSg; ! reviewed corpus-audit nouns
+ 
+ LEXICON CalendarPlaceLoanSg
+ ! Reviewed common loans, month names, country names, and city names.
+@@ -83,6 +84,13 @@
+ வீடியோ	C1SgRoot;
+ போன்	C4SgRoot;
+ 
++LEXICON AuditBackedCommonNounSg
++! Common nouns promoted from tokenizer/HF audit review.
++விற்பனை	C2SgRoot;
++குறைபாடு	C7SgRoot;
++ஓட்டம்	C15SgRoot;
++இயக்குநர்	C16SgRoot;
++
+ LEXICON ForeignFinalSg
+ ! Borrowed consonant-final names. Nominal forms keep the written final pulli;
+ ! case forms use the Tamilized oblique stem appropriate to the final consonant.
