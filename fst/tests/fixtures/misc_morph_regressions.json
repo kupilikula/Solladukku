@@ -16,7 +16,11 @@
         "பட்டதாரி": "பட்டதாரி+noun+nom",
         "மன்னார்": "மன்னார்+noun+nom",
         "பேப்பர்": "பேப்பர்+noun+nom",
-        "அழுத்தம்": "அழுத்தம்+noun+nom"
+        "அழுத்தம்": "அழுத்தம்+noun+nom",
+        "வைரஸ்": "வைரஸ்+noun+nom",
+        "வைரஸில்": "வைரஸ்+noun+loc",
+        "கலெக்டர்": "கலெக்டர்+noun+nom",
+        "குக்கர்": "குக்கர்+noun+nom"
       }
     },
     "part.fst": {
@@ -35,7 +39,13 @@
         "இவ்வளவு": "இவ்வளவு+dem+prox+degree",
         "அவ்வளவு": "அவ்வளவு+dem+dist+degree",
         "வேண்டாம்": "வேண்டாம்+modal+neg+prohib",
-        "உண்டா": "உண்டா+exist+ques"
+        "உண்டா": "உண்டா+exist+ques",
+        "பி": "பி+abbrev+letter",
+        "ஜி": "ஜி+abbrev+letter",
+        "டி": "டி+abbrev+letter",
+        "எஸ்": "எஸ்+abbrev+letter",
+        "என்பதை": "என்பதை+comp+acc",
+        "எனக்": "எனக்+comp+sandhik"
       }
     },
     "adv.fst": {
@@ -50,14 +60,36 @@
         "அப்போது": "அப்போது+dem+dist+time+adv",
         "எப்போது": "எப்போது+dem+inter+time+adv",
         "இம்மாசம்": "இம்மாசம்+dem+prox+time+adv",
-        "இந்நிலையில்": "இந்நிலையில்+dem+prox+situation+adv"
+        "இந்நிலையில்": "இந்நிலையில்+dem+prox+situation+adv",
+        "கடுமையாக": "கடுமையாக+adv",
+        "குறைவாக": "குறைவாக+adv",
+        "வலுவின்றி": "வலுவின்றி+adv"
       }
     },
     "adj.fst": {
       "must_analyze": {
         "இவ்வகை": "இவ்வகை+dem+prox+type+adj",
         "அவ்வகை": "அவ்வகை+dem+dist+type+adj",
-        "எவ்வகை": "எவ்வகை+dem+inter+type+adj"
+        "எவ்வகை": "எவ்வகை+dem+inter+type+adj",
+        "தமிழக": "தமிழக+adj",
+        "ஐக்கிய": "ஐக்கிய+adj",
+        "மாவட்ட": "மாவட்ட+adj",
+        "தேசிய": "தேசிய+adj",
+        "பிரபல": "பிரபல+adj",
+        "சரியான": "சரியான+adj"
+      }
+    },
+    "verb-c-rest.fst": {
+      "must_analyze": {
+        "பேசிய": "பேசு+verb+nonfin+sim+past=இ+adjpart=அ",
+        "வருகின்ற": "வா+verb+nonfin+sim+pres=கின்ற்+adjpart=அ",
+        "என்றார்": "என்+verb+fin+sim+strong+past=ற்+3sghe=ஆர்",
+        "ஆவார்": "ஆ+verb+fin+sim+weak+fut=வ்+3sghe=ஆர்"
+      }
+    },
+    "verb-c11.fst": {
+      "must_analyze": {
+        "விமர்சித்து": "விமர்சி+verb+nonfin+sim+vpart=உ"
       }
     }
   }

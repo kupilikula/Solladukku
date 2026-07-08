@@ -1,0 +1,18 @@
+--- tamil-adjectives.lexc
++++ tamil-adjectives.lexc
+@@ -11,6 +11,15 @@
+ இவ்வகை+dem+prox+type:இவ்வகை	 adjective; 
+ அவ்வகை+dem+dist+type:அவ்வகை	 adjective; 
+ எவ்வகை+dem+inter+type:எவ்வகை	 adjective; 
++
++! Corpus-backed adjectival stems and attributive nouns.
++தமிழக	 adjective; 
++ஐக்கிய	 adjective; 
++மாவட்ட	 adjective; 
++தேசிய	 adjective; 
++பிரபல	 adjective; 
++பிரபலமான	 adjective; 
++சரியான	 adjective; 
+ 
+ ஆச்சர்யப்பட்ட	 adjective; 
+ வட்டம்	 adjective; 

@@ -1,0 +1,21 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -42,6 +42,8 @@
+ பிலிப்பைன்ஸ்:பிலிப்பைன்ஸ	ForeignSFinalInflections;
+ மெட்ராஸ்	ForeignFinalNom;
+ மெட்ராஸ்:மெட்ராஸ	ForeignSFinalInflections;
++வைரஸ்	ForeignFinalNom;
++வைரஸ்:வைரஸ	ForeignSFinalInflections;
+ லாவோஸ்	ForeignFinalNom;
+ லாவோஸ்:லாவோஸ	ForeignSFinalInflections;
+ தனாக்	ForeignFinalNom;
+@@ -51138,6 +51140,9 @@
+ தனியார்	C16SgRoot;
+ மன்னார்	C16SgRoot;
+ பேப்பர்	C16SgRoot;
++! Selective corpus-backed loanword nouns.
++கலெக்டர்	C16SgRoot;
++குக்கர்	C16SgRoot;
+ LEXICON C16SgRoot
+ !        Root;
+         C16Inflections;

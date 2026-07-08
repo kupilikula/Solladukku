@@ -83,6 +83,9 @@ Covers:
 - deictic adverb/adjective FST coverage from `0028-add-deictic-adverb-forms.patch` and `0029-add-deictic-adjective-forms.patch`, covering forms such as `இப்பொழுது`, `எப்பொழுது`, `இந்நிலையில்`, and `இவ்வகை` with explicit deictic tags
 - corpus-backed common noun/adverb coverage from `0030-add-corpus-backed-common-nouns.patch` and `0031-add-corpus-backed-common-adverbs.patch`, covering high-frequency tokenizer-audit fallbacks such as `தேர்தல்`, `பாலம்`, `நடவடிக்கை`, `சுமார்`, and `அதனால்`
 - pronoun/quantifier/function coverage from `0032-add-pronoun-quantifier-function-coverage.patch`, covering high-frequency tokenizer-audit fallbacks such as `தங்கள்`, `ஒருவர்`, `அனைவரும்`, `எல்லா`, `என்ன`, `எத்தனை`, `வேண்டாம்`, and `உண்டா` with explicit semantic tags
+- selective loanword noun and abbreviation coverage from `0033-add-selective-loan-nouns.patch` and `0034-add-selective-abbreviation-particles.patch`, covering common corpus fallbacks such as `கலெக்டர்`, `குக்கர்`, `வைரஸ்`, and abbreviation letters `பி`, `ஜி`, `டி`, `எஸ்`
+- corpus-backed adjective/adverb and complementizer coverage from `0035-add-corpus-backed-adjectival-stems.patch`, `0036-add-corpus-backed-adverbial-stems.patch`, and `0037-add-complementizer-case-forms.patch`, covering forms such as `தமிழக`, `ஐக்கிய`, `மாவட்ட`, `தேசிய`, `கடுமையாக`, `வலுவின்றி`, `என்பதை`, and `எனக்`
+- productive verb-rule/root coverage from `0038-add-modern-verb-derived-forms.patch` and `0039-add-c11-loan-verb-stems.patch`, covering `பேசிய`, `வருகின்ற`, `என்றார்`, `ஆவார்`, and `விமர்சித்து` through FST classes rather than supplemental surface forms
 - irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளார்`, `உள்ளார்கள்`, and ambiguous `உண்டு`
 - Dictionary gold include/exclude checks run with `python3 fst/tests/run_fst_regressions.py --check-dictionary` (included in `npm run dict:build`)
 

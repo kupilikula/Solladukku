@@ -1,0 +1,28 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -1,9 +1,10 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +modal +neg +exist +ques +prohib
++Multichar_Symbols  +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +modal +neg +exist +ques +prohib +abbrev +letter
+ 
+ LEXICON Root
++abbreviations;
+ pronounQuantifiers;
+ modals;
+ demonstratives;
+@@ -19,6 +20,13 @@
+ particles;
+ casemarkers;
+ copulas;
++
++LEXICON abbreviations
++! Common abbreviation letter names seen in Tamil news/business text.
++பி+abbrev+letter:பி #;
++ஜி+abbrev+letter:ஜி #;
++டி+abbrev+letter:டி #;
++எஸ்+abbrev+letter:எஸ் #;
+ 
+ LEXICON pronounQuantifiers
+ தங்கள்+pron+poss:தங்கள் #;

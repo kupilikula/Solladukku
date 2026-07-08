@@ -4,8 +4,8 @@
     "class": "adj.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 115,
-    "predicted_lemmas": 115,
+    "normalized_or_predicted_inputs": 36,
+    "predicted_lemmas": 36,
     "sample_added": [],
     "templates_used": 3
   },
@@ -23,8 +23,8 @@
     "class": "noun.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 74139,
-    "predicted_lemmas": 74139,
+    "normalized_or_predicted_inputs": 74131,
+    "predicted_lemmas": 74131,
     "sample_added": [],
     "templates_used": 17
   },
@@ -34,14 +34,14 @@
     "forward_validated": 0,
     "generated_candidates": 0,
     "notes": "no controlled analyses for this class",
-    "predicted_lemmas": 4,
+    "predicted_lemmas": 5,
     "templates_used": 0
   },
   {
-    "accepted_added": 1174893,
+    "accepted_added": 1186550,
     "class": "verb-c-rest.fst",
-    "forward_validated": 1174893,
-    "generated_candidates": 1174893,
+    "forward_validated": 1186550,
+    "generated_candidates": 1186550,
     "normalized_or_predicted_inputs": 82825,
     "predicted_lemmas": 12554,
     "sample_added": [
@@ -71,7 +71,7 @@
       "அஃகினனள்",
       "அஃகினன்"
     ],
-    "templates_used": 1365
+    "templates_used": 1366
   },
   {
     "accepted_added": 146815,

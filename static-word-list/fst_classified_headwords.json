@@ -2247,6 +2247,9 @@
   "அழுகின்ற": [
     "verb-c-rest.fst"
   ],
+  "அழுகிய": [
+    "verb-c-rest.fst"
+  ],
   "அழுகு": [
     "verb-c-rest.fst"
   ],
@@ -2382,6 +2385,9 @@
   "அஸ்தமனம்": [
     "noun.fst"
   ],
+  "ஆ": [
+    "verb-c-rest.fst"
+  ],
   "ஆக": [
     "part.fst",
     "verb-c-rest.fst"
@@ -2424,7 +2430,8 @@
     "noun.fst"
   ],
   "ஆகிய": [
-    "part.fst"
+    "part.fst",
+    "verb-c-rest.fst"
   ],
   "ஆகு": [
     "verb-c-rest.fst"
@@ -2533,6 +2540,9 @@
   ],
   "ஆடிக்காற்று": [
     "noun.fst"
+  ],
+  "ஆடிய": [
+    "verb-c-rest.fst"
   ],
   "ஆடு": [
     "noun.fst"
@@ -3119,6 +3129,9 @@
   ],
   "ஆவரி": [
     "verb-c11.fst"
+  ],
+  "ஆவர்": [
+    "verb-c-rest.fst"
   ],
   "ஆவலி": [
     "verb-c11.fst"
@@ -4585,6 +4598,9 @@
   "ஈன்றான்": [
     "verb-c-rest.fst"
   ],
+  "ஈன்றார்": [
+    "verb-c-rest.fst"
+  ],
   "ஈன்றாள்": [
     "verb-c-rest.fst"
   ],
@@ -5731,6 +5747,9 @@
   ],
   "ஊதாப்பூ": [
     "noun.fst"
+  ],
+  "ஊதிய": [
+    "verb-c-rest.fst"
   ],
   "ஊதியம்": [
     "noun.fst"
@@ -7122,6 +7141,9 @@
     "verb-c-rest.fst"
   ],
   "ஓதுவான்": [
+    "verb-c-rest.fst"
+  ],
+  "ஓதுவார்": [
     "verb-c-rest.fst"
   ],
   "ஓத்தி": [
@@ -8613,6 +8635,9 @@
   "களம்": [
     "noun.fst"
   ],
+  "களவாடிய": [
+    "verb-c-rest.fst"
+  ],
   "களவாடு": [
     "verb-c-rest.fst"
   ],
@@ -9727,6 +9752,9 @@
   "குகை": [
     "noun.fst"
   ],
+  "குக்கர்": [
+    "noun.fst"
+  ],
   "குக்கி": [
     "verb-c-rest.fst"
   ],
@@ -10266,7 +10294,8 @@
     "noun.fst"
   ],
   "குறுகிய": [
-    "adj.fst"
+    "adj.fst",
+    "verb-c-rest.fst"
   ],
   "குறுக்கிடு": [
     "verb-c-rest.fst"
@@ -10627,6 +10656,9 @@
     "verb-c4.fst"
   ],
   "கூறி": [
+    "verb-c-rest.fst"
+  ],
+  "கூறிய": [
     "verb-c-rest.fst"
   ],
   "கூறை": [
@@ -12142,6 +12174,9 @@
   "சரித்து": [
     "verb-c11.fst"
   ],
+  "சரியான": [
+    "adj.fst"
+  ],
   "சரிவர": [
     "adv.fst"
   ],
@@ -12994,6 +13029,9 @@
   "சிவண": [
     "verb-c-rest.fst"
   ],
+  "சிவணிய": [
+    "verb-c-rest.fst"
+  ],
   "சிவணு": [
     "verb-c-rest.fst"
   ],
@@ -13421,6 +13459,9 @@
     "verb-c-rest.fst"
   ],
   "சுருக்கு": [
+    "verb-c-rest.fst"
+  ],
+  "சுருக்குவார்": [
     "verb-c-rest.fst"
   ],
   "சுருங்கு": [
@@ -14645,6 +14686,9 @@
   "ஜாநு": [
     "noun.fst"
   ],
+  "ஜி": [
+    "part.fst"
+  ],
   "ஜிந்தகி": [
     "noun.fst"
   ],
@@ -14764,6 +14808,9 @@
   ],
   "டப்பா": [
     "noun.fst"
+  ],
+  "டி": [
+    "part.fst"
   ],
   "டிராகன்": [
     "noun.fst"
@@ -16219,6 +16266,9 @@
   "திருடி": [
     "verb-c-rest.fst"
   ],
+  "திருடிய": [
+    "verb-c-rest.fst"
+  ],
   "திருடு": [
     "verb-c-rest.fst"
   ],
@@ -17130,6 +17180,9 @@
   "தூரி": [
     "verb-c-rest.fst"
   ],
+  "தூரிய": [
+    "verb-c-rest.fst"
+  ],
   "தூரு": [
     "verb-c-rest.fst"
   ],
@@ -17464,6 +17517,9 @@
   ],
   "தேசாபிமானம்": [
     "noun.fst"
+  ],
+  "தேசிய": [
+    "adj.fst"
   ],
   "தேசியம்": [
     "noun.fst"
@@ -21280,7 +21336,8 @@
   ],
   "பற்றிய": [
     "adj.fst",
-    "part.fst"
+    "part.fst",
+    "verb-c-rest.fst"
   ],
   "பற்று": [
     "verb-c-rest.fst"
@@ -21972,6 +22029,9 @@
   "பாஷை": [
     "noun.fst"
   ],
+  "பி": [
+    "part.fst"
+  ],
   "பிகு": [
     "noun.fst"
   ],
@@ -22533,6 +22593,9 @@
   ],
   "பிரபந்தம்": [
     "noun.fst"
+  ],
+  "பிரபலமான": [
+    "adj.fst"
   ],
   "பிரபலம்": [
     "noun.fst"
@@ -24115,6 +24178,9 @@
   "பேசுவாய்": [
     "verb-c-rest.fst"
   ],
+  "பேசுவார்": [
+    "verb-c-rest.fst"
+  ],
   "பேச்சாளர்": [
     "noun.fst"
   ],
@@ -24743,7 +24809,8 @@
     "verb-c-rest.fst"
   ],
   "போதிய": [
-    "adj.fst"
+    "adj.fst",
+    "verb-c-rest.fst"
   ],
   "போதியார்": [
     "noun.fst"
@@ -25625,6 +25692,9 @@
   "மன்னிப்பு": [
     "noun.fst"
   ],
+  "மன்னிய": [
+    "verb-c-rest.fst"
+  ],
   "மன்னும்": [
     "verb-c-rest.fst"
   ],
@@ -26263,6 +26333,9 @@
     "verb-c11.fst"
   ],
   "மழுங்கி": [
+    "verb-c-rest.fst"
+  ],
+  "மழுங்கிய": [
     "verb-c-rest.fst"
   ],
   "மழுங்கு": [
@@ -27163,7 +27236,8 @@
     "noun.fst"
   ],
   "முக்கிய": [
-    "adj.fst"
+    "adj.fst",
+    "verb-c-rest.fst"
   ],
   "முக்கியம்": [
     "noun.fst"
@@ -27335,7 +27409,8 @@
     "verb-c-rest.fst"
   ],
   "முதலிய": [
-    "adj.fst"
+    "adj.fst",
+    "verb-c-rest.fst"
   ],
   "முதலீடு": [
     "noun.fst"
@@ -29557,6 +29632,9 @@
   "வற்றல்": [
     "noun.fst"
   ],
+  "வற்றிய": [
+    "verb-c-rest.fst"
+  ],
   "வற்று": [
     "verb-c-rest.fst"
   ],
@@ -30713,6 +30791,12 @@
   "விமரிசம்": [
     "noun.fst"
   ],
+  "விமர்சி": [
+    "verb-c11.fst"
+  ],
+  "விமர்சிக்கின்றனர்": [
+    "verb-c11.fst"
+  ],
   "விமானம்": [
     "noun.fst"
   ],
@@ -31760,7 +31844,8 @@
     "verb-c-rest.fst"
   ],
   "வேண்டிய": [
-    "adj.fst"
+    "adj.fst",
+    "verb-c-rest.fst"
   ],
   "வேண்டியது": [
     "verb-c-rest.fst"

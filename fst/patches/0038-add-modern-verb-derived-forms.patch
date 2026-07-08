@@ -1,0 +1,42 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -455,5 +455,6 @@
+ அமர்த்து     C5Vinf;
+ அலட்டு     C5Vinf;
++ஆ     C5Vinf;
+ ஆகு     C5Vinf;
+ அமிழ்த்து     C5Vinf;
+ அலப்பு     C5Vinf;
+@@ -6438,6 +6438,7 @@
+ +verb+fin+sim+weak+fut%=வ்+3sgm%=ஆன்:^வான் #;
+ +verb+fin+sim+weak+fut%=வ்+3sgf%=ஆள்:^வாள் #;
+ +verb+fin+sim+weak+fut%=வ்+3sge%=அர்:^வர் #;
+++verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்:^வார் #;
+ +verb+fin+sim+weak+fut%=வ்+3ple%=ஆர்கள்:^வார்கள் #;
+ +verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்கள்:^வார்கள் #;
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+@@ -6528,6 +6529,7 @@
+ +verb+nonfin+sim+con%=ஆல்:^ினால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=இன்+adjpart%=அ:^ின #;
+++verb+nonfin+sim+past%=இ+adjpart%=அ:^ிய #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+@@ -6592,6 +6594,8 @@
+ +verb+fin+sim+weak+fut%=வ்+3ple%=ஆர்கள்:^வார்கள் #;
+ +verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்கள்:^வார்கள் #;
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ம் #;
+++verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+futANDadjpart%=உம்:^ம் #;
+ 
+ LEXICON ClassKelModern
+ 
+@@ -7111,6 +7115,7 @@
+ +verb+fin+sim+strong+past%=ற்+3sgf%=ஆள்:^றாள் #;
+ +verb+fin+sim+strong+past%=ற்+3sge%=அர்:^றர் #;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்:^றார்கள் #;
+++verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்:^றார் #;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்கள்:^றார்கள் #;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது:^றது #;
+ +verb+fin+sim+strong+past%=ற்+3pln%=அன:^றன #;

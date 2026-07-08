@@ -1,0 +1,12 @@
+--- tamil-adverbs.lexc
++++ tamil-adverbs.lexc
+@@ -10,6 +10,9 @@
+ LEXICON adverbs
+ சுமார்	 adverb; 
+ அதனால்	 adverb; 
++கடுமையாக	 adverb; 
++குறைவாக	 adverb; 
++வலுவின்றி	 adverb; 
+ இப்பொழுது+dem+prox+time:இப்பொழுது	 adverb; 
+ அப்பொழுது+dem+dist+time:அப்பொழுது	 adverb; 
+ எப்பொழுது+dem+inter+time:எப்பொழுது	 adverb; 

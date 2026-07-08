@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -867,6 +867,7 @@
+ வியலி  C11Vinf;
+ தீ  C11Vinf;
+ வருஷி  C11Vinf;
++விமர்சி  C11Vinf;
+ வியாகுலி  C11Vinf;
+ நீ  C11Vinf;
+ வலி  C11Vinf;

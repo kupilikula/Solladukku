@@ -47,6 +47,7 @@ COMPONENTS = [
             "0021-add-reviewed-peen-noun.patch",
             "0025-add-noun-additive-um.patch",
             "0030-add-corpus-backed-common-nouns.patch",
+            "0033-add-selective-loan-nouns.patch",
         ],
     },
     {
@@ -56,6 +57,7 @@ COMPONENTS = [
         "output": "adj.fst",
         "patches": [
             "0029-add-deictic-adjective-forms.patch",
+            "0035-add-corpus-backed-adjectival-stems.patch",
         ],
     },
     {
@@ -68,6 +70,7 @@ COMPONENTS = [
             "0027-add-common-adverb-een.patch",
             "0028-add-deictic-adverb-forms.patch",
             "0031-add-corpus-backed-common-adverbs.patch",
+            "0036-add-corpus-backed-adverbial-stems.patch",
         ],
     },
     {
@@ -78,6 +81,8 @@ COMPONENTS = [
         "patches": [
             "0026-add-common-function-particles.patch",
             "0032-add-pronoun-quantifier-function-coverage.patch",
+            "0034-add-selective-abbreviation-particles.patch",
+            "0037-add-complementizer-case-forms.patch",
         ],
     },
     {
@@ -132,6 +137,7 @@ COMPONENTS = [
             "0019-add-participial-person-nominals.patch",
             "0023-add-source-backed-c5-primary-verb-stems.patch",
             "0024-add-source-backed-c5-primary-verb-stems-2.patch",
+            "0039-add-c11-loan-verb-stems.patch",
         ],
     },
     {
@@ -186,6 +192,7 @@ COMPONENTS = [
             "0019-add-participial-person-nominals.patch",
             "0023-add-source-backed-c5-primary-verb-stems.patch",
             "0024-add-source-backed-c5-primary-verb-stems-2.patch",
+            "0038-add-modern-verb-derived-forms.patch",
         ],
     },
     {
