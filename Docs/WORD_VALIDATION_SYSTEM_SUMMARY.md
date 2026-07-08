@@ -411,6 +411,18 @@ Adds 76 multi-source source-backed name/name+noun candidates. Candidates require
 
 Representative examples include `சீனா`, `கோவா`, `சீதை`, `தமிழ்நாடு`, `ஜப்பான்`, `கேரளம்`, `பிள்ளையார்`, and `சேலம்`. Vuizur-only names and unsupported foreign-final consonant stems such as `பாரிஸ்` are intentionally deferred.
 
+### `0026-add-common-function-particles.patch`
+
+File: `fst/patches/0026-add-common-function-particles.patch`
+
+Adds common dictionary-backed function words to the particle FST: `என` as a complementizer, `மட்டும்` as a postposition/particle, and `இல்லை` as a copular/negative function word. These were already present in the static dictionary from lexical sources but previously lacked runtime FST analyses.
+
+### `0027-add-common-adverb-een.patch`
+
+File: `fst/patches/0027-add-common-adverb-een.patch`
+
+Adds `ஏன்` as an adverb in the adverb FST.
+
 ### `0025-add-noun-additive-um.patch`
 
 File: `fst/patches/0025-add-noun-additive-um.patch`

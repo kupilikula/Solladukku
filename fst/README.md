@@ -79,6 +79,7 @@ Covers:
 - source-backed C5 primary-stem verb tranche 3 from `0023-add-source-backed-c5-primary-verb-stems.patch`, covering 4,388 reviewed stems derived from lexical `தல்` / `த்தல்` lemmas backed by Tamil Lexicon and Tamil Wiktionary titles, with representatives such as `திறக்கு`, `உள்ளடக்கு`, `குணமாக்கு`, and `பொறுக்கு`
 - source-backed C5 primary-stem verb tranche 4 from `0024-add-source-backed-c5-primary-verb-stems-2.patch`, covering 262 post-`0023` tier-1 stems, with representatives such as `கணக்கிடு`, `உயிர்த்தெழு`, `அறிவுறு`, and `கையைப்பிடித்திழு`
 - productive plural nominative additive/enclitic `உம்` noun coverage from `0025-add-noun-additive-um.patch`, including forms such as `பெண்களும்`, `ஆண்களும்`, `மரங்களும்`, and `மாணவர்களும்`
+- common function-word FST coverage from `0026-add-common-function-particles.patch` and `0027-add-common-adverb-een.patch`, covering `என`, `மட்டும்`, `இல்லை`, and `ஏன்`
 - irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளார்`, `உள்ளார்கள்`, and ambiguous `உண்டு`
 - Dictionary gold include/exclude checks run with `python3 fst/tests/run_fst_regressions.py --check-dictionary` (included in `npm run dict:build`)
 

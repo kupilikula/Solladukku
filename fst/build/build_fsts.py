@@ -61,6 +61,7 @@ COMPONENTS = [
         "output": "adv.fst",
         "patches": [
             "0020-add-lexicon-adverb-illaakkaattil.patch",
+            "0027-add-common-adverb-een.patch",
         ],
     },
     {
@@ -68,6 +69,9 @@ COMPONENTS = [
         "zip": "ThamizhiMorph-Particles.zip",
         "entry": "tamil-part.foma",
         "output": "part.fst",
+        "patches": [
+            "0026-add-common-function-particles.patch",
+        ],
     },
     {
         "name": "verb-c3",

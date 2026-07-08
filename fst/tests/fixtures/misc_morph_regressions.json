@@ -1,0 +1,16 @@
+{
+  "models": {
+    "part.fst": {
+      "must_analyze": {
+        "என": "என+comp",
+        "மட்டும்": "மட்டும்+pp-particle",
+        "இல்லை": "இல்லை+cop"
+      }
+    },
+    "adv.fst": {
+      "must_analyze": {
+        "ஏன்": "ஏன்+adv"
+      }
+    }
+  }
+}

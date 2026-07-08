@@ -165,6 +165,7 @@ Current patch stack also includes source-backed noun/verb coverage and irregular
 - `0023-add-source-backed-c5-primary-verb-stems.patch`: adds a 4,388-entry C5 primary-stem tranche derived from fresh gap triage of lexical `தல்` / `த்தல்` verb lemmas backed by both Tamil Lexicon and Tamil Wiktionary titles.
 - `0024-add-source-backed-c5-primary-verb-stems-2.patch`: adds a smaller 262-entry post-`0023` C5 primary-stem tranche from the remaining tier-1 source-backed verb gaps.
 - `0025-add-noun-additive-um.patch`: adds productive plural nominative additive/enclitic `உம்` noun forms such as `பெண்களும்`, `ஆண்களும்`, `மரங்களும்`, and `மாணவர்களும்`.
+- `0026-add-common-function-particles.patch` and `0027-add-common-adverb-een.patch`: add FST-backed analyses for common function words `என`, `மட்டும்`, `இல்லை`, and `ஏன்`.
 
 ## Current Code Integration Details
 

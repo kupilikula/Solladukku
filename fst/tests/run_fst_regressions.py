@@ -21,6 +21,7 @@ HEURISTIC_FIXTURE_PATH = ROOT / "fst" / "tests" / "fixtures" / "heuristic_class_
 WIKTIONARY_REVIEW_FIXTURE_PATH = ROOT / "fst" / "tests" / "fixtures" / "wiktionary_resolution_regressions.json"
 WIKTIONARY_UNKNOWN_REVIEW_PATH = ROOT / "fst" / "tests" / "fixtures" / "wiktionary_unknown_review_candidates.json"
 FULL_MODE_FIXTURE_PATH = ROOT / "fst" / "tests" / "fixtures" / "full_mode_regressions.json"
+MISC_FIXTURE_PATH = ROOT / "fst" / "tests" / "fixtures" / "misc_morph_regressions.json"
 NOUN_FST_CANDIDATES = [
     ROOT / "build" / "fst-models" / "noun.fst",
     ROOT / "server" / "fst-models" / "noun.fst",
@@ -338,6 +339,22 @@ def main() -> None:
                 fail(f"Verb forward analysis miss in {model_name}: {word} returned +?")
             verb_good_count += 1
 
+    misc_fixture = json.loads(MISC_FIXTURE_PATH.read_text(encoding="utf-8"))
+    misc_good_count = 0
+    for model_name, model_fixture in misc_fixture.get("models", {}).items():
+        model_path = resolve_fst_model(model_name)
+        expected = model_fixture.get("must_analyze", {})
+        words = list(expected)
+        results = run_flookup_with_model(model_path, words, inverse=False)
+        for word, required_analysis in expected.items():
+            analyses = set(results.get(word, []))
+            if required_analysis not in analyses:
+                fail(
+                    f"Misc morphology miss in {model_name}: "
+                    f"{word} missing {required_analysis} (got {sorted(analyses)})"
+                )
+            misc_good_count += 1
+
     if leaked_bad and args.check_dictionary:
         ensure_file(DICT_FILE, "dictionary")
         dictionary_words = set(DICT_FILE.read_text(encoding="utf-8").splitlines())
@@ -405,6 +422,7 @@ def main() -> None:
     print("PASS: FST regressions")
     print(f"PASS: inverse checks={len(inverse_pairs)} forward-good={len(forward_good)}")
     print(f"PASS: verb forward-good={verb_good_count}")
+    print(f"PASS: misc morphology checks={misc_good_count}")
     print(f"PASS: rejected-bad={len(rejected_bad)} leaked-bad={len(leaked_bad)}")
     if args.check_dictionary:
         print("PASS: dictionary include/exclude checks")

@@ -4,8 +4,8 @@
     "class": "adj.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 119,
-    "predicted_lemmas": 119,
+    "normalized_or_predicted_inputs": 115,
+    "predicted_lemmas": 115,
     "sample_added": [],
     "templates_used": 3
   },
@@ -23,8 +23,8 @@
     "class": "noun.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 74161,
-    "predicted_lemmas": 74161,
+    "normalized_or_predicted_inputs": 74158,
+    "predicted_lemmas": 74158,
     "sample_added": [],
     "templates_used": 17
   },
