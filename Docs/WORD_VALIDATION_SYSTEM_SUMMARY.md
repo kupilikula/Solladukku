@@ -539,6 +539,14 @@ File: `fst/patches/0046-add-c4-u-final-future-forms.patch`
 
 Adds a narrow C4 helper lexicon for `உ`-final future/adjectival `-உம்` forms where the base C4 past/present paradigm already works but the surface future form was missing. The patch currently covers `விழும்` and `எழும்`, while preserving existing C4 analyses such as `விழுந்தது`, `எழுந்தது`, `சேர்ந்தார்`, and `அடைந்தோர்`.
 
+### `0047-add-noun-translative-and-singular-additive.patch`
+
+File: `fst/patches/0047-add-noun-translative-and-singular-additive.patch`
+
+Adds the noun tag `+trans` for translative/adverbial `-ஆக` forms and extends singular nominative additive `+add` coverage beyond the earlier plural-only `0025` patch. Covered audit examples include `மரமும்`, `எண்ணிக்கையும்`, `புலியும்`, `மாணவனும்`, `மரமாக`, `காரணமாக`, `இயக்குநராக`, and `எண்ணிக்கையாக`.
+
+The patch intentionally avoids `உ`-final translative forms such as `காடாக`, `குறைபாடாக`, and `ஆறாக`, because simple suffix addition produced malformed intermediate surfaces. Those need a separate final-vowel replacement rule. C10 forms such as `பொன்னும்` / `பொன்னாக` are also deferred pending a class-specific orthographic rule.
+
 ### `0025-add-noun-additive-um.patch`
 
 File: `fst/patches/0025-add-noun-additive-um.patch`

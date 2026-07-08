@@ -93,6 +93,7 @@ Covers:
 - audit-backed common noun coverage from `0044-add-audit-backed-common-noun-coverage.patch`, covering reviewed tokenizer-audit nouns such as `ஓட்டம்`, `விற்பனை`, `குறைபாடு`, and `இயக்குநர்`
 - audit-backed attributive adjective coverage from `0045-add-audit-backed-adjective-forms.patch`, covering `தேசியக்`, `நீர்வாழ்`, and `துடுப்பாட்ட`
 - C4 `உ`-final future/adjectival coverage from `0046-add-c4-u-final-future-forms.patch`, covering forms such as `விழும்` and `எழும்` while preserving existing C4 past forms such as `விழுந்தது`
+- noun singular additive and translative coverage from `0047-add-noun-translative-and-singular-additive.patch`, covering forms such as `மரமும்`, `எண்ணிக்கையும்`, `மரமாக`, `காரணமாக`, and `இயக்குநராக`; `உ`-final translatives such as `காடாக` remain deferred pending a proper final-vowel replacement rule
 - irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளனர்`, `உள்ளார்`, `உள்ளார்கள்`, and ambiguous `உண்டு`
 - Dictionary gold include/exclude checks run with `python3 fst/tests/run_fst_regressions.py --check-dictionary` (included in `npm run dict:build`)
 

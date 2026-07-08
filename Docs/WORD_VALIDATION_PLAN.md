@@ -179,6 +179,7 @@ Current patch stack also includes source-backed noun/verb coverage and irregular
 - `0044-add-audit-backed-common-noun-coverage.patch`: adds a small reviewed corpus-audit noun lexicon for high-frequency common nouns such as `ஓட்டம்`, `விற்பனை`, `குறைபாடு`, and `இயக்குநர்`.
 - `0045-add-audit-backed-adjective-forms.patch`: adds reviewed attributive adjective forms found in the tokenizer audit, including `தேசியக்`, `நீர்வாழ்`, and `துடுப்பாட்ட`.
 - `0046-add-c4-u-final-future-forms.patch`: adds a narrow C4 helper lexicon for `உ`-final future/adjectival forms such as `விழும்` and `எழும்`, without replacing the existing C4 past/present paradigm.
+- `0047-add-noun-translative-and-singular-additive.patch`: adds noun singular additive `-உம்` coverage and translative/adverbial `-ஆக` coverage for class patterns that can be generated without malformed surfaces. Covered audit examples include `எண்ணிக்கையும்`, `மரமும்`, `காரணமாக`, and `இயக்குநராக`; `உ`-final translatives such as `காடாக` remain a separate rewrite-rule task.
 
 ## Current Code Integration Details
 

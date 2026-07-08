@@ -147,6 +147,38 @@
     {
       "surface": "மாணவர்களும்",
       "analysis": "மாணவன்+noun+pl+nom+add"
+    },
+    {
+      "surface": "மரமும்",
+      "analysis": "மரம்+noun+nom+add"
+    },
+    {
+      "surface": "எண்ணிக்கையும்",
+      "analysis": "எண்ணிக்கை+noun+nom+add"
+    },
+    {
+      "surface": "புலியும்",
+      "analysis": "புலி+noun+nom+add"
+    },
+    {
+      "surface": "மாணவனும்",
+      "analysis": "மாணவன்+noun+nom+add"
+    },
+    {
+      "surface": "மரமாக",
+      "analysis": "மரம்+noun+trans"
+    },
+    {
+      "surface": "காரணமாக",
+      "analysis": "காரணம்+noun+trans"
+    },
+    {
+      "surface": "இயக்குநராக",
+      "analysis": "இயக்குநர்+noun+trans"
+    },
+    {
+      "surface": "எண்ணிக்கையாக",
+      "analysis": "எண்ணிக்கை+noun+trans"
     }
   ],
   "analysis_must_recognize": [
@@ -197,7 +229,15 @@
     "பெண்களும்",
     "ஆண்களும்",
     "மரங்களும்",
-    "மாணவர்களும்"
+    "மாணவர்களும்",
+    "மரமும்",
+    "எண்ணிக்கையும்",
+    "புலியும்",
+    "மாணவனும்",
+    "மரமாக",
+    "காரணமாக",
+    "இயக்குநராக",
+    "எண்ணிக்கையாக"
   ],
   "analysis_should_reject": [
     "திருமகன்னை",
