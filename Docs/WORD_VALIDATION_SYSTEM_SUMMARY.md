@@ -423,6 +423,18 @@ File: `fst/patches/0027-add-common-adverb-een.patch`
 
 Adds `ஏன்` as an adverb in the adverb FST.
 
+### `0028-add-deictic-adverb-forms.patch`
+
+File: `fst/patches/0028-add-deictic-adverb-forms.patch`
+
+Adds semantically tagged deictic adverb coverage for common proximal, distal, and interrogative time/situation forms such as `இப்பொழுது`, `அப்பொழுது`, `எப்பொழுது`, `இப்போது`, `எப்போது`, `இம்மாசம்`, and `இந்நிலையில்`. These analyses expose tags such as `dem`, `prox`, `dist`, `inter`, `time`, and `situation`. The patch also removes redundant plain `+adv` entries for the standard time forms so runtime analysis keeps the richer deictic reading without duplicate generic analyses.
+
+### `0029-add-deictic-adjective-forms.patch`
+
+File: `fst/patches/0029-add-deictic-adjective-forms.patch`
+
+Adds semantically tagged deictic adjective coverage for type/kind modifiers such as `இவ்வகை`, `அவ்வகை`, and `எவ்வகை`, exposing `dem`, proximity/interrogative, `type`, and `adj` tags.
+
 ### `0025-add-noun-additive-um.patch`
 
 File: `fst/patches/0025-add-noun-additive-um.patch`

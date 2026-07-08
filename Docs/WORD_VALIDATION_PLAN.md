@@ -166,6 +166,7 @@ Current patch stack also includes source-backed noun/verb coverage and irregular
 - `0024-add-source-backed-c5-primary-verb-stems-2.patch`: adds a smaller 262-entry post-`0023` C5 primary-stem tranche from the remaining tier-1 source-backed verb gaps.
 - `0025-add-noun-additive-um.patch`: adds productive plural nominative additive/enclitic `உம்` noun forms such as `பெண்களும்`, `ஆண்களும்`, `மரங்களும்`, and `மாணவர்களும்`.
 - `0026-add-common-function-particles.patch` and `0027-add-common-adverb-een.patch`: add FST-backed analyses for common function words `என`, `மட்டும்`, `இல்லை`, and `ஏன்`.
+- `0028-add-deictic-adverb-forms.patch` and `0029-add-deictic-adjective-forms.patch`: add semantically tagged deictic adverb/adjective analyses for forms such as `இப்பொழுது`, `எப்பொழுது`, `இந்நிலையில்`, and `இவ்வகை`, while avoiding redundant generic `+adv` analyses for the time adverbs.
 
 ## Current Code Integration Details
 

@@ -53,6 +53,9 @@ COMPONENTS = [
         "zip": "ThamizhiMorph-Adjectives.zip",
         "entry": "__generated_adj_build.foma",
         "output": "adj.fst",
+        "patches": [
+            "0029-add-deictic-adjective-forms.patch",
+        ],
     },
     {
         "name": "adv",
@@ -62,6 +65,7 @@ COMPONENTS = [
         "patches": [
             "0020-add-lexicon-adverb-illaakkaattil.patch",
             "0027-add-common-adverb-een.patch",
+            "0028-add-deictic-adverb-forms.patch",
         ],
     },
     {

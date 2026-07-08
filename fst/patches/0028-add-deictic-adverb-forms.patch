@@ -1,0 +1,59 @@
+--- tamil-adverbs.lexc
++++ tamil-adverbs.lexc
+@@ -1,13 +1,28 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r 
++Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r +dem +prox +dist +inter +time +situation
+ 
+ LEXICON Root
+ adverbs ;
+ 
+ 
+ LEXICON adverbs
++இப்பொழுது+dem+prox+time:இப்பொழுது	 adverb; 
++அப்பொழுது+dem+dist+time:அப்பொழுது	 adverb; 
++எப்பொழுது+dem+inter+time:எப்பொழுது	 adverb; 
++இப்போது+dem+prox+time:இப்போது	 adverb; 
++அப்போது+dem+dist+time:அப்போது	 adverb; 
++எப்போது+dem+inter+time:எப்போது	 adverb; 
++இம்மாசம்+dem+prox+time:இம்மாசம்	 adverb; 
++அம்மாசம்+dem+dist+time:அம்மாசம்	 adverb; 
++எம்மாசம்+dem+inter+time:எம்மாசம்	 adverb; 
++இம்மாதம்+dem+prox+time:இம்மாதம்	 adverb; 
++அம்மாதம்+dem+dist+time:அம்மாதம்	 adverb; 
++எம்மாதம்+dem+inter+time:எம்மாதம்	 adverb; 
++இந்நிலையில்+dem+prox+situation:இந்நிலையில்	 adverb; 
++அந்நிலையில்+dem+dist+situation:அந்நிலையில்	 adverb; 
++எந்நிலையில்+dem+inter+situation:எந்நிலையில்	 adverb; 
+ இல்லாக்காட்டில்	 adverb; 
+ ஏன்	 adverb; 
+ சொல்லப்போனால்	 adverb; 
+@@ -616,8 +631,6 @@
+ என்றால்	 adverb; 
+ எவ்வாறு	 adverb; 
+ எலும்பும்தோலுமாக	 adverb; 
+-எப்போது	 adverb; 
+-எப்பொழுது	 adverb; 
+ எப்படி	 adverb; 
+ எதேச்சையாக	 adverb; 
+ எதிரே	 adverb; 
+@@ -679,8 +692,6 @@
+ இல்லாமல்	 adverb; 
+ இருந்தபோதிலும்கூட	 adverb; 
+ இரவோடு-இரவாக	 adverb; 
+-இப்போது	 adverb; 
+-இப்பொழுது	 adverb; 
+ இப்படி	 adverb; 
+ இந்நேரம்	 adverb; 
+ இதுவரை	 adverb; 
+@@ -741,8 +752,6 @@
+ அதிகளவு	 adverb; 
+ அப்போதைக்கு	 adverb; 
+ அப்போதைக்கப்போது	 adverb; 
+-அப்போது	 adverb; 
+-அப்பொழுது	 adverb; 
+ அப்புறம்	 adverb; 
+ அப்பால்	 adverb; 
+ அப்படியே	 adverb; 

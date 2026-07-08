@@ -1,0 +1,20 @@
+--- tamil-adjectives.lexc
++++ tamil-adjectives.lexc
+@@ -1,13 +1,16 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r 
++Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r +dem +prox +dist +inter +type
+ 
+ LEXICON Root
+ adjectives ;
+ 
+ 
+ LEXICON adjectives
++இவ்வகை+dem+prox+type:இவ்வகை	 adjective; 
++அவ்வகை+dem+dist+type:அவ்வகை	 adjective; 
++எவ்வகை+dem+inter+type:எவ்வகை	 adjective; 
+ 
+ ஆச்சர்யப்பட்ட	 adjective; 
+ வட்டம்	 adjective; 

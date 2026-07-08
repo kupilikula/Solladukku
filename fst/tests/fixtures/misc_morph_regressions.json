@@ -9,7 +9,22 @@
     },
     "adv.fst": {
       "must_analyze": {
-        "ஏன்": "ஏன்+adv"
+        "ஏன்": "ஏன்+adv",
+        "இப்பொழுது": "இப்பொழுது+dem+prox+time+adv",
+        "அப்பொழுது": "அப்பொழுது+dem+dist+time+adv",
+        "எப்பொழுது": "எப்பொழுது+dem+inter+time+adv",
+        "இப்போது": "இப்போது+dem+prox+time+adv",
+        "அப்போது": "அப்போது+dem+dist+time+adv",
+        "எப்போது": "எப்போது+dem+inter+time+adv",
+        "இம்மாசம்": "இம்மாசம்+dem+prox+time+adv",
+        "இந்நிலையில்": "இந்நிலையில்+dem+prox+situation+adv"
+      }
+    },
+    "adj.fst": {
+      "must_analyze": {
+        "இவ்வகை": "இவ்வகை+dem+prox+type+adj",
+        "அவ்வகை": "அவ்வகை+dem+dist+type+adj",
+        "எவ்வகை": "எவ்வகை+dem+inter+type+adj"
       }
     }
   }
