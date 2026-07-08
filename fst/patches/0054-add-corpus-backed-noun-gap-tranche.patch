@@ -1,0 +1,50 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -18687,6 +18687,9 @@
+ ! Corpus-backed common noun coverage tranche.
+ உடற்பயிற்சி	C2SgRoot;
+ உற்பத்தி	C2SgRoot;
++எடை	C2SgRoot;
++திருப்புல்லாணி	C2SgRoot;
++பரங்கிப்பேட்டை	C2SgRoot;
+ உள்ளாட்சி	C2SgRoot;
+ ஊராட்சி	C2SgRoot;
+ நபி	C2SgRoot;
+@@ -24701,6 +24704,10 @@
+ வேதியியல்	C4SgRoot;
+ ! Corpus-backed common noun coverage tranche.
+ கொள்முதல்	C4SgRoot;
++உப்பள	C4SgRoot;
++தாக்கல்	C4SgRoot;
++தாக்குதல்	C4SgRoot;
++வழங்கல்	C4SgRoot;
+ செயற்கைகோள்	C4SgRoot;
+ செயற்கைக்கோள்	C4SgRoot;
+ தேர்தல்	C4SgRoot;
+@@ -25141,6 +25148,7 @@
+ முல்லைக்காடு	C6SgRoot;
+ மென்காடு	C6SgRoot;
+ மேடு	C6SgRoot;
++கெடிமேடு	C6SgRoot;
+ வடகாடு	C6SgRoot;
+ வண்காடு	C6SgRoot;
+ வளர்காடு	C6SgRoot;
+@@ -49872,6 +49880,8 @@
+ அழுத்தம்	C15SgRoot;
+ நல்லறம்	C15SgRoot;
+ பாலம்	C15SgRoot;
++சின்னம்	C15SgRoot;
++ராமநாதபுரம்	C15SgRoot;
+ உப்பளம்	C15SgRoot;
+ இவ்வசனம்	C15SgRoot;
+ கிராமப்புறம்	C15SgRoot;
+@@ -51332,6 +51342,9 @@
+ தனியார்	C16SgRoot;
+ மன்னார்	C16SgRoot;
+ பேப்பர்	C16SgRoot;
++நகர்	C16SgRoot;
++நிறுவனர்	C16SgRoot;
++சுல்தான்	C16SgRoot;
+ ! Selective corpus-backed loanword nouns.
+ கலெக்டர்	C16SgRoot;
+ குக்கர்	C16SgRoot;

@@ -1,0 +1,18 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -92,6 +92,7 @@ LEXICON AuditBackedCommonNounSg
+ ! Common nouns promoted from tokenizer/HF audit review.
+ விற்பனை	C2SgRoot;
+ குறைபாடு	C7SgRoot;
++இங்கிலாந்து	C7SgRoot;
+ ஓட்டம்	C15SgRoot;
+ இயக்குநர்	C16SgRoot;
+ 
+@@ -25421,6 +25422,7 @@ LEXICON C6TTUSg
+ முரட்டு	C6TTUSgRoot;
+ மொட்டு	C6TTUSgRoot;
+ விளையாட்டு	C6TTUSgRoot;
++ஜல்லிக்கட்டு	C6TTUSgRoot;
+ 
+ 
+ ! Source-backed name cleanup tranche: multi-source name/name+noun candidates.

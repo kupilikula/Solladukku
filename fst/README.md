@@ -97,6 +97,7 @@ Covers:
 - oblique/final-short-u translative coverage from `0048-add-noun-oblique-translative-coverage.patch`, covering `காடாக`, `குறைபாடாக`, `ஆறாக`, plus C10 alternate-stem additive/translative forms `பொன்னும்` and `பொன்னாக`
 - corpus-backed modern verb coverage from `0049-add-corpus-backed-modern-verb-coverage.patch` and `0050-add-c4-modern-human-plural-verb-coverage.patch`, covering `செயல்பட்டு`, `உயிரிழந்தனர்`, `ஏற்பட்டுள்ளது`, `வந்துள்ளது`, `தெரிவித்துள்ளார்`, and `அனுப்பப்பட்டனர்` through FST roots/rules rather than supplemental surface forms
 - follow-up corpus-backed noun and verb gap coverage from `0051-add-corpus-backed-common-noun-gaps.patch`, `0052-add-c4-modern-nonfinite-verb-forms.patch`, and `0053-add-c2-koll-modern-infinitive.patch`, covering forms such as `நபிமார்கள்`, `இவ்வசனங்கள்`, `கிராமப்புறங்களில்`, `பிரதானமாக`, `தெரிய`, `நடிக்க`, `கொள்ள`, and `சொன்ன`
+- corpus-backed noun/function gap coverage from `0054-add-corpus-backed-noun-gap-tranche.patch`, `0055-add-focused-adverb-form.patch`, `0056-add-indefinite-quantifier-particle.patch`, and `0057-add-remaining-corpus-noun-roots.patch`, covering forms such as `பரங்கிப்பேட்டை`, `ராமநாதபுரத்தில்`, `இங்கிலாந்து`, `நகரில்`, `சின்னத்தை`, `தாக்குதலுக்கு`, `ஜல்லிக்கட்டு`, `அதனால்தான்`, and `ஏதேனும்`
 - irregular existential `உள்` forms such as `உள்ளது`, `உள்ளன`, `உள்ளனர்`, `உள்ளார்`, `உள்ளார்கள்`, and ambiguous `உண்டு`
 - Dictionary gold include/exclude checks run with `python3 fst/tests/run_fst_regressions.py --check-dictionary` (included in `npm run dict:build`)
 

@@ -23,8 +23,8 @@
     "class": "noun.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 74151,
-    "predicted_lemmas": 74151,
+    "normalized_or_predicted_inputs": 74144,
+    "predicted_lemmas": 74144,
     "sample_added": [],
     "templates_used": 17
   },
@@ -38,12 +38,12 @@
     "templates_used": 0
   },
   {
-    "accepted_added": 1187938,
+    "accepted_added": 1187809,
     "class": "verb-c-rest.fst",
-    "forward_validated": 1187938,
-    "generated_candidates": 1187938,
-    "normalized_or_predicted_inputs": 82835,
-    "predicted_lemmas": 12564,
+    "forward_validated": 1187809,
+    "generated_candidates": 1187809,
+    "normalized_or_predicted_inputs": 82829,
+    "predicted_lemmas": 12563,
     "sample_added": [
       "அஃக",
       "அஃகக்",
@@ -78,8 +78,8 @@
     "class": "verb-c11.fst",
     "forward_validated": 146815,
     "generated_candidates": 146815,
-    "normalized_or_predicted_inputs": 82696,
-    "predicted_lemmas": 12415,
+    "normalized_or_predicted_inputs": 82690,
+    "predicted_lemmas": 12414,
     "sample_added": [
       "அகலி",
       "அகலிக்க",
@@ -114,8 +114,8 @@
     "class": "verb-c12.fst",
     "forward_validated": 9377,
     "generated_candidates": 9377,
-    "normalized_or_predicted_inputs": 33220,
-    "predicted_lemmas": 12415,
+    "normalized_or_predicted_inputs": 33218,
+    "predicted_lemmas": 12414,
     "sample_added": [
       "அச",
       "அசக்க",
@@ -150,8 +150,8 @@
     "class": "verb-c3.fst",
     "forward_validated": 1875,
     "generated_candidates": 1875,
-    "normalized_or_predicted_inputs": 33220,
-    "predicted_lemmas": 12415,
+    "normalized_or_predicted_inputs": 33218,
+    "predicted_lemmas": 12414,
     "sample_added": [
       "அகன்ற",
       "அகன்றது",
@@ -186,8 +186,8 @@
     "class": "verb-c4.fst",
     "forward_validated": 45600,
     "generated_candidates": 45600,
-    "normalized_or_predicted_inputs": 33220,
-    "predicted_lemmas": 12415,
+    "normalized_or_predicted_inputs": 33218,
+    "predicted_lemmas": 12414,
     "sample_added": [
       "அகழ",
       "அகழக்",
@@ -222,8 +222,8 @@
     "class": "verb-c62.fst",
     "forward_validated": 868,
     "generated_candidates": 868,
-    "normalized_or_predicted_inputs": 33220,
-    "predicted_lemmas": 12415,
+    "normalized_or_predicted_inputs": 33218,
+    "predicted_lemmas": 12414,
     "sample_added": [
       "இகாத",
       "இகாதீர்கள்",

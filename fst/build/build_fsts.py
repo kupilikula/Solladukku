@@ -53,6 +53,8 @@ COMPONENTS = [
             "0047-add-noun-translative-and-singular-additive.patch",
             "0048-add-noun-oblique-translative-coverage.patch",
             "0051-add-corpus-backed-common-noun-gaps.patch",
+            "0054-add-corpus-backed-noun-gap-tranche.patch",
+            "0057-add-remaining-corpus-noun-roots.patch",
         ],
     },
     {
@@ -77,6 +79,7 @@ COMPONENTS = [
             "0028-add-deictic-adverb-forms.patch",
             "0031-add-corpus-backed-common-adverbs.patch",
             "0036-add-corpus-backed-adverbial-stems.patch",
+            "0055-add-focused-adverb-form.patch",
         ],
     },
     {
@@ -90,6 +93,7 @@ COMPONENTS = [
             "0034-add-selective-abbreviation-particles.patch",
             "0037-add-complementizer-case-forms.patch",
             "0042-add-comparative-kkum-particle.patch",
+            "0056-add-indefinite-quantifier-particle.patch",
         ],
     },
     {

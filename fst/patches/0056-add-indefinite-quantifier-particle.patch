@@ -1,0 +1,19 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +modal +neg +exist +ques +prohib +abbrev +letter +acc +comparative +add
++Multichar_Symbols  +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +acc +comparative +add
+ 
+ LEXICON Root
+ abbreviations;
+@@ -35,6 +35,7 @@
+ எல்லா+quant+all+det:எல்லா #;
+ என்ன+pron+inter:என்ன #;
+ எத்தனை+quant+inter:எத்தனை #;
++ஏதேனும்+quant+indef+add:ஏதேனும் #;
+ அதே+dem+dist+same:அதே #;
+ அந்தந்த+dem+dist+distrib:அந்தந்த #;
+ இவ்வளவு+dem+prox+degree:இவ்வளவு #;

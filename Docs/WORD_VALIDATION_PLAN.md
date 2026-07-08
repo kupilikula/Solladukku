@@ -242,3 +242,9 @@ Files: `fst/patches/0051-add-corpus-backed-common-noun-gaps.patch`, `fst/patches
 
 Adds a small follow-up tranche from the post-`0050` tokenizer audit. The noun patch classifies common dictionary-backed lemmas such as `வசனம்`, `உள்ளாட்சி`, `ஊராட்சி`, `கிராமப்புறம்`, `பிரதானம்`, `இறைத்தூதர்`, and `ஒருங்கிணைப்பாளர்`, plus a narrow `நபி -> நபிமார்கள்` honorific plural continuation. The verb patches add modern non-finite/participial alternants for `தெரிய`, `நடிக்க`, `கொள்ள`, and `சொன்ன` using explicit FST continuations rather than tokenizer-only supplemental forms.
 
+### `0054`-`0057` corpus-backed noun and function gap patches
+
+Files: `fst/patches/0054-add-corpus-backed-noun-gap-tranche.patch`, `fst/patches/0055-add-focused-adverb-form.patch`, `fst/patches/0056-add-indefinite-quantifier-particle.patch`, `fst/patches/0057-add-remaining-corpus-noun-roots.patch`
+
+Adds another focused tranche from the tokenizer corpus audit. The noun patches classify dictionary-backed common/place roots into existing noun classes, including `பரங்கிப்பேட்டை`, `சுல்தான்`, `ராமநாதபுரம்`, `உப்பள`, `திருப்புல்லாணி`, `இங்கிலாந்து`, `நகர்`, `சின்னம்`, `கெடிமேடு`, `எடை`, `தாக்குதல்`, `நிறுவனர்`, `தாக்கல்`, `வழங்கல்`, and `ஜல்லிக்கட்டு`. The function patches add explicit FST tags for focused adverb `அதனால்தான்` and indefinite additive quantifier `ஏதேனும்`, preserving semantic tags instead of treating them as unknown surfaces.
+

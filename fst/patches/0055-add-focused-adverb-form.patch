@@ -1,0 +1,19 @@
+--- tamil-adverbs.lexc
++++ tamil-adverbs.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r +dem +prox +dist +inter +time +situation
++Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r +dem +prox +dist +inter +time +situation +foc
+ 
+ LEXICON Root
+ adverbs ;
+@@ -10,6 +10,7 @@
+ LEXICON adverbs
+ சுமார்	 adverb; 
+ அதனால்	 adverb; 
++அதனால்தான்+foc:அதனால்தான்	 adverb; 
+ கடுமையாக	 adverb; 
+ குறைவாக	 adverb; 
+ வலுவின்றி	 adverb; 

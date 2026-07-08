@@ -1,5 +1,5 @@
 {
-  "built_at_utc": "2026-07-08T16:07:12.663940+00:00",
+  "built_at_utc": "2026-07-08T16:49:16.012668+00:00",
   "submodule": {
     "path": "vendor/thamizhi-morph",
     "commit": "a296417ac603fd44eda35645369f1257d96bed89"
@@ -32,7 +32,9 @@
         "0044-add-audit-backed-common-noun-coverage.patch",
         "0047-add-noun-translative-and-singular-additive.patch",
         "0048-add-noun-oblique-translative-coverage.patch",
-        "0051-add-corpus-backed-common-noun-gaps.patch"
+        "0051-add-corpus-backed-common-noun-gaps.patch",
+        "0054-add-corpus-backed-noun-gap-tranche.patch",
+        "0057-add-remaining-corpus-noun-roots.patch"
       ]
     },
     {
@@ -58,7 +60,8 @@
         "0027-add-common-adverb-een.patch",
         "0028-add-deictic-adverb-forms.patch",
         "0031-add-corpus-backed-common-adverbs.patch",
-        "0036-add-corpus-backed-adverbial-stems.patch"
+        "0036-add-corpus-backed-adverbial-stems.patch",
+        "0055-add-focused-adverb-form.patch"
       ]
     },
     {
@@ -72,7 +75,8 @@
         "0032-add-pronoun-quantifier-function-coverage.patch",
         "0034-add-selective-abbreviation-particles.patch",
         "0037-add-complementizer-case-forms.patch",
-        "0042-add-comparative-kkum-particle.patch"
+        "0042-add-comparative-kkum-particle.patch",
+        "0056-add-indefinite-quantifier-particle.patch"
       ]
     },
     {
@@ -617,13 +621,29 @@
     {
       "file": "fst/patches/0053-add-c2-koll-modern-infinitive.patch",
       "sha256": "afdad14be8f09c13deaaecda0f259f7d2375c020aa1e104d630eefbbd39912b4"
+    },
+    {
+      "file": "fst/patches/0054-add-corpus-backed-noun-gap-tranche.patch",
+      "sha256": "de7d60ec6048faa4215d88a52a447e1bb1842720917c839f8a9f867c43ca4df1"
+    },
+    {
+      "file": "fst/patches/0055-add-focused-adverb-form.patch",
+      "sha256": "87a8d289dde964e6d427579f06bf7d4e91d7cf581fb2a8f3d2615b7eb9c291c5"
+    },
+    {
+      "file": "fst/patches/0056-add-indefinite-quantifier-particle.patch",
+      "sha256": "1e5e8b63c293cd01fb0a3eaf50af712229821b3543bd4403b3f808e743fe57e3"
+    },
+    {
+      "file": "fst/patches/0057-add-remaining-corpus-noun-roots.patch",
+      "sha256": "f9d5d95ca0811c6806f0727d66b52a4c2b3f6ff3d349d5f66b59ac2abe2877c4"
     }
   ],
   "outputs": [
     {
       "file": "adj.fst",
-      "sha256": "7dfbf3d25cce7e6ddf096991dc8ddd928ed760f65f3a89e519d72f8eb0942920",
-      "size_bytes": 7777,
+      "sha256": "df31e09ddddd3c411f64837ca64d0fda85343da179a247a4bdb12832b7182357",
+      "size_bytes": 7774,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -632,8 +652,8 @@
     },
     {
       "file": "adv.fst",
-      "sha256": "e12f338a3e1adbc361806fe4ff5b294351b6a515684ecb37c90df590dd546a2d",
-      "size_bytes": 14076,
+      "sha256": "4a828f2e772f4d41f68307cca2d8654160a092b2737a213b060a7b67d09aa22e",
+      "size_bytes": 14152,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -642,8 +662,8 @@
     },
     {
       "file": "noun.fst",
-      "sha256": "e39720c28e8b8babbbf8edb2026d9de320cb97b5917e50706dbdf1daa1265213",
-      "size_bytes": 193371,
+      "sha256": "b8710d9dfc6c788997ceafcaa0b93e50bed4e3cc1d38c6d7ad53ce0d22705e07",
+      "size_bytes": 193766,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -652,8 +672,8 @@
     },
     {
       "file": "part.fst",
-      "sha256": "2dfb977e8cc29fdcf87ec883eaff3a1468100db5db535c9291e22167606e0c76",
-      "size_bytes": 5405,
+      "sha256": "8877d1c19c2912714ee1db6d84c1aa93d210e71800404affb9e6a852e5b78995",
+      "size_bytes": 5483,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -672,8 +692,8 @@
     },
     {
       "file": "verb-c-rest.fst",
-      "sha256": "71dc2f18b71b27e7d92f433c80220ed4db40fd95a6aff052e60ca067c50e02a6",
-      "size_bytes": 174406,
+      "sha256": "29dab10fbbd67a13f7d998db6ec359672365f4e636404d58d66a20395061d50b",
+      "size_bytes": 174404,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -682,8 +702,8 @@
     },
     {
       "file": "verb-c11.fst",
-      "sha256": "7d179231cb3b7125a17ae318d703e3c5f381fdd6bfdebcfff83cc49127f4aa2d",
-      "size_bytes": 67111,
+      "sha256": "f47e01a9c640b324a0cc1050bf5cda6300a6186eb8d18ebbe17d94df707be7e2",
+      "size_bytes": 67108,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -692,7 +712,7 @@
     },
     {
       "file": "verb-c12.fst",
-      "sha256": "46c0698b5b16dd525b42ca78aa5fd4152dee1928edc9835c414461f03ffd5b3d",
+      "sha256": "8c3dbbd81acabae332f04740174be2a732add5e9d1b7b0e3f20c80d287afc38b",
       "size_bytes": 43900,
       "copied_to": [
         "build/fst-models",
@@ -702,7 +722,7 @@
     },
     {
       "file": "verb-c3.fst",
-      "sha256": "4c92336108b8d62c03cd85688e0ef72459b9d61e70cb18704633a059a3e4bebb",
+      "sha256": "97f06a89d6d2f13cf5d733a5a63215bd67775bd0f8326cea2af4a2260d177142",
       "size_bytes": 12755,
       "copied_to": [
         "build/fst-models",
@@ -712,7 +732,7 @@
     },
     {
       "file": "verb-c4.fst",
-      "sha256": "696bd1889d489ca7591df9b84776ffbef2b151b0e849369a5469c3d4a46d6830",
+      "sha256": "5ae6cc6bbc830b0ffd9f5ec4751a700668c42efde89f593469147ea1ae79a76f",
       "size_bytes": 39802,
       "copied_to": [
         "build/fst-models",
@@ -722,7 +742,7 @@
     },
     {
       "file": "verb-c62.fst",
-      "sha256": "656cffeaa0f672b5ae6d8a6441911b9f93f3b53cb96d314fded3c89175f29056",
+      "sha256": "8c1e7f1c2e4be7d894b100f3a9bb889163e01d027e5af3f8e9d83deb13248411",
       "size_bytes": 12415,
       "copied_to": [
         "build/fst-models",
