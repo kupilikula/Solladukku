@@ -277,3 +277,11 @@ Adds a narrow passive-perfect neuter continuation for reviewed tokenizer audit v
 Files: `fst/patches/0063-add-reviewed-c11-verb-root-coverage.patch`, `fst/patches/0064-add-reviewed-modern-perfect-hooks.patch`
 
 Adds a systematic C11 verb-root tranche for 49 Tamil Lexicon `*-வி-த்தல்` lemmas that were not recognized by the runtime FST, plus the reviewed corpus-backed compound root `இசையமை`. Representative generated analyses include `அறிவிக்கின்றன`, `அறிவித்தோம்`, `அறிவித்தது`, `விடுவித்தது`, and `தெளிவிக்க`. The modern-hook patch adds focused perfect/passive-perfect entries for audited forms `இசையமைத்துள்ளார்` and `அறிவிக்கப்பட்டுள்ளது`. Passive verbal-nominal negative forms such as `அறிவிக்கப்படுவதில்லை` remain deferred to the broader passive-rule lane.
+### `0065`-`0070` class-level modern verb and function coverage
+
+Files: `fst/patches/0065-add-class-level-modern-perfect-and-verbal-nouns.patch`, `fst/patches/0066-add-passive-verbal-noun-negative-rule.patch`, `fst/patches/0067-add-complementizer-and-quantifier-family-coverage.patch`, `fst/patches/0068-add-focused-causal-adverb-family.patch`, `fst/patches/0069-add-reviewed-modern-bare-infinitives.patch`, `fst/patches/0070-add-c11-passive-family-coverage.patch`
+
+Converts several previously narrow tokenizer-audit fixes into broader FST rule/class coverage. The verb rules add C11 modern perfect and verbal-noun continuations, C3/C5 verbal-noun continuations, passive verbal-noun negative continuations for `CPadu61Vinf`, reviewed C4 bare-infinitive alternants, and generated C11 passive stems/perfect hooks. Representative covered forms include `அமைத்துள்ளார்`, `சமைத்துள்ளது`, `அமைப்பது`, `கூறுவது`, `செல்வது`, `எழுதுவது`, `அறிவிக்கப்படுவதில்லை`, `வழங்கப்படுவதில்லை`, `அனுமதிக்கப்பட்டுள்ளது`, `அழைக்கப்பட்டுள்ளது`, `புரிய`, `அறிய`, and `விரிய`.
+
+The function-word patches keep closed-class items semantically explicit: complementizer case/additive/sandhi forms such as `என்பதற்கு`, `என்பதில்`, `என்பதால்`, `என்பதன்`, `என்பதும்`, `எனச்`, and `எனத்`; indefinite quantifier `ஏதாவது`; and deictic focused causal adverbs `இதனால்தான்`, `அதனால்தான்`, and `எதனால்தான்`. The older plain `அதனால்தான்+foc+adv` reading is intentionally replaced by the richer `+dem+dist+foc+adv` analysis.
+

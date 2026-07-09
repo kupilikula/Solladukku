@@ -1,0 +1,13 @@
+--- tamil-adverbs.lexc
++++ tamil-adverbs.lexc
+@@ -10,7 +10,9 @@
+ LEXICON adverbs
+ சுமார்	 adverb; 
+ அதனால்	 adverb; 
+-அதனால்தான்+foc:அதனால்தான்	 adverb; 
++இதனால்தான்+dem+prox+foc:இதனால்தான்	 adverb; 
++அதனால்தான்+dem+dist+foc:அதனால்தான்	 adverb; 
++எதனால்தான்+dem+inter+foc:எதனால்தான்	 adverb; 
+ கடுமையாக	 adverb; 
+ குறைவாக	 adverb; 
+ வலுவின்றி	 adverb; 

@@ -1,0 +1,23 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -30,6 +30,7 @@
+ கினி C4Vinf;
+ துணி C4Vinf;
+ அறி C4Vinf;
++அறி:அறிய ModernBareInf;
+ குமி C4Vinf;
+ துமி C4Vinf;
+ இடி C4Vinf;
+@@ -97,10 +98,12 @@
+ பிறி C4Vinf;
+ வழி C4Vinf;
+ புரி C4Vinf;
++புரி:புரிய ModernBareInf;
+ விசி C4Vinf;
+ பொசி C4Vinf;
+ பொடி C4Vinf;
+ விரி C4Vinf;
++விரி:விரிய ModernBareInf;
+ பொலி C4Vinf;
+ பொதி C4Vinf;
+ விளி C4Vinf;

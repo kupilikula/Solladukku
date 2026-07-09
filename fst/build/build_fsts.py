@@ -82,6 +82,7 @@ COMPONENTS = [
             "0031-add-corpus-backed-common-adverbs.patch",
             "0036-add-corpus-backed-adverbial-stems.patch",
             "0055-add-focused-adverb-form.patch",
+            "0068-add-focused-causal-adverb-family.patch",
         ],
     },
     {
@@ -96,6 +97,7 @@ COMPONENTS = [
             "0037-add-complementizer-case-forms.patch",
             "0042-add-comparative-kkum-particle.patch",
             "0056-add-indefinite-quantifier-particle.patch",
+            "0067-add-complementizer-and-quantifier-family-coverage.patch",
         ],
     },
     {
@@ -115,6 +117,7 @@ COMPONENTS = [
             "0023-add-source-backed-c5-primary-verb-stems.patch",
             "0024-add-source-backed-c5-primary-verb-stems-2.patch",
             "0061-add-modern-present-finite-coverage.patch",
+            "0065-add-class-level-modern-perfect-and-verbal-nouns.patch",
         ],
     },
     {
@@ -136,6 +139,7 @@ COMPONENTS = [
             "0046-add-c4-u-final-future-forms.patch",
             "0050-add-c4-modern-human-plural-verb-coverage.patch",
             "0052-add-c4-modern-nonfinite-verb-forms.patch",
+            "0069-add-reviewed-modern-bare-infinitives.patch",
         ],
     },
     {
@@ -156,6 +160,7 @@ COMPONENTS = [
             "0024-add-source-backed-c5-primary-verb-stems-2.patch",
             "0063-add-reviewed-c11-verb-root-coverage.patch",
             "0039-add-c11-loan-verb-stems.patch",
+            "0065-add-class-level-modern-perfect-and-verbal-nouns.patch",
         ],
     },
     {
@@ -219,6 +224,9 @@ COMPONENTS = [
             "0061-add-modern-present-finite-coverage.patch",
             "0062-add-modern-passive-perfect-neuter-coverage.patch",
             "0064-add-reviewed-modern-perfect-hooks.patch",
+            "0065-add-class-level-modern-perfect-and-verbal-nouns.patch",
+            "0066-add-passive-verbal-noun-negative-rule.patch",
+            "0070-add-c11-passive-family-coverage.patch",
         ],
     },
     {

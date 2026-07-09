@@ -1,0 +1,37 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -1415,6 +1415,12 @@ LEXICON C11Vinf
+ +verb+fin+sim+strong+pres%=க்கின்ற்+euph%=அன்+1sg%=அன்:^க்கின்றனன் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+euph%=அன்+3sgm%=அன்:^க்கின்றனன் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+euph%=அன்+3sgf%=அள்:^க்கின்றனள் #;
+++verb+fin+complex+perfect+past%=த்+3sgn%=அது:^த்துள்ளது #;
+++verb+fin+complex+perfect+past%=த்+3sge%=அர்:^த்துள்ளனர் #;
+++verb+fin+complex+perfect+past%=த்+3sghe%=ஆர்:^த்துள்ளார் #;
+++verb+fin+complex+perfect+past%=த்+3ple%=ஆர்கள்:^த்துள்ளார்கள் #;
+++verb+nonfin+sim+verbalnoun%=அது:^ப்பது #;
+++verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^ப்பதும் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -114,6 +114,8 @@ LEXICON C3Vinf
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+1sg%=அன்:^கின்றனன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgm%=அன்:^கின்றனன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+++verb+nonfin+sim+verbalnoun%=அது:^வது #;
+++verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -6425,6 +6425,8 @@ LEXICON C5Vinf
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+1sg%=அன்:^கின்றனன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgm%=அன்:^கின்றனன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+++verb+nonfin+sim+verbalnoun%=அது:^வது #;
+++verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;

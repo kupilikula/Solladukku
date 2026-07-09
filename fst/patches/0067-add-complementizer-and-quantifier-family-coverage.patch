@@ -1,0 +1,34 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +acc +comparative +add
++Multichar_Symbols  +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add
+ 
+ LEXICON Root
+ abbreviations;
+@@ -36,6 +36,7 @@
+ என்ன+pron+inter:என்ன #;
+ எத்தனை+quant+inter:எத்தனை #;
+ ஏதேனும்+quant+indef+add:ஏதேனும் #;
++ஏதாவது+quant+indef:ஏதாவது #;
+ அதே+dem+dist+same:அதே #;
+ அந்தந்த+dem+dist+distrib:அந்தந்த #;
+ இவ்வளவு+dem+prox+degree:இவ்வளவு #;
+@@ -86,7 +87,14 @@
+ என  complimentiser;
+ என்பது  complimentiser;
+ என்பதை+comp+acc:என்பதை #;
++என்பதற்கு+comp+dat:என்பதற்கு #;
++என்பதில்+comp+loc:என்பதில் #;
++என்பதால்+comp+inst:என்பதால் #;
++என்பதன்+comp+gen:என்பதன் #;
++என்பதும்+comp+add:என்பதும் #;
+ எனக்+comp+sandhik:எனக் #;
++எனச்+comp+sandhic:எனச் #;
++எனத்+comp+sandhit:எனத் #;
+ க்கும்+pp-particle+comparative+add:க்கும் #;
+ 
+ LEXICON intensifiers

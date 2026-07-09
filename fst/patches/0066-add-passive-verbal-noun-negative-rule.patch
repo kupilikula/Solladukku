@@ -1,0 +1,11 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -83854,6 +83854,8 @@ LEXICON CPadu61Vinf
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+passive+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+passive+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+nonfin+complex+passive+verbalnoun%=அது:^வது #;
+++verb+nonfin+complex+passive+verbalnoun+neg%=இல்லை:^வதில்லை #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;

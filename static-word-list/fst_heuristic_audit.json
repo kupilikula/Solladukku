@@ -38,10 +38,10 @@
     "templates_used": 0
   },
   {
-    "accepted_added": 1193679,
+    "accepted_added": 1219185,
     "class": "verb-c-rest.fst",
-    "forward_validated": 1193679,
-    "generated_candidates": 1193679,
+    "forward_validated": 1219185,
+    "generated_candidates": 1219185,
     "normalized_or_predicted_inputs": 82829,
     "predicted_lemmas": 12563,
     "sample_added": [
@@ -71,13 +71,13 @@
       "அஃகினனள்",
       "அஃகினன்"
     ],
-    "templates_used": 1374
+    "templates_used": 1376
   },
   {
-    "accepted_added": 153179,
+    "accepted_added": 155549,
     "class": "verb-c11.fst",
-    "forward_validated": 153179,
-    "generated_candidates": 153179,
+    "forward_validated": 155549,
+    "generated_candidates": 155549,
     "normalized_or_predicted_inputs": 82690,
     "predicted_lemmas": 12414,
     "sample_added": [
@@ -107,7 +107,7 @@
       "அகலிக்கின்றாள்",
       "அகலிக்கின்றீர்"
     ],
-    "templates_used": 669
+    "templates_used": 675
   },
   {
     "accepted_added": 9377,
@@ -146,10 +146,10 @@
     "templates_used": 427
   },
   {
-    "accepted_added": 1890,
+    "accepted_added": 1920,
     "class": "verb-c3.fst",
-    "forward_validated": 1890,
-    "generated_candidates": 1890,
+    "forward_validated": 1920,
+    "generated_candidates": 1920,
     "normalized_or_predicted_inputs": 33218,
     "predicted_lemmas": 12414,
     "sample_added": [
@@ -179,13 +179,13 @@
       "அகலக்",
       "அகலச்"
     ],
-    "templates_used": 140
+    "templates_used": 142
   },
   {
-    "accepted_added": 45600,
+    "accepted_added": 45603,
     "class": "verb-c4.fst",
-    "forward_validated": 45600,
-    "generated_candidates": 45600,
+    "forward_validated": 45603,
+    "generated_candidates": 45603,
     "normalized_or_predicted_inputs": 33218,
     "predicted_lemmas": 12414,
     "sample_added": [
