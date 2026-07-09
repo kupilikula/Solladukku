@@ -266,3 +266,8 @@ File: `fst/patches/0061-add-modern-present-finite-coverage.patch`
 
 Adds focused modern present-finite coverage for reviewed tokenizer audit verb gaps. The patch adds short honorific present forms for C3/C8 roots, covering `செல்கிறார்` and `என்கிறார்`; adds a C5 human-plural `...கின்றனர்` continuation, covering `கூறுகின்றனர்`; and classifies source-backed `முற்படுதல்` as C5 productive stem `முற்படு`, covering `முற்படுகின்றனர்`. Deferred forms such as `தெரிந்துகொள்வது` and `எளிதாக்குவதும்` remain root/class acquisition gaps rather than verbal-noun continuation gaps.
 
+### `0062-add-modern-passive-perfect-neuter-coverage.patch`
+
+File: `fst/patches/0062-add-modern-passive-perfect-neuter-coverage.patch`
+
+Adds a narrow passive-perfect neuter continuation for reviewed tokenizer audit verb gaps whose bases are already recognized by the runtime FST. Covered examples include `உயர்த்தப்பட்டுள்ளது`, `தெரிவிக்கப்பட்டுள்ளது`, `தொகுக்கப்பட்டுள்ளது`, and `பாதிக்கப்பட்டுள்ளது`, all generated with explicit `passive+perfect` verb tags. Root/class gaps such as `இசையமைத்துள்ளார்` and `அறிவிக்கப்பட்டுள்ளது` remain deferred until their lemmas can be classified systematically.

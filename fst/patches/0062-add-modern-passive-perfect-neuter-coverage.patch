@@ -1,0 +1,21 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -6597,10 +6597,18 @@ LEXICON ClassVaaModern
+ செயல்படு:செயல்பட் ModernPattuPart;
+ தெரிவி:தெரிவித்துள்ள ModernPerfectFin;
+ 
++உயர்த்த:உயர்த்தப்பட்டுள்ள ModernPassivePerfectNeut;
++தெரிவிக்க:தெரிவிக்கப்பட்டுள்ள ModernPassivePerfectNeut;
++தொகுக்க:தொகுக்கப்பட்டுள்ள ModernPassivePerfectNeut;
++பாதிக்க:பாதிக்கப்பட்டுள்ள ModernPassivePerfectNeut;
++
+ LEXICON ModernVerbalNominal
+ +verb+nonfin+sim+verbalnoun%=அது:^து #;
+ +verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^தும் #;
+ 
++LEXICON ModernPassivePerfectNeut
+++verb+fin+complex+passive+perfect+past%=த்+3sgn%=அது:^து #;
++
+ LEXICON ModernPattuPart
+ +verb+nonfin+sim+vpart%=உ:^டு #;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது:^டது #;

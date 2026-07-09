@@ -216,6 +216,7 @@ COMPONENTS = [
             "0053-add-c2-koll-modern-infinitive.patch",
             "0060-add-modern-verbal-nominal-forms.patch",
             "0061-add-modern-present-finite-coverage.patch",
+            "0062-add-modern-passive-perfect-neuter-coverage.patch",
         ],
     },
     {

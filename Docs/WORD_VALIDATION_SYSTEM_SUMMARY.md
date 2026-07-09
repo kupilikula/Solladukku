@@ -690,5 +690,21 @@ Adds another focused tranche from the tokenizer corpus audit. The noun patches c
 Files: `fst/patches/0058-add-triaged-common-noun-coverage.patch`, `fst/patches/0059-add-c15-irkku-dative-variant.patch`
 
 Adds a curated common-noun tranche from the tokenizer coverage triage workflow, intentionally excluding pronoun/quantifier/adverb forms and name/title-policy rows from the generic noun import. Representative FST-backed forms include `உள்ளடக்கங்களை`, `ஓலை`, `பத்திரிகைகளும்`, `புழக்கத்தில்`, `ஆசிரமத்தில்`, `நீர்ப்பறவைகளில்`, `நடைமுறைக்கு`, `நெறிமுறைகளை`, `வழித்தடங்களும்`, and `விமர்சனங்களும்`. The follow-up rule patch adds the productive C15 formal dative `...த்திற்கு` variant, covering forms such as `சந்தேகத்திற்கு` and `மட்டத்திற்கு` through the noun class rather than surface-specific entries.
-- Modern verbal-noun coverage from `0060-add-modern-verbal-nominal-forms.patch`: FST-backed analyses for reviewed tokenizer audit fallbacks such as `செயல்படுவது`, `தட்டுவது`, `மாற்றுவது`, `வாங்குவது`, and additive `வழிபடுவதும்`, exposed through the explicit `verbalnoun` FST tag. Rows whose bases still lack root/class coverage, such as `தெரிந்துகொள்வது` and `எளிதாக்குவதும்`, remain deferred.
-- Modern present-finite coverage from `0061-add-modern-present-finite-coverage.patch`: FST-backed analyses for reviewed audit fallbacks `கூறுகின்றனர்`, `முற்படுகின்றனர்`, `என்கிறார்`, and `செல்கிறார்`. The patch uses class continuations for C3/C8 short honorific present forms, adds C5 `...கின்றனர்`, and classifies source-backed `முற்படு` as a C5 verb root. Deferred forms such as `தெரிந்துகொள்வது` and `எளிதாக்குவதும்` remain root/class acquisition gaps.
+
+### `0060-add-modern-verbal-nominal-forms.patch`
+
+File: `fst/patches/0060-add-modern-verbal-nominal-forms.patch`
+
+Adds FST-backed analyses for reviewed tokenizer audit fallbacks such as `செயல்படுவது`, `தட்டுவது`, `மாற்றுவது`, `வாங்குவது`, and additive `வழிபடுவதும்`, exposed through the explicit `verbalnoun` FST tag. Rows whose bases still lack root/class coverage, such as `தெரிந்துகொள்வது` and `எளிதாக்குவதும்`, remain deferred.
+
+### `0061-add-modern-present-finite-coverage.patch`
+
+File: `fst/patches/0061-add-modern-present-finite-coverage.patch`
+
+Adds FST-backed analyses for reviewed audit fallbacks `கூறுகின்றனர்`, `முற்படுகின்றனர்`, `என்கிறார்`, and `செல்கிறார்`. The patch uses class continuations for C3/C8 short honorific present forms, adds C5 `...கின்றனர்`, and classifies source-backed `முற்படு` as a C5 verb root. Deferred forms such as `தெரிந்துகொள்வது` and `எளிதாக்குவதும்` remain root/class acquisition gaps.
+
+### `0062-add-modern-passive-perfect-neuter-coverage.patch`
+
+File: `fst/patches/0062-add-modern-passive-perfect-neuter-coverage.patch`
+
+Adds FST-backed passive-perfect neuter analyses for reviewed audit fallbacks `உயர்த்தப்பட்டுள்ளது`, `தெரிவிக்கப்பட்டுள்ளது`, `தொகுக்கப்பட்டுள்ளது`, and `பாதிக்கப்பட்டுள்ளது`. The new continuation emits explicit `passive+perfect` tags, so tokenizer output can preserve both `<VOICE_PASSIVE>` and `<ASPECT_PERFECT>`. Root/class gaps such as `இசையமைத்துள்ளார்` and `அறிவிக்கப்பட்டுள்ளது` remain deferred.
