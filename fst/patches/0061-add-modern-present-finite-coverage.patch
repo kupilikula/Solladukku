@@ -1,0 +1,36 @@
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -83,6 +83,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் #;
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -5521,6 +5521,7 @@
+ கிருக்கு     C5Vinf;
+ குமுக்கு     C5Vinf;
+ கூறு     C5Vinf;
++முற்படு     C5Vinf;
+ கிலுக்கு     C5Vinf;
+ குமுங்கு     C5Vinf;
+ கூனு     C5Vinf;
+@@ -6428,6 +6429,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3pln%=அன:^கின்றன #;
+@@ -7200,6 +7202,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் #;
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;

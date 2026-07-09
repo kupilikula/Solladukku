@@ -23,8 +23,8 @@
     "class": "noun.fst",
     "forward_validated": 0,
     "generated_candidates": 0,
-    "normalized_or_predicted_inputs": 74093,
-    "predicted_lemmas": 74093,
+    "normalized_or_predicted_inputs": 74092,
+    "predicted_lemmas": 74092,
     "sample_added": [],
     "templates_used": 17
   },
@@ -38,10 +38,10 @@
     "templates_used": 0
   },
   {
-    "accepted_added": 1187817,
+    "accepted_added": 1193679,
     "class": "verb-c-rest.fst",
-    "forward_validated": 1187817,
-    "generated_candidates": 1187817,
+    "forward_validated": 1193679,
+    "generated_candidates": 1193679,
     "normalized_or_predicted_inputs": 82829,
     "predicted_lemmas": 12563,
     "sample_added": [
@@ -146,10 +146,10 @@
     "templates_used": 427
   },
   {
-    "accepted_added": 1875,
+    "accepted_added": 1890,
     "class": "verb-c3.fst",
-    "forward_validated": 1875,
-    "generated_candidates": 1875,
+    "forward_validated": 1890,
+    "generated_candidates": 1890,
     "normalized_or_predicted_inputs": 33218,
     "predicted_lemmas": 12414,
     "sample_added": [
@@ -179,7 +179,7 @@
       "அகலக்",
       "அகலச்"
     ],
-    "templates_used": 139
+    "templates_used": 140
   },
   {
     "accepted_added": 45600,

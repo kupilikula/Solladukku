@@ -114,6 +114,7 @@ COMPONENTS = [
             "0019-add-participial-person-nominals.patch",
             "0023-add-source-backed-c5-primary-verb-stems.patch",
             "0024-add-source-backed-c5-primary-verb-stems-2.patch",
+            "0061-add-modern-present-finite-coverage.patch",
         ],
     },
     {
@@ -214,6 +215,7 @@ COMPONENTS = [
             "0049-add-corpus-backed-modern-verb-coverage.patch",
             "0053-add-c2-koll-modern-infinitive.patch",
             "0060-add-modern-verbal-nominal-forms.patch",
+            "0061-add-modern-present-finite-coverage.patch",
         ],
     },
     {

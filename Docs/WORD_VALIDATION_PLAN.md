@@ -260,3 +260,9 @@ File: `fst/patches/0060-add-modern-verbal-nominal-forms.patch`
 
 Adds a narrow modern verbal-noun continuation for reviewed tokenizer audit verb gaps whose bases are already recognized by the runtime FST. Covered examples include `செயல்படுவது`, `தட்டுவது`, `மாற்றுவது`, `வாங்குவது`, and additive `வழிபடுவதும்`. These forms are generated from base stems through an explicit `verbalnoun` tag rather than tokenizer-side supplemental surfaces. Rows whose bases still lack root/class coverage, such as `தெரிந்துகொள்வது` and `எளிதாக்குவதும்`, remain deferred to the root/class coverage queue.
 
+### `0061-add-modern-present-finite-coverage.patch`
+
+File: `fst/patches/0061-add-modern-present-finite-coverage.patch`
+
+Adds focused modern present-finite coverage for reviewed tokenizer audit verb gaps. The patch adds short honorific present forms for C3/C8 roots, covering `செல்கிறார்` and `என்கிறார்`; adds a C5 human-plural `...கின்றனர்` continuation, covering `கூறுகின்றனர்`; and classifies source-backed `முற்படுதல்` as C5 productive stem `முற்படு`, covering `முற்படுகின்றனர்`. Deferred forms such as `தெரிந்துகொள்வது` and `எளிதாக்குவதும்` remain root/class acquisition gaps rather than verbal-noun continuation gaps.
+
