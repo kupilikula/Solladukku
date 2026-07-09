@@ -254,3 +254,9 @@ Files: `fst/patches/0058-add-triaged-common-noun-coverage.patch`, `fst/patches/0
 
 Adds a curated common-noun tranche from the tokenizer coverage triage workflow, intentionally excluding pronoun/quantifier/adverb forms and name/title-policy rows from the generic noun import. Representative FST-backed forms include `உள்ளடக்கங்களை`, `ஓலை`, `பத்திரிகைகளும்`, `புழக்கத்தில்`, `ஆசிரமத்தில்`, `நீர்ப்பறவைகளில்`, `நடைமுறைக்கு`, `நெறிமுறைகளை`, `வழித்தடங்களும்`, and `விமர்சனங்களும்`. The follow-up rule patch adds the productive C15 formal dative `...த்திற்கு` variant, covering forms such as `சந்தேகத்திற்கு` and `மட்டத்திற்கு` through the noun class rather than surface-specific entries.
 
+### `0060-add-modern-verbal-nominal-forms.patch`
+
+File: `fst/patches/0060-add-modern-verbal-nominal-forms.patch`
+
+Adds a narrow modern verbal-noun continuation for reviewed tokenizer audit verb gaps whose bases are already recognized by the runtime FST. Covered examples include `செயல்படுவது`, `தட்டுவது`, `மாற்றுவது`, `வாங்குவது`, and additive `வழிபடுவதும்`. These forms are generated from base stems through an explicit `verbalnoun` tag rather than tokenizer-side supplemental surfaces. Rows whose bases still lack root/class coverage, such as `தெரிந்துகொள்வது` and `எளிதாக்குவதும்`, remain deferred to the root/class coverage queue.
+

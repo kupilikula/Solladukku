@@ -213,6 +213,7 @@ COMPONENTS = [
             "0043-add-audit-backed-passive-verb-stems.patch",
             "0049-add-corpus-backed-modern-verb-coverage.patch",
             "0053-add-c2-koll-modern-infinitive.patch",
+            "0060-add-modern-verbal-nominal-forms.patch",
         ],
     },
     {

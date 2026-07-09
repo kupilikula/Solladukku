@@ -1,0 +1,21 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -6587,9 +6587,18 @@
+ வா:வந்துள்ள ModernPerfectFin;
+ ஏற்படு:ஏற்பட்டுள்ள ModernPerfectFin;
+ செயல்படு:செயல்பட்டுள்ள ModernPerfectFin;
++செயல்படு:செயல்படுவ ModernVerbalNominal;
++தட்டு:தட்டுவ ModernVerbalNominal;
++மாற்று:மாற்றுவ ModernVerbalNominal;
++வாங்கு:வாங்குவ ModernVerbalNominal;
++வழிபடு:வழிபடுவ ModernVerbalNominal;
+ செயல்படு:செயல்பட் ModernPattuPart;
+ தெரிவி:தெரிவித்துள்ள ModernPerfectFin;
+ 
++LEXICON ModernVerbalNominal
+++verb+nonfin+sim+verbalnoun%=அது:^து #;
+++verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^தும் #;
++
+ LEXICON ModernPattuPart
+ +verb+nonfin+sim+vpart%=உ:^டு #;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது:^டது #;
