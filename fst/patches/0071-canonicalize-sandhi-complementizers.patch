@@ -1,0 +1,15 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -92,9 +92,9 @@
+ என்பதால்+comp+inst:என்பதால் #;
+ என்பதன்+comp+gen:என்பதன் #;
+ என்பதும்+comp+add:என்பதும் #;
+-எனக்+comp+sandhik:எனக் #;
+-எனச்+comp+sandhic:எனச் #;
+-எனத்+comp+sandhit:எனத் #;
++என+comp+sandhik:எனக் #;
++என+comp+sandhic:எனச் #;
++என+comp+sandhit:எனத் #;
+ க்கும்+pp-particle+comparative+add:க்கும் #;
+ 
+ LEXICON intensifiers

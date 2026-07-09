@@ -38,19 +38,15 @@
     "templates_used": 0
   },
   {
-    "accepted_added": 1219185,
+    "accepted_added": 1142705,
     "class": "verb-c-rest.fst",
-    "forward_validated": 1219185,
-    "generated_candidates": 1219185,
+    "forward_validated": 1142705,
+    "generated_candidates": 1142705,
     "normalized_or_predicted_inputs": 82829,
     "predicted_lemmas": 12563,
     "sample_added": [
       "அஃக",
-      "அஃகக்",
-      "அஃகச்",
       "அஃகட்டும்",
-      "அஃகத்",
-      "அஃகப்",
       "அஃகலாகாது",
       "அஃகலாம்",
       "அஃகவில்லை",
@@ -61,33 +57,33 @@
       "அஃகாமல்",
       "அஃகாவிட்டால்",
       "அஃகி",
-      "அஃகிக்",
-      "அஃகிச்",
-      "அஃகித்",
       "அஃகின",
       "அஃகினது",
       "அஃகினன",
       "அஃகினனன்",
       "அஃகினனள்",
-      "அஃகினன்"
+      "அஃகினன்",
+      "அஃகினர்",
+      "அஃகினான்",
+      "அஃகினாய்",
+      "அஃகினார்",
+      "அஃகினார்கள்",
+      "அஃகினால்",
+      "அஃகினாள்"
     ],
     "templates_used": 1376
   },
   {
-    "accepted_added": 155549,
+    "accepted_added": 146085,
     "class": "verb-c11.fst",
-    "forward_validated": 155549,
-    "generated_candidates": 155549,
+    "forward_validated": 146085,
+    "generated_candidates": 146085,
     "normalized_or_predicted_inputs": 82690,
     "predicted_lemmas": 12414,
     "sample_added": [
       "அகலி",
       "அகலிக்க",
-      "அகலிக்கக்",
-      "அகலிக்கச்",
       "அகலிக்கட்டும்",
-      "அகலிக்கத்",
-      "அகலிக்கப்",
       "அகலிக்கலாகாது",
       "அகலிக்கலாம்",
       "அகலிக்கவில்லை",
@@ -105,7 +101,11 @@
       "அகலிக்கின்றார்",
       "அகலிக்கின்றார்கள்",
       "அகலிக்கின்றாள்",
-      "அகலிக்கின்றீர்"
+      "அகலிக்கின்றீர்",
+      "அகலிக்கின்றீர்கள்",
+      "அகலிக்கின்றேன்",
+      "அகலிக்கின்றோம்",
+      "அகலிக்கிறது"
     ],
     "templates_used": 675
   },
@@ -146,10 +146,10 @@
     "templates_used": 427
   },
   {
-    "accepted_added": 1920,
+    "accepted_added": 1800,
     "class": "verb-c3.fst",
-    "forward_validated": 1920,
-    "generated_candidates": 1920,
+    "forward_validated": 1800,
+    "generated_candidates": 1800,
     "normalized_or_predicted_inputs": 33218,
     "predicted_lemmas": 12414,
     "sample_added": [
@@ -169,15 +169,15 @@
       "அகன்றீர்",
       "அகன்றீர்கள்",
       "அகன்று",
-      "அகன்றுக்",
-      "அகன்றுச்",
-      "அகன்றுத்",
-      "அகன்றுப்",
       "அகன்றேன்",
       "அகன்றோம்",
       "அகல",
-      "அகலக்",
-      "அகலச்"
+      "அகலட்டும்",
+      "அகலலாகாது",
+      "அகலலாம்",
+      "அகலவில்லை",
+      "அகலாத",
+      "அகலாதீர்கள்"
     ],
     "templates_used": 142
   },
@@ -218,10 +218,10 @@
     "templates_used": 277
   },
   {
-    "accepted_added": 868,
+    "accepted_added": 812,
     "class": "verb-c62.fst",
-    "forward_validated": 868,
-    "generated_candidates": 868,
+    "forward_validated": 812,
+    "generated_candidates": 812,
     "normalized_or_predicted_inputs": 33218,
     "predicted_lemmas": 12414,
     "sample_added": [

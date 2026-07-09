@@ -45,6 +45,7 @@ MAX_TAMIL_LETTERS = 15
 CHUNK_SIZE = 5000
 TAMIL_CHAR_RE = re.compile(r'^[\u0B80-\u0BFF]+$')
 TAMIL_DIGIT_RE = re.compile(r'[\u0BE6-\u0BEF\u0BF0-\u0BF9]')
+SANDHI_ANALYSIS_RE = re.compile(r'\+sandhi(?:[a-z]+|-r)')
 
 FST_MODEL_CANDIDATE_DIRS = [
     PROJECT_ROOT / "build" / "fst-models",
@@ -419,9 +420,14 @@ def forward_classify(fst_path: Path, lemmas: List[str]) -> List[Tuple[str, str]]
     return classified
 
 
+def is_sandhi_analysis(analysis: str) -> bool:
+    """Return True for purely orthographic Tamil linker-letter analyses."""
+    return bool(SANDHI_ANALYSIS_RE.search(analysis))
+
+
 def inverse_generate_forms(fst_path: Path, analyses: Iterable[str]) -> Set[str]:
     forms: Set[str] = set()
-    items = list(analyses)
+    items = [analysis for analysis in analyses if not is_sandhi_analysis(analysis)]
     total = len(items)
     for i in range(0, total, CHUNK_SIZE):
         chunk = items[i:i + CHUNK_SIZE]

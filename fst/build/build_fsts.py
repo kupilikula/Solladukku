@@ -98,6 +98,7 @@ COMPONENTS = [
             "0042-add-comparative-kkum-particle.patch",
             "0056-add-indefinite-quantifier-particle.patch",
             "0067-add-complementizer-and-quantifier-family-coverage.patch",
+            "0071-canonicalize-sandhi-complementizers.patch",
         ],
     },
     {

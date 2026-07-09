@@ -150,7 +150,7 @@
         "டி": "டி+abbrev+letter",
         "எஸ்": "எஸ்+abbrev+letter",
         "என்பதை": "என்பதை+comp+acc",
-        "எனக்": "எனக்+comp+sandhik",
+        "எனக்": "என+comp+sandhik",
         "க்கும்": "க்கும்+pp-particle+comparative+add",
         "ஏதேனும்": "ஏதேனும்+quant+indef+add"
       }

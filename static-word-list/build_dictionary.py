@@ -20,6 +20,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 OUTPUT_FILE = PROJECT_ROOT / "public" / "tamil_dictionary.txt"
+LEMMA_DICTIONARY_FILE = SCRIPT_DIR / "lemma_dictionary.txt"
 LEXICON_FILE = SCRIPT_DIR / "tamillexicon_headwords.txt"
 FST_FORMS_FILE = SCRIPT_DIR / "fst_generated_forms.txt"
 HEURISTIC_FORMS_FILE = SCRIPT_DIR / "fst_heuristic_forms.txt"
@@ -210,6 +211,22 @@ def load_heuristic_forms() -> set:
     return words
 
 
+
+def write_lemma_dictionary(words: set[str]) -> None:
+    """Write source lexical headwords for tokenizer/root-lemma use.
+
+    This intentionally excludes FST-generated inflected forms. Scrabble uses
+    public/tamil_dictionary.txt; tokenizer experiments should prefer this lemma
+    inventory when they need a static dictionary.
+    """
+    sorted_words = sorted(w for w in words if is_lexical_headword(w))
+    with open(LEMMA_DICTIONARY_FILE, 'w', encoding='utf-8') as f:
+        for word in sorted_words:
+            f.write(word + '\n')
+    size_mb = LEMMA_DICTIONARY_FILE.stat().st_size / (1024 * 1024)
+    print(f"  Lemma dictionary: {len(sorted_words)} headwords, {size_mb:.1f} MB")
+    print(f"  Lemma output: {LEMMA_DICTIONARY_FILE}")
+
 def main():
     print("Building Solmaalai Tamil dictionary...\n")
 
@@ -219,9 +236,10 @@ def main():
 
     # Step 1: Tamil Lexicon headwords
     print("Step 1: Cleaning Tamil Lexicon headwords...")
-    all_words = clean_lexicon_headwords()
+    lexicon_words = clean_lexicon_headwords()
     if excluded_wiktionary:
-        all_words -= excluded_wiktionary
+        lexicon_words -= excluded_wiktionary
+    all_words = set(lexicon_words)
 
     # Step 2: Tamil Wiktionary dump headwords (official Wikimedia source)
     print("\nStep 2: Loading Tamil Wiktionary dump headwords...")
@@ -240,6 +258,10 @@ def main():
     new_from_vuizur = vuizur_words - all_words
     print(f"  Additional new words from Vuizur: {len(new_from_vuizur)}")
     all_words |= vuizur_words
+
+    # Tokenizer/root-lemma artifact: source headwords only, no generated inflections.
+    lemma_words = (lexicon_words | wiki_dump_words | vuizur_words) - excluded_wiktionary
+    write_lemma_dictionary(lemma_words)
 
     # Step 4: FST-generated forms (noun/adj/adv/part/pronoun + verb classes)
     print("\nStep 4: Loading FST-generated surface forms...")

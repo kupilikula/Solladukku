@@ -721,4 +721,12 @@ Files: `fst/patches/0065-add-class-level-modern-perfect-and-verbal-nouns.patch`,
 Adds broader class/rule coverage for modern Tamil verb forms that were previously represented by narrow hooks. C11 roots now generate modern perfects and verbal nouns such as `அமைத்துள்ளார்`, `சமைத்துள்ளது`, `அமைப்பது`, and `சமைப்பதும்`; C3/C5 roots generate verbal nouns such as `செல்வது`, `கூறுவது`, and `எழுதுவது`; passive stems generate verbal-noun negative forms such as `அறிவிக்கப்படுவதில்லை`, `வழங்கப்படுவதில்லை`, and `பயன்படுத்தப்படுவதில்லை`; and generated C11 passive-family coverage handles passive perfects such as `அனுமதிக்கப்பட்டுள்ளது` and `அழைக்கப்பட்டுள்ளது`. The tranche also adds reviewed bare-infinitive alternants `புரிய`, `அறிய`, and `விரிய`.
 
 Function coverage is extended for complementizer case/additive/sandhi forms (`என்பதற்கு`, `என்பதில்`, `என்பதால்`, `என்பதன்`, `என்பதும்`, `எனச்`, `எனத்`), indefinite `ஏதாவது`, and focused causal deictic adverbs (`இதனால்தான்`, `அதனால்தான்`, `எதனால்தான்`) with explicit deictic/focus tags.
+### Static word-list resource policy
+
+The source build now maintains two distinct static dictionary artifacts:
+
+- `public/tamil_dictionary.txt` is the Scrabble/game validation dictionary. It is a playable surface-form list built from lexical sources plus FST-generated inflections. It intentionally excludes sandhi-linker-only surfaces such as `எனக்`, `எனச்`, `எனத்`, `ஊராட்சித்`, and `ஊராட்சிக்குச்`; those orthographic linker letters are not valid standalone Scrabble words even though the runtime FST may analyze them for prose generation.
+- `static-word-list/lemma_dictionary.txt` is a source headword/lemma inventory for tokenizer/root-lexicon use. It combines Tamil Lexicon, Tamil Wiktionary dump, and Vuizur headwords after the usual lexical filters and exclusions, but excludes FST-generated inflected forms. Examples such as `மரம்`, `படி`, `என`, and `ஊராட்சி` are included; inflected/sandhi surfaces such as `மரங்களிலிருந்து`, `படித்தான்`, `எனக்`, and `ஊராட்சித்` are excluded.
+
+The FSTs themselves should remain comprehensive for runtime analysis and LLM generation. Sandhi tags such as `+sandhik`, `+sandhic`, and `+sandhit` are retained in FST analyses so generation-aware tokenizers can emit bounded `<SANDHI_*>` tokens, but those forms are filtered out of generated static word-list/dictionary artifacts.
 

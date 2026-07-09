@@ -33,6 +33,7 @@ FST_MODEL_DIR_CANDIDATES = [
     ROOT / "static-word-list" / "fst-models",
 ]
 DICT_FILE = ROOT / "public" / "tamil_dictionary.txt"
+LEMMA_DICT_FILE = ROOT / "static-word-list" / "lemma_dictionary.txt"
 CLASSIFIED_HEADWORDS_FILE = ROOT / "static-word-list" / "fst_classified_headwords.json"
 HEURISTIC_CLASSIFIED_FILE = ROOT / "static-word-list" / "fst_heuristic_classified_headwords.json"
 UNCLASSIFIED_WIKTIONARY_FILE = ROOT / "static-word-list" / "fst_unclassified_vuizur_headwords.json"
@@ -371,6 +372,14 @@ def main() -> None:
         for word in fixture["dictionary_must_exclude"]:
             if word in dictionary_words:
                 fail(f"Dictionary contains forbidden word: {word}")
+        ensure_file(LEMMA_DICT_FILE, "lemma dictionary")
+        lemma_words = set(LEMMA_DICT_FILE.read_text(encoding="utf-8").splitlines())
+        for word in ["மரம்", "படி", "என", "ஊராட்சி"]:
+            if word not in lemma_words:
+                fail(f"Lemma dictionary missing expected lemma: {word}")
+        for word in ["மரங்களிலிருந்து", "படித்தான்", "எனக்", "ஊராட்சித்"]:
+            if word in lemma_words:
+                fail(f"Lemma dictionary contains non-lemma/sandhi surface: {word}")
 
     combined_classes = load_combined_classification_map()
     heuristic_fixture = json.loads(HEURISTIC_FIXTURE_PATH.read_text(encoding="utf-8"))
