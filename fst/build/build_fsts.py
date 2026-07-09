@@ -154,6 +154,7 @@ COMPONENTS = [
             "0019-add-participial-person-nominals.patch",
             "0023-add-source-backed-c5-primary-verb-stems.patch",
             "0024-add-source-backed-c5-primary-verb-stems-2.patch",
+            "0063-add-reviewed-c11-verb-root-coverage.patch",
             "0039-add-c11-loan-verb-stems.patch",
         ],
     },
@@ -217,6 +218,7 @@ COMPONENTS = [
             "0060-add-modern-verbal-nominal-forms.patch",
             "0061-add-modern-present-finite-coverage.patch",
             "0062-add-modern-passive-perfect-neuter-coverage.patch",
+            "0064-add-reviewed-modern-perfect-hooks.patch",
         ],
     },
     {

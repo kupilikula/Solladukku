@@ -74,10 +74,10 @@
     "templates_used": 1374
   },
   {
-    "accepted_added": 146815,
+    "accepted_added": 153179,
     "class": "verb-c11.fst",
-    "forward_validated": 146815,
-    "generated_candidates": 146815,
+    "forward_validated": 153179,
+    "generated_candidates": 153179,
     "normalized_or_predicted_inputs": 82690,
     "predicted_lemmas": 12414,
     "sample_added": [

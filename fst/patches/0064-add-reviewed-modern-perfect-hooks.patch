@@ -1,0 +1,13 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -6595,8 +6595,10 @@ LEXICON ClassVaaModern
+ வாங்கு:வாங்குவ ModernVerbalNominal;
+ வழிபடு:வழிபடுவ ModernVerbalNominal;
+ செயல்படு:செயல்பட் ModernPattuPart;
++இசையமை:இசையமைத்துள்ள ModernPerfectFin;
+ தெரிவி:தெரிவித்துள்ள ModernPerfectFin;
+ 
++அறிவிக்க:அறிவிக்கப்பட்டுள்ள ModernPassivePerfectNeut;
+ உயர்த்த:உயர்த்தப்பட்டுள்ள ModernPassivePerfectNeut;
+ தெரிவிக்க:தெரிவிக்கப்பட்டுள்ள ModernPassivePerfectNeut;
+ தொகுக்க:தொகுக்கப்பட்டுள்ள ModernPassivePerfectNeut;

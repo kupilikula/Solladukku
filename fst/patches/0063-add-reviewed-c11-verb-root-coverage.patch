@@ -1,0 +1,61 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -580,6 +580,58 @@ LEXICON ClassEleven
+ நிண்ணி  C11Vinf;
+ நொசி  C11Vinf;
+ தெரிவி  C11Vinf;
++
++! Source-backed C11 verb tranche: Tamil Lexicon *வி-த்தல் roots plus reviewed compound root.
++அந்தர்ப்பவி  C11Vinf;
++அபிபவி  C11Vinf;
++அறிவி  C11Vinf;
++அழுங்குவி  C11Vinf;
++ஆவிர்ப்பவி  C11Vinf;
++இகுத்துவி  C11Vinf;
++ஈவி  C11Vinf;
++உஜ்ஜீவி  C11Vinf;
++உபசீவி  C11Vinf;
++உவி  C11Vinf;
++ஊற்றால்கவி  C11Vinf;
++ஏகீபவி  C11Vinf;
++ஐந்தவி  C11Vinf;
++ஒற்றுவி  C11Vinf;
++ஓடுவி  C11Vinf;
++ஓதுவி  C11Vinf;
++கணக்கொப்புவி  C11Vinf;
++கண்டுபாவி  C11Vinf;
++கண்ணார்வி  C11Vinf;
++கால்வளைவி  C11Vinf;
++கைகவி  C11Vinf;
++கைகுவி  C11Vinf;
++கொல்லைவிளைவி  C11Vinf;
++சமம்பாவி  C11Vinf;
++சுயம்பாவி  C11Vinf;
++சோகம்பாவி  C11Vinf;
++ஜீவி  C11Vinf;
++தித்திவி  C11Vinf;
++திரோபவி  C11Vinf;
++தெளிவி  C11Vinf;
++நீலம்பாவி  C11Vinf;
++பரிதவி  C11Vinf;
++பாசுரஞ்சேவி  C11Vinf;
++பாடனுபவி  C11Vinf;
++புடவி  C11Vinf;
++புலம்புவி  C11Vinf;
++போவி  C11Vinf;
++போவுவி  C11Vinf;
++மடிவி  C11Vinf;
++மாட்டுவி  C11Vinf;
++முடிகவி  C11Vinf;
++முழுத்துவி  C11Vinf;
++மேளஞ்சேவி  C11Vinf;
++வாத்தியஞ்சேவி  C11Vinf;
++விடுவி  C11Vinf;
++விளக்கவி  C11Vinf;
++விளிவி  C11Vinf;
++வீடுவி  C11Vinf;
++ஸம்பவி  C11Vinf;
++இசையமை  C11Vinf;
+ நித்திரி  C11Vinf;
+ நொடி  C11Vinf;
+ தெழி  C11Vinf;

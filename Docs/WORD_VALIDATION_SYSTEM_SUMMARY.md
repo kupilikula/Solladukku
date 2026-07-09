@@ -708,3 +708,9 @@ Adds FST-backed analyses for reviewed audit fallbacks `கூறுகின்�
 File: `fst/patches/0062-add-modern-passive-perfect-neuter-coverage.patch`
 
 Adds FST-backed passive-perfect neuter analyses for reviewed audit fallbacks `உயர்த்தப்பட்டுள்ளது`, `தெரிவிக்கப்பட்டுள்ளது`, `தொகுக்கப்பட்டுள்ளது`, and `பாதிக்கப்பட்டுள்ளது`. The new continuation emits explicit `passive+perfect` tags, so tokenizer output can preserve both `<VOICE_PASSIVE>` and `<ASPECT_PERFECT>`. Root/class gaps such as `இசையமைத்துள்ளார்` and `அறிவிக்கப்பட்டுள்ளது` remain deferred.
+
+### `0063`-`0064` reviewed C11 verb roots and modern hooks
+
+Files: `fst/patches/0063-add-reviewed-c11-verb-root-coverage.patch`, `fst/patches/0064-add-reviewed-modern-perfect-hooks.patch`
+
+Adds a systematic C11 verb-root tranche for 49 Tamil Lexicon `*-வி-த்தல்` lemmas that were not recognized by the runtime FST, plus the reviewed corpus-backed compound root `இசையமை`. Representative generated analyses include `அறிவிக்கின்றன`, `அறிவித்தோம்`, `அறிவித்தது`, `விடுவித்தது`, and `தெளிவிக்க`. The modern-hook patch adds focused perfect/passive-perfect entries for audited forms `இசையமைத்துள்ளார்` and `அறிவிக்கப்பட்டுள்ளது`. Passive verbal-nominal negative forms such as `அறிவிக்கப்படுவதில்லை` remain deferred to the broader passive-rule lane.
