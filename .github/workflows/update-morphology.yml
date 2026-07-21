@@ -49,12 +49,22 @@ jobs:
           diff -qr /tmp/tamil-morphology/runtime static-word-list/fst-models
           diff -qr /tmp/tamil-morphology/runtime server/fst-models
           python3 /tmp/tamil-morphology/fst/tests/run_fst_regressions.py
-      - uses: peter-evans/create-pull-request@v7
-        with:
-          branch: automation/update-tamil-morphology
-          delete-branch: true
-          commit-message: Update Tamil morphology release
-          title: Update Tamil morphology release
-          body: |
-            Automated checksum-verified update from `kupilikula/tamil-morphology`.
-            Solladukku's FST regression suite passed.
+      - name: Open tested update pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          branch=automation/update-tamil-morphology
+          git add -- morphology.lock.json build/fst-models static-word-list/fst-models server/fst-models
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git commit -m "Update Tamil morphology release"
+          git push --force origin "HEAD:refs/heads/$branch"
+          gh pr view "$branch" --json number >/dev/null 2>&1 || \
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --title "Update Tamil morphology release" \
+              --body "Automated checksum-verified update from kupilikula/tamil-morphology. Solladukku's FST regression suite passed."
