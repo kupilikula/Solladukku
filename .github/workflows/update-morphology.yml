@@ -41,11 +41,14 @@ jobs:
             --runtime-dir static-word-list/fst-models \
             --runtime-dir server/fst-models \
             --lock-file morphology.lock.json
-      - name: Run FST regressions
+      - name: Verify consumer copies and run FST regressions
         run: |
           sudo apt-get update
           sudo apt-get install -y foma
-          python3 fst/tests/run_fst_regressions.py
+          diff -qr /tmp/tamil-morphology/runtime build/fst-models
+          diff -qr /tmp/tamil-morphology/runtime static-word-list/fst-models
+          diff -qr /tmp/tamil-morphology/runtime server/fst-models
+          python3 /tmp/tamil-morphology/fst/tests/run_fst_regressions.py
       - uses: peter-evans/create-pull-request@v7
         with:
           branch: automation/update-tamil-morphology
