@@ -13,28 +13,30 @@ jobs:
   update:
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.MORPHOLOGY_RELEASE_TOKEN }}
+      MORPHOLOGY_DEPLOY_KEY: ${{ secrets.MORPHOLOGY_DEPLOY_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Require morphology repository token
-        run: test -n "$GH_TOKEN"
-      - name: Download newest morphology release
+      - name: Configure read-only morphology access
         run: |
-          tag=$(gh release list --repo kupilikula/tamil-morphology --limit 1 --json tagName --jq '.[0].tagName')
+          test -n "$MORPHOLOGY_DEPLOY_KEY"
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$MORPHOLOGY_DEPLOY_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
+      - name: Fetch newest morphology version
+        run: |
+          remote=git@github.com:kupilikula/tamil-morphology.git
+          tag=$(git ls-remote --tags "$remote" 'refs/tags/v*' | sed 's#.*refs/tags/##; /^.*\^{}$/d' | sort -V | tail -1)
           test -n "$tag"
-          mkdir -p /tmp/tamil-morphology-release
-          gh release download "$tag" \
-            --repo kupilikula/tamil-morphology \
-            --pattern 'tamil-morphology-*.tar.gz' \
-            --dir /tmp/tamil-morphology-release
+          git clone --depth 1 --branch "$tag" "$remote" /tmp/tamil-morphology
+          tar -czf /tmp/tamil-morphology-release.tar.gz \
+            -C /tmp tamil-morphology/manifest.json tamil-morphology/runtime
       - name: Verify and install runtime
         run: |
-          archive=$(find /tmp/tamil-morphology-release -name 'tamil-morphology-*.tar.gz' -type f -print -quit)
-          test -n "$archive"
-          python scripts/install_morphology_release.py "$archive" \
+          python scripts/install_morphology_release.py /tmp/tamil-morphology-release.tar.gz \
             --runtime-dir build/fst-models \
             --runtime-dir static-word-list/fst-models \
             --runtime-dir server/fst-models \
@@ -53,4 +55,3 @@ jobs:
           body: |
             Automated checksum-verified update from `kupilikula/tamil-morphology`.
             Solladukku's FST regression suite passed.
-
