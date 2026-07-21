@@ -1,0 +1,56 @@
+name: update-morphology
+
+on:
+  schedule:
+    - cron: "41 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.MORPHOLOGY_RELEASE_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Require morphology repository token
+        run: test -n "$GH_TOKEN"
+      - name: Download newest morphology release
+        run: |
+          tag=$(gh release list --repo kupilikula/tamil-morphology --limit 1 --json tagName --jq '.[0].tagName')
+          test -n "$tag"
+          mkdir -p /tmp/tamil-morphology-release
+          gh release download "$tag" \
+            --repo kupilikula/tamil-morphology \
+            --pattern 'tamil-morphology-*.tar.gz' \
+            --dir /tmp/tamil-morphology-release
+      - name: Verify and install runtime
+        run: |
+          archive=$(find /tmp/tamil-morphology-release -name 'tamil-morphology-*.tar.gz' -type f -print -quit)
+          test -n "$archive"
+          python scripts/install_morphology_release.py "$archive" \
+            --runtime-dir build/fst-models \
+            --runtime-dir static-word-list/fst-models \
+            --runtime-dir server/fst-models \
+            --lock-file morphology.lock.json
+      - name: Run FST regressions
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y foma
+          python3 fst/tests/run_fst_regressions.py
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/update-tamil-morphology
+          delete-branch: true
+          commit-message: Update Tamil morphology release
+          title: Update Tamil morphology release
+          body: |
+            Automated checksum-verified update from `kupilikula/tamil-morphology`.
+            Solladukku's FST regression suite passed.
+

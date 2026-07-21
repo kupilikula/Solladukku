@@ -1,0 +1,156 @@
+{
+  "inventory": {
+    "candidate_tokens": 207,
+    "compact_symbolic_upper_analyses": 276051759,
+    "compiled_fst_models": 12,
+    "direct_and_secondary_generated_forms": 10207184,
+    "direct_runtime_union_surfaces": 3773878,
+    "distinct_runtime_and_source_tags": 207,
+    "dominant_category_class_outliers": 173,
+    "dominant_category_runtime_gap_candidates": 20222,
+    "ending_and_word_formation_families": 38,
+    "enumerated_relation_paths": 382919216,
+    "exact_signature_roundtrip_failures": 0,
+    "exact_tag_signature_patterns": 35262,
+    "explicit_unique_noun_roots": 127126,
+    "explicit_unique_verb_lexical_strings": 11389,
+    "fixed_vocabulary_lemmas": 139514,
+    "fixed_vocabulary_tokens": 140263,
+    "full_dictionary_surfaces": 10234220,
+    "heuristic_secondary_forms": 8049056,
+    "lexical_entries_with_ascii": 0,
+    "lexical_non_nfc_entries": 0,
+    "manifest_patch_records": 512,
+    "manifest_unique_patch_files": 447,
+    "named_foma_rules": 237,
+    "noun_inflection_classes_and_subclasses": 23,
+    "paradigm_probe_failures": 0,
+    "paradigm_probes": 573819,
+    "productive_auxiliary_continuation_classes": 19,
+    "productive_auxiliary_root_relations": 371329,
+    "productive_auxiliary_route_groups": 16,
+    "runtime_multiple_analysis_lemmas": 3600,
+    "runtime_multiple_pos_lemmas": 1589,
+    "runtime_recognized_lemmas": 102345,
+    "runtime_source_pos_mismatches": 38,
+    "runtime_source_pos_mismatches_unresolved": 0,
+    "runtime_unrecognized_lemmas": 26675,
+    "semantic_tokens": 211,
+    "source_lemma_dictionary": 129020,
+    "source_multi_source_lemmas": 76518,
+    "source_tamil_lexicon_lemmas": 106486,
+    "source_tamil_wiktionary_lemmas": 98104,
+    "source_union_lemmas": 129396,
+    "source_vuizur_lemmas": 5509,
+    "strict_category_class_outliers": 0,
+    "unique_lexc_sections": 280,
+    "unique_semantic_signature_keys": 21470,
+    "verb_base_classes": 24
+  },
+  "provenance": {
+    "source_build_manifest": "provenance/fst-build-manifest.json",
+    "source_project": "Solladukku",
+    "source_state": "0351 patched build; content hashes are authoritative"
+  },
+  "relation": {
+    "compact_symbolic_upper_analyses": 276051759,
+    "enumerated_relation_paths": 382919216,
+    "exact_tag_patterns": 35262,
+    "maximum_exact_variants_per_semantic_key": 34,
+    "semantic_signature_keys": 21470
+  },
+  "release": {
+    "date": "2026-07-21",
+    "name": "tamil-morphology",
+    "status": "research-preview",
+    "version": "0.1.0-rc1"
+  },
+  "runtime": {
+    "artifacts": [
+      {
+        "file": "adj.fst",
+        "sha256": "7ba42fb5521cb5aeebb1d941c7936ddad22439c386bfea0db22a73aa864e30ca",
+        "size_bytes": 14495
+      },
+      {
+        "file": "adv.fst",
+        "sha256": "3d659d35a213b09be6cd89a1cde26c6701783cc2b9747fedb9b024c4a0fc1ca4",
+        "size_bytes": 15208
+      },
+      {
+        "file": "noun.fst",
+        "sha256": "f551ccf186251f794e66a02be737eccd8f1c136b15b20105eb15589599f0a664",
+        "size_bytes": 848293
+      },
+      {
+        "file": "part.fst",
+        "sha256": "e0002f78b0e4e6fc48b0939179bb82c2c8d26a08f3dd5cd2cc75d90f8d16840d",
+        "size_bytes": 21304
+      },
+      {
+        "file": "pronoun.fst",
+        "sha256": "498e9cb6f08b84b9030908d092af9744e0eb363df2fb5996b922bfdc78b5e583",
+        "size_bytes": 21340
+      },
+      {
+        "file": "verb-auxiliary.fst",
+        "sha256": "eeadaedd3c12bd531c395852a48f5d69c216ddc5e5f8333e9f0179a73c48a560",
+        "size_bytes": 1004814
+      },
+      {
+        "file": "verb-c-rest.fst",
+        "sha256": "c45959687adda522af3d073330c905afc89adbcefd850d223b18d433393cab32",
+        "size_bytes": 595565
+      },
+      {
+        "file": "verb-c11.fst",
+        "sha256": "88ea44729c001bbcfd845f9b5f42191cf1a11d407d22ccd85954ba5545684f10",
+        "size_bytes": 217678
+      },
+      {
+        "file": "verb-c12.fst",
+        "sha256": "38b01b84f5ec8d965bbdb4b4fffda03bd15ddf68f4ab4dd1dc84f20a44b9b107",
+        "size_bytes": 140226
+      },
+      {
+        "file": "verb-c3.fst",
+        "sha256": "ce95f29cb0e3a9baf220b00963bfbd0ce0c5f03b1f54c9a895390edbcd4c45e4",
+        "size_bytes": 81336
+      },
+      {
+        "file": "verb-c4.fst",
+        "sha256": "7bd4d0ac75a021d786b5ee5f9cb7413d73379f77d624e5409cdc18793ec91dc6",
+        "size_bytes": 148782
+      },
+      {
+        "file": "verb-c62.fst",
+        "sha256": "bf3da8d139f4e07734bfad9f9d8faadd5a55a7a8478c4257fc86330da635a351",
+        "size_bytes": 73912
+      }
+    ],
+    "engine": "foma/flookup",
+    "fst_count": 12,
+    "sidecars": [
+      {
+        "file": "verb-auxiliary.inventory.json",
+        "sha256": "e7f4357a054e88df1d4cd3705232b8cb41c141bf9249908615edb2b81f0fcda8",
+        "size_bytes": 5877350
+      }
+    ]
+  },
+  "schema_version": "1.0.0",
+  "validation": {
+    "exact_signature_roundtrip_failures": 0,
+    "exact_signature_roundtrips": 35262,
+    "required_morphology": {
+      "failed": 0,
+      "failed_families": {},
+      "passed": 149,
+      "requirements": 149,
+      "status": {
+        "pass": 149
+      }
+    },
+    "source_build_manifest_sha256": "05e21fab4c1e725d50df4fefafd6ce9b2c025ec893997fe414e96560ee693d63"
+  }
+}
