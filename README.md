@@ -24,7 +24,10 @@ A multiplayer Tamil Scrabble game built with React and WebSockets.
 ### Prerequisites
 
 - Node.js 18+
-- `foma` + `flookup` (required only when rebuilding patched FST models and dictionary artifacts): `brew install foma`
+- `foma` + `flookup` when rebuilding FST models or dictionary artifacts. Install
+  with `brew install foma` on macOS or `sudo apt-get install foma-bin` on
+  Ubuntu/Debian. Compiled `.fst` files still require the external `flookup`
+  executable for runtime morphology validation.
 
 ### Running Locally
 
