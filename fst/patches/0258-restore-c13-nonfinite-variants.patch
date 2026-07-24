@@ -1,0 +1,30 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -14946,6 +14946,7 @@
+ 
+ ! Citation/second-person singular imperative surface retained by Class13
+ ஆகு:ஆகு AakuBareImp;
++ஆகு:ஆ AakuShortVariants;
+ 
+ ஆகு:ஆ      C13Vinf;
+ உண்டாகு:உண்டா      C13Vinf;
+@@ -14958,6 +14959,9 @@
+ 
+ LEXICON AakuBareImp
+ +verb+fin+sim+imp%=∅+2sg%=∅: #;
++
++LEXICON AakuShortVariants
+++verb+nonfin+sim+inf%=அ+moodpart%=ஆம்:^லாம் #;
+ 
+ LEXICON C13Vinf
+ 
+@@ -15447,6 +15451,9 @@
+ +verb+fin+sim+strong+past%=இன்+3sge%=அர்:^னர் #;
+ +verb+fin+sim+strong+past%=இன்+3sge%=அர்:^கினர் #;
+ +verb+fin+sim+strong+fut%=உம்+3pln%=∅:^கும் #;
++
+++verb+nonfin+sim+verbalnoun%=தல்:^தல் #;
+++verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ 
+ LEXICON Class14
+ 

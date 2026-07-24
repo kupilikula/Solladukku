@@ -1,0 +1,287 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -2630,6 +2630,8 @@
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^த்தார் #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^த்தார்கள் #;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^த்தது #;
+++verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+trans%=ஆக:^த்ததாக #;
+++verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்ததாகவும் #;
+ +verb+fin+sim+strong+past%=த்+3pln%=அன:^த்தன #;
+ +verb+fin+sim+strong+pres%=க்கிற்+1sg%=ஏன்:^க்கிறேன் #;
+ +verb+fin+sim+strong+pres%=க்கிற்+1pl%=ஓம்:^க்கிறோம் #;
+@@ -2643,6 +2645,8 @@
+ +verb+fin+sim+strong+pres%=க்கிற்+3sghe%=ஆர்:^க்கிறார் #;
+ +verb+fin+sim+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது #;
+++verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^க்கிறதாக #;
+++verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கிறதாகவும் #;
+ +verb+fin+sim+strong+pres%=க்கிற்+3pln%=அன:^க்கிறன #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+1sg%=ஏன்:^க்கின்றேன் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+1pl%=ஓம்:^க்கின்றோம் #;
+@@ -2657,6 +2661,8 @@
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3sghe%=ஆர்:^க்கின்றார் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3sghe%=ஆர்கள்:^க்கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3sgn%=அது:^க்கின்றது #;
+++verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^க்கின்றதாக #;
+++verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கின்றதாகவும் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3pln%=அன:^க்கின்றன #;
+ +verb+fin+sim+strong+fut%=ப்ப்+1sg%=ஏன்:^ப்பேன் #;
+ +verb+fin+sim+strong+fut%=ப்ப்+1pl%=ஓம்:^ப்போம் #;
+@@ -2681,10 +2687,14 @@
+ +verb+fin+sim+strong+pres%=க்கின்ற்+euph%=அன்+3sgm%=அன்:^க்கின்றனன் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+euph%=அன்+3sgf%=அள்:^க்கின்றனள் #;
+ +verb+fin+complex+perfect+past%=த்+3sgn%=அது:^த்துள்ளது #;
+++verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+trans%=ஆக:^த்துள்ளதாக #;
+++verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்துள்ளதாகவும் #;
+ +verb+fin+complex+perfect+past%=த்+3ple%=னர்:^த்துள்ளனர் #;
+ +verb+fin+complex+perfect+past%=த்+3sghe%=ஆர்:^த்துள்ளார் #;
+ +verb+fin+complex+perfect+past%=த்+3ple%=ஆர்கள்:^த்துள்ளார்கள் #;
+ +verb+nonfin+sim+verbalnoun%=அது:^ப்பது #;
+++verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக:^ப்பதாக #;
+++verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பதாகவும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^ப்பதும் #;
+ +verb+nonfin+sim+verbalnoun%=தல்:^த்தல் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+@@ -2704,6 +2714,8 @@
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் #;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sghe%=ஆர்:^ப்பித்தார் #;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது #;
+++verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக:^ப்பித்ததாக #;
+++verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பித்ததாகவும் #;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பித்தன #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+1sg%=ஏன்:^ப்பிக்கிறேன் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+1pl%=ஓம்:^ப்பிக்கிறோம் #;
+@@ -2717,6 +2729,8 @@
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்:^ப்பிக்கிறார் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது:^ப்பிக்கிறது #;
+++verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கிறதாக #;
+++verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கிறதாகவும் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3pln%=அன:^ப்பிக்கிறன #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கின்ற்+1sg%=ஏன்:^ப்பிக்கின்றேன் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கின்ற்+1pl%=ஓம்:^ப்பிக்கின்றோம் #;
+@@ -2731,6 +2745,8 @@
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கின்ற்+3sghe%=ஆர்கள்:^ப்பிக்கின்றார்கள் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கின்ற்+3sghe%=ஆர்:^ப்பிக்கின்றார் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கின்ற்+3sgn%=அது:^ப்பிக்கின்றது #;
+++verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கின்றதாக #;
+++verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கின்றதாகவும் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கின்ற்+3pln%=அன:^ப்பிக்கின்றன #;
+ +verb+fin+sim+caus%=ப்பி+fut%=ப்ப்+1sg%=ஏன்:^ப்பிப்பேன் #;
+ +verb+fin+sim+caus%=ப்பி+fut%=ப்ப்+1pl%=ஓம்:^ப்பிப்போம் #;
+@@ -5865,6 +5881,8 @@
+ +verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்கள்:^த்தார்கள் #;
+ +verb+fin+complex+attitude+strong+past%=த்+3sghe%=ஆர்கள்:^த்தார்கள் #;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது:^த்தது #;
+++verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+trans%=ஆக:^த்ததாக #;
+++verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்ததாகவும் #;
+ +verb+fin+complex+attitude+strong+past%=த்+3pln%=அன:^த்தன #;
+ +verb+fin+complex+attitude+strong+pres%=க்கிற்+1sg%=ஏன்:^க்கிறேன் #;
+ +verb+fin+complex+attitude+strong+pres%=க்கிற்+1pl%=ஓம்:^க்கிறோம் #;
+@@ -5877,6 +5895,8 @@
+ +verb+fin+complex+attitude+strong+pres%=க்கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் #;
+ +verb+fin+complex+attitude+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் #;
+ +verb+fin+complex+attitude+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது #;
+++verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^க்கிறதாக #;
+++verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கிறதாகவும் #;
+ +verb+fin+complex+attitude+strong+pres%=க்கிற்+3pln%=அன:^க்கிறன #;
+ +verb+fin+complex+attitude+strong+pres%=க்கின்ற்+1sg%=ஏன்:^க்கின்றேன் #;
+ +verb+fin+complex+attitude+strong+pres%=க்கின்ற்+1pl%=ஓம்:^க்கின்றோம் #;
+@@ -5890,6 +5910,8 @@
+ +verb+fin+complex+attitude+strong+pres%=க்கின்ற்+3ple%=ஆர்கள்:^க்கின்றார்கள் #;
+ +verb+fin+complex+attitude+strong+pres%=க்கின்ற்+3sghe%=ஆர்கள்:^க்கின்றார்கள் #;
+ +verb+fin+complex+attitude+strong+pres%=க்கின்ற்+3sgn%=அது:^க்கின்றது #;
+++verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^க்கின்றதாக #;
+++verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கின்றதாகவும் #;
+ +verb+fin+complex+attitude+strong+pres%=க்கின்ற்+3pln%=அன:^க்கின்றன #;
+ +verb+fin+complex+attitude+strong+fut%=ப்ப்+1sg%=ஏன்:^ப்பேன் #;
+ +verb+fin+complex+attitude+strong+fut%=ப்ப்+1pl%=ஓம்:^ப்போம் #;
+@@ -5928,6 +5950,8 @@
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது #;
+++verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக:^ப்பித்ததாக #;
+++verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பித்ததாகவும் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பித்தன #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+1sg%=ஏன்:^ப்பிக்கிறேன் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+1pl%=ஓம்:^ப்பிக்கிறோம் #;
+@@ -5940,6 +5964,8 @@
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+3ple%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது:^ப்பிக்கிறது #;
+++verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கிறதாக #;
+++verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கிறதாகவும் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+3pln%=அன:^ப்பிக்கிறன #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+1sg%=ஏன்:^ப்பிக்கின்றேன் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+1pl%=ஓம்:^ப்பிக்கின்றோம் #;
+@@ -5953,6 +5979,8 @@
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+3ple%=ஆர்கள்:^ப்பிக்கின்றார்கள் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+3sghe%=ஆர்கள்:^ப்பிக்கின்றார்கள் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+3sgn%=அது:^ப்பிக்கின்றது #;
+++verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கின்றதாக #;
+++verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கின்றதாகவும் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+3pln%=அன:^ப்பிக்கின்றன #;
+ +verb+fin+complex+attitude+caus%=ப்பி+fut%=ப்ப்+1sg%=ஏன்:^ப்பிப்பேன் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+fut%=ப்ப்+1pl%=ஓம்:^ப்பிப்போம் #;
+@@ -11647,6 +11675,8 @@
+ +verb+fin+complex+mood+strong+past%=த்+3ple%=ஆர்கள்:^த்தார்கள் #;
+ +verb+fin+complex+mood+strong+past%=த்+3sghe%=ஆர்கள்:^த்தார்கள் #;
+ +verb+fin+complex+mood+strong+past%=த்+3sgn%=அது:^த்தது #;
+++verb+nonfin+complex+mood+strong+past%=த்+verbalnoun%=அது+trans%=ஆக:^த்ததாக #;
+++verb+nonfin+complex+mood+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்ததாகவும் #;
+ +verb+fin+complex+mood+strong+past%=த்+3pln%=அன:^த்தன #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+1sg%=ஏன்:^க்கிறேன் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+1pl%=ஓம்:^க்கிறோம் #;
+@@ -11659,6 +11689,8 @@
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது #;
+++verb+nonfin+complex+mood+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^க்கிறதாக #;
+++verb+nonfin+complex+mood+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கிறதாகவும் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+3pln%=அன:^க்கிறன #;
+ +verb+fin+complex+mood+strong+pres%=க்கின்ற்+1sg%=ஏன்:^க்கின்றேன் #;
+ +verb+fin+complex+mood+strong+pres%=க்கின்ற்+1pl%=ஓம்:^க்கின்றோம் #;
+@@ -11672,6 +11704,8 @@
+ +verb+fin+complex+mood+strong+pres%=க்கின்ற்+3ple%=ஆர்கள்:^க்கின்றார்கள் #;
+ +verb+fin+complex+mood+strong+pres%=க்கின்ற்+3sghe%=ஆர்கள்:^க்கின்றார்கள் #;
+ +verb+fin+complex+mood+strong+pres%=க்கின்ற்+3sgn%=அது:^க்கின்றது #;
+++verb+nonfin+complex+mood+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^க்கின்றதாக #;
+++verb+nonfin+complex+mood+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கின்றதாகவும் #;
+ +verb+fin+complex+mood+strong+pres%=க்கின்ற்+3pln%=அன:^க்கின்றன #;
+ +verb+fin+complex+mood+strong+fut%=ப்ப்+1sg%=ஏன்:^ப்பேன் #;
+ +verb+fin+complex+mood+strong+fut%=ப்ப்+1pl%=ஓம்:^ப்போம் #;
+@@ -11710,6 +11744,8 @@
+ +verb+fin+complex+mood+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் #;
+ +verb+fin+complex+mood+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் #;
+ +verb+fin+complex+mood+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது #;
+++verb+nonfin+complex+mood+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக:^ப்பித்ததாக #;
+++verb+nonfin+complex+mood+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பித்ததாகவும் #;
+ +verb+fin+complex+mood+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பித்தன #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கிற்+1sg%=ஏன்:^ப்பிக்கிறேன் #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கிற்+1pl%=ஓம்:^ப்பிக்கிறோம் #;
+@@ -11722,6 +11758,8 @@
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கிற்+3ple%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது:^ப்பிக்கிறது #;
+++verb+nonfin+complex+mood+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கிறதாக #;
+++verb+nonfin+complex+mood+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கிறதாகவும் #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கிற்+3pln%=அன:^ப்பிக்கிறன #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கின்ற்+1sg%=ஏன்:^ப்பிக்கின்றேன் #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கின்ற்+1pl%=ஓம்:^ப்பிக்கின்றோம் #;
+@@ -11735,6 +11773,8 @@
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கின்ற்+3ple%=ஆர்கள்:^ப்பிக்கின்றார்கள் #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கின்ற்+3sghe%=ஆர்கள்:^ப்பிக்கின்றார்கள் #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கின்ற்+3sgn%=அது:^ப்பிக்கின்றது #;
+++verb+nonfin+complex+mood+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கின்றதாக #;
+++verb+nonfin+complex+mood+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கின்றதாகவும் #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கின்ற்+3pln%=அன:^ப்பிக்கின்றன #;
+ +verb+fin+complex+mood+caus%=ப்பி+fut%=ப்ப்+1sg%=ஏன்:^ப்பிப்பேன் #;
+ +verb+fin+complex+mood+caus%=ப்பி+fut%=ப்ப்+1pl%=ஓம்:^ப்பிப்போம் #;
+@@ -14855,6 +14895,8 @@
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3ple%=ஆர்கள்:^த்தார்கள் #;
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3sghe%=ஆர்கள்:^த்தார்கள் #;
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3sgn%=அது:^த்தது #;
+++verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+trans%=ஆக:^த்ததாக #;
+++verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்ததாகவும் #;
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3pln%=அன:^த்தன #;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+1sg%=ஏன்:^க்கிறேன் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+1pl%=ஓம்:^க்கிறோம் #;
+@@ -14867,6 +14909,8 @@
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3sgn%=அது:^க்கிறது #;
+++verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+trans%=ஆக:^க்கிறதாக #;
+++verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கிறதாகவும் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3pln%=அன:^க்கிறன #;
+ +verb+fin+complex+nonattitude+strong+pres%=கின்ற்+1sg%=ஏன்:^க்கின்றேன் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கின்ற்+1pl%=ஓம்:^க்கின்றோம் #;
+@@ -14880,6 +14924,8 @@
+ +verb+fin+complex+nonattitude+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^க்கின்றார்கள் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^க்கின்றார்கள் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கின்ற்+3sgn%=அது:^க்கின்றது #;
+++verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக:^க்கின்றதாக #;
+++verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கின்றதாகவும் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கின்ற்+3pln%=அன:^க்கின்றன #;
+ +verb+fin+complex+nonattitude+weak+fut%=ப்+1sg%=ஏன்:^ப்பேன் #;
+ +verb+fin+complex+nonattitude+weak+fut%=ப்+1pl%=ஓம்:^ப்போம் #;
+@@ -14918,6 +14964,8 @@
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=இன்+3ple%=ஆர்கள்:^ப்பிப்பார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=இன்+3sghe%=ஆர்கள்:^ப்பிப்பார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=இன்+3sgn%=அது:^ப்பிப்பது #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=இன்+verbalnoun%=அது+trans%=ஆக:^ப்பிப்பதாக #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=இன்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிப்பதாகவும் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=இன்+3pln%=அன:^ப்பிப்பன #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=கிற்+1sg%=ஏன்:^ப்பிக்கிறேன் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=கிற்+1pl%=ஓம்:^ப்பிக்கிறோம் #;
+@@ -14931,6 +14979,8 @@
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=கிற்+3ple%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=கிற்+3sgn%=அது:^ப்பிக்கிறது #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=கிற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கிறதாக #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கிறதாகவும் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=கிற்+3pln%=அன:^ப்பிக்கிறன #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=கின்ற்+1sg%=ஏன்:^ப்பிக்கின்றேன் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=கின்ற்+1pl%=ஓம்:^ப்பிக்கின்றோம் #;
+@@ -14944,6 +14994,8 @@
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=கின்ற்+3ple%=ஆர்கள்:^ப்பிக்கின்றார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=கின்ற்+3sghe%=ஆர்கள்:^ப்பிக்கின்றார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=கின்ற்+3sgn%=அது:^ப்பிக்கின்றது #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கின்றதாக #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கின்றதாகவும் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=கின்ற்+3pln%=அன:^ப்பிக்கின்றன #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+fut%=ப்+1sg%=ஏன்:^ப்பிபேன் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+fut%=ப்+1pl%=ஓம்:^ப்பிப்போம் #;
+@@ -20672,6 +20724,8 @@
+ +verb+fin+complex+nonattitude+strong+past%=த்+3ple%=ஆர்கள்:^த்தார்கள் #;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sghe%=ஆர்கள்:^த்தார்கள் #;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sgn%=அது:^த்தது #;
+++verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+trans%=ஆக:^த்ததாக #;
+++verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்ததாகவும் #;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3pln%=அன:^த்தன #;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கிற்+1sg%=ஏன்:^க்கிறேன் #;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கிற்+1pl%=ஓம்:^க்கிறோம் #;
+@@ -20684,6 +20738,8 @@
+ +verb+fin+complex+nonattitude+strong+pres%=க்கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் #;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் #;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது #;
+++verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^க்கிறதாக #;
+++verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கிறதாகவும் #;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கிற்+3pln%=அன:^க்கிறன #;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கின்ற்+1sg%=ஏன்:^க்கின்றேன் #;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கின்ற்+1pl%=ஓம்:^க்கின்றோம் #;
+@@ -20697,6 +20753,8 @@
+ +verb+fin+complex+nonattitude+strong+pres%=க்கின்ற்+3ple%=ஆர்கள்:^க்கின்றார்கள் #;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கின்ற்+3sghe%=ஆர்கள்:^க்கின்றார்கள் #;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கின்ற்+3sgn%=அது:^க்கின்றது #;
+++verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^க்கின்றதாக #;
+++verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கின்றதாகவும் #;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கின்ற்+3pln%=அன:^க்கின்றன #;
+ +verb+fin+complex+nonattitude+strong+fut%=ப்ப்+1sg%=ஏன்:^ப்பேன் #;
+ +verb+fin+complex+nonattitude+strong+fut%=ப்ப்+1pl%=ஓம்:^ப்போம் #;
+@@ -20735,6 +20793,8 @@
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக:^ப்பித்ததாக #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பித்ததாகவும் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பித்தன #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+1sg%=ஏன்:^ப்பிக்கிறேன் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+1pl%=ஓம்:^ப்பிக்கிறோம் #;
+@@ -20747,6 +20807,8 @@
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3ple%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது:^ப்பிக்கிறது #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கிறதாக #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கிறதாகவும் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3pln%=அன:^ப்பிக்கிறன #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+1sg%=ஏன்:^ப்பிக்கின்றேன் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+1pl%=ஓம்:^ப்பிக்கின்றோம் #;
+@@ -20760,6 +20822,8 @@
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+3ple%=ஆர்கள்:^ப்பிக்கின்றார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+3sghe%=ஆர்கள்:^ப்பிக்கின்றார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+3sgn%=அது:^ப்பிக்கின்றது #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கின்றதாக #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கின்றதாகவும் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+3pln%=அன:^ப்பிக்கின்றன #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+fut%=ப்ப்+1sg%=ஏன்:^ப்பிப்பேன் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+fut%=ப்ப்+1pl%=ஓம்:^ப்பிப்போம் #;

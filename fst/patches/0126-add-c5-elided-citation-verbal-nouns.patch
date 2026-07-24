@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -8390,6 +8390,7 @@
+ +verb+nonfin+sim+verbalnoun%=அது:^வது #;
+ +verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+nonfin+sim+verbalnoun%=தல்:^தல் #;
+++verb+nonfin+sim+verbalnoun%=தல்:^அல் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;

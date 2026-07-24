@@ -1,0 +1,21 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -5,6 +5,8 @@
+ 
+ 
+ LEXICON Root
++! Irregular infinitive of என், required by the productive passive எனப்படு.
++என்+verb+nonfin+sim+inf%=அ:என #;
+ ClassOne ;
+ ClassTwo ;
+ ClassFive ;
+@@ -75331,6 +75333,9 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+soc+add:^ாதவர்களுடனும் #;
+ LEXICON ClassPadu61
+ 
++! Complement-clause passive: என் + infinitive + படு.
++என்:%<PV%>எனப்படு    CPadu61Vinf;
++
+ ! Corpus-attested passive stems with analyzed active infinitives.
+ அச்சடி:%<PV%>அச்சடிக்கப்படு    CPadu61Vinf;
+ அனுஷ்டி:%<PV%>அனுஷ்டிக்கப்படு    CPadu61Vinf;

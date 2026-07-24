@@ -1,0 +1,270 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -221,6 +221,14 @@
+ ரூத்:ரூத	ForeignTFinalInflections;
+ 
+ LEXICON PoliceHumanPlural
+++noun+human+pl+nom+add%=உம்:^ும் #;
+++noun+human+pl+acc%=ஐ:^ை #;
+++noun+human+pl+dat%=க்கு:^ுக்கு #;
+++noun+human+pl+inst%=ஆல்:^ால் #;
+++noun+human+pl+gen%=இன்:^ின் #;
+++noun+human+pl+gen%=உடைய:^ுடைய #;
+++noun+human+pl+loc%=இடம்:^ிடம் #;
+++noun+human+pl+soc%=உடன்:^ுடன் #;
+ +noun+human+pl+nom: #;
+ 
+ LEXICON ForeignFinalNom
+@@ -3206,6 +3214,11 @@
+ +noun+nom+add:^வும் #;
+ +noun+nom+all:^வெல்லாம் #;
+ +noun+trans:^வாக #;
+++noun+trans+add%=உம்:^வாகவும் #;
+++noun+trans+foc%=ஏ:^வாகவே #;
+++noun+trans+sandhic%=ச்:^வாகச் #;
+++noun+trans+sandhit%=த்:^வாகத் #;
+++noun+trans+sandhip%=ப்:^வாகப் #;
+ +noun+trans+sandhik%=க்:^வாகக் #;
+ +noun+trans+cop+fut+3sgn:^வாகும் #;
+ +noun+nom+sandhip:^ப் #;
+@@ -3699,6 +3712,7 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++அறுவை	C2SgRoot;
+ ! Fresh common-vocabulary audit additions.
+ பாணி	C2SgRoot;
+ அணை	C2SgRoot;
+@@ -43860,6 +43874,11 @@
+ +noun+nom+add:^யும் #;
+ +noun+nom+all:^யெல்லாம் #;
+ +noun+trans:^யாக #;
+++noun+trans+add%=உம்:^யாகவும் #;
+++noun+trans+foc%=ஏ:^யாகவே #;
+++noun+trans+sandhic%=ச்:^யாகச் #;
+++noun+trans+sandhit%=த்:^யாகத் #;
+++noun+trans+sandhip%=ப்:^யாகப் #;
+ +noun+trans+sandhik%=க்:^யாகக் #;
+ +noun+trans+cop+fut+3sgn:^யாகும் #;
+ +noun+nom+sandhip:^ப் #;
+@@ -44451,6 +44470,11 @@
+ +noun+nom+add:^யும் #;
+ +noun+nom+all:^யெல்லாம் #;
+ +noun+trans:^யாக #;
+++noun+trans+add%=உம்:^யாகவும் #;
+++noun+trans+foc%=ஏ:^யாகவே #;
+++noun+trans+sandhic%=ச்:^யாகச் #;
+++noun+trans+sandhit%=த்:^யாகத் #;
+++noun+trans+sandhip%=ப்:^யாகப் #;
+ +noun+trans+sandhik%=க்:^யாகக் #;
+ +noun+trans+cop+fut+3sgn:^யாகும் #;
+ +noun+nom+sandhip:^ப் #;
+@@ -50241,7 +50265,7 @@
+ ! Source-backed name cleanup tranche: multi-source name/name+noun candidates.
+ அளவர்	C4SgRoot;
+ ஏவாள்	C4SgRoot;
+-கர்த்தர்	C4SgRoot;
++கர்த்தர்	C16DirectSgRoot;
+ காபூல்	C4SgRoot;
+ கொடுந்தமிழ்	C4SgRoot;
+ சங்கத்தமிழ்	C4SgRoot;
+@@ -54309,6 +54333,11 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+add%=உம்:^ாகவும் #;
+++noun+trans+foc%=ஏ:^ாகவே #;
+++noun+trans+sandhic%=ச்:^ாகச் #;
+++noun+trans+sandhit%=த்:^ாகத் #;
+++noun+trans+sandhip%=ப்:^ாகப் #;
+ +noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+@@ -55437,6 +55466,11 @@
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^எல்லாம் #;
+ +noun+trans:^ஆாக #;
+++noun+trans+add%=உம்:^ஆாகவும் #;
+++noun+trans+foc%=ஏ:^ஆாகவே #;
+++noun+trans+sandhic%=ச்:^ஆாகச் #;
+++noun+trans+sandhit%=த்:^ஆாகத் #;
+++noun+trans+sandhip%=ப்:^ஆாகப் #;
+ +noun+trans+sandhik%=க்:^ஆாகக் #;
+ +noun+trans+cop+fut+3sgn:^ஆாகும் #;
+ +noun+nom+sandhip:^ட்டுப் #;
+@@ -56425,6 +56459,16 @@
+ 
+ 
+ LEXICON C7Sg
++குற்றச்சாட்டு:குற்றச்சாட்டு	ModernKkalPlural;
++அமைப்பு:அமைப்பு	ModernKkalPlural;
++விபத்து:விபத்து	ModernKkalPlural;
++வாய்ப்பு:வாய்ப்பு	ModernKkalPlural;
++சத்து:சத்து	ModernKkalPlural;
++எழுத்து:எழுத்து	ModernKkalPlural;
++பாராட்டு:பாராட்டு	ModernKkalPlural;
++சொத்து:சொத்து	ModernKkalPlural;
++நல்வாழ்த்து:நல்வாழ்த்து	ModernKkalPlural;
++வாழ்த்து:வாழ்த்து	ModernKkalPlural;
+ ! Fresh common-vocabulary audit additions.
+ அதிகளவு	C7SgRoot;
+ தொற்று	C7SgRoot;
+@@ -69385,6 +69429,11 @@
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^எல்லாம் #;
+ +noun+trans:^ஆாக #;
+++noun+trans+add%=உம்:^ஆாகவும் #;
+++noun+trans+foc%=ஏ:^ஆாகவே #;
+++noun+trans+sandhic%=ச்:^ஆாகச் #;
+++noun+trans+sandhit%=த்:^ஆாகத் #;
+++noun+trans+sandhip%=ப்:^ஆாகப் #;
+ +noun+trans+sandhik%=க்:^ஆாகக் #;
+ +noun+trans+cop+fut+3sgn:^ஆாகும் #;
+ 
+@@ -69976,6 +70025,11 @@
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^ணெல்லாம் #;
+ +noun+trans:^றாக #;
+++noun+trans+add%=உம்:^றாகவும் #;
+++noun+trans+foc%=ஏ:^றாகவே #;
+++noun+trans+sandhic%=ச்:^றாகச் #;
+++noun+trans+sandhit%=த்:^றாகத் #;
+++noun+trans+sandhip%=ப்:^றாகப் #;
+ +noun+trans+sandhik%=க்:^றாகக் #;
+ +noun+trans+cop+fut+3sgn:^றாகும் #;
+ +noun+nom+sandhip:^றுப் #;
+@@ -71221,6 +71275,11 @@
+ +noun+nom+add:^ணும் #;
+ +noun+nom+all:^ணெல்லாம் #;
+ +noun+trans:^ணாக #;
+++noun+trans+add%=உம்:^ணாகவும் #;
+++noun+trans+foc%=ஏ:^ணாகவே #;
+++noun+trans+sandhic%=ச்:^ணாகச் #;
+++noun+trans+sandhit%=த்:^ணாகத் #;
+++noun+trans+sandhip%=ப்:^ணாகப் #;
+ +noun+trans+sandhik%=க்:^ணாகக் #;
+ +noun+trans+cop+fut+3sgn:^ணாகும் #;
+ +noun+pl+nom:^கள் #;
+@@ -71757,6 +71816,7 @@
+         C10Inflections;
+ 
+ LEXICON C10RegularSgRoot
+++noun+nom+add%=உம்:^ும் #;
+ 0:Q C10Inflections;
+ 
+ LEXICON C10GeminatingSgRoot
+@@ -71766,6 +71826,11 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+add%=உம்:^ாகவும் #;
+++noun+trans+foc%=ஏ:^ாகவே #;
+++noun+trans+sandhic%=ச்:^ாகச் #;
+++noun+trans+sandhit%=த்:^ாகத் #;
+++noun+trans+sandhip%=ப்:^ாகப் #;
+ +noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ 
+@@ -93196,11 +93261,17 @@
+         C11Inflections;
+         
+ LEXICON C11Inflections
+++noun+gen%=உடைய:^னுடைய #;
+ +noun+nom: #;
+ +noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+add%=உம்:^ாகவும் #;
+++noun+trans+foc%=ஏ:^ாகவே #;
+++noun+trans+sandhic%=ச்:^ாகச் #;
+++noun+trans+sandhit%=த்:^ாகத் #;
+++noun+trans+sandhip%=ப்:^ாகப் #;
+ +noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+@@ -93711,6 +93782,11 @@
+ +noun+nom+add:^லும் #;
+ +noun+nom+all:^லெல்லாம் #;
+ +noun+trans:^லாக #;
+++noun+trans+add%=உம்:^லாகவும் #;
+++noun+trans+foc%=ஏ:^லாகவே #;
+++noun+trans+sandhic%=ச்:^லாகச் #;
+++noun+trans+sandhit%=த்:^லாகத் #;
+++noun+trans+sandhip%=ப்:^லாகப் #;
+ +noun+trans+sandhik%=க்:^லாகக் #;
+ +noun+trans+cop+fut+3sgn:^லாகும் #;
+ +noun+nom+sandhip:^ற்ப் #;
+@@ -94213,6 +94289,11 @@
+ +noun+nom+add:^ளும் #;
+ +noun+nom+all:^ளெல்லாம் #;
+ +noun+trans:^ளாக #;
+++noun+trans+add%=உம்:^ளாகவும் #;
+++noun+trans+foc%=ஏ:^ளாகவே #;
+++noun+trans+sandhic%=ச்:^ளாகச் #;
+++noun+trans+sandhit%=த்:^ளாகத் #;
+++noun+trans+sandhip%=ப்:^ளாகப் #;
+ +noun+trans+sandhik%=க்:^ளாகக் #;
+ +noun+trans+cop+fut+3sgn:^ளாகும் #;
+ +noun+nom+sandhip:^ட்ப் #;
+@@ -97855,6 +97936,11 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+add%=உம்:^ாகவும் #;
+++noun+trans+foc%=ஏ:^ாகவே #;
+++noun+trans+sandhic%=ச்:^ாகச் #;
+++noun+trans+sandhit%=த்:^ாகத் #;
+++noun+trans+sandhip%=ப்:^ாகப் #;
+ +noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+@@ -132773,6 +132859,11 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+add%=உம்:^ாகவும் #;
+++noun+trans+foc%=ஏ:^ாகவே #;
+++noun+trans+sandhic%=ச்:^ாகச் #;
+++noun+trans+sandhit%=த்:^ாகத் #;
+++noun+trans+sandhip%=ப்:^ாகப் #;
+ +noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+@@ -137401,11 +137492,17 @@
+         C16DirectInflections;
+ 
+ LEXICON C16DirectInflections
+++noun+gen%=உடைய:^ுடைய #;
+ +noun+nom: #;
+ +noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+add%=உம்:^ாகவும் #;
+++noun+trans+foc%=ஏ:^ாகவே #;
+++noun+trans+sandhic%=ச்:^ாகச் #;
+++noun+trans+sandhit%=த்:^ாகத் #;
+++noun+trans+sandhip%=ப்:^ாகப் #;
+ +noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+@@ -138003,11 +138100,18 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ 
+ LEXICON C16Inflections
+++noun+gen%=உடைய:^ுடைய #;
+++noun+gen%=உடைய:^ற்றுடைய #;
+ +noun+nom: #;
+ +noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+add%=உம்:^ாகவும் #;
+++noun+trans+foc%=ஏ:^ாகவே #;
+++noun+trans+sandhic%=ச்:^ாகச் #;
+++noun+trans+sandhit%=த்:^ாகத் #;
+++noun+trans+sandhip%=ப்:^ாகப் #;
+ +noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;

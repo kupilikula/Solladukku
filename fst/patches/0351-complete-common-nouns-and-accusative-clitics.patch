@@ -1,0 +1,708 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -187,6 +187,37 @@
+ இயக்குநர்	C16DirectSgRoot;
+ 
+ LEXICON ForeignFinalSg
++! Reviewed common pulli-final loans with productive oblique stems.
++பாஸ்	ForeignFinalNom;
++பாஸ்:பாஸ	ForeignSFinalInflections;
++கேஸ்	ForeignFinalNom;
++கேஸ்:கேஸ	ForeignSFinalInflections;
++யூஸ்	ForeignFinalNom;
++யூஸ்:யூஸ	ForeignSFinalInflections;
++ப்ளீஸ்	ForeignFinalNom;
++ப்ளீஸ்:ப்ளீஸ	ForeignSFinalInflections;
++நியூஸ்	ForeignFinalNom;
++நியூஸ்:நியூஸ	ForeignSFinalInflections;
++ரிலீஸ்	ForeignFinalNom;
++ரிலீஸ்:ரிலீஸ	ForeignSFinalInflections;
++பிக்பாஸ்	ForeignFinalNom;
++பிக்பாஸ்:பிக்பாஸ	ForeignSFinalInflections;
++கோர்ட்	ForeignFinalNom;
++கோர்ட்:கோர்ட	ForeignDoubledTTFinalInflections;
++அவுட்	ForeignFinalNom;
++அவுட்:அவுட	ForeignDoubledTTFinalInflections;
++கமெண்ட்	ForeignFinalNom;
++கமெண்ட்:கமெண்ட	ForeignDoubledTTFinalInflections;
++வெயிட்	ForeignFinalNom;
++வெயிட்:வெயிட	ForeignDoubledTTFinalInflections;
++கரெக்ட்	ForeignFinalNom;
++கரெக்ட்:கரெக்ட	ForeignDoubledTTFinalInflections;
++ஹீட்	ForeignFinalNom;
++ஹீட்:ஹீட	ForeignDoubledTTFinalInflections;
++ஹிட்	ForeignFinalNom;
++ஹிட்:ஹிட	ForeignDoubledTTFinalInflections;
++யூடியூப்	ForeignFinalNom;
++யூடியூப்:யூடியூப	ForeignDoubledPPFinalInflections;
+ ! Borrowed consonant-final names. Nominal forms keep the written final pulli;
+ ! case forms use the Tamilized oblique stem appropriate to the final consonant.
+ கிறிஸ்துமஸ்	ForeignFinalNom;
+@@ -236,6 +267,8 @@
+ 
+ LEXICON ForeignSFinalInflections
+ +noun+acc:^ை #;
+++noun+acc+foc%=ஏ:^ையே #;
+++noun+acc+all:^ையெல்லாம் #;
+ +noun+acc+add:^ையும் #;
+ +noun+acc+sandhip:^ைப் #;
+ +noun+acc+sandhic:^ைச் #;
+@@ -273,6 +306,8 @@
+ 
+ LEXICON ForeignKFinalInflections
+ +noun+acc:^ை #;
+++noun+acc+foc%=ஏ:^ையே #;
+++noun+acc+all:^ையெல்லாம் #;
+ +noun+acc+add:^ையும் #;
+ +noun+acc+sandhip:^ைப் #;
+ +noun+acc+sandhic:^ைச் #;
+@@ -310,6 +345,8 @@
+ 
+ LEXICON ForeignDoubledKKFinalInflections
+ +noun+acc:^்கை #;
+++noun+acc+foc%=ஏ:^்கையே #;
+++noun+acc+all:^்கையெல்லாம் #;
+ +noun+acc+add:^்கையும் #;
+ +noun+acc+sandhip:^்கைப் #;
+ +noun+acc+sandhic:^்கைச் #;
+@@ -345,8 +382,49 @@
+ +noun+loc:^்கிடம் #;
+ +noun+loc+add:^்கிடமும் #;
+ 
++LEXICON ForeignDoubledPPFinalInflections
+++noun+acc:^்பை #;
+++noun+acc+foc%=ஏ:^்பையே #;
+++noun+acc+all:^்பையெல்லாம் #;
+++noun+acc+add:^்பையும் #;
+++noun+acc+sandhip:^்பைப் #;
+++noun+acc+sandhic:^்பைச் #;
+++noun+acc+sandhit:^்பைத் #;
+++noun+acc+sandhik:^்பைக் #;
+++noun+inst:^்பால் #;
+++noun+inst+add:^்பாலும் #;
+++noun+dat:^்புக்கு #;
+++noun+dat+add:^்புக்கும் #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^்புக்கான #;
+++noun+dat+sandhip:^்புக்குப் #;
+++noun+dat+sandhic:^்புக்குச் #;
+++noun+dat+sandhit:^்புக்குத் #;
+++noun+dat+sandhik:^்புக்குக் #;
+++noun+soc:^்போடு #;
+++noun+soc+add:^்போடும் #;
+++noun+soc:^்புடன் #;
+++noun+soc+add:^்புடனும் #;
+++noun+abl:^்பில் #;
+++noun+abl+add:^்பிலும் #;
+++noun+abl:^்பின் #;
+++noun+abl+add:^்பினும் #;
+++noun+abl:^்பிலிருந்து #;
+++noun+abl+add:^்பிலிருந்தும் #;
+++noun+gen:^்பின் #;
+++noun+gen+psp_padi:^்பின்படி #;
+++noun+gen+add:^்பினும் #;
+++noun+gen:^்புடைய #;
+++noun+loc:^்பில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^்பிலான #;
+++noun+loc+add:^்பிலும் #;
+++noun+loc+foc%=ஏயே:^்பிலேயே #;
+++noun+loc:^்பிடம் #;
+++noun+loc+add:^்பிடமும் #;
++
+ LEXICON ForeignCHFinalInflections
+ +noun+acc:^்சை #;
+++noun+acc+foc%=ஏ:^்சையே #;
+++noun+acc+all:^்சையெல்லாம் #;
+ +noun+acc+add:^்சையும் #;
+ +noun+acc+sandhip:^்சைப் #;
+ +noun+acc+sandhic:^்சைச் #;
+@@ -384,6 +462,8 @@
+ 
+ LEXICON ForeignDoubledTTFinalInflections
+ +noun+acc:^்டை #;
+++noun+acc+foc%=ஏ:^்டையே #;
+++noun+acc+all:^்டையெல்லாம் #;
+ +noun+acc+add:^்டையும் #;
+ +noun+acc+sandhip:^்டைப் #;
+ +noun+acc+sandhic:^்டைச் #;
+@@ -421,6 +501,8 @@
+ 
+ LEXICON ForeignPlainTTFinalInflections
+ +noun+acc:^ை #;
+++noun+acc+foc%=ஏ:^ையே #;
+++noun+acc+all:^ையெல்லாம் #;
+ +noun+acc+add:^ையும் #;
+ +noun+acc+sandhip:^ைப் #;
+ +noun+acc+sandhic:^ைச் #;
+@@ -458,6 +540,8 @@
+ 
+ LEXICON ForeignTFinalInflections
+ +noun+acc:^்தை #;
+++noun+acc+foc%=ஏ:^்தையே #;
+++noun+acc+all:^்தையெல்லாம் #;
+ +noun+acc+add:^்தையும் #;
+ +noun+acc+sandhip:^்தைப் #;
+ +noun+acc+sandhic:^்தைச் #;
+@@ -1569,6 +1653,9 @@
+ +pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ 
+ LEXICON C1Sg
++! Reviewed common lexical readings recurring across development corpora.
++போட்டோ	C1SgRoot;
++ஸ்டூடியோ	C1SgRoot;
+ அணு	C1SgRoot;
+ தூமகேது	C1SgRoot;
+ பிக்ஷு	C1SgRoot;
+@@ -3240,18 +3327,24 @@
+ +noun+pl+nom+all:^க்களெல்லாம் #;
+ 
+ +noun+acc:^வை #;
+++noun+acc+foc%=ஏ:^வையே #;
+++noun+acc+all:^வையெல்லாம் #;
+ +noun+acc+add:^வையும் #;
+ +noun+acc+sandhip:^வைப் #;
+ +noun+acc+sandhic:^வைச் #;
+ +noun+acc+sandhit:^வைத் #;
+ +noun+acc+sandhik:^வைக் #;
+ +noun+pl+acc:^க்களினை #;
+++noun+pl+acc+foc%=ஏ:^க்களினையே #;
+++noun+pl+acc+all:^க்களினையெல்லாம் #;
+ +noun+pl+acc+add:^க்களினையும் #;
+ +noun+pl+acc+sandhip:^க்களினைப் #;
+ +noun+pl+acc+sandhic:^க்களினைச் #;
+ +noun+pl+acc+sandhit:^க்களினைத் #;
+ +noun+pl+acc+sandhik:^க்களினைக் #;
+ +noun+pl+acc:^க்களை #;
+++noun+pl+acc+foc%=ஏ:^க்களையே #;
+++noun+pl+acc+all:^க்களையெல்லாம் #;
+ +noun+pl+acc+add:^க்களையும் #;
+ +noun+pl+acc+sandhip:^க்களைப் #;
+ +noun+pl+acc+sandhic:^க்களைச் #;
+@@ -3717,6 +3810,13 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++! Reviewed common lexical readings recurring across development corpora.
++திரை	C2SgRoot;
++ருசி	C2SgRoot;
++வழிச்சாலை	C2SgRoot;
++பேட்டரி	C2SgRoot;
++மிலிட்டரி	C2SgRoot;
++காஃபி	C2SgRoot;
+ அறுவை	C2SgRoot;
+ ! Fresh common-vocabulary audit additions.
+ பாணி	C2SgRoot;
+@@ -43868,6 +43968,8 @@
+ +noun+pl+trans%=ஆக+sandhik%=க்:^மார்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^மார்களாகும் #;
+ +noun+pl+acc:^மார்களை #;
+++noun+pl+acc+foc%=ஏ:^மார்களையே #;
+++noun+pl+acc+all:^மார்களையெல்லாம் #;
+ +noun+pl+acc+add:^மார்களையும் #;
+ +noun+pl+acc+sandhip:^மார்களைப் #;
+ +noun+pl+acc+sandhic:^மார்களைச் #;
+@@ -43903,18 +44005,24 @@
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+ +noun+acc:^யை #;
+++noun+acc+foc%=ஏ:^யையே #;
+++noun+acc+all:^யையெல்லாம் #;
+ +noun+acc+add:^யையும் #;
+ +noun+acc+sandhip:^யைப் #;
+ +noun+acc+sandhic:^யைச் #;
+ +noun+acc+sandhit:^யைத் #;
+ +noun+acc+sandhik:^யைக் #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc+foc%=ஏ:^களினையே #;
+++noun+pl+acc+all:^களினையெல்லாம் #;
+ +noun+pl+acc+add:^களினையும் #;
+ +noun+pl+acc+sandhip:^களினைப் #;
+ +noun+pl+acc+sandhic:^களினைச் #;
+ +noun+pl+acc+sandhit:^களினைத் #;
+ +noun+pl+acc+sandhik:^களினைக் #;
+ +noun+pl+acc:^களை #;
+++noun+pl+acc+foc%=ஏ:^களையே #;
+++noun+pl+acc+all:^களையெல்லாம் #;
+ +noun+pl+acc+add:^களையும் #;
+ +noun+pl+acc+sandhip:^களைப் #;
+ +noun+pl+acc+sandhic:^களைச் #;
+@@ -44501,18 +44609,24 @@
+ +noun+pl+nom+all:^க்களெல்லாம் #;
+ 
+ +noun+acc:^யை #;
+++noun+acc+foc%=ஏ:^யையே #;
+++noun+acc+all:^யையெல்லாம் #;
+ +noun+acc+add:^யையும் #;
+ +noun+acc+sandhip:^யைப் #;
+ +noun+acc+sandhic:^யைச் #;
+ +noun+acc+sandhit:^யைத் #;
+ +noun+acc+sandhik:^யைக் #;
+ +noun+pl+acc:^க்களினை #;
+++noun+pl+acc+foc%=ஏ:^க்களினையே #;
+++noun+pl+acc+all:^க்களினையெல்லாம் #;
+ +noun+pl+acc+add:^க்களினையும் #;
+ +noun+pl+acc+sandhip:^க்களினைப் #;
+ +noun+pl+acc+sandhic:^க்களினைச் #;
+ +noun+pl+acc+sandhit:^க்களினைத் #;
+ +noun+pl+acc+sandhik:^க்களினைக் #;
+ +noun+pl+acc:^க்களை #;
+++noun+pl+acc+foc%=ஏ:^க்களையே #;
+++noun+pl+acc+all:^க்களையெல்லாம் #;
+ +noun+pl+acc+add:^க்களையும் #;
+ +noun+pl+acc+sandhip:^க்களைப் #;
+ +noun+pl+acc+sandhic:^க்களைச் #;
+@@ -44975,6 +45089,15 @@
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^க்களின்கீழேயிருந்தும் #;
+ LEXICON C4Sg
++! Reviewed common lexical readings recurring across development corpora.
++லெவல்	C4SgRoot;
++டிசைன்	C4SgRoot;
++கலர்	C4SgRoot;
++சேனல்	C4SgRoot;
++மெசேஜ்	C4SgRoot;
++லெட்டர்	C4SgRoot;
++மாடல்	C4SgRoot;
++சீரியல்	C4SgRoot;
+ முஸ்லிம்	C4SgRoot;
+ திருக்கோயில்	C4SgRoot;
+ கொவிட்	C4SgRoot;
+@@ -54365,18 +54488,24 @@
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+ +noun+acc:^ை #;
+++noun+acc+foc%=ஏ:^ையே #;
+++noun+acc+all:^ையெல்லாம் #;
+ +noun+acc+add:^ையும் #;
+ +noun+acc+sandhip:^ைப் #;
+ +noun+acc+sandhic:^ைச் #;
+ +noun+acc+sandhit:^ைத் #;
+ +noun+acc+sandhik:^ைக் #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc+foc%=ஏ:^களினையே #;
+++noun+pl+acc+all:^களினையெல்லாம் #;
+ +noun+pl+acc+add:^களினையும் #;
+ +noun+pl+acc+sandhip:^களினைப் #;
+ +noun+pl+acc+sandhic:^களினைச் #;
+ +noun+pl+acc+sandhit:^களினைத் #;
+ +noun+pl+acc+sandhik:^களினைக் #;
+ +noun+pl+acc:^களை #;
+++noun+pl+acc+foc%=ஏ:^களையே #;
+++noun+pl+acc+all:^களையெல்லாம் #;
+ +noun+pl+acc+add:^களையும் #;
+ +noun+pl+acc+sandhip:^களைப் #;
+ +noun+pl+acc+sandhic:^களைச் #;
+@@ -54866,6 +54995,8 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+acc:^ை #;
+++noun+pl+acc+foc%=ஏ:^ையே #;
+++noun+pl+acc+all:^ையெல்லாம் #;
+ +noun+pl+acc+add:^ையும் #;
+ +noun+pl+acc+sandhip:^ைப் #;
+ +noun+pl+acc+sandhic:^ைச் #;
+@@ -55501,18 +55632,24 @@
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+ +noun+acc:^ட்டை #;
+++noun+acc+foc%=ஏ:^ட்டையே #;
+++noun+acc+all:^ட்டையெல்லாம் #;
+ +noun+acc+add:^ட்டையும் #;
+ +noun+acc+sandhip:^ட்டைப் #;
+ +noun+acc+sandhic:^ட்டைச் #;
+ +noun+acc+sandhit:^ட்டைத் #;
+ +noun+acc+sandhik:^ட்டைக் #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc+foc%=ஏ:^களினையே #;
+++noun+pl+acc+all:^களினையெல்லாம் #;
+ +noun+pl+acc+add:^களினையும் #;
+ +noun+pl+acc+sandhip:^களினைப் #;
+ +noun+pl+acc+sandhic:^களினைச் #;
+ +noun+pl+acc+sandhit:^களினைத் #;
+ +noun+pl+acc+sandhik:^களினைக் #;
+ +noun+pl+acc:^களை #;
+++noun+pl+acc+foc%=ஏ:^களையே #;
+++noun+pl+acc+all:^களையெல்லாம் #;
+ +noun+pl+acc+add:^களையும் #;
+ +noun+pl+acc+sandhip:^களைப் #;
+ +noun+pl+acc+sandhic:^களைச் #;
+@@ -55999,18 +56136,24 @@
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+ +noun+acc:^ட்டை #;
+++noun+acc+foc%=ஏ:^ட்டையே #;
+++noun+acc+all:^ட்டையெல்லாம் #;
+ +noun+acc+add:^ட்டையும் #;
+ +noun+acc+sandhip:^ட்டைப் #;
+ +noun+acc+sandhic:^ட்டைச் #;
+ +noun+acc+sandhit:^ட்டைத் #;
+ +noun+acc+sandhik:^ட்டைக் #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc+foc%=ஏ:^களினையே #;
+++noun+pl+acc+all:^களினையெல்லாம் #;
+ +noun+pl+acc+add:^களினையும் #;
+ +noun+pl+acc+sandhip:^களினைப் #;
+ +noun+pl+acc+sandhic:^களினைச் #;
+ +noun+pl+acc+sandhit:^களினைத் #;
+ +noun+pl+acc+sandhik:^களினைக் #;
+ +noun+pl+acc:^களை #;
+++noun+pl+acc+foc%=ஏ:^களையே #;
+++noun+pl+acc+all:^களையெல்லாம் #;
+ +noun+pl+acc+add:^களையும் #;
+ +noun+pl+acc+sandhip:^களைப் #;
+ +noun+pl+acc+sandhic:^களைச் #;
+@@ -56475,6 +56618,10 @@
+ 
+ 
+ LEXICON C7Sg
++! Reviewed common lexical readings recurring across development corpora.
++அரங்கு	C7SgRoot;
++செயற்குழு	C7SgRoot;
++படக்குழு	C7SgRoot;
+ குற்றச்சாட்டு:குற்றச்சாட்டு	ModernKkalPlural;
+ அமைப்பு:அமைப்பு	ModernKkalPlural;
+ விபத்து:விபத்து	ModernKkalPlural;
+@@ -69425,6 +69572,8 @@
+ +noun+pl+psp_idaiye:^க்களிடையே #;
+ +noun+pl+nom+add%=உம்:^க்களும் #;
+ +noun+pl+acc:^க்களை #;
+++noun+pl+acc+foc%=ஏ:^க்களையே #;
+++noun+pl+acc+all:^க்களையெல்லாம் #;
+ +noun+pl+dat:^க்களுக்கு #;
+ +noun+pl+gen:^க்களின் #;
+ +noun+pl+gen+psp_padi:^க்களின்படி #;
+@@ -69468,18 +69617,24 @@
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+ +noun+acc:^ஆை #;
+++noun+acc+foc%=ஏ:^ஆையே #;
+++noun+acc+all:^ஆையெல்லாம் #;
+ +noun+acc+add:^ஆையும் #;
+ +noun+acc+sandhip:^ஆைப் #;
+ +noun+acc+sandhic:^ஆைச் #;
+ +noun+acc+sandhit:^ஆைத் #;
+ +noun+acc+sandhik:^ஆைக் #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc+foc%=ஏ:^களினையே #;
+++noun+pl+acc+all:^களினையெல்லாம் #;
+ +noun+pl+acc+add:^களினையும் #;
+ +noun+pl+acc+sandhip:^களினைப் #;
+ +noun+pl+acc+sandhic:^களினைச் #;
+ +noun+pl+acc+sandhit:^களினைத் #;
+ +noun+pl+acc+sandhik:^களினைக் #;
+ +noun+pl+acc:^களை #;
+++noun+pl+acc+foc%=ஏ:^களையே #;
+++noun+pl+acc+all:^களையெல்லாம் #;
+ +noun+pl+acc+add:^களையும் #;
+ +noun+pl+acc+sandhip:^களைப் #;
+ +noun+pl+acc+sandhic:^களைச் #;
+@@ -70065,18 +70220,24 @@
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+ +noun+acc:^றை #;
+++noun+acc+foc%=ஏ:^றையே #;
+++noun+acc+all:^றையெல்லாம் #;
+ +noun+acc+add:^றையும் #;
+ +noun+acc+sandhip:^றைப் #;
+ +noun+acc+sandhic:^றைச் #;
+ +noun+acc+sandhit:^றைத் #;
+ +noun+acc+sandhik:^றைக் #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc+foc%=ஏ:^களினையே #;
+++noun+pl+acc+all:^களினையெல்லாம் #;
+ +noun+pl+acc+add:^களினையும் #;
+ +noun+pl+acc+sandhip:^களினைப் #;
+ +noun+pl+acc+sandhic:^களினைச் #;
+ +noun+pl+acc+sandhit:^களினைத் #;
+ +noun+pl+acc+sandhik:^களினைக் #;
+ +noun+pl+acc:^களை #;
+++noun+pl+acc+foc%=ஏ:^களையே #;
+++noun+pl+acc+all:^களையெல்லாம் #;
+ +noun+pl+acc+add:^களையும் #;
+ +noun+pl+acc+sandhip:^களைப் #;
+ +noun+pl+acc+sandhic:^களைச் #;
+@@ -71313,18 +71474,24 @@
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+ +noun+acc:^ணை #;
+++noun+acc+foc%=ஏ:^ணையே #;
+++noun+acc+all:^ணையெல்லாம் #;
+ +noun+acc+add:^ணையும் #;
+ +noun+acc+sandhip:^ணைப் #;
+ +noun+acc+sandhic:^ணைச் #;
+ +noun+acc+sandhit:^ணைத் #;
+ +noun+acc+sandhik:^ணைக் #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc+foc%=ஏ:^களினையே #;
+++noun+pl+acc+all:^களினையெல்லாம் #;
+ +noun+pl+acc+add:^களினையும் #;
+ +noun+pl+acc+sandhip:^களினைப் #;
+ +noun+pl+acc+sandhic:^களினைச் #;
+ +noun+pl+acc+sandhit:^களினைத் #;
+ +noun+pl+acc+sandhik:^களினைக் #;
+ +noun+pl+acc:^களை #;
+++noun+pl+acc+foc%=ஏ:^களையே #;
+++noun+pl+acc+all:^களையெல்லாம் #;
+ +noun+pl+acc+add:^களையும் #;
+ +noun+pl+acc+sandhip:^களைப் #;
+ +noun+pl+acc+sandhic:^களைச் #;
+@@ -71878,18 +72045,24 @@
+ +noun+pl+nom+cmpr:^கள்போல் #;
+ 
+ +noun+acc:^னை #;
+++noun+acc+foc%=ஏ:^னையே #;
+++noun+acc+all:^னையெல்லாம் #;
+ +noun+acc+add:^னையும் #;
+ +noun+acc+sandhip:^னைப் #;
+ +noun+acc+sandhic:^னைச் #;
+ +noun+acc+sandhit:^னைத் #;
+ +noun+acc+sandhik:^னைக் #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc+foc%=ஏ:^களினையே #;
+++noun+pl+acc+all:^களினையெல்லாம் #;
+ +noun+pl+acc+add:^களினையும் #;
+ +noun+pl+acc+sandhip:^களினைப் #;
+ +noun+pl+acc+sandhic:^களினைச் #;
+ +noun+pl+acc+sandhit:^களினைத் #;
+ +noun+pl+acc+sandhik:^களினைக் #;
+ +noun+pl+acc:^களை #;
+++noun+pl+acc+foc%=ஏ:^களையே #;
+++noun+pl+acc+all:^களையெல்லாம் #;
+ +noun+pl+acc+add:^களையும் #;
+ +noun+pl+acc+sandhip:^களைப் #;
+ +noun+pl+acc+sandhic:^களைச் #;
+@@ -93313,18 +93486,24 @@
+ +noun+pl+nom+all:^ர்களெல்லாம் #;
+ 
+ +noun+acc:^ை #;
+++noun+acc+foc%=ஏ:^ையே #;
+++noun+acc+all:^ையெல்லாம் #;
+ +noun+acc+add:^ையும் #;
+ +noun+acc+sandhip:^ைப் #;
+ +noun+acc+sandhic:^ைச் #;
+ +noun+acc+sandhit:^ைத் #;
+ +noun+acc+sandhik:^ைக் #;
+ +noun+pl+acc:^ர்களினை #;
+++noun+pl+acc+foc%=ஏ:^ர்களினையே #;
+++noun+pl+acc+all:^ர்களினையெல்லாம் #;
+ +noun+pl+acc+add:^ர்களினையும் #;
+ +noun+pl+acc+sandhip:^ர்களினைப் #;
+ +noun+pl+acc+sandhic:^ர்களினைச் #;
+ +noun+pl+acc+sandhit:^ர்களினைத் #;
+ +noun+pl+acc+sandhik:^ர்களினைக் #;
+ +noun+pl+acc:^ர்களை #;
+++noun+pl+acc+foc%=ஏ:^ர்களையே #;
+++noun+pl+acc+all:^ர்களையெல்லாம் #;
+ +noun+pl+acc+add:^ர்களையும் #;
+ +noun+pl+acc+sandhip:^ர்களைப் #;
+ +noun+pl+acc+sandhic:^ர்களைச் #;
+@@ -93830,18 +94009,24 @@
+ +noun+pl+nom+all:^ற்களெல்லாம் #;
+ 
+ +noun+acc:^லை #;
+++noun+acc+foc%=ஏ:^லையே #;
+++noun+acc+all:^லையெல்லாம் #;
+ +noun+acc+add:^லையும் #;
+ +noun+acc+sandhip:^லைப் #;
+ +noun+acc+sandhic:^லைச் #;
+ +noun+acc+sandhit:^லைத் #;
+ +noun+acc+sandhik:^லைக் #;
+ +noun+pl+acc:^ற்களினை #;
+++noun+pl+acc+foc%=ஏ:^ற்களினையே #;
+++noun+pl+acc+all:^ற்களினையெல்லாம் #;
+ +noun+pl+acc+add:^ற்களினையும் #;
+ +noun+pl+acc+sandhip:^ற்களினைப் #;
+ +noun+pl+acc+sandhic:^ற்களினைச் #;
+ +noun+pl+acc+sandhit:^ற்களினைத் #;
+ +noun+pl+acc+sandhik:^ற்களினைக் #;
+ +noun+pl+acc:^ற்களை #;
+++noun+pl+acc+foc%=ஏ:^ற்களையே #;
+++noun+pl+acc+all:^ற்களையெல்லாம் #;
+ +noun+pl+acc+add:^ற்களையும் #;
+ +noun+pl+acc+sandhip:^ற்களைப் #;
+ +noun+pl+acc+sandhic:^ற்களைச் #;
+@@ -94339,18 +94524,24 @@
+ +noun+pl+nom+all:^ட்களெல்லாம் #;
+ 
+ +noun+acc:^ளை #;
+++noun+acc+foc%=ஏ:^ளையே #;
+++noun+acc+all:^ளையெல்லாம் #;
+ +noun+acc+add:^ளையும் #;
+ +noun+acc+sandhip:^ளைப் #;
+ +noun+acc+sandhic:^ளைச் #;
+ +noun+acc+sandhit:^ளைத் #;
+ +noun+acc+sandhik:^ளைக் #;
+ +noun+pl+acc:^ட்களினை #;
+++noun+pl+acc+foc%=ஏ:^ட்களினையே #;
+++noun+pl+acc+all:^ட்களினையெல்லாம் #;
+ +noun+pl+acc+add:^ட்களினையும் #;
+ +noun+pl+acc+sandhip:^ட்களினைப் #;
+ +noun+pl+acc+sandhic:^ட்களினைச் #;
+ +noun+pl+acc+sandhit:^ட்களினைத் #;
+ +noun+pl+acc+sandhik:^ட்களினைக் #;
+ +noun+pl+acc:^ட்களை #;
+++noun+pl+acc+foc%=ஏ:^ட்களையே #;
+++noun+pl+acc+all:^ட்களையெல்லாம் #;
+ +noun+pl+acc+add:^ட்களையும் #;
+ +noun+pl+acc+sandhip:^ட்களைப் #;
+ +noun+pl+acc+sandhic:^ட்களைச் #;
+@@ -97448,6 +97639,8 @@
+ LEXICON LexicalActionNominalL
+ +noun+verbalnoun+actionnominal+nom:் #;
+ +noun+verbalnoun+actionnominal+acc:ை #;
+++noun+verbalnoun+actionnominal+acc+foc%=ஏ:ையே #;
+++noun+verbalnoun+actionnominal+acc+all:ையெல்லாம் #;
+ +noun+verbalnoun+actionnominal+dat:ுக்கு #;
+ +noun+verbalnoun+actionnominal+gen:ின் #;
+ +noun+verbalnoun+actionnominal+gen+psp_padi:ின்படி #;
+@@ -97485,12 +97678,16 @@
+ +noun+pl+nom+add:^ட்களும் #;
+ +noun+pl+nom+all:^ட்களெல்லாம் #;
+ +noun+pl+acc:^ட்களினை #;
+++noun+pl+acc+foc%=ஏ:^ட்களினையே #;
+++noun+pl+acc+all:^ட்களினையெல்லாம் #;
+ +noun+pl+acc+add:^ட்களினையும் #;
+ +noun+pl+acc+sandhip:^ட்களினைப் #;
+ +noun+pl+acc+sandhic:^ட்களினைச் #;
+ +noun+pl+acc+sandhit:^ட்களினைத் #;
+ +noun+pl+acc+sandhik:^ட்களினைக் #;
+ +noun+pl+acc:^ட்களை #;
+++noun+pl+acc+foc%=ஏ:^ட்களையே #;
+++noun+pl+acc+all:^ட்களையெல்லாம் #;
+ +noun+pl+acc+add:^ட்களையும் #;
+ +noun+pl+acc+sandhip:^ட்களைப் #;
+ +noun+pl+acc+sandhic:^ட்களைச் #;
+@@ -97729,12 +97926,16 @@
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc+foc%=ஏ:^களினையே #;
+++noun+pl+acc+all:^களினையெல்லாம் #;
+ +noun+pl+acc+add:^களினையும் #;
+ +noun+pl+acc+sandhip:^களினைப் #;
+ +noun+pl+acc+sandhic:^களினைச் #;
+ +noun+pl+acc+sandhit:^களினைத் #;
+ +noun+pl+acc+sandhik:^களினைக் #;
+ +noun+pl+acc:^களை #;
+++noun+pl+acc+foc%=ஏ:^களையே #;
+++noun+pl+acc+all:^களையெல்லாம் #;
+ +noun+pl+acc+add:^களையும் #;
+ +noun+pl+acc+sandhip:^களைப் #;
+ +noun+pl+acc+sandhic:^களைச் #;
+@@ -97982,6 +98183,8 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+acc:^ை #;
+++noun+acc+foc%=ஏ:^ையே #;
+++noun+acc+all:^ையெல்லாம் #;
+ +noun+acc+add:^ையும் #;
+ +noun+acc+sandhip:^ைப் #;
+ +noun+acc+sandhic:^ைச் #;
+@@ -98225,6 +98428,8 @@
+ +noun+gen+psp_keele_iruntu+add:^ின்கீழேயிருந்தும் #;
+ 
+ LEXICON C15Sg
++! Reviewed common lexical readings recurring across development corpora.
++ஆர்ப்பாட்டம்	C15SgRoot;
+ கதாபாத்திரம்	C15SgRoot;
+ சுல்தானகம்	C15SgRoot;
+ ! Post-0318 reviewed common lexical coverage.
+@@ -132913,6 +133118,8 @@
+ +noun+pl+nom+add:^ங்களும் #;
+ +noun+pl+nom+all:^ங்களெல்லாம் #;
+ +noun+infInc+acc:^த்தை #;
+++noun+infInc+acc+foc%=ஏ:^த்தையே #;
+++noun+infInc+acc+all:^த்தையெல்லாம் #;
+ +noun+infInc+acc+add:^த்தையும் #;
+ +noun+infInc+acc+sandhip:^த்தைப் #;
+ +noun+infInc+acc+sandhic:^த்தைச் #;
+@@ -132920,12 +133127,16 @@
+ +noun+infInc+acc+sandhik:^த்தைக் #;
+ 
+ +noun+pl+acc:^ங்களினை #;
+++noun+pl+acc+foc%=ஏ:^ங்களினையே #;
+++noun+pl+acc+all:^ங்களினையெல்லாம் #;
+ +noun+pl+acc+add:^ங்களினையும் #;
+ +noun+pl+acc+sandhip:^ங்களினைப் #;
+ +noun+pl+acc+sandhic:^ங்களினைச் #;
+ +noun+pl+acc+sandhit:^ங்களினைத் #;
+ +noun+pl+acc+sandhik:^ங்களினைக் #;
+ +noun+pl+acc:^ங்களை #;
+++noun+pl+acc+foc%=ஏ:^ங்களையே #;
+++noun+pl+acc+all:^ங்களையெல்லாம் #;
+ +noun+pl+acc+add:^ங்களையும் #;
+ +noun+pl+acc+sandhip:^ங்களைப் #;
+ +noun+pl+acc+sandhic:^ங்களைச் #;
+@@ -133406,6 +133617,12 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^ங்களின்கீழேயிருந்தும் #;
+ 
+ LEXICON C16Sg
++! Reviewed common lexical readings recurring across development corpora.
++தோழர்	C16DirectSgRoot;
++தாயார்	C16DirectSgRoot;
++பேரிடர்	C16DirectSgRoot;
++வன்னியர்	C16DirectSgRoot;
++வேளாளர்	C16DirectSgRoot;
+ ! Post-0318 reviewed common lexical coverage.
+ ஆட்சியாளர்	C16DirectSgRoot;
+ ஊடகவியலாளர்	C16DirectSgRoot;
+@@ -137556,6 +137773,8 @@
+ +noun+pl+nom+foc:^கள்தான் #;
+ 
+ +noun+acc:^ை #;
+++noun+acc+foc%=ஏ:^ையே #;
+++noun+acc+all:^ையெல்லாம் #;
+ +noun+acc+add:^ையும் #;
+ +noun+acc+sandhip:^ைப் #;
+ +noun+acc+sandhic:^ைச் #;
+@@ -137563,12 +137782,16 @@
+ +noun+acc+sandhik:^ைக் #;
+ +noun+acc+foc:^ைத்தான் #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc+foc%=ஏ:^களினையே #;
+++noun+pl+acc+all:^களினையெல்லாம் #;
+ +noun+pl+acc+add:^களினையும் #;
+ +noun+pl+acc+sandhip:^களினைப் #;
+ +noun+pl+acc+sandhic:^களினைச் #;
+ +noun+pl+acc+sandhit:^களினைத் #;
+ +noun+pl+acc+sandhik:^களினைக் #;
+ +noun+pl+acc:^களை #;
+++noun+pl+acc+foc%=ஏ:^களையே #;
+++noun+pl+acc+all:^களையெல்லாம் #;
+ +noun+pl+acc+add:^களையும் #;
+ +noun+pl+acc+sandhip:^களைப் #;
+ +noun+pl+acc+sandhic:^களைச் #;
+@@ -138167,6 +138390,8 @@
+ +noun+pl+nom+foc:^கள்தான் #;
+ 
+ +noun+acc:^ற்றை #;
+++noun+acc+foc%=ஏ:^ற்றையே #;
+++noun+acc+all:^ற்றையெல்லாம் #;
+ +noun+acc+add:^ற்றையும் #;
+ +noun+acc+sandhip:^ற்றைப் #;
+ +noun+acc+sandhic:^ற்றைச் #;
+@@ -138174,6 +138399,8 @@
+ +noun+acc+sandhik:^ற்றைக் #;
+ +noun+acc+foc:^ற்றைத்தான் #;
+ +noun+acc:^ை #;
+++noun+acc+foc%=ஏ:^ையே #;
+++noun+acc+all:^ையெல்லாம் #;
+ +noun+acc+add:^ையும் #;
+ +noun+acc+sandhip:^ைப் #;
+ +noun+acc+sandhic:^ைச் #;
+@@ -138181,12 +138408,16 @@
+ +noun+acc+sandhik:^ைக் #;
+ +noun+acc+foc:^ைத்தான் #;
+ +noun+pl+acc:^களினை #;
+++noun+pl+acc+foc%=ஏ:^களினையே #;
+++noun+pl+acc+all:^களினையெல்லாம் #;
+ +noun+pl+acc+add:^களினையும் #;
+ +noun+pl+acc+sandhip:^களினைப் #;
+ +noun+pl+acc+sandhic:^களினைச் #;
+ +noun+pl+acc+sandhit:^களினைத் #;
+ +noun+pl+acc+sandhik:^களினைக் #;
+ +noun+pl+acc:^களை #;
+++noun+pl+acc+foc%=ஏ:^களையே #;
+++noun+pl+acc+all:^களையெல்லாம் #;
+ +noun+pl+acc+add:^களையும் #;
+ +noun+pl+acc+sandhip:^களைப் #;
+ +noun+pl+acc+sandhic:^களைச் #;

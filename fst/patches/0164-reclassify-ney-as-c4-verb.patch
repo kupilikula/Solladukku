@@ -1,0 +1,21 @@
+--- ThamizhiFST-C4.foma
++++ ThamizhiFST-C4.foma
+@@ -16,6 +16,8 @@
+ define C4R9 [{ஈ}] -> {ஈய} || _ "^" [{அ}];
+ 
+ 
++define C4NeyPast {நெய்ந்த} -> {நெய்த};
++
+ # To Cleanup: remove morpheme boundaries
+ define Cleanup1 "அ" -> 0 || "^" _;
+ define Cleanup2 "^" -> 0;
+@@ -31,7 +33,8 @@
+ 		C4R8	.o.
+ 		C4R9	.o.
+ 		Cleanup1		.o.
+-		Cleanup2;
++		Cleanup2		.o.
++		C4NeyPast;
+ 
+ regex ClassFourGrammar;
+ 

@@ -1,0 +1,43 @@
+--- ThamizhiFST-otherthan-3-4-62-11-12.foma
++++ ThamizhiFST-otherthan-3-4-62-11-12.foma
+@@ -9,6 +9,16 @@
+ define VerbQuestionBoundary "~" -> 0;
+ define Class17Marker W -> 0;
+ define KollModal {கொள்} -> {கொள்ள} || _ "^" [{அலாம்}|{அவில்லை}|{ா}];
++define KollNeuterFuture {கொள்} -> {கொள்ள} || _ "^" [{ு}];
++define C1LiteraryConditional {ய்} -> {ய} || _ "^" [{ி}];
++define C2LiteraryConditional {ள்} -> {ள} || _ "^" [{ி}];
++define C16MannerPurpose {தா} -> {தர} || _ "^" [{ுமாறு}];
++define C9KelK {கேள்} -> {கேட்} || _ "^" [{க}];
++define C9KelU {கேள்} -> {கேட்க} || _ "^" [{ு}];
++define C9KelP {கேள்} -> {கேட்} || _ "^" [{பி}];
++define C8MarkedGemination [{ன்} X] -> {ன்ன} || _ "^" [{ு}|{ா}|{ி}|{அ}];
++define C8Marker X -> 0;
++define C18Past {வே} -> {வெ} || _ "^" [{ந்}];
+ 
+ define VM [ா | ி | ீ | ு | ூ | ெ |ே | ொ |ோ |ை];
+ define CON [க | ச | ட | த | ப | ற | ய | ர | ள | வ | ழ | ல | ங | ஞ | ண | ந | ம | ன ];
+@@ -125,6 +135,15 @@
+ 			C1R2	 	.o.
+ 			C1R3	 	.o.
+ 			KollModal		.o.
++			KollNeuterFuture	.o.
++			C1LiteraryConditional	.o.
++			C2LiteraryConditional	.o.
++			C16MannerPurpose	.o.
++			C9KelK	.o.
++			C9KelU	.o.
++			C9KelP	.o.
++			C8MarkedGemination	.o.
++			C18Past	.o.
+ 		  	C2R1		.o.
+ 			C2R2		.o.
+ 			C2R3		.o.
+@@ -161,6 +180,7 @@
+ 			C8Rule2           	.o.
+ 			C8Rule3           	.o.
+ 			C8Rule4           	.o.
++			C8Marker	.o.
+ 			C9Rule1           	.o.
+ 			C9Rule2           	.o.
+ 			C9Rule3           	.o.

@@ -1,0 +1,43 @@
+--- a/tamil-part.lexc
++++ b/tamil-part.lexc
+@@ -120,15 +120,36 @@
+ 
+ LEXICON ordinals
+ முதலாவது		ordinal;
+-இரண்டாது		ordinal;
+-மூன்றாவது		ordinal;	
++இரண்டாவது		ordinal;
++மூன்றாவது		ordinal;
+ நான்காவது		ordinal;
+ ஐந்தாவது		ordinal;
+ ஆறாவது		ordinal;
+ ஏழாவது		ordinal;
+-எட்டாது		ordinal;	
+-ஒன்பததாவது		ordinal;
++எட்டாவது		ordinal;
++ஒன்பதாவது		ordinal;
+ பத்தாவது		ordinal;
++! Productive modern -ஆம் ordinals retain the cardinal lexical lemma.
++முதல்:முதலாம்		ordinal;
++இரண்டு:இரண்டாம்		ordinal;
++மூன்று:மூன்றாம்		ordinal;
++நான்கு:நான்காம்		ordinal;
++ஐந்து:ஐந்தாம்		ordinal;
++ஆறு:ஆறாம்		ordinal;
++ஏழு:ஏழாம்		ordinal;
++எட்டு:எட்டாம்		ordinal;
++ஒன்பது:ஒன்பதாம்		ordinal;
++பத்து:பத்தாம்		ordinal;
++பதினொன்று:பதினோராம்	ordinal;
++பன்னிரண்டு:பன்னிரண்டாம்	ordinal;
++பதின்மூன்று:பதின்மூன்றாம்	ordinal;
++பதினான்கு:பதினான்காம்	ordinal;
++பதினைந்து:பதினைந்தாம்	ordinal;
++பதினாறு:பதினாறாம்	ordinal;
++பதினேழு:பதினேழாம்	ordinal;
++பதினெட்டு:பதினெட்டாம்	ordinal;
++பத்தொன்பது:பத்தொன்பதாம்	ordinal;
++இருபது:இருபதாம்		ordinal;
+ 
+ 
+ LEXICON fractions

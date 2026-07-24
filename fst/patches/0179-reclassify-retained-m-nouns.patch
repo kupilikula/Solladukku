@@ -1,0 +1,20 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -42737,6 +42737,9 @@
+ +noun+gen+psp_keele_iruntu:^யின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ LEXICON C4Sg
++கிராம்	  C4SgRoot ;
++கிலோகிராம்	  C4SgRoot ;
++முகாம்	  C4SgRoot ;
+ பாய்			 C4SgRoot; 
+ சேய்			 C4SgRoot; 
+ நோய்			 C4SgRoot; 
+@@ -118790,7 +118793,6 @@
+ கிலுத்தம்	C15SgRoot;
+ கிலுப்தம்	C15SgRoot;
+ கிலேதம்	C15SgRoot;
+-கிலோகிராம்	C15SgRoot;
+ கில்பிஷம்	C15SgRoot;
+ கிளபுறம்	C15SgRoot;
+ கிளப்பம்	C15SgRoot;

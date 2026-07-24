@@ -1,0 +1,65 @@
+--- ThamizhiVerbs-C62.lexc
++++ ThamizhiVerbs-C62.lexc
+@@ -32,6 +32,8 @@
+ +verb+fin+sim+strong+past%=க்+3ple%=ஆர்கள்:^க்கார்கள் #;
+ +verb+fin+sim+strong+past%=க்+3sghe%=ஆர்கள்:^க்கார்கள் #;
+ +verb+fin+sim+strong+past%=க்+3sgn%=அது:^க்கது #;
+++verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+trans%=ஆக:^க்கதாக #;
+++verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கதாகவும் #;
+ +verb+fin+sim+strong+past%=க்+3pln%=அன:^க்கன #;
+ +verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:^கிறேன் #;
+ +verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:^கிறோம் #;
+@@ -45,6 +47,8 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+trans%=ஆக:^கிறதாக #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^கிறதாகவும் #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -59,6 +63,8 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக:^கின்றதாக #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^கின்றதாகவும் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3pln%=அன:^கின்றன #;
+ +verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் #;
+ +verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:^வோம் #;
+@@ -83,6 +89,8 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+nonfin+sim+verbalnoun%=தல்:^தல் #;
+ +verb+nonfin+sim+verbalnoun%=அது:^வது #;
+++verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக:^வதாக #;
+++verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக+add%=உம்:^வதாகவும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+@@ -102,6 +110,8 @@
+ +verb+fin+sim+caus%=வி+past%=க்+3ple%=ஆர்கள்:^விக்கார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=க்+3sghe%=ஆர்கள்:^விக்கார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=க்+3sgn%=அது:^விக்கது #;
+++verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+trans%=ஆக:^விக்கதாக #;
+++verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^விக்கதாகவும் #;
+ +verb+fin+sim+caus%=வி+past%=க்+3pln%=அன:^விக்கன #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+1sg%=ஏன்:^விகிறேன் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+1pl%=ஓம்:^விகிறோம் #;
+@@ -115,6 +125,8 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விகிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விகிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விகிறது #;
+++verb+nonfin+sim+caus%=வி+pres%=கிற்+verbalnoun%=அது+trans%=ஆக:^விகிறதாக #;
+++verb+nonfin+sim+caus%=வி+pres%=கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^விகிறதாகவும் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விகிறன #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விகின்றேன் #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விகின்றோம் #;
+@@ -128,6 +140,8 @@
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+3ple%=ஆர்கள்:^விகின்றார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+3sghe%=ஆர்கள்:^விகின்றார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+3sgn%=அது:^விகின்றது #;
+++verb+nonfin+sim+caus%=வி+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக:^விகின்றதாக #;
+++verb+nonfin+sim+caus%=வி+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^விகின்றதாகவும் #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+3pln%=அன:^விகின்றன #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1sg%=ஏன்:^விவேன் #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1pl%=ஓம்:^விவோம் #;

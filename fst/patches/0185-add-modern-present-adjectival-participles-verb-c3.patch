@@ -1,0 +1,9 @@
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -202,5 +202,6 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ன்ற #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=ம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;

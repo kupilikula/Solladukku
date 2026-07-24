@@ -1,0 +1,13 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -5630,6 +5630,10 @@
+ 
+ 
+ LEXICON ClassFour
++கோபமடை	C4Vinf;
++சரணடை	C4Vinf;
++வந்தடை	C4Vinf;
++மனமுடை	C4Vinf;
+ ஒருங்கிணை	C4Vinf;
+ சென்றடை	C4Vinf;
+ ஒன்றிணை	C4Vinf;

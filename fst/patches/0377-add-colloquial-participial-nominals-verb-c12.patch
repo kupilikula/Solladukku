@@ -1,0 +1,26 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -8530,6 +8530,23 @@
+ +verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+ +verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ:^க்கிற HumanGenderedPartNoun;
+ +verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq:^க்குற #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அது+nom:^க்குறது #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அது+nom+add%=உம்:^க்குறதும் #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அது+acc%=ஐ:^க்குறதை #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அது+acc%=ஐ+add%=உம்:^க்குறதையும் #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அது+dat%=க்கு:^க்குறதுக்கு #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அது+inst%=ஆல்:^க்குறதால் #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அது+gen%=இன்:^க்குறதன் #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அது+loc%=இல்:^க்குறதில் #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அது+soc%=உடன்:^க்குறதுடன் #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அது+trans%=ஆக:^க்குறதாக #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அது+ques%=ஆ:^க்குறதா #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அது+comp%=என்று:^க்குறதுன்னு #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அவன்+human+3sgm+nom:^க்குறவன் #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அவன்+human+3sgm+acc%=ஐ:^க்குறவனை #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அவள்+human+3sgf+nom:^க்குறவள் #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அவர்+human+3sghe+nom:^க்குறவர் #;
+++verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+colloq+PartNoun%=அவர்+human+pl+nom:^க்குறவங்க #;
+ +verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+ +verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+ +verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;

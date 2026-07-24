@@ -1,0 +1,13 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -16450,6 +16450,10 @@
+ +verb+nonfin+complex+aspect+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+ LEXICON ClassPo5
++
++! Reviewed direct participial and infinitival po connectors
++கேட்டுப்போ    ClassPo5Inf;
++வரப்போ    ClassPo5Inf;
+ 
+ ! Source citations with runtime-verified participial prefixes
+ அற்றுப்போ    ClassPo5Inf;

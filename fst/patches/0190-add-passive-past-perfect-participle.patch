@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -87368,6 +87368,7 @@
+ +verb+nonfin+complex+passive+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+passive+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+complex+passive+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+passive+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ:^ட்டிருந்த #;
+ +verb+nonfin+complex+passive+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+passive+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+passive+neg%=ஆத்+adjpart%=அ:^ாத #;

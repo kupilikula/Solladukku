@@ -1,0 +1,25 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -4141,6 +4141,12 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++! Reviewed common noun homographs.
++தீவிரவாதி	C2SgRoot;
++பயங்கரவாதி	C2SgRoot;
++கற்கை	C2SgRoot;
++குறை	C2SgRoot;
++சரி	C2SgRoot;
+ ! Reviewed final native and calendrical nouns.
+ திங்கள்கிழமை	C2SgRoot;
+ ! Reviewed common source-backed residual nouns.
+@@ -45453,6 +45459,9 @@
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^க்களின்கீழேயிருந்தும் #;
+ LEXICON C4Sg
++! Reviewed common noun homographs.
++அமல்	C4SgRoot;
++வருவாய்	C4SgRoot;
+ ! Reviewed everyday modern loans from five-corpus saturation.
+ டைம்	C4SgRoot;
+ ரியல்	C4SgRoot;

@@ -1,0 +1,82 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart +1pl +3pl +adv +time +cardinal +foc +3sgm +3sgf +3pln +abl +soc +unit +part +conjunction +intj +presentative +pp-particle +trans +fut +2sg +vpart_pin +vpart_patti +vpart_parttu +psp_mathiri +purpose +verb +nonfin +sim +past +PartNoun +honorific_title +colloq +compoundmodifier
++Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart +1pl +3pl +adv +time +cardinal +foc +3sgm +3sgf +3pln +abl +soc +unit +part +conjunction +intj +presentative +pp-particle +trans +fut +2sg +vpart_pin +vpart_patti +vpart_parttu +psp_mathiri +purpose +verb +nonfin +sim +past +PartNoun +honorific_title +colloq +compoundmodifier +psp_padi +psp_ul +psp_idaiyl +recip +incl +2pl +cond +vpart
+ 
+ LEXICON Root
+ abbreviations;
+@@ -52,6 +52,59 @@
+ எஸ்+abbrev+letter:எஸ் #;
+ 
+ LEXICON pronounQuantifiers
++! Reviewed compositional function forms from the common-unknown audit.
++பற்று+verb+nonfin+sim+vpart%=இ+add%=உம்:பற்றியும் #;
++போது+pp-particle+loc%=இல்+add%=உம்:போதிலும் #;
++இல்லை+exist+neg+adjpart%=அ:இல்லா #;
++வரலாறு+noun+compoundmodifier:வரலாற்று #;
++இது+pron+dem+prox+det+sandhik%=க்:இக் #;
++இது+pron+dem+prox+det+sandhic%=ச்:இச் #;
++இது+pron+dem+prox+det+sandhit%=த்:இத் #;
++இது+pron+dem+prox+det:இவ் #;
++அது+pron+dem+dist+3sgn+dat+sandhip%=ப்:அதற்குப் #;
++அன்று+adv+time+ques%=ஓ:அன்றோ #;
++வேறு+adj+colloq:வேற #;
++மேல்+pp-particle+colloq:மேல #;
++எ+pron+inter+quant+det:எவ்வித #;
++முறை+noun+time+dem+prox:இம்முறை #;
++முறை+noun+nom+psp_padi:முறைப்படி #;
++ஒருநாள்+noun+time+nom+add%=உம்:ஒருநாளும் #;
++எங்கு+adv+inter+colloq:எங்க #;
++நாம்+pron+1pl+poss+colloq:எங்க #;
++அவர்கள்+pron+dem+dist+3pl+nom+colloq:அவங்க #;
++நீங்கள்+pron+2pl+poss+colloq:உங்க #;
++நாம்+pron+1pl+poss+incl+colloq:நம்ம #;
++என்று+comp+colloq:ன்னு #;
++இல்லை+exist+neg+vpart%=ஆமல்+colloq:இல்லாம #;
++பெண்+noun+nom+colloq:பொண்ணு #;
++இது+pron+dem+prox+3sgn+nom+all:இதெல்லாம் #;
++இது+pron+dem+prox+3sgn+gen+soc:இதனுடன் #;
++அவர்+pron+dem+dist+3sge+soc:அவருடன் #;
++அது+pron+dem+dist+3sgn+dat+psp_ul:அதற்குள் #;
++இது+pron+dem+prox+3sgn+dat+psp_idaiyl:இதற்கிடையில் #;
++எல்லாம்+quant+all+PartNoun%=அது+pl+acc+add%=உம்:எல்லாவற்றையும் #;
++போல்+pp-particle+adjpart%=அ+PartNoun%=அது+pl+acc:போன்றவற்றை #;
++ஒன்று+cardinal+human+trans%=ஆக:ஒருவராக #;
++ஒன்று+cardinal+human+cop%=ஆ+adjpart%=ன:ஒருவரான #;
++ஒன்று+cardinal+human+recip:ஒருவருக்கொருவர் #;
++என்ன+pron+inter+comp%=என்றால்:என்னவென்றால் #;
++வேண்டும்+modal+cond%=ஆல்:வேண்டுமானால் #;
++வேண்டும்+modal+cond%=ஆல்+add%=உம்:வேண்டுமானாலும் #;
++அல்ல+cop+neg+ques%=ஆ:அல்லவா #;
++இல்லை+exist+neg+foc%=ஏ:இல்லையே #;
++இல்லை+exist+neg+ques%=ஓ:இல்லையோ #;
++என்ன+pron+inter+indef%=ஓ:என்னவோ #;
++என்ன+pron+inter+foc%=தான்:என்னதான் #;
++என்று+comp+foc%=தான்:என்றுதான் #;
++எப்படி+adv+inter+indef%=ஓ:எப்படியோ #;
++ரூ+unit:ரூ #;
++மில்லி+unit:மில்லி #;
++இது+pron+dem+prox+3sgn+nom+vpart_patti:இதுபற்றி #;
++அப்படி+adv+dem+dist+foc%=தான்:அப்படித்தான் #;
++பின்+pp-particle+time+foc%=ஏ:பின்னரே #;
++பிறகு+pp-particle+time+add%=உம்:பிறகும் #;
++இப்போது+adv+dem+prox+time+add%=உம்:இப்போதும் #;
++வேண்டும்+modal+comp%=என்று:வேண்டுமென்று #;
+ ! Reviewed high-frequency closed-class and temporal lexical items.
+ ஒருநாள்+noun+nom+time:ஒருநாள் #;
+ ஒருநாள்+adv+time:ஒருநாள் #;
+@@ -102,8 +155,8 @@
+ இது+pron+dem+prox+3sgn+gen+vpart_pin:இதனையடுத்து #;
+ இது+pron+dem+prox+3sgn+nom+vpart_patti:இதுகுறித்து #;
+ அது+pron+dem+dist+3sgn+nom+vpart_patti:அதுகுறித்து #;
+-இது+pron+dem+prox+3sgn+gen+vpart_parttu:இதன்படி #;
+-அது+pron+dem+dist+3sgn+gen+vpart_parttu:அதன்படி #;
++இது+pron+dem+prox+3sgn+gen+psp_padi:இதன்படி #;
++அது+pron+dem+dist+3sgn+gen+psp_padi:அதன்படி #;
+ இது+pron+dem+prox+3sgn+gen+time:இதன்போது #;
+ அது+pron+dem+dist+3sgn+gen+time:அதன்போது #;
+ அது+pron+dem+dist+3sgn+nom+foc%=ஏ+psp_mathiri:அதேபோல் #;

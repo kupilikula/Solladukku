@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -87306,6 +87306,7 @@
+ +verb+fin+complex+passive+strong+pres%=கிற்+3sge%=அர்:^கிறர் #;
+ +verb+fin+complex+passive+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+passive+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+++verb+fin+complex+passive+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+ +verb+fin+complex+passive+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+ +verb+fin+complex+passive+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;

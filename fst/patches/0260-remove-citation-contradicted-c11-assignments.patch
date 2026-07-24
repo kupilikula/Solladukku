@@ -1,0 +1,74 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -511,7 +511,6 @@
+ ஆவிபிடி  C11Vinf;
+ ஆவேசி  C11Vinf;
+ இடந்துடி  C11Vinf;
+-இட்டுப்பிரி  C11Vinf;
+ இணையடி  C11Vinf;
+ இதமி  C11Vinf;
+ இனாப்பி  C11Vinf;
+@@ -583,7 +582,6 @@
+ கடைக்கணி  C11Vinf;
+ கடைசல்பிடி  C11Vinf;
+ கடைப்பிடி  C11Vinf;
+-கடையழி  C11Vinf;
+ கடைவிரி  C11Vinf;
+ கட்டடி  C11Vinf;
+ கட்டழி  C11Vinf;
+@@ -598,7 +596,6 @@
+ கதைபடி  C11Vinf;
+ கந்தடி  C11Vinf;
+ கன்னாருரி  C11Vinf;
+-கன்னியழி  C11Vinf;
+ கன்மம்புசி  C11Vinf;
+ கமனி  C11Vinf;
+ கயிறடி  C11Vinf;
+@@ -1124,7 +1121,6 @@
+ வயிரி  C11Vinf;
+ வயிறடி  C11Vinf;
+ வயிறுபிடி  C11Vinf;
+-வயிறெரி  C11Vinf;
+ வயிற்றிலடி  C11Vinf;
+ வருக்கி  C11Vinf;
+ வருச்சி  C11Vinf;
+@@ -1443,7 +1439,6 @@
+ கோபி  C11Vinf;
+ கழி  C11Vinf;
+ குறி  C11Vinf;
+-சக்களி  C11Vinf;
+ களி  C11Vinf;
+ குனி  C11Vinf;
+ சகளீகரி  C11Vinf;
+@@ -2083,7 +2078,6 @@
+ விவகரி  C11Vinf;
+ இரு  C11Vinf;
+ இழு  C11Vinf;
+-சாட்டு  C11Vinf;
+ நது  C11Vinf;
+ இறு  C11Vinf;
+ சிடுசிடு  C11Vinf;
+@@ -2178,7 +2172,6 @@
+ வெளுவெளு  C11Vinf;
+ உலை  C11Vinf;
+ மறு  C11Vinf;
+-வேங்கு  C11Vinf;
+ உழை  C11Vinf;
+ மிகு  C11Vinf;
+ உளை  C11Vinf;
+@@ -2392,7 +2385,6 @@
+ உவர்  C11Vinf;
+ ஊர்  C11Vinf;
+ எதிர்  C11Vinf;
+-ஏர்  C11Vinf;
+ ஒளிர்  C11Vinf;
+ ஓர்  C11Vinf;
+ கதிர்  C11Vinf;
+@@ -2406,7 +2398,6 @@
+ சிதர்  C11Vinf;
+ சிலிர்  C11Vinf;
+ சீர்  C11Vinf;
+-சூர்  C11Vinf;
+ செயிர்  C11Vinf;
+ சேர்  C11Vinf;
+ சோர்  C11Vinf;

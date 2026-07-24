@@ -1,0 +1,8 @@
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -398,3 +398,5 @@
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=ம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
++
+++verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்:^வார் #;

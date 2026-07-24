@@ -1,0 +1,322 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1,6 +1,6 @@
+ !!!Header.lexc!!!
+ 
+-Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +trans +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add +all +verb +nonfin +sim +neg +verbalnoun +cop +adjpart +compoundmodifier +human +fut +3sgn +actionnominal +psp_padi +psp_idaiye
++Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +trans +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add +all +verb +nonfin +sim +neg +verbalnoun +cop +adjpart +compoundmodifier +human +fut +3sgn +actionnominal +psp_padi +psp_idaiye +colloq
+ 
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+@@ -914,6 +914,7 @@
+ +nom+add:^யும் #;
+ +nom+all:^யெல்லாம் #;
+ +trans:^யாக #;
+++trans+colloq:^யா #;
+ +trans+sandhik%=க்:^யாகக் #;
+ +nom+sandhip:^ப் #;
+ +nom+sandhic:^ச் #;
+@@ -1136,6 +1137,7 @@
+ +nom+add:^ும் #;
+ +nom+all:^ெல்லாம் #;
+ +trans:^ாக #;
+++trans+colloq:^ா #;
+ +trans+sandhik%=க்:^ாகக் #;
+ +nom+sandhip:^ப் #;
+ +nom+sandhic:^ச் #;
+@@ -1354,6 +1356,7 @@
+ +nom+add:^ம் #;
+ +nom+all:^எல்லாம் #;
+ +trans:^ஆாக #;
+++trans+colloq:^ஆா #;
+ +trans+sandhik%=க்:^ஆாகக் #;
+ +nom+sandhip:^ப் #;
+ +nom+sandhic:^ச் #;
+@@ -3214,6 +3217,7 @@
+ +noun+nom+add:^வும் #;
+ +noun+nom+all:^வெல்லாம் #;
+ +noun+trans:^வாக #;
+++noun+trans+colloq:^வா #;
+ +noun+trans+add%=உம்:^வாகவும் #;
+ +noun+trans+foc%=ஏ:^வாகவே #;
+ +noun+trans+sandhic%=ச்:^வாகச் #;
+@@ -3229,6 +3233,7 @@
+ +noun+pl+nom:^க்கள் #;
+ +noun+pl+psp_idaiye:^க்களிடையே #;
+ +noun+pl+trans%=ஆக:^க்களாக #;
+++noun+pl+trans%=ஆக+colloq:^க்களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^க்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^க்களாகும் #;
+ +noun+pl+nom+add:^க்களும் #;
+@@ -43859,6 +43864,7 @@
+ +noun+pl+nom:^மார்கள் #;
+ +noun+pl+psp_idaiye:^மார்களிடையே #;
+ +noun+pl+trans%=ஆக:^மார்களாக #;
+++noun+pl+trans%=ஆக+colloq:^மார்களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^மார்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^மார்களாகும் #;
+ +noun+pl+acc:^மார்களை #;
+@@ -43874,6 +43880,7 @@
+ +noun+nom+add:^யும் #;
+ +noun+nom+all:^யெல்லாம் #;
+ +noun+trans:^யாக #;
+++noun+trans+colloq:^யா #;
+ +noun+trans+add%=உம்:^யாகவும் #;
+ +noun+trans+foc%=ஏ:^யாகவே #;
+ +noun+trans+sandhic%=ச்:^யாகச் #;
+@@ -43889,6 +43896,7 @@
+ +noun+pl+nom:^கள் #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+colloq:^களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+@@ -44470,6 +44478,7 @@
+ +noun+nom+add:^யும் #;
+ +noun+nom+all:^யெல்லாம் #;
+ +noun+trans:^யாக #;
+++noun+trans+colloq:^யா #;
+ +noun+trans+add%=உம்:^யாகவும் #;
+ +noun+trans+foc%=ஏ:^யாகவே #;
+ +noun+trans+sandhic%=ச்:^யாகச் #;
+@@ -44485,6 +44494,7 @@
+ +noun+pl+nom:^க்கள் #;
+ +noun+pl+psp_idaiye:^க்களிடையே #;
+ +noun+pl+trans%=ஆக:^க்களாக #;
+++noun+pl+trans%=ஆக+colloq:^க்களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^க்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^க்களாகும் #;
+ +noun+pl+nom+add:^க்களும் #;
+@@ -54333,6 +54343,7 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+colloq:^ா #;
+ +noun+trans+add%=உம்:^ாகவும் #;
+ +noun+trans+foc%=ஏ:^ாகவே #;
+ +noun+trans+sandhic%=ச்:^ாகச் #;
+@@ -54347,6 +54358,7 @@
+ +noun+pl+nom:^கள் #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+colloq:^களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+@@ -54845,6 +54857,7 @@
+ +noun+pl+psp_idaiye:^ிடையே #;
+ +noun+pl+voc%=ஏ:^ே #;
+ +noun+pl+trans%=ஆக:^ாக #;
+++noun+pl+trans%=ஆக+colloq:^ா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^ாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+@@ -55466,6 +55479,7 @@
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^எல்லாம் #;
+ +noun+trans:^ஆாக #;
+++noun+trans+colloq:^ஆா #;
+ +noun+trans+add%=உம்:^ஆாகவும் #;
+ +noun+trans+foc%=ஏ:^ஆாகவே #;
+ +noun+trans+sandhic%=ச்:^ஆாகச் #;
+@@ -55480,6 +55494,7 @@
+ +noun+pl+nom:^கள் #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+colloq:^களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+@@ -55977,6 +55992,7 @@
+ +noun+pl+nom:^கள் #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+colloq:^களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+@@ -69429,6 +69445,7 @@
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^எல்லாம் #;
+ +noun+trans:^ஆாக #;
+++noun+trans+colloq:^ஆா #;
+ +noun+trans+add%=உம்:^ஆாகவும் #;
+ +noun+trans+foc%=ஏ:^ஆாகவே #;
+ +noun+trans+sandhic%=ச்:^ஆாகச் #;
+@@ -69444,6 +69461,7 @@
+ +noun+pl+nom:^கள் #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+colloq:^களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+@@ -70025,6 +70043,7 @@
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^ணெல்லாம் #;
+ +noun+trans:^றாக #;
+++noun+trans+colloq:^றா #;
+ +noun+trans+add%=உம்:^றாகவும் #;
+ +noun+trans+foc%=ஏ:^றாகவே #;
+ +noun+trans+sandhic%=ச்:^றாகச் #;
+@@ -70039,6 +70058,7 @@
+ +noun+pl+nom:^கள் #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+colloq:^களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+@@ -71275,6 +71295,7 @@
+ +noun+nom+add:^ணும் #;
+ +noun+nom+all:^ணெல்லாம் #;
+ +noun+trans:^ணாக #;
+++noun+trans+colloq:^ணா #;
+ +noun+trans+add%=உம்:^ணாகவும் #;
+ +noun+trans+foc%=ஏ:^ணாகவே #;
+ +noun+trans+sandhic%=ச்:^ணாகச் #;
+@@ -71285,6 +71306,7 @@
+ +noun+pl+nom:^கள் #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+colloq:^களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+@@ -71826,6 +71848,7 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+colloq:^ா #;
+ +noun+trans+add%=உம்:^ாகவும் #;
+ +noun+trans+foc%=ஏ:^ாகவே #;
+ +noun+trans+sandhic%=ச்:^ாகச் #;
+@@ -71844,6 +71867,7 @@
+ +noun+pl+nom:^கள் #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+colloq:^களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+@@ -93267,6 +93291,7 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+colloq:^ா #;
+ +noun+trans+add%=உம்:^ாகவும் #;
+ +noun+trans+foc%=ஏ:^ாகவே #;
+ +noun+trans+sandhic%=ச்:^ாகச் #;
+@@ -93281,6 +93306,7 @@
+ +noun+pl+nom:^ர்கள் #;
+ +noun+pl+psp_idaiye:^ர்களிடையே #;
+ +noun+pl+trans%=ஆக:^ர்களாக #;
+++noun+pl+trans%=ஆக+colloq:^ர்களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^ர்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^ர்களாகும் #;
+ +noun+pl+nom+add:^ர்களும் #;
+@@ -93782,6 +93808,7 @@
+ +noun+nom+add:^லும் #;
+ +noun+nom+all:^லெல்லாம் #;
+ +noun+trans:^லாக #;
+++noun+trans+colloq:^லா #;
+ +noun+trans+add%=உம்:^லாகவும் #;
+ +noun+trans+foc%=ஏ:^லாகவே #;
+ +noun+trans+sandhic%=ச்:^லாகச் #;
+@@ -93796,6 +93823,7 @@
+ +noun+pl+nom:^ற்கள் #;
+ +noun+pl+psp_idaiye:^ற்களிடையே #;
+ +noun+pl+trans%=ஆக:^ற்களாக #;
+++noun+pl+trans%=ஆக+colloq:^ற்களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^ற்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^ற்களாகும் #;
+ +noun+pl+nom+add:^ற்களும் #;
+@@ -94289,6 +94317,7 @@
+ +noun+nom+add:^ளும் #;
+ +noun+nom+all:^ளெல்லாம் #;
+ +noun+trans:^ளாக #;
+++noun+trans+colloq:^ளா #;
+ +noun+trans+add%=உம்:^ளாகவும் #;
+ +noun+trans+foc%=ஏ:^ளாகவே #;
+ +noun+trans+sandhic%=ச்:^ளாகச் #;
+@@ -94303,6 +94332,7 @@
+ +noun+pl+nom:^ட்கள் #;
+ +noun+pl+psp_idaiye:^ட்களிடையே #;
+ +noun+pl+trans%=ஆக:^ட்களாக #;
+++noun+pl+trans%=ஆக+colloq:^ட்களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^ட்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^ட்களாகும் #;
+ +noun+pl+nom+add:^ட்களும் #;
+@@ -97449,6 +97479,7 @@
+ +noun+pl+nom:^ட்கள் #;
+ +noun+pl+psp_idaiye:^ட்களிடையே #;
+ +noun+pl+trans%=ஆக:^ட்களாக #;
+++noun+pl+trans%=ஆக+colloq:^ட்களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^ட்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^ட்களாகும் #;
+ +noun+pl+nom+add:^ட்களும் #;
+@@ -97692,6 +97723,7 @@
+ +noun+pl+nom:^கள் #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+colloq:^களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+@@ -97936,6 +97968,7 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+colloq:^ா #;
+ +noun+trans+add%=உம்:^ாகவும் #;
+ +noun+trans+foc%=ஏ:^ாகவே #;
+ +noun+trans+sandhic%=ச்:^ாகச் #;
+@@ -132859,6 +132892,7 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+colloq:^ா #;
+ +noun+trans+add%=உம்:^ாகவும் #;
+ +noun+trans+foc%=ஏ:^ாகவே #;
+ +noun+trans+sandhic%=ச்:^ாகச் #;
+@@ -132873,6 +132907,7 @@
+ +noun+pl+nom:^ங்கள் #;
+ +noun+pl+psp_idaiye:^ங்களிடையே #;
+ +noun+pl+trans%=ஆக:^ங்களாக #;
+++noun+pl+trans%=ஆக+colloq:^ங்களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^ங்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^ங்களாகும் #;
+ +noun+pl+nom+add:^ங்களும் #;
+@@ -137498,6 +137533,7 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+colloq:^ா #;
+ +noun+trans+add%=உம்:^ாகவும் #;
+ +noun+trans+foc%=ஏ:^ாகவே #;
+ +noun+trans+sandhic%=ச்:^ாகச் #;
+@@ -137512,6 +137548,7 @@
+ +noun+pl+nom:^கள் #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+colloq:^களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+@@ -138107,6 +138144,7 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+colloq:^ா #;
+ +noun+trans+add%=உம்:^ாகவும் #;
+ +noun+trans+foc%=ஏ:^ாகவே #;
+ +noun+trans+sandhic%=ச்:^ாகச் #;
+@@ -138121,6 +138159,7 @@
+ +noun+pl+nom:^கள் #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+colloq:^களா #;
+ +noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;

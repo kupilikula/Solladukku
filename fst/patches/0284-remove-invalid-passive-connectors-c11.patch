@@ -1,0 +1,114 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -7054,7 +7054,6 @@
+ வேதிக்கப்படமுடி            ClassMudi11Inf; 
+ வேர்க்கப்படமுடி            ClassMudi11Inf; 
+ வேகிக்கப்படமுடி            ClassMudi11Inf; 
+-வேங்குக்கப்படமுடி            ClassMudi11Inf; 
+ வீதிக்கப்படமுடி            ClassMudi11Inf; 
+ வஞ்சிக்கப்படமுடி            ClassMudi11Inf; 
+ யாபிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -7791,7 +7790,6 @@
+ சாதாளிக்கப்படமுடி            ClassMudi11Inf; 
+ சானிக்கப்படமுடி            ClassMudi11Inf; 
+ சாடிக்கப்படமுடி            ClassMudi11Inf; 
+-சாட்டுக்கப்படமுடி            ClassMudi11Inf; 
+ சண்ணிக்கப்படமுடி            ClassMudi11Inf; 
+ சணாய்க்கப்படமுடி            ClassMudi11Inf; 
+ சையோகிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -8117,7 +8115,6 @@
+ இறக்கப்படமுடி            ClassMudi11Inf; 
+ இயக்கப்படமுடி            ClassMudi11Inf; 
+ இழக்கப்படமுடி            ClassMudi11Inf; 
+-இரக்கக்கப்படமுடி            ClassMudi11Inf; 
+ இரக்கப்படமுடி            ClassMudi11Inf; 
+ இடக்கப்படமுடி            ClassMudi11Inf; 
+ அல்லாக்கப்படமுடி            ClassMudi11Inf; 
+@@ -8293,7 +8290,6 @@
+ தசையப்படமுடி            ClassMudi11Inf; 
+ துழையப்படமுடி            ClassMudi11Inf; 
+ துலையப்படமுடி            ClassMudi11Inf; 
+-துய்ப்படமுடி            ClassMudi11Inf; 
+ துயர்ப்படமுடி            ClassMudi11Inf; 
+ துதையப்படமுடி            ClassMudi11Inf; 
+ துளர்க்கப்படமுடி            ClassMudi11Inf; 
+@@ -9886,7 +9882,6 @@
+ வேதிக்கமுடி            ClassMudi11Inf; 
+ வேர்க்கமுடி            ClassMudi11Inf; 
+ வேகிக்கமுடி            ClassMudi11Inf; 
+-வேங்குக்கமுடி            ClassMudi11Inf; 
+ வீதிக்கமுடி            ClassMudi11Inf; 
+ வஞ்சிக்கமுடி            ClassMudi11Inf; 
+ யாபிக்கமுடி            ClassMudi11Inf; 
+@@ -10623,7 +10618,6 @@
+ சாதாளிக்கமுடி            ClassMudi11Inf; 
+ சானிக்கமுடி            ClassMudi11Inf; 
+ சாடிக்கமுடி            ClassMudi11Inf; 
+-சாட்டுக்கமுடி            ClassMudi11Inf; 
+ சண்ணிக்கமுடி            ClassMudi11Inf; 
+ சணாய்க்கமுடி            ClassMudi11Inf; 
+ சையோகிக்கமுடி            ClassMudi11Inf; 
+@@ -10949,7 +10943,6 @@
+ இறக்கமுடி            ClassMudi11Inf; 
+ இயக்கமுடி            ClassMudi11Inf; 
+ இழக்கமுடி            ClassMudi11Inf; 
+-இரக்கக்கமுடி            ClassMudi11Inf; 
+ இரக்கமுடி            ClassMudi11Inf; 
+ இடக்கமுடி            ClassMudi11Inf; 
+ அல்லாக்கமுடி            ClassMudi11Inf; 
+@@ -16578,7 +16571,6 @@
+ வேதிக்கப்படப்பார்            ClassPar11Inf; 
+ வேர்க்கப்படப்பார்            ClassPar11Inf; 
+ வேகிக்கப்படப்பார்            ClassPar11Inf; 
+-வேங்குக்கப்படப்பார்            ClassPar11Inf; 
+ வீதிக்கப்படப்பார்            ClassPar11Inf; 
+ வஞ்சிக்கப்படப்பார்            ClassPar11Inf; 
+ யாபிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17315,7 +17307,6 @@
+ சாதாளிக்கப்படப்பார்            ClassPar11Inf; 
+ சானிக்கப்படப்பார்            ClassPar11Inf; 
+ சாடிக்கப்படப்பார்            ClassPar11Inf; 
+-சாட்டுக்கப்படப்பார்            ClassPar11Inf; 
+ சண்ணிக்கப்படப்பார்            ClassPar11Inf; 
+ சணாய்க்கப்படப்பார்            ClassPar11Inf; 
+ சையோகிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17641,7 +17632,6 @@
+ இறக்கப்படப்பார்            ClassPar11Inf; 
+ இயக்கப்படப்பார்            ClassPar11Inf; 
+ இழக்கப்படப்பார்            ClassPar11Inf; 
+-இரக்கக்கப்படப்பார்            ClassPar11Inf; 
+ இரக்கப்படப்பார்            ClassPar11Inf; 
+ இடக்கப்படப்பார்            ClassPar11Inf; 
+ அல்லாக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17817,7 +17807,6 @@
+ தசையப்படப்பார்            ClassPar11Inf; 
+ துழையப்படப்பார்            ClassPar11Inf; 
+ துலையப்படப்பார்            ClassPar11Inf; 
+-துய்ப்படப்பார்            ClassPar11Inf; 
+ துயர்ப்படப்பார்            ClassPar11Inf; 
+ துதையப்படப்பார்            ClassPar11Inf; 
+ துளர்க்கப்படப்பார்            ClassPar11Inf; 
+@@ -19410,7 +19399,6 @@
+ வேதிக்கப்பார்            ClassPar11Inf; 
+ வேர்க்கப்பார்            ClassPar11Inf; 
+ வேகிக்கப்பார்            ClassPar11Inf; 
+-வேங்குக்கப்பார்            ClassPar11Inf; 
+ வீதிக்கப்பார்            ClassPar11Inf; 
+ வஞ்சிக்கப்பார்            ClassPar11Inf; 
+ யாபிக்கப்பார்            ClassPar11Inf; 
+@@ -20147,7 +20135,6 @@
+ சாதாளிக்கப்பார்            ClassPar11Inf; 
+ சானிக்கப்பார்            ClassPar11Inf; 
+ சாடிக்கப்பார்            ClassPar11Inf; 
+-சாட்டுக்கப்பார்            ClassPar11Inf; 
+ சண்ணிக்கப்பார்            ClassPar11Inf; 
+ சணாய்க்கப்பார்            ClassPar11Inf; 
+ சையோகிக்கப்பார்            ClassPar11Inf; 
+@@ -20473,7 +20460,6 @@
+ இறக்கப்பார்            ClassPar11Inf; 
+ இயக்கப்பார்            ClassPar11Inf; 
+ இழக்கப்பார்            ClassPar11Inf; 
+-இரக்கக்கப்பார்            ClassPar11Inf; 
+ இரக்கப்பார்            ClassPar11Inf; 
+ இடக்கப்பார்            ClassPar11Inf; 
+ அல்லாக்கப்பார்            ClassPar11Inf; 

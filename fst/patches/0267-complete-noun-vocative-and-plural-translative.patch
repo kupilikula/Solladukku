@@ -1,0 +1,311 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -3073,6 +3073,7 @@
+ LEXICON C1Inflections
+ 
+ +noun+nom: #;
+++noun+voc%=ஏ:^வே #;
+ +noun+nom+add:^வும் #;
+ +noun+nom+all:^வெல்லாம் #;
+ +noun+trans:^வாக #;
+@@ -3082,6 +3083,7 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+nom:^க்கள் #;
+++noun+pl+trans%=ஆக:^க்களாக #;
+ +noun+pl+nom+add:^க்களும் #;
+ +noun+pl+nom+all:^க்களெல்லாம் #;
+ 
+@@ -43631,6 +43633,7 @@
+ 
+ LEXICON NapiHonorificPlural
+ +noun+pl+nom:^மார்கள் #;
+++noun+pl+trans%=ஆக:^மார்களாக #;
+ +noun+pl+acc:^மார்களை #;
+ +noun+pl+acc+add:^மார்களையும் #;
+ +noun+pl+acc+sandhip:^மார்களைப் #;
+@@ -43640,6 +43643,7 @@
+ 
+ LEXICON C2Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^யே #;
+ +noun+nom+add:^யும் #;
+ +noun+nom+all:^யெல்லாம் #;
+ +noun+trans:^யாக #;
+@@ -43649,6 +43653,7 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+nom:^கள் #;
+++noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -44138,6 +44143,7 @@
+ 
+ LEXICON C3Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^யே #;
+ +noun+nom+add:^யும் #;
+ +noun+nom+all:^யெல்லாம் #;
+ +noun+trans:^யாக #;
+@@ -44147,6 +44153,7 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+nom:^க்கள் #;
+++noun+pl+trans%=ஆக:^க்களாக #;
+ +noun+pl+nom+add:^க்களும் #;
+ +noun+pl+nom+all:^க்களெல்லாம் #;
+ 
+@@ -53952,6 +53959,7 @@
+ 
+ LEXICON C4Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+@@ -53960,6 +53968,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -54442,6 +54451,8 @@
+ 
+ LEXICON C5Inflections
+ +noun+pl+nom: #;
+++noun+pl+voc%=ஏ:^ே #;
+++noun+pl+trans%=ஆக:^ாக #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+@@ -55050,6 +55061,7 @@
+ 
+ LEXICON C6Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^எல்லாம் #;
+ +noun+trans:^ஆாக #;
+@@ -55058,6 +55070,7 @@
+ +noun+nom+sandhit:^ட்டுத் #;
+ +noun+nom+sandhik:^ட்டுக் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -55529,6 +55542,7 @@
+ 
+ LEXICON C6TTUInflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^எல்லாம் #;
+ +noun+nom+sandhip:^ட்டுப் #;
+@@ -55536,6 +55550,7 @@
+ +noun+nom+sandhit:^ட்டுத் #;
+ +noun+nom+sandhik:^ட்டுக் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -68917,6 +68932,7 @@
+ 
+ LEXICON C7Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^எல்லாம் #;
+ +noun+trans:^ஆாக #;
+@@ -68926,6 +68942,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -69487,6 +69504,7 @@
+         
+ LEXICON C8Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^ணெல்லாம் #;
+ +noun+trans:^றாக #;
+@@ -69495,6 +69513,7 @@
+ +noun+nom+sandhit:^றுத் #;
+ +noun+nom+sandhik:^றுக் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -70715,10 +70734,12 @@
+ 
+ LEXICON C9Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^ணே #;
+ +noun+nom+add:^ணும் #;
+ +noun+nom+all:^ணெல்லாம் #;
+ +noun+trans:^ணாக #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -71208,11 +71229,13 @@
+ 
+ LEXICON C10Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^னே #;
+ +noun+nom+sandhip:^ற்ப் #;
+ +noun+nom+sandhic:^ற்ச் #;
+ +noun+nom+sandhit:^ற்த் #;
+ +noun+nom+sandhik:^ற்க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -92636,6 +92659,7 @@
+         
+ LEXICON C11Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+@@ -92644,6 +92668,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^ர்கள் #;
+++noun+pl+trans%=ஆக:^ர்களாக #;
+ +noun+pl+nom+add:^ர்களும் #;
+ +noun+pl+nom+all:^ர்களெல்லாம் #;
+ 
+@@ -93129,6 +93154,7 @@
+ 
+ LEXICON C12Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^லே #;
+ +noun+nom+add:^லும் #;
+ +noun+nom+all:^லெல்லாம் #;
+ +noun+trans:^லாக #;
+@@ -93137,6 +93163,7 @@
+ +noun+nom+sandhit:^ற்த் #;
+ +noun+nom+sandhik:^ற்க் #;
+ +noun+pl+nom:^ற்கள் #;
+++noun+pl+trans%=ஆக:^ற்களாக #;
+ +noun+pl+nom+add:^ற்களும் #;
+ +noun+pl+nom+all:^ற்களெல்லாம் #;
+ 
+@@ -93614,6 +93641,7 @@
+ 
+ LEXICON C13Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^ளே #;
+ +noun+nom+add:^ளும் #;
+ +noun+nom+all:^ளெல்லாம் #;
+ +noun+trans:^ளாக #;
+@@ -93622,6 +93650,7 @@
+ +noun+nom+sandhit:^ட்த் #;
+ +noun+nom+sandhik:^ட்க் #;
+ +noun+pl+nom:^ட்கள் #;
+++noun+pl+trans%=ஆக:^ட்களாக #;
+ +noun+pl+nom+add:^ட்களும் #;
+ +noun+pl+nom+all:^ட்களெல்லாம் #;
+ 
+@@ -96728,6 +96757,7 @@
+ 
+ LEXICON C14AlternatingPlural
+ +noun+pl+nom:^ட்கள் #;
+++noun+pl+trans%=ஆக:^ட்களாக #;
+ +noun+pl+nom+add:^ட்களும் #;
+ +noun+pl+nom+all:^ட்களெல்லாம் #;
+ +noun+pl+acc:^ட்களினை #;
+@@ -96966,6 +96996,7 @@
+ 
+ LEXICON C14RetainedPlural
+ +noun+pl+nom:^கள் #;
+++noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ +noun+pl+acc:^களினை #;
+@@ -97203,6 +97234,7 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ LEXICON C14Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+@@ -132093,6 +132125,7 @@
+         
+ LEXICON C15Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+@@ -132101,6 +132134,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^ங்கள் #;
+++noun+pl+trans%=ஆக:^ங்களாக #;
+ +noun+pl+nom+add:^ங்களும் #;
+ +noun+pl+nom+all:^ங்களெல்லாம் #;
+ +noun+infInc+acc:^த்தை #;
+@@ -136670,6 +136704,7 @@
+ 
+ LEXICON C16Inflections
+ +noun+nom: #;
+++noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+@@ -136678,6 +136713,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ +noun+pl+nom+foc:^கள்தான் #;
+--- tamil-noun.foma
++++ tamil-noun.foma
+@@ -10,12 +10,12 @@
+ 
+ define Lexicon;
+ 
+-define R1 {்} -> 0 || LongChar CharSet1 _ "^" [{ி}|{ு}|{ோ}|{து}|{ை}|{ா}|{ெ}];
++define R1 {்} -> 0 || LongChar CharSet1 _ "^" [{ி}|{ு}|{ோ}|{து}|{ை}|{ா}|{ெ}|{ே}];
+ define R101 {ய்} -> 0 || LongChar  _ "^" [{ோ}];
+-define R2 {்} -> 0 || CharSet2 _ "^" [{ி}|{ு}|{ோ}|{து}|{ை}|{ா}|{ெ}];
++define R2 {்} -> 0 || CharSet2 _ "^" [{ி}|{ு}|{ோ}|{து}|{ை}|{ா}|{ெ}|{ே}];
+ define R3TTU {ட்டு} -> 0 || _ "^" {ட்ட}; # For மொட்டு -> மொட்டை
+ define R3 {டு} -> 0 ||  _ "^" {ட்ட};   #For Kaadu class
+-define R4 {ு} -> 0 || _ "^" {ஆ}; #For Vandu
++define R4 {ு} -> 0 || _ "^" [{ஆ}|{ே}]; #For Vandu
+ define R5 {று} -> {ற்} || _ "^" {ற}; # For ஆறு -> ஆற்றை
+ define R19 {ன்}-> 0 ||  _ "^" [{ற்த்}|{ற்ச்}|{ற்ட்}|{ற்ப்}]; #For பொற்  
+ define R6 {ன்} -> 0 || _ "^" [{ர்க}]; #For Manavan
+@@ -24,12 +24,12 @@
+ define R8 {ல்} -> 0 || _ "^" [{ற்க}]; #For புல்
+ define R9 {ள்} -> 0 || _ "^" [{ட்க}]; #For முள்
+ define R10 {ள்} -> 0 || LongChar _ "^" [{ட்க}]; #For நாள்
+-define R11 {்} -> 0 || {ருள} _ "^" [{ி}|{ு}|{ோ}|{ை}|{ா}|{ெ}]; #For அருள்
++define R11 {்} -> 0 || {ருள} _ "^" [{ி}|{ு}|{ோ}|{ை}|{ா}|{ெ}|{ே}]; #For அருள்
+ define R12 {ம்}-> 0 ||  _ "^" [{ங்க}]; #For மரங்கள்
+ define R17 {ம்}-> 0 ||  _ "^" [{த்}|{ச்}|{ட்}|{ப்}]; #For மரச் 
+ define R13 {ம்} -> 0 ||  _ "^" [{த்த}]; #For மரம் - மரத்தை
+ define R14 {ர்} -> 0 ||  _ "^" [{ற்ற}]; #For சுவர் - சுவற்றில்
+-define R15 {்} -> 0 || {ள} _ "^" [{ி}|{ு}|{ோ}|{ை}|{ா}|{ெ}]; 
++define R15 {்} -> 0 || {ள} _ "^" [{ி}|{ு}|{ோ}|{ை}|{ா}|{ெ}|{ே}];
+ define R16 {ன்} -> 0 || _ "^" [{ற்}]; #பொன் - பொற்
+ 
+ 

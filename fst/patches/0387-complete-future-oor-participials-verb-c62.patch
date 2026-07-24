@@ -1,0 +1,19 @@
+--- ThamizhiVerbs-C62.lexc
++++ ThamizhiVerbs-C62.lexc
+@@ -551,6 +551,16 @@
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ+vpart_pin%=பின்:^கிறபின் #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ+vpart_potu%=போது:^கிறபோது #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்:^ுவோர் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+add%=உம்:^ுவோரும் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+foc%=ஏ:^ுவோரே #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+acc%=ஐ:^ுவோரை #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+dat%=க்கு:^ுவோருக்கு #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^ுவோரால் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=இன்:^ுவோரின் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=உடைய:^ுவோருடைய #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+loc%=இடம்:^ுவோரிடம் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+soc%=உடன்:^ுவோருடன் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+psp_padi%=படி:^ும்படி #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+vpart_pin%=பின்:^ும்பின் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+vpart_maaru%=மாறு:^ுமாறு #;

@@ -1,0 +1,69 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1,6 +1,6 @@
+ !!!Header.lexc!!!
+ 
+-Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +trans +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add +all +verb +nonfin +sim +neg +verbalnoun +cop +adjpart +compoundmodifier +human +fut +3sgn
++Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +trans +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add +all +verb +nonfin +sim +neg +verbalnoun +cop +adjpart +compoundmodifier +human +fut +3sgn +actionnominal
+ 
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+@@ -3584,7 +3584,7 @@
+ 
+ !!!C1.lexc!!!
+ 
+-Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +fut +3sgn
++Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +fut +3sgn +verbalnoun +actionnominal
+ 
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+@@ -43711,6 +43711,7 @@
+ செயப்படுபொருள்குன்றியவினை	C2SgRoot;
+ புல்லுத்தடுக்குஞ்சூரைச்செடி	C2SgRoot;
+ வெள்ளந்தி	C2SgRoot;
++ராசி	C2SgRoot;
+ LEXICON C2SgRoot
+  !       Root;
+         C2Inflections;
+@@ -96981,6 +96982,24 @@
+ பின்பிறந்தாள்	C14SgRoot;
+ பிறந்தநாள்	C14DualRoot;
+ முட்டாள்	C14RetainedRoot;
++கோவில்	C14RetainedRoot;
++! Lexical action nominal: confiscation/seizure, not a finite verb.
++பறிமுதல்:பறிமுதல	LexicalActionNominalL;
++
++LEXICON ModernManamLocative
+++noun+infInc+loc%=இல்:^தில் #;
++
++LEXICON LexicalActionNominalL
+++noun+verbalnoun+actionnominal+nom:் #;
+++noun+verbalnoun+actionnominal+acc:ை #;
+++noun+verbalnoun+actionnominal+dat:ுக்கு #;
+++noun+verbalnoun+actionnominal+gen:ின் #;
+++noun+verbalnoun+actionnominal+inst:ால் #;
+++noun+verbalnoun+actionnominal+loc:ில் #;
+++noun+verbalnoun+actionnominal+abl:ிலிருந்து #;
+++noun+verbalnoun+actionnominal+soc:ுடன் #;
+++noun+verbalnoun+actionnominal+nom+add:ும் #;
++
+ LEXICON C14SgRoot
+ !        Root;
+         C14Inflections;
+@@ -99098,6 +99117,8 @@
+ மறையின்பம்	C15SgRoot ; 
+ மறைவானம்	C15SgRoot ; 
+ மனம்	C15SgRoot ; 
++! Modern reduced locative allomorph, semantically the lemma மனம்.
++மனம்:மன	ModernManamLocative;
+ மன்குன்றம்	C15SgRoot ; 
+ மன்வானம்	C15SgRoot ; 
+ மன்றம்	C15SgRoot ; 
+@@ -136984,6 +137005,7 @@
+ சலவைக்காரர்	C16DirectSgRoot;
+ நிதியமைச்சர்	C16DirectSgRoot;
+ மீனவர்	C16DirectSgRoot;
++தொடர்	C16DirectSgRoot;
+ LEXICON C16SgRoot
+ !        Root;
+         C16Inflections;

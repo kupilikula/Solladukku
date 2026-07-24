@@ -1,0 +1,11 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -1445,6 +1445,8 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^த்த #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்:^த்தோர் #;
+++verb+nonfin+complex+perfect+past%=த்+adjpart%=அ:^த்துள்ள #;
+++verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ:^த்திருந்த #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^க்கும் #;

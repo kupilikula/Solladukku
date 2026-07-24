@@ -1,0 +1,48 @@
+--- ThamizhiVerbs-C62.lexc
++++ ThamizhiVerbs-C62.lexc
+@@ -358,3 +358,45 @@
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
++
++! Complete modern present-perfect and short past human-plural paradigms.
+++verb+fin+sim+strong+past%=க்+3ple%=னர்:^க்கனர் #;
+++verb+fin+sim+caus%=வி+past%=க்+3ple%=னர்:^விக்கனர் #;
+++verb+fin+complex+perfect+pres%=∅+1sg%=ஏன்:^க்குள்ளேன் #;
+++verb+fin+complex+perfect+pres%=∅+1pl%=ஓம்:^க்குள்ளோம் #;
+++verb+fin+complex+perfect+pres%=∅+2sg%=ஆய்:^க்குள்ளாய் #;
+++verb+fin+complex+perfect+pres%=∅+2sgh%=ஈர்:^க்குள்ளீர் #;
+++verb+fin+complex+perfect+pres%=∅+2pl%=ஈர்கள்:^க்குள்ளீர்கள் #;
+++verb+fin+complex+perfect+pres%=∅+3sgm%=ஆன்:^க்குள்ளான் #;
+++verb+fin+complex+perfect+pres%=∅+3sgf%=ஆள்:^க்குள்ளாள் #;
+++verb+fin+complex+perfect+pres%=∅+3sghe%=ஆர்:^க்குள்ளார் #;
+++verb+fin+complex+perfect+pres%=∅+3ple%=னர்:^க்குள்ளனர் #;
+++verb+fin+complex+perfect+pres%=∅+3ple%=ஆர்கள்:^க்குள்ளார்கள் #;
+++verb+fin+complex+perfect+pres%=∅+3sgn%=அது:^க்குள்ளது #;
+++verb+fin+complex+perfect+pres%=∅+3pln%=அன:^க்குள்ளன #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது:^க்குள்ளது #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ:^க்குள்ளதை #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+add%=உம்:^க்குள்ளதையும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+inst%=ஆல்:^க்குள்ளதால் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^க்குள்ளதாலும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு:^க்குள்ளதற்கு #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+add%=உம்:^க்குள்ளதற்கும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்:^க்குள்ளதில் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்+add%=உம்:^க்குள்ளதிலும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^க்குள்ளதிலேயே #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+abl%=இலிருந்து:^க்குள்ளதிலிருந்து #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+abl%=இலிருந்து+add%=உம்:^க்குள்ளதிலிருந்தும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+soc%=உடன்:^க்குள்ளதுடன் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+soc%=உடன்+add%=உம்:^க்குள்ளதுடனும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+gen%=இன்:^க்குள்ளதன் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^க்குள்ளதைப் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^க்குள்ளதைச் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^க்குள்ளதைத் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^க்குள்ளதைக் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^க்குள்ளதற்குப் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^க்குள்ளதற்குச் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்குள்ளதற்குத் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^க்குள்ளதற்குக் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக:^க்குள்ளதாக #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்குள்ளதாகவும் #;
+++verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ:^க்குள்ள #;

@@ -29,6 +29,7 @@ CLASSIFIED_OUTPUT_FILE = SCRIPT_DIR / "fst_classified_headwords.json"
 HEURISTIC_CLASSIFIED_OUTPUT_FILE = SCRIPT_DIR / "fst_heuristic_classified_headwords.json"
 HEURISTIC_FORMS_OUTPUT_FILE = SCRIPT_DIR / "fst_heuristic_forms.txt"
 HEURISTIC_AUDIT_OUTPUT_FILE = SCRIPT_DIR / "fst_heuristic_audit.json"
+GENERATION_AUDIT_OUTPUT_FILE = SCRIPT_DIR / "fst_generation_audit.json"
 UNCLASSIFIED_VUIZUR_OUTPUT_FILE = SCRIPT_DIR / "fst_unclassified_vuizur_headwords.json"
 UNCLASSIFIED_VUIZUR_SUMMARY_FILE = SCRIPT_DIR / "fst_unclassified_vuizur_summary.json"
 LEXICON_FILE = SCRIPT_DIR / "tamillexicon_headwords.txt"
@@ -96,7 +97,7 @@ VERB_LEXC_CANDIDATES = {
 
 NOUN_TAGS = [
     "+noun+nom", "+noun+acc", "+noun+dat", "+noun+loc",
-    "+noun+abl", "+noun+gen", "+noun+inst", "+noun+soc",
+    "+noun+abl", "+noun+gen", "+noun+infInc+gen", "+noun+inst", "+noun+soc",
     "+noun+pl+nom", "+noun+pl+nom+add", "+noun+pl+acc", "+noun+pl+dat", "+noun+pl+loc",
     "+noun+pl+abl", "+noun+pl+gen", "+noun+pl+inst", "+noun+pl+soc",
 ]
@@ -470,7 +471,13 @@ def extract_verb_templates_from_lexc(lexc_path: Path, conservative: bool = True)
     with open(lexc_path, "r", encoding="utf-8") as f:
         for raw in f:
             line = raw.strip()
-            if not line.startswith("+verb") or "#;" not in line:
+            if not line.startswith("+verb"):
+                continue
+            # Finite declarations may now route through an optional question
+            # continuation. Its epsilon branch is terminal-equivalent to '#'.
+            if "#;" not in line and not line.endswith(
+                (" VerbQuestion;", " VerbQuestionNeuterPlural;")
+            ):
                 continue
             # Keep lexical analysis side only (drop surface rewrite side after ':')
             lexical = line.split(":", 1)[0].strip()
@@ -706,8 +713,13 @@ def select_verb_templates_for_stem(stem: str, templates: List[str], full_generat
     if stem.endswith("க்க"):
         filtered = [t for t in templates if "+sim+" in t and "+complex+" not in t]
         return filtered or templates
-    # Base/simple stems default to simple templates in full mode.
-    filtered = [t for t in templates if "+sim+" in t and "+complex+" not in t]
+    # Canonical passive upper analyses are keyed by the active lemma. Try both
+    # simple and passive templates here; inverse lookup admits only explicitly
+    # licensed passive stems, so this does not create productive guesses.
+    filtered = [
+        t for t in templates
+        if ("+sim+" in t and "+complex+" not in t) or "+complex+passive+" in t
+    ]
     return filtered or templates
 
 
@@ -797,13 +809,15 @@ def main() -> None:
     # Step 2: Classification + generation
     all_forms: Set[str] = set()
     class_map: Dict[str, Set[str]] = {}
+    runtime_citation_verbs: Set[str] = set()
+    generation_audit: List[Dict[str, object]] = []
 
     for fst_name in FST_ORDER:
         fst_path = fst_dir / fst_name
         print(f"\n=== {fst_name} ===")
         recognized = forward_classify(fst_path, headwords)
         filtered_lemmas: Set[str] = set()
-        for lemma, _analysis in recognized:
+        for lemma, analysis in recognized:
             override_class = LEMMA_CLASS_OVERRIDES.get(lemma)
             if override_class and fst_name != override_class:
                 continue
@@ -813,6 +827,8 @@ def main() -> None:
                 if allowed is not None and fst_name not in allowed:
                     continue
             filtered_lemmas.add(lemma)
+            if "+verbalnoun=தல்" in analysis and "verb" in pos_hints:
+                runtime_citation_verbs.add(lemma)
         lemma_set = sorted(filtered_lemmas)
         print(f"Recognized lemmas: {len(lemma_set)}")
 
@@ -822,11 +838,14 @@ def main() -> None:
                 all_forms.add(lemma)
 
         generated: Set[str] = set()
+        template_count = 0
         if fst_name == "noun.fst" and lemma_set:
+            template_count = len(NOUN_TAGS)
             analyses = [lemma + tag for lemma in lemma_set for tag in NOUN_TAGS]
             generated = inverse_generate_forms(fst_path, analyses)
             print(f"Generated noun forms: {len(generated)}")
         elif fst_name == "adj.fst" and lemma_set:
+            template_count = len(ADJ_TAGS)
             analyses = [lemma + tag for lemma in lemma_set for tag in ADJ_TAGS]
             generated = inverse_generate_forms(fst_path, analyses)
             print(f"Generated adjective forms: {len(generated)}")
@@ -837,6 +856,7 @@ def main() -> None:
             else:
                 templates = extract_verb_templates_from_lexc(lexc_path, conservative=not full_fst_generation)
                 if templates:
+                    template_count = len(templates)
                     analyses = [lemma + tag for lemma in lemma_set for tag in templates]
                     generated = inverse_generate_forms(fst_path, analyses)
                     print(f"Generated verb forms: {len(generated)} (templates: {len(templates)})")
@@ -844,7 +864,16 @@ def main() -> None:
                     print("WARNING: No verb templates extracted from lexc; skipping inverse generation")
 
         all_forms |= generated
+        generation_audit.append({
+            "model": fst_name,
+            "recognized_lemmas": len(lemma_set),
+            "generation_templates": template_count,
+            "generated_surfaces": len(generated),
+            "running_union_surfaces": len(all_forms),
+        })
         print(f"Running total forms: {len(all_forms)}")
+
+    direct_runtime_form_count = len(all_forms)
 
     # Step 2b: heuristic class prediction for unclassified headwords.
     include_heuristic_lemmas = str(os.environ.get("INCLUDE_HEURISTIC_LEMMAS", "")).lower() == "true"
@@ -977,6 +1006,13 @@ def main() -> None:
         if include_heuristic_lemmas and is_valid_form(lemma):
             heuristic_forms.add(lemma)
 
+    # Runtime citation recognition must not suppress the established secondary
+    # stem expansion used for passive and light-verb generation.
+    for lemma in runtime_citation_verbs:
+        primary = pick_primary_class(class_map.get(lemma, set()))
+        if primary:
+            predicted_by_class.setdefault(primary, []).append(lemma)
+
     if include_heuristic_inflections:
         print("Running controlled heuristic inflection synthesis...")
         generation_by_class = expand_heuristic_generation_classes(predicted_by_class)
@@ -1072,6 +1108,15 @@ def main() -> None:
 
     write_classification_map(class_map)
     write_heuristic_outputs(heuristic_rows, heuristic_forms, heuristic_audit_rows)
+    GENERATION_AUDIT_OUTPUT_FILE.write_text(json.dumps({
+        "full_fst_generation": full_fst_generation,
+        "source_lemma_pool": len(headwords),
+        "direct_runtime_union_surfaces": direct_runtime_form_count,
+        "heuristic_rows": len(heuristic_rows),
+        "heuristic_surfaces": len(heuristic_forms),
+        "final_generated_union_surfaces": len(sorted_forms),
+        "models": generation_audit,
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     unclassified_vuizur_rows = sorted(
         unclassified_vuizur_rows,
         key=lambda r: (",".join(r.get("pos_hints", [])), r.get("lemma", "")),
@@ -1086,6 +1131,7 @@ def main() -> None:
     print(f"Heuristic classifications: {HEURISTIC_CLASSIFIED_OUTPUT_FILE}")
     print(f"Heuristic forms: {HEURISTIC_FORMS_OUTPUT_FILE}")
     print(f"Heuristic audit: {HEURISTIC_AUDIT_OUTPUT_FILE}")
+    print(f"Generation audit: {GENERATION_AUDIT_OUTPUT_FILE}")
     print(f"Unclassified Vuizur lemmas: {UNCLASSIFIED_VUIZUR_OUTPUT_FILE}")
     print(f"Unclassified Vuizur summary: {UNCLASSIFIED_VUIZUR_SUMMARY_FILE}")
 

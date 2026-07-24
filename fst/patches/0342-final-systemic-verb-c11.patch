@@ -1,0 +1,130 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist +psp_padi +vpart_pin
+ 
+ LEXICON Root
+ 
+@@ -2699,6 +2699,8 @@
+ 
+ ! Productive infinitive + தக்க suitability/worthiness construction.
+ +verb+nonfin+sim+inf%=க்க+worthy%=தக்க+adjpart%=அ:^க்கத்தக்க #;
+++verb+nonfin+sim+inf%=க்க+worthy%=தக்க+adjpart%=அ+psp_padi%=படி:^க்கத்தக்கபடி #;
+++verb+nonfin+sim+inf%=க்க+worthy%=தக்க+adjpart%=அ+vpart_pin%=பின்:^க்கத்தக்கபின் #;
+ +verb+nonfin+sim+cond%=இன்:^ப்பின் #;
+ +verb+nonfin+sim+cond%=இன்+add%=உம்:^ப்பினும் #;
+ +verb+nonfin+sim+inf%=க்க+worthy%=தக்க+adjpart%=அ+vpart_potu%=போது:^க்கத்தக்கபோது #;
+@@ -3115,20 +3117,34 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^த்த #;
+++verb+nonfin+sim+past%=த்+adjpart%=அ+psp_padi%=படி:^த்தபடி #;
+++verb+nonfin+sim+past%=த்+adjpart%=அ+vpart_pin%=பின்:^த்தபின் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+vpart_potu%=போது:^த்தபோது #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்:^த்தோர் #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ:^த்துள்ள #;
+++verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+psp_padi%=படி:^த்துள்ளபடி #;
+++verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+vpart_pin%=பின்:^த்துள்ளபின் #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+vpart_potu%=போது:^த்துள்ளபோது #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ:^த்திருந்த #;
+++verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+psp_padi%=படி:^த்திருந்தபடி #;
+++verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+vpart_pin%=பின்:^த்திருந்தபின் #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+vpart_potu%=போது:^த்திருந்தபோது #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+psp_padi%=படி:^க்கின்றபடி #;
+++verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+vpart_pin%=பின்:^க்கின்றபின் #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+vpart_potu%=போது:^க்கின்றபோது #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+++verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+++verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^க்கும் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+psp_padi%=படி:^க்கும்படி #;
+++verb+nonfin+sim+futANDadjpart%=உம்+vpart_pin%=பின்:^க்கும்பின் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+vpart_maaru%=மாறு:^க்குமாறு #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+vpart_potu%=போது:^க்கும்போது #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^க்காத #;
+++verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+psp_padi%=படி:^க்காதபடி #;
+++verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+vpart_pin%=பின்:^க்காதபின் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+vpart_potu%=போது:^க்காதபோது #;
+ 
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^த்தர் VerbQuestion;
+@@ -6798,14 +6814,24 @@
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ:^த்த #;
+++verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+psp_padi%=படி:^த்தபடி #;
+++verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+vpart_pin%=பின்:^த்தபின் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+vpart_potu%=போது:^த்தபோது #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+psp_padi%=படி:^க்கின்றபடி #;
+++verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+vpart_pin%=பின்:^க்கின்றபின் #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+vpart_potu%=போது:^க்கின்றபோது #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+++verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+++verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்:^க்கும் #;
+++verb+nonfin+complex+attitude+futANDadjpart%=உம்+psp_padi%=படி:^க்கும்படி #;
+++verb+nonfin+complex+attitude+futANDadjpart%=உம்+vpart_pin%=பின்:^க்கும்பின் #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்+vpart_potu%=போது:^க்கும்போது #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+++verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+psp_padi%=படி:^ாதபடி #;
+++verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+vpart_pin%=பின்:^ாதபின் #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+vpart_potu%=போது:^ாதபோது #;
+ 
+ 
+@@ -10294,14 +10320,24 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^ாவிட்டாலும் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ:^ின #;
+++verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+psp_padi%=படி:^ினபடி #;
+++verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+vpart_pin%=பின்:^ினபின் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+vpart_potu%=போது:^ினபோது #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+psp_padi%=படி:^க்கின்றபடி #;
+++verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+vpart_pin%=பின்:^க்கின்றபின் #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+vpart_potu%=போது:^க்கின்றபோது #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ:^க்கிற #;
+++verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+++verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்:^ும் #;
+++verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+psp_padi%=படி:^ும்படி #;
+++verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+vpart_pin%=பின்:^ும்பின் #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+vpart_potu%=போது:^ும்போது #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+++verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+psp_padi%=படி:^ாதபடி #;
+++verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+vpart_pin%=பின்:^ாதபின் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+vpart_potu%=போது:^ாதபோது #;
+ 
+ 
+@@ -16390,14 +16426,24 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ:^த்த #;
+++verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+psp_padi%=படி:^த்தபடி #;
+++verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+vpart_pin%=பின்:^த்தபின் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+vpart_potu%=போது:^த்தபோது #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+psp_padi%=படி:^க்கின்றபடி #;
+++verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+vpart_pin%=பின்:^க்கின்றபின் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+vpart_potu%=போது:^க்கின்றபோது #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+++verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+++verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்:^க்கும் #;
+++verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+psp_padi%=படி:^க்கும்படி #;
+++verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+vpart_pin%=பின்:^க்கும்பின் #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+vpart_potu%=போது:^க்கும்போது #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+++verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+psp_padi%=படி:^ாதபடி #;
+++verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+vpart_pin%=பின்:^ாதபின் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+vpart_potu%=போது:^ாதபோது #;
+ 
+ ! Productive participial human and future-neuter nominals.

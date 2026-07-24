@@ -1,0 +1,76 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -42,7 +42,6 @@
+ பிஸ்கட்:பிஸ்கட	ForeignDoubledTTFinalInflections;
+ சாக்லேட்	ForeignFinalNom;
+ சாக்லேட்:சாக்லேட	ForeignDoubledTTFinalInflections;
+-ஐஸ்கிரீம்	C15SgRoot;
+ பீட்சா	C1SgRoot;
+ பிரியாணி	C2SgRoot;
+ ஹோட்டல்	C4SgRoot;
+@@ -42737,6 +42736,16 @@
+ +noun+gen+psp_keele_iruntu:^யின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ LEXICON C4Sg
++அசாம்	  C4SgRoot ;
++ஆதாம்	  C4SgRoot ;
++ஆபிரகாம்	  C4SgRoot ;
++இப்ராஹீம்	  C4SgRoot ;
++இமாம்	  C4SgRoot ;
++ஐஸ்கிரீம்	  C4SgRoot ;
++முஸ்லீம்	  C4SgRoot ;
++ரோம்	  C4SgRoot ;
++இஸ்லாம்	  C4SgRoot ;
++இசுலாம்	  C4SgRoot ;
+ அட்டகிராம்	  C4SgRoot ;
+ அஷ்டகிராம்	  C4SgRoot ;
+ சீக்கிராம்	  C4SgRoot ;
+@@ -95052,8 +95061,6 @@
+ 
+ 
+ ! Source-backed name cleanup tranche: multi-source name/name+noun candidates.
+-அசாம்	C15SgRoot;
+-ஆதாம்	C15SgRoot;
+ ஆதியாகமம்	C15SgRoot;
+ ஆரியம்	C15SgRoot;
+ இராமாயணம்	C15SgRoot;
+@@ -95074,7 +95081,6 @@
+ மிசோரம்	C15SgRoot;
+ யாகுவம்	C15SgRoot;
+ யாழ்ப்பாணம்	C15SgRoot;
+-ரோம்	C15SgRoot;
+ வங்காளதேசம்	C15SgRoot;
+ வங்காளம்	C15SgRoot;
+ 
+@@ -95174,7 +95180,6 @@
+ இட்டம்	C15SgRoot;
+ இபங்கம்	C15SgRoot;
+ இமம்	C15SgRoot;
+-இமாம்	C15SgRoot;
+ இயக்கம்	C15SgRoot;
+ இயக்குரோதம்	C15SgRoot;
+ இயம்	C15SgRoot;
+@@ -95722,7 +95727,6 @@
+ முன்னேற்றம்	C15SgRoot;
+ முன்புருவம்	C15SgRoot;
+ முப்புவனம்	C15SgRoot;
+-முஸ்லீம்	C15SgRoot;
+ மூட்டம்	C15SgRoot;
+ மூத்திரம்	C15SgRoot;
+ மூலதனம்	C15SgRoot;
+@@ -115717,7 +115721,6 @@
+ ஆபாடம்	C15SgRoot;
+ ஆபாத்கிராமம்	C15SgRoot;
+ ஆபானம்	C15SgRoot;
+-ஆபிரகாம்	C15SgRoot;
+ ஆபூடம்	C15SgRoot;
+ ஆபூபிகம்	C15SgRoot;
+ ஆபூப்பியம்	C15SgRoot;
+@@ -116130,7 +116133,6 @@
+ இபோடணம்	C15SgRoot;
+ இப்கேசரம்	C15SgRoot;
+ இப்பவம்	C15SgRoot;
+-இப்ராஹீம்	C15SgRoot;
+ இமகதம்	C15SgRoot;
+ இமகஷாயம்	C15SgRoot;
+ இமதம்	C15SgRoot;

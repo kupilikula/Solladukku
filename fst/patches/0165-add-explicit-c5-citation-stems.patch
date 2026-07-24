@@ -1,0 +1,13 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -8320,6 +8320,10 @@
+ அடிபடு     C5Vinf;
+ 
+ 
++
++! Explicit Tamil Lexicon citation stems from segmented -தல் headwords
++இலங்கு	C5Vinf;
++மென்னு	C5Vinf;
+ LEXICON C5Vinf
+ 
+ 

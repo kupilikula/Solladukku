@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -5157,6 +5157,7 @@
+ +verb+fin+sim+caus%=ப்பி+fut%=ப்ப்+3pln%=∅:^ப்பிப்போம் VerbQuestion;
+ +verb+fin+sim+opt%=க்க:^க்க #;
+ +verb+nonfin+sim+inf%=க்க+negpart%=இல்லை:^க்கவில்லை #;
+++verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+colloq:^க்கல #;
+ +verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+sandhip%=ப்:^க்கவில்லைப் #;
+ +verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+sandhic%=ச்:^க்கவில்லைச் #;
+ +verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+sandhit%=த்:^க்கவில்லைத் #;

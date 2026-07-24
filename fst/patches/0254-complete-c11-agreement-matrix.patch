@@ -1,0 +1,12 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -3077,6 +3077,9 @@
+ +verb+nonfin+sim+futANDadjpart%=உம்:^க்கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+++verb+fin+sim+strong+past%=த்+3sge%=அர்:^த்தர் #;
+++verb+fin+sim+strong+pres%=க்கிற்+3sge%=அர்:^க்கிறர் #;
+++verb+fin+sim+strong+pres%=க்கின்ற்+3sge%=அர்:^க்கின்றர் #;
+ 
+ LEXICON ClassTheer11
+ 

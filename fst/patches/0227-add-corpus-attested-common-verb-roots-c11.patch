@@ -1,0 +1,32 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -22,6 +22,29 @@
+ வலஞ்சுழி  C11Vinf;
+ வளமைகொழி  C11Vinf;
+ LEXICON ClassEleven
++
++! Corpus-attested roots with inherited paradigm evidence
++அனுமதியளி    C11Vinf;
++ஆதரவளி    C11Vinf;
++எதிர்பார்    C11Vinf;
++காட்சியளி    C11Vinf;
++கௌரவி    C11Vinf;
++சித்தரி    C11Vinf;
++தயாரி    C11Vinf;
++தீர்ப்பளி    C11Vinf;
++தேர்ந்தெடு    C11Vinf;
++நடி    C11Vinf;
++நிர்மாணி    C11Vinf;
++பதிலளி    C11Vinf;
++பயணி    C11Vinf;
++பயனளி    C11Vinf;
++பரிந்துரை    C11Vinf;
++புகாரளி    C11Vinf;
++முன்னெடு    C11Vinf;
++முயற்சி    C11Vinf;
++வடிவமை    C11Vinf;
++வழிவகு    C11Vinf;
++விநியோகி    C11Vinf;
+ 
+ ! Final full-paradigm source review
+ பளபள    C11Vinf;

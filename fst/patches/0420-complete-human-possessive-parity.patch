@@ -1,0 +1,128 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -333,6 +333,8 @@
+ ஆகு+verb+nonfin+sim+past%=இ+adjpart%=அ+PartNoun%=அவர்+human+pl+nom:ஆகியோர் #;
+ ஆகு+verb+nonfin+sim+past%=இ+adjpart%=அ+PartNoun%=அவர்+human+pl+acc:ஆகியோரை #;
+ ஆகு+verb+nonfin+sim+past%=இ+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:ஆகியோரின் #;
++ஆகு+verb+nonfin+sim+past%=இ+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:ஆகியோரது #;
++ஆகு+verb+nonfin+sim+past%=இ+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=உடைய:ஆகியோருடைய #;
+ ! Reviewed classical pronouns, universal quantifier and singleton determiner.
+ யான்+pron+1sg+nom:யான் #;
+ யான்+pron+1sg+nom+add:யானும் #;
+@@ -451,6 +453,8 @@
+ ஒன்று+cardinal+human+inst+add:ஒருவராலும் #;
+ ஒன்று+cardinal+human+inst+add+foc%=ஏ:ஒருவராலுமே #;
+ ஒன்று+cardinal+human+gen:ஒருவரின் #;
++ஒன்று+cardinal+human+gen%=அது:ஒருவரது #;
++ஒன்று+cardinal+human+gen%=உடைய:ஒருவருடைய #;
+ ஒன்று+cardinal+human+loc:ஒருவரிடம் #;
+ ஒன்று+cardinal+human+loc+add:ஒருவரிடமும் #;
+ ஒன்று+cardinal+human+loc+add+foc%=ஏ:ஒருவரிடமுமே #;
+@@ -472,6 +476,8 @@
+ இரண்டு+cardinal+human+inst+add:இருவராலும் #;
+ இரண்டு+cardinal+human+inst+add+foc%=ஏ:இருவராலுமே #;
+ இரண்டு+cardinal+human+gen:இருவரின் #;
++இரண்டு+cardinal+human+gen%=அது:இருவரது #;
++இரண்டு+cardinal+human+gen%=உடைய:இருவருடைய #;
+ இரண்டு+cardinal+human+loc:இருவரிடம் #;
+ இரண்டு+cardinal+human+loc+add:இருவரிடமும் #;
+ இரண்டு+cardinal+human+loc+add+foc%=ஏ:இருவரிடமுமே #;
+@@ -493,6 +499,8 @@
+ மூன்று+cardinal+human+inst+add:மூவராலும் #;
+ மூன்று+cardinal+human+inst+add+foc%=ஏ:மூவராலுமே #;
+ மூன்று+cardinal+human+gen:மூவரின் #;
++மூன்று+cardinal+human+gen%=அது:மூவரது #;
++மூன்று+cardinal+human+gen%=உடைய:மூவருடைய #;
+ மூன்று+cardinal+human+loc:மூவரிடம் #;
+ மூன்று+cardinal+human+loc+add:மூவரிடமும் #;
+ மூன்று+cardinal+human+loc+add+foc%=ஏ:மூவரிடமுமே #;
+@@ -514,6 +522,8 @@
+ நான்கு+cardinal+human+inst+add:நால்வராலும் #;
+ நான்கு+cardinal+human+inst+add+foc%=ஏ:நால்வராலுமே #;
+ நான்கு+cardinal+human+gen:நால்வரின் #;
++நான்கு+cardinal+human+gen%=அது:நால்வரது #;
++நான்கு+cardinal+human+gen%=உடைய:நால்வருடைய #;
+ நான்கு+cardinal+human+loc:நால்வரிடம் #;
+ நான்கு+cardinal+human+loc+add:நால்வரிடமும் #;
+ நான்கு+cardinal+human+loc+add+foc%=ஏ:நால்வரிடமுமே #;
+@@ -535,6 +545,8 @@
+ ஐந்து+cardinal+human+inst+add:ஐவராலும் #;
+ ஐந்து+cardinal+human+inst+add+foc%=ஏ:ஐவராலுமே #;
+ ஐந்து+cardinal+human+gen:ஐவரின் #;
++ஐந்து+cardinal+human+gen%=அது:ஐவரது #;
++ஐந்து+cardinal+human+gen%=உடைய:ஐவருடைய #;
+ ஐந்து+cardinal+human+loc:ஐவரிடம் #;
+ ஐந்து+cardinal+human+loc+add:ஐவரிடமும் #;
+ ஐந்து+cardinal+human+loc+add+foc%=ஏ:ஐவரிடமுமே #;
+@@ -556,6 +568,8 @@
+ ஆறு+cardinal+human+inst+add:அறுவராலும் #;
+ ஆறு+cardinal+human+inst+add+foc%=ஏ:அறுவராலுமே #;
+ ஆறு+cardinal+human+gen:அறுவரின் #;
++ஆறு+cardinal+human+gen%=அது:அறுவரது #;
++ஆறு+cardinal+human+gen%=உடைய:அறுவருடைய #;
+ ஆறு+cardinal+human+loc:அறுவரிடம் #;
+ ஆறு+cardinal+human+loc+add:அறுவரிடமும் #;
+ ஆறு+cardinal+human+loc+add+foc%=ஏ:அறுவரிடமுமே #;
+@@ -577,6 +591,8 @@
+ ஏழு+cardinal+human+inst+add:எழுவராலும் #;
+ ஏழு+cardinal+human+inst+add+foc%=ஏ:எழுவராலுமே #;
+ ஏழு+cardinal+human+gen:எழுவரின் #;
++ஏழு+cardinal+human+gen%=அது:எழுவரது #;
++ஏழு+cardinal+human+gen%=உடைய:எழுவருடைய #;
+ ஏழு+cardinal+human+loc:எழுவரிடம் #;
+ ஏழு+cardinal+human+loc+add:எழுவரிடமும் #;
+ ஏழு+cardinal+human+loc+add+foc%=ஏ:எழுவரிடமுமே #;
+@@ -598,6 +614,8 @@
+ அனைவர்+quant+all+human+inst+add:அனைவராலும் #;
+ அனைவர்+quant+all+human+inst+add+foc%=ஏ:அனைவராலுமே #;
+ அனைவர்+quant+all+human+gen:அனைவரின் #;
++அனைவர்+quant+all+human+gen%=அது:அனைவரது #;
++அனைவர்+quant+all+human+gen%=உடைய:அனைவருடைய #;
+ அனைவர்+quant+all+human+loc:அனைவரிடம் #;
+ அனைவர்+quant+all+human+loc+add:அனைவரிடமும் #;
+ அனைவர்+quant+all+human+loc+add+foc%=ஏ:அனைவரிடமுமே #;
+@@ -619,6 +637,8 @@
+ எல்லா+quant+all+human+inst+add:எல்லோராலும் #;
+ எல்லா+quant+all+human+inst+add+foc%=ஏ:எல்லோராலுமே #;
+ எல்லா+quant+all+human+gen:எல்லோரின் #;
++எல்லா+quant+all+human+gen%=அது:எல்லோரது #;
++எல்லா+quant+all+human+gen%=உடைய:எல்லோருடைய #;
+ எல்லா+quant+all+human+loc:எல்லோரிடம் #;
+ எல்லா+quant+all+human+loc+add:எல்லோரிடமும் #;
+ எல்லா+quant+all+human+loc+add+foc%=ஏ:எல்லோரிடமுமே #;
+@@ -640,6 +660,8 @@
+ பல+quant+human+inst+add:பலராலும் #;
+ பல+quant+human+inst+add+foc%=ஏ:பலராலுமே #;
+ பல+quant+human+gen:பலரின் #;
++பல+quant+human+gen%=அது:பலரது #;
++பல+quant+human+gen%=உடைய:பலருடைய #;
+ பல+quant+human+loc:பலரிடம் #;
+ பல+quant+human+loc+add:பலரிடமும் #;
+ பல+quant+human+loc+add+foc%=ஏ:பலரிடமுமே #;
+@@ -661,6 +683,8 @@
+ சில+quant+human+inst+add:சிலராலும் #;
+ சில+quant+human+inst+add+foc%=ஏ:சிலராலுமே #;
+ சில+quant+human+gen:சிலரின் #;
++சில+quant+human+gen%=அது:சிலரது #;
++சில+quant+human+gen%=உடைய:சிலருடைய #;
+ சில+quant+human+loc:சிலரிடம் #;
+ சில+quant+human+loc+add:சிலரிடமும் #;
+ சில+quant+human+loc+add+foc%=ஏ:சிலரிடமுமே #;
+@@ -676,6 +700,8 @@
+ யார்+pron+inter+human+inst+add:யாராலும் #;
+ யார்+pron+inter+human+inst+add+foc%=ஏ:யாராலுமே #;
+ யார்+pron+inter+human+gen:யாரின் #;
++யார்+pron+inter+human+gen%=அது:யாரது #;
++யார்+pron+inter+human+gen%=உடைய:யாருடைய #;
+ யார்+pron+inter+human+loc:யாரிடம் #;
+ யார்+pron+inter+human+loc+add:யாரிடமும் #;
+ யார்+pron+inter+human+loc+add+foc%=ஏ:யாரிடமுமே #;
+@@ -697,6 +723,8 @@
+ எவர்+pron+inter+human+inst+add:எவராலும் #;
+ எவர்+pron+inter+human+inst+add+foc%=ஏ:எவராலுமே #;
+ எவர்+pron+inter+human+gen:எவரின் #;
++எவர்+pron+inter+human+gen%=அது:எவரது #;
++எவர்+pron+inter+human+gen%=உடைய:எவருடைய #;
+ எவர்+pron+inter+human+loc:எவரிடம் #;
+ எவர்+pron+inter+human+loc+add:எவரிடமும் #;
+ எவர்+pron+inter+human+loc+add+foc%=ஏ:எவரிடமுமே #;

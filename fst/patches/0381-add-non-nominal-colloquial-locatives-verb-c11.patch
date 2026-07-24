@@ -1,0 +1,234 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -4716,6 +4716,7 @@
+ 
+ ! Productive temporal verbal noun in locative -கையில்.
+ +verb+nonfin+sim+verbalnoun%=கை+loc%=இல்:^க்கையில் #;
+++verb+nonfin+sim+verbalnoun%=கை+loc%=இல்+colloq:^க்கையுல #;
+ 
+ +verb+fin+sim+strong+past%=த்+1sg%=ஏன்:^த்தேன் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+1pl%=ஓம்:^த்தோம் VerbQuestion;
+@@ -4755,6 +4756,7 @@
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^த்ததற்கான #;
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^த்ததற்கும் #;
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+loc%=இல்:^த்ததில் #;
+++verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+loc%=இல்+colloq:^த்ததுல #;
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+loc%=இல்+add%=உம்:^த்ததிலும் #;
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^த்ததிலேயே #;
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+abl%=இலிருந்து:^த்ததிலிருந்து #;
+@@ -4807,6 +4809,7 @@
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^க்கிறதற்கான #;
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^க்கிறதற்கும் #;
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்:^க்கிறதில் #;
+++verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+colloq:^க்கிறதுல #;
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^க்கிறதிலும் #;
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^க்கிறதிலேயே #;
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+abl%=இலிருந்து:^க்கிறதிலிருந்து #;
+@@ -4858,6 +4861,7 @@
+ +verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^க்கின்றதற்கான #;
+ +verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^க்கின்றதற்கும் #;
+ +verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்:^க்கின்றதில் #;
+++verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+colloq:^க்கின்றதுல #;
+ +verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^க்கின்றதிலும் #;
+ +verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^க்கின்றதிலேயே #;
+ +verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+abl%=இலிருந்து:^க்கின்றதிலிருந்து #;
+@@ -4919,6 +4923,7 @@
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^த்துள்ளதற்கான #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+add%=உம்:^த்துள்ளதற்கும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்:^த்துள்ளதில் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்+colloq:^த்துள்ளதுல #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்+add%=உம்:^த்துள்ளதிலும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^த்துள்ளதிலேயே #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+abl%=இலிருந்து:^த்துள்ளதிலிருந்து #;
+@@ -4958,6 +4963,7 @@
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பதற்கான #;
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பதற்கும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+loc%=இல்:^ப்பதில் #;
+++verb+nonfin+sim+verbalnoun%=அது+loc%=இல்+colloq:^ப்பதுல #;
+ +verb+nonfin+sim+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பதிலும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பதிலேயே #;
+ +verb+nonfin+sim+verbalnoun%=அது+abl%=இலிருந்து:^ப்பதிலிருந்து #;
+@@ -5020,6 +5026,7 @@
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பித்ததற்கான #;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பித்ததற்கும் #;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்:^ப்பித்ததில் #;
+++verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பித்ததுல #;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பித்ததிலும் #;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பித்ததிலேயே #;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பித்ததிலிருந்து #;
+@@ -5072,6 +5079,7 @@
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பிக்கிறதற்கான #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பிக்கிறதற்கும் #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்:^ப்பிக்கிறதில் #;
+++verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பிக்கிறதுல #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பிக்கிறதிலும் #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பிக்கிறதிலேயே #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பிக்கிறதிலிருந்து #;
+@@ -5123,6 +5131,7 @@
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பிக்கின்றதற்கான #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பிக்கின்றதற்கும் #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்:^ப்பிக்கின்றதில் #;
+++verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பிக்கின்றதுல #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பிக்கின்றதிலும் #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பிக்கின்றதிலேயே #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பிக்கின்றதிலிருந்து #;
+@@ -5376,6 +5385,7 @@
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பதற்கான #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பதற்கும் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+loc%=இல்:^ப்பதில் #;
+++verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பதுல #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பதிலும் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பதிலேயே #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பதிலிருந்து #;
+@@ -5444,6 +5454,7 @@
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பிப்பதற்கான #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பிப்பதற்கும் #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+loc%=இல்:^ப்பிப்பதில் #;
+++verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பிப்பதுல #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பிப்பதிலும் #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பிப்பதிலேயே #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பிப்பதிலிருந்து #;
+@@ -8714,6 +8725,7 @@
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^த்ததற்கான #;
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^த்ததற்கும் #;
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+loc%=இல்:^த்ததில் #;
+++verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+loc%=இல்+colloq:^த்ததுல #;
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+loc%=இல்+add%=உம்:^த்ததிலும் #;
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^த்ததிலேயே #;
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+abl%=இலிருந்து:^த்ததிலிருந்து #;
+@@ -8765,6 +8777,7 @@
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^க்கிறதற்கான #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^க்கிறதற்கும் #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்:^க்கிறதில் #;
+++verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+colloq:^க்கிறதுல #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^க்கிறதிலும் #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^க்கிறதிலேயே #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+abl%=இலிருந்து:^க்கிறதிலிருந்து #;
+@@ -8815,6 +8828,7 @@
+ +verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^க்கின்றதற்கான #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^க்கின்றதற்கும் #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்:^க்கின்றதில் #;
+++verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+colloq:^க்கின்றதுல #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^க்கின்றதிலும் #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^க்கின்றதிலேயே #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+abl%=இலிருந்து:^க்கின்றதிலிருந்து #;
+@@ -8898,6 +8912,7 @@
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பித்ததற்கான #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பித்ததற்கும் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்:^ப்பித்ததில் #;
+++verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பித்ததுல #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பித்ததிலும் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பித்ததிலேயே #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பித்ததிலிருந்து #;
+@@ -8949,6 +8964,7 @@
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பிக்கிறதற்கான #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பிக்கிறதற்கும் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்:^ப்பிக்கிறதில் #;
+++verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பிக்கிறதுல #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பிக்கிறதிலும் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பிக்கிறதிலேயே #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பிக்கிறதிலிருந்து #;
+@@ -8999,6 +9015,7 @@
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பிக்கின்றதற்கான #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பிக்கின்றதற்கும் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்:^ப்பிக்கின்றதில் #;
+++verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பிக்கின்றதுல #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பிக்கின்றதிலும் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பிக்கின்றதிலேயே #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பிக்கின்றதிலிருந்து #;
+@@ -12335,6 +12352,7 @@
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^த்ததற்கான #;
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^த்ததற்கும் #;
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+loc%=இல்:^த்ததில் #;
+++verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+loc%=இல்+colloq:^த்ததுல #;
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+loc%=இல்+add%=உம்:^த்ததிலும் #;
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^த்ததிலேயே #;
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+abl%=இலிருந்து:^த்ததிலிருந்து #;
+@@ -12386,6 +12404,7 @@
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^க்கிறதற்கான #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^க்கிறதற்கும் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+loc%=இல்:^க்கிறதில் #;
+++verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+loc%=இல்+colloq:^க்கிறதுல #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^க்கிறதிலும் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^க்கிறதிலேயே #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+abl%=இலிருந்து:^க்கிறதிலிருந்து #;
+@@ -12436,6 +12455,7 @@
+ +verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^க்கின்றதற்கான #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^க்கின்றதற்கும் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+loc%=இல்:^க்கின்றதில் #;
+++verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+loc%=இல்+colloq:^க்கின்றதுல #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^க்கின்றதிலும் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^க்கின்றதிலேயே #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+abl%=இலிருந்து:^க்கின்றதிலிருந்து #;
+@@ -12519,6 +12539,7 @@
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பித்ததற்கான #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பித்ததற்கும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்:^ப்பித்ததில் #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பித்ததுல #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பித்ததிலும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பித்ததிலேயே #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பித்ததிலிருந்து #;
+@@ -12571,6 +12592,7 @@
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பிக்கிறதற்கான #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பிக்கிறதற்கும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்:^ப்பிக்கிறதில் #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பிக்கிறதுல #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பிக்கிறதிலும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பிக்கிறதிலேயே #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பிக்கிறதிலிருந்து #;
+@@ -12621,6 +12643,7 @@
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பிக்கின்றதற்கான #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பிக்கின்றதற்கும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்:^ப்பிக்கின்றதில் #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பிக்கின்றதுல #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பிக்கின்றதிலும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பிக்கின்றதிலேயே #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பிக்கின்றதிலிருந்து #;
+@@ -18554,6 +18577,7 @@
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^த்ததற்கான #;
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^த்ததற்கும் #;
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+loc%=இல்:^த்ததில் #;
+++verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+loc%=இல்+colloq:^த்ததுல #;
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+loc%=இல்+add%=உம்:^த்ததிலும் #;
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^த்ததிலேயே #;
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+abl%=இலிருந்து:^த்ததிலிருந்து #;
+@@ -18605,6 +18629,7 @@
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^க்கிறதற்கான #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^க்கிறதற்கும் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்:^க்கிறதில் #;
+++verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+colloq:^க்கிறதுல #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^க்கிறதிலும் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^க்கிறதிலேயே #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+abl%=இலிருந்து:^க்கிறதிலிருந்து #;
+@@ -18655,6 +18680,7 @@
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^க்கின்றதற்கான #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^க்கின்றதற்கும் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்:^க்கின்றதில் #;
+++verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+colloq:^க்கின்றதுல #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^க்கின்றதிலும் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^க்கின்றதிலேயே #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+abl%=இலிருந்து:^க்கின்றதிலிருந்து #;
+@@ -18737,6 +18763,7 @@
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பித்ததற்கான #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பித்ததற்கும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்:^ப்பித்ததில் #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பித்ததுல #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பித்ததிலும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பித்ததிலேயே #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பித்ததிலிருந்து #;
+@@ -18788,6 +18815,7 @@
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பிக்கிறதற்கான #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பிக்கிறதற்கும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்:^ப்பிக்கிறதில் #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பிக்கிறதுல #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பிக்கிறதிலும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பிக்கிறதிலேயே #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பிக்கிறதிலிருந்து #;
+@@ -18838,6 +18866,7 @@
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பிக்கின்றதற்கான #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பிக்கின்றதற்கும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்:^ப்பிக்கின்றதில் #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+colloq:^ப்பிக்கின்றதுல #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பிக்கின்றதிலும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பிக்கின்றதிலேயே #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பிக்கின்றதிலிருந்து #;

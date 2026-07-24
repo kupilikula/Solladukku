@@ -1,0 +1,34 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -4441,7 +4441,6 @@
+ இயைத்துத்தீர்	Vtheerinf;
+ இயந்திரித்துத்தீர்	Vtheerinf;
+ இரித்துத்தீர்	Vtheerinf;
+-இருத்துத்தீர்	Vtheerinf;
+ இரதித்துத்தீர்	Vtheerinf;
+ இரமித்துத்தீர்	Vtheerinf;
+ இரைத்துத்தீர்	Vtheerinf;
+@@ -4672,7 +4671,6 @@
+ தவந்துதீர்	Vtheerinf;
+ தொண்ணாந்துதீர்	Vtheerinf;
+ வறந்துதீர்	Vtheerinf;
+-வலந்துதீர்	Vtheerinf;
+ விறந்துதீர்	Vtheerinf;
+ வியந்துதீர்	Vtheerinf;
+ விழுமாந்துதீர்	Vtheerinf;
+@@ -13959,7 +13957,6 @@
+ இயைத்துக்கொடு	VkoduInf;
+ இயந்திரித்துக்கொடு	VkoduInf;
+ இரித்துக்கொடு	VkoduInf;
+-இருத்துக்கொடு	VkoduInf;
+ இரதித்துக்கொடு	VkoduInf;
+ இரமித்துக்கொடு	VkoduInf;
+ இரைத்துக்கொடு	VkoduInf;
+@@ -14190,7 +14187,6 @@
+ தவந்துகொடு	VkoduInf;
+ தொண்ணாந்துகொடு	VkoduInf;
+ வறந்துகொடு	VkoduInf;
+-வலந்துகொடு	VkoduInf;
+ விறந்துகொடு	VkoduInf;
+ வியந்துகொடு	VkoduInf;
+ விழுமாந்துகொடு	VkoduInf;

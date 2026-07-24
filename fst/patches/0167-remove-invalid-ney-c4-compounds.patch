@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -1338,7 +1338,6 @@
+ நாசித்துத்தொலை	VtholaiInf;
+ நைவேதித்துத்தொலை	VtholaiInf;
+ நைத்துத்தொலை	VtholaiInf;
+-நெய்த்துத்தொலை	VtholaiInf;
+ நெரித்துத்தொலை	VtholaiInf;
+ நெருநெருத்துத்தொலை	VtholaiInf;
+ நொளுநொளுத்துத்தொலை	VtholaiInf;

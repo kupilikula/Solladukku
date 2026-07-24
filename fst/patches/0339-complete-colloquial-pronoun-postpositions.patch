@@ -1,0 +1,49 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart +1pl +3pl +adv +time +cardinal +foc +3sgm +3sgf +3pln +abl +soc +unit +part +conjunction +intj +presentative +pp-particle +trans +fut +2sg +vpart_pin +vpart_patti +vpart_parttu +psp_mathiri +purpose +verb +nonfin +sim +past +PartNoun +honorific_title +colloq +compoundmodifier +psp_padi +psp_ul +psp_idaiyl +recip +incl +2pl +cond +vpart
++Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart +1pl +3pl +adv +time +cardinal +foc +3sgm +3sgf +3pln +abl +soc +unit +part +conjunction +intj +presentative +pp-particle +trans +fut +2sg +vpart_pin +vpart_patti +vpart_parttu +psp_mathiri +purpose +verb +nonfin +sim +past +PartNoun +honorific_title +colloq +compoundmodifier +psp_padi +psp_ul +psp_idaiyl +recip +incl +2pl +cond +vpart +refl +dem +1sg +3sge
+ 
+ LEXICON Root
+ abbreviations;
+@@ -52,6 +52,37 @@
+ எஸ்+abbrev+letter:எஸ் #;
+ 
+ LEXICON pronounQuantifiers
++! Fresh audit: colloquial cases and deictic postposition compositions.
++எது+pron+inter+3sgn+dat+colloq:எதுக்கு #;
++இது+pron+dem+prox+3sgn+dat+colloq:இதுக்கு #;
++இது+pron+dem+prox+3sgn+dat+psp_idaiyl:இதற்கிடையே #;
++இது+pron+dem+prox+3sgn+gen+psp_idaiyl:இதனிடையே #;
++நாம்+pron+1pl+incl+gen+psp_idaiyl:நம்மிடையே #;
++நான்+pron+1sg+dat+purpose:எனக்காக #;
++நீ+pron+2sg+dat+purpose:உனக்காக #;
++நாம்+pron+1pl+incl+dat+purpose:நமக்காக #;
++நாங்கள்+pron+1pl+dat+purpose:எங்களுக்காக #;
++நீங்கள்+pron+2pl+dat+purpose:உங்களுக்காக #;
++அவன்+pron+dem+dist+3sgm+dat+purpose:அவனுக்காக #;
++அவள்+pron+dem+dist+3sgf+dat+purpose:அவளுக்காக #;
++அவர்+pron+dem+dist+3sge+dat+purpose:அவருக்காக #;
++அவர்கள்+pron+dem+dist+3pl+dat+purpose:அவர்களுக்காக #;
++இவன்+pron+dem+prox+3sgm+dat+purpose:இவனுக்காக #;
++இவள்+pron+dem+prox+3sgf+dat+purpose:இவளுக்காக #;
++இவர்+pron+dem+prox+3sge+dat+purpose:இவருக்காக #;
++இவர்கள்+pron+dem+prox+3pl+dat+purpose:இவர்களுக்காக #;
++யார்+pron+inter+human+dat+purpose:யாருக்காக #;
++எது+pron+inter+3sgn+dat+purpose:எதற்காக #;
++தான்+pron+refl+dat+purpose:தனக்காக #;
++அவன்+pron+dem+dist+3sgm+soc:அவனுடன் #;
++அவள்+pron+dem+dist+3sgf+soc:அவளுடன் #;
++அவர்கள்+pron+dem+dist+3pl+soc:அவர்களுடன் #;
++இவன்+pron+dem+prox+3sgm+soc:இவனுடன் #;
++இவள்+pron+dem+prox+3sgf+soc:இவளுடன் #;
++இவர்+pron+dem+prox+3sge+soc:இவருடன் #;
++இவர்கள்+pron+dem+prox+3pl+soc:இவர்களுடன் #;
++தான்+pron+refl+soc:தன்னுடன் #;
++எது+pron+inter+3sgn+gen+soc:எதனுடன் #;
+ ! Reviewed compositional function forms from the common-unknown audit.
+ பற்று+verb+nonfin+sim+vpart%=இ+add%=உம்:பற்றியும் #;
+ போது+pp-particle+loc%=இல்+add%=உம்:போதிலும் #;

@@ -1,0 +1,60 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart +1pl +3pl +adv +time +cardinal +foc +3sgm +3sgf +3pln +abl +soc +unit +part +conjunction +intj +presentative +pp-particle +trans +fut +2sg
++Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart +1pl +3pl +adv +time +cardinal +foc +3sgm +3sgf +3pln +abl +soc +unit +part +conjunction +intj +presentative +pp-particle +trans +fut +2sg +vpart_pin +vpart_patti +vpart_parttu +psp_mathiri +purpose +verb +nonfin +sim +past +PartNoun
+ 
+ LEXICON Root
+ abbreviations;
+@@ -52,6 +52,48 @@
+ எஸ்+abbrev+letter:எஸ் #;
+ 
+ LEXICON pronounQuantifiers
++! Reviewed compositional deictic, postpositional, focus and unit relations.
++இது+pron+dem+prox+3sgn+nom+foc%=ஏ:இதே #;
++என்+comp+foc%=ஏ:என்றே #;
++போல+pp-particle+foc%=ஏ:போலவே #;
++போது+pp-particle+foc%=ஏ:போதே #;
++இன்று+adv+time+add%=உம்:இன்றும் #;
++அனைத்து+quant+all+acc+add%=உம்:அனைத்தையும் #;
++மூன்று+cardinal+prox+add%=உம்:இம்மூன்றும் #;
++மூன்று+cardinal+prox+human+nom:இம்மூவர் #;
++இது+pron+dem+prox+3sgn+acc+vpart_pin:இதையடுத்து #;
++இது+pron+dem+prox+3sgn+gen+vpart_pin:இதனையடுத்து #;
++இது+pron+dem+prox+3sgn+nom+vpart_patti:இதுகுறித்து #;
++அது+pron+dem+dist+3sgn+nom+vpart_patti:அதுகுறித்து #;
++இது+pron+dem+prox+3sgn+gen+vpart_parttu:இதன்படி #;
++அது+pron+dem+dist+3sgn+gen+vpart_parttu:அதன்படி #;
++இது+pron+dem+prox+3sgn+gen+time:இதன்போது #;
++அது+pron+dem+dist+3sgn+gen+time:அதன்போது #;
++அது+pron+dem+dist+3sgn+nom+foc%=ஏ+psp_mathiri:அதேபோல் #;
++எது+pron+inter+det+indef:எந்தவொரு #;
++மட்டும்+part+neg:மட்டுமல்ல #;
++உண்டு+exist+ques%=ஓ:உண்டோ #;
++இனிது+adj+foc%=ஏ:இனிதே #;
++நன்று+adj+foc%=ஏ:நன்றே #;
++சற்று+adv+foc%=ஏ:சற்றே #;
++போல+pp-particle+foc%=ஏ:போலே #;
++லிட்டர்+unit:லிட்டர் #;
++செல்சியசு+unit:செல்சியசு #;
++அங்கு+adv+abl:அங்கிருந்து #;
++இது+pron+dem+prox+3sgn+dat+purpose:இதற்காக #;
++அது+pron+dem+dist+3sgn+dat+purpose:அதற்காக #;
++தேவை+noun+nom+exist+neg:தேவையில்லை #;
++மட்டும்+part+neg:மட்டுமின்றி #;
++அது+pron+dem+dist+3sgn+soc:அதோடு #;
++ஒன்று+cardinal+time+add%=உம்+neg:ஒருபோதும் #;
++இது+pron+dem+prox+3sgn+nom+foc%=ஏ+time:இதேவேளை #;
++ஆகு+verb+nonfin+sim+past%=இ+adjpart%=அ+PartNoun%=அது+pl+acc:ஆகியவற்றை #;
++ஆகு+verb+nonfin+sim+past%=இ+adjpart%=அ+PartNoun%=அது+pl+gen:ஆகியவற்றின் #;
++ஆகு+verb+nonfin+sim+past%=இ+adjpart%=அ+PartNoun%=அது+pl+loc:ஆகியவற்றில் #;
++ஆகு+verb+nonfin+sim+past%=இ+adjpart%=அ+PartNoun%=அது+pl+nom:ஆகியன #;
++ஆகு+verb+nonfin+sim+past%=இ+adjpart%=அ+PartNoun%=அவர்+human+pl+nom:ஆகியோர் #;
++ஆகு+verb+nonfin+sim+past%=இ+adjpart%=அ+PartNoun%=அவர்+human+pl+acc:ஆகியோரை #;
++ஆகு+verb+nonfin+sim+past%=இ+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:ஆகியோரின் #;
+ ! Reviewed classical pronouns, universal quantifier and singleton determiner.
+ யான்+pron+1sg+nom:யான் #;
+ யான்+pron+1sg+nom+add:யானும் #;

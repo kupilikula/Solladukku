@@ -1,0 +1,10 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -53834,7 +53834,6 @@
+ கல்விவடிவு	C7SgRoot; 
+ கல்விவிளக்கு	C7SgRoot; 
+ கவின்அழகு	C7SgRoot; 
+-கவின்மலர்கவின்--அழகு	C7SgRoot; 
+ கழனிக்கொழுந்து	C7SgRoot; 
+ கழனிநிலவு	C7SgRoot; 
+ கழனிமுத்து	C7SgRoot; 

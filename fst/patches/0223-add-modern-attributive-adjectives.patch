@@ -1,0 +1,27 @@
+--- a/tamil-adjectives.lexc
++++ b/tamil-adjectives.lexc
+@@ -1104,5 +1104,24 @@
+ செம்மை	 adjective; 
+ வெண்மை    adjective; 
+ 
++! Source-backed modern attributive adjective stems from the pinned corpus audit.
++அதிக	 adjective;
++அமெரிக்க	 adjective;
++கரிம	 adjective;
++கன்னட	 adjective;
++சாதாரண	 adjective;
++சீன	 adjective;
++தீவிர	 adjective;
++திராவிட	 adjective;
++தென்	 adjective;
++நவீன	 adjective;
++நேர	 adjective;
++பாரம்பரிய	 adjective;
++பாரிய	 adjective;
++பிரதான	 adjective;
++புனித	 adjective;
++மத	 adjective;
++மன	 adjective;
++
+ LEXICON adjective
+ +adj: #;

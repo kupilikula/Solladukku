@@ -1,0 +1,2560 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist +psp_padi +vpart_pin
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist +psp_padi +vpart_pin +colloq
+ 
+ LEXICON Root
+ 
+@@ -2724,6 +2724,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^த்தாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3ple%=னர்:^த்தனர் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^த்தார்கள் VerbQuestion;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^த்தாங்க VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^த்தார் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^த்தார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^த்தது VerbQuestion;
+@@ -2763,6 +2764,7 @@
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^த்ததற்குத் #;
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^த்ததற்குக் #;
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+trans%=ஆக:^த்ததாக #;
+++verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+colloq:^த்ததா #;
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^த்ததாகும் #;
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்ததாகவும் #;
+ +verb+fin+sim+strong+past%=த்+3pln%=அன:^த்தன VerbQuestionNeuterPlural;
+@@ -2778,6 +2780,7 @@
+ +verb+fin+sim+strong+pres%=க்கிற்+3sghe%=ஆர்:^க்கிறார் VerbQuestion;
+ +verb+fin+sim+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் VerbQuestion;
+ +verb+fin+sim+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது VerbQuestion;
+++verb+fin+sim+strong+pres%=க்கிற்+3sgn%=அது+colloq:^க்குது VerbQuestion;
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+comp%=ஆவது:^க்கிறதாவது #;
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ:^க்கிறதை #;
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^க்கிறதையும் #;
+@@ -2810,6 +2813,7 @@
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்கிறதற்குத் #;
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^க்கிறதற்குக் #;
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^க்கிறதாக #;
+++verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+colloq:^க்கிறதா #;
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^க்கிறதாகும் #;
+ +verb+nonfin+sim+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கிறதாகவும் #;
+ +verb+fin+sim+strong+pres%=க்கிற்+3pln%=அன:^க்கிறன VerbQuestionNeuterPlural;
+@@ -2858,6 +2862,7 @@
+ +verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்கின்றதற்குத் #;
+ +verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^க்கின்றதற்குக் #;
+ +verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^க்கின்றதாக #;
+++verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+colloq:^க்கின்றதா #;
+ +verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^க்கின்றதாகும் #;
+ +verb+nonfin+sim+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கின்றதாகவும் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3pln%=அன:^க்கின்றன VerbQuestionNeuterPlural;
+@@ -2916,6 +2921,7 @@
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^த்துள்ளதற்குத் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^த்துள்ளதற்குக் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக:^த்துள்ளதாக #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக+colloq:^த்துள்ளதா #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^த்துள்ளதாகும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்துள்ளதாகவும் #;
+ +verb+fin+complex+perfect+pres%=∅+3ple%=னர்:^த்துள்ளனர் VerbQuestion;
+@@ -2954,12 +2960,14 @@
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பதற்குத் #;
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பதற்குக் #;
+ +verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக:^ப்பதாக #;
+++verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பதா #;
+ +verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பதாகும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பதாகவும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^ப்பதும் #;
+ +verb+nonfin+sim+verbalnoun%=தல்:^த்தல் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+1sg%=ஏன்:^ப்பித்தேன் VerbQuestion;
+@@ -2972,6 +2980,7 @@
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sgf%=ஆள்:^ப்பித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=னர்:^ப்பித்தனர் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+++verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sghe%=ஆர்:^ப்பித்தார் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+@@ -3011,6 +3020,7 @@
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பித்ததற்குத் #;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பித்ததற்குக் #;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக:^ப்பித்ததாக #;
+++verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பித்ததா #;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பித்ததாகும் #;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பித்ததாகவும் #;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பித்தன VerbQuestionNeuterPlural;
+@@ -3026,6 +3036,7 @@
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்:^ப்பிக்கிறார் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது:^ப்பிக்கிறது VerbQuestion;
+++verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது+colloq:^ப்பிக்குது VerbQuestion;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+comp%=ஆவது:^ப்பிக்கிறதாவது #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ:^ப்பிக்கிறதை #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^ப்பிக்கிறதையும் #;
+@@ -3058,6 +3069,7 @@
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பிக்கிறதற்குத் #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பிக்கிறதற்குக் #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கிறதாக #;
+++verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பிக்கிறதா #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பிக்கிறதாகும் #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கிறதாகவும் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3pln%=அன:^ப்பிக்கிறன VerbQuestionNeuterPlural;
+@@ -3106,6 +3118,7 @@
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பிக்கின்றதற்குத் #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பிக்கின்றதற்குக் #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கின்றதாக #;
+++verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பிக்கின்றதா #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பிக்கின்றதாகும் #;
+ +verb+nonfin+sim+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கின்றதாகவும் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கின்ற்+3pln%=அன:^ப்பிக்கின்றன VerbQuestionNeuterPlural;
+@@ -3157,6 +3170,7 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^த்துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^த்துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^க்காமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^க்காம #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்+sandhip%=ப்:^க்காமல்ப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்+sandhic%=ச்:^க்காமல்ச் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்+sandhit%=த்:^க்காமல்த் #;
+@@ -3169,8 +3183,10 @@
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhit%=த்:^க்காதுத் #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhik%=க்:^க்காதுக் #;
+ +verb+nonfin+sim+con%=ஆல்:^த்தால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^த்தா #;
+ +verb+nonfin+sim+con%=ஆல்+add%=உம்:^த்தாலும் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^த்த #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+psp_padi%=படி:^த்தபடி #;
+@@ -3199,6 +3215,7 @@
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+vpart_pin%=பின்:^க்கின்றபின் #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+vpart_potu%=போது:^க்கின்றபோது #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+++verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+colloq:^க்குற #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;
+@@ -3295,6 +3312,7 @@
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பதற்குத் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பதற்குக் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக:^ப்பதாக #;
+++verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பதா #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பதாகும் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பதாகவும் #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+nom:^ப்பிப்பவர் #;
+@@ -3361,6 +3379,7 @@
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பிப்பதற்குத் #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பிப்பதற்குக் #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக:^ப்பிப்பதாக #;
+++verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பிப்பதா #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பிப்பதாகும் #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிப்பதாகவும் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+nom:^த்தவர் #;
+@@ -6589,6 +6608,7 @@
+ +verb+fin+complex+attitude+strong+past%=த்+3sgf%=ஆள்:^த்தாள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3ple%=னர்:^த்தனர் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்கள்:^த்தார்கள் VerbQuestion;
+++verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்கள்+colloq:^த்தாங்க VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3sghe%=ஆர்கள்:^த்தார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது:^த்தது VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது+add%=உம்:^த்ததும் VerbQuestion;
+@@ -6627,6 +6647,7 @@
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^த்ததற்குத் #;
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^த்ததற்குக் #;
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+trans%=ஆக:^த்ததாக #;
+++verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+colloq:^த்ததா #;
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^த்ததாகும் #;
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்ததாகவும் #;
+ +verb+fin+complex+attitude+strong+past%=த்+3pln%=அன:^த்தன VerbQuestionNeuterPlural;
+@@ -6641,6 +6662,7 @@
+ +verb+fin+complex+attitude+strong+pres%=க்கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது VerbQuestion;
+++verb+fin+complex+attitude+strong+pres%=க்கிற்+3sgn%=அது+colloq:^க்குது VerbQuestion;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+comp%=ஆவது:^க்கிறதாவது #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ:^க்கிறதை #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^க்கிறதையும் #;
+@@ -6673,6 +6695,7 @@
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்கிறதற்குத் #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^க்கிறதற்குக் #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^க்கிறதாக #;
+++verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+colloq:^க்கிறதா #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^க்கிறதாகும் #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கிறதாகவும் #;
+ +verb+fin+complex+attitude+strong+pres%=க்கிற்+3pln%=அன:^க்கிறன VerbQuestionNeuterPlural;
+@@ -6720,6 +6743,7 @@
+ +verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்கின்றதற்குத் #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^க்கின்றதற்குக் #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^க்கின்றதாக #;
+++verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+colloq:^க்கின்றதா #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^க்கின்றதாகும் #;
+ +verb+nonfin+complex+attitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கின்றதாகவும் #;
+ +verb+fin+complex+attitude+strong+pres%=க்கின்ற்+3pln%=அன:^க்கின்றன VerbQuestionNeuterPlural;
+@@ -6746,6 +6770,7 @@
+ +verb+fin+complex+attitude+strong+pres%=க்கின்ற்+euph%=அன்+3sgf%=அள்:^க்கின்றனள் VerbQuestion;
+ +verb+fin+complex+attitude+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+1sg%=ஏன்:^ப்பித்தேன் VerbQuestion;
+@@ -6758,6 +6783,7 @@
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sgf%=ஆள்:^ப்பித்தாள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=னர்:^ப்பித்தனர் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+++verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+@@ -6796,6 +6822,7 @@
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பித்ததற்குத் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பித்ததற்குக் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக:^ப்பித்ததாக #;
+++verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பித்ததா #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பித்ததாகும் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பித்ததாகவும் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பித்தன VerbQuestionNeuterPlural;
+@@ -6810,6 +6837,7 @@
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+3ple%=ஆர்கள்:^ப்பிக்கிறார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது:^ப்பிக்கிறது VerbQuestion;
+++verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது+colloq:^ப்பிக்குது VerbQuestion;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+comp%=ஆவது:^ப்பிக்கிறதாவது #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ:^ப்பிக்கிறதை #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^ப்பிக்கிறதையும் #;
+@@ -6842,6 +6870,7 @@
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பிக்கிறதற்குத் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பிக்கிறதற்குக் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கிறதாக #;
+++verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பிக்கிறதா #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பிக்கிறதாகும் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கிறதாகவும் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கிற்+3pln%=அன:^ப்பிக்கிறன VerbQuestionNeuterPlural;
+@@ -6889,6 +6918,7 @@
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பிக்கின்றதற்குத் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பிக்கின்றதற்குக் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கின்றதாக #;
+++verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பிக்கின்றதா #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பிக்கின்றதாகும் #;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கின்றதாகவும் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=க்கின்ற்+3pln%=அன:^ப்பிக்கின்றன VerbQuestionNeuterPlural;
+@@ -6919,6 +6949,7 @@
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhik%=க்:^த்துக் #;
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhip%=ப்:^த்துப் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்:^க்காமல் #;
+++verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்+colloq:^க்காம #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்+sandhip%=ப்:^க்காமல்ப் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்+sandhic%=ச்:^க்காமல்ச் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்+sandhit%=த்:^க்காமல்த் #;
+@@ -6931,8 +6962,10 @@
+ +verb+nonfin+complex+attitude+neg%=ஆது+vpart%=∅+sandhit%=த்:^க்காதுத் #;
+ +verb+nonfin+complex+attitude+neg%=ஆது+vpart%=∅+sandhik%=க்:^க்காதுக் #;
+ +verb+nonfin+complex+attitude+con%=ஆல்:^த்தால் #;
+++verb+nonfin+complex+attitude+con%=ஆல்+colloq:^த்தா #;
+ +verb+nonfin+complex+attitude+con%=ஆல்+add%=உம்:^த்தாலும் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+++verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ:^த்த #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+psp_padi%=படி:^த்தபடி #;
+@@ -6943,6 +6976,7 @@
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+vpart_pin%=பின்:^க்கின்றபின் #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+vpart_potu%=போது:^க்கின்றபோது #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+++verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+colloq:^க்குற #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;
+@@ -10147,6 +10181,7 @@
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3sgf%=ஆள்:^த்தாள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3ple%=னர்:^த்தனர் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3ple%=ஆர்கள்:^த்தார்கள் VerbQuestion;
+++verb+fin+complex+nonattitude+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^த்தாங்க VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3sghe%=ஆர்கள்:^த்தார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3sgn%=அது:^த்தது VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3sgn%=அது+add%=உம்:^த்ததும் VerbQuestion;
+@@ -10185,6 +10220,7 @@
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^த்ததற்குத் #;
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^த்ததற்குக் #;
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+trans%=ஆக:^த்ததாக #;
+++verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+trans%=ஆக+colloq:^த்ததா #;
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^த்ததாகும் #;
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்ததாகவும் #;
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3pln%=அன:^த்தன VerbQuestionNeuterPlural;
+@@ -10199,6 +10235,7 @@
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3sgn%=அது:^க்கிறது VerbQuestion;
+++verb+fin+complex+nonattitude+strong+pres%=கிற்+3sgn%=அது+colloq:^க்குது VerbQuestion;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+comp%=ஆவது:^க்கிறதாவது #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ:^க்கிறதை #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^க்கிறதையும் #;
+@@ -10231,6 +10268,7 @@
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்கிறதற்குத் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^க்கிறதற்குக் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+trans%=ஆக:^க்கிறதாக #;
+++verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+trans%=ஆக+colloq:^க்கிறதா #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^க்கிறதாகும் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கிறதாகவும் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3pln%=அன:^க்கிறன VerbQuestionNeuterPlural;
+@@ -10278,6 +10316,7 @@
+ +verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்கின்றதற்குத் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^க்கின்றதற்குக் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக:^க்கின்றதாக #;
+++verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக+colloq:^க்கின்றதா #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^க்கின்றதாகும் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கின்றதாகவும் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கின்ற்+3pln%=அன:^க்கின்றன VerbQuestionNeuterPlural;
+@@ -10304,6 +10343,7 @@
+ +verb+fin+complex+nonattitude+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^க்கின்றனள் VerbQuestion;
+ +verb+fin+complex+nonattitude+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+nonattitude+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+nonattitude+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+1sg%=ஏன்:^ப்பிப்னேன் VerbQuestion;
+@@ -10316,6 +10356,7 @@
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sgf%=ஆள்:^ப்பித்தாள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sge%=அர்:^ப்பிபர் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+++verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+@@ -10354,6 +10395,7 @@
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பித்ததற்குத் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பித்ததற்குக் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக:^ப்பித்ததாக #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பித்ததா #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பித்ததாகும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பித்ததாகவும் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பித்தன VerbQuestionNeuterPlural;
+@@ -10369,6 +10411,7 @@
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3ple%=ஆர்கள்:^ப்பிக்கிறார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது:^ப்பிக்கிறது VerbQuestion;
+++verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது+colloq:^ப்பிக்குது VerbQuestion;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+comp%=ஆவது:^ப்பிக்கிறதாவது #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ:^ப்பிக்கிறதை #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^ப்பிக்கிறதையும் #;
+@@ -10401,6 +10444,7 @@
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பிக்கிறதற்குத் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பிக்கிறதற்குக் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கிறதாக #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பிக்கிறதா #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பிக்கிறதாகும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கிறதாகவும் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3pln%=அன:^ப்பிக்கிறன VerbQuestionNeuterPlural;
+@@ -10448,6 +10492,7 @@
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பிக்கின்றதற்குத் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பிக்கின்றதற்குக் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கின்றதாக #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பிக்கின்றதா #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பிக்கின்றதாகும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கின்றதாகவும் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+3pln%=அன:^ப்பிக்கின்றன VerbQuestionNeuterPlural;
+@@ -10476,6 +10521,7 @@
+ +verb+nonfin+complex+nonattitude+vpart%=இ+sandhik%=க்:^ிக் #;
+ +verb+nonfin+complex+nonattitude+vpart%=இ+sandhip%=ப்:^ிப் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்+sandhip%=ப்:^ாமல்ப் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்+sandhic%=ச்:^ாமல்ச் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்+sandhit%=த்:^ாமல்த் #;
+@@ -10488,8 +10534,10 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆது+vpart%=∅+sandhit%=த்:^ாதுத் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆது+vpart%=∅+sandhik%=க்:^ாதுக் #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்:^ினால் #;
+++verb+nonfin+complex+nonattitude+con%=ஆல்+colloq:^ினா #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்+add%=உம்:^ினாலும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^ாவிட்டாலும் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+psp_padi%=படி:^ினபடி #;
+@@ -10500,6 +10548,7 @@
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+vpart_pin%=பின்:^க்கின்றபின் #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+vpart_potu%=போது:^க்கின்றபோது #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ:^க்கிற #;
+++verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+colloq:^க்குற #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;
+@@ -16303,6 +16352,7 @@
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sgf%=ஆள்:^த்தாள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3ple%=னர்:^த்தனர் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3ple%=ஆர்கள்:^த்தார்கள் VerbQuestion;
+++verb+fin+complex+nonattitude+strong+past%=த்+3ple%=ஆர்கள்+colloq:^த்தாங்க VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sghe%=ஆர்கள்:^த்தார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sgn%=அது:^த்தது VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sgn%=அது+add%=உம்:^த்ததும் VerbQuestion;
+@@ -16341,6 +16391,7 @@
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^த்ததற்குத் #;
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^த்ததற்குக் #;
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+trans%=ஆக:^த்ததாக #;
+++verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+colloq:^த்ததா #;
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^த்ததாகும் #;
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்ததாகவும் #;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3pln%=அன:^த்தன VerbQuestionNeuterPlural;
+@@ -16355,6 +16406,7 @@
+ +verb+fin+complex+nonattitude+strong+pres%=க்கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது VerbQuestion;
+++verb+fin+complex+nonattitude+strong+pres%=க்கிற்+3sgn%=அது+colloq:^க்குது VerbQuestion;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+comp%=ஆவது:^க்கிறதாவது #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ:^க்கிறதை #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^க்கிறதையும் #;
+@@ -16387,6 +16439,7 @@
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்கிறதற்குத் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^க்கிறதற்குக் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^க்கிறதாக #;
+++verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+colloq:^க்கிறதா #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^க்கிறதாகும் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கிறதாகவும் #;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கிற்+3pln%=அன:^க்கிறன VerbQuestionNeuterPlural;
+@@ -16434,6 +16487,7 @@
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்கின்றதற்குத் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^க்கின்றதற்குக் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^க்கின்றதாக #;
+++verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+colloq:^க்கின்றதா #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^க்கின்றதாகும் #;
+ +verb+nonfin+complex+nonattitude+strong+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கின்றதாகவும் #;
+ +verb+fin+complex+nonattitude+strong+pres%=க்கின்ற்+3pln%=அன:^க்கின்றன VerbQuestionNeuterPlural;
+@@ -16460,6 +16514,7 @@
+ +verb+fin+complex+nonattitude+strong+pres%=க்கின்ற்+euph%=அன்+3sgf%=அள்:^க்கின்றனள் VerbQuestion;
+ +verb+fin+complex+nonattitude+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+nonattitude+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+nonattitude+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+1sg%=ஏன்:^ப்பித்தேன் VerbQuestion;
+@@ -16472,6 +16527,7 @@
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sgf%=ஆள்:^ப்பித்தாள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3ple%=னர்:^ப்பித்தனர் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+++verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+@@ -16510,6 +16566,7 @@
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பித்ததற்குத் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பித்ததற்குக் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக:^ப்பித்ததாக #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பித்ததா #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பித்ததாகும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பித்ததாகவும் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பித்தன VerbQuestionNeuterPlural;
+@@ -16524,6 +16581,7 @@
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3ple%=ஆர்கள்:^ப்பிக்கிறார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது:^ப்பிக்கிறது VerbQuestion;
+++verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது+colloq:^ப்பிக்குது VerbQuestion;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+comp%=ஆவது:^ப்பிக்கிறதாவது #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ:^ப்பிக்கிறதை #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^ப்பிக்கிறதையும் #;
+@@ -16556,6 +16614,7 @@
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பிக்கிறதற்குத் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பிக்கிறதற்குக் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கிறதாக #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பிக்கிறதா #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பிக்கிறதாகும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கிறதாகவும் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கிற்+3pln%=அன:^ப்பிக்கிறன VerbQuestionNeuterPlural;
+@@ -16603,6 +16662,7 @@
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பிக்கின்றதற்குத் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பிக்கின்றதற்குக் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக:^ப்பிக்கின்றதாக #;
+++verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+colloq:^ப்பிக்கின்றதா #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பிக்கின்றதாகும் #;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிக்கின்றதாகவும் #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+pres%=க்கின்ற்+3pln%=அன:^ப்பிக்கின்றன VerbQuestionNeuterPlural;
+@@ -16633,6 +16693,7 @@
+ +verb+nonfin+complex+nonattitude+vpart%=உ+sandhik%=க்:^த்துக் #;
+ +verb+nonfin+complex+nonattitude+vpart%=உ+sandhip%=ப்:^த்துப் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்:^க்காமல் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்+colloq:^க்காம #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்+sandhip%=ப்:^க்காமல்ப் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்+sandhic%=ச்:^க்காமல்ச் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்+sandhit%=த்:^க்காமல்த் #;
+@@ -16645,8 +16706,10 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆது+vpart%=∅+sandhit%=த்:^க்காதுத் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆது+vpart%=∅+sandhik%=க்:^க்காதுக் #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்:^த்தால் #;
+++verb+nonfin+complex+nonattitude+con%=ஆல்+colloq:^த்தா #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்+add%=உம்:^த்தாலும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ:^த்த #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+psp_padi%=படி:^த்தபடி #;
+@@ -16657,6 +16720,7 @@
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+vpart_pin%=பின்:^க்கின்றபின் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+vpart_potu%=போது:^க்கின்றபோது #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+++verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+colloq:^க்குற #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +colloq
+ 
+ 
+ LEXICON Root
+@@ -101,6 +101,7 @@
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தர் #;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்:^ந்தார் #;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது #;
+ +verb+fin+sim+strong+past%=த்+3pln%=அன:^ந்தன #;
+@@ -117,6 +118,7 @@
+ +verb+fin+sim+strong+pres%=க்கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது #;
+++verb+fin+sim+strong+pres%=க்கிற்+3sgn%=அது+colloq:^க்குது #;
+ +verb+fin+sim+strong+pres%=க்கிற்+3pln%=அன:^க்கிறன #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+1sg%=ஏன்:^க்கின்றேன் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+1pl%=ஓம்:^க்கின்றோம் #;
+@@ -157,6 +159,7 @@
+ +verb+fin+sim+strong+pres%=க்கின்ற்+euph%=அன்+3sgf%=அள்:^க்கின்றனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -172,6 +175,7 @@
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sge%=அர்:^ப்பித்தர் #;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பித்தார் #;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் #;
+++verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க #;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பிந்தார்கள் #;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது #;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பித்தன #;
+@@ -188,6 +192,7 @@
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3ple%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது:^ப்பிக்கிறது #;
+++verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது+colloq:^ப்பிக்குது #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கிற்+3pln%=அன:^ப்பிக்கிறன #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கின்ற்+1sg%=ஏன்:^ப்பிக்கின்றேன் #;
+ +verb+fin+sim+caus%=ப்பி+pres%=க்கின்ற்+1pl%=ஓம்:^ப்பிக்கின்றோம் #;
+@@ -228,9 +233,12 @@
+ +verb+nonfin+sim+vpart%=உ+sandhi-k%=க்:^ந்துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhi-p%=ப்:^ந்துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^க்காமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^க்காம #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^க்காது #;
+ +verb+nonfin+sim+con%=ஆல்:^ந்தால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^ந்தா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^ந்த #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்:^ந்தோர் #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+@@ -3327,22 +3335,31 @@
+ +verb+fin+complex+aspect+strong+past%=த்+3sge%=அர்:^ந்தர் #;
+ +verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்:^ந்தார் #;
+ +verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க #;
+ +verb+fin+complex+aspect+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+complex+aspect+strong+past%=த்+3sgn%=அது:^ந்தது #;
+ +verb+fin+complex+aspect+strong+past%=த்+3pln%=அன:^ந்தன #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+1sg%=ஏன்:^க்கிறேன் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+1sg%=ஏன்+colloq:^க்கேன் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+1pl%=ஓம்:^க்கிறோம் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+1pl%=ஓம்+colloq:^க்கோம் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+1sg%=அன்:^க்கிறன் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+2sg%=ஆய்:^க்கிறாய் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+2sgh%=ஈர்:^க்கிறீர் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+2pl%=ஈர்கள்:^க்கிறீர்கள் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+2pl%=ஈர்கள்+colloq:^க்கீங்க #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgm%=ஆன்:^க்கிறான் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgm%=ஆன்+colloq:^க்கான் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgf%=ஆள்:^க்கிறாள் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgf%=ஆள்+colloq:^க்காள் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sge%=அர்:^க்கிறர் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்:^க்கிறார் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்கள்+colloq:^க்காங்க #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3sghe%=ஆர்கள்+colloq:^க்காங்க #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgn%=அது+colloq:^க்குது #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3pln%=அன:^க்கிறன #;
+ +verb+fin+complex+aspect+strong+pres%=க்கின்ற்+1sg%=ஏன்:^க்கின்றேன் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கின்ற்+1pl%=ஓம்:^க்கின்றோம் #;
+@@ -3382,6 +3399,7 @@
+ +verb+fin+complex+aspect+strong+pres%=க்கின்ற்+euph%=அன்+3sgf%=அள்:^க்கின்றனள் #;
+ +verb+fin+complex+aspect+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+aspect+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+aspect+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -3397,6 +3415,7 @@
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sge%=அர்:^ப்பித்தர் #;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பித்தார் #;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் #;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க #;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பிந்தார்கள் #;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது #;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பித்தன #;
+@@ -3413,6 +3432,7 @@
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+3ple%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது:^ப்பிக்கிறது #;
+++verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது+colloq:^ப்பிக்குது #;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+3pln%=அன:^ப்பிக்கிறன #;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கின்ற்+1sg%=ஏன்:^ப்பிக்கின்றேன் #;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கின்ற்+1pl%=ஓம்:^ப்பிக்கின்றோம் #;
+@@ -3453,9 +3473,12 @@
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhi-k%=க்:^ந்துக் #;
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhi-p%=ப்:^ந்துப் #;
+ +verb+nonfin+complex+aspect+neg%=ஆ+vpart%=மல்:^க்காமல் #;
+++verb+nonfin+complex+aspect+neg%=ஆ+vpart%=மல்+colloq:^க்காம #;
+ +verb+nonfin+complex+aspect+neg%=ஆது+vpart%=∅:^க்காது #;
+ +verb+nonfin+complex+aspect+con%=ஆல்:^ந்தால் #;
+++verb+nonfin+complex+aspect+con%=ஆல்+colloq:^ந்தா #;
+ +verb+nonfin+complex+aspect+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+++verb+nonfin+complex+aspect+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+complex+aspect+past%=த்+adjpart%=அ:^ந்த #;
+ +verb+nonfin+complex+aspect+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+ +verb+nonfin+complex+aspect+futANDadjpart%=உம்:^க்கும் #;
+@@ -6553,22 +6576,31 @@
+ +verb+fin+complex+aspect+strong+past%=த்+3sge%=அர்:^ந்தர் #;
+ +verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்:^ந்தார் #;
+ +verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க #;
+ +verb+fin+complex+aspect+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+complex+aspect+strong+past%=த்+3sgn%=அது:^ந்தது #;
+ +verb+fin+complex+aspect+strong+past%=த்+3pln%=அன:^ந்தன #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+1sg%=ஏன்:^க்கிறேன் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+1sg%=ஏன்+colloq:^க்கேன் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+1pl%=ஓம்:^க்கிறோம் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+1pl%=ஓம்+colloq:^க்கோம் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+1sg%=அன்:^க்கிறன் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+2sg%=ஆய்:^க்கிறாய் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+2sgh%=ஈர்:^க்கிறீர் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+2pl%=ஈர்கள்:^க்கிறீர்கள் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+2pl%=ஈர்கள்+colloq:^க்கீங்க #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgm%=ஆன்:^க்கிறான் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgm%=ஆன்+colloq:^க்கான் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgf%=ஆள்:^க்கிறாள் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgf%=ஆள்+colloq:^க்காள் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sge%=அர்:^க்கிறர் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்:^க்கிறார் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்கள்+colloq:^க்காங்க #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3sghe%=ஆர்கள்+colloq:^க்காங்க #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது #;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgn%=அது+colloq:^க்குது #;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3pln%=அன:^க்கிறன #;
+ +verb+fin+complex+aspect+strong+pres%=க்கின்ற்+1sg%=ஏன்:^க்கின்றேன் #;
+ +verb+fin+complex+aspect+strong+pres%=க்கின்ற்+1pl%=ஓம்:^க்கின்றோம் #;
+@@ -6608,6 +6640,7 @@
+ +verb+fin+complex+aspect+strong+pres%=க்கின்ற்+euph%=அன்+3sgf%=அள்:^க்கின்றனள் #;
+ +verb+fin+complex+aspect+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+aspect+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+aspect+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -6623,6 +6656,7 @@
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sge%=அர்:^ப்பிந்தர் #;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பிந்தார் #;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பிந்தார்கள் #;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பிந்தாங்க #;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பிந்தார்கள் #;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பிந்தது #;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பிந்தன #;
+@@ -6639,6 +6673,7 @@
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+3ple%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது:^ப்பிக்கிறது #;
+++verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது+colloq:^ப்பிக்குது #;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+3pln%=அன:^ப்பிக்கிறன #;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கின்ற்+1sg%=ஏன்:^ப்பிக்கின்றேன் #;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கின்ற்+1pl%=ஓம்:^ப்பிக்கின்றோம் #;
+@@ -6679,9 +6714,12 @@
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhi-k%=க்:^ந்துக் #;
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhi-p%=ப்:^ந்துப் #;
+ +verb+nonfin+complex+aspect+neg%=ஆ+vpart%=மல்:^க்காமல் #;
+++verb+nonfin+complex+aspect+neg%=ஆ+vpart%=மல்+colloq:^க்காம #;
+ +verb+nonfin+complex+aspect+neg%=ஆது+vpart%=∅:^க்காது #;
+ +verb+nonfin+complex+aspect+con%=ஆல்:^ந்தால் #;
+++verb+nonfin+complex+aspect+con%=ஆல்+colloq:^ந்தா #;
+ +verb+nonfin+complex+aspect+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+++verb+nonfin+complex+aspect+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+complex+aspect+past%=த்+adjpart%=அ:^ந்த #;
+ +verb+nonfin+complex+aspect+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+ +verb+nonfin+complex+aspect+futANDadjpart%=உம்:^க்கும் #;
+@@ -9777,22 +9815,31 @@
+ +verb+fin+complex+mood+strong+past%=த்+3sge%=அர்:^ந்தர் #;
+ +verb+fin+complex+mood+strong+past%=த்+3ple%=ஆர்:^ந்தார் #;
+ +verb+fin+complex+mood+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+complex+mood+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க #;
+ +verb+fin+complex+mood+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+complex+mood+strong+past%=த்+3sgn%=அது:^ந்தது #;
+ +verb+fin+complex+mood+strong+past%=த்+3pln%=அன:^ந்தன #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+1sg%=ஏன்:^க்கிறேன் #;
+++verb+fin+complex+mood+strong+pres%=க்கிற்+1sg%=ஏன்+colloq:^க்கேன் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+1pl%=ஓம்:^க்கிறோம் #;
+++verb+fin+complex+mood+strong+pres%=க்கிற்+1pl%=ஓம்+colloq:^க்கோம் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+1sg%=அன்:^க்கிறன் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+2sg%=ஆய்:^க்கிறாய் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+2sgh%=ஈர்:^க்கிறீர் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+2pl%=ஈர்கள்:^க்கிறீர்கள் #;
+++verb+fin+complex+mood+strong+pres%=க்கிற்+2pl%=ஈர்கள்+colloq:^க்கீங்க #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+3sgm%=ஆன்:^க்கிறான் #;
+++verb+fin+complex+mood+strong+pres%=க்கிற்+3sgm%=ஆன்+colloq:^க்கான் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+3sgf%=ஆள்:^க்கிறாள் #;
+++verb+fin+complex+mood+strong+pres%=க்கிற்+3sgf%=ஆள்+colloq:^க்காள் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+3sge%=அர்:^க்கிறர் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+3ple%=ஆர்:^க்கிறார் #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் #;
+++verb+fin+complex+mood+strong+pres%=க்கிற்+3ple%=ஆர்கள்+colloq:^க்காங்க #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் #;
+++verb+fin+complex+mood+strong+pres%=க்கிற்+3sghe%=ஆர்கள்+colloq:^க்காங்க #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது #;
+++verb+fin+complex+mood+strong+pres%=க்கிற்+3sgn%=அது+colloq:^க்குது #;
+ +verb+fin+complex+mood+strong+pres%=க்கிற்+3pln%=அன:^க்கிறன #;
+ +verb+fin+complex+mood+strong+pres%=க்கின்ற்+1sg%=ஏன்:^க்கின்றேன் #;
+ +verb+fin+complex+mood+strong+pres%=க்கின்ற்+1pl%=ஓம்:^க்கின்றோம் #;
+@@ -9832,6 +9879,7 @@
+ +verb+fin+complex+mood+strong+pres%=க்கின்ற்+euph%=அன்+3sgf%=அள்:^க்கின்றனள் #;
+ +verb+fin+complex+mood+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+mood+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+mood+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+mood+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+mood+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+mood+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -9847,6 +9895,7 @@
+ +verb+fin+complex+mood+caus%=ப்பி+past%=த்+3sge%=அர்:^ப்பிந்தர் #;
+ +verb+fin+complex+mood+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பிந்தார் #;
+ +verb+fin+complex+mood+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பிந்தார்கள் #;
+++verb+fin+complex+mood+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பிந்தாங்க #;
+ +verb+fin+complex+mood+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பிந்தார்கள் #;
+ +verb+fin+complex+mood+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பிந்தது #;
+ +verb+fin+complex+mood+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பிந்தன #;
+@@ -9863,6 +9912,7 @@
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கிற்+3ple%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது:^ப்பிக்கிறது #;
+++verb+fin+complex+mood+caus%=ப்பி+pres%=க்கிற்+3sgn%=அது+colloq:^ப்பிக்குது #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கிற்+3pln%=அன:^ப்பிக்கிறன #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கின்ற்+1sg%=ஏன்:^ப்பிக்கின்றேன் #;
+ +verb+fin+complex+mood+caus%=ப்பி+pres%=க்கின்ற்+1pl%=ஓம்:^ப்பிக்கின்றோம் #;
+@@ -9903,9 +9953,12 @@
+ +verb+nonfin+complex+mood+vpart%=உ+sandhi-k%=க்:^ந்துக் #;
+ +verb+nonfin+complex+mood+vpart%=உ+sandhi-p%=ப்:^ந்துப் #;
+ +verb+nonfin+complex+mood+neg%=ஆ+vpart%=மல்:^க்காமல் #;
+++verb+nonfin+complex+mood+neg%=ஆ+vpart%=மல்+colloq:^க்காம #;
+ +verb+nonfin+complex+mood+neg%=ஆது+vpart%=∅:^க்காது #;
+ +verb+nonfin+complex+mood+con%=ஆல்:^ந்தால் #;
+++verb+nonfin+complex+mood+con%=ஆல்+colloq:^ந்தா #;
+ +verb+nonfin+complex+mood+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+++verb+nonfin+complex+mood+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+complex+mood+past%=த்+adjpart%=அ:^ந்த #;
+ +verb+nonfin+complex+mood+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+ +verb+nonfin+complex+mood+futANDadjpart%=உம்:^க்கும் #;
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +colloq
+ 
+ LEXICON Root
+ 
+@@ -69,6 +69,7 @@
+ +verb+fin+sim+strong+past%=ற்+3sgf%=ஆள்:^ன்றாள் #;
+ +verb+fin+sim+strong+past%=ற்+3sge%=அர்:^ன்றர் #;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்:^ன்றார்கள் #;
+++verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^ன்றாங்க #;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்:^ன்றார் #;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்கள்:^ன்றார்கள் #;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது:^ன்றது #;
+@@ -85,6 +86,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -125,6 +127,7 @@
+ +verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -139,6 +142,7 @@
+ +verb+fin+sim+caus%=வி+past%=ற்+3sgf%=ஆள்:^வின்றாள் #;
+ +verb+fin+sim+caus%=வி+past%=ற்+3sge%=அர்:^வின்றர் #;
+ +verb+fin+sim+caus%=வி+past%=ற்+3ple%=ஆர்கள்:^வின்றார்கள் #;
+++verb+fin+sim+caus%=வி+past%=ற்+3ple%=ஆர்கள்+colloq:^வின்றாங்க #;
+ +verb+fin+sim+caus%=வி+past%=ற்+3sghe%=ஆர்கள்:^வின்றார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=ற்+3sgn%=அது:^வின்றது #;
+ +verb+fin+sim+caus%=வி+past%=ற்+3pln%=அன:^வின்றன #;
+@@ -154,6 +158,7 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விகிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விகிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விகிறது #;
+++verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விகுது #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விகிறன #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விகின்றேன் #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விகின்றோம் #;
+@@ -196,9 +201,12 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+sim+con%=ஆல்:^தால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^தா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ன்ற #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=ம்:^ும் #;
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +colloq
+ 
+ 
+ LEXICON Root
+@@ -403,6 +403,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் #;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தர் #;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^ந்தார் #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது #;
+@@ -420,6 +421,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -460,6 +462,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -474,6 +477,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^விந்தாள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sge%=அர்:^விந்தர் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^விந்தார்கள் #;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^விந்தாங்க #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^விந்தார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^விந்தது #;
+ +verb+fin+sim+caus%=வி+past%=த்+3pln%=அன:^விந்தன #;
+@@ -489,6 +493,7 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விகிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விகிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விகிறது #;
+++verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விகுது #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விகிறன #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விகின்றேன் #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விகின்றோம் #;
+@@ -531,9 +536,12 @@
+ +verb+nonfin+sim+vpart%=உ+sandhi-k%=க்:^ந்துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhi-p%=ப்:^ந்துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+sim+con%=ஆல்:^ந்தால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^ந்தா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^ந்த #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்:^ந்தோர் #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+@@ -3630,6 +3638,7 @@
+ +verb+fin+complex+attitude+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் #;
+ +verb+fin+complex+attitude+strong+past%=த்+3sge%=அர்:^ந்தர் #;
+ +verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க #;
+ +verb+fin+complex+attitude+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது:^ந்தது #;
+ +verb+fin+complex+attitude+strong+past%=த்+3pln%=அன:^ந்தன #;
+@@ -3645,6 +3654,7 @@
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -3682,6 +3692,7 @@
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+attitude+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -3696,6 +3707,7 @@
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sgf%=ஆள்:^விந்தாள் #;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sge%=அர்:^விந்தர் #;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3ple%=ஆர்கள்:^விந்தார்கள் #;
+++verb+fin+complex+attitude+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^விந்தாங்க #;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^விந்தார்கள் #;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sgn%=அது:^விந்தது #;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3pln%=அன:^விந்தன #;
+@@ -3711,6 +3723,7 @@
+ +verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விகிறார்கள் #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விகிறார்கள் #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3sgn%=அது:^விகிறது #;
+++verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விகுது #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3pln%=அன:^விகிறன #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விகின்றேன் #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விகின்றோம் #;
+@@ -3749,9 +3762,12 @@
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhi-k%=க்:^ந்துக் #;
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhi-p%=ப்:^ந்துப் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+attitude+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+attitude+con%=ஆல்:^ந்தால் #;
+++verb+nonfin+complex+attitude+con%=ஆல்+colloq:^ந்தா #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ:^ந்த #;
+ +verb+nonfin+complex+attitude+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்:^ும் #;
+--- ThamizhiVerbs-C62.lexc
++++ ThamizhiVerbs-C62.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +colloq
+ 
+ LEXICON Root
+ 
+@@ -30,6 +30,7 @@
+ +verb+fin+sim+strong+past%=க்+3sgf%=ஆள்:^க்காள் #;
+ +verb+fin+sim+strong+past%=க்+3sge%=அர்:^க்கர் #;
+ +verb+fin+sim+strong+past%=க்+3ple%=ஆர்கள்:^க்கார்கள் #;
+++verb+fin+sim+strong+past%=க்+3ple%=ஆர்கள்+colloq:^க்காங்க #;
+ +verb+fin+sim+strong+past%=க்+3sghe%=ஆர்கள்:^க்கார்கள் #;
+ +verb+fin+sim+strong+past%=க்+3sgn%=அது:^க்கது #;
+ +verb+fin+sim+strong+past%=க்+3pln%=அன:^க்கன #;
+@@ -45,6 +46,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -83,6 +85,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -97,6 +100,7 @@
+ +verb+fin+sim+caus%=வி+past%=க்+3sgf%=ஆள்:^விக்காள் #;
+ +verb+fin+sim+caus%=வி+past%=க்+3sge%=அர்:^விக்கர் #;
+ +verb+fin+sim+caus%=வி+past%=க்+3ple%=ஆர்கள்:^விக்கார்கள் #;
+++verb+fin+sim+caus%=வி+past%=க்+3ple%=ஆர்கள்+colloq:^விக்காங்க #;
+ +verb+fin+sim+caus%=வி+past%=க்+3sghe%=ஆர்கள்:^விக்கார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=க்+3sgn%=அது:^விக்கது #;
+ +verb+fin+sim+caus%=வி+past%=க்+3pln%=அன:^விக்கன #;
+@@ -112,6 +116,7 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விகிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விகிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விகிறது #;
+++verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விகுது #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விகிறன #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விகின்றேன் #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விகின்றோம் #;
+@@ -154,9 +159,12 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^ந்துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^ந்துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+sim+con%=ஆல்:^கால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^கா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+past%=க்+adjpart%=அ:^க்க #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +colloq
+ 
+ 
+ LEXICON Root
+@@ -67,6 +67,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^தாள் #;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^தர் #;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^தார்கள் #;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^தாங்க #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^தார் #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^தார்கள் #;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^தது #;
+@@ -84,6 +85,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -124,6 +126,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -138,6 +141,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் #;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்:^வித்தார் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது #;
+@@ -155,6 +159,7 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்:^விக்கிறார் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -198,9 +203,12 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+sim+con%=ஆல்:^தால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^தா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^த #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+@@ -257,6 +265,7 @@
+ +verb+fin+sim+strong+past%=ட்+3sgf%=ஆள்:^ண்டாள் #;
+ +verb+fin+sim+strong+past%=ட்+3sge%=அர்:^ண்டர் #;
+ +verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்:^ண்டார்கள் #;
+++verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ண்டாங்க #;
+ +verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்:^ண்டார் #;
+ +verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்கள்:^ண்டார்கள் #;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது:^ண்டது #;
+@@ -274,6 +283,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -314,6 +324,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -328,6 +339,7 @@
+ +verb+fin+sim+caus%=வி+past%=ட்+3sgf%=ஆள்:^விண்டாள் #;
+ +verb+fin+sim+caus%=வி+past%=ட்+3sge%=அர்:^விண்டர் #;
+ +verb+fin+sim+caus%=வி+past%=ட்+3ple%=ஆர்கள்:^விண்டார்கள் #;
+++verb+fin+sim+caus%=வி+past%=ட்+3ple%=ஆர்கள்+colloq:^விண்டாங்க #;
+ +verb+fin+sim+caus%=வி+past%=ட்+3sghe%=ஆர்கள்:^விண்டார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=ட்+3sghe%=ஆர்:^விண்டார் #;
+ +verb+fin+sim+caus%=வி+past%=ட்+3sgn%=அது:^விண்டது #;
+@@ -345,6 +357,7 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்:^விக்கிறார் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -388,9 +401,12 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+sim+con%=ஆல்:^தால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^தா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+past%=ட்+adjpart%=அ:^ண்ட #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+@@ -8325,6 +8341,7 @@
+ +verb+fin+sim+strong+past%=இன்+3sgf%=ஆள்:^ினாள் #;
+ +verb+fin+sim+strong+past%=இன்+3ple%=னர்:^ினர் #;
+ +verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்:^ினார்கள் #;
+++verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க #;
+ +verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்:^ினார் #;
+ +verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்கள்:^ினார்கள் #;
+ +verb+fin+sim+strong+past%=இன்+3sgn%=அது:^ினது #;
+@@ -8343,6 +8360,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -8383,6 +8401,7 @@
+ +verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -8397,6 +8416,7 @@
+ +verb+fin+sim+caus%=வி+past%=இன்+3sgf%=ஆள்:^வித்தாள் #;
+ +verb+fin+sim+caus%=வி+past%=இன்+3ple%=னர்:^வித்தனர் #;
+ +verb+fin+sim+caus%=வி+past%=இன்+3ple%=ஆர்கள்:^வித்தார்கள் #;
+++verb+fin+sim+caus%=வி+past%=இன்+3ple%=ஆர்கள்+colloq:^வித்தாங்க #;
+ +verb+fin+sim+caus%=வி+past%=இன்+3sghe%=ஆர்கள்:^வித்தார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=இன்+3sgn%=அது:^வித்தது #;
+ +verb+fin+sim+caus%=வி+past%=இன்+3pln%=அன:^வித்தன #;
+@@ -8412,6 +8432,7 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -8454,9 +8475,12 @@
+ +verb+nonfin+sim+vpart%=இ+sandhik%=க்:^ிக் #;
+ +verb+nonfin+sim+vpart%=இ+sandhip%=ப்:^ிப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+sim+con%=ஆல்:^ினால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^ினா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+@@ -8489,6 +8513,7 @@
+ +verb+fin+sim+strong+past%=இன்+3sgf%=ஆள்:^னாள் #;
+ +verb+fin+sim+strong+past%=இன்+3ple%=னர்:^னர் #;
+ +verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்:^னார்கள் #;
+++verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^னாங்க #;
+ +verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்கள்:^னார்கள் #;
+ +verb+fin+sim+strong+past%=இன்+3sgn%=அது:^னது #;
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^கும் #;
+@@ -8511,6 +8536,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் #;
+ +verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:^வோம் #;
+ +verb+fin+sim+weak+fut%=வ்+2sg%=ஆய்:^வாய் #;
+@@ -8539,6 +8565,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^்கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^்கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^்கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^்குது #;
+ +verb+fin+sim+middle+fut%=ப்+1sg%=ஏன்:^்பேன் #;
+ +verb+fin+sim+middle+fut%=ப்+1pl%=ஓம்:^்போம் #;
+ +verb+fin+sim+middle+fut%=ப்+2sg%=ஆய்:^்பாய் #;
+@@ -8585,6 +8612,7 @@
+ +verb+fin+sim+strong+past%=ட்+3sgf%=ஆள்:^ட்டாள் #;
+ +verb+fin+sim+strong+past%=ட்+3sge%=அர்:^ட்டர் #;
+ +verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் #;
+++verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க #;
+ +verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் #;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது:^ட்டது #;
+ +verb+fin+sim+strong+past%=ட்+3pln%=அன:^ட்டன #;
+@@ -8600,6 +8628,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -8638,6 +8667,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -8652,6 +8682,7 @@
+ +verb+fin+sim+caus%=வி+past%=ட்+3sgf%=ஆள்:^விட்டாள் #;
+ +verb+fin+sim+caus%=வி+past%=ட்+3sge%=அர்:^விட்டர் #;
+ +verb+fin+sim+caus%=வி+past%=ட்+3ple%=ஆர்கள்:^விட்டார்கள் #;
+++verb+fin+sim+caus%=வி+past%=ட்+3ple%=ஆர்கள்+colloq:^விட்டாங்க #;
+ +verb+fin+sim+caus%=வி+past%=ட்+3sghe%=ஆர்கள்:^விட்டார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=ட்+3sgn%=அது:^விட்டது #;
+ +verb+fin+sim+caus%=வி+past%=ட்+3pln%=அன:^விட்டன #;
+@@ -8667,6 +8698,7 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -8709,9 +8741,12 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+sim+con%=ஆல்:^டால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^டா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+@@ -8743,6 +8778,7 @@
+ +verb+fin+sim+strong+past%=ற்+3sge%=அர்:^ற்றர் #;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்:^ற்றார் #;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்:^ற்றார்கள் #;
+++verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^ற்றாங்க #;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்கள்:^ற்றார்கள் #;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது:^ற்றது #;
+ +verb+fin+sim+strong+past%=ற்+3pln%=அன:^ற்றன #;
+@@ -8811,6 +8847,7 @@
+ +verb+fin+sim+caus%=வி+past%=ற்+3sge%=அர்:^விற்றர் #;
+ +verb+fin+sim+caus%=வி+past%=ற்+3ple%=ஆர்:^விற்றார் #;
+ +verb+fin+sim+caus%=வி+past%=ற்+3ple%=ஆர்கள்:^விற்றார்கள் #;
+++verb+fin+sim+caus%=வி+past%=ற்+3ple%=ஆர்கள்+colloq:^விற்றாங்க #;
+ +verb+fin+sim+caus%=வி+past%=ற்+3sghe%=ஆர்கள்:^விற்றார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=ற்+3sgn%=அது:^விற்றது #;
+ +verb+fin+sim+caus%=வி+past%=ற்+3pln%=அன:^விற்றன #;
+@@ -8870,6 +8907,7 @@
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+sim+con%=ஆல்:^றால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^றா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ற்ற #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+@@ -8895,6 +8933,7 @@
+ +verb+fin+sim+strong+past%=ட்+3sgf%=ஆள்:^டாள் #;
+ +verb+fin+sim+strong+past%=ட்+3sge%=அர்:^டர் #;
+ +verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்:^டார்கள் #;
+++verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^டாங்க #;
+ +verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்கள்:^டார்கள் #;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது:^டது #;
+ +verb+fin+sim+strong+past%=ட்+3pln%=அன:^டன #;
+@@ -8910,6 +8949,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -8948,6 +8988,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -8962,6 +9003,7 @@
+ +verb+fin+sim+caus%=பி+past%=ட்+3sgf%=ஆள்:^பிடாள் #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3sge%=அர்:^பிடர் #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3ple%=ஆர்கள்:^பிடார்கள் #;
+++verb+fin+sim+caus%=பி+past%=ட்+3ple%=ஆர்கள்+colloq:^பிடாங்க #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3sghe%=ஆர்கள்:^பிடார்கள் #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3sgn%=அது:^பிடது #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3pln%=அன:^பிடன #;
+@@ -8977,6 +9019,7 @@
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3ple%=ஆர்கள்:^பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3sghe%=ஆர்கள்:^பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3sgn%=அது:^பிக்கிறது #;
+++verb+fin+sim+caus%=பி+pres%=கிற்+3sgn%=அது+colloq:^பிக்குது #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3pln%=அன:^பிக்கிறன #;
+ +verb+fin+sim+caus%=பி+pres%=கின்ற்+1sg%=ஏன்:^பிக்கின்றேன் #;
+ +verb+fin+sim+caus%=பி+pres%=கின்ற்+1pl%=ஓம்:^பிக்கின்றோம் #;
+@@ -9019,9 +9062,12 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ளாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ளாம #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ளாது #;
+ +verb+nonfin+sim+con%=ஆல்:^டால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^டா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ளாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ளாவிட்டா #;
+ +verb+nonfin+sim+past%=ட்+adjpart%=அ:^ட #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^கும் #;
+@@ -9044,6 +9090,7 @@
+ +verb+fin+sim+strong+past%=ற்+3sgf%=ஆள்:^றாள் #;
+ +verb+fin+sim+strong+past%=ற்+3sge%=அர்:^றர் #;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்:^றார்கள் #;
+++verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^றாங்க #;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்கள்:^றார்கள் #;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது:^றது #;
+ +verb+fin+sim+strong+past%=ற்+3pln%=அன:^றன #;
+@@ -9059,6 +9106,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -9097,6 +9145,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -9112,6 +9161,7 @@
+ +verb+fin+sim+caus%=பி+past%=ற்+3sge%=அர்:^பித்தர் #;
+ +verb+fin+sim+caus%=பி+past%=ற்+3ple%=ஆர்:^பித்தார் #;
+ +verb+fin+sim+caus%=பி+past%=ற்+3ple%=ஆர்கள்:^பித்தார்கள் #;
+++verb+fin+sim+caus%=பி+past%=ற்+3ple%=ஆர்கள்+colloq:^பித்தாங்க #;
+ +verb+fin+sim+caus%=பி+past%=ற்+3sghe%=ஆர்கள்:^பித்தார்கள் #;
+ +verb+fin+sim+caus%=பி+past%=ற்+3sgn%=அது:^பித்தது #;
+ +verb+fin+sim+caus%=பி+past%=ற்+3pln%=அன:^பித்தன #;
+@@ -9127,6 +9177,7 @@
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3ple%=ஆர்கள்:^பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3sghe%=ஆர்கள்:^பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3sgn%=அது:^பிக்கிறது #;
+++verb+fin+sim+caus%=பி+pres%=கிற்+3sgn%=அது+colloq:^பிக்குது #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3pln%=அன:^பிக்கிறன #;
+ +verb+fin+sim+caus%=பி+pres%=கின்ற்+1sg%=ஏன்:^பிக்கின்றேன் #;
+ +verb+fin+sim+caus%=பி+pres%=கின்ற்+1pl%=ஓம்:^பிக்கின்றோம் #;
+@@ -9169,9 +9220,12 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^றுக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^றுப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^னாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^னாம #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^னாது #;
+ +verb+nonfin+sim+con%=ஆல்:^றால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^றா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^னாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^னாவிட்டா #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ற #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^கும் #;
+@@ -9203,6 +9257,7 @@
+ +verb+fin+sim+strong+past%=ட்+3sgf%=ஆள்:^ட்டாள் #;
+ +verb+fin+sim+strong+past%=ட்+3sge%=அர்:^ட்டர் #;
+ +verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் #;
+++verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க #;
+ +verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் #;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது:^ட்டது #;
+ +verb+fin+sim+strong+past%=ட்+3pln%=அன:^ட்டன #;
+@@ -9218,6 +9273,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -9256,6 +9312,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -9270,6 +9327,7 @@
+ +verb+fin+sim+caus%=பி+past%=ட்+3sgf%=ஆள்:^பிட்டாள் #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3sge%=அர்:^பிட்டர் #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3ple%=ஆர்கள்:^பிட்டார்கள் #;
+++verb+fin+sim+caus%=பி+past%=ட்+3ple%=ஆர்கள்+colloq:^பிட்டாங்க #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3sghe%=ஆர்கள்:^பிட்டார்கள் #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3sgn%=அது:^பிட்டது #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3pln%=அன:^பிட்டன #;
+@@ -9285,6 +9343,7 @@
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3ple%=ஆர்கள்:^பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3sghe%=ஆர்கள்:^பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3sgn%=அது:^பிக்கிறது #;
+++verb+fin+sim+caus%=பி+pres%=கிற்+3sgn%=அது+colloq:^பிக்குது #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3pln%=அன:^பிக்கிறன #;
+ +verb+fin+sim+caus%=பி+pres%=கின்ற்+1sg%=ஏன்:^பிக்கின்றேன் #;
+ +verb+fin+sim+caus%=பி+pres%=கின்ற்+1pl%=ஓம்:^பிக்கின்றோம் #;
+@@ -9327,9 +9386,12 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ளாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ளாம #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ளாது #;
+ +verb+nonfin+sim+con%=ஆல்:^டால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^டா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ளாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ளாவிட்டா #;
+ +verb+nonfin+sim+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^கும் #;
+@@ -9356,6 +9418,7 @@
+ +verb+fin+sim+strong+past%=ற்+3sgf%=ஆள்:^றாள் #;
+ +verb+fin+sim+strong+past%=ற்+3sge%=அர்:^றர் #;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்:^றார்கள் #;
+++verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^றாங்க #;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்:^ற்றார் #;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்கள்:^றார்கள் #;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது:^றது #;
+@@ -9373,6 +9436,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -9413,6 +9477,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -9427,6 +9492,7 @@
+ +verb+fin+sim+caus%=பி+past%=ற்+3sgf%=ஆள்:^பிறாள் #;
+ +verb+fin+sim+caus%=பி+past%=ற்+3sge%=அர்:^பிறர் #;
+ +verb+fin+sim+caus%=பி+past%=ற்+3ple%=ஆர்கள்:^பிறார்கள் #;
+++verb+fin+sim+caus%=பி+past%=ற்+3ple%=ஆர்கள்+colloq:^பிறாங்க #;
+ +verb+fin+sim+caus%=பி+past%=ற்+3sghe%=ஆர்கள்:^பிறார்கள் #;
+ +verb+fin+sim+caus%=பி+past%=ற்+3sgn%=அது:^பிறது #;
+ +verb+fin+sim+caus%=பி+past%=ற்+3pln%=அன:^பிறன #;
+@@ -9442,6 +9508,7 @@
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3ple%=ஆர்கள்:^பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3sghe%=ஆர்கள்:^பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3sgn%=அது:^பிக்கிறது #;
+++verb+fin+sim+caus%=பி+pres%=கிற்+3sgn%=அது+colloq:^பிக்குது #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3pln%=அன:^பிக்கிறன #;
+ +verb+fin+sim+caus%=பி+pres%=கின்ற்+1sg%=ஏன்:^பிக்கின்றேன் #;
+ +verb+fin+sim+caus%=பி+pres%=கின்ற்+1pl%=ஓம்:^பிக்கின்றோம் #;
+@@ -9484,9 +9551,12 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^றுக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^றுப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^காமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^காம #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^காது #;
+ +verb+nonfin+sim+con%=ஆல்:^றால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^றா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^காவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^காவிட்டா #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ற #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்:^றோர் #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+@@ -9511,6 +9581,7 @@
+ +verb+fin+sim+strong+past%=இன்+3sgf%=ஆள்:^ினாள் #;
+ +verb+fin+sim+strong+past%=இன்+3ple%=னர்:^ினர் #;
+ +verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்:^ினார்கள் #;
+++verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க #;
+ +verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்கள்:^ினார்கள் #;
+ +verb+fin+sim+strong+past%=இன்+3sgn%=அது:^ினது #;
+ +verb+fin+sim+strong+past%=இன்+3pln%=அன:^ினன #;
+@@ -9526,6 +9597,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் #;
+ +verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:^வோம் #;
+@@ -9545,6 +9617,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+euph%=அன்+3sgf%=அள்:^கிறனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -9560,6 +9633,7 @@
+ +verb+fin+sim+caus%=வி+past%=இன்+3ple%=னர்:^வித்தனர் #;
+ +verb+fin+sim+caus%=வி+past%=இன்+3ple%=ஆர்:^வித்தார் #;
+ +verb+fin+sim+caus%=வி+past%=இன்+3ple%=ஆர்கள்:^வித்தார்கள் #;
+++verb+fin+sim+caus%=வி+past%=இன்+3ple%=ஆர்கள்+colloq:^வித்தாங்க #;
+ +verb+fin+sim+caus%=வி+past%=இன்+3sghe%=ஆர்கள்:^வித்தார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=இன்+3sgn%=அது:^வித்தது #;
+ +verb+fin+sim+caus%=வி+past%=இன்+3pln%=அன:^வித்தன #;
+@@ -9577,6 +9651,7 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1sg%=ஏன்:^விப்பேன் #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1pl%=ஓம்:^விவோம் #;
+@@ -9605,10 +9680,14 @@
+ +verb+nonfin+sim+vpart%=இ+sandhik%=க்:^ிக் #;
+ +verb+nonfin+sim+vpart%=இ+sandhip%=ப்:^ிப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+con%=ஆல்:^ினால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^ினா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq:^குற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON Class14
+@@ -9630,6 +9709,7 @@
+ +verb+fin+sim+strong+past%=ட்+3sge%=அர்:^டர் #;
+ +verb+fin+sim+strong+past%=ட்+3ple%=ஆர்:^டார் #;
+ +verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்:^டார்கள் #;
+++verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^டாங்க #;
+ +verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்கள்:^டார்கள் #;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது:^டது #;
+ +verb+fin+sim+strong+past%=ட்+3pln%=அன:^டன #;
+@@ -9646,6 +9726,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+middle+fut%=ப்+1sg%=ஏன்:^பேன் #;
+ +verb+fin+sim+middle+fut%=ப்+1pl%=ஓம்:^போம் #;
+@@ -9666,6 +9747,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+euph%=அன்+3sgf%=அள்:^கிறனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -9681,6 +9763,7 @@
+ +verb+fin+sim+caus%=பி+past%=ட்+3sge%=அர்:^பிடர் #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3ple%=ஆர்:^பிடார் #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3ple%=ஆர்கள்:^பிடார்கள் #;
+++verb+fin+sim+caus%=பி+past%=ட்+3ple%=ஆர்கள்+colloq:^பிடாங்க #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3sghe%=ஆர்கள்:^பிடார்கள் #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3sgn%=அது:^பிடது #;
+ +verb+fin+sim+caus%=பி+past%=ட்+3pln%=அன:^பிடன #;
+@@ -9697,6 +9780,7 @@
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3ple%=ஆர்கள்:^பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3sghe%=ஆர்கள்:^பிக்கிறார்கள் #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3sgn%=அது:^பிக்கிறது #;
+++verb+fin+sim+caus%=பி+pres%=கிற்+3sgn%=அது+colloq:^பிக்குது #;
+ +verb+fin+sim+caus%=பி+pres%=கிற்+3pln%=அன:^பிக்கிறன #;
+ +verb+fin+sim+caus%=பி+fut%=ப்+1sg%=ஏன்:^பிபேன் #;
+ +verb+fin+sim+caus%=பி+fut%=ப்+1pl%=ஓம்:^பிபோம் #;
+@@ -9725,10 +9809,14 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+con%=ஆல்:^டால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^டா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+past%=ட்+adjpart%=அ:^ட #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq:^குற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON Class15
+@@ -9749,6 +9837,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^தாள் #;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^தர் #;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^தார்கள் #;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^தாங்க #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^தார்கள் #;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^தது #;
+ +verb+fin+sim+strong+past%=த்+3pln%=அன:^தன #;
+@@ -9764,6 +9853,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் #;
+ +verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:^வோம் #;
+@@ -9783,6 +9873,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+euph%=அன்+3sgf%=அள்:^கிறனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -9797,6 +9888,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் #;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது #;
+ +verb+fin+sim+caus%=வி+past%=த்+3pln%=அன:^வித்தன #;
+@@ -9812,6 +9904,7 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1sg%=ஏன்:^விப்பேன் #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1pl%=ஓம்:^விப்போம் #;
+@@ -9839,10 +9932,14 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+con%=ஆல்:^த்தால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^த்தா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^காவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^காவிட்டா #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^த #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq:^குற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^காத #;
+ LEXICON Class16
+@@ -9863,6 +9960,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் #;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தர் #;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது #;
+ +verb+fin+sim+strong+past%=த்+3pln%=அன:^ந்தன #;
+@@ -9878,6 +9976,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் #;
+ +verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:^வோம் #;
+@@ -9897,6 +9996,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+euph%=அன்+3sgf%=அள்:^கிறனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -9911,6 +10011,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^விந்தாள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sge%=அர்:^விந்தர் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^விந்தார்கள் #;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^விந்தாங்க #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^விந்தார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^விந்தது #;
+ +verb+fin+sim+caus%=வி+past%=த்+3pln%=அன:^விந்தன #;
+@@ -9926,6 +10027,7 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1sg%=ஏன்:^விப்பேன் #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1pl%=ஓம்:^விவோம் #;
+@@ -9953,10 +10055,14 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+con%=ஆல்:^ந்தால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^ந்தா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^ந்த #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq:^குற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON Class17
+@@ -9977,6 +10083,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் #;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தர் #;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது #;
+ +verb+fin+sim+strong+past%=த்+3pln%=அன:^ந்தன #;
+@@ -9992,6 +10099,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் #;
+ +verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:^வோம் #;
+@@ -10011,6 +10119,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+euph%=அன்+3sgf%=அள்:^கிறனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -10025,6 +10134,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^விந்தாள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sge%=அர்:^விந்தர் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^விந்தார்கள் #;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^விந்தாங்க #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^விந்தார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^விந்தது #;
+ +verb+fin+sim+caus%=வி+past%=த்+3pln%=அன:^விந்தன #;
+@@ -10040,6 +10150,7 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1sg%=ஏன்:^விப்பேன் #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1pl%=ஓம்:^விவோம் #;
+@@ -10067,10 +10178,14 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^ந்துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^ந்துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+con%=ஆல்:^ந்தால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^ந்தா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^ந்த #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq:^குற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON Class18
+@@ -10091,6 +10206,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் #;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தர் #;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க #;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது #;
+ +verb+fin+sim+strong+past%=த்+3pln%=அன:^ந்தன #;
+@@ -10106,6 +10222,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் #;
+ +verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:^வோம் #;
+@@ -10125,6 +10242,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+euph%=அன்+3sgf%=அள்:^கிறனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -10139,6 +10257,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^விந்தாள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sge%=அர்:^விந்தர் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^விந்தார்கள் #;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^விந்தாங்க #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^விந்தார்கள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^விந்தது #;
+ +verb+fin+sim+caus%=வி+past%=த்+3pln%=அன:^விந்தன #;
+@@ -10154,6 +10273,7 @@
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+sim+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1sg%=ஏன்:^விப்பேன் #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1pl%=ஓம்:^விவோம் #;
+@@ -10181,10 +10301,14 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+sim+con%=ஆல்:^ந்தால் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^ந்தா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^ந்த #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq:^குற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -13279,6 +13403,7 @@
+ +verb+fin+complex+aspect+strong+past%=ட்+3sge%=அர்:^ட்டர் #;
+ +verb+fin+complex+aspect+strong+past%=ட்+3ple%=ஆர்:^ட்டார் #;
+ +verb+fin+complex+aspect+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் #;
+++verb+fin+complex+aspect+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க #;
+ +verb+fin+complex+aspect+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் #;
+ +verb+fin+complex+aspect+strong+past%=ட்+3sgn%=அது:^ட்டது #;
+ +verb+fin+complex+aspect+strong+past%=ட்+3pln%=அன:^ட்டன #;
+@@ -13296,6 +13421,7 @@
+ +verb+fin+complex+aspect+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+aspect+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+aspect+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+aspect+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+aspect+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+aspect+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+aspect+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -13335,6 +13461,7 @@
+ +verb+fin+complex+aspect+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+aspect+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+aspect+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+aspect+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -13351,6 +13478,7 @@
+ 
+ +verb+fin+complex+aspect+caus%=வி+past%=ட்+3ple%=ஆர்:^விட்டார் #;
+ +verb+fin+complex+aspect+caus%=வி+past%=ட்+3ple%=ஆர்கள்:^விட்டார்கள் #;
+++verb+fin+complex+aspect+caus%=வி+past%=ட்+3ple%=ஆர்கள்+colloq:^விட்டாங்க #;
+ +verb+fin+complex+aspect+caus%=வி+past%=ட்+3sghe%=ஆர்கள்:^விட்டார்கள் #;
+ +verb+fin+complex+aspect+caus%=வி+past%=ட்+3sgn%=அது:^விட்டது #;
+ +verb+fin+complex+aspect+caus%=வி+past%=ட்+3pln%=அன:^விட்டன #;
+@@ -13367,6 +13495,7 @@
+ +verb+fin+complex+aspect+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+aspect+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+aspect+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+complex+aspect+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+complex+aspect+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+complex+aspect+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+complex+aspect+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -13407,9 +13536,12 @@
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+complex+aspect+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+aspect+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+aspect+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+aspect+con%=ஆல்:^டால் #;
+++verb+nonfin+complex+aspect+con%=ஆல்+colloq:^டா #;
+ +verb+nonfin+complex+aspect+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+aspect+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+aspect+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+complex+aspect+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+aspect+futANDadjpart%=உம்:^ும் #;
+@@ -22429,22 +22561,35 @@
+ +verb+fin+complex+attitude+strong+past%=த்+3ple%=னர்:^னர் #;
+ +verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்:^னார் #;
+ +verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்கள்:^னார்கள் #;
+++verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்கள்+colloq:^னாங்க #;
+ +verb+fin+complex+attitude+strong+past%=த்+3sghe%=ஆர்கள்:^னார்கள் #;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது:^னது #;
+ +verb+fin+complex+attitude+strong+past%=த்+3pln%=அன:^னன #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+1sg%=ஏன்:^கிறேன் #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+1sg%=ஏன்+colloq:^றேன் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+1pl%=ஓம்:^கிறோம் #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+1pl%=ஓம்+colloq:^றோம் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+1sg%=அன்:^கிறன் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+2sg%=ஆய்:^கிறாய் #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+2sg%=ஆய்+colloq:^றாய் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+2sgh%=ஈர்:^கிறீர் #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+2sgh%=ஈர்+colloq:^றீர் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+2pl%=ஈர்கள்:^கிறீர்கள் #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+2pl%=ஈர்கள்+colloq:^றீங்க #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgm%=ஆன்:^கிறான் #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+3sgm%=ஆன்+colloq:^றான் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+3sgf%=ஆள்+colloq:^றாள் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sge%=அர்:^கிறர் #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+3sge%=அர்+colloq:^றர் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3ple%=ஆர்:^கிறார் #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+3ple%=ஆர்+colloq:^றார் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+3ple%=ஆர்கள்+colloq:^றாங்க #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+3sghe%=ஆர்கள்+colloq:^றாங்க #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -22484,6 +22629,7 @@
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+attitude+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்:^ங்கள் #;
+++verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்+colloq:^ங்க #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^காதே #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^காதீர்கள் #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^காதே #;
+@@ -22499,21 +22645,33 @@
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=னர்:^ப்பித்தனர் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பித்தார் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் #;
+++verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க #;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது #;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பித்தன #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+1sg%=ஏன்:^ப்பிக்கிறேன் #;
+++verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+1sg%=ஏன்+colloq:^ப்பிக்றேன் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+1pl%=ஓம்:^ப்பிக்கிறோம் #;
+++verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+1pl%=ஓம்+colloq:^ப்பிக்றோம் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+1sg%=அன்:^ப்பிக்கிறன் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+2sg%=ஆய்:^ப்பிக்கிறாய் #;
+++verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+2sg%=ஆய்+colloq:^ப்பிக்றாய் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+2sgh%=ஈர்:^ப்பிக்கிறீர் #;
+++verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+2sgh%=ஈர்+colloq:^ப்பிக்றீர் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+2pl%=ஈர்கள்:^ப்பிக்கிறீர்கள் #;
+++verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+2pl%=ஈர்கள்+colloq:^ப்பிக்றீங்க #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3sgm%=ஆன்:^ப்பிக்கிறான் #;
+++verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3sgm%=ஆன்+colloq:^ப்பிக்றான் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3sgf%=ஆள்:^ப்பிக்கிறாள் #;
+++verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3sgf%=ஆள்+colloq:^ப்பிக்றாள் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3sge%=அர்:^ப்பிக்கிறர் #;
+++verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3sge%=அர்+colloq:^ப்பிக்றர் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3ple%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+++verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3ple%=ஆர்கள்+colloq:^ப்பிக்றாங்க #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3sghe%=ஆர்கள்:^ப்பிக்கிறார்கள் #;
+++verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3sghe%=ஆர்கள்+colloq:^ப்பிக்றாங்க #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3sgn%=அது:^ப்பிக்கிறது #;
+++verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3sgn%=அது+colloq:^ப்பிக்குது #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கிற்+3pln%=அன:^ப்பிக்கிறன #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கின்ற்+1sg%=ஏன்:^ப்பிக்கின்றேன் #;
+ +verb+fin+complex+attitude+caus%=ப்பி+pres%=கின்ற்+1pl%=ஓம்:^ப்பிக்கின்றோம் #;
+@@ -22552,9 +22710,12 @@
+ +verb+nonfin+complex+attitude+vpart%=இ+sandhik%=க்:^ிக் #;
+ +verb+nonfin+complex+attitude+vpart%=இ+sandhip%=ப்:^ிப் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+attitude+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+attitude+con%=ஆல்:^ினால் #;
+++verb+nonfin+complex+attitude+con%=ஆல்+colloq:^ினா #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ:^ின #;
+ +verb+nonfin+complex+attitude+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்:^ும் #;
+@@ -25651,6 +25812,7 @@
+ +verb+fin+complex+attitude+strong+past%=ட்+3sgf%=ஆள்:^ட்டாள் #;
+ +verb+fin+complex+attitude+strong+past%=ட்+3sge%=அர்:^ட்டர் #;
+ +verb+fin+complex+attitude+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் #;
+++verb+fin+complex+attitude+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க #;
+ +verb+fin+complex+attitude+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் #;
+ +verb+fin+complex+attitude+strong+past%=ட்+3sgn%=அது:^ட்டது #;
+ +verb+fin+complex+attitude+strong+past%=ட்+3pln%=அன:^ட்டன #;
+@@ -25666,6 +25828,7 @@
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -25703,6 +25866,7 @@
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+attitude+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -25717,6 +25881,7 @@
+ +verb+fin+complex+attitude+caus%=வி+past%=ட்+3sgf%=ஆள்:^விட்டாள் #;
+ +verb+fin+complex+attitude+caus%=வி+past%=ட்+3sge%=அர்:^விட்டர் #;
+ +verb+fin+complex+attitude+caus%=வி+past%=ட்+3ple%=ஆர்கள்:^விட்டார்கள் #;
+++verb+fin+complex+attitude+caus%=வி+past%=ட்+3ple%=ஆர்கள்+colloq:^விட்டாங்க #;
+ +verb+fin+complex+attitude+caus%=வி+past%=ட்+3sghe%=ஆர்கள்:^விட்டார்கள் #;
+ +verb+fin+complex+attitude+caus%=வி+past%=ட்+3sgn%=அது:^விட்டது #;
+ +verb+fin+complex+attitude+caus%=வி+past%=ட்+3pln%=அன:^விட்டன #;
+@@ -25732,6 +25897,7 @@
+ +verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -25770,9 +25936,12 @@
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+attitude+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+attitude+con%=ஆல்:^டால் #;
+++verb+nonfin+complex+attitude+con%=ஆல்+colloq:^டா #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+attitude+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+complex+attitude+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்:^ும் #;
+@@ -28869,6 +29038,7 @@
+ +verb+fin+complex+attitude+strong+past%=இன்+3sgf%=ஆள்:^ினாள் #;
+ +verb+fin+complex+attitude+strong+past%=இன்+3ple%=னர்:^ினர் #;
+ +verb+fin+complex+attitude+strong+past%=இன்+3ple%=ஆர்கள்:^ினார்கள் #;
+++verb+fin+complex+attitude+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க #;
+ +verb+fin+complex+attitude+strong+past%=இன்+3sghe%=ஆர்கள்:^ினார்கள் #;
+ +verb+fin+complex+attitude+strong+past%=இன்+3sgn%=அது:^ினது #;
+ +verb+fin+complex+attitude+strong+past%=இன்+3pln%=அன:^ினன #;
+@@ -28884,6 +29054,7 @@
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+attitude+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -28923,6 +29094,7 @@
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+attitude+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -28938,6 +29110,7 @@
+ +verb+fin+complex+attitude+caus%=வி+past%=இன்+3ple%=னர்:^வித்தனர் #;
+ +verb+fin+complex+attitude+caus%=வி+past%=இன்+3ple%=ஆர்:^வித்தார் #;
+ +verb+fin+complex+attitude+caus%=வி+past%=இன்+3ple%=ஆர்கள்:^வித்தார்கள் #;
+++verb+fin+complex+attitude+caus%=வி+past%=இன்+3ple%=ஆர்கள்+colloq:^வித்தாங்க #;
+ +verb+fin+complex+attitude+caus%=வி+past%=இன்+3sghe%=ஆர்கள்:^வித்தார்கள் #;
+ +verb+fin+complex+attitude+caus%=வி+past%=இன்+3sgn%=அது:^வித்தது #;
+ +verb+fin+complex+attitude+caus%=வி+past%=இன்+3pln%=அன:^வித்தன #;
+@@ -28953,6 +29126,7 @@
+ +verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+complex+attitude+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -28991,9 +29165,12 @@
+ +verb+nonfin+complex+attitude+vpart%=இ+sandhik%=க்:^ிக் #;
+ +verb+nonfin+complex+attitude+vpart%=இ+sandhip%=ப்:^ிப் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+attitude+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+attitude+con%=ஆல்:^ினால் #;
+++verb+nonfin+complex+attitude+con%=ஆல்+colloq:^ினா #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+attitude+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+complex+attitude+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்:^ும் #;
+@@ -38017,6 +38194,7 @@
+ +verb+fin+complex+caus+strong+past%=இன்+3sgf%=ஆள்:^ினாள் #;
+ +verb+fin+complex+caus+strong+past%=இன்+3ple%=னர்:^ினர் #;
+ +verb+fin+complex+caus+strong+past%=இன்+3ple%=ஆர்கள்:^ினார்கள் #;
+++verb+fin+complex+caus+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க #;
+ +verb+fin+complex+caus+strong+past%=இன்+3sghe%=ஆர்கள்:^ினார்கள் #;
+ +verb+fin+complex+caus+strong+past%=இன்+3sgn%=அது:^ினது #;
+ +verb+fin+complex+caus+strong+past%=இன்+3pln%=அன:^ினன #;
+@@ -38032,6 +38210,7 @@
+ +verb+fin+complex+caus+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+caus+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+caus+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+caus+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+caus+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+caus+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+caus+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -38069,6 +38248,7 @@
+ +verb+fin+complex+caus+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+caus+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+caus+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+caus+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+caus+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+caus+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+caus+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -38083,6 +38263,7 @@
+ +verb+fin+complex+caus+caus%=வி+past%=இன்+3sgf%=ஆள்:^வித்தாள் #;
+ +verb+fin+complex+caus+caus%=வி+past%=இன்+3ple%=னர்:^வித்தனர் #;
+ +verb+fin+complex+caus+caus%=வி+past%=இன்+3ple%=ஆர்கள்:^வித்தார்கள் #;
+++verb+fin+complex+caus+caus%=வி+past%=இன்+3ple%=ஆர்கள்+colloq:^வித்தாங்க #;
+ +verb+fin+complex+caus+caus%=வி+past%=இன்+3sghe%=ஆர்கள்:^வித்தார்கள் #;
+ +verb+fin+complex+caus+caus%=வி+past%=இன்+3sgn%=அது:^வித்தது #;
+ +verb+fin+complex+caus+caus%=வி+past%=இன்+3pln%=அன:^வித்தன #;
+@@ -38098,6 +38279,7 @@
+ +verb+fin+complex+caus+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+complex+caus+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -38136,9 +38318,12 @@
+ +verb+nonfin+complex+caus+vpart%=இ+sandhik%=க்:^ிக் #;
+ +verb+nonfin+complex+caus+vpart%=இ+sandhip%=ப்:^ிப் #;
+ +verb+nonfin+complex+caus+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+caus+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+caus+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+caus+con%=ஆல்:^ினால் #;
+++verb+nonfin+complex+caus+con%=ஆல்+colloq:^ினா #;
+ +verb+nonfin+complex+caus+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+caus+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+caus+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+complex+caus+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+caus+futANDadjpart%=உம்:^ும் #;
+@@ -47158,6 +47343,7 @@
+ +verb+fin+complex+caus+strong+past%=த்+3sgf%=ஆள்:^தாள் #;
+ +verb+fin+complex+caus+strong+past%=த்+3sge%=அர்:^தர் #;
+ +verb+fin+complex+caus+strong+past%=த்+3ple%=ஆர்கள்:^தார்கள் #;
+++verb+fin+complex+caus+strong+past%=த்+3ple%=ஆர்கள்+colloq:^தாங்க #;
+ +verb+fin+complex+caus+strong+past%=த்+3sghe%=ஆர்கள்:^தார்கள் #;
+ +verb+fin+complex+caus+strong+past%=த்+3sgn%=அது:^தது #;
+ +verb+fin+complex+caus+strong+past%=த்+3pln%=அன:^தன #;
+@@ -47173,6 +47359,7 @@
+ +verb+fin+complex+caus+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+caus+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+caus+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+caus+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+caus+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+caus+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+caus+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -47210,6 +47397,7 @@
+ +verb+fin+complex+caus+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+caus+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+caus+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+caus+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+caus+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+caus+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+caus+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -47224,6 +47412,7 @@
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் #;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் #;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் #;
+++verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க #;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் #;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgn%=அது:^வித்தது #;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3pln%=அன:^வித்தன #;
+@@ -47239,6 +47428,7 @@
+ +verb+fin+complex+caus+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+complex+caus+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -47277,9 +47467,12 @@
+ +verb+nonfin+complex+caus+vpart%=உ+sandhik%=க்:^துக் #;
+ +verb+nonfin+complex+caus+vpart%=உ+sandhip%=ப்:^துப் #;
+ +verb+nonfin+complex+caus+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+caus+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+caus+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+caus+con%=ஆல்:^தால் #;
+++verb+nonfin+complex+caus+con%=ஆல்+colloq:^தா #;
+ +verb+nonfin+complex+caus+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+caus+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+caus+past%=த்+adjpart%=அ:^த #;
+ +verb+nonfin+complex+caus+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+caus+futANDadjpart%=உம்:^ும் #;
+@@ -56257,6 +56450,7 @@
+ +verb+fin+complex+caus+strong+past%=த்+3sgf%=ஆள்:^தாள் #;
+ +verb+fin+complex+caus+strong+past%=த்+3sge%=அர்:^தர் #;
+ +verb+fin+complex+caus+strong+past%=த்+3ple%=ஆர்கள்:^தார்கள் #;
+++verb+fin+complex+caus+strong+past%=த்+3ple%=ஆர்கள்+colloq:^தாங்க #;
+ +verb+fin+complex+caus+strong+past%=த்+3sghe%=ஆர்கள்:^தார்கள் #;
+ +verb+fin+complex+caus+strong+past%=த்+3sgn%=அது:^தது #;
+ +verb+fin+complex+caus+strong+past%=த்+3pln%=அன:^தன #;
+@@ -56272,6 +56466,7 @@
+ +verb+fin+complex+caus+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+caus+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+caus+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+caus+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+caus+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+caus+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+caus+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -56309,6 +56504,7 @@
+ +verb+fin+complex+caus+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+caus+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+caus+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+caus+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+caus+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+caus+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+caus+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -56323,6 +56519,7 @@
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் #;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் #;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் #;
+++verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க #;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் #;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgn%=அது:^வித்தது #;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3pln%=அன:^வித்தன #;
+@@ -56338,6 +56535,7 @@
+ +verb+fin+complex+caus+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+complex+caus+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+complex+caus+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -56376,9 +56574,12 @@
+ +verb+nonfin+complex+caus+vpart%=உ+sandhik%=க்:^துக் #;
+ +verb+nonfin+complex+caus+vpart%=உ+sandhip%=ப்:^துப் #;
+ +verb+nonfin+complex+caus+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+caus+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+caus+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+caus+con%=ஆல்:^தால் #;
+++verb+nonfin+complex+caus+con%=ஆல்+colloq:^தா #;
+ +verb+nonfin+complex+caus+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+caus+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+caus+past%=த்+adjpart%=அ:^த #;
+ +verb+nonfin+complex+caus+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+caus+futANDadjpart%=உம்:^ும் #;
+@@ -65403,6 +65604,7 @@
+ +verb+fin+complex+mood+strong+past%=இன்+3sgf%=ஆள்:^ினாள் #;
+ +verb+fin+complex+mood+strong+past%=இன்+3ple%=னர்:^ினர் #;
+ +verb+fin+complex+mood+strong+past%=இன்+3ple%=ஆர்கள்:^ினார்கள் #;
+++verb+fin+complex+mood+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க #;
+ +verb+fin+complex+mood+strong+past%=இன்+3sghe%=ஆர்கள்:^ினார்கள் #;
+ +verb+fin+complex+mood+strong+past%=இன்+3sgn%=அது:^ினது #;
+ +verb+fin+complex+mood+strong+past%=இன்+3pln%=அன:^ினன #;
+@@ -65418,6 +65620,7 @@
+ +verb+fin+complex+mood+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+mood+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+mood+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+mood+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+mood+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+mood+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+mood+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -65455,6 +65658,7 @@
+ +verb+fin+complex+mood+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+mood+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+mood+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+mood+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+mood+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+mood+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+mood+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -65469,6 +65673,7 @@
+ +verb+fin+complex+mood+caus%=வி+past%=இன்+3sgf%=ஆள்:^வித்தாள் #;
+ +verb+fin+complex+mood+caus%=வி+past%=இன்+3ple%=னர்:^வித்தனர் #;
+ +verb+fin+complex+mood+caus%=வி+past%=இன்+3ple%=ஆர்கள்:^வித்தார்கள் #;
+++verb+fin+complex+mood+caus%=வி+past%=இன்+3ple%=ஆர்கள்+colloq:^வித்தாங்க #;
+ +verb+fin+complex+mood+caus%=வி+past%=இன்+3sghe%=ஆர்கள்:^வித்தார்கள் #;
+ +verb+fin+complex+mood+caus%=வி+past%=இன்+3sgn%=அது:^வித்தது #;
+ +verb+fin+complex+mood+caus%=வி+past%=இன்+3pln%=அன:^வித்தன #;
+@@ -65484,6 +65689,7 @@
+ +verb+fin+complex+mood+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+mood+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+mood+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+complex+mood+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+complex+mood+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+complex+mood+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+complex+mood+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -65522,9 +65728,12 @@
+ +verb+nonfin+complex+mood+vpart%=இ+sandhik%=க்:^ிக் #;
+ +verb+nonfin+complex+mood+vpart%=இ+sandhip%=ப்:^ிப் #;
+ +verb+nonfin+complex+mood+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+mood+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+mood+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+mood+con%=ஆல்:^ினால் #;
+++verb+nonfin+complex+mood+con%=ஆல்+colloq:^ினா #;
+ +verb+nonfin+complex+mood+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+mood+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+mood+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+complex+mood+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+mood+futANDadjpart%=உம்:^ும் #;
+@@ -74483,6 +74692,7 @@
+ +verb+fin+complex+mood+strong+past%=இன்+3sgf%=ஆள்:^ினாள் #;
+ +verb+fin+complex+mood+strong+past%=இன்+3ple%=னர்:^ினர் #;
+ +verb+fin+complex+mood+strong+past%=இன்+3ple%=ஆர்கள்:^ினார்கள் #;
+++verb+fin+complex+mood+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க #;
+ +verb+fin+complex+mood+strong+past%=இன்+3sghe%=ஆர்கள்:^ினார்கள் #;
+ +verb+fin+complex+mood+strong+past%=இன்+3sgn%=அது:^ினது #;
+ +verb+fin+complex+mood+strong+past%=இன்+3pln%=அன:^ினன #;
+@@ -74498,6 +74708,7 @@
+ +verb+fin+complex+mood+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+mood+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+mood+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+mood+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+mood+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+mood+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+mood+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -74535,6 +74746,7 @@
+ +verb+fin+complex+mood+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+mood+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+mood+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+mood+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+mood+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+mood+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+mood+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -74549,6 +74761,7 @@
+ +verb+fin+complex+mood+caus%=வி+past%=இன்+3sgf%=ஆள்:^வித்தாள் #;
+ +verb+fin+complex+mood+caus%=வி+past%=இன்+3ple%=னர்:^வித்தனர் #;
+ +verb+fin+complex+mood+caus%=வி+past%=இன்+3ple%=ஆர்கள்:^வித்தார்கள் #;
+++verb+fin+complex+mood+caus%=வி+past%=இன்+3ple%=ஆர்கள்+colloq:^வித்தாங்க #;
+ +verb+fin+complex+mood+caus%=வி+past%=இன்+3sghe%=ஆர்கள்:^வித்தார்கள் #;
+ +verb+fin+complex+mood+caus%=வி+past%=இன்+3sgn%=அது:^வித்தது #;
+ +verb+fin+complex+mood+caus%=வி+past%=இன்+3pln%=அன:^வித்தன #;
+@@ -74564,6 +74777,7 @@
+ +verb+fin+complex+mood+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+mood+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+mood+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+complex+mood+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+complex+mood+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+complex+mood+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+complex+mood+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -74602,9 +74816,12 @@
+ +verb+nonfin+complex+mood+vpart%=இ+sandhik%=க்:^ிக் #;
+ +verb+nonfin+complex+mood+vpart%=இ+sandhip%=ப்:^ிப் #;
+ +verb+nonfin+complex+mood+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+mood+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+mood+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+mood+con%=ஆல்:^ினால் #;
+++verb+nonfin+complex+mood+con%=ஆல்+colloq:^ினா #;
+ +verb+nonfin+complex+mood+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+mood+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+mood+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+complex+mood+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+mood+futANDadjpart%=உம்:^ும் #;
+@@ -77701,6 +77918,7 @@
+ +verb+fin+complex+nonattitude+strong+past%=ட்+3sgf%=ஆள்:^ட்டாள் #;
+ +verb+fin+complex+nonattitude+strong+past%=ட்+3sge%=அர்:^ட்டர் #;
+ +verb+fin+complex+nonattitude+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் #;
+++verb+fin+complex+nonattitude+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க #;
+ +verb+fin+complex+nonattitude+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் #;
+ +verb+fin+complex+nonattitude+strong+past%=ட்+3sgn%=அது:^ட்டது #;
+ +verb+fin+complex+nonattitude+strong+past%=ட்+3pln%=அன:^ட்டன #;
+@@ -77716,6 +77934,7 @@
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+nonattitude+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+nonattitude+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -77753,6 +77972,7 @@
+ +verb+fin+complex+nonattitude+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+nonattitude+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+nonattitude+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+nonattitude+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -77767,6 +77987,7 @@
+ +verb+fin+complex+nonattitude+caus%=வி+past%=ட்+3sgf%=ஆள்:^விட்டாள் #;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=ட்+3sge%=அர்:^விட்டர் #;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=ட்+3ple%=ஆர்கள்:^விட்டார்கள் #;
+++verb+fin+complex+nonattitude+caus%=வி+past%=ட்+3ple%=ஆர்கள்+colloq:^விட்டாங்க #;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=ட்+3sghe%=ஆர்கள்:^விட்டார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=ட்+3sgn%=அது:^விட்டது #;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=ட்+3pln%=அன:^விட்டன #;
+@@ -77782,6 +78003,7 @@
+ +verb+fin+complex+nonattitude+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+complex+nonattitude+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+complex+nonattitude+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+complex+nonattitude+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+complex+nonattitude+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -77820,9 +78042,12 @@
+ +verb+nonfin+complex+nonattitude+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+complex+nonattitude+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்:^டால் #;
+++verb+nonfin+complex+nonattitude+con%=ஆல்+colloq:^டா #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+nonattitude+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்:^ும் #;
+@@ -80918,6 +81143,7 @@
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் #;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sge%=அர்:^ந்தர் #;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் #;
+++verb+fin+complex+nonattitude+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க #;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sgn%=அது:^ந்தது #;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3pln%=அன:^ந்தன #;
+@@ -80933,6 +81159,7 @@
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+nonattitude+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+nonattitude+weak+fut%=வ்+1sg%=ஏன்:^வேன் #;
+ +verb+fin+complex+nonattitude+weak+fut%=வ்+1pl%=ஓம்:^வோம் #;
+@@ -80952,6 +81179,7 @@
+ +verb+fin+complex+nonattitude+strong+pres%=கிற்+euph%=அன்+3sgf%=அள்:^கிறனள் #;
+ +verb+fin+complex+nonattitude+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+nonattitude+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+nonattitude+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -80966,6 +81194,7 @@
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sgf%=ஆள்:^விந்தாள் #;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sge%=அர்:^விந்தர் #;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3ple%=ஆர்கள்:^விந்தார்கள் #;
+++verb+fin+complex+nonattitude+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^விந்தாங்க #;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^விந்தார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sgn%=அது:^விந்தது #;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3pln%=அன:^விந்தன #;
+@@ -80981,6 +81210,7 @@
+ +verb+fin+complex+nonattitude+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+nonattitude+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+complex+nonattitude+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+complex+nonattitude+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+complex+nonattitude+caus%=வி+fut%=வ்+1sg%=ஏன்:^விப்பேன் #;
+ +verb+fin+complex+nonattitude+caus%=வி+fut%=வ்+1pl%=ஓம்:^விவோம் #;
+@@ -81004,10 +81234,14 @@
+ +verb+nonfin+complex+nonattitude+vpart%=உ+sandhik%=க்:^ந்துக் #;
+ +verb+nonfin+complex+nonattitude+vpart%=உ+sandhip%=ப்:^ந்துப் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்:^ந்தால் #;
+++verb+nonfin+complex+nonattitude+con%=ஆல்+colloq:^ந்தா #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ:^ந்த #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ:^கிற #;
+++verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+colloq:^குற #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -84031,6 +84265,7 @@
+ +verb+fin+complex+passive+strong+past%=ட்+3sgf%=ஆள்:^ட்டாள் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3sge%=அர்:^ட்டர் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் #;
+++verb+fin+complex+passive+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க #;
+ +verb+fin+complex+passive+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3sgn%=அது:^ட்டது #;
+ +verb+fin+complex+passive+strong+past%=ட்+3pln%=அன:^ட்டன #;
+@@ -84046,6 +84281,7 @@
+ +verb+fin+complex+passive+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+passive+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+passive+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+passive+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+passive+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -84083,6 +84319,7 @@
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+passive+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+passive+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+passive+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -84097,6 +84334,7 @@
+ +verb+fin+complex+passive+caus%=வி+past%=ட்+3sgf%=ஆள்:^விட்டாள் #;
+ +verb+fin+complex+passive+caus%=வி+past%=ட்+3sge%=அர்:^விட்டர் #;
+ +verb+fin+complex+passive+caus%=வி+past%=ட்+3ple%=ஆர்கள்:^விட்டார்கள் #;
+++verb+fin+complex+passive+caus%=வி+past%=ட்+3ple%=ஆர்கள்+colloq:^விட்டாங்க #;
+ +verb+fin+complex+passive+caus%=வி+past%=ட்+3sghe%=ஆர்கள்:^விட்டார்கள் #;
+ +verb+fin+complex+passive+caus%=வி+past%=ட்+3sgn%=அது:^விட்டது #;
+ +verb+fin+complex+passive+caus%=வி+past%=ட்+3pln%=அன:^விட்டன #;
+@@ -84112,6 +84350,7 @@
+ +verb+fin+complex+passive+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+passive+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+passive+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+complex+passive+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+complex+passive+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+complex+passive+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+complex+passive+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -84150,9 +84389,12 @@
+ +verb+nonfin+complex+passive+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+complex+passive+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+complex+passive+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+passive+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+passive+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+passive+con%=ஆல்:^டால் #;
+++verb+nonfin+complex+passive+con%=ஆல்+colloq:^டா #;
+ +verb+nonfin+complex+passive+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+passive+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+passive+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+complex+passive+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+passive+futANDadjpart%=உம்:^ும் #;
+@@ -87182,6 +87424,7 @@
+ +verb+fin+complex+passive+strong+past%=ற்+3sge%=அர்:^ற்றர் #;
+ +verb+fin+complex+passive+strong+past%=ற்+3ple%=ஆர்:^ற்றார் #;
+ +verb+fin+complex+passive+strong+past%=ற்+3ple%=ஆர்கள்:^ற்றார்கள் #;
+++verb+fin+complex+passive+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^ற்றாங்க #;
+ +verb+fin+complex+passive+strong+past%=ற்+3sghe%=ஆர்கள்:^ற்றார்கள் #;
+ +verb+fin+complex+passive+strong+past%=ற்+3sgn%=அது:^ற்றது #;
+ +verb+fin+complex+passive+strong+past%=ற்+3pln%=அன:^ற்றன #;
+@@ -87197,6 +87440,7 @@
+ +verb+fin+complex+passive+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+passive+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+complex+passive+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+++verb+fin+complex+passive+strong+pres%=கிற்+3sgn%=அது+colloq:^குது #;
+ +verb+fin+complex+passive+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+@@ -87234,6 +87478,7 @@
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+passive+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+passive+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+++verb+fin+complex+passive+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -87249,6 +87494,7 @@
+ +verb+fin+complex+passive+caus%=வி+past%=ற்+3sge%=அர்:^விற்றர் #;
+ +verb+fin+complex+passive+caus%=வி+past%=ற்+3ple%=ஆர்:^விற்றார் #;
+ +verb+fin+complex+passive+caus%=வி+past%=ற்+3ple%=ஆர்கள்:^விற்றார்கள் #;
+++verb+fin+complex+passive+caus%=வி+past%=ற்+3ple%=ஆர்கள்+colloq:^விற்றாங்க #;
+ +verb+fin+complex+passive+caus%=வி+past%=ற்+3sghe%=ஆர்கள்:^விற்றார்கள் #;
+ +verb+fin+complex+passive+caus%=வி+past%=ற்+3sgn%=அது:^விற்றது #;
+ +verb+fin+complex+passive+caus%=வி+past%=ற்+3pln%=அன:^விற்றன #;
+@@ -87264,6 +87510,7 @@
+ +verb+fin+complex+passive+caus%=வி+pres%=கிற்+3ple%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+passive+caus%=வி+pres%=கிற்+3sghe%=ஆர்கள்:^விக்கிறார்கள் #;
+ +verb+fin+complex+passive+caus%=வி+pres%=கிற்+3sgn%=அது:^விக்கிறது #;
+++verb+fin+complex+passive+caus%=வி+pres%=கிற்+3sgn%=அது+colloq:^விக்குது #;
+ +verb+fin+complex+passive+caus%=வி+pres%=கிற்+3pln%=அன:^விக்கிறன #;
+ +verb+fin+complex+passive+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விக்கின்றேன் #;
+ +verb+fin+complex+passive+caus%=வி+pres%=கின்ற்+1pl%=ஓம்:^விக்கின்றோம் #;
+@@ -87302,9 +87549,12 @@
+ +verb+nonfin+complex+passive+vpart%=உ+sandhik%=க்:^றுக் #;
+ +verb+nonfin+complex+passive+vpart%=உ+sandhip%=ப்:^றுப் #;
+ +verb+nonfin+complex+passive+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+passive+neg%=ஆ+vpart%=மல்+colloq:^ாம #;
+ +verb+nonfin+complex+passive+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+passive+con%=ஆல்:^றால் #;
+++verb+nonfin+complex+passive+con%=ஆல்+colloq:^றா #;
+ +verb+nonfin+complex+passive+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+passive+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+passive+past%=ற்+adjpart%=அ:^ற்ற #;
+ +verb+nonfin+complex+passive+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+passive+futANDadjpart%=உம்:^ும் #;

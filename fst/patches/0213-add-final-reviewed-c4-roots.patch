@@ -1,0 +1,21 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -11,6 +11,18 @@
+ 
+ 
+ LEXICON ClassFour
++
++! Final full-paradigm source review
++தளர்    C4Vinf;
++பிசை    C4Vinf;
++பின்றொடர்    C4Vinf;
++முகர்    C4Vinf;
++கைதளர்    C4Vinf;
++மனந்தளர்    C4Vinf;
++கண்ணைப்பிசை    C4Vinf;
++கண்பிசை    C4Vinf;
++கைபிசை    C4Vinf;
++மடிபிசை    C4Vinf;
+ 
+ ! Dual-source compounds inheriting a reviewed right-head class
+ அசறுபாய்    C4Vinf;

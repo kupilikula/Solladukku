@@ -1,0 +1,51 @@
+--- tamil-adjectives.lexc
++++ tamil-adjectives.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r +dem +prox +dist +inter +type +noun +nom +cop +adjpart +PartNoun +privative +exist
++Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r +dem +prox +dist +inter +type +noun +nom +cop +adjpart +PartNoun +privative +exist +adj +loc +pp-particle
+ 
+ LEXICON Root
+ nominalCopularParticiples ;
+@@ -10,6 +10,8 @@
+ 
+ 
+ LEXICON nominalCopularParticiples
++சிக்கல்:சிக்கலான	nominalCopularParticiple;
++தலைவர்:தலைவரான	nominalCopularParticiple;
+ ! Reviewed noun predicates with the copular adjectival participle -ஆன.
+ அகதி:அகதியான	nominalCopularParticiple;
+ அங்கம்:அங்கமான	nominalCopularParticiple;
+@@ -512,9 +514,19 @@
+ +adv+cop%=ஆ+adjpart%=ன:0 #;
+ 
+ LEXICON adjectives
++அருகு+noun+loc%=இல்+exist+adjpart%=அ:அருகிலுள்ள adjectiveSandhi;
++இடையே+pp-particle+cop%=ஆ+adjpart%=ன:இடையேயான adjectiveSandhi;
++உலகளாவிய:உலகளாவிய adjectiveSandhi;
++அரோமாட்டிக்:அரோமாட்டிக் adjectiveSandhi;
++டிஜிட்டல்:டிஜிட்டல் adjectiveSandhi;
++ஆன்லைன்:ஆன்லைன் adjectiveSandhi;
++ஸ்மார்ட்:ஸ்மார்ட் adjectiveSandhi;
++நிரந்தர:நிரந்தர adjectiveSandhi;
++சிவில்:சிவில் adjectiveSandhi;
++வேளாண்:வேளாண் adjectiveSandhi;
+ ! High-frequency adjective and reviewed compositional adjective readings.
+-அன்ன+adj:அன்ன adjectiveSandhi;
+-மிகப்பெரிய+adj+intensifier:மிகப்பெரிய adjectiveSandhi;
++அன்ன:அன்ன adjectiveSandhi;
++மிகப்பெரிய+intensifier:மிகப்பெரிய adjectiveSandhi;
+ நிறம்+privative%=அற்ற+adjpart%=அ:நிறமற்ற adjectiveSandhi;
+ எண்+privative%=அற்ற+adjpart%=அ:எண்ணற்ற adjectiveSandhi;
+ தேவை+privative%=அற்ற+adjpart%=அ:தேவையற்ற adjectiveSandhi;
+@@ -529,7 +541,7 @@
+ நீர்+privative%=அற்ற+adjpart%=அ:நீரற்ற adjectiveSandhi;
+ பார்வை+privative%=அற்ற+adjpart%=அ:பார்வையற்ற adjectiveSandhi;
+ பொறுப்பு+privative%=அற்ற+adjpart%=அ:பொறுப்பற்ற adjectiveSandhi;
+-பொது+adj+cop%=ஆ+adjpart%=ன:பொதுவான adjectiveSandhi;
++பொது+cop%=ஆ+adjpart%=ன:பொதுவான adjectiveSandhi;
+ வலு+noun+cop%=ஆ+adjpart%=ன:வலுவான adjectiveSandhi;
+ அங்கு+adv+exist+adjpart%=அ:அங்குள்ள adjectiveSandhi;
+ இங்கு+adv+exist+adjpart%=அ:இங்குள்ள adjectiveSandhi;

@@ -1,0 +1,26 @@
+--- ThamizhiFST-otherthan-3-4-62-11-12.foma
++++ ThamizhiFST-otherthan-3-4-62-11-12.foma
+@@ -84,6 +84,12 @@
+ define C16Rule3 {தா} -> {தார}  || _ "^" [{ு}];
+ define C16Rule4 {தா} -> {தந்}  || _ "^" [{து}];
+ 
++# வா uses வரு before present and future suffixes.
++define C17Present {வா} -> {வரு} || _ "^" [{க}];
++define C17WeakFuture {வா} -> {வரு} || _ "^" [{வ}];
++define C17NeuterFutureU {வா} -> {வர} || _ "^" [{ும்}];
++define C17NeuterFutureM {வா} -> {வரு} || _ "^" [{ம்}];
++
+ define C17Rule1 {வா} -> {வ}  || _ "^" [{ந்}];
+ define C17Rule2 {வா} -> {வர}  || _ "^" [{ா} | {ி}| {அ}];
+ define C17Rule3 {வா} -> {வார}  || _ "^" [{ு}];
+@@ -161,6 +167,10 @@
+ 			C16Rule2           	.o.
+ 			C16Rule3           	.o.
+ 			C16Rule4           	.o.
++			C17Present         	.o.
++			C17WeakFuture      	.o.
++			C17NeuterFutureU   	.o.
++			C17NeuterFutureM   	.o.
+ 			C17Rule1           	.o.
+ 			C17Rule2           	.o.
+ 			C17Rule3           	.o.

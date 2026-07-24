@@ -1,0 +1,14 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -399,6 +399,11 @@
+ தெகிழ் C4Vinf;
+ 
+ 
++
++! Reviewed missing verb homographs from source POS audit
++இணர்	C4Vinf;
++சுடர்	C4Vinf;
++நெய்	C4Vinf;
+ LEXICON C4UFinalFutureVinf
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+ +verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ும் #;

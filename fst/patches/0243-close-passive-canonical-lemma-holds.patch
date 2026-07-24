@@ -1,0 +1,138 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -9444,7 +9444,7 @@
+ அவிழ்:அவிழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ அவை:அவைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ அவ்வி:அவ்விக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-ஆக:ஆகப்பட்டுள்ள ModernPassivePerfectNeut;
++ஆகு:ஆகப்பட்டுள்ள ModernPassivePerfectNeut;
+ ஆகரி:ஆகரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ ஆகுலி:ஆகுலிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ ஆக்கு:ஆக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -70477,7 +70477,7 @@
+ அலர்:%<PV%>அலர்க்கப்படு    CPadu61Vinf;
+ அலை:%<PV%>அலையப்படு    CPadu61Vinf;
+ அமிழ்:%<PV%>அமிழப்படு    CPadu61Vinf;
+-அமர்ப்படு                   CPadu61Vinf; 
++அமர்:%<PV%>அமர்ப்படு    CPadu61Vinf;
+ அமை:%<PV%>அமையப்படு    CPadu61Vinf;
+ அறி:%<PV%>அறிக்கப்படு    CPadu61Vinf;
+ அறை:%<PV%>அறையப்படு    CPadu61Vinf;
+@@ -70559,15 +70559,15 @@
+ துழை:%<PV%>துழையப்படு    CPadu61Vinf;
+ துலை:%<PV%>துலையப்படு    CPadu61Vinf;
+ துய்:%<PV%>துய்ப்படு    CPadu61Vinf;
+-துயர்ப்படு                   CPadu61Vinf; 
++துயர்:%<PV%>துயர்ப்படு    CPadu61Vinf;
+ துதை:%<PV%>துதையப்படு    CPadu61Vinf;
+ துளர்:%<PV%>துளர்க்கப்படு    CPadu61Vinf;
+ துளை:%<PV%>துளையப்படு    CPadu61Vinf;
+-துடர்ப்படு                   CPadu61Vinf; 
++துடர்:%<PV%>துடர்ப்படு    CPadu61Vinf;
+ துனை:%<PV%>துனையப்படு    CPadu61Vinf;
+-துணர்ப்படு                   CPadu61Vinf; 
++துணர்:%<PV%>துணர்ப்படு    CPadu61Vinf;
+ துணை:%<PV%>துணையப்படு    CPadu61Vinf;
+-துவர்ப்படு                   CPadu61Vinf; 
++துவர்:%<PV%>துவர்ப்படு    CPadu61Vinf;
+ துவை:%<PV%>துவையப்படு    CPadu61Vinf;
+ தளை:%<PV%>தளையப்படு    CPadu61Vinf;
+ தேய்:%<PV%>தேய்ப்படு    CPadu61Vinf;
+@@ -70584,7 +70584,7 @@
+ சிறை:%<PV%>சிறையப்படு    CPadu61Vinf;
+ சிதை:%<PV%>சிதையப்படு    CPadu61Vinf;
+ சூழ்:%<PV%>சூழப்படு    CPadu61Vinf;
+-சூர்ப்படு                   CPadu61Vinf; 
++சூர்:%<PV%>சூர்ப்படு    CPadu61Vinf;
+ சார்:%<PV%>சார்க்கப்படு    CPadu61Vinf;
+ சாய்:%<PV%>சாய்ப்படு    CPadu61Vinf;
+ சமழ்:%<PV%>சமழப்படு    CPadu61Vinf;
+@@ -70620,7 +70620,7 @@
+ பிறழ்:%<PV%>பிறழப்படு    CPadu61Vinf;
+ பிசிர்:%<PV%>பிசிர்க்கப்படு    CPadu61Vinf;
+ பிணை:%<PV%>பிணையப்படு    CPadu61Vinf;
+-பூர்ப்படு                   CPadu61Vinf; 
++பூர்:%<PV%>பூர்ப்படு    CPadu61Vinf;
+ பகிர்:%<PV%>பகிர்க்கப்படு    CPadu61Vinf;
+ பகர்:%<PV%>பகர்க்கப்படு    CPadu61Vinf;
+ பாய்:%<PV%>பாய்ப்படு    CPadu61Vinf;
+@@ -70629,7 +70629,7 @@
+ புரை:%<PV%>புரையப்படு    CPadu61Vinf;
+ புகழ்:%<PV%>புகழப்படு    CPadu61Vinf;
+ புகை:%<PV%>புகையப்படு    CPadu61Vinf;
+-புலர்ப்படு                   CPadu61Vinf; 
++புலர்:%<PV%>புலர்ப்படு    CPadu61Vinf;
+ புய்:%<PV%>புய்ப்படு    CPadu61Vinf;
+ புதை:%<PV%>புதையப்படு    CPadu61Vinf;
+ புளை:%<PV%>புளையப்படு    CPadu61Vinf;
+@@ -70638,10 +70638,10 @@
+ பொழி:%<PV%>பொழிக்கப்படு    CPadu61Vinf;
+ பொலி:%<PV%>பொலிக்கப்படு    CPadu61Vinf;
+ பொதி:%<PV%>பொதிக்கப்படு    CPadu61Vinf;
+-பெயர்ப்படு                   CPadu61Vinf; 
++பெயர்:%<PV%>பெயர்ப்படு    CPadu61Vinf;
+ பீழ்:%<PV%>பீழப்படு    CPadu61Vinf;
+ போழ்:%<PV%>போழப்படு    CPadu61Vinf;
+-பேர்ப்படு                   CPadu61Vinf; 
++பேர்:%<PV%>பேர்ப்படு    CPadu61Vinf;
+ பவர்:%<PV%>பவர்க்கப்படு    CPadu61Vinf;
+ ஞிமிர்:%<PV%>ஞிமிர்க்கப்படு    CPadu61Vinf;
+ ஞமர்:%<PV%>ஞமர்க்கப்படு    CPadu61Vinf;
+@@ -70654,7 +70654,7 @@
+ ஓய்:%<PV%>ஓய்ப்படு    CPadu61Vinf;
+ ஊழ்:%<PV%>ஊழப்படு    CPadu61Vinf;
+ ஊய்:%<PV%>ஊய்ப்படு    CPadu61Vinf;
+-ஊர்ப்படு                   CPadu61Vinf; 
++ஊர்:%<PV%>ஊர்ப்படு    CPadu61Vinf;
+ ஆழ்:%<PV%>ஆழப்படு    CPadu61Vinf;
+ ஆராய்:%<PV%>ஆராய்ப்படு    CPadu61Vinf;
+ ஒசி:%<PV%>ஒசிக்கப்படு    CPadu61Vinf;
+@@ -70663,10 +70663,10 @@
+ உராய்:%<PV%>உராய்ப்படு    CPadu61Vinf;
+ உரை:%<PV%>உரையப்படு    CPadu61Vinf;
+ உகை:%<PV%>உகையப்படு    CPadu61Vinf;
+-உலர்ப்படு                   CPadu61Vinf; 
++உலர்:%<PV%>உலர்ப்படு    CPadu61Vinf;
+ உலை:%<PV%>உலையப்படு    CPadu61Vinf;
+ உய்:%<PV%>உய்ப்படு    CPadu61Vinf;
+-உயர்ப்படு                   CPadu61Vinf; 
++உயர்:%<PV%>உயர்ப்படு    CPadu61Vinf;
+ உமிழ்:%<PV%>உமிழப்படு    CPadu61Vinf;
+ உறழ்:%<PV%>உறழப்படு    CPadu61Vinf;
+ உறி:%<PV%>உறிக்கப்படு    CPadu61Vinf;
+@@ -70699,7 +70699,7 @@
+ நளி:%<PV%>நளிக்கப்படு    CPadu61Vinf;
+ நனை:%<PV%>நனையப்படு    CPadu61Vinf;
+ நெகிழ்:%<PV%>நெகிழப்படு    CPadu61Vinf;
+-நேர்ப்படு                   CPadu61Vinf; 
++நேர்:%<PV%>நேர்ப்படு    CPadu61Vinf;
+ நோய்:%<PV%>நோய்ப்படு    CPadu61Vinf;
+ நவிர்:%<PV%>நவிர்க்கப்படு    CPadu61Vinf;
+ இழை:%<PV%>இழையப்படு    CPadu61Vinf;
+@@ -70712,7 +70712,7 @@
+ இசை:%<PV%>இசையப்படு    CPadu61Vinf;
+ இடை:%<PV%>இடையப்படு    CPadu61Vinf;
+ இணை:%<PV%>இணையப்படு    CPadu61Vinf;
+-இவர்ப்படு                   CPadu61Vinf; 
++இவர்:%<PV%>இவர்ப்படு    CPadu61Vinf;
+ அட்டு:%<PV%>அட்டப்படு    CPadu61Vinf;
+ அடக்கு:%<PV%>அடக்கப்படு    CPadu61Vinf;
+ அடைச்சு:%<PV%>அடைச்சப்படு    CPadu61Vinf;
+@@ -71391,7 +71391,7 @@
+ சாம்பு:%<PV%>சாம்பப்படு    CPadu61Vinf;
+ சார்த்து:%<PV%>சார்த்தப்படு    CPadu61Vinf;
+ சாத்து:%<PV%>சாத்தப்படு    CPadu61Vinf;
+-சண்ணிப்படு                   CPadu61Vinf; 
++சண்ணி:%<PV%>சண்ணிப்படு    CPadu61Vinf;
+ சங்கு:%<PV%>சங்கப்படு    CPadu61Vinf;
+ சலுப்பு:%<PV%>சலுப்பப்படு    CPadu61Vinf;
+ சல்லு:%<PV%>சல்லப்படு    CPadu61Vinf;
+@@ -71919,7 +71919,7 @@
+ ஆற்று:%<PV%>ஆற்றப்படு    CPadu61Vinf;
+ ஆறு:%<PV%>ஆறப்படு    CPadu61Vinf;
+ ஆக்கு:%<PV%>ஆக்கப்படு    CPadu61Vinf;
+-ஆகப்படு                   CPadu61Vinf; 
++ஆகு:%<PV%>ஆகப்படு    CPadu61Vinf;
+ ஆவு:%<PV%>ஆவப்படு    CPadu61Vinf;
+ ஆங்கு:%<PV%>ஆங்கப்படு    CPadu61Vinf;
+ ஆலு:%<PV%>ஆலப்படு    CPadu61Vinf;

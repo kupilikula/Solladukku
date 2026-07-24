@@ -1,0 +1,98 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -866,6 +866,7 @@
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+sim+caus%=வி+past%=த்+1sg%=ஏன்:^வித்தேன் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+1pl%=ஓம்:^வித்தோம் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+1sg%=அன்:^வித்தன் VerbQuestion;
+@@ -11179,6 +11180,7 @@
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^காதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^காதீர்கள் #;
+++verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^காதீங்க #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^காமல் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^காம #;
+ +verb+nonfin+sim+neg%=ஆ+verbalnoun%=மை:^காமை #;
+@@ -15927,6 +15929,7 @@
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^லுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^லாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^லாதீர்கள் #;
+++verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^லாதீங்க #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^லாமல் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்+colloq:^லாம #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்+sandhip%=ப்:^லாமல்ப் #;
+@@ -21662,6 +21665,7 @@
+ 
+ LEXICON ModernC9Imperatives
+ கொள்+verb+fin+sim+imp%=∅+2pl%=உங்கள்:கொள்ளுங்கள் #;
++கொள்+verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:கொள்ளுங்க #;
+ 
+ LEXICON C9Vinf
+ 
+@@ -22582,6 +22586,7 @@
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ட்குங்க #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ட்குங்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ட்காதீர்கள் #;
+++verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ட்காதீங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ட்காதே #;
+ +verb+fin+sim+middle+fut%=ப்+1pl%=ஓம்:^ட்போம் VerbQuestion;
+ +verb+fin+sim+middle+fut%=ப்+1sg%=ஏன்:^ட்பேன் VerbQuestion;
+@@ -32941,6 +32946,7 @@
+ +verb+fin+complex+aspect+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+complex+aspect+caus%=வி+past%=த்+1sg%=ஏன்:^வித்தேன் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=வி+past%=த்+1pl%=ஓம்:^வித்தோம் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=வி+past%=த்+1sg%=அன்:^வித்தன் VerbQuestion;
+@@ -39520,6 +39526,7 @@
+ +verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்+colloq:^ங்க #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^காதே #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^காதீர்கள் #;
+++verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^காதீங்க #;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+1sg%=ஏன்:^ப்பித்தேன் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+1pl%=ஓம்:^ப்பித்தோம் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+1sg%=அன்:^ப்பித்தனன் VerbQuestion;
+@@ -43363,6 +43370,7 @@
+ +verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+1sg%=ஏன்:^வித்தேன் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+1pl%=ஓம்:^வித்தோம் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+1sg%=அன்:^வித்தன் VerbQuestion;
+@@ -53510,6 +53518,7 @@
+ +verb+fin+complex+caus+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+caus+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+caus+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+complex+caus+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+1sg%=ஏன்:^வித்தேன் VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+1pl%=ஓம்:^வித்தோம் VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+1sg%=அன்:^வித்தனன் VerbQuestion;
+@@ -72379,6 +72388,7 @@
+ +verb+fin+complex+mood+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+mood+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+mood+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+complex+mood+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+1sg%=ஏன்:^வித்தேன் VerbQuestion;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+1pl%=ஓம்:^வித்தோம் VerbQuestion;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+1sg%=அன்:^வித்தனன் VerbQuestion;
+@@ -82365,6 +82375,7 @@
+ +verb+fin+complex+nonattitude+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+1sg%=ஏன்:^வித்தேன் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+1pl%=ஓம்:^வித்தோம் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+1sg%=அன்:^வித்தன் VerbQuestion;
+@@ -89937,6 +89948,7 @@
+ +verb+nonfin+complex+passive+verbalnoun+neg%=இல்லை:^வதில்லை #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+complex+passive+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+1sg%=ஏன்:^வித்தேன் VerbQuestion;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+1pl%=ஓம்:^வித்தோம் VerbQuestion;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+1sg%=அன்:^வித்தன் VerbQuestion;

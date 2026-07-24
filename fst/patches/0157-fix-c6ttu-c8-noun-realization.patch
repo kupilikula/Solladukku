@@ -1,0 +1,168 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -52748,7 +52748,7 @@
+ 
+ +noun+loc:^ட்டில் #;
+ +noun+pl+loc:^களில் #;
+-+noun+loc:^இடம் #;
+++noun+loc:^ட்டிடம் #;
+ +noun+pl+loc:^களிடம் #;
+ 
+ +noun+nom+foc:^தான் #;
+@@ -52967,11 +52967,11 @@
+ +noun+soc:^ட்டோடு #;
+ +noun+pl+soc:^களோடு #;
+ 
+-+noun+abl:^இல் #;
+++noun+abl:^ட்டில் #;
+ +noun+pl+abl:^களில் #;
+-+noun+abl:^இன் #;
+++noun+abl:^ட்டின் #;
+ +noun+pl+abl:^களின் #;
+-+noun+abl:^இலிருந்து #;
+++noun+abl:^ட்டிலிருந்து #;
+ +noun+pl+abl:^களிலிருந்து #;
+ 
+ +noun+gen:^ட்டது #;
+@@ -52979,9 +52979,9 @@
+ +noun+gen:^ட்டின் #;
+ +noun+pl+gen:^களின் #;
+ 
+-+noun+loc:^இல் #;
+++noun+loc:^ட்டில் #;
+ +noun+pl+loc:^களில் #;
+-+noun+loc:^இடம் #;
+++noun+loc:^ட்டிடம் #;
+ +noun+pl+loc:^களிடம் #;
+ 
+ +noun+nom+foc:^தான் #;
+@@ -66266,7 +66266,7 @@
+ அறிவேறு	C8SgRoot;
+ அனலேறு	C8SgRoot;
+ அன்ஆண்பால்ஈறு	C8SgRoot;
+-அன்புபற்று	C8SgRoot;
++அன்புபற்று	C7SgRoot;
+ ஆதவன்ஞாயிறு	C8SgRoot;
+ ஆறு	C8SgRoot;
+ ஆற்றலேறு	C8SgRoot;
+@@ -66275,7 +66275,7 @@
+ இறையேறு	C8SgRoot;
+ இன்னேறு	C8SgRoot;
+ ஈழவேறு	C8SgRoot;
+-ஊற்று	C8SgRoot;
++ஊற்று	C7SgRoot;
+ எழிலேறு	C8SgRoot;
+ ஏறு	C8SgRoot;
+ ஒப்பிலேறு	C8SgRoot;
+@@ -66284,53 +66284,53 @@
+ கல்வியேறு	C8SgRoot;
+ காரேறு	C8SgRoot;
+ காவலேறு	C8SgRoot;
+-குணக்குன்று	C8SgRoot;
++குணக்குன்று	C7SgRoot;
+ குறளேறு	C8SgRoot;
+-குன்று	C8SgRoot;
++குன்று	C7SgRoot;
+ கைம்மாறு	C8SgRoot;
+-கோடைபருவங்களில்ஒன்று	C8SgRoot;
++கோடைபருவங்களில்ஒன்று	C7SgRoot;
+ கோதையேறு	C8SgRoot;
+ சாரலேறு	C8SgRoot;
+-சான்று	C8SgRoot;
++சான்று	C7SgRoot;
+ சுடர்ஞாயிறு	C8SgRoot;
+ சூதுகவறு	C8SgRoot;
+-செய்குன்று	C8SgRoot;
++செய்குன்று	C7SgRoot;
+ செறு	C8SgRoot;
+ சோணைஓராறு	C8SgRoot;
+ ஞாயிறு	C8SgRoot;
+ தகையேறு	C8SgRoot;
+ தமிழேறு	C8SgRoot;
+-தெற்குதிசைகளுள்ஒன்று	C8SgRoot;
+-இளங்காற்று	C8SgRoot;
++தெற்குதிசைகளுள்ஒன்று	C7SgRoot;
++இளங்காற்று	C7SgRoot;
+ நறு	C8SgRoot;
+ நீராறு	C8SgRoot;
+-நீலம்நிறங்களிலொன்று	C8SgRoot;
+-பங்குகூறு	C8SgRoot;
++நீலம்நிறங்களிலொன்று	C7SgRoot;
++பங்குகூறு	C7SgRoot;
+ பண்பேறு	C8SgRoot;
+-பவளக்குன்று	C8SgRoot;
+-பழங்குன்று	C8SgRoot;
++பவளக்குன்று	C7SgRoot;
++பழங்குன்று	C7SgRoot;
+ புகழேறு	C8SgRoot;
+ புரட்சியேறு	C8SgRoot;
+-பூங்கன்று	C8SgRoot;
+-பூங்குன்று	C8SgRoot;
++பூங்கன்று	C7SgRoot;
++பூங்குன்று	C7SgRoot;
+ பொருநைஓராறு	C8SgRoot;
+-பொற்குன்று	C8SgRoot;
++பொற்குன்று	C7SgRoot;
+ பொன்னிஓராறு	C8SgRoot;
+ போரேறு	C8SgRoot;
+ மன்நிலைபேறு	C8SgRoot;
+-மன்றம்ஃமன்று	C8SgRoot;
++மன்றம்ஃமன்று	C7SgRoot;
+ மான்ஆண்பால்ஈறு	C8SgRoot;
+-மும்மைமூன்று	C8SgRoot;
+-மூமூன்று	C8SgRoot;
++மும்மைமூன்று	C7SgRoot;
++மூமூன்று	C7SgRoot;
+ வல்லூறு	C8SgRoot;
+ விடியலேறு	C8SgRoot;
+-விடுதலைக்காற்று	C8SgRoot;
++விடுதலைக்காற்று	C7SgRoot;
+ வைகைஓராறு	C8SgRoot;
+ வைகையாறு	C8SgRoot;
+  பேறு	C8SgRoot; 
+ மண்ணியாறு	C8SgRoot; 
+ முகக்கயிறு	C8SgRoot; 
+-மேலக்காற்று	C8SgRoot; 
++மேலக்காற்று	C7SgRoot;
+ வடவாறு	C8SgRoot; 
+ வயிறு	C8SgRoot; 
+ வயிறு	C8SgRoot; 
+@@ -66363,11 +66363,11 @@
+ +noun+pl+inst:^களினால் #;
+ +noun+pl+inst:^களால் #;
+ 
+-+noun+dat:^க்கு #;
+-+noun+dat+sandhip:^க்குப் #;
+-+noun+dat+sandhic:^க்குச் #;
+-+noun+dat+sandhit:^க்குத் #;
+-+noun+dat+sandhik:^க்குக் #;
+++noun+dat:^றுக்கு #;
+++noun+dat+sandhip:^றுக்குப் #;
+++noun+dat+sandhic:^றுக்குச் #;
+++noun+dat+sandhit:^றுக்குத் #;
+++noun+dat+sandhik:^றுக்குக் #;
+ +noun+dat+pl:^களுக்கு #;
+ +noun+dat+pl+sandhip:^களுக்குப் #;
+ +noun+dat+pl+sandhic:^களுக்குச் #;
+--- tamil-noun.foma
++++ tamil-noun.foma
+@@ -13,9 +13,10 @@
+ define R1 {்} -> 0 || LongChar CharSet1 _ "^" [{ி}|{ு}|{ோ}|{து}|{ை}|{ா}];
+ define R101 {ய்} -> 0 || LongChar  _ "^" [{ோ}];
+ define R2 {்} -> 0 || CharSet2 _ "^" [{ி}|{ு}|{ோ}|{து}|{ை}|{ா}];
++define R3TTU {ட்டு} -> 0 || _ "^" {ட்ட}; # For மொட்டு -> மொட்டை
+ define R3 {டு} -> 0 ||  _ "^" {ட்ட};   #For Kaadu class
+ define R4 {ு} -> 0 || _ "^" {ஆ}; #For Vandu
+-define R5 {று} -> 0 || _ "^" {ற}; #For Aaru
++define R5 {று} -> {ற்} || _ "^" {ற}; # For ஆறு -> ஆற்றை
+ define R19 {ன்}-> 0 ||  _ "^" [{ற்த்}|{ற்ச்}|{ற்ட்}|{ற்ப்}]; #For பொற்  
+ define R6 {ன்} -> 0 || _ "^" [{ர்க}]; #For Manavan
+ define R7 {ன்} -> 0 || _ "^" [{னி}|{னோ}|{னா}|{னு}]; #For Manavan
+@@ -40,6 +41,7 @@
+ 						R1				.o.
+ 						R101				.o.
+ 						R2				.o.
++						R3TTU				.o.
+ 						R3				.o.
+ 						R4				.o.
+ 						R5				.o.	

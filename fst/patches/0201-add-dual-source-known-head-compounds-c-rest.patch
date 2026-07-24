@@ -1,0 +1,48 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -43,6 +43,18 @@
+ 
+ !!!C1.lexc!!!
+ LEXICON ClassOne
++
++! Dual-source compounds inheriting a reviewed right-head class
++சோரப்பெய்    C1Vinf;
++தலைப்பெய்    C1Vinf;
++துன்னம்பெய்    C1Vinf;
++நீர்பெய்    C1Vinf;
++பூக்கொய்    C1Vinf;
++மண்ணுப்பெய்    C1Vinf;
++மழைபெய்    C1Vinf;
++முத்துமழைபெய்    C1Vinf;
++மூத்திரம்பெய்    C1Vinf;
++வாய்ப்பெய்    C1Vinf;
+ 
+ தொழு	 C1Vinf;
+ பொரு	 C1Vinf;
+@@ -405,6 +417,12 @@
+ +verb+nonfin+sim+inf%=அ: #;
+ 
+ LEXICON ClassFive
++
++! Dual-source compounds inheriting a reviewed right-head class
++அணிவிளக்கு    C5Vinf;
++கைம்மாறு    C5Vinf;
++மட்டுத்தப்பு    C5Vinf;
++வெளிநாடு    C5Vinf;
+ 
+ ! Source-backed C5 verb tranche: remaining POS-verb citation roots after stem disambiguation.
+ அக்குளுப்பாய்ச்சு	C5Vinf;
+@@ -11517,6 +11535,13 @@
+ +verb+nonfin+sim+vpart%=உ:^்டு #;
+ 
+ LEXICON ClassSixOne
++
++! Dual-source compounds inheriting a reviewed right-head class
++உருப்போடு    C6Vinf;
++கற்போடு    C6Vinf;
++தீப்படு    C6Vinf;
++பலப்படு    C6Vinf;
++புகடு    C6Vinf;
+ 
+ அடு      C6Vinf;
+ கெடு      C6Vinf;

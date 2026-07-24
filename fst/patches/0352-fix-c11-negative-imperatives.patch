@@ -1,0 +1,13 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -2968,8 +2968,8 @@
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+-+verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+-+verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^க்காதே #;
+++verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^க்காதீர்கள் #;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+1sg%=ஏன்:^ப்பித்தேன் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+1pl%=ஓம்:^ப்பித்தோம் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+1sg%=அன்:^ப்பித்தன் VerbQuestion;

@@ -1,0 +1,50 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -3424,7 +3424,6 @@
+ போக்கித்தொலை	VtholaiInf;
+ போட்டித்தொலை	VtholaiInf;
+ போதித்தொலை	VtholaiInf;
+-போித்தொலை	VtholaiInf;
+ பொக்கித்தொலை	VtholaiInf;
+ பொம்மித்தொலை	VtholaiInf;
+ பொசுக்கித்தொலை	VtholaiInf;
+@@ -4187,12 +4186,10 @@
+ ஆராட்டித்தொலை	VtholaiInf;
+ ஆழ்த்தித்தொலை	VtholaiInf;
+ அற்கித்தொலை	VtholaiInf;
+-அறவிடித்தொலை	VtholaiInf;
+ அறிவுறுத்தித்தொலை	VtholaiInf;
+ அறாவித்தொலை	VtholaiInf;
+ அகற்றித்தொலை	VtholaiInf;
+ அகவித்தொலை	VtholaiInf;
+-அகப்படித்தொலை	VtholaiInf;
+ அகட்டித்தொலை	VtholaiInf;
+ அவாவித்தொலை	VtholaiInf;
+ அப்புறப்படுத்தித்தொலை	VtholaiInf;
+@@ -4218,14 +4215,12 @@
+ அடக்கித்தொலை	VtholaiInf;
+ அடைச்சித்தொலை	VtholaiInf;
+ அடைசித்தொலை	VtholaiInf;
+-அடிபடித்தொலை	VtholaiInf;
+ அடிமையாக்கித்தொலை	VtholaiInf;
+ அடசித்தொலை	VtholaiInf;
+ அடங்கித்தொலை	VtholaiInf;
+ அளுக்கித்தொலை	VtholaiInf;
+ அள்ளித்தொலை	VtholaiInf;
+ அளறித்தொலை	VtholaiInf;
+-அளவிடித்தொலை	VtholaiInf;
+ அளவித்தொலை	VtholaiInf;
+ அளாவித்தொலை	VtholaiInf;
+ அணுகித்தொலை	VtholaiInf;
+@@ -4330,6 +4325,11 @@
+ ஈன்றுத்தொலை	VtholaiInf;
+ கேட்டுத்தொலை	VtholaiInf;
+ 
++அகப்பட்டுத்தொலை    VtholaiInf;
++அடிபட்டுத்தொலை    VtholaiInf;
++அறவிட்டுத்தொலை    VtholaiInf;
++அளவிட்டுத்தொலை    VtholaiInf;
++போய்த்தொலை    VtholaiInf;
+ LEXICON VtholaiInf
+ 
+ 

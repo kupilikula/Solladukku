@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -6907,6 +6907,7 @@
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3pln%=∅:^விும் VerbQuestion;
+ +verb+fin+sim+opt%=க:^க #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை:^அவில்லை #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq:^அல #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhip%=ப்:^அவில்லைப் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhic%=ச்:^அவில்லைச் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhit%=த்:^அவில்லைத் #;

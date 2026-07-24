@@ -1,0 +1,29 @@
+--- tamil-adjectives.lexc
++++ tamil-adjectives.lexc
+@@ -5,6 +5,7 @@
+ 
+ LEXICON Root
+ nominalCopularParticiples ;
++deicticAdverbCopularParticiples ;
+ adjectives ;
+ 
+ 
+@@ -496,6 +497,18 @@
+ 
+ LEXICON nominalCopularParticiple
+ +noun+nom+cop%=ஆ+adjpart%=ன:0 #;
++
++LEXICON deicticAdverbCopularParticiples
++! Reviewed deictic/manner adverbs with the copular participle -ஆன.
++இவ்வாறு:இவ்வாறான	deicticAdverbCopularParticiple;
++அவ்வாறு:அவ்வாறான	deicticAdverbCopularParticiple;
++எவ்வாறு:எவ்வாறான	deicticAdverbCopularParticiple;
++இப்படி:இப்படியான	deicticAdverbCopularParticiple;
++அப்படி:அப்படியான	deicticAdverbCopularParticiple;
++எப்படி:எப்படியான	deicticAdverbCopularParticiple;
++
++LEXICON deicticAdverbCopularParticiple
+++adv+cop%=ஆ+adjpart%=ன:0 #;
+ 
+ LEXICON adjectives
+ இவ்வகை+dem+prox+type:இவ்வகை	 adjective; 

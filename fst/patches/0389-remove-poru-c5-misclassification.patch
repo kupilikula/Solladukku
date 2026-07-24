@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -8087,7 +8087,6 @@
+ பிறகிடு	C5Vinf;
+ பிறகுகாண்ணு	C5Vinf;
+ பிறக்கிடு	C5Vinf;
+-பொறு	C5Vinf;
+ முத்தாடு	C5Vinf;
+ மேலிடு	C5Vinf;
+ ரெம்பு	C5Vinf;

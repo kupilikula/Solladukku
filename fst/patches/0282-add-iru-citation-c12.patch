@@ -1,0 +1,11 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -10,6 +10,8 @@
+ ClassIru12 ;
+ ClassKondiru12 ;
+ 
++இரு+verb+nonfin+sim+verbalnoun%=தல்:இருத்தல் #;
++
+ 
+ ! Source-backed C12 verb tranche: tier-2 multi-source simple citation roots.
+ அகமுகமா  C12Vinf;

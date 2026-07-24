@@ -1,0 +1,146 @@
+--- ThamizhiVerbs-C62.lexc
++++ ThamizhiVerbs-C62.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +foc +purpose +cop +adjpart +comp +add
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu
+ 
+ LEXICON Root
+ 
+@@ -35,7 +35,10 @@
+ +verb+fin+sim+strong+past%=க்+3ple%=ஆர்கள்:^க்கார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=க்+3sghe%=ஆர்கள்:^க்கார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=க்+3sgn%=அது:^க்கது VerbQuestion;
+++verb+fin+sim+strong+past%=க்+3sgn%=அது+add%=உம்:^க்கதும் VerbQuestion;
+++verb+nonfin+sim+strong+past%=க்+vpart_tum%=தும்:^க்கதும் VerbQuestion;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+comp%=ஆவது:^க்கதாவது #;
+++verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+comp%=ஆவது+add%=உம்:^க்கதாவதும் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ:^க்கதை #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^க்கதையும் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+inst%=ஆல்:^க்கதால் #;
+@@ -47,6 +50,7 @@
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+loc%=இல்+add%=உம்:^க்கதிலும் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^க்கதிலேயே #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+abl%=இலிருந்து:^க்கதிலிருந்து #;
+++verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+abl%=இலிருந்து+add%=உம்:^க்கதிலிருந்தும் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+abl%=இலிருந்து+add%=உம்:^க்கதிலிருந்தும் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+soc%=உடன்:^க்கதுடன் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+soc%=உடன்+add%=உம்:^க்கதுடனும் #;
+@@ -60,6 +64,7 @@
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்கதற்குத் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^க்கதற்குக் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+trans%=ஆக:^க்கதாக #;
+++verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^க்கதாகும் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்கதாகவும் #;
+ +verb+fin+sim+strong+past%=க்+3pln%=அன:^க்கன VerbQuestionNeuterPlural;
+ +verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:^கிறேன் VerbQuestion;
+@@ -99,6 +104,7 @@
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^கிறதற்குத் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^கிறதற்குக் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+trans%=ஆக:^கிறதாக #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^கிறதாகும் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^கிறதாகவும் #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன VerbQuestionNeuterPlural;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் VerbQuestion;
+@@ -139,6 +145,7 @@
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^கின்றதற்குத் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^கின்றதற்குக் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக:^கின்றதாக #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^கின்றதாகும் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^கின்றதாகவும் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3pln%=அன:^கின்றன VerbQuestionNeuterPlural;
+ +verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் VerbQuestion;
+@@ -189,6 +196,7 @@
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^வதற்குத் #;
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^வதற்குக் #;
+ +verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக:^வதாக #;
+++verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^வதாகும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக+add%=உம்:^வதாகவும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+@@ -209,7 +217,10 @@
+ +verb+fin+sim+caus%=வி+past%=க்+3ple%=ஆர்கள்:^விக்கார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=க்+3sghe%=ஆர்கள்:^விக்கார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=க்+3sgn%=அது:^விக்கது VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=க்+3sgn%=அது+add%=உம்:^விக்கதும் VerbQuestion;
+++verb+nonfin+sim+caus%=வி+past%=க்+vpart_tum%=தும்:^விக்கதும் VerbQuestion;
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+comp%=ஆவது:^விக்கதாவது #;
+++verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+comp%=ஆவது+add%=உம்:^விக்கதாவதும் #;
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+acc%=ஐ:^விக்கதை #;
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^விக்கதையும் #;
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+inst%=ஆல்:^விக்கதால் #;
+@@ -221,6 +232,7 @@
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+loc%=இல்+add%=உம்:^விக்கதிலும் #;
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^விக்கதிலேயே #;
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+abl%=இலிருந்து:^விக்கதிலிருந்து #;
+++verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+abl%=இலிருந்து+add%=உம்:^விக்கதிலிருந்தும் #;
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+abl%=இலிருந்து+add%=உம்:^விக்கதிலிருந்தும் #;
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+soc%=உடன்:^விக்கதுடன் #;
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+soc%=உடன்+add%=உம்:^விக்கதுடனும் #;
+@@ -234,6 +246,7 @@
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^விக்கதற்குத் #;
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^விக்கதற்குக் #;
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+trans%=ஆக:^விக்கதாக #;
+++verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^விக்கதாகும் #;
+ +verb+nonfin+sim+caus%=வி+past%=க்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^விக்கதாகவும் #;
+ +verb+fin+sim+caus%=வி+past%=க்+3pln%=அன:^விக்கன VerbQuestionNeuterPlural;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+1sg%=ஏன்:^விகிறேன் VerbQuestion;
+@@ -273,6 +286,7 @@
+ +verb+nonfin+sim+caus%=வி+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^விகிறதற்குத் #;
+ +verb+nonfin+sim+caus%=வி+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^விகிறதற்குக் #;
+ +verb+nonfin+sim+caus%=வி+pres%=கிற்+verbalnoun%=அது+trans%=ஆக:^விகிறதாக #;
+++verb+nonfin+sim+caus%=வி+pres%=கிற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^விகிறதாகும் #;
+ +verb+nonfin+sim+caus%=வி+pres%=கிற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^விகிறதாகவும் #;
+ +verb+fin+sim+caus%=வி+pres%=கிற்+3pln%=அன:^விகிறன VerbQuestionNeuterPlural;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+1sg%=ஏன்:^விகின்றேன் VerbQuestion;
+@@ -312,6 +326,7 @@
+ +verb+nonfin+sim+caus%=வி+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^விகின்றதற்குத் #;
+ +verb+nonfin+sim+caus%=வி+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^விகின்றதற்குக் #;
+ +verb+nonfin+sim+caus%=வி+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக:^விகின்றதாக #;
+++verb+nonfin+sim+caus%=வி+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^விகின்றதாகும் #;
+ +verb+nonfin+sim+caus%=வி+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^விகின்றதாகவும் #;
+ +verb+fin+sim+caus%=வி+pres%=கின்ற்+3pln%=அன:^விகின்றன VerbQuestionNeuterPlural;
+ +verb+fin+sim+caus%=வி+fut%=வ்+1sg%=ஏன்:^விவேன் VerbQuestion;
+@@ -350,13 +365,9 @@
+ +verb+nonfin+sim+inf%=அ:^அ #;
+ +verb+nonfin+sim+inf%=அ+add%=உம்:^அவும் #;
+ +verb+nonfin+sim+inf%=அ+sandhic%=ச்:^அச் #;
+-+verb+nonfin+sim+inf%=அ+sandhic%=ச்+add%=உம்:^அச்வும் #;
+ +verb+nonfin+sim+inf%=அ+sandhit%=த்:^அத் #;
+-+verb+nonfin+sim+inf%=அ+sandhit%=த்+add%=உம்:^அத்வும் #;
+ +verb+nonfin+sim+inf%=அ+sandhik%=க்:^அக் #;
+-+verb+nonfin+sim+inf%=அ+sandhik%=க்+add%=உம்:^அக்வும் #;
+ +verb+nonfin+sim+inf%=அ+sandhip%=ப்:^அப் #;
+-+verb+nonfin+sim+inf%=அ+sandhip%=ப்+add%=உம்:^அப்வும் #;
+ +verb+nonfin+sim+vpart%=உ:^ந்து #;
+ +verb+nonfin+sim+vpart%=உ+add%=உம்:^ந்தும் #;
+ +verb+nonfin+sim+vpart%=உ+foc%=ஏ:^ந்தே #;
+@@ -381,10 +392,15 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^ாவிட்டாலும் #;
+ +verb+nonfin+sim+past%=க்+adjpart%=அ:^க்க #;
+++verb+nonfin+sim+past%=க்+adjpart%=அ+vpart_potu%=போது:^க்கபோது #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ+vpart_potu%=போது:^கின்றபோது #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+vpart_potu%=போது:^கிறபோது #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+vpart_potu%=போது:^ும்போது #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+++verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+vpart_potu%=போது:^ாதபோது #;
+ 
+ ! Complete modern present-perfect and short past human-plural paradigms.
+ +verb+fin+sim+strong+past%=க்+3ple%=னர்:^க்கனர் VerbQuestion;
+@@ -428,8 +444,10 @@
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்குள்ளதற்குத் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^க்குள்ளதற்குக் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக:^க்குள்ளதாக #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^க்குள்ளதாகும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்குள்ளதாகவும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ:^க்குள்ள #;
+++verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+vpart_potu%=போது:^க்குள்ளபோது #;
+ 
+ ! Productive participial human and future-neuter nominals.
+ +verb+nonfin+sim+past%=க்+adjpart%=அ+PartNoun%=அவர்+human+nom:^க்கவர் #;

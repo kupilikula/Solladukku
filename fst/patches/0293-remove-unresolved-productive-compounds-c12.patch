@@ -1,0 +1,194 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -1055,7 +1055,6 @@
+ வேதித்திரு      CIru12Inf; 
+ வேர்த்திரு      CIru12Inf; 
+ வேகித்திரு      CIru12Inf; 
+-வேங்குத்திரு      CIru12Inf; 
+ வீதித்திரு      CIru12Inf; 
+ வஞ்சித்திரு      CIru12Inf; 
+ யாபித்திரு      CIru12Inf; 
+@@ -1698,7 +1697,6 @@
+ நொசித்திரு      CIru12Inf; 
+ நெகிழ்த்திரு      CIru12Inf; 
+ நெறித்திரு      CIru12Inf; 
+-நெறுமுத்திரு      CIru12Inf; 
+ நெறுநெறுத்திரு      CIru12Inf; 
+ நெடித்திரு      CIru12Inf; 
+ நெடுத்திரு      CIru12Inf; 
+@@ -1835,7 +1833,6 @@
+ சாதாளித்திரு      CIru12Inf; 
+ சானித்திரு      CIru12Inf; 
+ சாடித்திரு      CIru12Inf; 
+-சாட்டுத்திரு      CIru12Inf; 
+ சண்ணித்திரு      CIru12Inf; 
+ சணாய்த்திரு      CIru12Inf; 
+ சையோகித்திரு      CIru12Inf; 
+@@ -1866,7 +1863,6 @@
+ செங்காரித்திரு      CIru12Inf; 
+ சகித்திரு      CIru12Inf; 
+ சகளீகரித்திரு      CIru12Inf; 
+-சக்களித்திரு      CIru12Inf; 
+ சகாரித்திரு      CIru12Inf; 
+ சபித்திரு      CIru12Inf; 
+ சப்பளித்திரு      CIru12Inf; 
+@@ -1878,7 +1874,6 @@
+ சன்னியாசித்திரு      CIru12Inf; 
+ சன்னித்திரு      CIru12Inf; 
+ சலித்திரு      CIru12Inf; 
+-சல்லரித்திரு      CIru12Inf; 
+ சல்லாபித்திரு      CIru12Inf; 
+ சற்கரித்திரு      CIru12Inf; 
+ சட்டித்திரு      CIru12Inf; 
+@@ -1906,7 +1901,6 @@
+ சங்கரித்திரு      CIru12Inf; 
+ சங்கற்பித்திரு      CIru12Inf; 
+ சூத்திரித்திரு      CIru12Inf; 
+-சூர்த்திரு      CIru12Inf; 
+ சூரணித்திரு      CIru12Inf; 
+ சூக்குமித்திரு      CIru12Inf; 
+ சூசிப்பித்திரு      CIru12Inf; 
+@@ -1945,7 +1939,6 @@
+ ஒடித்திரு      CIru12Inf; 
+ ஒஞ்சித்திரு      CIru12Inf; 
+ ஏய்த்திரு      CIru12Inf; 
+-ஏர்த்திரு      CIru12Inf; 
+ ஏம்பலித்திரு      CIru12Inf; 
+ ஏற்பித்திரு      CIru12Inf; 
+ ஔவித்திரு      CIru12Inf; 
+@@ -2316,7 +2309,6 @@
+ சுழன்றிரு      CIru12Inf; 
+ சான்றிரு      CIru12Inf; 
+ சோன்றிரு      CIru12Inf; 
+-சொன்றிரு      CIru12Inf; 
+ சூன்றிரு      CIru12Inf; 
+ நிழன்றிரு      CIru12Inf; 
+ நிரன்றிரு      CIru12Inf; 
+@@ -2429,7 +2421,6 @@
+ தசைந்திரு      CIru12Inf; 
+ துழைந்திரு      CIru12Inf; 
+ துலைந்திரு      CIru12Inf; 
+-துய்ந்திரு      CIru12Inf; 
+ துயர்ந்திரு      CIru12Inf; 
+ துமிந்திரு      CIru12Inf; 
+ துதைந்திரு      CIru12Inf; 
+@@ -2533,7 +2524,6 @@
+ பிணிந்திரு      CIru12Inf; 
+ பிணைந்திரு      CIru12Inf; 
+ பரிந்திரு      CIru12Inf; 
+-பூர்ந்திரு      CIru12Inf; 
+ பகிர்ந்திரு      CIru12Inf; 
+ பகர்ந்திரு      CIru12Inf; 
+ பகுந்திரு      CIru12Inf; 
+@@ -3286,7 +3276,6 @@
+ சாடியிரு      CIru12Inf; 
+ சார்த்தியிரு      CIru12Inf; 
+ சாத்தியிரு      CIru12Inf; 
+-சண்ணிியிரு      CIru12Inf; 
+ சங்கியிரு      CIru12Inf; 
+ சலுப்பியிரு      CIru12Inf; 
+ சல்லியிரு      CIru12Inf; 
+@@ -3766,7 +3755,6 @@
+ உரைசியிரு      CIru12Inf; 
+ உரைஞ்சியிரு      CIru12Inf; 
+ உரிஞ்சியிரு      CIru12Inf; 
+-உரிியிரு      CIru12Inf; 
+ உரசியிரு      CIru12Inf; 
+ உராவியிரு      CIru12Inf; 
+ உராய்ஞ்சியிரு      CIru12Inf; 
+@@ -4689,7 +4677,6 @@
+ வேதித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ வேர்த்துக்கொண்டிரு     ClassKondiru12Inf; 
+ வேகித்துக்கொண்டிரு     ClassKondiru12Inf; 
+-வேங்குத்துக்கொண்டிரு     ClassKondiru12Inf; 
+ வீதித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ வஞ்சித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ யாபித்துக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -5332,7 +5319,6 @@
+ நொசித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ நெகிழ்த்துக்கொண்டிரு     ClassKondiru12Inf; 
+ நெறித்துக்கொண்டிரு     ClassKondiru12Inf; 
+-நெறுமுத்துக்கொண்டிரு     ClassKondiru12Inf; 
+ நெறுநெறுத்துக்கொண்டிரு     ClassKondiru12Inf; 
+ நெடித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ நெடுத்துக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -5469,7 +5455,6 @@
+ சாதாளித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சானித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சாடித்துக்கொண்டிரு     ClassKondiru12Inf; 
+-சாட்டுத்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சண்ணித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சணாய்த்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சையோகித்துக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -5500,7 +5485,6 @@
+ செங்காரித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சகித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சகளீகரித்துக்கொண்டிரு     ClassKondiru12Inf; 
+-சக்களித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சகாரித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சபித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சப்பளித்துக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -5512,7 +5496,6 @@
+ சன்னியாசித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சன்னித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சலித்துக்கொண்டிரு     ClassKondiru12Inf; 
+-சல்லரித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சல்லாபித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சற்கரித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சட்டித்துக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -5540,7 +5523,6 @@
+ சங்கரித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சங்கற்பித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சூத்திரித்துக்கொண்டிரு     ClassKondiru12Inf; 
+-சூர்த்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சூரணித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சூக்குமித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ சூசிப்பித்துக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -5579,7 +5561,6 @@
+ ஒடித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ ஒஞ்சித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ ஏய்த்துக்கொண்டிரு     ClassKondiru12Inf; 
+-ஏர்த்துக்கொண்டிரு     ClassKondiru12Inf; 
+ ஏம்பலித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ ஏற்பித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ ஔவித்துக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -5950,7 +5931,6 @@
+ சுழன்றுகொண்டிரு     ClassKondiru12Inf; 
+ சான்றுகொண்டிரு     ClassKondiru12Inf; 
+ சோன்றுகொண்டிரு     ClassKondiru12Inf; 
+-சொன்றுகொண்டிரு     ClassKondiru12Inf; 
+ சூன்றுகொண்டிரு     ClassKondiru12Inf; 
+ நிழன்றுகொண்டிரு     ClassKondiru12Inf; 
+ நிரன்றுகொண்டிரு     ClassKondiru12Inf; 
+@@ -6063,7 +6043,6 @@
+ தசைந்துகொண்டிரு     ClassKondiru12Inf; 
+ துழைந்துகொண்டிரு     ClassKondiru12Inf; 
+ துலைந்துகொண்டிரு     ClassKondiru12Inf; 
+-துய்ந்துகொண்டிரு     ClassKondiru12Inf; 
+ துயர்ந்துகொண்டிரு     ClassKondiru12Inf; 
+ துமிந்துகொண்டிரு     ClassKondiru12Inf; 
+ துதைந்துகொண்டிரு     ClassKondiru12Inf; 
+@@ -6167,7 +6146,6 @@
+ பிணிந்துகொண்டிரு     ClassKondiru12Inf; 
+ பிணைந்துகொண்டிரு     ClassKondiru12Inf; 
+ பரிந்துகொண்டிரு     ClassKondiru12Inf; 
+-பூர்ந்துகொண்டிரு     ClassKondiru12Inf; 
+ பகிர்ந்துகொண்டிரு     ClassKondiru12Inf; 
+ பகர்ந்துகொண்டிரு     ClassKondiru12Inf; 
+ பகுந்துகொண்டிரு     ClassKondiru12Inf; 
+@@ -6920,7 +6898,6 @@
+ சாடிக்கொண்டிரு     ClassKondiru12Inf; 
+ சார்த்திக்கொண்டிரு     ClassKondiru12Inf; 
+ சாத்திக்கொண்டிரு     ClassKondiru12Inf; 
+-சண்ணிிக்கொண்டிரு     ClassKondiru12Inf; 
+ சங்கிக்கொண்டிரு     ClassKondiru12Inf; 
+ சலுப்பிக்கொண்டிரு     ClassKondiru12Inf; 
+ சல்லிக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -7400,7 +7377,6 @@
+ உரைசிக்கொண்டிரு     ClassKondiru12Inf; 
+ உரைஞ்சிக்கொண்டிரு     ClassKondiru12Inf; 
+ உரிஞ்சிக்கொண்டிரு     ClassKondiru12Inf; 
+-உரிிக்கொண்டிரு     ClassKondiru12Inf; 
+ உரசிக்கொண்டிரு     ClassKondiru12Inf; 
+ உராவிக்கொண்டிரு     ClassKondiru12Inf; 
+ உராய்ஞ்சிக்கொண்டிரு     ClassKondiru12Inf; 

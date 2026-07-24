@@ -1,0 +1,462 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -3371,13 +3371,9 @@
+ LEXICON ClassTheer11
+ 
+ வைதுத்தீர்	Vtheerinf;
+-கொதுதீர்	Vtheerinf;
+-எதுதீர்	Vtheerinf;
+-செதுதீர்	Vtheerinf;
+ அழுதுதீர்	Vtheerinf;
+ உழுதுதீர்	Vtheerinf;
+ பொருதுத்தீர்	Vtheerinf;
+-பெதுதீர்	Vtheerinf;
+ தொழுதுதீர்	Vtheerinf;
+ விற்றுத்தீர்	Vtheerinf;
+ நூற்றுத்தீர்	Vtheerinf;
+@@ -3512,7 +3508,6 @@
+ வேதித்துத்தீர்	Vtheerinf;
+ வேர்த்துத்தீர்	Vtheerinf;
+ வேகித்துத்தீர்	Vtheerinf;
+-வேங்குத்துத்தீர்	Vtheerinf;
+ வீதித்துத்தீர்	Vtheerinf;
+ வஞ்சித்துத்தீர்	Vtheerinf;
+ யாபித்துத்தீர்	Vtheerinf;
+@@ -4142,7 +4137,6 @@
+ நாசித்துத்தீர்	Vtheerinf;
+ நைவேதித்துத்தீர்	Vtheerinf;
+ நைத்துத்தீர்	Vtheerinf;
+-நெய்த்துத்தீர்	Vtheerinf;
+ நெரித்துத்தீர்	Vtheerinf;
+ நெருநெருத்துத்தீர்	Vtheerinf;
+ நொளுநொளுத்துத்தீர்	Vtheerinf;
+@@ -4156,7 +4150,6 @@
+ நொசித்துத்தீர்	Vtheerinf;
+ நெகிழ்த்துத்தீர்	Vtheerinf;
+ நெறித்துத்தீர்	Vtheerinf;
+-நெறுமுத்துத்தீர்	Vtheerinf;
+ நெறுநெறுத்துத்தீர்	Vtheerinf;
+ நெடித்துத்தீர்	Vtheerinf;
+ நெடுத்துத்தீர்	Vtheerinf;
+@@ -4293,7 +4286,6 @@
+ சாதாளித்துத்தீர்	Vtheerinf;
+ சானித்துத்தீர்	Vtheerinf;
+ சாடித்துத்தீர்	Vtheerinf;
+-சாட்டுத்துத்தீர்	Vtheerinf;
+ சண்ணித்துத்தீர்	Vtheerinf;
+ சணாய்த்துத்தீர்	Vtheerinf;
+ சையோகித்துத்தீர்	Vtheerinf;
+@@ -4324,7 +4316,6 @@
+ செங்காரித்துத்தீர்	Vtheerinf;
+ சகித்துத்தீர்	Vtheerinf;
+ சகளீகரித்துத்தீர்	Vtheerinf;
+-சக்களித்துத்தீர்	Vtheerinf;
+ சகாரித்துத்தீர்	Vtheerinf;
+ சபித்துத்தீர்	Vtheerinf;
+ சப்பளித்துத்தீர்	Vtheerinf;
+@@ -4336,7 +4327,6 @@
+ சன்னியாசித்துத்தீர்	Vtheerinf;
+ சன்னித்துத்தீர்	Vtheerinf;
+ சலித்துத்தீர்	Vtheerinf;
+-சல்லரித்துத்தீர்	Vtheerinf;
+ சல்லாபித்துத்தீர்	Vtheerinf;
+ சற்கரித்துத்தீர்	Vtheerinf;
+ சட்டித்துத்தீர்	Vtheerinf;
+@@ -4364,7 +4354,6 @@
+ சங்கரித்துத்தீர்	Vtheerinf;
+ சங்கற்பித்துத்தீர்	Vtheerinf;
+ சூத்திரித்துத்தீர்	Vtheerinf;
+-சூர்த்துத்தீர்	Vtheerinf;
+ சூரணித்துத்தீர்	Vtheerinf;
+ சூக்குமித்துத்தீர்	Vtheerinf;
+ சூசிப்பித்துத்தீர்	Vtheerinf;
+@@ -4403,7 +4392,6 @@
+ ஒடித்துத்தீர்	Vtheerinf;
+ ஒஞ்சித்துத்தீர்	Vtheerinf;
+ ஏய்த்துத்தீர்	Vtheerinf;
+-ஏர்த்துத்தீர்	Vtheerinf;
+ ஏம்பலித்துத்தீர்	Vtheerinf;
+ ஏற்பித்துத்தீர்	Vtheerinf;
+ ஔவித்துத்தீர்	Vtheerinf;
+@@ -4774,7 +4762,6 @@
+ சுழன்றுத்தீர்	Vtheerinf;
+ சான்றுத்தீர்	Vtheerinf;
+ சோன்றுத்தீர்	Vtheerinf;
+-சொன்றுத்தீர்	Vtheerinf;
+ சூன்றுத்தீர்	Vtheerinf;
+ நிழன்றுத்தீர்	Vtheerinf;
+ நிரன்றுத்தீர்	Vtheerinf;
+@@ -4887,7 +4874,6 @@
+ தசைந்துதீர்	Vtheerinf;
+ துழைந்துதீர்	Vtheerinf;
+ துலைந்துதீர்	Vtheerinf;
+-துய்ந்துதீர்	Vtheerinf;
+ துயர்ந்துதீர்	Vtheerinf;
+ துமிந்துதீர்	Vtheerinf;
+ துதைந்துதீர்	Vtheerinf;
+@@ -4991,7 +4977,6 @@
+ பிணிந்துதீர்	Vtheerinf;
+ பிணைந்துதீர்	Vtheerinf;
+ பரிந்துதீர்	Vtheerinf;
+-பூர்ந்துதீர்	Vtheerinf;
+ பகிர்ந்துதீர்	Vtheerinf;
+ பகர்ந்துதீர்	Vtheerinf;
+ பகுந்துதீர்	Vtheerinf;
+@@ -5530,7 +5515,6 @@
+ போக்கித்தீர்	Vtheerinf;
+ போட்டித்தீர்	Vtheerinf;
+ போதித்தீர்	Vtheerinf;
+-போித்தீர்	Vtheerinf;
+ பொக்கித்தீர்	Vtheerinf;
+ பொம்மித்தீர்	Vtheerinf;
+ பொசுக்கித்தீர்	Vtheerinf;
+@@ -5745,7 +5729,6 @@
+ சாடித்தீர்	Vtheerinf;
+ சார்த்தித்தீர்	Vtheerinf;
+ சாத்தித்தீர்	Vtheerinf;
+-சண்ணிித்தீர்	Vtheerinf;
+ சங்கித்தீர்	Vtheerinf;
+ சலுப்பித்தீர்	Vtheerinf;
+ சல்லித்தீர்	Vtheerinf;
+@@ -5991,7 +5974,6 @@
+ நிகர்த்தித்தீர்	Vtheerinf;
+ நிகழ்த்தித்தீர்	Vtheerinf;
+ நிவறித்தீர்	Vtheerinf;
+-நிப்பாட்டுித்தீர்	Vtheerinf;
+ நிய்த்தித்தீர்	Vtheerinf;
+ நியதித்தீர்	Vtheerinf;
+ நிம்பித்தீர்	Vtheerinf;
+@@ -6226,7 +6208,6 @@
+ உரைசித்தீர்	Vtheerinf;
+ உரைஞ்சித்தீர்	Vtheerinf;
+ உரிஞ்சித்தீர்	Vtheerinf;
+-உரிித்தீர்	Vtheerinf;
+ உரசித்தீர்	Vtheerinf;
+ உராவித்தீர்	Vtheerinf;
+ உராய்ஞ்சித்தீர்	Vtheerinf;
+@@ -6294,12 +6275,10 @@
+ ஆராட்டித்தீர்	Vtheerinf;
+ ஆழ்த்தித்தீர்	Vtheerinf;
+ அற்கித்தீர்	Vtheerinf;
+-அறவிடித்தீர்	Vtheerinf;
+ அறிவுறுத்தித்தீர்	Vtheerinf;
+ அறாவித்தீர்	Vtheerinf;
+ அகற்றித்தீர்	Vtheerinf;
+ அகவித்தீர்	Vtheerinf;
+-அகப்படித்தீர்	Vtheerinf;
+ அகட்டித்தீர்	Vtheerinf;
+ அவாவித்தீர்	Vtheerinf;
+ அப்புறப்படுத்தித்தீர்	Vtheerinf;
+@@ -6325,14 +6304,12 @@
+ அடக்கித்தீர்	Vtheerinf;
+ அடைச்சித்தீர்	Vtheerinf;
+ அடைசித்தீர்	Vtheerinf;
+-அடிபடித்தீர்	Vtheerinf;
+ அடிமையாக்கித்தீர்	Vtheerinf;
+ அடசித்தீர்	Vtheerinf;
+ அடங்கித்தீர்	Vtheerinf;
+ அளுக்கித்தீர்	Vtheerinf;
+ அள்ளித்தீர்	Vtheerinf;
+ அளறித்தீர்	Vtheerinf;
+-அளவிடித்தீர்	Vtheerinf;
+ அளவித்தீர்	Vtheerinf;
+ அளாவித்தீர்	Vtheerinf;
+ அணுகித்தீர்	Vtheerinf;
+@@ -6435,11 +6412,6 @@
+ நோன்றுத்தீர்	Vtheerinf;
+ தின்றுத்தீர்	Vtheerinf;
+ ஈன்றுத்தீர்	Vtheerinf;
+-பெட்டுத்தீர்	Vtheerinf;
+-வேட்டுத்தீர்	Vtheerinf;
+-மீட்டுத்தீர்	Vtheerinf;
+-தெட்டுத்தீர்	Vtheerinf;
+-தோட்டுத்தீர்	Vtheerinf;
+ கேட்டுத்தீர்	Vtheerinf;
+ 
+ LEXICON Vtheerinf
+@@ -11035,7 +11007,6 @@
+ அலர்க்கமுடி            ClassMudi11Inf; 
+ அலையமுடி            ClassMudi11Inf; 
+ அமிழமுடி            ClassMudi11Inf; 
+-அமர்முடி            ClassMudi11Inf; 
+ அமையமுடி            ClassMudi11Inf; 
+ அறிக்கமுடி            ClassMudi11Inf; 
+ அறையமுடி            ClassMudi11Inf; 
+@@ -11116,16 +11087,11 @@
+ தசையமுடி            ClassMudi11Inf; 
+ துழையமுடி            ClassMudi11Inf; 
+ துலையமுடி            ClassMudi11Inf; 
+-துய்முடி            ClassMudi11Inf; 
+-துயர்முடி            ClassMudi11Inf; 
+ துதையமுடி            ClassMudi11Inf; 
+ துளர்க்கமுடி            ClassMudi11Inf; 
+ துளையமுடி            ClassMudi11Inf; 
+-துடர்முடி            ClassMudi11Inf; 
+ துனையமுடி            ClassMudi11Inf; 
+-துணர்முடி            ClassMudi11Inf; 
+ துணையமுடி            ClassMudi11Inf; 
+-துவர்முடி            ClassMudi11Inf; 
+ துவையமுடி            ClassMudi11Inf; 
+ தளையமுடி            ClassMudi11Inf; 
+ தேய்முடி            ClassMudi11Inf; 
+@@ -11142,7 +11108,6 @@
+ சிறையமுடி            ClassMudi11Inf; 
+ சிதையமுடி            ClassMudi11Inf; 
+ சூழமுடி            ClassMudi11Inf; 
+-சூர்முடி            ClassMudi11Inf; 
+ சார்க்கமுடி            ClassMudi11Inf; 
+ சாய்முடி            ClassMudi11Inf; 
+ சமழமுடி            ClassMudi11Inf; 
+@@ -11178,7 +11143,6 @@
+ பிறழமுடி            ClassMudi11Inf; 
+ பிசிர்க்கமுடி            ClassMudi11Inf; 
+ பிணையமுடி            ClassMudi11Inf; 
+-பூர்முடி            ClassMudi11Inf; 
+ பகிர்க்கமுடி            ClassMudi11Inf; 
+ பகர்க்கமுடி            ClassMudi11Inf; 
+ பாய்முடி            ClassMudi11Inf; 
+@@ -11187,7 +11151,6 @@
+ புரையமுடி            ClassMudi11Inf; 
+ புகழமுடி            ClassMudi11Inf; 
+ புகையமுடி            ClassMudi11Inf; 
+-புலர்முடி            ClassMudi11Inf; 
+ புய்முடி            ClassMudi11Inf; 
+ புதையமுடி            ClassMudi11Inf; 
+ புளையமுடி            ClassMudi11Inf; 
+@@ -11196,10 +11159,8 @@
+ பொழிக்கமுடி            ClassMudi11Inf; 
+ பொலிக்கமுடி            ClassMudi11Inf; 
+ பொதிக்கமுடி            ClassMudi11Inf; 
+-பெயர்முடி            ClassMudi11Inf; 
+ பீழமுடி            ClassMudi11Inf; 
+ போழமுடி            ClassMudi11Inf; 
+-பேர்முடி            ClassMudi11Inf; 
+ பவர்க்கமுடி            ClassMudi11Inf; 
+ ஞிமிர்க்கமுடி            ClassMudi11Inf; 
+ ஞமர்க்கமுடி            ClassMudi11Inf; 
+@@ -11212,7 +11173,6 @@
+ ஓய்முடி            ClassMudi11Inf; 
+ ஊழமுடி            ClassMudi11Inf; 
+ ஊய்முடி            ClassMudi11Inf; 
+-ஊர்முடி            ClassMudi11Inf; 
+ ஆழமுடி            ClassMudi11Inf; 
+ ஆராய்முடி            ClassMudi11Inf; 
+ ஒசிக்கமுடி            ClassMudi11Inf; 
+@@ -11221,10 +11181,8 @@
+ உராய்முடி            ClassMudi11Inf; 
+ உரையமுடி            ClassMudi11Inf; 
+ உகையமுடி            ClassMudi11Inf; 
+-உலர்முடி            ClassMudi11Inf; 
+ உலையமுடி            ClassMudi11Inf; 
+ உய்முடி            ClassMudi11Inf; 
+-உயர்முடி            ClassMudi11Inf; 
+ உமிழமுடி            ClassMudi11Inf; 
+ உறழமுடி            ClassMudi11Inf; 
+ உறிக்கமுடி            ClassMudi11Inf; 
+@@ -11257,7 +11215,6 @@
+ நளிக்கமுடி            ClassMudi11Inf; 
+ நனையமுடி            ClassMudi11Inf; 
+ நெகிழமுடி            ClassMudi11Inf; 
+-நேர்முடி            ClassMudi11Inf; 
+ நோய்முடி            ClassMudi11Inf; 
+ நவிர்க்கமுடி            ClassMudi11Inf; 
+ இழையமுடி            ClassMudi11Inf; 
+@@ -11270,7 +11227,6 @@
+ இசையமுடி            ClassMudi11Inf; 
+ இடையமுடி            ClassMudi11Inf; 
+ இணையமுடி            ClassMudi11Inf; 
+-இவர்முடி            ClassMudi11Inf; 
+ அடக்கமுடி            ClassMudi11Inf; 
+ அடைச்சமுடி            ClassMudi11Inf; 
+ அடைசமுடி            ClassMudi11Inf; 
+@@ -13029,7 +12985,6 @@
+ வேதித்துக்கொடு	VkoduInf;
+ வேர்த்துக்கொடு	VkoduInf;
+ வேகித்துக்கொடு	VkoduInf;
+-வேங்குத்துக்கொடு	VkoduInf;
+ வீதித்துக்கொடு	VkoduInf;
+ வஞ்சித்துக்கொடு	VkoduInf;
+ யாபித்துக்கொடு	VkoduInf;
+@@ -13672,7 +13627,6 @@
+ நொசித்துக்கொடு	VkoduInf;
+ நெகிழ்த்துக்கொடு	VkoduInf;
+ நெறித்துக்கொடு	VkoduInf;
+-நெறுமுத்துக்கொடு	VkoduInf;
+ நெறுநெறுத்துக்கொடு	VkoduInf;
+ நெடித்துக்கொடு	VkoduInf;
+ நெடுத்துக்கொடு	VkoduInf;
+@@ -13809,7 +13763,6 @@
+ சாதாளித்துக்கொடு	VkoduInf;
+ சானித்துக்கொடு	VkoduInf;
+ சாடித்துக்கொடு	VkoduInf;
+-சாட்டுத்துக்கொடு	VkoduInf;
+ சண்ணித்துக்கொடு	VkoduInf;
+ சணாய்த்துக்கொடு	VkoduInf;
+ சையோகித்துக்கொடு	VkoduInf;
+@@ -13840,7 +13793,6 @@
+ செங்காரித்துக்கொடு	VkoduInf;
+ சகித்துக்கொடு	VkoduInf;
+ சகளீகரித்துக்கொடு	VkoduInf;
+-சக்களித்துக்கொடு	VkoduInf;
+ சகாரித்துக்கொடு	VkoduInf;
+ சபித்துக்கொடு	VkoduInf;
+ சப்பளித்துக்கொடு	VkoduInf;
+@@ -13852,7 +13804,6 @@
+ சன்னியாசித்துக்கொடு	VkoduInf;
+ சன்னித்துக்கொடு	VkoduInf;
+ சலித்துக்கொடு	VkoduInf;
+-சல்லரித்துக்கொடு	VkoduInf;
+ சல்லாபித்துக்கொடு	VkoduInf;
+ சற்கரித்துக்கொடு	VkoduInf;
+ சட்டித்துக்கொடு	VkoduInf;
+@@ -13880,7 +13831,6 @@
+ சங்கரித்துக்கொடு	VkoduInf;
+ சங்கற்பித்துக்கொடு	VkoduInf;
+ சூத்திரித்துக்கொடு	VkoduInf;
+-சூர்த்துக்கொடு	VkoduInf;
+ சூரணித்துக்கொடு	VkoduInf;
+ சூக்குமித்துக்கொடு	VkoduInf;
+ சூசிப்பித்துக்கொடு	VkoduInf;
+@@ -13919,7 +13869,6 @@
+ ஒடித்துக்கொடு	VkoduInf;
+ ஒஞ்சித்துக்கொடு	VkoduInf;
+ ஏய்த்துக்கொடு	VkoduInf;
+-ஏர்த்துக்கொடு	VkoduInf;
+ ஏம்பலித்துக்கொடு	VkoduInf;
+ ஏற்பித்துக்கொடு	VkoduInf;
+ ஔவித்துக்கொடு	VkoduInf;
+@@ -14290,7 +14239,6 @@
+ சுழன்றுக்கொடு	VkoduInf;
+ சான்றுக்கொடு	VkoduInf;
+ சோன்றுக்கொடு	VkoduInf;
+-சொன்றுக்கொடு	VkoduInf;
+ சூன்றுக்கொடு	VkoduInf;
+ நிழன்றுக்கொடு	VkoduInf;
+ நிரன்றுக்கொடு	VkoduInf;
+@@ -14403,7 +14351,6 @@
+ தசைந்துகொடு	VkoduInf;
+ துழைந்துகொடு	VkoduInf;
+ துலைந்துகொடு	VkoduInf;
+-துய்ந்துகொடு	VkoduInf;
+ துயர்ந்துகொடு	VkoduInf;
+ துமிந்துகொடு	VkoduInf;
+ துதைந்துகொடு	VkoduInf;
+@@ -14507,7 +14454,6 @@
+ பிணிந்துகொடு	VkoduInf;
+ பிணைந்துகொடு	VkoduInf;
+ பரிந்துகொடு	VkoduInf;
+-பூர்ந்துகொடு	VkoduInf;
+ பகிர்ந்துகொடு	VkoduInf;
+ பகர்ந்துகொடு	VkoduInf;
+ பகுந்துகொடு	VkoduInf;
+@@ -15260,7 +15206,6 @@
+ சாடிக்கொடு	VkoduInf;
+ சார்த்திக்கொடு	VkoduInf;
+ சாத்திக்கொடு	VkoduInf;
+-சண்ணிிக்கொடு	VkoduInf;
+ சங்கிக்கொடு	VkoduInf;
+ சலுப்பிக்கொடு	VkoduInf;
+ சல்லிக்கொடு	VkoduInf;
+@@ -15740,7 +15685,6 @@
+ உரைசிக்கொடு	VkoduInf;
+ உரைஞ்சிக்கொடு	VkoduInf;
+ உரிஞ்சிக்கொடு	VkoduInf;
+-உரிிக்கொடு	VkoduInf;
+ உரசிக்கொடு	VkoduInf;
+ உராவிக்கொடு	VkoduInf;
+ உராய்ஞ்சிக்கொடு	VkoduInf;
+@@ -20550,7 +20494,6 @@
+ அலர்க்கப்பார்            ClassPar11Inf; 
+ அலையப்பார்            ClassPar11Inf; 
+ அமிழப்பார்            ClassPar11Inf; 
+-அமர்ப்பார்            ClassPar11Inf; 
+ அமையப்பார்            ClassPar11Inf; 
+ அறிக்கப்பார்            ClassPar11Inf; 
+ அறையப்பார்            ClassPar11Inf; 
+@@ -20631,16 +20574,11 @@
+ தசையப்பார்            ClassPar11Inf; 
+ துழையப்பார்            ClassPar11Inf; 
+ துலையப்பார்            ClassPar11Inf; 
+-துய்ப்பார்            ClassPar11Inf; 
+-துயர்ப்பார்            ClassPar11Inf; 
+ துதையப்பார்            ClassPar11Inf; 
+ துளர்க்கப்பார்            ClassPar11Inf; 
+ துளையப்பார்            ClassPar11Inf; 
+-துடர்ப்பார்            ClassPar11Inf; 
+ துனையப்பார்            ClassPar11Inf; 
+-துணர்ப்பார்            ClassPar11Inf; 
+ துணையப்பார்            ClassPar11Inf; 
+-துவர்ப்பார்            ClassPar11Inf; 
+ துவையப்பார்            ClassPar11Inf; 
+ தளையப்பார்            ClassPar11Inf; 
+ தேய்ப்பார்            ClassPar11Inf; 
+@@ -20657,7 +20595,6 @@
+ சிறையப்பார்            ClassPar11Inf; 
+ சிதையப்பார்            ClassPar11Inf; 
+ சூழப்பார்            ClassPar11Inf; 
+-சூர்ப்பார்            ClassPar11Inf; 
+ சார்க்கப்பார்            ClassPar11Inf; 
+ சாய்ப்பார்            ClassPar11Inf; 
+ சமழப்பார்            ClassPar11Inf; 
+@@ -20693,7 +20630,6 @@
+ பிறழப்பார்            ClassPar11Inf; 
+ பிசிர்க்கப்பார்            ClassPar11Inf; 
+ பிணையப்பார்            ClassPar11Inf; 
+-பூர்ப்பார்            ClassPar11Inf; 
+ பகிர்க்கப்பார்            ClassPar11Inf; 
+ பகர்க்கப்பார்            ClassPar11Inf; 
+ பாய்ப்பார்            ClassPar11Inf; 
+@@ -20702,7 +20638,6 @@
+ புரையப்பார்            ClassPar11Inf; 
+ புகழப்பார்            ClassPar11Inf; 
+ புகையப்பார்            ClassPar11Inf; 
+-புலர்ப்பார்            ClassPar11Inf; 
+ புய்ப்பார்            ClassPar11Inf; 
+ புதையப்பார்            ClassPar11Inf; 
+ புளையப்பார்            ClassPar11Inf; 
+@@ -20711,10 +20646,8 @@
+ பொழிக்கப்பார்            ClassPar11Inf; 
+ பொலிக்கப்பார்            ClassPar11Inf; 
+ பொதிக்கப்பார்            ClassPar11Inf; 
+-பெயர்ப்பார்            ClassPar11Inf; 
+ பீழப்பார்            ClassPar11Inf; 
+ போழப்பார்            ClassPar11Inf; 
+-பேர்ப்பார்            ClassPar11Inf; 
+ பவர்க்கப்பார்            ClassPar11Inf; 
+ ஞிமிர்க்கப்பார்            ClassPar11Inf; 
+ ஞமர்க்கப்பார்            ClassPar11Inf; 
+@@ -20727,7 +20660,6 @@
+ ஓய்ப்பார்            ClassPar11Inf; 
+ ஊழப்பார்            ClassPar11Inf; 
+ ஊய்ப்பார்            ClassPar11Inf; 
+-ஊர்ப்பார்            ClassPar11Inf; 
+ ஆழப்பார்            ClassPar11Inf; 
+ ஆராய்ப்பார்            ClassPar11Inf; 
+ ஒசிக்கப்பார்            ClassPar11Inf; 
+@@ -20736,10 +20668,8 @@
+ உராய்ப்பார்            ClassPar11Inf; 
+ உரையப்பார்            ClassPar11Inf; 
+ உகையப்பார்            ClassPar11Inf; 
+-உலர்ப்பார்            ClassPar11Inf; 
+ உலையப்பார்            ClassPar11Inf; 
+ உய்ப்பார்            ClassPar11Inf; 
+-உயர்ப்பார்            ClassPar11Inf; 
+ உமிழப்பார்            ClassPar11Inf; 
+ உறழப்பார்            ClassPar11Inf; 
+ உறிக்கப்பார்            ClassPar11Inf; 
+@@ -20772,7 +20702,6 @@
+ நளிக்கப்பார்            ClassPar11Inf; 
+ நனையப்பார்            ClassPar11Inf; 
+ நெகிழப்பார்            ClassPar11Inf; 
+-நேர்ப்பார்            ClassPar11Inf; 
+ நோய்ப்பார்            ClassPar11Inf; 
+ நவிர்க்கப்பார்            ClassPar11Inf; 
+ இழையப்பார்            ClassPar11Inf; 
+@@ -20785,7 +20714,6 @@
+ இசையப்பார்            ClassPar11Inf; 
+ இடையப்பார்            ClassPar11Inf; 
+ இணையப்பார்            ClassPar11Inf; 
+-இவர்ப்பார்            ClassPar11Inf; 
+ அட்டப்பார்            ClassPar11Inf; 
+ அடக்கப்பார்            ClassPar11Inf; 
+ அடைச்சப்பார்            ClassPar11Inf; 

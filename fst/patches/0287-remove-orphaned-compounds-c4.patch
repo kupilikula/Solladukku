@@ -1,0 +1,18 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -2570,7 +2570,6 @@
+ இயைத்துத்தொலை	VtholaiInf;
+ இயந்திரித்துத்தொலை	VtholaiInf;
+ இரித்துத்தொலை	VtholaiInf;
+-இருத்துத்தொலை	VtholaiInf;
+ இரதித்துத்தொலை	VtholaiInf;
+ இரமித்துத்தொலை	VtholaiInf;
+ இரைத்துத்தொலை	VtholaiInf;
+@@ -2801,7 +2800,6 @@
+ தவந்துதொலை	VtholaiInf;
+ தொண்ணாந்துதொலை	VtholaiInf;
+ வறந்துதொலை	VtholaiInf;
+-வலந்துதொலை	VtholaiInf;
+ விறந்துதொலை	VtholaiInf;
+ வியந்துதொலை	VtholaiInf;
+ விழுமாந்துதொலை	VtholaiInf;

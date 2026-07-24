@@ -1,0 +1,29 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -154,6 +154,7 @@
+ +verb+fin+sim+strong+pres%=க்கின்ற்+euph%=அன்+1sg%=அன்:^க்கின்றனன் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+euph%=அன்+3sgm%=அன்:^க்கின்றனன் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+euph%=அன்+3sgf%=அள்:^க்கின்றனள் #;
+++verb+nonfin+sim+verbalnoun%=தல்:^தல் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+--- ThamizhiFST-C12.foma
++++ ThamizhiFST-C12.foma
+@@ -14,6 +14,9 @@
+ define C12Rule8 {ு} -> {ுக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+ define C12Rule8 {ு} -> {க்க}  || _ "^" [{க} | {அ}];
+ 
++define C12CitationDouble {த} -> {த்த} || [{ய}|{ண}|{ள}|{ல}|{ற}|{ழ}|{ட}|{ர}|{வ}|{ச}|{க}|{த}|{ம}|{ு}] "^" _;
++define C12CitationUDelete {ு} -> 0 || _ "^" {த்த};
++
+ 
+ # To Cleanup: remove morpheme boundaries
+ define Cleanup1 "அ" -> 0 || "^" _;
+@@ -33,4 +36,6 @@
+ 			C12Rule7           	.o.
+ 			C12Rule8           	.o.
++			C12CitationDouble  	.o.
++			C12CitationUDelete 	.o.
+ 			Cleanup1		.o.
+ 			Cleanup;

@@ -1,0 +1,29 @@
+--- ThamizhiVerbs-C62.lexc
++++ ThamizhiVerbs-C62.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +foc
+ 
+ LEXICON Root
+ 
+@@ -18,6 +18,9 @@
+ நகு      C6Vinf;
+ 
+ LEXICON C6Vinf
++
++! Productive bare negative stem in -ஆ.
+++verb+nonfin+sim+neg%=ஆ:^ா #;
+ 
+ 
+ +verb+fin+sim+strong+past%=க்+1sg%=ஏன்:^க்கேன் VerbQuestion;
+@@ -336,6 +339,7 @@
+ +verb+nonfin+sim+inf%=அ+sandhik%=க்:^அக் #;
+ +verb+nonfin+sim+inf%=அ+sandhip%=ப்:^அப் #;
+ +verb+nonfin+sim+vpart%=உ:^ந்து #;
+++verb+nonfin+sim+vpart%=உ+foc%=ஏ:^ந்தே #;
+ +verb+nonfin+sim+vpart%=உ+sandhic%=ச்:^ந்துச் #;
+ +verb+nonfin+sim+vpart%=உ+sandhit%=த்:^ந்துத் #;
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^ந்துக் #;

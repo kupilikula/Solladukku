@@ -1,0 +1,11 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -67,6 +67,7 @@ LEXICON ClassFour
+ எறி C4Vinf;
+ செறி C4Vinf;
+ நெறி C4Vinf;
+ நடி:நடிக்க ModernBareInf;
++நடி C4Vinf;
+ ஒசி C4Vinf;
+ சொரி C4Vinf;
+ நொசி C4Vinf;

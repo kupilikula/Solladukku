@@ -1,0 +1,55 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +foc
+ 
+ 
+ LEXICON Root
+@@ -6494,6 +6494,9 @@
+ 
+ LEXICON C4Vinf
+ 
++! Productive bare negative stem in -ஆ.
+++verb+nonfin+sim+neg%=ஆ:^ா #;
++
+ 
+ +verb+fin+sim+strong+past%=த்+1sg%=ஏன்:^ந்தேன் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+1pl%=ஓம்:^ந்தோம் VerbQuestion;
+@@ -6834,6 +6837,7 @@
+ +verb+nonfin+sim+inf%=அ+sandhi-p%=ப்+sandhit%=த்:^அப்த் #;
+ +verb+nonfin+sim+inf%=அ+sandhi-p%=ப்+sandhik%=க்:^அப்க் #;
+ +verb+nonfin+sim+vpart%=உ:^ந்து #;
+++verb+nonfin+sim+vpart%=உ+foc%=ஏ:^ந்தே #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^ந்துப் #;
+ +verb+nonfin+sim+vpart%=உ+sandhic%=ச்:^ந்துச் #;
+ +verb+nonfin+sim+vpart%=உ+sandhit%=த்:^ந்துத் #;
+@@ -10461,6 +10465,7 @@
+ +verb+nonfin+complex+attitude+inf%=அ+sandhi-p%=ப்+sandhit%=த்:^அப்த் #;
+ +verb+nonfin+complex+attitude+inf%=அ+sandhi-p%=ப்+sandhik%=க்:^அப்க் #;
+ +verb+nonfin+complex+attitude+vpart%=உ:^ந்து #;
+++verb+nonfin+complex+attitude+vpart%=உ+foc%=ஏ:^ந்தே #;
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhip%=ப்:^ந்துப் #;
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhic%=ச்:^ந்துச் #;
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhit%=த்:^ந்துத் #;
+--- ThamizhiFST-C4.foma
++++ ThamizhiFST-C4.foma
+@@ -13,6 +13,7 @@
+ define C4R1 {ை} -> {ைய} || _ "^" [{ும்}|{அ}|{ா}];
+ define C4R2  {்} -> 0  || _ "^" [{ும்}|{ா}];
+ define C4R3 {ி} -> {ிய} || _ "^" [{ும்}|{ா}];
++define C4WeakIModal {ி} -> {ிய} || [{அற}|{தெர}|{புர}] _ "^" [{அலாம்}|{அவில்லை}];
+ define C4R4 {ு} -> {ுக்க} || _ "^" [{ும்}|{அ}];
+ define C4R5 {ழ்} -> {ழ}  || _ "^" [{அ}];
+ # Intransitive முடி takes the y-glide infinitive முடிய; transitive C11 remains முடிக்க.
+@@ -33,6 +34,7 @@
+ 		C4R1	.o.
+ 		C4R2	.o.
+ 		C4R3	.o.
++		C4WeakIModal	.o.
+ 		C4R4	.o.
+ 		C4R5	.o.
+ 		C4MudiInf	.o.

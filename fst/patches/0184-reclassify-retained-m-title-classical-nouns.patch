@@ -1,0 +1,36 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -42742,6 +42742,9 @@
+ +noun+gen+psp_keele_iruntu:^யின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ LEXICON C4Sg
++அக்கீம்	  C4SgRoot ;
++தீம்	  C4SgRoot ;
++வாக்குண்டாம்	  C4SgRoot ;
+ அசாம்	  C4SgRoot ;
+ ஆதாம்	  C4SgRoot ;
+ ஆபிரகாம்	  C4SgRoot ;
+@@ -93301,7 +93304,6 @@
+ தினைஒருவகைக்கூலம்	C15SgRoot ; 
+ தினைப்புனம்	C15SgRoot ; 
+ தினைமருதம்	C15SgRoot ; 
+-தீம்	C15SgRoot ; 
+ தீம்பழம்	C15SgRoot ; 
+ துணையமுதம்	C15SgRoot ; 
+ துணையின்பம்	C15SgRoot ; 
+@@ -109151,7 +109153,6 @@
+ அக்கியாதம்	C15SgRoot;
+ அக்கிரதாம்பூலம்	C15SgRoot;
+ அக்கிரமாமிசம்	C15SgRoot;
+-அக்கீம்	C15SgRoot;
+ அக்கோடம்	C15SgRoot;
+ அக்ஷயம்	C15SgRoot;
+ அக்ஷரம்	C15SgRoot;
+@@ -112510,7 +112511,6 @@
+ வாகீகம்	C15SgRoot;
+ வாகுரம்	C15SgRoot;
+ வாக்கியசேடம்	C15SgRoot;
+-வாக்குண்டாம்	C15SgRoot;
+ வாக்குத்துஷ்டம்	C15SgRoot;
+ வாக்குநயம்	C15SgRoot;
+ வாக்குநாணயம்	C15SgRoot;

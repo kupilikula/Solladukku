@@ -1,0 +1,50 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -17352,7 +17352,6 @@
+ நாசிக்கப்படப்போ            ClassPo5Inf; 
+ நைவேதிக்கப்படப்போ            ClassPo5Inf; 
+ நைக்கப்படப்போ            ClassPo5Inf; 
+-நெய்க்கப்படப்போ            ClassPo5Inf; 
+ நெரிக்கப்படப்போ            ClassPo5Inf; 
+ நெருநெருக்கப்படப்போ            ClassPo5Inf; 
+ நொளுநொளுக்கப்படப்போ            ClassPo5Inf; 
+@@ -32934,7 +32933,6 @@
+ நாசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நைவேதிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-நெய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நெரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நெருநெருக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நொளுநொளுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -42073,7 +42071,6 @@
+ நாசிக்கப்படச்செய்            ClassSei1Inf; 
+ நைவேதிக்கப்படச்செய்            ClassSei1Inf; 
+ நைக்கப்படச்செய்            ClassSei1Inf; 
+-நெய்க்கப்படச்செய்            ClassSei1Inf; 
+ நெரிக்கப்படச்செய்            ClassSei1Inf; 
+ நெருநெருக்கப்படச்செய்            ClassSei1Inf; 
+ நொளுநொளுக்கப்படச்செய்            ClassSei1Inf; 
+@@ -51211,7 +51208,6 @@
+ நாசிக்கப்படவை            ClassVai1Inf; 
+ நைவேதிக்கப்படவை            ClassVai1Inf; 
+ நைக்கப்படவை            ClassVai1Inf; 
+-நெய்க்கப்படவை            ClassVai1Inf; 
+ நெரிக்கப்படவை            ClassVai1Inf; 
+ நெருநெருக்கப்படவை            ClassVai1Inf; 
+ நொளுநொளுக்கப்படவை            ClassVai1Inf; 
+@@ -60309,7 +60305,6 @@
+ நாசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நைவேதிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நைக்கப்படக்கூடு            ClassKoodu5Inf; 
+-நெய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ நெரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நெருநெருக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நொளுநொளுக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -69450,7 +69445,6 @@
+ நாசிக்கப்படவேண்டு            ClassVendu5Inf; 
+ நைவேதிக்கப்படவேண்டு            ClassVendu5Inf; 
+ நைக்கப்படவேண்டு            ClassVendu5Inf; 
+-நெய்க்கப்படவேண்டு            ClassVendu5Inf; 
+ நெரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ நெருநெருக்கப்படவேண்டு            ClassVendu5Inf; 
+ நொளுநொளுக்கப்படவேண்டு            ClassVendu5Inf; 

@@ -1,0 +1,177 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -205,6 +205,7 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^த #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -397,6 +398,7 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=ட்+adjpart%=அ:^ண்ட #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON ModernBareInf
+@@ -8482,6 +8484,7 @@
+ +verb+nonfin+sim+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+sim+past%=இ+adjpart%=அ:^ிய #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -11649,6 +11652,7 @@
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ம் #;
+ +verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ம் #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ம் #;
+ 
+ LEXICON ClassKelModern
+@@ -11845,6 +11849,7 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON ClassSixThree
+@@ -12005,6 +12010,7 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ற்ற #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON ClassSeven
+@@ -12157,6 +12163,7 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ளாவிட்டால் #;
+ +verb+nonfin+sim+past%=ட்+adjpart%=அ:^ட #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON ClassEight
+@@ -12312,6 +12319,7 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^னாவிட்டால் #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ற #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -12471,6 +12479,7 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ளாவிட்டால் #;
+ +verb+nonfin+sim+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON ClassTen
+@@ -12630,6 +12639,7 @@
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ற #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்:^றோர் #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON Class13
+@@ -16558,6 +16568,7 @@
+ +verb+nonfin+complex+aspect+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+aspect+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+complex+aspect+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+aspect+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+aspect+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+aspect+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -25698,6 +25709,7 @@
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ:^ின #;
+ +verb+nonfin+complex+attitude+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+attitude+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -28916,6 +28928,7 @@
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+attitude+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+complex+attitude+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+attitude+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -32137,6 +32150,7 @@
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+attitude+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+complex+attitude+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+attitude+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -41277,6 +41291,7 @@
+ +verb+nonfin+complex+caus+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+caus+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+complex+caus+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+caus+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+caus+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+caus+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -50413,6 +50428,7 @@
+ +verb+nonfin+complex+caus+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+caus+past%=த்+adjpart%=அ:^த #;
+ +verb+nonfin+complex+caus+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+caus+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+caus+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+caus+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -59509,6 +59525,7 @@
+ +verb+nonfin+complex+caus+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+caus+past%=த்+adjpart%=அ:^த #;
+ +verb+nonfin+complex+caus+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+caus+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+caus+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+caus+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -68650,6 +68667,7 @@
+ +verb+nonfin+complex+mood+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+mood+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+complex+mood+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+mood+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+mood+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+mood+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -77725,6 +77743,7 @@
+ +verb+nonfin+complex+mood+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+mood+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+complex+mood+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+mood+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+mood+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+mood+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -80943,6 +80962,7 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+nonattitude+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -87387,6 +87407,7 @@
+ +verb+nonfin+complex+passive+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+passive+past%=ட்+adjpart%=அ:^ட்ட #;
+ +verb+nonfin+complex+passive+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+passive+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+passive+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+passive+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -90538,5 +90559,6 @@
+ +verb+nonfin+complex+passive+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+passive+past%=ற்+adjpart%=அ:^ற்ற #;
+ +verb+nonfin+complex+passive+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+complex+passive+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+complex+passive+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+passive+neg%=ஆத்+adjpart%=அ:^ாத #;

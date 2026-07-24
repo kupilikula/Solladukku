@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -348,6 +348,7 @@
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+1sg%=ஏன்:^வித்தேன் VerbQuestion;

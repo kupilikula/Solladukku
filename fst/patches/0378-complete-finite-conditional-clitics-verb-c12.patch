@@ -1,0 +1,30 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -8088,7 +8088,13 @@
+ 
+ ! Productive infinitive negation and possibility missing from Class 12.
+ +verb+nonfin+complex+aspect+inf%=க்க+negpart%=இல்லை:^க்கவில்லை #;
+++verb+nonfin+complex+aspect+inf%=க்க+negpart%=இல்லை+ques%=ஆ:^க்கவில்லையா #;
+++verb+nonfin+complex+aspect+inf%=க்க+negpart%=இல்லை+foc%=ஏ:^க்கவில்லையே #;
+++verb+nonfin+complex+aspect+inf%=க்க+negpart%=இல்லை+report%=ஆம்:^க்கவில்லையாம் #;
+ +verb+nonfin+complex+aspect+inf%=க்க+negpart%=இல்லை+colloq:^க்கல #;
+++verb+nonfin+complex+aspect+inf%=க்க+negpart%=இல்லை+colloq+ques%=ஆ:^க்கலையா #;
+++verb+nonfin+complex+aspect+inf%=க்க+negpart%=இல்லை+colloq+foc%=ஏ:^க்கலையே #;
+++verb+nonfin+complex+aspect+inf%=க்க+negpart%=இல்லை+colloq+report%=ஆம்:^க்கலையாம் #;
+ +verb+nonfin+complex+aspect+inf%=க்க+moodpart%=ஆம்:^க்கலாம் VerbQuestion;
+ 
+ 
+@@ -8553,9 +8559,13 @@
+ +verb+nonfin+complex+aspect+neg%=ஆது+vpart%=∅+sandhit%=த்:^க்காதுத் #;
+ +verb+nonfin+complex+aspect+neg%=ஆது+vpart%=∅+sandhik%=க்:^க்காதுக் #;
+ +verb+nonfin+complex+aspect+con%=ஆல்:^ந்தால் #;
+++verb+nonfin+complex+aspect+con%=ஆல்+foc%=ஏ:^ந்தாலே #;
+++verb+nonfin+complex+aspect+con%=ஆல்+foc%=தான்:^ந்தால்தான் #;
+ +verb+nonfin+complex+aspect+con%=ஆல்+colloq:^ந்தா #;
+ +verb+nonfin+complex+aspect+con%=ஆல்+add%=உம்:^ந்தாலும் #;
+ +verb+nonfin+complex+aspect+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+++verb+nonfin+complex+aspect+neg%=ஆ+aux%=விடு+con%=ஆல்+foc%=ஏ:^க்காவிட்டாலே #;
+++verb+nonfin+complex+aspect+neg%=ஆ+aux%=விடு+con%=ஆல்+foc%=தான்:^க்காவிட்டால்தான் #;
+ +verb+nonfin+complex+aspect+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+complex+aspect+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+complex+aspect+past%=த்+adjpart%=அ:^ந்த #;

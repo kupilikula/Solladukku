@@ -1,0 +1,58 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -4735,6 +4735,7 @@
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^த்தார் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^த்தார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^த்தது VerbQuestion;
+++verb+fin+sim+strong+past%=த்+3sgn%=அது+colloq:^த்துச்சு VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது+add%=உம்:^த்ததும் VerbQuestion;
+ +verb+nonfin+sim+strong+past%=த்+vpart_tum%=தும்:^த்ததும் VerbQuestion;
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+comp%=ஆவது:^த்ததாவது #;
+@@ -4999,6 +5000,7 @@
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sghe%=ஆர்:^ப்பித்தார் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+++verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது+colloq:^ப்பித்துச்சு VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+vpart_tum%=தும்:^ப்பித்ததும் VerbQuestion;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+comp%=ஆவது:^ப்பித்ததாவது #;
+@@ -8692,6 +8694,7 @@
+ +verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்கள்+colloq:^த்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+strong+past%=த்+3sghe%=ஆர்கள்:^த்தார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது:^த்தது VerbQuestion;
+++verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது+colloq:^த்துச்சு VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது+add%=உம்:^த்ததும் VerbQuestion;
+ +verb+nonfin+complex+attitude+strong+past%=த்+vpart_tum%=தும்:^த்ததும் VerbQuestion;
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+comp%=ஆவது:^த்ததாவது #;
+@@ -8875,6 +8878,7 @@
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+++verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sgn%=அது+colloq:^ப்பித்துச்சு VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+vpart_tum%=தும்:^ப்பித்ததும் VerbQuestion;
+ +verb+nonfin+complex+attitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+comp%=ஆவது:^ப்பித்ததாவது #;
+@@ -12311,6 +12315,7 @@
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^த்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3sghe%=ஆர்கள்:^த்தார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3sgn%=அது:^த்தது VerbQuestion;
+++verb+fin+complex+nonattitude+strong+past%=இன்+3sgn%=அது+colloq:^த்துச்சு VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=இன்+3sgn%=அது+add%=உம்:^த்ததும் VerbQuestion;
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+vpart_tum%=தும்:^த்ததும் VerbQuestion;
+ +verb+nonfin+complex+nonattitude+strong+past%=இன்+verbalnoun%=அது+comp%=ஆவது:^த்ததாவது #;
+@@ -12494,6 +12499,7 @@
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+++verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sgn%=அது+colloq:^ப்பித்துச்சு VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+vpart_tum%=தும்:^ப்பித்ததும் VerbQuestion;
+ +verb+nonfin+complex+nonattitude+caus%=ப்பி+past%=த்+verbalnoun%=அது+comp%=ஆவது:^ப்பித்ததாவது #;
+@@ -18528,6 +18534,7 @@
+ +verb+fin+complex+nonattitude+strong+past%=த்+3ple%=ஆர்கள்+colloq:^த்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sghe%=ஆர்கள்:^த்தார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sgn%=அது:^த்தது VerbQuestion;
+++verb+fin+complex+nonattitude+strong+past%=த்+3sgn%=அது+colloq:^த்துச்சு VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sgn%=அது+add%=உம்:^த்ததும் VerbQuestion;
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+vpart_tum%=தும்:^த்ததும் VerbQuestion;
+ +verb+nonfin+complex+nonattitude+strong+past%=த்+verbalnoun%=அது+comp%=ஆவது:^த்ததாவது #;

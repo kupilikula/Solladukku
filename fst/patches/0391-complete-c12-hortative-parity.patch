@@ -1,0 +1,26 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -693,6 +693,7 @@
+ +verb+fin+sim+caus%=ப்பி+fut%=ப்ப்+3pln%=∅:^ப்போம் VerbQuestion;
+ +verb+fin+sim+opt%=க்க:^க்க #;
+ +verb+nonfin+sim+inf%=க்க:^க்க #;
+++verb+nonfin+sim+inf%=க்க+moodpart%=அட்டும்:^க்கட்டும் #;
+ +verb+nonfin+sim+inf%=க்க+foc%=ஏ:^க்கவே #;
+ +verb+nonfin+sim+inf%=க்க+add%=உம்:^க்கவும் #;
+ +verb+nonfin+sim+inf%=க்க+sandhip%=ப்:^க்கப் #;
+@@ -4652,6 +4653,7 @@
+ +verb+fin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+3pln%=∅:^ப்போம் VerbQuestion;
+ +verb+fin+complex+aspect+opt%=க்க:^க்க #;
+ +verb+nonfin+complex+aspect+inf%=க்க:^க்க #;
+++verb+nonfin+complex+aspect+inf%=க்க+moodpart%=அட்டும்:^க்கட்டும் #;
+ +verb+nonfin+complex+aspect+inf%=க்க+foc%=ஏ:^க்கவே #;
+ +verb+nonfin+complex+aspect+inf%=க்க+add%=உம்:^க்கவும் #;
+ +verb+nonfin+complex+aspect+inf%=க்க+sandhip%=ப்:^க்கப் #;
+@@ -8513,6 +8515,7 @@
+ +verb+fin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+3pln%=∅:^ப்பிும் VerbQuestion;
+ +verb+fin+complex+aspect+opt%=க்க:^க்க #;
+ +verb+nonfin+complex+aspect+inf%=க்க:^க்க #;
+++verb+nonfin+complex+aspect+inf%=க்க+moodpart%=அட்டும்:^க்கட்டும் #;
+ +verb+nonfin+complex+aspect+inf%=க்க+foc%=ஏ:^க்கவே #;
+ +verb+nonfin+complex+aspect+inf%=க்க+add%=உம்:^க்கவும் #;
+ +verb+nonfin+complex+aspect+inf%=க்க+sandhip%=ப்:^க்கப் #;

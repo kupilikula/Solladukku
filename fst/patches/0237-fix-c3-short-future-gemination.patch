@@ -1,0 +1,19 @@
+--- ThamizhiFST-C3.foma
++++ ThamizhiFST-C3.foma
+@@ -9,6 +9,8 @@
+ define C3R1 {ல்} -> 0 || _ "^" [{ன்}];
+ ##This is an issue, முயலாத / வெல்லாத  - how to handle this?
+ define C3R2 {ல்} -> {ல்ல} || .#. CON VM _ "^" [{அ}|{ா}];
++# Short monosyllabic C3 roots geminate before future -um.
++define C3ShortFuture {ல்} -> {ல்ல} || [{கொ}|{செ}|{சொ}|{மெ}|{வெ}] _ "^" [{ு}];
+ define C3R22 {ல்} -> {ல}  || _ "^" [{ு}|{அ}];
+ define C3R3 {ல்} -> {ல}  || _ "^" [{ா}];
+ # To Cleanup: remove morpheme boundaries
+@@ -21,6 +23,7 @@
+ define ClassThreeGrammar 	Lexicon           	.o.
+ 	  	C3R1		.o.
+ 	  	C3R2		.o.
++	  C3ShortFuture	.o.
+ 	  	C3R22		.o.
+ 	  	C3R3		.o.
+ 		Cleanup1		.o.

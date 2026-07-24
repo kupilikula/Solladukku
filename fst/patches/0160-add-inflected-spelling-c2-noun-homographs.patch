@@ -1,0 +1,37 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -42202,6 +42202,34 @@
+ வரை	C2SgRoot;
+ வாந்தி	C2SgRoot;
+ விதை	C2SgRoot;
++
++! Reviewed source-POS noun homographs; preserve existing non-noun readings
++அண்டை	C2SgRoot;
++அம்மி	C2SgRoot;
++அரக்கி	C2SgRoot;
++அலர்த்தி	C2SgRoot;
++ஆடி	C2SgRoot;
++இஞ்சி	C2SgRoot;
++உதவி	C2SgRoot;
++உலாவி	C2SgRoot;
++உள்ளுறை	C2SgRoot;
++ஊசி	C2SgRoot;
++கத்தி	C2SgRoot;
++கலவி	C2SgRoot;
++காவி	C2SgRoot;
++குற்றி	C2SgRoot;
++கொளுவி	C2SgRoot;
++சிங்கி	C2SgRoot;
++சிமிட்டி	C2SgRoot;
++தாங்கி	C2SgRoot;
++நெற்றி	C2SgRoot;
++பன்னி	C2SgRoot;
++பின்றி	C2SgRoot;
++மூடி	C2SgRoot;
++மெட்டி	C2SgRoot;
++வறட்டி	C2SgRoot;
++விசிறி	C2SgRoot;
++விலங்கி	C2SgRoot;
+ LEXICON C2SgRoot
+  !       Root;
+         C2Inflections;

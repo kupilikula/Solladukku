@@ -1,0 +1,26 @@
+--- tamil-adjectives.lexc
++++ tamil-adjectives.lexc
+@@ -185,7 +185,6 @@
+ பெரிய	 adjective; 
+ பெயர்போன	 adjective; 
+ பெயர்பெற்ற	 adjective; 
+-பூஜ்யÿ	 adjective; 
+ பூர்வ	 adjective; 
+ புனர்	 adjective; 
+ புதிய	 adjective; 
+@@ -551,7 +550,6 @@
+ முக்கிய	 adjective; 
+ சில	 adjective; 
+ ஆணாதிக்க	 adjective; 
+-வீ¦ட்டு	 adjective; 
+ நாட்டு	 adjective; 
+ மாபெரும்	 adjective; 
+ தென்னந்	 adjective; 
+@@ -594,7 +592,6 @@
+ பன்மை	 adjective; 
+ சகலகலா	 adjective; 
+ காட்டு	 adjective; 
+-ந‌ம்ப‌க‌ம்	 adjective; 
+ பூரணை	 adjective; 
+ தாழ்தப்பட்ட	 adjective; 
+ முற்பாதி	 adjective; 

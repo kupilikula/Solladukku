@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -5630,6 +5630,7 @@
+ 
+ 
+ LEXICON ClassFour
++ஒன்றிணை	C4Vinf;
+ வெற்றியடை C4Vinf;
+ பணிபுரி C4Vinf;
+ மனமார் C4Vinf;

@@ -1,0 +1,1558 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -264,7 +264,6 @@
+ பசு	 	C1SgRoot;
+ தெரு	C1SgRoot;
+ மடு		C1SgRoot;
+-தெரு	C1SgRoot;
+ பூ		C1SgRoot;
+ குழு		C1SgRoot;
+ உயிரணு	C1SgRoot;
+@@ -960,7 +959,6 @@
+ புளிமா	C1SgRoot;
+ புறா	C1SgRoot;
+ புனையுரு	C1SgRoot;
+-பூ	C1SgRoot;
+ பூங்கா	C1SgRoot;
+ பூநிலா	C1SgRoot;
+ பூந்திரு	C1SgRoot;
+@@ -1228,7 +1226,6 @@
+ முணு	C1SgRoot;
+ முருகா	C1SgRoot;
+ முழு	C1SgRoot;
+-மைனா	C1SgRoot;
+ விழா	C1SgRoot;
+ விஷ்ணு	C1SgRoot;
+ வென்னா	C1SgRoot;
+@@ -1342,7 +1339,6 @@
+ மைதா	C1SgRoot;
+ ரஜா	C1SgRoot;
+ ராஜா	C1SgRoot;
+-ரோஜா	C1SgRoot;
+ வினா	C1SgRoot;
+ ! Corpus-backed common noun coverage tranche.
+ சுற்றுலா	C1SgRoot;
+@@ -2066,10 +2062,6 @@
+ +noun+pl+dat+psp_kurukke:^க்களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^வுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^க்களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^வுக்குள் #;
+-+noun+pl+dat+psp_ul:^க்களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^வுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^க்களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^வுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^க்களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^வுக்குள்ளேயிருந்து #;
+@@ -2090,8 +2082,6 @@
+ +noun+pl+dat+psp_naduvil:^க்களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^வுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^க்களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^வுக்காக #;
+-+noun+pl+dat+ben:^க்களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^வினருகில் #;
+ +noun+pl+gen+psp_arukil:^க்களினருகில் #;
+@@ -2177,7 +2167,6 @@
+ வேட்டி         	C2SgRoot; 
+ தாடி         		C2SgRoot; 
+ மாலை         	C2SgRoot; 
+-தலை         		C2SgRoot; 
+ பை         		C2SgRoot; 
+ மை         		C2SgRoot; 
+ கை         		C2SgRoot; 
+@@ -3070,7 +3059,6 @@
+ அரசழகி	C2SgRoot;
+ அரசன்னை	C2SgRoot;
+ அரசாழி	C2SgRoot;
+-அரசி	C2SgRoot;
+ அரசிறைவி	C2SgRoot;
+ அரசெழிலி	C2SgRoot;
+ அரசேந்தி	C2SgRoot;
+@@ -5034,7 +5022,6 @@
+ எருமை	C2SgRoot;
+ எருமைமுன்னை	C2SgRoot;
+ எருவை	C2SgRoot;
+-எலி	C2SgRoot;
+ எல்லணி	C2SgRoot;
+ எல்லம்மை	C2SgRoot;
+ எல்லரசி	C2SgRoot;
+@@ -7186,7 +7173,6 @@
+ கேளெழிலி	C2SgRoot;
+ கேளொளி	C2SgRoot;
+ கேள்வி	C2SgRoot;
+-கை	C2SgRoot;
+ கைக்கணை	C2SgRoot;
+ கைக்கழி	C2SgRoot;
+ கைக்கனி	C2SgRoot;
+@@ -7752,7 +7738,6 @@
+ கோவையெழிலி	C2SgRoot;
+ கோவையொளி	C2SgRoot;
+ கோவைவாணி	C2SgRoot;
+-கோழி	C2SgRoot;
+ கோளரி	C2SgRoot;
+ கோளழகி	C2SgRoot;
+ கோளொளி	C2SgRoot;
+@@ -7975,7 +7960,6 @@
+ சாலிழை	C2SgRoot;
+ சாலினி	C2SgRoot;
+ சாலெழிலி	C2SgRoot;
+-சாலை	C2SgRoot;
+ சாலொளி	C2SgRoot;
+ சாலோதி	C2SgRoot;
+ சால்கணை	C2SgRoot;
+@@ -9495,7 +9479,6 @@
+ தம்பனை	C2SgRoot;
+ தம்பி	C2SgRoot;
+ தம்புகை	C2SgRoot;
+-தலை	C2SgRoot;
+ தலைதலைமை	C2SgRoot;
+ தலைப்பிறை	C2SgRoot;
+ தலைமணி	C2SgRoot;
+@@ -12300,7 +12283,6 @@
+ படர்வாடை	C2SgRoot;
+ படர்வாணி	C2SgRoot;
+ படர்விழி	C2SgRoot;
+-படை	C2SgRoot;
+ படைக்கணை	C2SgRoot;
+ படைக்கண்ணி	C2SgRoot;
+ படைக்கலை	C2SgRoot;
+@@ -13298,7 +13280,6 @@
+ புகழ்ப்பரிதி	C2SgRoot;
+ புகழ்ப்பாடி	C2SgRoot;
+ புகழ்ப்பாடினி	C2SgRoot;
+-புகழ்ப்பாவை	C2SgRoot;
+ புகழ்ப்பிடி	C2SgRoot;
+ புகழ்ப்பிணை	C2SgRoot;
+ புகழ்ப்பிராட்டி	C2SgRoot;
+@@ -13653,7 +13634,6 @@
+ புலவெற்றி	C2SgRoot;
+ புலவேங்கை	C2SgRoot;
+ புலவொளி	C2SgRoot;
+-புலி	C2SgRoot;
+ புலிக்கண்ணி	C2SgRoot;
+ புலிக்குட்டி	C2SgRoot;
+ புலிக்கொடி	C2SgRoot;
+@@ -13945,7 +13925,6 @@
+ பேரொலி	C2SgRoot;
+ பேரொளி	C2SgRoot;
+ பேர்பெருமை	C2SgRoot;
+-பை	C2SgRoot;
+ பைங்கணை	C2SgRoot;
+ பைங்கண்ணி	C2SgRoot;
+ பைங்கலை	C2SgRoot;
+@@ -14081,7 +14060,6 @@
+ பொதிகைவேங்கை	C2SgRoot;
+ பொதிகைவேரி	C2SgRoot;
+ பொதிதகையொளி	C2SgRoot;
+-பொய்	C2SgRoot;
+ பொய்கை	C2SgRoot;
+ பொய்கைக்கரை	C2SgRoot;
+ பொய்கைக்கிளி	C2SgRoot;
+@@ -15167,7 +15145,6 @@
+ மலர்வேங்கை	C2SgRoot;
+ மலர்வேரி	C2SgRoot;
+ மலாக்காசாம்பிராணி	C2SgRoot;
+-மலை	C2SgRoot;
+ மலைக்கழை	C2SgRoot;
+ மலைக்கனி	C2SgRoot;
+ மலைக்கிளி	C2SgRoot;
+@@ -15567,7 +15544,6 @@
+ மாரி	C2SgRoot;
+ மாரித்தம்பி	C2SgRoot;
+ மாரிமழை	C2SgRoot;
+-மாலை	C2SgRoot;
+ மாலைசூடி	C2SgRoot;
+ மாலைபூமாலை	C2SgRoot;
+ மாலைமணி	C2SgRoot;
+@@ -16118,7 +16094,6 @@
+ மூதூர்வல்லி	C2SgRoot;
+ மூதூர்வழுதி	C2SgRoot;
+ மூதூர்வாணி	C2SgRoot;
+-மெய்	C2SgRoot;
+ மெய்உண்மை	C2SgRoot;
+ மெய்க்கணை	C2SgRoot;
+ மெய்க்கண்ணி	C2SgRoot;
+@@ -16383,7 +16358,6 @@
+ மேன்மைப்பூவை	C2SgRoot;
+ மேன்மைப்பொறை	C2SgRoot;
+ மேன்மைப்பொன்னி	C2SgRoot;
+-மை	C2SgRoot;
+ மைகருமை	C2SgRoot;
+ மைக்கண்ணி	C2SgRoot;
+ மைக்கிளி	C2SgRoot;
+@@ -16398,7 +16372,6 @@
+ மைவாரி	C2SgRoot;
+ மைவிழி	C2SgRoot;
+ மொட்டுமுகை	C2SgRoot;
+-மொழி	C2SgRoot;
+ மொழிக்கலை	C2SgRoot;
+ மொழிக்கனி	C2SgRoot;
+ மொழிக்கிளி	C2SgRoot;
+@@ -16560,7 +16533,6 @@
+ யாழ்வெற்றி	C2SgRoot;
+ யாழ்வேங்கை	C2SgRoot;
+ யாழ்வேரி	C2SgRoot;
+-யானை	C2SgRoot;
+ ரவி	C2SgRoot;
+ வஞ்சி	C2SgRoot;
+ வஞ்சிக்கனி	C2SgRoot;
+@@ -17929,10 +17901,8 @@
+ பேருதவி	C2SgRoot;
+ பொடி	C2SgRoot;
+ பொம்மை	C2SgRoot;
+-பொய்	C2SgRoot;
+ பொரி	C2SgRoot;
+ பொறாமை	C2SgRoot;
+-பொறி	C2SgRoot;
+ பொறுமை	C2SgRoot;
+ போட்டி	C2SgRoot;
+ போதை	C2SgRoot;
+@@ -17945,7 +17915,6 @@
+ மகிழ்ச்சி	C2SgRoot;
+ மகிஷி	C2SgRoot;
+ மங்காமணி	C2SgRoot;
+-மங்கை	C2SgRoot;
+ மடமை	C2SgRoot;
+ மடி	C2SgRoot;
+ மடை	C2SgRoot;
+@@ -17954,12 +17923,10 @@
+ மணப்படை	C2SgRoot;
+ மண்வெட்டி	C2SgRoot;
+ மதனி	C2SgRoot;
+-மதுரை	C2SgRoot;
+ மந்தாகினி	C2SgRoot;
+ மந்தி	C2SgRoot;
+ மந்திரவாதி	C2SgRoot;
+ மந்திராலோசனை	C2SgRoot;
+-மந்திரி	C2SgRoot;
+ மந்திரி	C2SgRoot;
+ மரக்கட்டை	C2SgRoot;
+ மரக்கிளை	C2SgRoot;
+@@ -17968,15 +17935,12 @@
+ மரியாதை	C2SgRoot;
+ மருத்துவச்சி	C2SgRoot;
+ மலர்ச்சி	C2SgRoot;
+-மலை	C2SgRoot;
+ மல்லை	C2SgRoot;
+ மழபாடி	C2SgRoot;
+ மழவர்பாடி	C2SgRoot;
+-மழை	C2SgRoot;
+ மறுதிசை	C2SgRoot;
+ மறுமுறை	C2SgRoot;
+ மறுமொழி	C2SgRoot;
+-மறை	C2SgRoot;
+ மனக்கிளர்ச்சி	C2SgRoot;
+ மனக்குறை	C2SgRoot;
+ மனக்கோட்டை	C2SgRoot;
+@@ -17993,13 +17957,10 @@
+ மாதரசி	C2SgRoot;
+ மாதிரி	C2SgRoot;
+ மாதேவடி	C2SgRoot;
+-மாதேவடி	C2SgRoot;
+-மாதேவி	C2SgRoot;
+ மாப்பிள்ளை	C2SgRoot;
+ மாயமோகினி	C2SgRoot;
+ மாயை	C2SgRoot;
+ மார்பகத்தை	C2SgRoot;
+-மாலை	C2SgRoot;
+ மாளிகை	C2SgRoot;
+ மிகுதி	C2SgRoot;
+ மிராண்டி	C2SgRoot;
+@@ -18011,18 +17972,14 @@
+ முகமூடி	C2SgRoot;
+ முகஸ்துதி	C2SgRoot;
+ முக்கால்வாசி	C2SgRoot;
+-முடி	C2SgRoot;
+ முட்டுக்கட்டை	C2SgRoot;
+ முதலியவை	C2SgRoot;
+ முதலை	C2SgRoot;
+ முதன்மந்திரி	C2SgRoot;
+ முதுகை	C2SgRoot;
+-முதுமை	C2SgRoot;
+ முத்திரை	C2SgRoot;
+-முயற்சி	C2SgRoot;
+ முறைமை	C2SgRoot;
+ முற்பிறவி	C2SgRoot;
+-முனை	C2SgRoot;
+ முன்குடுமி	C2SgRoot;
+ முன்மாலை	C2SgRoot;
+ முன்யோசனை	C2SgRoot;
+@@ -18039,28 +17996,23 @@
+ மூலை	C2SgRoot;
+ மூளை	C2SgRoot;
+ மெத்தை	C2SgRoot;
+-மென்மை	C2SgRoot;
+ மென்னி	C2SgRoot;
+ மேடை	C2SgRoot;
+ மேதாவி	C2SgRoot;
+ மேலை	C2SgRoot;
+ மேற்றளி	C2SgRoot;
+-மேனகை	C2SgRoot;
+ மேனி	C2SgRoot;
+-மொழி	C2SgRoot;
+ மோகனாங்கி	C2SgRoot;
+ மோகினி	C2SgRoot;
+ மோசக்காரி	C2SgRoot;
+ மோசடி	C2SgRoot;
+ யாத்திரை	C2SgRoot;
+-யானை	C2SgRoot;
+ யுவதி	C2SgRoot;
+ யோகசாலி	C2SgRoot;
+ யோசனை	C2SgRoot;
+ வகை	C2SgRoot;
+ வசதி	C2SgRoot;
+ வஞ்சகி	C2SgRoot;
+-வடகரை	C2SgRoot;
+ வடதளி	C2SgRoot;
+ வடதிசை	C2SgRoot;
+ வடபகுதி	C2SgRoot;
+@@ -18072,10 +18024,7 @@
+ வரிசை	C2SgRoot;
+ வரி	C2SgRoot;
+ வலக்கை	C2SgRoot;
+-வலிமை	C2SgRoot;
+-வலி	C2SgRoot;
+ வலை	C2SgRoot;
+-வல்லமை	C2SgRoot;
+ வனிதாமணி	C2SgRoot;
+ வாக்குவன்மை	C2SgRoot;
+ வாக்குறுதி	C2SgRoot;
+@@ -18093,9 +18042,7 @@
+ வார்த்தை	C2SgRoot;
+ வாவி	C2SgRoot;
+ வாழ்த்தொலி	C2SgRoot;
+-வானதி	C2SgRoot;
+ வானமாதேவி	C2SgRoot;
+-வானவன்மாதேவி	C2SgRoot;
+ விசாரணை	C2SgRoot;
+ விடுதி	C2SgRoot;
+ விடை	C2SgRoot;
+@@ -18112,21 +18059,14 @@
+ விரோதி	C2SgRoot;
+ விளக்கினடி	C2SgRoot;
+ வினாடி	C2SgRoot;
+-வீணை	C2SgRoot;
+-வீதி	C2SgRoot;
+ வீதி	C2SgRoot;
+ வீரபுரி	C2SgRoot;
+ வீராதி	C2SgRoot;
+ வெளி	C2SgRoot;
+ வெளிக்கோட்டை	C2SgRoot;
+-வெளி	C2SgRoot;
+ வெளித்திரை	C2SgRoot;
+ வெளிப்புறத்திரை	C2SgRoot;
+-வெளி	C2SgRoot;
+-வெள்ளை	C2SgRoot;
+ வெறி	C2SgRoot;
+-வெறி	C2SgRoot;
+-வெற்றி	C2SgRoot;
+ வெற்றிலை	C2SgRoot;
+ வேங்கி	C2SgRoot;
+ வேடிக்கை	C2SgRoot;
+@@ -18624,7 +18564,6 @@
+ திருக்கார்த்திகை	C2SgRoot;
+ திருக்கை	C2SgRoot;
+ திருச்சபை	C2SgRoot;
+-திருநம்பி	C2SgRoot;
+ திருநாமச்செடி	C2SgRoot;
+ திருநீற்றுப்பச்சை	C2SgRoot;
+ திருப்தி	C2SgRoot;
+@@ -42440,10 +42379,6 @@
+ +noun+pl+dat+psp_kurukke:^களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^யுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^யுக்குள் #;
+-+noun+pl+dat+psp_ul:^களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^யுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^யுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^யுக்குள்ளேயிருந்து #;
+@@ -42464,8 +42399,6 @@
+ +noun+pl+dat+psp_naduvil:^களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^யுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^யுக்காக #;
+-+noun+pl+dat+ben:^களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^யினருகில் #;
+ +noun+pl+gen+psp_arukil:^களினருகில் #;
+@@ -42693,10 +42626,6 @@
+ +noun+pl+dat+psp_kurukke:^க்களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^யுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^க்களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^யுக்குள் #;
+-+noun+pl+dat+psp_ul:^க்களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^யுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^க்களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^யுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^க்களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^யுக்குள்ளேயிருந்து #;
+@@ -42717,8 +42646,6 @@
+ +noun+pl+dat+psp_naduvil:^க்களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^யுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^க்களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^யுக்காக #;
+-+noun+pl+dat+ben:^க்களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^யினருகில் #;
+ +noun+pl+gen+psp_arukil:^க்களினருகில் #;
+@@ -43426,7 +43353,6 @@
+ ஆட்சியாற்றல்	C4SgRoot; 
+ ஆட்சியெழில்	C4SgRoot; 
+ ஆட்சிவேல்	C4SgRoot; 
+-ஆண்	C4SgRoot; 
+ ஆத்திக்குயில்	C4SgRoot; 
+ ஆத்திமயில்	C4SgRoot; 
+ ஆத்தியண்ணல்	C4SgRoot; 
+@@ -43547,7 +43473,6 @@
+ இணைக்குயில்	C4SgRoot; 
+ இணைமயில்	C4SgRoot; 
+ இணையாற்றல்	C4SgRoot; 
+-இதழ்	C4SgRoot; 
+ இத்திக்குயில்	C4SgRoot; 
+ இத்திச்சாரல்	C4SgRoot; 
+ இத்திச்சேய்	C4SgRoot; 
+@@ -45225,7 +45150,6 @@
+ செறுவிறல்	C4SgRoot; 
+ செறுவேல்	C4SgRoot; 
+ சேடல்	C4SgRoot; 
+-சேய்	C4SgRoot; 
+ சேரக்கடல்	C4SgRoot; 
+ சேரக்கனல்	C4SgRoot; 
+ சேரக்குயில்	C4SgRoot; 
+@@ -45527,7 +45451,6 @@
+ தாமரையெழில்	C4SgRoot; 
+ தாமரைவயல்	C4SgRoot; 
+ தாயெழில்	C4SgRoot; 
+-தாய்	C4SgRoot; 
+ தாய்க்கடல்	C4SgRoot; 
+ தாய்க்குயில்	C4SgRoot; 
+ தாய்த்தமிழ்	C4SgRoot; 
+@@ -46560,7 +46483,6 @@
+ பாமயில்	C4SgRoot; 
+ பாமுகில்	C4SgRoot; 
+ பாயாழ்	C4SgRoot; 
+-பாய்	C4SgRoot; 
+ பாய்கயல்	C4SgRoot; 
+ பாய்தல்	C4SgRoot; 
+ பாய்தல்குதித்தல்	C4SgRoot; 
+@@ -46574,7 +46496,6 @@
+ பார்வைத்திறல்	C4SgRoot; 
+ பார்வைத்தென்றல்	C4SgRoot; 
+ பாலெழில்	C4SgRoot; 
+-பால்	C4SgRoot; 
+ பால்பால்	C4SgRoot; 
+ பாவெழில்	C4SgRoot; 
+ பாற்கடல்	C4SgRoot; 
+@@ -48001,7 +47922,6 @@
+ பொய்க்கால்	C4SgRoot; 
+ மணல்	C4SgRoot; 
+ மதில்	C4SgRoot; 
+-மயில்	C4SgRoot; 
+ மரநாய்	C4SgRoot; 
+ மார்க்கத்தில்	C4SgRoot; 
+ மாறுதல்	C4SgRoot; 
+@@ -48009,24 +47929,18 @@
+ முழிமுழித்தாய்	C4SgRoot; 
+ முன்கால்	C4SgRoot; 
+ முன்வாசல்	C4SgRoot; 
+-மூங்கில்	C4SgRoot; 
+ மேல்	C4SgRoot; 
+ மோனமதில்	C4SgRoot; 
+-வயல்	C4SgRoot; 
+ வயிற்றெரிச்சல்	C4SgRoot; 
+ வாசல்	C4SgRoot; 
+-வாய்	C4SgRoot; 
+ வாய்க்கால்	C4SgRoot; 
+-வாய்	C4SgRoot; 
+ வால்	C4SgRoot; 
+ வானவில்	C4SgRoot; 
+ விம்மல்	C4SgRoot; 
+ விரல்	C4SgRoot; 
+ வீண்	C4SgRoot; 
+-வீரப்புகழ்	C4SgRoot; 
+ வெயில்	C4SgRoot; 
+ வெளிமதில்	C4SgRoot; 
+-வேல்	C4SgRoot; 
+ 
+ 
+ ! Source-backed name cleanup tranche: multi-source name/name+noun candidates.
+@@ -52264,10 +52178,6 @@
+ +noun+pl+dat+psp_kurukke:^களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^ுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^ுக்குள் #;
+-+noun+pl+dat+psp_ul:^களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^ுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^ுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^ுக்குள்ளேயிருந்து #;
+@@ -52288,8 +52198,6 @@
+ +noun+pl+dat+psp_naduvil:^களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^ுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^ுக்காக #;
+-+noun+pl+dat+ben:^களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^ினருகில் #;
+ +noun+pl+gen+psp_arukil:^களினருகில் #;
+@@ -52421,8 +52329,6 @@
+ +noun+pl+dat+psp_pinne_iruntu:^ுக்குப்பின்னேயிருந்து #;
+ +noun+pl+dat+psp_kurukke:^ுக்குக்குறுக்கே #;
+ +noun+pl+dat+psp_kurukke_iruntu:^ுக்குக்குறுக்கேயிருந்து #;
+-+noun+pl+dat+psp_ul:^ுக்குள் #;
+-+noun+pl+dat+psp_ul_iruntu:^ுக்குள்ளிருந்து #;
+ +noun+pl+dat+psp_ulle:^ுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle_iruntu:^ுக்குள்ளேயிருந்து #;
+ +noun+pl+dat+psp_ethire:^ுக்கெதிரே #;
+@@ -52433,7 +52339,6 @@
+ +noun+pl+dat+psp_idayil_iruntu:^ுக்கிடையிலிருந்து #;
+ +noun+pl+dat+psp_naduvil:^ுக்குநடுவில் #;
+ +noun+pl+dat+psp_naduvil_iruntu:^ுக்குநடுவிலிருந்து #;
+-+noun+pl+dat+ben:^ுக்காக #;
+ 
+ +noun+pl+gen+psp_arukil:^ினருகில் #;
+ +noun+pl+gen+psp_arukil_iruntu:^ினருகிலிருந்து #;
+@@ -52461,7 +52366,6 @@
+ காடு 		C6SgRoot;
+ ஆடு	C6SgRoot;
+ ஊர்நாடு	C6SgRoot;
+-காடு	C6SgRoot;
+ காவற்காடு	C6SgRoot;
+ கான்காடு	C6SgRoot;
+ குமரிகோடு	C6SgRoot;
+@@ -52508,7 +52412,6 @@
+ மல்லிகைக்காடு	C6SgRoot;
+ மறைக்காடு	C6SgRoot;
+ மனைவீடு	C6SgRoot;
+-மாடு	C6SgRoot;
+ முதற்காடு	C6SgRoot;
+ முத்துக்காடு	C6SgRoot;
+ முல்லைக்காடு	C6SgRoot;
+@@ -52522,7 +52425,6 @@
+ வேரற்காடு	C6SgRoot;
+ வேழக்காடு	C6SgRoot;
+ மலாடு	C6SgRoot;
+-மாடு	C6SgRoot;
+ மிலாடு	C6SgRoot;
+ முடு	C6SgRoot;
+ வடநாடு	C6SgRoot;
+@@ -52784,11 +52686,9 @@
+ வாண்மொட்டு	C6TTUSgRoot;
+ வெண்மொட்டு	C6TTUSgRoot;
+ வைகைப்பொட்டு	C6TTUSgRoot;
+-பொட்டு	C6TTUSgRoot;
+ மின்வெட்டு	C6TTUSgRoot;
+ முகட்டு	C6TTUSgRoot;
+ முரட்டு	C6TTUSgRoot;
+-மொட்டு	C6TTUSgRoot;
+ விளையாட்டு	C6TTUSgRoot;
+ ஜல்லிக்கட்டு	C6TTUSgRoot;
+ 
+@@ -53003,10 +52903,6 @@
+ +noun+pl+dat+psp_kurukke:^களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^ட்டுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^ட்டுக்குள் #;
+-+noun+pl+dat+psp_ul:^களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^ட்டுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^ட்டுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^ட்டுக்குள்ளேயிருந்து #;
+@@ -53027,8 +52923,6 @@
+ +noun+pl+dat+psp_naduvil:^களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^ட்டுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^ட்டுக்காக #;
+-+noun+pl+dat+ben:^களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^ட்டினருகில் #;
+ +noun+pl+gen+psp_arukil:^களினருகில் #;
+@@ -53238,10 +53132,6 @@
+ +noun+pl+dat+psp_kurukke:^களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^ட்டுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^ட்டுக்குள் #;
+-+noun+pl+dat+psp_ul:^களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^ட்டுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^ட்டுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^ட்டுக்குள்ளேயிருந்து #;
+@@ -53262,8 +53152,6 @@
+ +noun+pl+dat+psp_naduvil:^களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^ட்டுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^ட்டுக்காக #;
+-+noun+pl+dat+ben:^களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^ட்டினருகில் #;
+ +noun+pl+gen+psp_arukil:^களினருகில் #;
+@@ -56145,7 +56033,6 @@
+ வீரவமுது	C7SgRoot; 
+ வீரவரசு	C7SgRoot; 
+ வீரவழகு	C7SgRoot; 
+-வெண்ணிலவு	C7SgRoot; 
+ வெண்முத்து	C7SgRoot; 
+ வெள்ளிமுத்து	C7SgRoot; 
+ வெள்ளைக்கடம்பு	C7SgRoot; 
+@@ -56215,7 +56102,6 @@
+ பொந்து	C7SgRoot; 
+ பொழுது	C7SgRoot; 
+ பொறுப்பு	C7SgRoot; 
+-பொறுப்பு	C7SgRoot; 
+ பொற்காசு	C7SgRoot; 
+ போக்கு	C7SgRoot; 
+ மகனிடமிருந்து	C7SgRoot; 
+@@ -56234,10 +56120,8 @@
+ முடிவு	C7SgRoot; 
+ முடுக்கு	C7SgRoot; 
+ முதுகு	C7SgRoot; 
+-முத்து	C7SgRoot; 
+ முழவு	C7SgRoot; 
+ முழுவது	C7SgRoot; 
+-மூக்கு	C7SgRoot; 
+ மூச்சு	C7SgRoot; 
+ மூடுபல்லக்கு	C7SgRoot; 
+ மூப்பு	C7SgRoot; 
+@@ -56247,16 +56131,13 @@
+ மேற்கு	C7SgRoot; 
+ மோகினிப்பிசாசு	C7SgRoot; 
+ வசவு	C7SgRoot; 
+-வடக்கு	C7SgRoot; 
+ வடமேற்கு	C7SgRoot; 
+-வண்டு	C7SgRoot; 
+ வம்பு	C7SgRoot; 
+ வயது	C7SgRoot; 
+ வரவேற்பு	C7SgRoot; 
+ வனப்பு	C7SgRoot; 
+ வாக்கு	C7SgRoot; 
+ வாசற்கதவு	C7SgRoot; 
+-வாழ்வு	C7SgRoot; 
+ வானத்து	C7SgRoot; 
+ விபத்து	C7SgRoot; 
+ வியப்பு	C7SgRoot; 
+@@ -56265,7 +56146,6 @@
+ வில்லம்பு	C7SgRoot; 
+ வில்லு	C7SgRoot; 
+ விழிப்பு	C7SgRoot; 
+-விளக்கு	C7SgRoot; 
+ விளிம்பு	C7SgRoot; 
+ வீச்சு	C7SgRoot; 
+ வீட்டுக்கதவு	C7SgRoot; 
+@@ -66385,10 +66265,6 @@
+ +noun+pl+dat+psp_kurukke:^களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^க்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^க்குள் #;
+-+noun+pl+dat+psp_ul:^களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^க்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^க்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^க்குள்ளேயிருந்து #;
+@@ -66409,8 +66285,6 @@
+ +noun+pl+dat+psp_naduvil:^களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^க்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^க்காக #;
+-+noun+pl+dat+ben:^களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^ஆினருகில் #;
+ +noun+pl+gen+psp_arukil:^களினருகில் #;
+@@ -66450,7 +66324,6 @@
+ அன்ஆண்பால்ஈறு	C8SgRoot;
+ அன்புபற்று	C7SgRoot;
+ ஆதவன்ஞாயிறு	C8SgRoot;
+-ஆறு	C8SgRoot;
+ ஆற்றலேறு	C8SgRoot;
+ இசையேறு	C8SgRoot;
+ இளவேறு	C8SgRoot;
+@@ -66514,13 +66387,10 @@
+ முகக்கயிறு	C8SgRoot; 
+ மேலக்காற்று	C7SgRoot;
+ வடவாறு	C8SgRoot; 
+-வயிறு	C8SgRoot; 
+-வயிறு	C8SgRoot; 
+ வரலாறு	C8SgRoot; 
+ வெட்டாறு	C8SgRoot; 
+ வெண்ணாறு	C8SgRoot; 
+ வேறு	C8SgRoot; 
+-வைகையாறு	C8SgRoot; 
+ 
+ 
+ ! Reviewed source-POS noun homographs; preserve existing non-noun readings
+@@ -66718,10 +66588,6 @@
+ +noun+pl+dat+psp_kurukke:^களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^றுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^றுக்குள் #;
+-+noun+pl+dat+psp_ul:^களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^றுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^றுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^றுக்குள்ளேயிருந்து #;
+@@ -66742,8 +66608,6 @@
+ +noun+pl+dat+psp_naduvil:^களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^றுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^றுக்காக #;
+-+noun+pl+dat+ben:^களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^றினருகில் #;
+ +noun+pl+gen+psp_arukil:^களினருகில் #;
+@@ -66820,14 +66684,12 @@
+ ஈழப்பண்	C9SgRoot ; 
+ ஈழவரண்	C9SgRoot ; 
+ ஊற்றுக்கண்	C9SgRoot ; 
+-எண்	C9SgRoot ; 
+ எழிலரண்	C9SgRoot ; 
+ கடம்பரண்	C9SgRoot ; 
+ கடலரண்	C9SgRoot ; 
+ கணிப்பண்	C9SgRoot ; 
+ கணியரண்	C9SgRoot ; 
+ கணையரண்	C9SgRoot ; 
+-கண்	C9SgRoot ; 
+ கண்ணியப்பண்	C9SgRoot ; 
+ கண்ணியவரண்	C9SgRoot ; 
+ கலையரண்	C9SgRoot ; 
+@@ -66973,7 +66835,6 @@
+ புரவரண்	C9SgRoot ; 
+ புலவரண்	C9SgRoot ; 
+ புனையரண்	C9SgRoot ; 
+-பெண்	C9SgRoot ; 
+ பெரும்பெண்	C9SgRoot ; 
+ பேரரண்	C9SgRoot ; 
+ பைம்பண்	C9SgRoot ; 
+@@ -66991,7 +66852,6 @@
+ மங்கைபெண்	C9SgRoot ; 
+ மணிப்பண்	C9SgRoot ; 
+ மணியரண்	C9SgRoot ; 
+-மண்	C9SgRoot ; 
+ மதுரையரண்	C9SgRoot ; 
+ மருதப்பண்	C9SgRoot ; 
+ மருதவரண்	C9SgRoot ; 
+@@ -67034,7 +66894,6 @@
+ வானரண்	C9SgRoot ; 
+ விடியற்பண்	C9SgRoot ; 
+ விடுதலைப்பண்	C9SgRoot ; 
+-விண்	C9SgRoot ; 
+ விழிகண்	C9SgRoot ; 
+ விறலரண்	C9SgRoot ; 
+ விறற்பண்	C9SgRoot ; 
+@@ -67049,7 +66908,6 @@
+ வைகறைப்பண்	C9SgRoot ; 
+ வைகைப்பெண்	C9SgRoot ; 
+ மணப்பெண்	C9SgRoot ;
+-மண்	C9SgRoot ;
+ மனக்கண்	C9SgRoot ;
+ விழுப்புண்	C9SgRoot ;
+ 
+@@ -67700,10 +67558,6 @@
+ +noun+pl+dat+psp_kurukke:^களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^ணுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^ணுக்குள் #;
+-+noun+pl+dat+psp_ul:^களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^ணுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^ணுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^ணுக்குள்ளேயிருந்து #;
+@@ -67724,8 +67578,6 @@
+ +noun+pl+dat+psp_naduvil:^களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^ணுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^ணுக்காக #;
+-+noun+pl+dat+ben:^களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^ணினருகில் #;
+ +noun+pl+gen+psp_arukil:^களினருகில் #;
+@@ -67953,10 +67805,6 @@
+ +noun+pl+dat+psp_kurukke:^களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^னுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^னுக்குள் #;
+-+noun+pl+dat+psp_ul:^களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^னுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^னுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^னுக்குள்ளேயிருந்து #;
+@@ -67977,8 +67825,6 @@
+ +noun+pl+dat+psp_naduvil:^களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^னுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^னுக்காக #;
+-+noun+pl+dat+ben:^களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^னினருகில் #;
+ +noun+pl+gen+psp_arukil:^களினருகில் #;
+@@ -69093,7 +68939,6 @@
+ அரசறவோன்	C11SgRoot ;
+ அரசறிஞன்	C11SgRoot ;
+ அரசறிவன்	C11SgRoot ;
+-அரசன்	C11SgRoot ;
+ அரசன்பன்	C11SgRoot ;
+ அரசாற்றலன்	C11SgRoot ;
+ அரசினியன்	C11SgRoot ;
+@@ -79276,7 +79121,6 @@
+ மாங்குடிமருதன்	C11SgRoot ;
+ மாசாத்தன்	C11SgRoot ;
+ மாச்சுடரோன்	C11SgRoot ;
+-மாணவன்	C11SgRoot ;
+ மாணெஞ்சன்	C11SgRoot ;
+ மாண்பன்	C11SgRoot ;
+ மாண்பன்மாட்சிமையுடையவன்	C11SgRoot ;
+@@ -80898,24 +80742,17 @@
+ வைகைவேலன்	C11SgRoot ;
+ வைரவன்	C11SgRoot ;
+ வோங்குவேலோன்	C11SgRoot ;
+-பேரன்	C11SgRoot ;
+ பைத்தியக்காரன்	C11SgRoot ;
+-மகன்	C11SgRoot ;
+ மகாராஜன்	C11SgRoot ;
+ மகான்	C11SgRoot ;
+ மகிடாசுரன்	C11SgRoot ;
+ மகிந்தராஜன்	C11SgRoot ;
+ மகிந்தன்	C11SgRoot ;
+ மகேந்திரன்	C11SgRoot ;
+-மணாளன்	C11SgRoot ;
+ மதுராந்தகன்	C11SgRoot ;
+ மயன்	C11SgRoot ;
+-மலையமான்	C11SgRoot ;
+ மழவரையன்	C11SgRoot ;
+-மனிதன்	C11SgRoot ;
+ மன்மதன்	C11SgRoot ;
+-மன்னன்	C11SgRoot ;
+-மாமன்	C11SgRoot ;
+ மாமன்	C11SgRoot ;
+ மாரியம்மன்	C11SgRoot ;
+ மாறபாண்டியன்	C11SgRoot ;
+@@ -80925,10 +80762,8 @@
+ முதன்	C11SgRoot ;
+ முத்தரையன்	C11SgRoot ;
+ முரடன்	C11SgRoot ;
+-முன்	C11SgRoot ;
+ மூத்தவன்	C11SgRoot ;
+ மௌடீகன்	C11SgRoot ;
+-யமன்	C11SgRoot ;
+ யமன்	C11SgRoot ;
+ வந்தியதேவன்	C11SgRoot ;
+ வந்தியத்தேவன்	C11SgRoot ;
+@@ -80940,23 +80775,18 @@
+ வஸுதேவன்	C11SgRoot ;
+ வாசற்காவலன்	C11SgRoot ;
+ வாலிபன்	C11SgRoot ;
+-விண்ணவன்	C11SgRoot ;
+-விண்மீன்	C11SgRoot ;
+ விருத்திராசுரன்	C11SgRoot ;
+ விரும்புவோன்	C11SgRoot ;
+ விஜயாலயன்	C11SgRoot ;
+ வீமன்	C11SgRoot ;
+ வீரநாராயணன்	C11SgRoot ;
+ வீரபாண்டியன்	C11SgRoot ;
+-வீரன்	C11SgRoot ;
+ வீராதிவீரன்	C11SgRoot ;
+ வெறியாடியவன்	C11SgRoot ;
+-வேலன்	C11SgRoot ;
+ வேளான்	C11SgRoot ;
+ வைதும்பராயன்	C11SgRoot ;
+ வைஷ்ணவன்	C11SgRoot ;
+ யுவராஜ்  C11SgRoot ;
+-மாயவன்  C11SgRoot ;
+ 
+ 
+ ! Source-backed noun tranche: Tamil Lexicon / Tamil Wiktionary / Vuizur candidates.
+@@ -89154,10 +88984,6 @@
+ +noun+pl+dat+psp_kurukke:^ர்களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^னுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^ர்களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^னுக்குள் #;
+-+noun+pl+dat+psp_ul:^ர்களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^னுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^ர்களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^னுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^ர்களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^னுக்குள்ளேயிருந்து #;
+@@ -89178,8 +89004,6 @@
+ +noun+pl+dat+psp_naduvil:^ர்களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^னுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^ர்களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^னுக்காக #;
+-+noun+pl+dat+ben:^ர்களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^னினருகில் #;
+ +noun+pl+gen+psp_arukil:^ர்களினருகில் #;
+@@ -89401,10 +89225,6 @@
+ +noun+pl+dat+psp_kurukke:^ற்களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^லுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^ற்களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^லுக்குள் #;
+-+noun+pl+dat+psp_ul:^ற்களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^லுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^ற்களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^லுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^ற்களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^லுக்குள்ளேயிருந்து #;
+@@ -89425,8 +89245,6 @@
+ +noun+pl+dat+psp_naduvil:^ற்களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^லுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^ற்களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^லுக்காக #;
+-+noun+pl+dat+ben:^ற்களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^லினருகில் #;
+ +noun+pl+gen+psp_arukil:^ற்களினருகில் #;
+@@ -89642,10 +89460,6 @@
+ +noun+pl+dat+psp_kurukke:^ட்களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^ளுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^ட்களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^ளுக்குள் #;
+-+noun+pl+dat+psp_ul:^ட்களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^ளுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^ட்களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^ளுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^ட்களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^ளுக்குள்ளேயிருந்து #;
+@@ -89666,8 +89480,6 @@
+ +noun+pl+dat+psp_naduvil:^ட்களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^ளுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^ட்களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^ளுக்காக #;
+-+noun+pl+dat+ben:^ட்களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^ளினருகில் #;
+ +noun+pl+gen+psp_arukil:^ட்களினருகில் #;
+@@ -89864,7 +89676,6 @@
+ ஆர்வலள்	C14SgRoot ; 
+ ஆழியூராள்	C14SgRoot ; 
+ ஆளிஆள்பவள்	C14SgRoot ; 
+-ஆள்	C14SgRoot ; 
+ ஆற்றலள்	C14SgRoot ; 
+ ஆற்றலாள்	C14SgRoot ; 
+ ஆற்றலினியள்	C14SgRoot ; 
+@@ -90535,7 +90346,6 @@
+ நாவன்மகள்	C14SgRoot ; 
+ நாவினியள்	C14SgRoot ; 
+ நாவினியாள்	C14SgRoot ; 
+-நாள்	C14SgRoot ; 
+ நிகரிலாள்	C14SgRoot ; 
+ நிலநல்லாள்	C14SgRoot ; 
+ நிலமகள்	C14SgRoot ; 
+@@ -91292,7 +91102,6 @@
+ வைகையாள்	C14SgRoot ; 
+ வைகையினியள்	C14SgRoot ; 
+ வைகையினியாள்	C14SgRoot ; 
+-பொருள்	C14SgRoot ; 
+ போர்முரசங்கள்	C14SgRoot ; 
+ மங்கள்	C14SgRoot ; 
+ மஞ்சள்	C14SgRoot ; 
+@@ -92493,10 +92302,6 @@
+ +noun+pl+dat+psp_kurukke:^ட்களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^ுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^ட்களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^ுக்குள் #;
+-+noun+pl+dat+psp_ul:^ட்களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^ுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^ட்களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^ுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^ட்களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^ுக்குள்ளேயிருந்து #;
+@@ -92517,8 +92322,6 @@
+ +noun+pl+dat+psp_naduvil:^ட்களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^ுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^ட்களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^ுக்காக #;
+-+noun+pl+dat+ben:^ட்களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^ினருகில் #;
+ +noun+pl+gen+psp_arukil:^ட்களினருகில் #;
+@@ -92965,7 +92768,6 @@
+ குடிகுடும்பம்	C15SgRoot ; 
+ குட்டித்தங்கம்	C15SgRoot ; 
+ குணத்தங்கம்	C15SgRoot ; 
+-குணம்	C15SgRoot ; 
+ குணவமுதம்	C15SgRoot ; 
+ குமரிகுமரிக்கண்டம்	C15SgRoot ; 
+ குமரிச்செல்வம்	C15SgRoot ; 
+@@ -93060,7 +92862,6 @@
+ கோலக்கலம்	C15SgRoot ; 
+ கோலத்தங்கம்	C15SgRoot ; 
+ கோலமருதம்	C15SgRoot ; 
+-கோலம்	C15SgRoot ; 
+ கோலவானம்	C15SgRoot ; 
+ கோவளம்	C15SgRoot ; 
+ கோவைப்பழம்	C15SgRoot ; 
+@@ -93092,7 +92893,6 @@
+ சான்மானம்	C15SgRoot ; 
+ சான்றமுதம்	C15SgRoot ; 
+ சான்றுத்தங்கம்	C15SgRoot ; 
+-சிங்கம்	C15SgRoot ; 
+ சிறைஅடைக்குமிடம்	C15SgRoot ; 
+ சிற்றம்பலம்	C15SgRoot ; 
+ சின்னத்தங்கம்	C15SgRoot ; 
+@@ -93599,7 +93399,6 @@
+ பழத்தங்கம்	C15SgRoot ; 
+ பழந்தங்கம்	C15SgRoot ; 
+ பழமருதம்	C15SgRoot ; 
+-பழம்	C15SgRoot ; 
+ பழவமுதம்	C15SgRoot ; 
+ பழவின்பம்	C15SgRoot ; 
+ பறம்பின்பம்	C15SgRoot ; 
+@@ -93850,7 +93649,6 @@
+ மயிற்குன்றம்	C15SgRoot ; 
+ மயின்மருதம்	C15SgRoot ; 
+ மரகதம்	C15SgRoot ; 
+-மரம்	C15SgRoot ; 
+ மராஅம்	C15SgRoot ; 
+ மருதக்கயம்	C15SgRoot ; 
+ மருதங்குளம்	C15SgRoot ; 
+@@ -94173,9 +93971,7 @@
+ சாணம்	 C15SgRoot; 
+ இராணுவம்	 C15SgRoot; 
+ திருகோணம்	 C15SgRoot; 
+-ஈழம்	 C15SgRoot; 
+ விகிதம்	 C15SgRoot; 
+-சமம்	 C15SgRoot; 
+ பாக்கியம்	 C15SgRoot; 
+ சருமம்	 C15SgRoot; 
+ தோஷம்	 C15SgRoot; 
+@@ -94188,13 +93984,10 @@
+ வர்த்தகம்	 C15SgRoot; 
+ பரிகாரம்	 C15SgRoot; 
+ நவக்கிரஹம்	 C15SgRoot; 
+-சங்கம்	 C15SgRoot; 
+ இமாச்சலம்	 C15SgRoot; 
+ நேரம்	 C15SgRoot; 
+-குடம்	 C15SgRoot; 
+ பயங்கரம்	 C15SgRoot; 
+ விண்பயணம்	 C15SgRoot; 
+-கட்டிடம்	 C15SgRoot; 
+ அகலிடம்	 C15SgRoot; 
+ அக்கிரகாரம்	 C15SgRoot; 
+ அக்கிரமம்	 C15SgRoot; 
+@@ -94222,8 +94015,6 @@
+ அமங்கலம்	 C15SgRoot; 
+ அமிர்தம்	 C15SgRoot; 
+ அமிலம்	 C15SgRoot; 
+-அமிழ்தம்	 C15SgRoot; 
+-அமுதம்	 C15SgRoot; 
+ அமோகம்	 C15SgRoot; 
+ அரங்கம்	 C15SgRoot; 
+ அரங்கேற்றம்	 C15SgRoot; 
+@@ -94285,7 +94076,6 @@
+ இரத்தம்	 C15SgRoot; 
+ இருதயம்	 C15SgRoot; 
+ இலக்கம்	 C15SgRoot; 
+-இலக்கியம்	 C15SgRoot; 
+ இலட்சம்	 C15SgRoot; 
+ இலட்சியம்	 C15SgRoot; 
+ இலவசம்	 C15SgRoot; 
+@@ -94296,7 +94086,6 @@
+ இளவட்டம்	 C15SgRoot; 
+ இறக்கம்	 C15SgRoot; 
+ இனம்	 C15SgRoot; 
+-இன்பம்	 C15SgRoot; 
+ இஷ்டம்	 C15SgRoot; 
+ ஈயம்	 C15SgRoot; 
+ ஈனம்	 C15SgRoot; 
+@@ -94308,7 +94097,6 @@
+ உத்திராடம்	 C15SgRoot; 
+ உத்திராட்சம்	 C15SgRoot; 
+ உபதேசம்	 C15SgRoot; 
+-உலகம்	 C15SgRoot; 
+ உலோகம்	 C15SgRoot; 
+ ஊதியம்	 C15SgRoot; 
+ எண்ணம்	 C15SgRoot; 
+@@ -94324,7 +94112,6 @@
+ கட்டடம்	 C15SgRoot; 
+ கட்டணம்	 C15SgRoot; 
+ கட்டாயம்	 C15SgRoot; 
+-கட்டிடம்	 C15SgRoot; 
+ கட்டிளம்	 C15SgRoot; 
+ கட்டுத்திட்டம்	 C15SgRoot; 
+ கணிதம்	 C15SgRoot; 
+@@ -94352,7 +94139,6 @@
+ கன்னடம்	 C15SgRoot; 
+ கஷ்டம்	 C15SgRoot; 
+ காகிதம்	 C15SgRoot; 
+-காண்டாமிருகம்	 C15SgRoot; 
+ காப்பகம்	 C15SgRoot; 
+ காப்பியம்	 C15SgRoot; 
+ காமம்	 C15SgRoot; 
+@@ -94366,7 +94152,6 @@
+ கிறித்தவம்	 C15SgRoot; 
+ கிறிஸ்துவம்	 C15SgRoot; 
+ குங்கிலியம்	 C15SgRoot; 
+-கூட்டம்	 C15SgRoot; 
+ கைவைத்தியம்	 C15SgRoot; 
+ கொடும்	 C15SgRoot; 
+ கொலைக்களம்	 C15SgRoot; 
+@@ -94391,14 +94176,12 @@
+ சாதாரணம்	 C15SgRoot; 
+ சாத்துவீகம்	 C15SgRoot; 
+ சாத்வீகம்	 C15SgRoot; 
+-சாந்தம்	 C15SgRoot; 
+ சாந்திமுகூர்த்தம்	 C15SgRoot; 
+ சாபம்	 C15SgRoot; 
+ சாமானியம்	 C15SgRoot; 
+ சாயங்காலம்	 C15SgRoot; 
+ சாயந்திரம்	 C15SgRoot; 
+ சிக்கனம்	 C15SgRoot; 
+-சிங்கம்	 C15SgRoot; 
+ சித்தம்	 C15SgRoot; 
+ சித்தவைத்தியம்	 C15SgRoot; 
+ சித்தாந்தம்	 C15SgRoot; 
+@@ -94436,7 +94219,6 @@
+ செயல்விளக்கம்	 C15SgRoot; 
+ செய்திப்படம்	 C15SgRoot; 
+ செரிமானம்	 C15SgRoot; 
+-செல்வம்	 C15SgRoot; 
+ செவ்வகம்	 C15SgRoot; 
+ செவ்வாய்தோஷம்	 C15SgRoot; 
+ சைத்தியம்	 C15SgRoot; 
+@@ -94448,7 +94230,6 @@
+ சோதிடம்	 C15SgRoot; 
+ ஞாபகம்	 C15SgRoot; 
+ ஞாபகார்த்தம்	 C15SgRoot; 
+-தங்கம்	 C15SgRoot; 
+ தசமம்	 C15SgRoot; 
+ தடயம்	 C15SgRoot; 
+ தட்பவெப்பம்	 C15SgRoot; 
+@@ -94489,7 +94270,6 @@
+ தனித்துவம்	 C15SgRoot; 
+ தனிமம்	 C15SgRoot; 
+ தனுர்வாதம்	 C15SgRoot; 
+-தன்மானம்	 C15SgRoot; 
+ தன்னடக்கம்	 C15SgRoot; 
+ தன்னலம்	 C15SgRoot; 
+ தாகம்	 C15SgRoot; 
+@@ -94561,7 +94341,6 @@
+ துஷ்பிரச்சாரம்	 C15SgRoot; 
+ துஷ்பிரயோகம்	 C15SgRoot; 
+ தூக்கம்	 C15SgRoot; 
+-தெய்வம்	 C15SgRoot; 
+ தெய்வாதீனம்	 C15SgRoot; 
+ தெய்வீகம்	 C15SgRoot; 
+ தேகம்	 C15SgRoot; 
+@@ -94586,7 +94365,6 @@
+ தோரணம்	 C15SgRoot; 
+ தோற்றம்	 C15SgRoot; 
+ தோஷநகம்	 C15SgRoot; 
+-நகரம்	 C15SgRoot; 
+ நகரமன்றம்	 C15SgRoot; 
+ நகர்ப்புறம்	 C15SgRoot; 
+ நரகம்	 C15SgRoot; 
+@@ -94603,7 +94381,6 @@
+ நிச்சயம்	 C15SgRoot; 
+ நிர்வாகம்	 C15SgRoot; 
+ நிலநடுக்கம்	 C15SgRoot; 
+-நிலம்	 C15SgRoot; 
+ நிலையம்	 C15SgRoot; 
+ நிவாரணம்	 C15SgRoot; 
+ நிவேதனம்	 C15SgRoot; 
+@@ -94614,7 +94391,6 @@
+ நீர்ப்பாசனம்	 C15SgRoot; 
+ நெற்களஞ்சியம்	 C15SgRoot; 
+ நேசம்	 C15SgRoot; 
+-நேயம்	 C15SgRoot; 
+ நேர்முகம்	 C15SgRoot; 
+ பக்கம்	 C15SgRoot; 
+ படிகம்	 C15SgRoot; 
+@@ -94633,7 +94409,6 @@
+ பலவீனம்	 C15SgRoot; 
+ பலிபீடம்	 C15SgRoot; 
+ பல்கலைக்கழகம்	 C15SgRoot; 
+-பவளம்	 C15SgRoot; 
+ பவனம்	 C15SgRoot; 
+ பள்ளிக்கூடம்	 C15SgRoot; 
+ பாசம்	 C15SgRoot; 
+@@ -94643,7 +94418,6 @@
+ பாயிரம்	 C15SgRoot; 
+ பாய்மரம்	 C15SgRoot; 
+ பாரதம்	 C15SgRoot; 
+-பாரம்	 C15SgRoot; 
+ பாரபரியம்	 C15SgRoot; 
+ பாராயணம்	 C15SgRoot; 
+ பாராளுமன்றம்	 C15SgRoot; 
+@@ -94663,17 +94437,13 @@
+ பிரமச்சரியம்	 C15SgRoot; 
+ பிரமம்	 C15SgRoot; 
+ பிரமாணம்	 C15SgRoot; 
+-பிரமம்	 C15SgRoot; 
+ பிரயாணம்	 C15SgRoot; 
+ பிரயோகம்	 C15SgRoot; 
+ பிரளயம்	 C15SgRoot; 
+ பிரிவுபசாரம்	 C15SgRoot; 
+ பிரேதம்	 C15SgRoot; 
+ புண்ணியம்	 C15SgRoot; 
+-புதினம்	 C15SgRoot; 
+-புதுமுகம்	 C15SgRoot; 
+ புதுயுகம்	 C15SgRoot; 
+-புத்தகம்	 C15SgRoot; 
+ புராணம்	 C15SgRoot; 
+ புராதனம்	 C15SgRoot; 
+ புருவம்	 C15SgRoot; 
+@@ -94697,14 +94467,11 @@
+ பொதுநலம்	 C15SgRoot; 
+ பொற்காலம்	 C15SgRoot; 
+ பொன்னிறம்	 C15SgRoot; 
+-மதம்	 C15SgRoot; 
+ மதுபானம்	 C15SgRoot; 
+ மதுரம்	 C15SgRoot; 
+ மந்தம்	 C15SgRoot; 
+-மாதம்	 C15SgRoot; 
+ மாத்திரம்	 C15SgRoot; 
+ மாநகரம்	 C15SgRoot; 
+-மாநிலம்	 C15SgRoot; 
+ மாநிறம்	 C15SgRoot; 
+ மாந்தம்	 C15SgRoot; 
+ மாமாங்கம்	 C15SgRoot; 
+@@ -94718,7 +94485,6 @@
+ மானசீகம்	 C15SgRoot; 
+ மானநஷ்டம்	 C15SgRoot; 
+ மானபங்கம்	 C15SgRoot; 
+-மானம்	 C15SgRoot; 
+ மானியம்	 C15SgRoot; 
+ மான்யம்	 C15SgRoot; 
+ மிதம்	 C15SgRoot; 
+@@ -94727,7 +94493,6 @@
+ மிருகசீருடம்	 C15SgRoot; 
+ மிருகம்	 C15SgRoot; 
+ மிருதங்கம்	 C15SgRoot; 
+-மின்கலம்	 C15SgRoot; 
+ மின்காந்தம்	 C15SgRoot; 
+ மின்சாரம்	 C15SgRoot; 
+ மீனம்	 C15SgRoot; 
+@@ -94778,7 +94543,6 @@
+ வட்டாரம்	 C15SgRoot; 
+ வணிகம்	 C15SgRoot; 
+ வர்ணம்	 C15SgRoot; 
+-வண்ணம்	 C15SgRoot; 
+ வதனம்	 C15SgRoot; 
+ வசம்	 C15SgRoot; 
+ வராகம்	 C15SgRoot; 
+@@ -94793,12 +94557,10 @@
+ வாலிபம்	 C15SgRoot; 
+ வாழைப்பழம்	 C15SgRoot; 
+ வானசாஸ்திரம்	 C15SgRoot; 
+-வானம்	 C15SgRoot; 
+ வானரம்	 C15SgRoot; 
+ விகடம்	 C15SgRoot; 
+ விசேஷம்	 C15SgRoot; 
+ விஞ்ஞானம்	 C15SgRoot; 
+-விண்கலம்	 C15SgRoot; 
+ விண்ணப்பம்	 C15SgRoot; 
+ வித்தியாசம்	 C15SgRoot; 
+ விநியோகம்	 C15SgRoot; 
+@@ -94810,7 +94572,6 @@
+ விருப்பம்	 C15SgRoot; 
+ விரோதம்	 C15SgRoot; 
+ வில்லங்கம்	 C15SgRoot; 
+-வில்வம்	 C15SgRoot; 
+ விவகாரம்	 C15SgRoot; 
+ விவசாயம்	 C15SgRoot; 
+ விவரம்	 C15SgRoot; 
+@@ -94830,10 +94591,8 @@
+ விஸ்தீரணம்	 C15SgRoot; 
+ விஸ்வரூபம்	 C15SgRoot; 
+ வீட்டுப்பாடம்	 C15SgRoot; 
+-வீரம்	 C15SgRoot; 
+ வீரியம்	 C15SgRoot; 
+ வெகுமானம்	 C15SgRoot; 
+-வெங்கலம்	 C15SgRoot; 
+ வெங்காயம்	 C15SgRoot; 
+ வெங்காயவடகம்	 C15SgRoot; 
+ வெட்கம்	 C15SgRoot; 
+@@ -94858,7 +94617,6 @@
+ ஜென்மம்	 C15SgRoot; 
+ ஜைனம்	 C15SgRoot; 
+ ஜோதிடம்	 C15SgRoot; 
+-காலம்	 C15SgRoot; 
+ பெரும்ம்	 C15SgRoot; 
+ அதிநவீனம்	 C15SgRoot; 
+ பெருந்ம்	 C15SgRoot; 
+@@ -94868,26 +94626,21 @@
+ விகிதாச்சாரம்	 C15SgRoot; 
+ வாணிபக்கழகம்	 C15SgRoot; 
+ சட்டம்	 C15SgRoot; 
+-மன்றம்	 C15SgRoot; 
+ மலையாளம்	 C15SgRoot; 
+ ஆணாதிக்கம்	 C15SgRoot; 
+ இனவர்க்கம்	 C15SgRoot; 
+ சாதியம்	 C15SgRoot; 
+ பாலினம்	 C15SgRoot; 
+ சந்தோஷம்	 C15SgRoot; 
+-மனம்	 C15SgRoot; 
+ ஆரம்பம்	 C15SgRoot; 
+ பணம்	 C15SgRoot; 
+ சாராயம்	 C15SgRoot; 
+ மண்பாண்டம்	 C15SgRoot; 
+ தென்மண்டலம்	 C15SgRoot; 
+ நடுத்தரவர்க்கம்	 C15SgRoot; 
+-குடும்பம்	 C15SgRoot; 
+-புஷ்பம்	 C15SgRoot; 
+ சொர்க்கம்	 C15SgRoot; 
+ மருத்துவம்	 C15SgRoot; 
+ அண்ணாபிஷேகம்	 C15SgRoot; 
+-உயிரினம்	 C15SgRoot; 
+ ஜலவாசம்	 C15SgRoot; 
+ வனம்	 C15SgRoot; 
+ மாகாணம்	 C15SgRoot; 
+@@ -94911,7 +94664,6 @@
+ பைத்தியம்	C15SgRoot ;
+ பொக்கிஷம்	C15SgRoot ;
+ பொற்கரம்	C15SgRoot ;
+-பொற்கரம்	C15SgRoot ;
+ பொற்கலசம்	C15SgRoot ;
+ போபம்	C15SgRoot ;
+ போராட்டம்	C15SgRoot ;
+@@ -94930,35 +94682,23 @@
+ மச்சஹஸ்தம்	C15SgRoot ;
+ மச்சாவதாரம்	C15SgRoot ;
+ மடாலயம்	C15SgRoot ;
+-மணம்	C15SgRoot ;
+ மணிமகுடம்	C15SgRoot ;
+ மண்டபம்	C15SgRoot ;
+ மண்டலம்	C15SgRoot ;
+ மதசின்னம்	C15SgRoot ;
+-மதம்	C15SgRoot ;
+ மதியம்	C15SgRoot ;
+-மதுபானம்	C15SgRoot ;
+ மத்தளம்	C15SgRoot ;
+ மந்தகாஸம்	C15SgRoot ;
+ மந்திரகோஷம்	C15SgRoot ;
+ மந்திரதந்திரம்	C15SgRoot ;
+ மந்திரம்	C15SgRoot ;
+ மயக்கம்	C15SgRoot ;
+-மரகதம்	C15SgRoot ;
+ மரக்கலம்	C15SgRoot ;
+-மரக்கலம்	C15SgRoot ;
+-மரம்	C15SgRoot ;
+ மரணம்	C15SgRoot ;
+-மரம்	C15SgRoot ;
+-மரம்	C15SgRoot ;
+-மருத்துவம்	C15SgRoot ;
+ மர்மம்	C15SgRoot ;
+ மறுகணம்	C15SgRoot ;
+ மறுகாரியம்	C15SgRoot ;
+ மறுபக்கம்	C15SgRoot ;
+-மனம்	C15SgRoot ;
+-மனம்	C15SgRoot ;
+-மனம்	C15SgRoot ;
+ மனிதகுலம்	C15SgRoot ;
+ மனிதம்	C15SgRoot ;
+ மனோகரம்	C15SgRoot ;
+@@ -94969,54 +94709,37 @@
+ மாடகூடம்	C15SgRoot ;
+ மாதண்டம்	C15SgRoot ;
+ மாதோட்டம்	C15SgRoot ;
+-மாத்திரம்	C15SgRoot ;
+ மாமல்லபுரம்	C15SgRoot ;
+-மாயம்	C15SgRoot ;
+ மாயமந்திரம்	C15SgRoot ;
+ மாருதமும்	C15SgRoot ;
+ மாற்சரியம்	C15SgRoot ;
+-மானியம்	C15SgRoot ;
+ மிசிரம்	C15SgRoot ;
+ மிச்சம்	C15SgRoot ;
+-மிருகம்	C15SgRoot ;
+ மீசிரம்	C15SgRoot ;
+-முகம்	C15SgRoot ;
+-முகம்	C15SgRoot ;
+ முகபாவம்	C15SgRoot ;
+ முகமும்	C15SgRoot ;
+-முகம்	C15SgRoot ;
+ முகவிலாசம்	C15SgRoot ;
+ முக்கியம்	C15SgRoot ;
+ முண்டனம்	C15SgRoot ;
+ முதற்காரியம்	C15SgRoot ;
+-முத்தம்	C15SgRoot ;
+-முழக்கம்	C15SgRoot ;
+ முற்காலம்	C15SgRoot ;
+ முற்றம்	C15SgRoot ;
+ முன்புறம்	C15SgRoot ;
+ மூலபலம்	C15SgRoot ;
+-மேகம்	C15SgRoot ;
+ மேலண்ணம்	C15SgRoot ;
+ மொத்தம்	C15SgRoot ;
+-மோகம்	C15SgRoot ;
+ மோகனம்	C15SgRoot ;
+-மோதிரம்	C15SgRoot ;
+ மோனம்	C15SgRoot ;
+-மௌனம்	C15SgRoot ;
+ யவனம்	C15SgRoot ;
+ யுத்தம்	C15SgRoot ;
+-யோகம்	C15SgRoot ;
+ யௌவனம்	C15SgRoot ;
+ வஞ்சகம்	C15SgRoot ;
+ வடவேங்கடம்	C15SgRoot ;
+ வடிவம்	C15SgRoot ;
+-வண்ணம்	C15SgRoot ;
+-வதனம்	C15SgRoot ;
+ வந்தனம்	C15SgRoot ;
+ வரம்	C15SgRoot ;
+ வருத்தம்	C15SgRoot ;
+ வருஷம்	C15SgRoot ;
+-வர்ணம்	C15SgRoot ;
+ வலக்கரம்	C15SgRoot ;
+ வலப்புறம்	C15SgRoot ;
+ வழக்கம்	C15SgRoot ;
+@@ -95028,34 +94751,18 @@
+ வாக்குவாதம்	C15SgRoot ;
+ வாசம்	C15SgRoot ;
+ வாணர்குலம்	C15SgRoot ;
+-வாரம்	C15SgRoot ;
+-வானகம்	C15SgRoot ;
+-வானம்	C15SgRoot ;
+ வானுலகம்	C15SgRoot ;
+ விக்கிரகம்	C15SgRoot ;
+ விசித்திரம்	C15SgRoot ;
+-விசேஷம்	C15SgRoot ;
+ விண்ணகரம்	C15SgRoot ;
+-விண்ணப்பம்	C15SgRoot ;
+ விதம்	C15SgRoot ;
+ விதானம்	C15SgRoot ;
+-வித்தியாசம்	C15SgRoot ;
+-விபரீதம்	C15SgRoot ;
+-விமானம்	C15SgRoot ;
+ விரதம்	C15SgRoot ;
+ விரிகமலம்	C15SgRoot ;
+ விருட்சம்	C15SgRoot ;
+ விருத்தாசலம்	C15SgRoot ;
+-விருப்பம்	C15SgRoot ;
+-விரோதம்	C15SgRoot ;
+-விவகாரம்	C15SgRoot ;
+-விவரம்	C15SgRoot ;
+-விவாதம்	C15SgRoot ;
+-விவேகம்	C15SgRoot ;
+-விளக்கம்	C15SgRoot ;
+ விஜயம்	C15SgRoot ;
+ விஷம்	C15SgRoot ;
+-விஷயம்	C15SgRoot ;
+ விஷ்ணுக்கிருஹம்	C15SgRoot ;
+ வீசம்	C15SgRoot ;
+ வீதம்	C15SgRoot ;
+@@ -95066,7 +94773,6 @@
+ வீரப்பிரதாபம்	C15SgRoot ;
+ வீராணம்	C15SgRoot ;
+ வீராவேசம்	C15SgRoot ;
+-வீரியம்	C15SgRoot ;
+ வெகுதூரம்	C15SgRoot ;
+ வெண்சாமரம்	C15SgRoot ;
+ வெல்லம்	C15SgRoot ;
+@@ -95077,12 +94783,10 @@
+ வெறியாட்டம்	C15SgRoot ;
+ வேகம்	C15SgRoot ;
+ வேடம்	C15SgRoot ;
+-வேதம்	C15SgRoot ;
+ வேதாளம்	C15SgRoot ;
+ வேலாயுதம்	C15SgRoot ;
+ வேலும்	C15SgRoot ;
+ வேஷம்	C15SgRoot ;
+-வைரம்	C15SgRoot ;
+ வைஷ்ணவம்	C15SgRoot ;
+ 
+ 
+@@ -126947,8 +126651,6 @@
+ 
+ +noun+infInc+loc:^த்தில் #;
+ +noun+infInc+loc+foc:^த்தில்தான் #;
+-+noun+pl+loc:^ங்களில் #;
+-+noun+pl+loc+foc:^ங்களில்தான் #;
+ +noun+infInc+loc:^த்திடம் #;
+ +noun+infInc+loc+foc:^த்திடம்தான் #;
+ +noun+pl+loc:^ங்களிடம் #;
+@@ -127085,10 +126787,6 @@
+ +noun+pl+dat+psp_kurukke:^ங்களுக்குக்குறுக்கே #;
+ +noun+dat+psp_kurukke_iruntu:^த்துக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^ங்களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^த்துக்குள் #;
+-+noun+pl+dat+psp_ul:^ங்களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^த்துக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^ங்களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^த்துக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^ங்களுக்குள்ளே #;
+ +noun+dat+psp_ulle_iruntu:^த்துக்குள்ளேயிருந்து #;
+@@ -127109,8 +126807,6 @@
+ +noun+pl+dat+psp_naduvil:^ங்களுக்குநடுவில் #;
+ +noun+dat+psp_naduvil_iruntu:^த்துக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^ங்களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^த்துக்காக #;
+-+noun+pl+dat+ben:^ங்களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^த்தினருகில் #;
+ +noun+pl+gen+psp_arukil:^ங்களினருகில் #;
+@@ -128119,8 +127815,6 @@
+ பெற்றோர்	C16SgRoot ;
+ பேரரசர்	C16SgRoot ;
+ பேரர்	C16SgRoot ;
+-பேர்	C16SgRoot ;
+-பேர்	C16SgRoot ;
+ பொய்யர்	C16SgRoot ;
+ பொல்லாதவர்	C16SgRoot ;
+ போடுகிறவர்	C16SgRoot ;
+@@ -128134,11 +127828,9 @@
+ மங்கையர்	C16SgRoot ;
+ மதுராந்தகர்	C16SgRoot ;
+ மதுராந்தகத்தேவர்	C16SgRoot ;
+-மதுராந்தகர்	C16SgRoot ;
+ மந்திரிப்பவர்	C16SgRoot ;
+ மருத்துவர்	C16SgRoot ;
+ மருமகர்	C16SgRoot ;
+-மலர்	C16SgRoot ;
+ மழபாடிக்காரர்	C16SgRoot ;
+ மழவரையர்	C16SgRoot ;
+ மழுவரையர்	C16SgRoot ;
+@@ -128179,7 +127871,6 @@
+ வரையர்	C16SgRoot ;
+ வர்த்தகர்	C16SgRoot ;
+ வர்மர்	C16SgRoot ;
+-வள்ளுவர்	C16SgRoot ;
+ வாங்குவோர்	C16SgRoot ;
+ வாசகர்	C16SgRoot ;
+ வாசற்காவலர்	C16SgRoot ;
+@@ -128187,7 +127878,6 @@
+ வாதக்காரர்	C16SgRoot ;
+ வாழைநார்	C16SgRoot ;
+ வாழ்ந்திருப்பவர்	C16SgRoot ;
+-விருந்தினர்	C16SgRoot ;
+ விருந்தினர்	C16SgRoot ;
+ வில்லியர்	C16SgRoot ;
+ விற்போர்	C16SgRoot ;
+@@ -128207,7 +127897,6 @@
+ வைதும்பராயர்	C16SgRoot ;
+ வைதும்பர்	C16SgRoot ;
+ வைத்தியர்	C16SgRoot ;
+-வைஷ்ணவர்	C16SgRoot ;
+ 
+ 
+ ! Source-backed noun tranche 3: reviewed Vuizur-backed noun candidates.
+@@ -131465,12 +131154,6 @@
+ +noun+dat+psp_kurukke_iruntu:^ற்றுக்குக்குறுக்கேயிருந்து #;
+ +noun+dat+psp_kurukke_iruntu:^ுக்குக்குறுக்கேயிருந்து #;
+ +noun+pl+dat+psp_kurukke_iruntu:^களுக்குக்குறுக்கேயிருந்து #;
+-+noun+dat+psp_ul:^ற்றுக்குள் #;
+-+noun+dat+psp_ul:^ுக்குள் #;
+-+noun+pl+dat+psp_ul:^களுக்குள் #;
+-+noun+dat+psp_ul_iruntu:^ற்றுக்குள்ளிருந்து #;
+-+noun+dat+psp_ul_iruntu:^ுக்குள்ளிருந்து #;
+-+noun+pl+dat+psp_ul_iruntu:^களுக்குள்ளிருந்து #;
+ +noun+dat+psp_ulle:^ற்றுக்குள்ளே #;
+ +noun+dat+psp_ulle:^ுக்குள்ளே #;
+ +noun+pl+dat+psp_ulle:^களுக்குள்ளே #;
+@@ -131501,9 +131184,6 @@
+ +noun+dat+psp_naduvil_iruntu:^ற்றுக்குநடுவிலிருந்து #;
+ +noun+dat+psp_naduvil_iruntu:^ுக்குநடுவிலிருந்து #;
+ +noun+pl+dat+psp_naduvil_iruntu:^களுக்குநடுவிலிருந்து #;
+-+noun+dat+ben:^ற்றுக்காக #;
+-+noun+dat+ben:^ுக்காக #;
+-+noun+pl+dat+ben:^களுக்காக #;
+ 
+ +noun+gen+psp_arukil:^ற்றினருகில் #;
+ +noun+gen+psp_arukil:^ினருகில் #;

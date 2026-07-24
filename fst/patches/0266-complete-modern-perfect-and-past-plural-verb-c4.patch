@@ -1,0 +1,50 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -1259,6 +1259,47 @@
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
++
++! Complete modern present-perfect and short past human-plural paradigms.
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=னர்:^விந்தனர் #;
+++verb+fin+complex+perfect+pres%=∅+1sg%=ஏன்:^ந்துள்ளேன் #;
+++verb+fin+complex+perfect+pres%=∅+1pl%=ஓம்:^ந்துள்ளோம் #;
+++verb+fin+complex+perfect+pres%=∅+2sg%=ஆய்:^ந்துள்ளாய் #;
+++verb+fin+complex+perfect+pres%=∅+2sgh%=ஈர்:^ந்துள்ளீர் #;
+++verb+fin+complex+perfect+pres%=∅+2pl%=ஈர்கள்:^ந்துள்ளீர்கள் #;
+++verb+fin+complex+perfect+pres%=∅+3sgm%=ஆன்:^ந்துள்ளான் #;
+++verb+fin+complex+perfect+pres%=∅+3sgf%=ஆள்:^ந்துள்ளாள் #;
+++verb+fin+complex+perfect+pres%=∅+3sghe%=ஆர்:^ந்துள்ளார் #;
+++verb+fin+complex+perfect+pres%=∅+3ple%=னர்:^ந்துள்ளனர் #;
+++verb+fin+complex+perfect+pres%=∅+3ple%=ஆர்கள்:^ந்துள்ளார்கள் #;
+++verb+fin+complex+perfect+pres%=∅+3sgn%=அது:^ந்துள்ளது #;
+++verb+fin+complex+perfect+pres%=∅+3pln%=அன:^ந்துள்ளன #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது:^ந்துள்ளது #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ:^ந்துள்ளதை #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+add%=உம்:^ந்துள்ளதையும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+inst%=ஆல்:^ந்துள்ளதால் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^ந்துள்ளதாலும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு:^ந்துள்ளதற்கு #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ந்துள்ளதற்கும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்:^ந்துள்ளதில் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்+add%=உம்:^ந்துள்ளதிலும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ந்துள்ளதிலேயே #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+abl%=இலிருந்து:^ந்துள்ளதிலிருந்து #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+abl%=இலிருந்து+add%=உம்:^ந்துள்ளதிலிருந்தும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+soc%=உடன்:^ந்துள்ளதுடன் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+soc%=உடன்+add%=உம்:^ந்துள்ளதுடனும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+gen%=இன்:^ந்துள்ளதன் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^ந்துள்ளதைப் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^ந்துள்ளதைச் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^ந்துள்ளதைத் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^ந்துள்ளதைக் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^ந்துள்ளதற்குப் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^ந்துள்ளதற்குச் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ந்துள்ளதற்குத் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ந்துள்ளதற்குக் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக:^ந்துள்ளதாக #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ந்துள்ளதாகவும் #;
+++verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ:^ந்துள்ள #;
+ LEXICON ClassTholai4
+ தொலை	VtholaiInf;
+ வைதுதொலை	VtholaiInf;

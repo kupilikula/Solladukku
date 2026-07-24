@@ -1,0 +1,102 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -108,6 +108,11 @@
+ AuditBackedCommonNounSg; ! reviewed corpus-audit nouns
+ 
+ LEXICON CalendarPlaceLoanSg
++! Reviewed frequent modern-Tamil roots from five-corpus saturation.
++விக்கெட்	ForeignFinalNom;
++விக்கெட்:விக்கெட	ForeignDoubledTTFinalInflections;
++பாஸ்போர்ட்	ForeignFinalNom;
++பாஸ்போர்ட்:பாஸ்போர்ட	ForeignDoubledTTFinalInflections;
+ கோவிட்	ForeignFinalNom;
+ கோவிட்:கோவிட	ForeignDoubledTTFinalInflections;
+ டெஸ்ட்	ForeignFinalNom;
+@@ -1667,6 +1672,8 @@
+ +pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ 
+ LEXICON C1Sg
++! Reviewed frequent modern-Tamil roots from five-corpus saturation.
++எரிவாயு	C1SgRoot;
+ ! Reviewed common lexical readings recurring across development corpora.
+ போட்டோ	C1SgRoot;
+ ஸ்டூடியோ	C1SgRoot;
+@@ -3827,6 +3834,19 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++! Reviewed frequent modern-Tamil roots from five-corpus saturation.
++அமலாக்கத்துறை	C2SgRoot;
++அரசாணை	C2SgRoot;
++ஆசிரியை	C2SgRoot;
++உதவித்தொகை	C2SgRoot;
++உலகக்கோப்பை	C2SgRoot;
++உள்ளூராட்சி	C2SgRoot;
++கல்வித்துறை	C2SgRoot;
++தொழில்துறை	C2SgRoot;
++நிதியுதவி	C2SgRoot;
++பேரூராட்சி	C2SgRoot;
++முன்னெச்சரிக்கை	C2SgRoot;
++வனத்துறை	C2SgRoot;
+ ! Reviewed common lexical readings recurring across development corpora.
+ திரை	C2SgRoot;
+ ருசி	C2SgRoot;
+@@ -45113,6 +45133,10 @@
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^க்களின்கீழேயிருந்தும் #;
+ LEXICON C4Sg
++! Reviewed frequent modern-Tamil roots from five-corpus saturation.
++விசில்	C4SgRoot;
++ரன்	C4SgRoot;
++பவுன்	C4SgRoot;
+ ! Reviewed common lexical readings recurring across development corpora.
+ லெவல்	C4SgRoot;
+ டிசைன்	C4SgRoot;
+@@ -56652,6 +56676,14 @@
+ 
+ 
+ LEXICON C7Sg
++! Reviewed frequent modern-Tamil roots from five-corpus saturation.
++ஆணைக்குழு	C7SgRoot;
++இடஒதுக்கீடு	C7SgRoot;
++குற்றப்பிரிவு	C7SgRoot;
++நோய்த்தொற்று	C7SgRoot;
++ஒளிப்பதிவு	C7SgRoot;
++மேல்முறையீடு	C7SgRoot;
++வெளியுறவு	C7SgRoot;
+ ! Reviewed lexicalized action noun with regular short-u inflection.
+ காத்திருப்பு	C7SgRoot;
+ ! Reviewed common lexical readings recurring across development corpora.
+@@ -72571,6 +72603,8 @@
+ +noun+pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ LEXICON C11Sg
++! Reviewed frequent modern-Tamil roots from five-corpus saturation.
++செயல்திறன்	C11SgRoot;
+ ! Post-0318 reviewed common lexical coverage.
+ கேப்டன்	C11SgRoot;
+ ! Final reviewed common-lexeme coverage.
+@@ -98494,6 +98528,8 @@
+ +noun+gen+psp_keele_iruntu+add:^ின்கீழேயிருந்தும் #;
+ 
+ LEXICON C15Sg
++! Reviewed frequent modern-Tamil roots from five-corpus saturation.
++உச்சநீதிமன்றம்	C15SgRoot;
+ ! Reviewed common lexical readings recurring across development corpora.
+ ஆர்ப்பாட்டம்	C15SgRoot;
+ கதாபாத்திரம்	C15SgRoot;
+@@ -133686,6 +133722,14 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^ங்களின்கீழேயிருந்தும் #;
+ 
+ LEXICON C16Sg
++! Reviewed frequent modern-Tamil roots from five-corpus saturation.
++ஆலோசகர்	C16DirectSgRoot;
++ஆராய்ச்சியாளர்	C16DirectSgRoot;
++கழிவுநீர்	C16DirectSgRoot;
++சிலிண்டர்	C16DirectSgRoot;
++துணைவேந்தர்	C16DirectSgRoot;
++வெள்ளாளர்	C16DirectSgRoot;
++உற்பத்தியாளர்	C16DirectSgRoot;
+ ! Reviewed common lexical readings recurring across development corpora.
+ தோழர்	C16DirectSgRoot;
+ தாயார்	C16DirectSgRoot;

@@ -1,0 +1,18 @@
+--- ThamizhiFST-otherthan-3-4-62-11-12.foma
++++ ThamizhiFST-otherthan-3-4-62-11-12.foma
+@@ -7,6 +7,7 @@
+ define VerbQuestionPulli {்} -> 0 || _ "~" {ா};
+ define VerbQuestionU {ு} -> 0 || _ "~" {ா};
+ define VerbQuestionBoundary "~" -> 0;
++define Class17Marker W -> 0;
+ 
+ define VM [ா | ி | ீ | ு | ூ | ெ |ே | ொ |ோ |ை];
+ define CON [க | ச | ட | த | ப | ற | ய | ர | ள | வ | ழ | ல | ங | ஞ | ண | ந | ம | ன ];
+@@ -182,6 +183,7 @@
+ 			C17Rule2           	.o.
+ 			C17Rule3           	.o.
+ 			C17Rule4           	.o.
++			Class17Marker		.o.
+ 			C18Rule1           	.o.
+ 			C18Rule2           	.o.
+ 			C0Rule1			.o.

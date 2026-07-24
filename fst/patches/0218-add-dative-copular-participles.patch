@@ -1,0 +1,319 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1,6 +1,6 @@
+ !!!Header.lexc!!!
+ 
+-Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +trans +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add +all +verb +nonfin +sim +neg +verbalnoun
++Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +trans +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add +all +verb +nonfin +sim +neg +verbalnoun +cop +adjpart
+ 
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+@@ -137,6 +137,7 @@
+ +noun+acc:^ை #;
+ +noun+inst:^ால் #;
+ +noun+dat:^ுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^ுக்கான #;
+ +noun+dat+sandhip:^ுக்குப் #;
+ +noun+dat+sandhic:^ுக்குச் #;
+ +noun+dat+sandhit:^ுக்குத் #;
+@@ -155,6 +156,7 @@
+ +noun+acc:^ை #;
+ +noun+inst:^ால் #;
+ +noun+dat:^ுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^ுக்கான #;
+ +noun+dat+sandhip:^ுக்குப் #;
+ +noun+dat+sandhic:^ுக்குச் #;
+ +noun+dat+sandhit:^ுக்குத் #;
+@@ -173,6 +175,7 @@
+ +noun+acc:^்கை #;
+ +noun+inst:^்கால் #;
+ +noun+dat:^்குக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^்குக்கான #;
+ +noun+dat+sandhip:^்குக்குப் #;
+ +noun+dat+sandhic:^்குக்குச் #;
+ +noun+dat+sandhit:^்குக்குத் #;
+@@ -191,6 +194,7 @@
+ +noun+acc:^்சை #;
+ +noun+inst:^்சால் #;
+ +noun+dat:^்சுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^்சுக்கான #;
+ +noun+dat+sandhip:^்சுக்குப் #;
+ +noun+dat+sandhic:^்சுக்குச் #;
+ +noun+dat+sandhit:^்சுக்குத் #;
+@@ -209,6 +213,7 @@
+ +noun+acc:^்டை #;
+ +noun+inst:^்டால் #;
+ +noun+dat:^்டுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^்டுக்கான #;
+ +noun+dat+sandhip:^்டுக்குப் #;
+ +noun+dat+sandhic:^்டுக்குச் #;
+ +noun+dat+sandhit:^்டுக்குத் #;
+@@ -227,6 +232,7 @@
+ +noun+acc:^ை #;
+ +noun+inst:^ால் #;
+ +noun+dat:^ுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^ுக்கான #;
+ +noun+dat+sandhip:^ுக்குப் #;
+ +noun+dat+sandhic:^ுக்குச் #;
+ +noun+dat+sandhit:^ுக்குத் #;
+@@ -245,6 +251,7 @@
+ +noun+acc:^்தை #;
+ +noun+inst:^்தால் #;
+ +noun+dat:^்துக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^்துக்கான #;
+ +noun+dat+sandhip:^்துக்குப் #;
+ +noun+dat+sandhic:^்துக்குச் #;
+ +noun+dat+sandhit:^்துக்குத் #;
+@@ -2956,11 +2963,13 @@
+ +noun+pl+inst:^க்களால் #;
+ 
+ +noun+dat:^வுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^வுக்கான #;
+ +noun+dat+sandhip:^வுக்குப் #;
+ +noun+dat+sandhic:^வுக்குச் #;
+ +noun+dat+sandhit:^வுக்குத் #;
+ +noun+dat+sandhik:^வுக்குக் #;
+ +noun+dat+pl:^ளுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^ளுக்கான #;
+ +noun+dat+pl+sandhip:^ளுக்குப் #;
+ +noun+dat+pl+sandhic:^ளுக்குச் #;
+ +noun+dat+pl+sandhit:^ளுக்குத் #;
+@@ -43264,7 +43273,9 @@
+ +noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^யுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^யுக்கான #;
+ +noun+dat:^க்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^க்கான #;
+ +noun+dat+sandhip:^யுக்குப் #;
+ +noun+dat+sandhip:^க்குப் #;
+ +noun+dat+sandhic:^யுக்குச் #;
+@@ -43274,6 +43285,7 @@
+ +noun+dat+sandhik:^யுக்குக் #;
+ +noun+dat+sandhik:^க்குக் #;
+ +noun+dat+pl:^களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^களுக்கான #;
+ +noun+dat+pl+sandhip:^களுக்குப் #;
+ +noun+dat+pl+sandhic:^களுக்குச் #;
+ +noun+dat+pl+sandhit:^களுக்குத் #;
+@@ -43509,7 +43521,9 @@
+ +noun+pl+inst:^க்களால் #;
+ 
+ +noun+dat:^யுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^யுக்கான #;
+ +noun+dat:^க்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^க்கான #;
+ +noun+dat+sandhip:^யுக்குப் #;
+ +noun+dat+sandhip:^க்குப் #;
+ +noun+dat+sandhic:^யுக்குச் #;
+@@ -43519,6 +43533,7 @@
+ +noun+dat+sandhik:^யுக்குக் #;
+ +noun+dat+sandhik:^க்குக் #;
+ +noun+dat+pl:^க்களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^க்களுக்கான #;
+ +noun+dat+pl+sandhip:^க்களுக்குப் #;
+ +noun+dat+pl+sandhic:^க்களுக்குச் #;
+ +noun+dat+pl+sandhit:^க்களுக்குத் #;
+@@ -53082,11 +53097,13 @@
+ +noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^ுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^ுக்கான #;
+ +noun+dat+sandhip:^ுக்குப் #;
+ +noun+dat+sandhic:^ுக்குச் #;
+ +noun+dat+sandhit:^ுக்குத் #;
+ +noun+dat+sandhik:^ுக்குக் #;
+ +noun+dat+pl:^களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^களுக்கான #;
+ +noun+dat+pl+sandhip:^களுக்குப் #;
+ +noun+dat+pl+sandhic:^களுக்குச் #;
+ +noun+dat+pl+sandhit:^களுக்குத் #;
+@@ -53311,6 +53328,7 @@
+ +noun+pl+inst:^ால் #;
+ 
+ +noun+pl+dat:^ுக்கு #;
+++noun+pl+dat+cop%=ஆ+adjpart%=ன:^ுக்கான #;
+ 
+ +noun+dat+pl+sandhip:^ுக்குப் #;
+ +noun+dat+pl+sandhic:^ுக்குச் #;
+@@ -53809,11 +53827,13 @@
+ +noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^ட்டுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^ட்டுக்கான #;
+ +noun+dat+sandhip:^ட்டுக்குப் #;
+ +noun+dat+sandhic:^ட்டுக்குச் #;
+ +noun+dat+sandhit:^ட்டுக்குத் #;
+ +noun+dat+sandhik:^ட்டுக்குக் #;
+ +noun+dat+pl:^களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^களுக்கான #;
+ +noun+dat+pl+sandhip:^களுக்குப் #;
+ +noun+dat+pl+sandhic:^களுக்குச் #;
+ +noun+dat+pl+sandhit:^களுக்குத் #;
+@@ -54038,11 +54058,13 @@
+ +noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^ட்டுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^ட்டுக்கான #;
+ +noun+dat+sandhip:^ட்டுக்குப் #;
+ +noun+dat+sandhic:^ட்டுக்குச் #;
+ +noun+dat+sandhit:^ட்டுக்குத் #;
+ +noun+dat+sandhik:^ட்டுக்குக் #;
+ +noun+dat+pl:^களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^களுக்கான #;
+ +noun+dat+pl+sandhip:^களுக்குப் #;
+ +noun+dat+pl+sandhic:^களுக்குச் #;
+ +noun+dat+pl+sandhit:^களுக்குத் #;
+@@ -67178,11 +67200,13 @@
+ +noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^க்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^க்கான #;
+ +noun+dat+sandhip:^க்குப் #;
+ +noun+dat+sandhic:^க்குச் #;
+ +noun+dat+sandhit:^க்குத் #;
+ +noun+dat+sandhik:^க்குக் #;
+ +noun+dat+pl:^களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^களுக்கான #;
+ +noun+dat+pl+sandhip:^களுக்குப் #;
+ +noun+dat+pl+sandhic:^களுக்குச் #;
+ +noun+dat+pl+sandhit:^களுக்குத் #;
+@@ -67498,11 +67522,13 @@
+ +noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^றுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^றுக்கான #;
+ +noun+dat+sandhip:^றுக்குப் #;
+ +noun+dat+sandhic:^றுக்குச் #;
+ +noun+dat+sandhit:^றுக்குத் #;
+ +noun+dat+sandhik:^றுக்குக் #;
+ +noun+dat+pl:^களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^களுக்கான #;
+ +noun+dat+pl+sandhip:^களுக்குப் #;
+ +noun+dat+pl+sandhic:^களுக்குச் #;
+ +noun+dat+pl+sandhit:^களுக்குத் #;
+@@ -68471,11 +68497,13 @@
+ +noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^ணுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^ணுக்கான #;
+ +noun+dat+sandhip:^ணுக்குப் #;
+ +noun+dat+sandhic:^ணுக்குச் #;
+ +noun+dat+sandhit:^ணுக்குத் #;
+ +noun+dat+sandhik:^ணுக்குக் #;
+ +noun+dat+pl:^களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^களுக்கான #;
+ +noun+dat+pl+sandhip:^களுக்குப் #;
+ +noun+dat+pl+sandhic:^களுக்குச் #;
+ +noun+dat+pl+sandhit:^களுக்குத் #;
+@@ -68720,11 +68748,13 @@
+ +noun+pl+inst:^களால் #;
+ 
+ +noun+dat:^னுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^னுக்கான #;
+ +noun+dat+sandhip:^னுக்குப் #;
+ +noun+dat+sandhic:^னுக்குச் #;
+ +noun+dat+sandhit:^னுக்குத் #;
+ +noun+dat+sandhik:^னுக்குக் #;
+ +noun+dat+pl:^களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^களுக்கான #;
+ +noun+dat+pl+sandhip:^களுக்குப் #;
+ +noun+dat+pl+sandhic:^களுக்குச் #;
+ +noun+dat+pl+sandhit:^களுக்குத் #;
+@@ -89895,11 +89925,13 @@
+ +noun+pl+inst:^ர்களால் #;
+ 
+ +noun+dat:^னுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^னுக்கான #;
+ +noun+dat+sandhip:^னுக்குப் #;
+ +noun+dat+sandhic:^னுக்குச் #;
+ +noun+dat+sandhit:^னுக்குத் #;
+ +noun+dat+sandhik:^னுக்குக் #;
+ +noun+dat+pl:^ர்களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^ர்களுக்கான #;
+ +noun+dat+pl+sandhip:^ர்களுக்குப் #;
+ +noun+dat+pl+sandhic:^ர்களுக்குச் #;
+ +noun+dat+pl+sandhit:^ர்களுக்குத் #;
+@@ -90137,11 +90169,13 @@
+ +noun+pl+inst:^ற்களால் #;
+ 
+ +noun+dat:^லுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^லுக்கான #;
+ +noun+dat+sandhip:^லுக்குப் #;
+ +noun+dat+sandhic:^லுக்குச் #;
+ +noun+dat+sandhit:^லுக்குத் #;
+ +noun+dat+sandhik:^லுக்குக் #;
+ +noun+dat+pl:^ற்களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^ற்களுக்கான #;
+ +noun+dat+pl+sandhip:^ற்களுக்குப் #;
+ +noun+dat+pl+sandhic:^ற்களுக்குச் #;
+ +noun+dat+pl+sandhit:^ற்களுக்குத் #;
+@@ -90371,11 +90405,13 @@
+ +noun+pl+inst:^ட்களால் #;
+ 
+ +noun+dat:^ளுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^ளுக்கான #;
+ +noun+dat+sandhip:^ளுக்குப் #;
+ +noun+dat+sandhic:^ளுக்குச் #;
+ +noun+dat+sandhit:^ளுக்குத் #;
+ +noun+dat+sandhik:^ளுக்குக் #;
+ +noun+dat+pl:^ட்களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^ட்களுக்கான #;
+ +noun+dat+pl+sandhip:^ட்களுக்குப் #;
+ +noun+dat+pl+sandhic:^ட்களுக்குச் #;
+ +noun+dat+pl+sandhit:^ட்களுக்குத் #;
+@@ -93220,11 +93256,13 @@
+ +noun+pl+inst:^ட்களால் #;
+ 
+ +noun+dat:^ுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^ுக்கான #;
+ +noun+dat+sandhip:^ுக்குப் #;
+ +noun+dat+sandhic:^ுக்குச் #;
+ +noun+dat+sandhit:^ுக்குத் #;
+ +noun+dat+sandhik:^ுக்குக் #;
+ +noun+dat+pl:^ட்களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^ட்களுக்கான #;
+ +noun+dat+pl+sandhip:^ட்களுக்குப் #;
+ +noun+dat+pl+sandhic:^ட்களுக்குச் #;
+ +noun+dat+pl+sandhit:^ட்களுக்குத் #;
+@@ -127709,7 +127747,9 @@
+ +noun+pl+inst+foc:^ங்களால்தான் #;
+ 
+ +noun+infInc+dat:^த்துக்கு #;
+++noun+infInc+dat+cop%=ஆ+adjpart%=ன:^த்துக்கான #;
+ +noun+infInc+dat:^த்திற்கு #;
+++noun+infInc+dat+cop%=ஆ+adjpart%=ன:^த்திற்கான #;
+ +noun+infInc+dat+foc:^த்திற்குத்தான் #;
+ +noun+infInc+dat+sandhip:^த்திற்குப் #;
+ +noun+infInc+dat+sandhic:^த்திற்குச் #;
+@@ -127722,6 +127762,7 @@
+ +noun+infInc+dat+sandhik:^த்துக்குக் #;
+ 
+ +noun+dat+pl:^ங்களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^ங்களுக்கான #;
+ +noun+dat+pl+foc:^ங்களுக்குதான் #;
+ +noun+dat+pl+sandhip:^ங்களுக்குப் #;
+ +noun+dat+pl+sandhic:^ங்களுக்குச் #;
+@@ -132033,12 +132074,14 @@
+ +noun+pl+inst+foc:^களால்தான் #;
+ 
+ +noun+dat:^ற்றுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^ற்றுக்கான #;
+ +noun+dat+foc:^ற்றுக்குத்தான் #;
+ +noun+dat+sandhip:^ற்றுக்குப் #;
+ +noun+dat+sandhic:^ற்றுக்குச் #;
+ +noun+dat+sandhit:^ற்றுக்குத் #;
+ +noun+dat+sandhik:^ற்றுக்குக் #;
+ +noun+dat:^ுக்கு #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^ுக்கான #;
+ +noun+dat+foc:^ுக்குத்தான் #;
+ +noun+dat+sandhip:^ுக்குப் #;
+ +noun+dat+sandhic:^ுக்குச் #;
+@@ -132046,6 +132089,7 @@
+ +noun+dat+sandhik:^ுக்குக் #;
+ 
+ +noun+dat+pl:^களுக்கு #;
+++noun+dat+pl+cop%=ஆ+adjpart%=ன:^களுக்கான #;
+ +noun+dat+pl+foc:^களுக்குத்தான் #;
+ +noun+dat+pl+sandhip:^களுக்குப் #;
+ +noun+dat+pl+sandhic:^களுக்குச் #;

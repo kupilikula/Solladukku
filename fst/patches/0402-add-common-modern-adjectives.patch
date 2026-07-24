@@ -1,0 +1,28 @@
+--- tamil-adjectives.lexc
++++ tamil-adjectives.lexc
+@@ -515,6 +515,25 @@
+ +adv+cop%=ஆ+adjpart%=ன:0 #;
+ 
+ LEXICON adjectives
++! Reviewed high-frequency modern attributive forms.
++அம்மாநில:அம்மாநில	adjectiveSandhi;
++அரபு:அரபு	adjectiveSandhi;
++ஆஸ்திரேலிய:ஆஸ்திரேலிய	adjectiveSandhi;
++இயந்திர:இயந்திர	adjectiveSandhi;
++இருசக்கர:இருசக்கர	adjectiveSandhi;
++கடலோர:கடலோர	adjectiveSandhi;
++சட்டவிரோத:சட்டவிரோத	adjectiveSandhi;
++சமீப:சமீப	adjectiveSandhi;
++சவுதி:சவுதி	adjectiveSandhi;
++சாதிய:சாதிய	adjectiveSandhi;
++தென்னிந்திய:தென்னிந்திய	adjectiveSandhi;
++பாரதிய:பாரதிய	adjectiveSandhi;
++பிரிட்டிஷ்:பிரிட்டிஷ்	adjectiveSandhi;
++பெருநகர:பெருநகர	adjectiveSandhi;
++மலேசிய:மலேசிய	adjectiveSandhi;
++மெகா:மெகா	adjectiveSandhi;
++ரஷ்ய:ரஷ்ய	adjectiveSandhi;
++அப்போது+adv+adjpart%=இய:அப்போதைய	adjectiveSandhi;
+ அருகு+noun+loc%=இல்+exist+adjpart%=அ:அருகிலுள்ள adjectiveSandhi;
+ இடையே+pp-particle+cop%=ஆ+adjpart%=ன:இடையேயான adjectiveSandhi;
+ உலகளாவிய:உலகளாவிய adjectiveSandhi;

@@ -37,6 +37,7 @@ server/analytics.db-wal
 static-word-list/cache/
 static-word-list/fst-models/
 static-word-list/fst_generated_forms.txt
+static-word-list/full_tamil_dictionary.txt
 static-word-list/tamillexicon_headwords.txt
 
 # local FST build/audit artifacts

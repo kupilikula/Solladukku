@@ -1,0 +1,57 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -5,6 +5,7 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON Root
++ProductivePadiSg ;
+ ! Productive bound proximal/distal determiners on reviewed noun roots.
+ சேர்மம்+dem+prox+det+sandhic%=ச்:இச்சேர்மம்	C15SgRoot;
+ சேர்மம்+dem+dist+det+sandhic%=ச்:அச்சேர்மம்	C15SgRoot;
+@@ -132758,6 +132759,11 @@
+ 
+ LEXICON C15CompoundModifier
+ +noun+compoundmodifier: #;
+++noun+compoundmodifier+sandhip%=ப்:^ப் #;
+++noun+compoundmodifier+sandhic%=ச்:^ச் #;
+++noun+compoundmodifier+sandhit%=த்:^த் #;
+++noun+compoundmodifier+sandhik%=க்:^க் #;
+++noun+nom+psp_padi%=படி:ப்படி #;
+ 
+ LEXICON C15SgRoot
+ !        Root;
+@@ -138684,3 +138690,34 @@
+ +noun+pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ 
++
++LEXICON ProductivePadiSg
++நிலவரம்:நிலவர	ProductivePadi;
++நேரம்:நேர	ProductivePadi;
++விருப்பம்:விருப்ப	ProductivePadi;
++கருத்து:கருத்து	ProductivePadi;
++கூற்று:கூற்று	ProductivePadi;
++வழக்கம்:வழக்க	ProductivePadi;
++விதி:விதி	ProductivePadi;
++உத்தரவு:உத்தரவு	ProductivePadi;
++அகவிலை:அகவிலை	ProductivePadi;
++கணக்கு:கணக்கு	ProductivePadi;
++வரிசை:வரிசை	ProductivePadi;
++கட்டளை:கட்டளை	ProductivePadi;
++விதிமுறை:விதிமுறை	ProductivePadi;
++மரபு:மரபு	ProductivePadi;
++ஒப்பந்தம்:ஒப்பந்த	ProductivePadi;
++அறிவுரை:அறிவுரை	ProductivePadi;
++ஆலோசனை:ஆலோசனை	ProductivePadi;
++கதை:கதை	ProductivePadi;
++நெறி:நெறி	ProductivePadi;
++பஞ்சாங்கம்:பஞ்சாங்க	ProductivePadi;
++மருத்துவம்:மருத்துவ	ProductivePadi;
++யோசனை:யோசனை	ProductivePadi;
++ஆய்வு:ஆய்வு	ProductivePadi;
++ஜாதகம்:ஜாதக	ProductivePadi;
++நியாயம்:நியாய	ProductivePadi;
++விகிதம்:விகித	ProductivePadi;
++
++LEXICON ProductivePadi
+++noun+nom+psp_padi%=படி:ப்படி #;

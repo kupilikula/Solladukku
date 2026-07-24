@@ -1,0 +1,10 @@
+--- tamil-adjectives.lexc
++++ tamil-adjectives.lexc
+@@ -648,6 +648,7 @@
+ முழு-நேர	 adjective; 
+ முழுமனதான	 adjectiveSandhi;
+ முழுநீள	 adjectiveSandhi;
++ஒற்றை	 adjectiveSandhi;
+ முழு	 adjectiveSandhi;
+ முந்தைய	 adjectiveSandhi;
+ முந்திய	 adjectiveSandhi;

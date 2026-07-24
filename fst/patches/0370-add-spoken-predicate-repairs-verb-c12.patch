@@ -1,0 +1,34 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -296,6 +296,7 @@
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது VerbQuestion;
+++verb+fin+sim+strong+past%=த்+3sgn%=அது+colloq:^ந்துச்சு VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது+add%=உம்:^ந்ததும் VerbQuestion;
+ +verb+nonfin+sim+strong+past%=த்+vpart_tum%=தும்:^ந்ததும் VerbQuestion;
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+comp%=ஆவது:^ந்ததாவது #;
+@@ -523,6 +524,7 @@
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+++verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது+colloq:^ப்பித்துச்சு VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+vpart_tum%=தும்:^ப்பித்ததும் VerbQuestion;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+verbalnoun%=அது+comp%=ஆவது:^ப்பித்ததாவது #;
+@@ -4267,6 +4269,7 @@
+ +verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+3sgn%=அது:^ந்தது VerbQuestion;
+++verb+fin+complex+aspect+strong+past%=த்+3sgn%=அது+colloq:^ந்துச்சு VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+3sgn%=அது+add%=உம்:^ந்ததும் VerbQuestion;
+ +verb+nonfin+complex+aspect+strong+past%=த்+vpart_tum%=தும்:^ந்ததும் VerbQuestion;
+ +verb+nonfin+complex+aspect+strong+past%=த்+verbalnoun%=அது+comp%=ஆவது:^ந்ததாவது #;
+@@ -4461,6 +4464,7 @@
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது+colloq:^ப்பித்துச்சு VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+ +verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+vpart_tum%=தும்:^ப்பித்ததும் VerbQuestion;
+ +verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+comp%=ஆவது:^ப்பித்ததாவது #;

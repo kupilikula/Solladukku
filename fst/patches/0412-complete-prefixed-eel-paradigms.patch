@@ -1,0 +1,214 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -5,6 +5,181 @@
+ 
+ 
+ LEXICON Root
++! Complete prefixed ஏல் paradigms.
++பங்கேறு+verb+fin+sim+imp%=∅+2sg%=∅:பங்கேறு #;
++பங்கேறு+verb+fin+sim+middle+fut%=ப்+1pl%=ஓம்:பங்கேற்போம் #;
++பங்கேறு+verb+fin+sim+middle+fut%=ப்+1sg%=ஏன்:பங்கேற்பேன் #;
++பங்கேறு+verb+fin+sim+middle+fut%=ப்+2pl%=ஈர்கள்:பங்கேற்பீர்கள் #;
++பங்கேறு+verb+fin+sim+middle+fut%=ப்+2sg%=ஆய்:பங்கேற்பாய் #;
++பங்கேறு+verb+fin+sim+middle+fut%=ப்+2sgh%=ஈர்:பங்கேற்பீர் #;
++பங்கேறு+verb+fin+sim+middle+fut%=ப்+3ple%=ஆர்கள்:பங்கேற்பார்கள் #;
++பங்கேறு+verb+fin+sim+middle+fut%=ப்+3pln%=∅:பங்கேற்கும் #;
++பங்கேறு+verb+fin+sim+middle+fut%=ப்+3sgf%=ஆள்:பங்கேற்பாள் #;
++பங்கேறு+verb+fin+sim+middle+fut%=ப்+3sghe%=ஆர்:பங்கேற்பார் #;
++பங்கேறு+verb+fin+sim+middle+fut%=ப்+3sgm%=ஆன்:பங்கேற்பான் #;
++பங்கேறு+verb+fin+sim+middle+fut%=ப்+3sgn%=∅:பங்கேற்கும் #;
++பங்கேறு+verb+fin+sim+strong+past%=த்+1pl%=ஓம்:பங்கேற்றோம் #;
++பங்கேறு+verb+fin+sim+strong+past%=த்+1sg%=ஏன்:பங்கேற்றேன் #;
++பங்கேறு+verb+fin+sim+strong+past%=த்+2pl%=ஈர்கள்:பங்கேற்றீர்கள் #;
++பங்கேறு+verb+fin+sim+strong+past%=த்+2sg%=ஆய்:பங்கேற்றாய் #;
++பங்கேறு+verb+fin+sim+strong+past%=த்+2sgh%=ஈர்:பங்கேற்றீர் #;
++பங்கேறு+verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:பங்கேற்றார்கள் #;
++பங்கேறு+verb+fin+sim+strong+past%=த்+3ple%=னர்:பங்கேற்றனர் #;
++பங்கேறு+verb+fin+sim+strong+past%=த்+3pln%=அன:பங்கேற்றன #;
++பங்கேறு+verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:பங்கேற்றாள் #;
++பங்கேறு+verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:பங்கேற்றார் #;
++பங்கேறு+verb+fin+sim+strong+past%=த்+3sgm%=ஆன்:பங்கேற்றான் #;
++பங்கேறு+verb+fin+sim+strong+past%=த்+3sgn%=அது:பங்கேற்றது #;
++பங்கேறு+verb+fin+sim+strong+pres%=கின்ற்+3pln%=அன:பங்கேற்கின்றன #;
++பங்கேறு+verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:பங்கேற்கிறோம் #;
++பங்கேறு+verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:பங்கேற்கிறேன் #;
++பங்கேறு+verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்:பங்கேற்கிறீர்கள் #;
++பங்கேறு+verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்:பங்கேற்கிறாய் #;
++பங்கேறு+verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்:பங்கேற்கிறீர் #;
++பங்கேறு+verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:பங்கேற்கிறார்கள் #;
++பங்கேறு+verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:பங்கேற்கிறாள் #;
++பங்கேறு+verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:பங்கேற்கிறார் #;
++பங்கேறு+verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்:பங்கேற்கிறான் #;
++பங்கேறு+verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:பங்கேற்கிறது #;
++பங்கேறு+verb+nonfin+sim+con%=ஆல்:பங்கேற்றால் #;
++பங்கேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+acc%=ஐ:பங்கேற்போரை #;
++பங்கேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+dat%=க்கு:பங்கேற்போருக்கு #;
++பங்கேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=இன்:பங்கேற்போரின் #;
++பங்கேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=உடைய:பங்கேற்போருடைய #;
++பங்கேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+inst%=ஆல்:பங்கேற்போரால் #;
++பங்கேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+loc%=இடம்:பங்கேற்போரிடம் #;
++பங்கேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+add%=உம்:பங்கேற்போரும் #;
++பங்கேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+foc%=ஏ:பங்கேற்போரே #;
++பங்கேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+soc%=உடன்:பங்கேற்போருடன் #;
++பங்கேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்:பங்கேற்போர் #;
++பங்கேறு+verb+nonfin+sim+futANDadjpart%=உம்:பங்கேற்கும் #;
++பங்கேறு+verb+nonfin+sim+inf%=அ+foc%=ஏ:பங்கேற்கவே #;
++பங்கேறு+verb+nonfin+sim+inf%=அ:பங்கேற்க #;
++பங்கேறு+verb+nonfin+sim+neg%=ஆ+verbalnoun%=மை:பங்கேற்காமை #;
++பங்கேறு+verb+nonfin+sim+neg%=ஆ+vpart%=மல்:பங்கேற்காமல் #;
++பங்கேறு+verb+nonfin+sim+neg%=ஆது+vpart%=∅:பங்கேற்காது #;
++பங்கேறு+verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:பங்கேற்காத #;
++பங்கேறு+verb+nonfin+sim+past%=த்+adjpart%=அ:பங்கேற்ற #;
++பங்கேறு+verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:பங்கேற்கின்ற #;
++பங்கேறு+verb+nonfin+sim+pres%=கிற்+adjpart%=அ:பங்கேற்கிற #;
++பங்கேறு+verb+nonfin+sim+verbalnoun%=தல்:பங்கேற்றல் #;
++பங்கேறு+verb+nonfin+sim+vpart%=உ:பங்கேற்று #;
++பதவியேறு+verb+fin+sim+imp%=∅+2sg%=∅:பதவியேறு #;
++பதவியேறு+verb+fin+sim+middle+fut%=ப்+1pl%=ஓம்:பதவியேற்போம் #;
++பதவியேறு+verb+fin+sim+middle+fut%=ப்+1sg%=ஏன்:பதவியேற்பேன் #;
++பதவியேறு+verb+fin+sim+middle+fut%=ப்+2pl%=ஈர்கள்:பதவியேற்பீர்கள் #;
++பதவியேறு+verb+fin+sim+middle+fut%=ப்+2sg%=ஆய்:பதவியேற்பாய் #;
++பதவியேறு+verb+fin+sim+middle+fut%=ப்+2sgh%=ஈர்:பதவியேற்பீர் #;
++பதவியேறு+verb+fin+sim+middle+fut%=ப்+3ple%=ஆர்கள்:பதவியேற்பார்கள் #;
++பதவியேறு+verb+fin+sim+middle+fut%=ப்+3pln%=∅:பதவியேற்கும் #;
++பதவியேறு+verb+fin+sim+middle+fut%=ப்+3sgf%=ஆள்:பதவியேற்பாள் #;
++பதவியேறு+verb+fin+sim+middle+fut%=ப்+3sghe%=ஆர்:பதவியேற்பார் #;
++பதவியேறு+verb+fin+sim+middle+fut%=ப்+3sgm%=ஆன்:பதவியேற்பான் #;
++பதவியேறு+verb+fin+sim+middle+fut%=ப்+3sgn%=∅:பதவியேற்கும் #;
++பதவியேறு+verb+fin+sim+strong+past%=த்+1pl%=ஓம்:பதவியேற்றோம் #;
++பதவியேறு+verb+fin+sim+strong+past%=த்+1sg%=ஏன்:பதவியேற்றேன் #;
++பதவியேறு+verb+fin+sim+strong+past%=த்+2pl%=ஈர்கள்:பதவியேற்றீர்கள் #;
++பதவியேறு+verb+fin+sim+strong+past%=த்+2sg%=ஆய்:பதவியேற்றாய் #;
++பதவியேறு+verb+fin+sim+strong+past%=த்+2sgh%=ஈர்:பதவியேற்றீர் #;
++பதவியேறு+verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:பதவியேற்றார்கள் #;
++பதவியேறு+verb+fin+sim+strong+past%=த்+3ple%=னர்:பதவியேற்றனர் #;
++பதவியேறு+verb+fin+sim+strong+past%=த்+3pln%=அன:பதவியேற்றன #;
++பதவியேறு+verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:பதவியேற்றாள் #;
++பதவியேறு+verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:பதவியேற்றார் #;
++பதவியேறு+verb+fin+sim+strong+past%=த்+3sgm%=ஆன்:பதவியேற்றான் #;
++பதவியேறு+verb+fin+sim+strong+past%=த்+3sgn%=அது:பதவியேற்றது #;
++பதவியேறு+verb+fin+sim+strong+pres%=கின்ற்+3pln%=அன:பதவியேற்கின்றன #;
++பதவியேறு+verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:பதவியேற்கிறோம் #;
++பதவியேறு+verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:பதவியேற்கிறேன் #;
++பதவியேறு+verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்:பதவியேற்கிறீர்கள் #;
++பதவியேறு+verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்:பதவியேற்கிறாய் #;
++பதவியேறு+verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்:பதவியேற்கிறீர் #;
++பதவியேறு+verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:பதவியேற்கிறார்கள் #;
++பதவியேறு+verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:பதவியேற்கிறாள் #;
++பதவியேறு+verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:பதவியேற்கிறார் #;
++பதவியேறு+verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்:பதவியேற்கிறான் #;
++பதவியேறு+verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:பதவியேற்கிறது #;
++பதவியேறு+verb+nonfin+sim+con%=ஆல்:பதவியேற்றால் #;
++பதவியேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+acc%=ஐ:பதவியேற்போரை #;
++பதவியேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+dat%=க்கு:பதவியேற்போருக்கு #;
++பதவியேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=இன்:பதவியேற்போரின் #;
++பதவியேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=உடைய:பதவியேற்போருடைய #;
++பதவியேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+inst%=ஆல்:பதவியேற்போரால் #;
++பதவியேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+loc%=இடம்:பதவியேற்போரிடம் #;
++பதவியேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+add%=உம்:பதவியேற்போரும் #;
++பதவியேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+foc%=ஏ:பதவியேற்போரே #;
++பதவியேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+soc%=உடன்:பதவியேற்போருடன் #;
++பதவியேறு+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்:பதவியேற்போர் #;
++பதவியேறு+verb+nonfin+sim+futANDadjpart%=உம்:பதவியேற்கும் #;
++பதவியேறு+verb+nonfin+sim+inf%=அ+foc%=ஏ:பதவியேற்கவே #;
++பதவியேறு+verb+nonfin+sim+inf%=அ:பதவியேற்க #;
++பதவியேறு+verb+nonfin+sim+neg%=ஆ+verbalnoun%=மை:பதவியேற்காமை #;
++பதவியேறு+verb+nonfin+sim+neg%=ஆ+vpart%=மல்:பதவியேற்காமல் #;
++பதவியேறு+verb+nonfin+sim+neg%=ஆது+vpart%=∅:பதவியேற்காது #;
++பதவியேறு+verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:பதவியேற்காத #;
++பதவியேறு+verb+nonfin+sim+past%=த்+adjpart%=அ:பதவியேற்ற #;
++பதவியேறு+verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:பதவியேற்கின்ற #;
++பதவியேறு+verb+nonfin+sim+pres%=கிற்+adjpart%=அ:பதவியேற்கிற #;
++பதவியேறு+verb+nonfin+sim+verbalnoun%=தல்:பதவியேற்றல் #;
++பதவியேறு+verb+nonfin+sim+vpart%=உ:பதவியேற்று #;
++வரவேல்+verb+fin+sim+imp%=∅+2sg%=∅:வரவேல் #;
++வரவேல்+verb+fin+sim+middle+fut%=ப்+1pl%=ஓம்:வரவேற்போம் #;
++வரவேல்+verb+fin+sim+middle+fut%=ப்+1sg%=ஏன்:வரவேற்பேன் #;
++வரவேல்+verb+fin+sim+middle+fut%=ப்+2pl%=ஈர்கள்:வரவேற்பீர்கள் #;
++வரவேல்+verb+fin+sim+middle+fut%=ப்+2sg%=ஆய்:வரவேற்பாய் #;
++வரவேல்+verb+fin+sim+middle+fut%=ப்+2sgh%=ஈர்:வரவேற்பீர் #;
++வரவேல்+verb+fin+sim+middle+fut%=ப்+3ple%=ஆர்கள்:வரவேற்பார்கள் #;
++வரவேல்+verb+fin+sim+middle+fut%=ப்+3pln%=∅:வரவேற்கும் #;
++வரவேல்+verb+fin+sim+middle+fut%=ப்+3sgf%=ஆள்:வரவேற்பாள் #;
++வரவேல்+verb+fin+sim+middle+fut%=ப்+3sghe%=ஆர்:வரவேற்பார் #;
++வரவேல்+verb+fin+sim+middle+fut%=ப்+3sgm%=ஆன்:வரவேற்பான் #;
++வரவேல்+verb+fin+sim+middle+fut%=ப்+3sgn%=∅:வரவேற்கும் #;
++வரவேல்+verb+fin+sim+strong+past%=த்+1pl%=ஓம்:வரவேற்றோம் #;
++வரவேல்+verb+fin+sim+strong+past%=த்+1sg%=ஏன்:வரவேற்றேன் #;
++வரவேல்+verb+fin+sim+strong+past%=த்+2pl%=ஈர்கள்:வரவேற்றீர்கள் #;
++வரவேல்+verb+fin+sim+strong+past%=த்+2sg%=ஆய்:வரவேற்றாய் #;
++வரவேல்+verb+fin+sim+strong+past%=த்+2sgh%=ஈர்:வரவேற்றீர் #;
++வரவேல்+verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:வரவேற்றார்கள் #;
++வரவேல்+verb+fin+sim+strong+past%=த்+3ple%=னர்:வரவேற்றனர் #;
++வரவேல்+verb+fin+sim+strong+past%=த்+3pln%=அன:வரவேற்றன #;
++வரவேல்+verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:வரவேற்றாள் #;
++வரவேல்+verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:வரவேற்றார் #;
++வரவேல்+verb+fin+sim+strong+past%=த்+3sgm%=ஆன்:வரவேற்றான் #;
++வரவேல்+verb+fin+sim+strong+past%=த்+3sgn%=அது:வரவேற்றது #;
++வரவேல்+verb+fin+sim+strong+pres%=கின்ற்+3pln%=அன:வரவேற்கின்றன #;
++வரவேல்+verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:வரவேற்கிறோம் #;
++வரவேல்+verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:வரவேற்கிறேன் #;
++வரவேல்+verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்:வரவேற்கிறீர்கள் #;
++வரவேல்+verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்:வரவேற்கிறாய் #;
++வரவேல்+verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்:வரவேற்கிறீர் #;
++வரவேல்+verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:வரவேற்கிறார்கள் #;
++வரவேல்+verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:வரவேற்கிறாள் #;
++வரவேல்+verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:வரவேற்கிறார் #;
++வரவேல்+verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்:வரவேற்கிறான் #;
++வரவேல்+verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:வரவேற்கிறது #;
++வரவேல்+verb+nonfin+sim+con%=ஆல்:வரவேற்றால் #;
++வரவேல்+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+acc%=ஐ:வரவேற்போரை #;
++வரவேல்+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+dat%=க்கு:வரவேற்போருக்கு #;
++வரவேல்+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=இன்:வரவேற்போரின் #;
++வரவேல்+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=உடைய:வரவேற்போருடைய #;
++வரவேல்+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+inst%=ஆல்:வரவேற்போரால் #;
++வரவேல்+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+loc%=இடம்:வரவேற்போரிடம் #;
++வரவேல்+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+add%=உம்:வரவேற்போரும் #;
++வரவேல்+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+foc%=ஏ:வரவேற்போரே #;
++வரவேல்+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+soc%=உடன்:வரவேற்போருடன் #;
++வரவேல்+verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்:வரவேற்போர் #;
++வரவேல்+verb+nonfin+sim+futANDadjpart%=உம்:வரவேற்கும் #;
++வரவேல்+verb+nonfin+sim+inf%=அ+foc%=ஏ:வரவேற்கவே #;
++வரவேல்+verb+nonfin+sim+inf%=அ:வரவேற்க #;
++வரவேல்+verb+nonfin+sim+neg%=ஆ+verbalnoun%=மை:வரவேற்காமை #;
++வரவேல்+verb+nonfin+sim+neg%=ஆ+vpart%=மல்:வரவேற்காமல் #;
++வரவேல்+verb+nonfin+sim+neg%=ஆது+vpart%=∅:வரவேற்காது #;
++வரவேல்+verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:வரவேற்காத #;
++வரவேல்+verb+nonfin+sim+past%=த்+adjpart%=அ:வரவேற்ற #;
++வரவேல்+verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:வரவேற்கின்ற #;
++வரவேல்+verb+nonfin+sim+pres%=கிற்+adjpart%=அ:வரவேற்கிற #;
++வரவேல்+verb+nonfin+sim+verbalnoun%=தல்:வரவேற்றல் #;
++வரவேல்+verb+nonfin+sim+vpart%=உ:வரவேற்று #;
+ எதிர்பார்+verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:எதிர்பாராத #;
+ எதிர்பார்+verb+nonfin+sim+neg%=ஆ+vpart%=மல்:எதிர்பாராமல் #;
+ எதிர்பார்+verb+nonfin+sim+neg%=ஆ+verbalnoun%=மை:எதிர்பாராமை #;
+@@ -67,10 +242,6 @@
+ ஏல்+verb+nonfin+sim+neg%=ஆது+vpart%=∅:ஏற்காது #;
+ ஏல்+verb+nonfin+sim+verbalnoun%=தல்:ஏற்றல் #;
+ ஏல்+verb+nonfin+sim+con%=ஆல்:ஏற்றால் #;
+-பங்கேறு+verb+nonfin+sim+inf%=அ:பங்கேற்க #;
+-பங்கேறு+verb+nonfin+sim+inf%=அ+foc%=ஏ:பங்கேற்கவே #;
+-பதவியேறு+verb+nonfin+sim+inf%=அ:பதவியேற்க #;
+-பதவியேறு+verb+nonfin+sim+inf%=அ+foc%=ஏ:பதவியேற்கவே #;
+ வெளியிடு+verb+nonfin+sim+verbalnoun%=தல்:வெளியிடல் #;
+ ModernC9Imperatives;
+ ! Irregular infinitive of என், required by the productive passive எனப்படு.
+@@ -115,6 +286,7 @@
+ 
+ 
+ !!!C1.lexc!!!
++
+ LEXICON ClassOne
+ 
+ ! Corpus-attested roots with inherited paradigm evidence
+@@ -17910,8 +18082,8 @@
+ இறு      C63Vinf;
+ தறு      C63Vinf;
+ பெறு      C63Vinf;
+-பங்கேறு C63Vinf;
+-பதவியேறு C63Vinf;
++
++
+ புகழ்பெறு      C63Vinf;
+ துறு      C63Vinf;
+ உறு      C63Vinf;

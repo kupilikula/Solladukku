@@ -1,0 +1,32 @@
+--- ThamizhiFST-C4.foma
++++ ThamizhiFST-C4.foma
+@@ -15,15 +15,17 @@
+ define C4R3 {ி} -> {ிய} || _ "^" [{ும்}|{ுமாறு}|{ா}];
+ define C4WeakIModal {ி} -> {ிய} || [{அற}|{தெர}|{புர}] _ "^" [{அலாம்}|{அவில்லை}];
+ define C4R4 {ு} -> {ுக்க} || _ "^" [{ும்}|{ுமாறு}|{அ}];
+-define C4EluFuture {எழு} -> {எழ} || _ "^" [{ும்}|{ுமாறு}];
+-define C4ViluFuture {விழு} -> {விழ} || _ "^" [{ும்}|{ுமாறு}];
+-define C4PukuFuture {புகு} -> {புக} || _ "^" [{ும்}|{ுமாறு}];
+-define C4MikuFuture {மிகு} -> {மிக} || _ "^" [{ும்}|{ுமாறு}];
++define C4EluFuture {எழு} -> {எழ} || _ "^" [{ும்}|{ுமாறு}|{அ}];
++define C4ViluFuture {விழு} -> {விழ} || _ "^" [{ும்}|{ுமாறு}|{அ}];
++define C4PukuFuture {புகு} -> {புக} || _ "^" [{ும்}|{ுமாறு}|{அ}];
++define C4MikuFuture {மிகு} -> {மிக} || _ "^" [{ும்}|{ுமாறு}|{அ}];
+ define C4R5 {ழ்} -> {ழ}  || _ "^" [{அ}];
+ # Class-4 i-final roots are weak: அறி -> அறிய; strong அறிக்க remains C11.
+ define C4R6 {ி} -> {ிய}  || _ "^" [{அ}];
+ # Class-4 r-final roots are weak: வளர் -> வளர; strong வளர்க்க is not a simple C4 form.
+ define C4R7 {ர்} -> {ர} || _ "^" [{அ}];
++# C4 roots in -ஆய் drop the final pulli before the infinitive -அ: ஆராய் -> ஆராய.
++define C4AayInf {ய்} -> {ய} || _ "^" [{அ}];
+ define C4R8 [{தீ}] -> {தீய} || _ "^" [{அ}|{ா}];
+ define C4R9 [{ஈ}] -> {ஈய} || _ "^" [{அ}];
+ 
+@@ -47,6 +49,7 @@
+ 		C4R5	.o.
+ 		C4R6	.o.
+ 		C4R7	.o.
++		C4AayInf	.o.
+ 		C4R8	.o.
+ 		C4R9	.o.
+ 		VerbQuestionPulli	.o.

@@ -1,0 +1,227 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -132868,10 +132868,10 @@
+ ரப்பர்	C16DirectSgRoot;
+ வைஷ்ணவர்	C16DirectSgRoot;
+ சுவர்	  C16SgRoot ; 
+-தயிர் 	  C16SgRoot ; 
+-தளிர் 	  C16SgRoot ; 
+-மயிர் 	  C16SgRoot ; 
+-பயிர்  	  C16SgRoot ;
++தயிர்	C16DirectSgRoot;
++தளிர்	C16DirectSgRoot;
++மயிர்	C16DirectSgRoot;
++பயிர்	C16DirectSgRoot;
+ மதிற்சுவர்	  C16SgRoot ; 
+ அகக்கதிர்	C16DirectSgRoot;
+ அகச்சுடர்	C16DirectSgRoot;
+@@ -133090,8 +133090,8 @@
+ கண்ணியக்கதிர்	C16DirectSgRoot;
+ கண்ணியச்சுடர்	C16DirectSgRoot;
+ கண்ணியமலர்	C16DirectSgRoot;
+-கண்மலர்	C16SgRoot ; 
+-கதிர்	C16SgRoot ; 
++கண்மலர்	C16DirectSgRoot;
++கதிர்	C16DirectSgRoot;
+ கதிர்மலர்	C16DirectSgRoot;
+ கயற்கதிர்	C16DirectSgRoot;
+ கருத்துச்சுடர்	C16DirectSgRoot;
+@@ -133130,12 +133130,12 @@
+ காதற்சுடர்	C16DirectSgRoot;
+ காதன்மலர்	C16DirectSgRoot;
+ காமரோதிகார்	C16DirectSgRoot;
+-காமர்	C16SgRoot ; 
++காமர்	C16DirectSgRoot;
+ காமர்கதிர்	C16DirectSgRoot;
+ காமர்மலர்	C16DirectSgRoot;
+ காமலர்	C16DirectSgRoot;
+ காரிகிழார்	C16DirectSgRoot;
+-கார்	C16SgRoot ; 
++கார்	C16DirectSgRoot;
+ காவற்கதிர்	C16DirectSgRoot;
+ காவற்சுடர்	C16DirectSgRoot;
+ காவன்மலர்	C16DirectSgRoot;
+@@ -133179,7 +133179,7 @@
+ கூத்தனார்	C16DirectSgRoot;
+ கூத்துமலர்	C16DirectSgRoot;
+ கூந்தன்மலர்	C16DirectSgRoot;
+-கூர்	C16SgRoot ; 
++கூர்	C16DirectSgRoot;
+ கூர்கதிர்	C16DirectSgRoot;
+ கூர்சுடர்	C16DirectSgRoot;
+ கூர்மலர்	C16DirectSgRoot;
+@@ -133232,7 +133232,7 @@
+ சந்தனக்கதிர்	C16DirectSgRoot;
+ சந்தனச்சுடர்	C16DirectSgRoot;
+ சந்தனமலர்	C16DirectSgRoot;
+-சமர்	C16SgRoot ; 
++சமர்	C16DirectSgRoot;
+ சமர்ச்சுடர்	C16DirectSgRoot;
+ சமர்போர்	C16DirectSgRoot;
+ சாத்தனார்	C16DirectSgRoot;
+@@ -133250,11 +133250,11 @@
+ சான்றுச்சுடர்	C16DirectSgRoot;
+ சிலம்புச்சுடர்	C16DirectSgRoot;
+ சிறுமலர்	C16DirectSgRoot;
+-சீர்	C16SgRoot ; 
++சீர்	C16DirectSgRoot;
+ சீர்ச்சுடர்	C16DirectSgRoot;
+ சீர்நாச்சியார்	C16DirectSgRoot;
+ சீர்மலர்	C16DirectSgRoot;
+-சுடர்	C16SgRoot ; 
++சுடர்	C16DirectSgRoot;
+ சுடர்க்கதிர்	C16DirectSgRoot;
+ சுடர்த்துகிர்	C16DirectSgRoot;
+ சுடர்மலர்	C16DirectSgRoot;
+@@ -133346,7 +133346,7 @@
+ தனிமலர்	C16DirectSgRoot;
+ தாமரைச்சுடர்	C16DirectSgRoot;
+ தாமரைமலர்	C16DirectSgRoot;
+-தார்	C16SgRoot ; 
++தார்	C16DirectSgRoot;
+ தாழைமலர்	C16DirectSgRoot;
+ திகழ்கதிர்	C16DirectSgRoot;
+ திகழ்சுடர்	C16DirectSgRoot;
+@@ -133445,14 +133445,14 @@
+ நன்மலர்	C16DirectSgRoot;
+ நாகநாதர்	C16DirectSgRoot;
+ நாகமலர்	C16DirectSgRoot;
+-நாகனார்	C16SgRoot ; 
+-நாச்சியார்	C16SgRoot ; 
++நாகனார்	C16DirectSgRoot;
++நாச்சியார்	C16DirectSgRoot;
+ நாண்மலர்	C16DirectSgRoot;
+ நாமலர்	C16DirectSgRoot;
+ நாவன்மலர்	C16DirectSgRoot;
+ நாவுக்கரசர்	C16DirectSgRoot;
+ நிகரில்சுடர்	C16DirectSgRoot;
+-நிகர்	C16SgRoot ; 
++நிகர்	C16DirectSgRoot;
+ நிலவுக்கதிர்	C16DirectSgRoot;
+ நிலவுச்சுடர்	C16DirectSgRoot;
+ நிலவுமலர்	C16DirectSgRoot;
+@@ -133510,7 +133510,7 @@
+ பணிச்சுடர்	C16DirectSgRoot;
+ பண்மலர்	C16DirectSgRoot;
+ பதுமனார்	C16DirectSgRoot;
+-பரணர்	C16SgRoot ; 
++பரணர்	C16DirectSgRoot;
+ பரிதிக்கதிர்	C16DirectSgRoot;
+ பரிதிச்சுடர்	C16DirectSgRoot;
+ பரிமேலழகர்	C16DirectSgRoot;
+@@ -133543,7 +133543,7 @@
+ பாதிரிமலர்	C16DirectSgRoot;
+ பாமலர்	C16DirectSgRoot;
+ பாய்சுடர்	C16DirectSgRoot;
+-பார்	C16SgRoot ; 
++பார்	C16DirectSgRoot;
+ பார்வைக்கதிர்	C16DirectSgRoot;
+ பார்வைச்சுடர்	C16DirectSgRoot;
+ பாலைச்சுடர்	C16DirectSgRoot;
+@@ -133603,7 +133603,7 @@
+ பெருமையனார்	C16DirectSgRoot;
+ பெரும்போர்	C16DirectSgRoot;
+ பேராசிரியர்	C16DirectSgRoot;
+-பேர்	C16SgRoot ; 
++பேர்	C16DirectSgRoot;
+ பைங்கதிர்	C16DirectSgRoot;
+ பைஞ்சுடர்	C16DirectSgRoot;
+ பைம்மலர்	C16DirectSgRoot;
+@@ -133650,8 +133650,8 @@
+ மதுரைமலர்	C16DirectSgRoot;
+ மயின்மலர்	C16DirectSgRoot;
+ மருதமலர்	C16DirectSgRoot;
+-மருதனார்	C16SgRoot ; 
+-மலர்	C16SgRoot ; 
++மருதனார்	C16DirectSgRoot;
++மலர்	C16DirectSgRoot;
+ மலர்க்கதிர்	C16DirectSgRoot;
+ மலர்ச்சுடர்	C16DirectSgRoot;
+ மலைமலர்	C16DirectSgRoot;
+@@ -133743,7 +133743,7 @@
+ யாழ்க்கதிர்	C16DirectSgRoot;
+ யாழ்ச்சுடர்	C16DirectSgRoot;
+ யாழ்மலர்	C16DirectSgRoot;
+-ராயர்	C16SgRoot ; 
++ராயர்	C16DirectSgRoot;
+ லெமூர்	C16DirectSgRoot;
+ வஞ்சிசேரநாட்டுநகர்	C16DirectSgRoot;
+ வஞ்சிச்சுடர்	C16DirectSgRoot;
+@@ -133872,7 +133872,7 @@
+ மழுவரையர்	C16DirectSgRoot;
+ மற்றவர்	C16DirectSgRoot;
+ மன்னர்	C16DirectSgRoot;
+-மாதர்	C16SgRoot ;
++மாதர்	C16DirectSgRoot;
+ மாதேவியார்	C16DirectSgRoot;
+ மாநகர்	C16DirectSgRoot;
+ மாமல்லர்	C16DirectSgRoot;
+@@ -133885,7 +133885,7 @@
+ முதியோர்	C16DirectSgRoot;
+ முத்தரையர்	C16DirectSgRoot;
+ முரடர்	C16DirectSgRoot;
+-முனிவர்	C16SgRoot ;
++முனிவர்	C16DirectSgRoot;
+ முனையரையர்	C16DirectSgRoot;
+ முன்னோர்	C16DirectSgRoot;
+ மூடமதியினர்	C16DirectSgRoot;
+@@ -133910,7 +133910,7 @@
+ வாங்குவோர்	C16DirectSgRoot;
+ வாசகர்	C16DirectSgRoot;
+ வாசற்காவலர்	C16DirectSgRoot;
+-வாணர்	C16SgRoot ;
++வாணர்	C16DirectSgRoot;
+ வாதக்காரர்	C16DirectSgRoot;
+ வாழைநார்	C16DirectSgRoot;
+ வாழ்ந்திருப்பவர்	C16DirectSgRoot;
+@@ -136565,7 +136565,7 @@
+ கடைக்காரர்	C16DirectSgRoot;
+ கடைமாணாக்கர்	C16DirectSgRoot;
+ கட்டளையாளர்	C16DirectSgRoot;
+-கணக்கர்	C16SgRoot;
++கணக்கர்	C16DirectSgRoot;
+ கணக்கியலறிஞர்	C16DirectSgRoot;
+ கணக்கெழுத்தர்	C16DirectSgRoot;
+ கணிஞர்	C16DirectSgRoot;
+@@ -136580,7 +136580,7 @@
+ கதாசிரியர்	C16DirectSgRoot;
+ கமனசித்தர்	C16DirectSgRoot;
+ கமாரக்காரர்	C16DirectSgRoot;
+-கம்மாளர்	C16SgRoot;
++கம்மாளர்	C16DirectSgRoot;
+ கர்க்கர்	C16DirectSgRoot;
+ கழாயினர்	C16DirectSgRoot;
+ கவிராயர்	C16DirectSgRoot;
+@@ -136665,7 +136665,7 @@
+ சிலேபிகர்	C16DirectSgRoot;
+ சிவத்துவிசர்	C16DirectSgRoot;
+ சிவப்பிரகாசர்	C16DirectSgRoot;
+-சிவாசாரியர்	C16SgRoot;
++சிவாசாரியர்	C16DirectSgRoot;
+ சீகண்டருத்திரர்	C16DirectSgRoot;
+ சீகண்டர்	C16DirectSgRoot;
+ சீனகர்	C16DirectSgRoot;
+@@ -136694,11 +136694,11 @@
+ ஜ்யோதிஷ்கர்	C16DirectSgRoot;
+ ஞானப்பிரகாசர்	C16DirectSgRoot;
+ ஞானாதிக்கர்	C16DirectSgRoot;
+-டக்கர்	C16SgRoot;
++டக்கர்	C16DirectSgRoot;
+ டெண்டர்	C16DirectSgRoot;
+-தச்சர்	C16SgRoot;
++தச்சர்	C16DirectSgRoot;
+ தட்சிணாமூர்த்திதேசிகர்	C16DirectSgRoot;
+-தண்டர்	C16SgRoot;
++தண்டர்	C16DirectSgRoot;
+ ததியர்	C16DirectSgRoot;
+ தத்துவப்பிரகாசர்	C16DirectSgRoot;
+ தத்துவராயர்	C16DirectSgRoot;
+@@ -136799,7 +136799,7 @@
+ பக்கவாத்தியர்	C16DirectSgRoot;
+ பக்திச்சுவாலகர்	C16DirectSgRoot;
+ பஞ்சமகர்	C16DirectSgRoot;
+-பஞ்சர்	C16SgRoot;
++பஞ்சர்	C16DirectSgRoot;
+ பஞ்சாசாரியர்	C16DirectSgRoot;
+ பஞ்சாளர்	C16DirectSgRoot;
+ படிகர்	C16DirectSgRoot;

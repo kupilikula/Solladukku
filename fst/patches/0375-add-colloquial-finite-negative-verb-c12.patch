@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -8088,6 +8088,7 @@
+ 
+ ! Productive infinitive negation and possibility missing from Class 12.
+ +verb+nonfin+complex+aspect+inf%=க்க+negpart%=இல்லை:^க்கவில்லை #;
+++verb+nonfin+complex+aspect+inf%=க்க+negpart%=இல்லை+colloq:^க்கல #;
+ +verb+nonfin+complex+aspect+inf%=க்க+moodpart%=ஆம்:^க்கலாம் VerbQuestion;
+ 
+ 

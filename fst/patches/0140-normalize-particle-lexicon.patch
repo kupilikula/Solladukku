@@ -1,0 +1,11 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -153,7 +153,7 @@
+ பதினாறு      cardinal; 
+ பதினேழு      cardinal; 
+ பதினெட்டு      cardinal; 
+-பத்தொன்பது      cardinal; 
++பத்தொன்பது      cardinal; 
+ இருபது      cardinal; 
+ இருபத்தியொன்று      cardinal; 
+ இருபத்தியிரண்டு      cardinal; 

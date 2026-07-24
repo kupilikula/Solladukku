@@ -1,0 +1,26 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -1166,7 +1166,6 @@
+ நாசித்திரு      CIru12Inf; 
+ நைவேதித்திரு      CIru12Inf; 
+ நைத்திரு      CIru12Inf; 
+-நெய்த்திரு      CIru12Inf; 
+ நெரித்திரு      CIru12Inf; 
+ நெருநெருத்திரு      CIru12Inf; 
+ நொளுநொளுத்திரு      CIru12Inf; 
+@@ -4392,7 +4391,6 @@
+ நாசித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ நைவேதித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ நைத்துக்கொண்டிரு     ClassKondiru12Inf; 
+-நெய்த்துக்கொண்டிரு     ClassKondiru12Inf; 
+ நெரித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ நெருநெருத்துக்கொண்டிரு     ClassKondiru12Inf; 
+ நொளுநொளுத்துக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -7617,7 +7615,6 @@
+ நாசித்திரு      CIru12Inf; 
+ நைவேதித்திரு      CIru12Inf; 
+ நைத்திரு      CIru12Inf; 
+-நெய்த்திரு      CIru12Inf; 
+ நெரித்திரு      CIru12Inf; 
+ நெருநெருத்திரு      CIru12Inf; 
+ நொளுநொளுத்திரு      CIru12Inf; 

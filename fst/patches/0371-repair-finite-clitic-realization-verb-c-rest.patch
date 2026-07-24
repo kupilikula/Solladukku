@@ -1,0 +1,13 @@
+--- ThamizhiFST-otherthan-3-4-62-11-12.foma
++++ ThamizhiFST-otherthan-3-4-62-11-12.foma
+@@ -4,8 +4,8 @@
+ define Lexicon;
+ 
+ # Surface realization of the productive -aa polar-question clitic.
+-define VerbQuestionPulli {்} -> 0 || _ "~" {ா};
+-define VerbQuestionU {ு} -> 0 || _ "~" {ா};
++define VerbQuestionPulli {்} -> 0 || _ "~" [{ா}|{ே}|{ோ}];
++define VerbQuestionU {ு} -> 0 || _ "~" [{ா}|{ே}|{ோ}];
+ define VerbQuestionBoundary "~" -> 0;
+ define Class17Marker W -> 0;
+ define KollModal {கொள்} -> {கொள்ள} || _ "^" [{அலாம்}|{அவில்லை}|{ா}];

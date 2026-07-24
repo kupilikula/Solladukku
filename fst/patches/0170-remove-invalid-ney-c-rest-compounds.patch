@@ -1,0 +1,154 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -14098,7 +14098,6 @@
+ நாசித்துவிடு     CVidu61Inf; 
+ நைவேதித்துவிடு     CVidu61Inf; 
+ நைத்துவிடு     CVidu61Inf; 
+-நெய்த்துவிடு     CVidu61Inf; 
+ நெரித்துவிடு     CVidu61Inf; 
+ நெருநெருத்துவிடு     CVidu61Inf; 
+ நொளுநொளுத்துவிடு     CVidu61Inf; 
+@@ -20350,7 +20349,6 @@
+ நாசிக்கப்போ            ClassPo5Inf; 
+ நைவேதிக்கப்போ            ClassPo5Inf; 
+ நைக்கப்போ            ClassPo5Inf; 
+-நெய்க்கப்போ            ClassPo5Inf; 
+ நெரிக்கப்போ            ClassPo5Inf; 
+ நெருநெருக்கப்போ            ClassPo5Inf; 
+ நொளுநொளுக்கப்போ            ClassPo5Inf; 
+@@ -23350,7 +23348,6 @@
+ நாசிக்கப்போ            ClassPo5Inf; 
+ நைவேதிக்கப்போ            ClassPo5Inf; 
+ நைக்கப்போ            ClassPo5Inf; 
+-நெய்க்கப்போ            ClassPo5Inf; 
+ நெரிக்கப்போ            ClassPo5Inf; 
+ நெருநெருக்கப்போ            ClassPo5Inf; 
+ நொளுநொளுக்கப்போ            ClassPo5Inf; 
+@@ -26469,7 +26466,6 @@
+ நாசித்துப்போடு	VpoduInf;
+ நைவேதித்துப்போடு	VpoduInf;
+ நைத்துப்போடு	VpoduInf;
+-நெய்த்துப்போடு	VpoduInf;
+ நெரித்துப்போடு	VpoduInf;
+ நெருநெருத்துப்போடு	VpoduInf;
+ நொளுநொளுத்துப்போடு	VpoduInf;
+@@ -29689,7 +29685,6 @@
+ நாசித்துத்தள்ளு	VthalluInf;
+ நைவேதித்துத்தள்ளு	VthalluInf;
+ நைத்துத்தள்ளு	VthalluInf;
+-நெய்த்துத்தள்ளு	VthalluInf;
+ நெரித்துத்தள்ளு	VthalluInf;
+ நெருநெருத்துத்தள்ளு	VthalluInf;
+ நொளுநொளுத்துத்தள்ளு	VthalluInf;
+@@ -35935,7 +35930,6 @@
+ நாசிக்கப்பண்ணு                  ClassPannu5Inf; 
+ நைவேதிக்கப்பண்ணு                  ClassPannu5Inf; 
+ நைக்கப்பண்ணு                  ClassPannu5Inf; 
+-நெய்க்கப்பண்ணு                  ClassPannu5Inf; 
+ நெரிக்கப்பண்ணு                  ClassPannu5Inf; 
+ நெருநெருக்கப்பண்ணு                  ClassPannu5Inf; 
+ நொளுநொளுக்கப்பண்ணு                  ClassPannu5Inf; 
+@@ -38935,7 +38929,6 @@
+ நாசிக்கப்பண்ணு                  ClassPannu5Inf; 
+ நைவேதிக்கப்பண்ணு                  ClassPannu5Inf; 
+ நைக்கப்பண்ணு                  ClassPannu5Inf; 
+-நெய்க்கப்பண்ணு                  ClassPannu5Inf; 
+ நெரிக்கப்பண்ணு                  ClassPannu5Inf; 
+ நெருநெருக்கப்பண்ணு                  ClassPannu5Inf; 
+ நொளுநொளுக்கப்பண்ணு                  ClassPannu5Inf; 
+@@ -45076,7 +45069,6 @@
+ நாசிக்கச்செய்            ClassSei1Inf; 
+ நைவேதிக்கச்செய்            ClassSei1Inf; 
+ நைக்கச்செய்            ClassSei1Inf; 
+-நெய்க்கச்செய்            ClassSei1Inf; 
+ நெரிக்கச்செய்            ClassSei1Inf; 
+ நெருநெருக்கச்செய்            ClassSei1Inf; 
+ நொளுநொளுக்கச்செய்            ClassSei1Inf; 
+@@ -48076,7 +48068,6 @@
+ நாசிக்கச்செய்            ClassSei1Inf; 
+ நைவேதிக்கச்செய்            ClassSei1Inf; 
+ நைக்கச்செய்            ClassSei1Inf; 
+-நெய்க்கச்செய்            ClassSei1Inf; 
+ நெரிக்கச்செய்            ClassSei1Inf; 
+ நெருநெருக்கச்செய்            ClassSei1Inf; 
+ நொளுநொளுக்கச்செய்            ClassSei1Inf; 
+@@ -54223,7 +54214,6 @@
+ நாசிக்கவை            ClassVai1Inf; 
+ நைவேதிக்கவை            ClassVai1Inf; 
+ நைக்கவை            ClassVai1Inf; 
+-நெய்க்கவை            ClassVai1Inf; 
+ நெரிக்கவை            ClassVai1Inf; 
+ நெருநெருக்கவை            ClassVai1Inf; 
+ நொளுநொளுக்கவை            ClassVai1Inf; 
+@@ -57202,7 +57192,6 @@
+ நாசிக்கவை            ClassVai1Inf; 
+ நைவேதிக்கவை            ClassVai1Inf; 
+ நைக்கவை            ClassVai1Inf; 
+-நெய்க்கவை            ClassVai1Inf; 
+ நெரிக்கவை            ClassVai1Inf; 
+ நெருநெருக்கவை            ClassVai1Inf; 
+ நொளுநொளுக்கவை            ClassVai1Inf; 
+@@ -63316,7 +63305,6 @@
+ நாசிக்கக்கூடு            ClassKoodu5Inf; 
+ நைவேதிக்கக்கூடு            ClassKoodu5Inf; 
+ நைக்கக்கூடு            ClassKoodu5Inf; 
+-நெய்க்கக்கூடு            ClassKoodu5Inf; 
+ நெரிக்கக்கூடு            ClassKoodu5Inf; 
+ நெருநெருக்கக்கூடு            ClassKoodu5Inf; 
+ நொளுநொளுக்கக்கூடு            ClassKoodu5Inf; 
+@@ -66316,7 +66304,6 @@
+ நாசிக்கக்கூடு            ClassKoodu5Inf; 
+ நைவேதிக்கக்கூடு            ClassKoodu5Inf; 
+ நைக்கக்கூடு            ClassKoodu5Inf; 
+-நெய்க்கக்கூடு            ClassKoodu5Inf; 
+ நெரிக்கக்கூடு            ClassKoodu5Inf; 
+ நெருநெருக்கக்கூடு            ClassKoodu5Inf; 
+ நொளுநொளுக்கக்கூடு            ClassKoodu5Inf; 
+@@ -72459,7 +72446,6 @@
+ நாசிக்கவேண்டு            ClassVendu5Inf; 
+ நைவேதிக்கவேண்டு            ClassVendu5Inf; 
+ நைக்கவேண்டு            ClassVendu5Inf; 
+-நெய்க்கவேண்டு            ClassVendu5Inf; 
+ நெரிக்கவேண்டு            ClassVendu5Inf; 
+ நெருநெருக்கவேண்டு            ClassVendu5Inf; 
+ நொளுநொளுக்கவேண்டு            ClassVendu5Inf; 
+@@ -75427,7 +75413,6 @@
+ நாசிக்கவேண்டு            ClassVendu5Inf; 
+ நைவேதிக்கவேண்டு            ClassVendu5Inf; 
+ நைக்கவேண்டு            ClassVendu5Inf; 
+-நெய்க்கவேண்டு            ClassVendu5Inf; 
+ நெரிக்கவேண்டு            ClassVendu5Inf; 
+ நெருநெருக்கவேண்டு            ClassVendu5Inf; 
+ நொளுநொளுக்கவேண்டு            ClassVendu5Inf; 
+@@ -78513,7 +78498,6 @@
+ நாசித்திடு      CIdu61Inf;  
+ நைவேதித்திடு      CIdu61Inf;  
+ நைத்திடு      CIdu61Inf;  
+-நெய்த்திடு      CIdu61Inf;  
+ நெரித்திடு      CIdu61Inf;  
+ நெருநெருத்திடு      CIdu61Inf;  
+ நொளுநொளுத்திடு      CIdu61Inf;  
+@@ -81732,7 +81716,6 @@
+ நாசித்துவா	VvaaInf;
+ நைவேதித்துவா	VvaaInf;
+ நைத்துவா	VvaaInf;
+-நெய்த்துவா	VvaaInf;
+ நெரித்துவா	VvaaInf;
+ நெருநெருத்துவா	VvaaInf;
+ நொளுநொளுத்துவா	VvaaInf;
+@@ -84945,7 +84928,6 @@
+ நாசிக்கப்படு                   CPadu61Vinf; 
+ நைவேதிக்கப்படு                   CPadu61Vinf; 
+ நைக்கப்படு                   CPadu61Vinf; 
+-நெய்க்கப்படு                   CPadu61Vinf; 
+ நெரிக்கப்படு                   CPadu61Vinf; 
+ நெருநெருக்கப்படு                   CPadu61Vinf; 
+ நொளுநொளுக்கப்படு                   CPadu61Vinf; 
+@@ -88203,7 +88185,6 @@
+ நாசிக்கப்பெறு                CPeru63Vinf; 
+ நைவேதிக்கப்பெறு                CPeru63Vinf; 
+ நைக்கப்பெறு                CPeru63Vinf; 
+-நெய்க்கப்பெறு                CPeru63Vinf; 
+ நெரிக்கப்பெறு                CPeru63Vinf; 
+ நெருநெருக்கப்பெறு                CPeru63Vinf; 
+ நொளுநொளுக்கப்பெறு                CPeru63Vinf; 

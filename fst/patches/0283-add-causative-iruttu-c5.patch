@@ -1,0 +1,11 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -2965,7 +2965,8 @@
+ இறக்கு     C5Vinf;
+ உயங்கு     C5Vinf;
+ இணாப்பு     C5Vinf;
+ இறங்கு     C5Vinf;
+ உயர்த்து     C5Vinf;
++இருத்து     C5Vinf;
+ இணுக்கு     C5Vinf;
+ இறட்டு     C5Vinf;

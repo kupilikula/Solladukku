@@ -1,0 +1,73 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols %<PV%> %<PP%> +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist +psp_padi +vpart_pin +colloq
++Multichar_Symbols %<PV%> %<PP%> %<C5COL%> +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist +psp_padi +vpart_pin +colloq
+ 
+ 
+ LEXICON Root
+@@ -8950,19 +8950,31 @@
+ +verb+nonfin+sim+strong+past%=இன்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ியதாகவும் #;
+ +verb+fin+sim+strong+past%=இன்+3pln%=அன:^ினன VerbQuestionNeuterPlural;
+ +verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:^கிறேன் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்+colloq:^வுறேன் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:^கிறோம் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்+colloq:%<C5COL%>^றோம் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+1sg%=அன்:^கிறன் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+1sg%=அன்+colloq:%<C5COL%>^றன் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்:^கிறாய் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்+colloq:%<C5COL%>^றாய் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்:^கிறீர் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்+colloq:%<C5COL%>^றீர் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்:^கிறீர்கள் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்+colloq:%<C5COL%>^றீங்க VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்:^கிறான் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்+colloq:%<C5COL%>^றான் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்+colloq:%<C5COL%>^றாள் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3sge%=அர்+colloq:%<C5COL%>^றர் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்+colloq:%<C5COL%>^றாங்க VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்+colloq:%<C5COL%>^றார் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்+colloq:%<C5COL%>^றாங்க VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது VerbQuestion;
+-+verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^து VerbQuestion;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+comp%=ஆவது:^கிறதாவது #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ:^கிறதை #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^கிறதையும் #;
+@@ -9345,7 +9357,7 @@
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ+vpart_potu%=போது:^கின்றபோது #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற HumanGenderedPartNoun;
+-+verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq:^குற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq:^ற #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ+psp_padi%=படி:^கிறபடி #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ+vpart_pin%=பின்:^கிறபின் #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ+vpart_potu%=போது:^கிறபோது #;
+--- ThamizhiFST-otherthan-3-4-62-11-12.foma
++++ ThamizhiFST-otherthan-3-4-62-11-12.foma
+@@ -128,6 +128,8 @@
+ define Cleanup6 "^" -> 0;
+ define CleanupPP %<PP%> -> 0;
+ define CleanupPV %<PV%> -> 0;
++define CleanupC5Colloq %<C5COL%> -> 0;
++define C5ColloqPresentRepair {ுவுற} -> {ுற};
+ 
+ 
+ regex	 	Lexicon           	.o.
+@@ -221,5 +223,6 @@
+ 			Cleanup5		.o.
+ 			Cleanup6		.o.
+ 			CleanupPP		.o.
+-			CleanupPV;
+-
++			CleanupPV		.o.
++			C5ColloqPresentRepair	.o.
++			CleanupC5Colloq;

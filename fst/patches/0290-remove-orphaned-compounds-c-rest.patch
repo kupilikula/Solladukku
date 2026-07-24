@@ -1,0 +1,82 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -22392,7 +22392,6 @@
+ இயைத்துவிடு     CVidu61Inf; 
+ இயந்திரித்துவிடு     CVidu61Inf; 
+ இரித்துவிடு     CVidu61Inf; 
+-இருத்துவிடு     CVidu61Inf; 
+ இரதித்துவிடு     CVidu61Inf; 
+ இரமித்துவிடு     CVidu61Inf; 
+ இரைத்துவிடு     CVidu61Inf; 
+@@ -22623,7 +22622,6 @@
+ தவந்துவிடு     CVidu61Inf; 
+ தொண்ணாந்துவிடு     CVidu61Inf; 
+ வறந்துவிடு     CVidu61Inf; 
+-வலந்துவிடு     CVidu61Inf; 
+ விறந்துவிடு     CVidu61Inf; 
+ வியந்துவிடு     CVidu61Inf; 
+ விழுமாந்துவிடு     CVidu61Inf; 
+@@ -32220,7 +32218,6 @@
+ இயைத்துப்போடு	VpoduInf;
+ இயந்திரித்துப்போடு	VpoduInf;
+ இரித்துப்போடு	VpoduInf;
+-இருத்துப்போடு	VpoduInf;
+ இரதித்துப்போடு	VpoduInf;
+ இரமித்துப்போடு	VpoduInf;
+ இரைத்துப்போடு	VpoduInf;
+@@ -32451,7 +32448,6 @@
+ தவந்துபோடு	VpoduInf;
+ தொண்ணாந்துபோடு	VpoduInf;
+ வறந்துபோடு	VpoduInf;
+-வலந்துபோடு	VpoduInf;
+ விறந்துபோடு	VpoduInf;
+ வியந்துபோடு	VpoduInf;
+ விழுமாந்துபோடு	VpoduInf;
+@@ -35726,7 +35722,6 @@
+ இயைத்துத்தள்ளு	VthalluInf;
+ இயந்திரித்துத்தள்ளு	VthalluInf;
+ இரித்துத்தள்ளு	VthalluInf;
+-இருத்துத்தள்ளு	VthalluInf;
+ இரதித்துத்தள்ளு	VthalluInf;
+ இரமித்துத்தள்ளு	VthalluInf;
+ இரைத்துத்தள்ளு	VthalluInf;
+@@ -35957,7 +35952,6 @@
+ தவந்துதள்ளு	VthalluInf;
+ தொண்ணாந்துதள்ளு	VthalluInf;
+ வறந்துதள்ளு	VthalluInf;
+-வலந்துதள்ளு	VthalluInf;
+ விறந்துதள்ளு	VthalluInf;
+ வியந்துதள்ளு	VthalluInf;
+ விழுமாந்துதள்ளு	VthalluInf;
+@@ -69546,7 +69540,6 @@
+ இயைத்திடு      CIdu61Inf;  
+ இயந்திரித்திடு      CIdu61Inf;  
+ இரித்திடு      CIdu61Inf;  
+-இருத்திடு      CIdu61Inf;  
+ இரதித்திடு      CIdu61Inf;  
+ இரமித்திடு      CIdu61Inf;  
+ இரைத்திடு      CIdu61Inf;  
+@@ -69777,7 +69770,6 @@
+ தவந்திடு      CIdu61Inf;  
+ தொண்ணாந்திடு      CIdu61Inf;  
+ வறந்திடு      CIdu61Inf;  
+-வலந்திடு      CIdu61Inf;  
+ விறந்திடு      CIdu61Inf;  
+ வியந்திடு      CIdu61Inf;  
+ விழுமாந்திடு      CIdu61Inf;  
+@@ -73051,7 +73043,6 @@
+ இயைத்துவா	VvaaInf;
+ இயந்திரித்துவா	VvaaInf;
+ இரித்துவா	VvaaInf;
+-இருத்துவா	VvaaInf;
+ இரதித்துவா	VvaaInf;
+ இரமித்துவா	VvaaInf;
+ இரைத்துவா	VvaaInf;
+@@ -73282,7 +73273,6 @@
+ தவந்துவா	VvaaInf;
+ தொண்ணாந்துவா	VvaaInf;
+ வறந்துவா	VvaaInf;
+-வலந்துவா	VvaaInf;
+ விறந்துவா	VvaaInf;
+ வியந்துவா	VvaaInf;
+ விழுமாந்துவா	VvaaInf;

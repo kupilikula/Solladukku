@@ -1,0 +1,64 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -42230,6 +42230,9 @@
+ வறட்டி	C2SgRoot;
+ விசிறி	C2SgRoot;
+ விலங்கி	C2SgRoot;
++
++! Reviewed source-POS noun homographs; preserve existing non-noun readings
++காணி	C2SgRoot;
+ LEXICON C2SgRoot
+  !       Root;
+         C2Inflections;
+@@ -52026,6 +52029,20 @@
+ நிரல்	C4SgRoot;
+ நிழல்	C4SgRoot;
+ நெய்	C4SgRoot;
++
++! Reviewed source-POS noun homographs; preserve existing non-noun readings
++ஈற்றயல்	C4SgRoot;
++சிதர்	C4SgRoot;
++தட்டான்	C4SgRoot;
++தலைவர்	C4SgRoot;
++தொடுவான்	C4SgRoot;
++நீர்	C4SgRoot;
++நீள்	C4SgRoot;
++பெயர்	C4SgRoot;
++பொருவாய்	C4SgRoot;
++மாண்	C4SgRoot;
++முனைவர்	C4SgRoot;
++வியர்	C4SgRoot;
+ LEXICON C4SgRoot
+ !        Root;
+         C4Inflections;
+@@ -66130,6 +66147,9 @@
+ நடுவு	C7SgRoot;
+ நீத்து	C7SgRoot;
+ பூண்டு	C7SgRoot;
++
++! Reviewed source-POS noun homographs; preserve existing non-noun readings
++கண்டு	C7SgRoot;
+ LEXICON C7SgRoot
+ !        Root;
+         C7Inflections;
+@@ -67685,6 +67705,10 @@
+ கன்:கன்ன	C10GeminatedNInflections ;
+ மன்:மன்ன	C10GeminatedNInflections ;
+ 
++
++! Reviewed source-POS noun homographs; preserve existing non-noun readings
++பின்	C10SgRoot;
++பின்:பின்ன	C10GeminatedNInflections ;
+ LEXICON C10SgRoot
+ !        Root;
+         C10Inflections;
+@@ -126794,6 +126818,9 @@
+ சீக்கிரம்	C15SgRoot;
+ தினம்	C15SgRoot;
+ வட்டம்	C15SgRoot;
++
++! Reviewed source-POS noun homographs; preserve existing non-noun readings
++மூலம்	C15SgRoot;
+ LEXICON C15SgRoot
+ !        Root;
+         C15Inflections;

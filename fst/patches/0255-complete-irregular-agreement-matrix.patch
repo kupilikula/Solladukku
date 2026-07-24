@@ -1,0 +1,184 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -252,7 +252,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் #;
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+-+verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ:^கிறதை #;
+@@ -494,7 +494,7 @@
+ +verb+fin+sim+caus%=வி+fut%=வ்+3sgf%=ஆள்:^விப்பாள் #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+3sge%=அர்:^விப்பர் #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+3ple%=ஆர்கள்:^விப்பார்கள் #;
+-+verb+fin+sim+caus%=வி+fut%=வ்+3sghe%=ஆர்கள்:^விப்பார் #;
+++verb+fin+sim+caus%=வி+fut%=வ்+3sghe%=ஆர்:^விப்பார் #;
+ +verb+fin+sim+caus%=வி+fut%=வ்+3sghe%=ஆர்கள்:^விப்பார்கள் #;
+ +verb+fin+sim+caus%=வி+fut%=உம்+3sgn%=∅:^விக்கும் #;
+ +verb+fin+sim+caus%=வி+fut%=உம்+3pln%=∅:^விக்கும் #;
+@@ -717,7 +717,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+-+verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்:^கின்றார் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ:^கின்றதை #;
+@@ -7898,7 +7898,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் #;
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+-+verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ:^கிறதை #;
+@@ -8193,6 +8193,8 @@
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+++verb+fin+sim+strong+past%=இன்+3sge%=அர்:^ினர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்:^கின்றார் #;
+ 
+ LEXICON ClassUlExistential
+ 
+@@ -8432,6 +8434,11 @@
+ +verb+nonfin+sim+past%=இன்+adjpart%=அ:^ன #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^காத #;
++
+++verb+fin+sim+strong+past%=இன்+3sge%=அர்:^னர் #;
+++verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்:^னார் #;
+++verb+fin+sim+strong+past%=இன்+3pln%=அன:^யின #;
++
+ LEXICON ModernSonnaAdjPart
+ +verb+nonfin+sim+past%=த்+adjpart%=அ: #;
+ 
+@@ -12057,6 +12064,9 @@
+ +verb+nonfin+sim+vpart%=உ+sandhit%=த்:^்டுத் #;
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^்டுக் #;
+ 
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^்கிறார் #;
+++verb+fin+sim+middle+fut%=ப்+3sghe%=ஆர்:^்பார் #;
++
+ LEXICON ClassSixOne
+ 
+ ! Corpus-attested roots with inherited paradigm evidence
+@@ -13242,6 +13252,10 @@
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
++
+++verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்:^ட்டார் #;
+++verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்:^வார் #;
++
+ LEXICON ClassSixThree
+ 
+ ! Corpus-attested roots with inherited paradigm evidence
+@@ -13620,6 +13634,9 @@
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^றுப் #;
+ +verb+nonfin+sim+con%=ஆல்:^றால் #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ற்ற #;
++
+++verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்:^வார் #;
++
+ LEXICON ClassSeven
+ 
+ உண்	C7Vinf;
+@@ -13939,6 +13956,12 @@
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
++
+++verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்:^டார் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்:^கின்றார் #;
+++verb+fin+sim+middle+fut%=ப்+3sghe%=ஆர்:^பார் #;
++
+ LEXICON ClassEight
+ 
+ ஈன்	C8Vinf;
+@@ -14587,6 +14610,12 @@
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
++
+++verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்:^ட்டார் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்:^கின்றார் #;
+++verb+fin+sim+middle+fut%=ப்+3sghe%=ஆர்:^பார் #;
++
+ LEXICON ClassTen
+ 
+ கல்           C10Vinf;
+@@ -15414,6 +15443,11 @@
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^குகிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^காத #;
++
+++verb+fin+sim+strong+past%=இன்+3sge%=அர்:^னர் #;
+++verb+fin+sim+strong+past%=இன்+3sge%=அர்:^கினர் #;
+++verb+fin+sim+strong+fut%=உம்+3pln%=∅:^கும் #;
++
+ LEXICON Class14
+ 
+ காண்      C14Vinf;
+@@ -15650,6 +15684,9 @@
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
++
+++verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ும் #;
++
+ LEXICON Class15
+ 
+ சா     C15Vinf;
+@@ -15883,6 +15920,12 @@
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^காத #;
++
+++verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^தார் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+++verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்:^வார் #;
+++verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ும் #;
++
+ LEXICON Class16
+ தா:தரு C16Daru;
+ 
+@@ -16063,6 +16106,9 @@
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+ ! Modern suppletive nonpast and verbal-noun realizations
++
+++verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^ந்தார் #;
++
+ LEXICON C16Daru
+ +verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:கிறேன் #;
+ +verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:கிறோம் #;
+@@ -16138,6 +16184,10 @@
+ +verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக:வதாக #;
+ +verb+nonfin+sim+verbalnoun%=அது+trans%=ஆக+add%=உம்:வதாகவும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+add%=உம்:வதும் #;
++
+++verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:கிறர் #;
+++verb+fin+sim+weak+fut%=வ்+3sge%=அர்:வர் #;
+++verb+fin+sim+strong+fut%=உம்+3pln%=∅:ம் #;
+ 
+ LEXICON Class17
+ வா:வரு C17VaruVN;
+@@ -16631,6 +16681,11 @@
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
++
+++verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^ந்தார் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் #;
+++verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்:^வார் #;
+++verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ும் #;
+ 
+ LEXICON ClassVidu61
+ 

@@ -32,7 +32,8 @@ FST_MODEL_DIR_CANDIDATES = [
     ROOT / "server" / "fst-models",
     ROOT / "static-word-list" / "fst-models",
 ]
-DICT_FILE = ROOT / "public" / "tamil_dictionary.txt"
+CLIENT_DICT_FILE = ROOT / "public" / "tamil_dictionary.txt"
+DICT_FILE = ROOT / "static-word-list" / "full_tamil_dictionary.txt"
 LEMMA_DICT_FILE = ROOT / "static-word-list" / "lemma_dictionary.txt"
 CLASSIFIED_HEADWORDS_FILE = ROOT / "static-word-list" / "fst_classified_headwords.json"
 HEURISTIC_CLASSIFIED_FILE = ROOT / "static-word-list" / "fst_heuristic_classified_headwords.json"
@@ -42,6 +43,7 @@ NOUN_SOURCE_ZIP_CANDIDATES = [
     ROOT / "fst" / "upstream-zips" / "ThamizhiMorph-Nouns.zip",
 ]
 PATCH_DIR = ROOT / "fst" / "patches"
+BUILD_MANIFEST_FILE = ROOT / "fst" / "build" / "manifest.json"
 GENERATE_FST_FORMS_PATH = ROOT / "static-word-list" / "generate_fst_forms.py"
 
 
@@ -103,6 +105,42 @@ def resolve_fst_model(model_name: str) -> Path:
         f"Missing {model_name} in expected locations: "
         + ", ".join(str(p) for p in FST_MODEL_DIR_CANDIDATES)
     )
+
+
+def ensure_pair_extensions_are_bidirectional() -> int:
+    """Prove every reviewed finite-relation extension supports inverse lookup."""
+    ensure_file(BUILD_MANIFEST_FILE, "FST build manifest")
+    manifest = json.loads(BUILD_MANIFEST_FILE.read_text(encoding="utf-8"))
+    checked = 0
+    for component in manifest.get("components", []):
+        extensions = component.get("pair_extensions", [])
+        if not extensions or component.get("canonicalized_deictic_person_pairs"):
+            continue
+        model_name = component["output"]
+        expected: dict[str, set[str]] = defaultdict(set)
+        for extension in extensions:
+            path = PATCH_DIR / extension["file"]
+            ensure_file(path, "finite-relation extension")
+            for line_number, line in enumerate(
+                path.read_text(encoding="utf-8").splitlines(), start=1
+            ):
+                values = line.split("\t", 1)
+                if len(values) != 2:
+                    fail(f"Malformed extension pair in {path}:{line_number}: {line!r}")
+                expected[values[0]].add(values[1])
+                checked += 1
+        results = run_flookup_with_model(
+            resolve_fst_model(model_name), sorted(expected), inverse=True
+        )
+        for analysis, required_surfaces in expected.items():
+            seen = set(results.get(analysis, []))
+            missing = required_surfaces - seen
+            if missing:
+                fail(
+                    f"Finite extension is not reversible in {model_name}: "
+                    f"{analysis} missing {sorted(missing)} (got {sorted(seen)[:5]})"
+                )
+    return checked
 
 
 def resolve_noun_source_zip() -> Path:
@@ -278,7 +316,7 @@ def main() -> None:
     parser.add_argument(
         "--check-dictionary",
         action="store_true",
-        help="Require dictionary include/exclude assertions against public/tamil_dictionary.txt",
+        help="Require dictionary include/exclude assertions against static dictionary artifacts",
     )
     parser.add_argument(
         "--full-mode",
@@ -295,6 +333,7 @@ def main() -> None:
     resolve_noun_fst()
     ensure_no_noun_class_duplicates()
     ensure_verb_infinitive_generation_expansion()
+    reversible_extension_pairs = ensure_pair_extensions_are_bidirectional()
 
     fixture = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
 
@@ -330,6 +369,7 @@ def main() -> None:
 
     verb_fixture = json.loads(VERB_FIXTURE_PATH.read_text(encoding="utf-8"))
     verb_good_count = 0
+    verb_bad_count = 0
     for model_name, model_fixture in verb_fixture["models"].items():
         model_path = resolve_fst_model(model_name)
         words = model_fixture.get("analysis_must_recognize", [])
@@ -339,6 +379,16 @@ def main() -> None:
             if not analyses or all(a == "+?" for a in analyses):
                 fail(f"Verb forward analysis miss in {model_name}: {word} returned +?")
             verb_good_count += 1
+        rejected_words = model_fixture.get("analysis_must_reject", [])
+        rejected_results = run_flookup_with_model(model_path, rejected_words, inverse=False)
+        for word in rejected_words:
+            analyses = rejected_results.get(word, [])
+            if analyses and any(analysis != "+?" for analysis in analyses):
+                fail(
+                    f"Verb forward analysis unexpectedly accepted in {model_name}: "
+                    f"{word} returned {analyses}"
+                )
+            verb_bad_count += 1
 
     misc_fixture = json.loads(MISC_FIXTURE_PATH.read_text(encoding="utf-8"))
     misc_good_count = 0
@@ -355,6 +405,16 @@ def main() -> None:
                     f"{word} missing {required_analysis} (got {sorted(analyses)})"
                 )
             misc_good_count += 1
+        forbidden = model_fixture.get("must_not_analyze", {})
+        forbidden_results = run_flookup_with_model(model_path, list(forbidden), inverse=False)
+        for word, forbidden_analyses in forbidden.items():
+            analyses = set(forbidden_results.get(word, []))
+            leaked = sorted(analyses & set(forbidden_analyses))
+            if leaked:
+                fail(
+                    f"Forbidden misc analysis in {model_name}: "
+                    f"{word} returned {leaked}"
+                )
 
     if leaked_bad and args.check_dictionary:
         ensure_file(DICT_FILE, "dictionary")
@@ -380,6 +440,15 @@ def main() -> None:
         for word in ["மரங்களிலிருந்து", "படித்தான்", "எனக்", "ஊராட்சித்"]:
             if word in lemma_words:
                 fail(f"Lemma dictionary contains non-lemma/sandhi surface: {word}")
+
+        ensure_file(CLIENT_DICT_FILE, "client dictionary")
+        client_words = set(CLIENT_DICT_FILE.read_text(encoding="utf-8").splitlines())
+        for word in ["மரம்", "படி", "என", "ஊராட்சி"]:
+            if word not in client_words:
+                fail(f"Client dictionary missing expected headword: {word}")
+        for word in ["எனக்", "எனச்", "எனத்", "ஊராட்சித்"]:
+            if word in client_words:
+                fail(f"Client dictionary contains sandhi surface: {word}")
 
     combined_classes = load_combined_classification_map()
     heuristic_fixture = json.loads(HEURISTIC_FIXTURE_PATH.read_text(encoding="utf-8"))
@@ -431,8 +500,10 @@ def main() -> None:
     print("PASS: FST regressions")
     print(f"PASS: inverse checks={len(inverse_pairs)} forward-good={len(forward_good)}")
     print(f"PASS: verb forward-good={verb_good_count}")
+    print(f"PASS: verb rejected-bad={verb_bad_count}")
     print(f"PASS: misc morphology checks={misc_good_count}")
     print(f"PASS: rejected-bad={len(rejected_bad)} leaked-bad={len(leaked_bad)}")
+    print(f"PASS: reversible finite-relation extensions={reversible_extension_pairs}")
     if args.check_dictionary:
         print("PASS: dictionary include/exclude checks")
     print("PASS: heuristic classification checks")

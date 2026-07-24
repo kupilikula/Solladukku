@@ -1,0 +1,55 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -2394,7 +2394,6 @@
+ ஆக்கு     C5Vinf;
+ அமர்த்து     C5Vinf;
+ அலட்டு     C5Vinf;
+ ஆ     C5Vinf;
+-ஆகு     C5Vinf;
+ அமிழ்த்து     C5Vinf;
+ அலப்பு     C5Vinf;
+@@ -12644,7 +12644,12 @@
+ LEXICON Class13
+ 
+-ஆகு      C13Vinf;
+-உண்டாகு      C13Vinf;
++ஆகு:ஆ      C13Vinf;
++உண்டாகு:உண்டா      C13Vinf;
++ஆளாகு:ஆளா      C13Vinf;
++உருவாகு:உருவா      C13Vinf;
++செலவாகு:செலவா      C13Vinf;
++மேலாகு:மேலா      C13Vinf;
++வெளியாகு:வெளியா      C13Vinf;
+ 
+ 
+ LEXICON C13Vinf
+@@ -12683,6 +12688,20 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+ +verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+++verb+fin+sim+strong+pres%=கின்ற்+1sg%=ஏன்:^கின்றேன் #;
+++verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் #;
+++verb+fin+sim+strong+pres%=கின்ற்+2sg%=ஆய்:^கின்றாய் #;
+++verb+fin+sim+strong+pres%=கின்ற்+2sgh%=ஈர்:^கின்றீர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+2pl%=ஈர்கள்:^கின்றீர்கள் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்:^கின்றார் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+++verb+fin+sim+strong+pres%=கின்ற்+3pln%=அன:^கின்றன #;
+ +verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் #;
+ +verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:^வோம் #;
+ +verb+fin+sim+weak+fut%=வ்+2sg%=ஆய்:^வாய் #;
+@@ -12855,6 +12874,8 @@
+ +verb+nonfin+sim+vpart%=இ+sandhip%=ப்:^ிப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+ +verb+nonfin+sim+neg%=ஆ+verbalnoun%=மை:^ாமை #;
+++verb+nonfin+sim+verbalnoun%=அது:^வது #;
+++verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+nonfin+sim+con%=ஆல்:^ினால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=இன்+adjpart%=அ:^ின #;

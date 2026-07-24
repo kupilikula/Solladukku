@@ -1,0 +1,27 @@
+--- ThamizhiFST-C12.foma
++++ ThamizhiFST-C12.foma
+@@ -13,8 +13,8 @@
+ define C12Rule6 {ழ} -> {ழக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+ 
+ define C12Rule7 {ட} -> {டக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+-define C12Rule8 {ு} -> {ுக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+-define C12Rule8 {ு} -> {க்க}  || _ "^" [{க} | {அ}];
++define C12Rule8A {ு} -> {ுக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
++define C12Rule8B {ு} -> {க்க}  || _ "^" [{க} | {அ}];
+ 
+ define C12CitationDouble {த} -> {த்த} || [{ய}|{ண}|{ள}|{ல}|{ற}|{ழ}|{ட}|{ர}|{வ}|{ச}|{க}|{த}|{ம}|{ு}] "^" _;
+ define C12CitationUDelete {ு} -> 0 || _ "^" {த்த};
+@@ -33,11 +33,11 @@
+ 			C12Rule5           	.o.
+ 			C12Rule6           	.o.
+ 			C12Rule7           	.o.
+-			C12Rule8           	.o.
++			C12Rule8A          	.o.
++			C12Rule8B          	.o.
+ 			C12CitationDouble  	.o.
+ 			C12CitationUDelete 	.o.
+ 			Cleanup1		.o.
+ 			Cleanup;
+ 
+ regex ClassTwelveGrammar;
+-

@@ -1,0 +1,108 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -283,7 +283,7 @@
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தர் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்:^ந்தார் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது+add%=உம்:^ந்ததும் VerbQuestion;
+@@ -502,7 +502,7 @@
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sge%=அர்:^ப்பித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பித்தார் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+@@ -4183,7 +4183,7 @@
+ +verb+fin+complex+aspect+strong+past%=த்+3sge%=அர்:^ந்தர் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்:^ந்தார் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestion;
+++verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+3sgn%=அது:^ந்தது VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+3sgn%=அது+add%=உம்:^ந்ததும் VerbQuestion;
+@@ -4234,7 +4234,7 @@
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+2sg%=ஆய்:^க்கிறாய் VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+2sgh%=ஈர்:^க்கிறீர் VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+2pl%=ஈர்கள்:^க்கிறீர்கள் VerbQuestion;
+-+verb+fin+complex+aspect+strong+pres%=க்கிற்+2pl%=ஈர்கள்+colloq:^க்கீங்க VerbQuestion;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+2pl%=ஈர்கள்+colloq:^க்கீங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgm%=ஆன்:^க்கிறான் VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgm%=ஆன்+colloq:^க்கான் VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgf%=ஆள்:^க்கிறாள் VerbQuestion;
+@@ -4242,9 +4242,9 @@
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sge%=அர்:^க்கிறர் VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்:^க்கிறார் VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்கள்+colloq:^க்காங்க VerbQuestion;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்கள்+colloq:^க்காங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+strong+pres%=க்கிற்+3sghe%=ஆர்கள்+colloq:^க்காங்க VerbQuestion;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3sghe%=ஆர்கள்+colloq:^க்காங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgn%=அது+colloq:^க்குது VerbQuestion;
+ +verb+nonfin+complex+aspect+strong+pres%=க்கிற்+verbalnoun%=அது+comp%=ஆவது:^க்கிறதாவது #;
+@@ -4370,7 +4370,7 @@
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sge%=அர்:^ப்பித்தர் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பித்தார் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+@@ -7958,7 +7958,7 @@
+ +verb+fin+complex+aspect+strong+past%=த்+3sge%=அர்:^ந்தர் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்:^ந்தார் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestion;
+++verb+fin+complex+aspect+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+3sgn%=அது:^ந்தது VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+3sgn%=அது+add%=உம்:^ந்ததும் VerbQuestion;
+@@ -8009,7 +8009,7 @@
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+2sg%=ஆய்:^க்கிறாய் VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+2sgh%=ஈர்:^க்கிறீர் VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+2pl%=ஈர்கள்:^க்கிறீர்கள் VerbQuestion;
+-+verb+fin+complex+aspect+strong+pres%=க்கிற்+2pl%=ஈர்கள்+colloq:^க்கீங்க VerbQuestion;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+2pl%=ஈர்கள்+colloq:^க்கீங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgm%=ஆன்:^க்கிறான் VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgm%=ஆன்+colloq:^க்கான் VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgf%=ஆள்:^க்கிறாள் VerbQuestion;
+@@ -8017,9 +8017,9 @@
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sge%=அர்:^க்கிறர் VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்:^க்கிறார் VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்கள்:^க்கிறார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்கள்+colloq:^க்காங்க VerbQuestion;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3ple%=ஆர்கள்+colloq:^க்காங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sghe%=ஆர்கள்:^க்கிறார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+strong+pres%=க்கிற்+3sghe%=ஆர்கள்+colloq:^க்காங்க VerbQuestion;
+++verb+fin+complex+aspect+strong+pres%=க்கிற்+3sghe%=ஆர்கள்+colloq:^க்காங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgn%=அது:^க்கிறது VerbQuestion;
+ +verb+fin+complex+aspect+strong+pres%=க்கிற்+3sgn%=அது+colloq:^க்குது VerbQuestion;
+ +verb+nonfin+complex+aspect+strong+pres%=க்கிற்+verbalnoun%=அது+comp%=ஆவது:^க்கிறதாவது #;
+@@ -8145,7 +8145,7 @@
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sge%=அர்:^ப்பித்தர் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பித்தார் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+@@ -8725,3 +8725,9 @@
+ +PartNoun%=அவள்+human+3sgf+soc%=உடன்:வளுடன் #;
+ +PartNoun%=அவள்+human+3sgf+soc%=உடன்+add%=உம்:வளுடனும் #;
+ +PartNoun%=அவள்+human+3sgf+voc%=ஏ:வளே #;
++
++! Spoken predicates ending in -ng insert -l- before the polar question -aa.
++LEXICON VerbQuestionColloquialNg
++: #;
+++ques%=ஆ:~ளா #;
++

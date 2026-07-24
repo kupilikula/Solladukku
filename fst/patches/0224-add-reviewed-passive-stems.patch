@@ -1,0 +1,27 @@
+--- a/ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ b/ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -64351,6 +64351,24 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+ LEXICON ClassPadu61
++அறியப்படு                   CPadu61Vinf;
++உருவாக்கப்படு                   CPadu61Vinf;
++உறுதிப்படுத்தப்படு                   CPadu61Vinf;
++ஏற்படுத்தப்படு                   CPadu61Vinf;
++ஒழுங்குபடுத்தப்படு                   CPadu61Vinf;
++கட்டுப்படுத்தப்படு                   CPadu61Vinf;
++கண்டுபிடிக்கப்படு                   CPadu61Vinf;
++காணப்படு                   CPadu61Vinf;
++கொள்ளப்படு                   CPadu61Vinf;
++கொண்டாடப்படு                   CPadu61Vinf;
++சுட்டிக்காட்டப்படு                   CPadu61Vinf;
++தரப்படு                   CPadu61Vinf;
++தூக்கிலிடப்படு                   CPadu61Vinf;
++பின்பற்றப்படு                   CPadu61Vinf;
++பெயரிடப்படு                   CPadu61Vinf;
++வகைப்படுத்தப்படு                   CPadu61Vinf;
++வெளியிடப்படு                   CPadu61Vinf;
++வெளியேற்றப்படு                   CPadu61Vinf;
+ அழப்படு                   CPadu61Vinf; 
+ கொய்யப்படு                   CPadu61Vinf; 
+ எய்யப்படு                   CPadu61Vinf; 

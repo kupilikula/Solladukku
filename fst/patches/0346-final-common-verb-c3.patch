@@ -1,0 +1,144 @@
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -99,6 +99,13 @@
+ +verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+inst%=ஆல்:^ன்றதால் #;
+ +verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^ன்றதாலும் #;
+ +verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+dat%=க்கு:^ன்றதற்கு #;
+++verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக:^ன்றதற்காக #;
+++verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+add%=உம்:^ன்றதற்காகவும் #;
+++verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+foc%=ஏ:^ன்றதற்காகவே #;
+++verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhik%=க்:^ன்றதற்காகக் #;
+++verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhic%=ச்:^ன்றதற்காகச் #;
+++verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhit%=த்:^ன்றதற்காகத் #;
+++verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhip%=ப்:^ன்றதற்காகப் #;
+ +verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ன்றதற்கான #;
+ +verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ன்றதற்கும் #;
+ +verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+loc%=இல்:^ன்றதில் #;
+@@ -143,6 +150,13 @@
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+inst%=ஆல்:^கிறதால் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^கிறதாலும் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு:^கிறதற்கு #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக:^கிறதற்காக #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+add%=உம்:^கிறதற்காகவும் #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+foc%=ஏ:^கிறதற்காகவே #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhik%=க்:^கிறதற்காகக் #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhic%=ச்:^கிறதற்காகச் #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhit%=த்:^கிறதற்காகத் #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhip%=ப்:^கிறதற்காகப் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^கிறதற்கான #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^கிறதற்கும் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+loc%=இல்:^கிறதில் #;
+@@ -185,6 +199,13 @@
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+inst%=ஆல்:^கின்றதால் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^கின்றதாலும் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு:^கின்றதற்கு #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக:^கின்றதற்காக #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+add%=உம்:^கின்றதற்காகவும் #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+foc%=ஏ:^கின்றதற்காகவே #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhik%=க்:^கின்றதற்காகக் #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhic%=ச்:^கின்றதற்காகச் #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhit%=த்:^கின்றதற்காகத் #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhip%=ப்:^கின்றதற்காகப் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^கின்றதற்கான #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^கின்றதற்கும் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+loc%=இல்:^கின்றதில் #;
+@@ -236,6 +257,13 @@
+ +verb+nonfin+sim+verbalnoun%=அது+inst%=ஆல்:^வதால் #;
+ +verb+nonfin+sim+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^வதாலும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு:^வதற்கு #;
+++verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக:^வதற்காக #;
+++verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+add%=உம்:^வதற்காகவும் #;
+++verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+foc%=ஏ:^வதற்காகவே #;
+++verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhik%=க்:^வதற்காகக் #;
+++verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhic%=ச்:^வதற்காகச் #;
+++verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhit%=த்:^வதற்காகத் #;
+++verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhip%=ப்:^வதற்காகப் #;
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^வதற்கான #;
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+add%=உம்:^வதற்கும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+loc%=இல்:^வதில் #;
+@@ -288,6 +316,13 @@
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+inst%=ஆல்:^வித்ததால் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^வித்ததாலும் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு:^வித்ததற்கு #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக:^வித்ததற்காக #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+add%=உம்:^வித்ததற்காகவும் #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+foc%=ஏ:^வித்ததற்காகவே #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhik%=க்:^வித்ததற்காகக் #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhic%=ச்:^வித்ததற்காகச் #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhit%=த்:^வித்ததற்காகத் #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhip%=ப்:^வித்ததற்காகப் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^வித்ததற்கான #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^வித்ததற்கும் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+loc%=இல்:^வித்ததில் #;
+@@ -331,6 +366,13 @@
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+inst%=ஆல்:^விக்கிறதால் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^விக்கிறதாலும் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு:^விக்கிறதற்கு #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக:^விக்கிறதற்காக #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+add%=உம்:^விக்கிறதற்காகவும் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+foc%=ஏ:^விக்கிறதற்காகவே #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhik%=க்:^விக்கிறதற்காகக் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhic%=ச்:^விக்கிறதற்காகச் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhit%=த்:^விக்கிறதற்காகத் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhip%=ப்:^விக்கிறதற்காகப் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^விக்கிறதற்கான #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^விக்கிறதற்கும் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+loc%=இல்:^விக்கிறதில் #;
+@@ -372,6 +414,13 @@
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+inst%=ஆல்:^விக்கின்றதால் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^விக்கின்றதாலும் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு:^விக்கின்றதற்கு #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக:^விக்கின்றதற்காக #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+add%=உம்:^விக்கின்றதற்காகவும் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+foc%=ஏ:^விக்கின்றதற்காகவே #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhik%=க்:^விக்கின்றதற்காகக் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhic%=ச்:^விக்கின்றதற்காகச் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhit%=த்:^விக்கின்றதற்காகத் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhip%=ப்:^விக்கின்றதற்காகப் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^விக்கின்றதற்கான #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^விக்கின்றதற்கும் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+loc%=இல்:^விக்கின்றதில் #;
+@@ -506,6 +555,13 @@
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+inst%=ஆல்:^ன்றுள்ளதால் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^ன்றுள்ளதாலும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு:^ன்றுள்ளதற்கு #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக:^ன்றுள்ளதற்காக #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+add%=உம்:^ன்றுள்ளதற்காகவும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+foc%=ஏ:^ன்றுள்ளதற்காகவே #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhik%=க்:^ன்றுள்ளதற்காகக் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhic%=ச்:^ன்றுள்ளதற்காகச் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhit%=த்:^ன்றுள்ளதற்காகத் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhip%=ப்:^ன்றுள்ளதற்காகப் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ன்றுள்ளதற்கான #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ன்றுள்ளதற்கும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்:^ன்றுள்ளதில் #;
+@@ -536,6 +592,15 @@
+ ! Productive participial human and future-neuter nominals.
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=அவர்+human+nom:^ன்றவர் #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்:^ன்றோர் #;
+++verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்+human+pl+nom+add%=உம்:^ன்றோரும் #;
+++verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்+human+pl+nom+foc%=ஏ:^ன்றோரே #;
+++verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்+human+pl+acc%=ஐ:^ன்றோரை #;
+++verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்+human+pl+dat%=க்கு:^ன்றோருக்கு #;
+++verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^ன்றோரால் #;
+++verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=இன்:^ன்றோரின் #;
+++verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=உடைய:^ன்றோருடைய #;
+++verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்+human+pl+loc%=இடம்:^ன்றோரிடம் #;
+++verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=ஓர்+human+pl+soc%=உடன்:^ன்றோருடன் #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=அவர்+human+nom+add:^ன்றவரும் #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=அவர்+human+nom+foc%=ஏ:^ன்றவரே #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ+PartNoun%=அவர்+human+nom+foc%=தான்:^ன்றவர்தான் #;
+@@ -686,6 +751,13 @@
+ +verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+inst%=ஆல்:^வதால் #;
+ +verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^வதாலும் #;
+ +verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+dat%=க்கு:^வதற்கு #;
+++verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக:^வதற்காக #;
+++verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+add%=உம்:^வதற்காகவும் #;
+++verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+foc%=ஏ:^வதற்காகவே #;
+++verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhik%=க்:^வதற்காகக் #;
+++verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhic%=ச்:^வதற்காகச் #;
+++verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhit%=த்:^வதற்காகத் #;
+++verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+dat%=க்கு+purpose%=ஆக+sandhip%=ப்:^வதற்காகப் #;
+ +verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^வதற்கான #;
+ +verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^வதற்கும் #;
+ +verb+nonfin+sim+weak+fut%=வ்+verbalnoun%=அது+loc%=இல்:^வதில் #;

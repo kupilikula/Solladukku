@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -2708,6 +2708,7 @@
+ +verb+nonfin+sim+inf%=அ+add%=உம்:வும் #;
+ 
+ LEXICON ClassFive
++திசைத்திருப்பு	C5Vinf;
+ உரையாற்று	C5Vinf;
+ படுத்து	C5Vinf;
+ 

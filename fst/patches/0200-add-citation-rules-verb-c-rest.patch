@@ -1,0 +1,102 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -12620,6 +12620,9 @@
+ சா     C15Vinf;
+ 
+ 
++! Reviewed direct citation readings
++சா+verb+nonfin+sim+verbalnoun%=தல்:சாதல் #;
++
+ LEXICON C15Vinf
+ 
+ 
+@@ -12958,6 +12961,9 @@
+ 
+ வே     C18Vinf;
+ 
++
++! Reviewed direct citation readings
++வே+verb+nonfin+sim+verbalnoun%=தல்:வேதல் #;
+ 
+ LEXICON C18Vinf
+ 
+@@ -16138,6 +16144,9 @@
+ கேட்டுவிடு     CVidu61Inf; 
+ 
+ LEXICON CVidu61Inf
++
++! Reviewed dictionary citation continuation
+++verb+nonfin+complex+aspect+verbalnoun%=தல்:^தல் #;
+ 
+ 
+ +verb+fin+complex+aspect+strong+past%=ட்+1sg%=ஏன்:^ட்டேன் #;
+@@ -21957,6 +21966,9 @@
+ 
+ LEXICON ClassPo5Inf
+ 
++! Reviewed dictionary citation continuation
+++verb+nonfin+complex+attitude+verbalnoun%=தல்:^தல் #;
++
+ +verb+fin+complex+attitude+strong+past%=த்+1sg%=ஏன்:^னேன் #;
+ +verb+fin+complex+attitude+strong+past%=த்+1pl%=ஓம்:^னோம் #;
+ +verb+fin+complex+attitude+strong+past%=த்+1sg%=அன்:^னன் #;
+@@ -25173,6 +25185,9 @@
+ 
+ LEXICON VpoduInf
+ 
++! Reviewed dictionary citation continuation
+++verb+nonfin+complex+attitude+verbalnoun%=தல்:^தல் #;
++
+ 
+ +verb+fin+complex+attitude+strong+past%=ட்+1sg%=ஏன்:^ட்டேன் #;
+ +verb+fin+complex+attitude+strong+past%=ட்+1pl%=ஓம்:^ட்டோம் #;
+@@ -28385,6 +28400,9 @@
+ 
+ 
+ LEXICON VthalluInf
++
++! Reviewed dictionary citation continuation
+++verb+nonfin+complex+attitude+verbalnoun%=தல்:^தல் #;
+ 
+ +verb+fin+complex+attitude+strong+past%=இன்+1sg%=ஏன்:^ினேன் #;
+ +verb+fin+complex+attitude+strong+past%=இன்+1pl%=ஓம்:^ினோம் #;
+@@ -34195,6 +34213,9 @@
+ இறப்பண்ணு                  ClassPannu5Inf; 
+ 
+ LEXICON ClassPannu5Inf
++
++! Reviewed dictionary citation continuation
+++verb+nonfin+complex+caus+verbalnoun%=தல்:^தல் #;
+ 
+ 
+ 
+@@ -60589,6 +60610,9 @@
+ 
+ LEXICON CIdu61Inf
+ 
++! Reviewed dictionary citation continuation
+++verb+nonfin+complex+nonattitude+verbalnoun%=தல்:^தல் #;
++
+ 
+ +verb+fin+complex+nonattitude+strong+past%=ட்+1sg%=ஏன்:^ட்டேன் #;
+ +verb+fin+complex+nonattitude+strong+past%=ட்+1pl%=ஓம்:^ட்டோம் #;
+@@ -66850,6 +66874,9 @@
+ 
+ LEXICON CPadu61Vinf
+ 
++! Reviewed dictionary citation continuation
+++verb+nonfin+complex+passive+verbalnoun%=தல்:^தல் #;
++
+ 
+ +verb+fin+complex+passive+strong+past%=ட்+1sg%=ஏன்:^ட்டேன் #;
+ +verb+fin+complex+passive+strong+past%=ட்+1pl%=ஓம்:^ட்டோம் #;
+@@ -69843,6 +69870,9 @@
+ 
+ LEXICON CPeru63Vinf
+ 
++! Reviewed dictionary citation continuation
+++verb+nonfin+complex+passive+verbalnoun%=தல்:^தல் #;
++
+ 
+ +verb+fin+complex+passive+strong+past%=ற்+1sg%=ஏன்:^ற்றேன் #;
+ +verb+fin+complex+passive+strong+past%=ற்+1pl%=ஓம்:^ற்றோம் #;

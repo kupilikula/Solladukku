@@ -1,0 +1,19 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -22083,6 +22083,16 @@
+ 
+ ! Productive bare negative stem in -ஆ.
+ +verb+nonfin+sim+neg%=ஆ:^ா #;
++! Productive C13 negative predicate/converb in -ஆகாது.
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅:^காது #;
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅+add%=உம்:^காதும் #;
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅+ques%=ஆ:^காதா #;
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅+foc%=ஏ:^காதே #;
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅+foc%=தான்:^காதுதான் #;
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhip%=ப்:^காதுப் #;
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhic%=ச்:^காதுச் #;
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhit%=த்:^காதுத் #;
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhik%=க்:^காதுக் #;
+ 
+ 
+ +verb+fin+sim+strong+past%=இன்+1sg%=ஏன்:^னேன் VerbQuestion;

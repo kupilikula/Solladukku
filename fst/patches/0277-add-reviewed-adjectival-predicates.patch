@@ -1,0 +1,15 @@
+--- tamil-adjectives.lexc
++++ tamil-adjectives.lexc
+@@ -511,6 +511,12 @@
+ +adv+cop%=ஆ+adjpart%=ன:0 #;
+ 
+ LEXICON adjectives
++! Reviewed adjectival predicates and color adjective.
++அரிது	 adjective;
++இனிது	 adjective;
++இன்னா	 adjective;
++நன்று	 adjective;
++பச்சை	 adjective;
+ இவ்வகை+dem+prox+type:இவ்வகை	 adjectiveSandhi;
+ அவ்வகை+dem+dist+type:அவ்வகை	 adjectiveSandhi;
+ எவ்வகை+dem+inter+type:எவ்வகை	 adjectiveSandhi;

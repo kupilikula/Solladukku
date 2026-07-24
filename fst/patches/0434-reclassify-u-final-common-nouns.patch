@@ -1,0 +1,54 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -2063,6 +2063,9 @@
+ +pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ 
+ LEXICON C1Sg
++! Reviewed u-final oblique-subclass corrections.
++முகப்பரு	C1SgRoot;
++காலக்கெடு	C1SgRoot;
+ ! Final frequency-reviewed common nouns.
+ ரேடியோ	C1SgRoot;
+ ! Frequent reviewed source-backed common nouns.
+@@ -55810,6 +55813,11 @@
+ 
+ 
+ LEXICON C6Sg
++! Reviewed u-final oblique-subclass corrections.
++கையேடு	C6SgRoot;
++தலையீடு	C6SgRoot;
++கணக்கீடு	C6SgRoot;
++துப்பாக்கிச்சூடு	C6SgRoot;
+ குறைபாடு	C6SgRoot;
+ செயல்பாடு	C6SgRoot;
+ ரோடு	C6SgRoot;
+@@ -57232,20 +57240,13 @@
+ 
+ LEXICON C7Sg
+ ! Final frequency-reviewed common nouns.
+-கையேடு	C7SgRoot;
+ கொள்வனவு	C7SgRoot;
+-துப்பாக்கிச்சூடு	C7SgRoot;
+-காலக்கெடு	C7SgRoot;
+ விறகு	C7SgRoot;
+ ! Frequent reviewed source-backed common nouns.
+ அவதூறு	C7SgRoot;
+-திருநீறு	C7SgRoot;
+-முகப்பரு	C7SgRoot;
+ கொள்ளளவு	C7SgRoot;
+ பொடுகு	C7SgRoot;
+ உடலுறவு	C7SgRoot;
+-தலையீடு	C7SgRoot;
+-கணக்கீடு	C7SgRoot;
+ பிசாசு	C7SgRoot;
+ பிளவு	C7SgRoot;
+ ரசீது	C7SgRoot;
+@@ -70777,6 +70778,8 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ 
+ LEXICON C8Sg
++! Reviewed u-final oblique-subclass corrections.
++திருநீறு	C8SgRoot;
+ வயிறு			C8SgRoot; 
+ கயிறு			C8SgRoot; 
+ பயறு			C8SgRoot; 

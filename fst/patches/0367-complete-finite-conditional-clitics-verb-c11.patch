@@ -1,0 +1,112 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist +psp_padi +vpart_pin +colloq
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist +psp_padi +vpart_pin +colloq +report
+ 
+ LEXICON Root
+ 
+@@ -5158,7 +5158,13 @@
+ +verb+fin+sim+caus%=ப்பி+fut%=ப்ப்+3pln%=∅:^ப்பிப்போம் VerbQuestion;
+ +verb+fin+sim+opt%=க்க:^க்க #;
+ +verb+nonfin+sim+inf%=க்க+negpart%=இல்லை:^க்கவில்லை #;
+++verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+ques%=ஆ:^க்கவில்லையா #;
+++verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+foc%=ஏ:^க்கவில்லையே #;
+++verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+report%=ஆம்:^க்கவில்லையாம் #;
+ +verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+colloq:^க்கல #;
+++verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+colloq+ques%=ஆ:^க்கலையா #;
+++verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+colloq+foc%=ஏ:^க்கலையே #;
+++verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+colloq+report%=ஆம்:^க்கலையாம் #;
+ +verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+sandhip%=ப்:^க்கவில்லைப் #;
+ +verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+sandhic%=ச்:^க்கவில்லைச் #;
+ +verb+nonfin+sim+inf%=க்க+negpart%=இல்லை+sandhit%=த்:^க்கவில்லைத் #;
+@@ -5225,9 +5231,13 @@
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhit%=த்:^க்காதுத் #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhik%=க்:^க்காதுக் #;
+ +verb+nonfin+sim+con%=ஆல்:^த்தால் #;
+++verb+nonfin+sim+con%=ஆல்+foc%=ஏ:^த்தாலே #;
+++verb+nonfin+sim+con%=ஆல்+foc%=தான்:^த்தால்தான் #;
+ +verb+nonfin+sim+con%=ஆல்+colloq:^த்தா #;
+ +verb+nonfin+sim+con%=ஆல்+add%=உம்:^த்தாலும் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+foc%=ஏ:^க்காவிட்டாலே #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+foc%=தான்:^க்காவிட்டால்தான் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^த்த #;
+@@ -9052,9 +9062,13 @@
+ +verb+nonfin+complex+attitude+neg%=ஆது+vpart%=∅+sandhit%=த்:^க்காதுத் #;
+ +verb+nonfin+complex+attitude+neg%=ஆது+vpart%=∅+sandhik%=க்:^க்காதுக் #;
+ +verb+nonfin+complex+attitude+con%=ஆல்:^த்தால் #;
+++verb+nonfin+complex+attitude+con%=ஆல்+foc%=ஏ:^த்தாலே #;
+++verb+nonfin+complex+attitude+con%=ஆல்+foc%=தான்:^த்தால்தான் #;
+ +verb+nonfin+complex+attitude+con%=ஆல்+colloq:^த்தா #;
+ +verb+nonfin+complex+attitude+con%=ஆல்+add%=உம்:^த்தாலும் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+++verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+foc%=ஏ:^க்காவிட்டாலே #;
+++verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+foc%=தான்:^க்காவிட்டால்தான் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ:^த்த #;
+@@ -12666,9 +12680,13 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆது+vpart%=∅+sandhit%=த்:^ாதுத் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆது+vpart%=∅+sandhik%=க்:^ாதுக் #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்:^ினால் #;
+++verb+nonfin+complex+nonattitude+con%=ஆல்+foc%=ஏ:^ினாலே #;
+++verb+nonfin+complex+nonattitude+con%=ஆல்+foc%=தான்:^ினால்தான் #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்+colloq:^ினா #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்+add%=உம்:^ினாலும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+foc%=ஏ:^ாவிட்டாலே #;
+++verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+foc%=தான்:^ாவிட்டால்தான் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^ாவிட்டாலும் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ:^ின #;
+@@ -18872,9 +18890,13 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆது+vpart%=∅+sandhit%=த்:^க்காதுத் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆது+vpart%=∅+sandhik%=க்:^க்காதுக் #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்:^த்தால் #;
+++verb+nonfin+complex+nonattitude+con%=ஆல்+foc%=ஏ:^த்தாலே #;
+++verb+nonfin+complex+nonattitude+con%=ஆல்+foc%=தான்:^த்தால்தான் #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்+colloq:^த்தா #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்+add%=உம்:^த்தாலும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+foc%=ஏ:^க்காவிட்டாலே #;
+++verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+foc%=தான்:^க்காவிட்டால்தான் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ:^த்த #;
+@@ -19048,11 +19070,19 @@
+ ! Productive polar-question clitic; imperatives and optatives do not enter here.
+ : #;
+ +ques%=ஆ:~ா #;
+++ques%=ஓ:~ோ #;
+++foc%=ஏ:~ே #;
+++report%=ஆம்:~ாம் #;
+++comp%=என்று+colloq:~னு #;
+ 
+ LEXICON VerbQuestionNeuterPlural
+ ! Past/present neuter plural ends in bare -na and takes the -vaa allomorph.
+ : #;
+ +ques%=ஆ:~வா #;
+++ques%=ஓ:~வோ #;
+++foc%=ஏ:~வே #;
+++report%=ஆம்:~வாம் #;
+++comp%=என்று+colloq:~னு #;
+ 
+ ! Productive gendered singular human participial nouns. The incoming lower
+ ! side is the realized adjectival or future-participial stem.
+@@ -19139,6 +19169,10 @@
+ LEXICON VerbQuestionColloquialNg
+ : #;
+ +ques%=ஆ:~ளா #;
+++ques%=ஓ:~ளோ #;
+++foc%=ஏ:~ளே #;
+++report%=ஆம்:~ளாம் #;
+++comp%=என்று+colloq:~ன்னு #;
+ 
+ 
+ 

@@ -1,0 +1,87 @@
+{
+  "full_fst_generation": false,
+  "source_lemma_pool": 129317,
+  "direct_runtime_union_surfaces": 3084718,
+  "heuristic_rows": 25093,
+  "heuristic_surfaces": 0,
+  "final_generated_union_surfaces": 3084718,
+  "models": [
+    {
+      "model": "noun.fst",
+      "recognized_lemmas": 87897,
+      "generation_templates": 18,
+      "generated_surfaces": 1905057,
+      "running_union_surfaces": 1905658
+    },
+    {
+      "model": "adj.fst",
+      "recognized_lemmas": 301,
+      "generation_templates": 3,
+      "generated_surfaces": 237,
+      "running_union_surfaces": 1905934
+    },
+    {
+      "model": "adv.fst",
+      "recognized_lemmas": 250,
+      "generation_templates": 0,
+      "generated_surfaces": 0,
+      "running_union_surfaces": 1906138
+    },
+    {
+      "model": "part.fst",
+      "recognized_lemmas": 299,
+      "generation_templates": 0,
+      "generated_surfaces": 0,
+      "running_union_surfaces": 1906373
+    },
+    {
+      "model": "pronoun.fst",
+      "recognized_lemmas": 59,
+      "generation_templates": 0,
+      "generated_surfaces": 0,
+      "running_union_surfaces": 1906428
+    },
+    {
+      "model": "verb-c3.fst",
+      "recognized_lemmas": 76,
+      "generation_templates": 578,
+      "generated_surfaces": 13950,
+      "running_union_surfaces": 1920323
+    },
+    {
+      "model": "verb-c4.fst",
+      "recognized_lemmas": 1342,
+      "generation_templates": 631,
+      "generated_surfaces": 135600,
+      "running_union_surfaces": 2056265
+    },
+    {
+      "model": "verb-c11.fst",
+      "recognized_lemmas": 3690,
+      "generation_templates": 711,
+      "generated_surfaces": 371303,
+      "running_union_surfaces": 2428389
+    },
+    {
+      "model": "verb-c12.fst",
+      "recognized_lemmas": 349,
+      "generation_templates": 639,
+      "generated_surfaces": 20327,
+      "running_union_surfaces": 2448835
+    },
+    {
+      "model": "verb-c62.fst",
+      "recognized_lemmas": 29,
+      "generation_templates": 499,
+      "generated_surfaces": 2472,
+      "running_union_surfaces": 2450717
+    },
+    {
+      "model": "verb-c-rest.fst",
+      "recognized_lemmas": 10766,
+      "generation_templates": 1168,
+      "generated_surfaces": 631442,
+      "running_union_surfaces": 3084718
+    }
+  ]
+}

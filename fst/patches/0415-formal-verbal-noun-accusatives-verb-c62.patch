@@ -1,0 +1,194 @@
+--- ThamizhiVerbs-C62.lexc
++++ ThamizhiVerbs-C62.lexc
+@@ -47,7 +47,9 @@
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+comp%=ஆவது:^க்கதாவது #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+comp%=ஆவது+add%=உம்:^க்கதாவதும் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ:^க்கதை #;
+++verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ:^க்கதனை #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^க்கதையும் #;
+++verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^க்கதனையும் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+inst%=ஆல்:^க்கதால் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^க்கதாலும் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+dat%=க்கு:^க்கதற்கு #;
+@@ -71,9 +73,13 @@
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+soc%=உடன்+add%=உம்:^க்கதுடனும் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+gen%=இன்:^க்கதன் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^க்கதைப் #;
+++verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^க்கதனைப் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^க்கதைச் #;
+++verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^க்கதனைச் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^க்கதைத் #;
+++verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^க்கதனைத் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^க்கதைக் #;
+++verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^க்கதனைக் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^க்கதற்குப் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^க்கதற்குச் #;
+ +verb+nonfin+sim+strong+past%=க்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்கதற்குத் #;
+@@ -101,7 +107,9 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது VerbQuestion;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+comp%=ஆவது:^கிறதாவது #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ:^கிறதை #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ:^கிறதனை #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^கிறதையும் #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^கிறதனையும் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+inst%=ஆல்:^கிறதால் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^கிறதாலும் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு:^கிறதற்கு #;
+@@ -124,9 +132,13 @@
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+soc%=உடன்+add%=உம்:^கிறதுடனும் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+gen%=இன்:^கிறதன் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^கிறதைப் #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^கிறதனைப் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^கிறதைச் #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^கிறதனைச் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^கிறதைத் #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^கிறதனைத் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^கிறதைக் #;
+++verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^கிறதனைக் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^கிறதற்குப் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^கிறதற்குச் #;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^கிறதற்குத் #;
+@@ -153,7 +165,9 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது VerbQuestion;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+comp%=ஆவது:^கின்றதாவது #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ:^கின்றதை #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ:^கின்றதனை #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^கின்றதையும் #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^கின்றதனையும் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+inst%=ஆல்:^கின்றதால் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^கின்றதாலும் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு:^கின்றதற்கு #;
+@@ -176,9 +190,13 @@
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+soc%=உடன்+add%=உம்:^கின்றதுடனும் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+gen%=இன்:^கின்றதன் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^கின்றதைப் #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^கின்றதனைப் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^கின்றதைச் #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^கின்றதனைச் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^கின்றதைத் #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^கின்றதனைத் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^கின்றதைக் #;
+++verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^கின்றதனைக் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^கின்றதற்குப் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^கின்றதற்குச் #;
+ +verb+nonfin+sim+strong+pres%=கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^கின்றதற்குத் #;
+@@ -217,7 +235,9 @@
+ +verb+nonfin+sim+verbalnoun%=அது+exist%=இல்லை+neg:^வதில்லை #;
+ +verb+nonfin+sim+verbalnoun%=அது+comp%=ஆவது:^வதாவது #;
+ +verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ:^வதை #;
+++verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ:^வதனை #;
+ +verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ+add%=உம்:^வதையும் #;
+++verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ+add%=உம்:^வதனையும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+inst%=ஆல்:^வதால் #;
+ +verb+nonfin+sim+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^வதாலும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு:^வதற்கு #;
+@@ -240,9 +260,13 @@
+ +verb+nonfin+sim+verbalnoun%=அது+soc%=உடன்+add%=உம்:^வதுடனும் #;
+ +verb+nonfin+sim+verbalnoun%=அது+gen%=இன்:^வதன் #;
+ +verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^வதைப் #;
+++verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^வதனைப் #;
+ +verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^வதைச் #;
+++verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^வதனைச் #;
+ +verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^வதைத் #;
+++verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^வதனைத் #;
+ +verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^வதைக் #;
+++verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^வதனைக் #;
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^வதற்குப் #;
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^வதற்குச் #;
+ +verb+nonfin+sim+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^வதற்குத் #;
+@@ -280,7 +304,9 @@
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+comp%=ஆவது:^வித்ததாவது #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+comp%=ஆவது+add%=உம்:^வித்ததாவதும் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+acc%=ஐ:^வித்ததை #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+acc%=ஐ:^வித்ததனை #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^வித்ததையும் #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^வித்ததனையும் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+inst%=ஆல்:^வித்ததால் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^வித்ததாலும் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு:^வித்ததற்கு #;
+@@ -304,9 +330,13 @@
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+soc%=உடன்+add%=உம்:^வித்ததுடனும் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+gen%=இன்:^வித்ததன் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^வித்ததைப் #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^வித்ததனைப் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^வித்ததைச் #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^வித்ததனைச் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^வித்ததைத் #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^வித்ததனைத் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^வித்ததைக் #;
+++verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^வித்ததனைக் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^வித்ததற்குப் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^வித்ததற்குச் #;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^வித்ததற்குத் #;
+@@ -333,7 +363,9 @@
+ +verb+fin+sim+caus%=வி+pres%=க்கிற்+3sgn%=அது+colloq:^விக்குது VerbQuestion;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+comp%=ஆவது:^விக்கிறதாவது #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ:^விக்கிறதை #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ:^விக்கிறதனை #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^விக்கிறதையும் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^விக்கிறதனையும் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+inst%=ஆல்:^விக்கிறதால் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^விக்கிறதாலும் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு:^விக்கிறதற்கு #;
+@@ -356,9 +388,13 @@
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+soc%=உடன்+add%=உம்:^விக்கிறதுடனும் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+gen%=இன்:^விக்கிறதன் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^விக்கிறதைப் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^விக்கிறதனைப் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^விக்கிறதைச் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^விக்கிறதனைச் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^விக்கிறதைத் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^விக்கிறதனைத் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^விக்கிறதைக் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^விக்கிறதனைக் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^விக்கிறதற்குப் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^விக்கிறதற்குச் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கிற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^விக்கிறதற்குத் #;
+@@ -384,7 +420,9 @@
+ +verb+fin+sim+caus%=வி+pres%=க்கின்ற்+3sgn%=அது:^விக்கின்றது VerbQuestion;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+comp%=ஆவது:^விக்கின்றதாவது #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+acc%=ஐ:^விக்கின்றதை #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+acc%=ஐ:^விக்கின்றதனை #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^விக்கின்றதையும் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^விக்கின்றதனையும் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+inst%=ஆல்:^விக்கின்றதால் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^விக்கின்றதாலும் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு:^விக்கின்றதற்கு #;
+@@ -407,9 +445,13 @@
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+soc%=உடன்+add%=உம்:^விக்கின்றதுடனும் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+gen%=இன்:^விக்கின்றதன் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^விக்கின்றதைப் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^விக்கின்றதனைப் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^விக்கின்றதைச் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^விக்கின்றதனைச் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^விக்கின்றதைத் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^விக்கின்றதனைத் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^விக்கின்றதைக் #;
+++verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^விக்கின்றதனைக் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^விக்கின்றதற்குப் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^விக்கின்றதற்குச் #;
+ +verb+nonfin+sim+caus%=வி+pres%=க்கின்ற்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^விக்கின்றதற்குத் #;
+@@ -592,7 +634,9 @@
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது:^க்குள்ளது #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+comp%=ஆவது:^க்குள்ளதாவது #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ:^க்குள்ளதை #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ:^க்குள்ளதனை #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+add%=உம்:^க்குள்ளதையும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+add%=உம்:^க்குள்ளதனையும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+inst%=ஆல்:^க்குள்ளதால் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^க்குள்ளதாலும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு:^க்குள்ளதற்கு #;
+@@ -615,9 +659,13 @@
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+soc%=உடன்+add%=உம்:^க்குள்ளதுடனும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+gen%=இன்:^க்குள்ளதன் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^க்குள்ளதைப் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^க்குள்ளதனைப் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^க்குள்ளதைச் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^க்குள்ளதனைச் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^க்குள்ளதைத் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^க்குள்ளதனைத் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^க்குள்ளதைக் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^க்குள்ளதனைக் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^க்குள்ளதற்குப் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^க்குள்ளதற்குச் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^க்குள்ளதற்குத் #;

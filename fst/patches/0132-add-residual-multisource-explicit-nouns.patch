@@ -1,0 +1,59 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1871,6 +1871,11 @@
+ ஸ்வயம்பூ	C1SgRoot;
+ ஹிப்பாநாமா	C1SgRoot;
+ ஹுக்கும்நாமா	C1SgRoot;
++
++! Residual multi-source explicit noun coverage: productive class roots.
++ஆறுமணிப்பூ	C1SgRoot;
++குங்குமப்பூ	C1SgRoot;
++கூனைப்பூ	C1SgRoot;
+ LEXICON C1SgRoot
+ !        Root;
+         C1Inflections;
+@@ -42124,6 +42129,10 @@
+ ஸ்வேச்சை	C2SgRoot;
+ ஹிந்தி	C2SgRoot;
+ ஹுண்டி	C2SgRoot;
++
++! Residual multi-source explicit noun coverage: productive class roots.
++நகைச்சுவை	C2SgRoot;
++மசக்கை	C2SgRoot;
+ LEXICON C2SgRoot
+  !       Root;
+         C2Inflections;
+@@ -51910,6 +51919,9 @@
+ ஶ்ரீகோயில்	C4SgRoot;
+ ஸ்தலக்காவல்	C4SgRoot;
+ ஸ்ரீகோயில்	C4SgRoot;
++
++! Residual multi-source explicit noun coverage: productive class roots.
++மறுகால்	C4SgRoot;
+ LEXICON C4SgRoot
+ !        Root;
+         C4Inflections;
+@@ -65950,6 +65962,9 @@
+ ஹத்து	C7SgRoot;
+ ஹிந்து	C7SgRoot;
+ ஹேட்டு	C7SgRoot;
++
++! Residual multi-source explicit noun coverage: productive class roots.
++மூது	C7SgRoot;
+ LEXICON C7SgRoot
+ !        Root;
+         C7Inflections;
+@@ -126612,6 +126627,13 @@
+ ஹோளாதிகரணநியாயம்	C15SgRoot;
+ ஹோளோத்ஸவம்	C15SgRoot;
+ ஹ்ருதயம்	C15SgRoot;
++
++! Residual multi-source explicit noun coverage: productive class roots.
++அச்சம்	C15SgRoot;
++கருநிலம்	C15SgRoot;
++சொர்ணம்	C15SgRoot;
++பகரம்	C15SgRoot;
++பொருத்தம்	C15SgRoot;
+ LEXICON C15SgRoot
+ !        Root;
+         C15Inflections;

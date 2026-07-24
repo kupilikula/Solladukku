@@ -1,0 +1,56 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart +1pl +3pl +adv +time +cardinal +foc +3sgm +3sgf +3pln +abl +soc +unit +part +conjunction +intj +presentative +pp-particle +trans +fut
++Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart +1pl +3pl +adv +time +cardinal +foc +3sgm +3sgf +3pln +abl +soc +unit +part +conjunction +intj +presentative +pp-particle +trans +fut +2sg
+ 
+ LEXICON Root
+ abbreviations;
+@@ -52,6 +52,17 @@
+ எஸ்+abbrev+letter:எஸ் #;
+ 
+ LEXICON pronounQuantifiers
++! Reviewed classical pronouns, universal quantifier and singleton determiner.
++யான்+pron+1sg+nom:யான் #;
++யான்+pron+1sg+nom+add:யானும் #;
++நின்+pron+poss+2sg:நின் #;
++முழுது+quant+all:முழுது #;
++முழுது+quant+all+add:முழுதும் #;
++ஒற்றை+quant+det:ஒற்றை #;
++ஒற்றை+quant+det+sandhip%=ப்:ஒற்றைப் #;
++ஒற்றை+quant+det+sandhic%=ச்:ஒற்றைச் #;
++ஒற்றை+quant+det+sandhit%=த்:ஒற்றைத் #;
++ஒற்றை+quant+det+sandhik%=க்:ஒற்றைக் #;
+ ! Reviewed high-frequency closed-class and presentative relations.
+ என்+comp:என்னும் #;
+ எனினும்+part+conjunction:எனினும் #;
+@@ -456,6 +467,8 @@
+ பத்தாவது		ordinal;
+ ! Productive modern -ஆம் ordinals retain the cardinal lexical lemma.
+ முதல்:முதலாம்		ordinal;
++இரண்டு:ரெண்டாம்		ordinal;
++இரண்டு:ரெண்டாவது		ordinal;
+ இரண்டு:இரண்டாம்		ordinal;
+ மூன்று:மூன்றாம்		ordinal;
+ நான்கு:நான்காம்		ordinal;
+@@ -519,6 +532,17 @@
+ ஒன்று+cardinal+abl:ஒன்றிலிருந்து #;
+ ஒன்று+cardinal+soc:ஒன்றுடன் #;
+ ஒன்று+cardinal+trans+cop+fut+3sgn:ஒன்றாகும் #;
++! Colloquial ரெண்டு surfaces retain canonical lemma இரண்டு.
++இரண்டு+cardinal:ரெண்டு #;
++இரண்டு+cardinal+add:ரெண்டும் #;
++இரண்டு+cardinal+foc%=ஏ:ரெண்டே #;
++இரண்டு+cardinal+dat:ரெண்டுக்கு #;
++இரண்டு+cardinal+inst:ரெண்டால் #;
++இரண்டு+cardinal+gen:ரெண்டின் #;
++இரண்டு+cardinal+loc:ரெண்டில் #;
++இரண்டு+cardinal+abl:ரெண்டிலிருந்து #;
++இரண்டு+cardinal+soc:ரெண்டுடன் #;
++இரண்டு+cardinal+trans+cop+fut+3sgn:ரெண்டாகும் #;
+ இரண்டு+cardinal+add:இரண்டும் #;
+ இரண்டு+cardinal+foc%=ஏ:இரண்டே #;
+ இரண்டு+cardinal+dat:இரண்டுக்கு #;

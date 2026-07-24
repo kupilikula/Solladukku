@@ -1,0 +1,19 @@
+--- ThamizhiFST-C4.foma
++++ ThamizhiFST-C4.foma
+@@ -10,6 +10,8 @@
+ define C4R3 {ி} -> {ிய} || _ "^" [{ும்}|{ா}];
+ define C4R4 {ு} -> {ுக்க} || _ "^" [{ும்}|{அ}];
+ define C4R5 {ழ்} -> {ழ}  || _ "^" [{அ}];
++# Intransitive முடி takes the y-glide infinitive முடிய; transitive C11 remains முடிக்க.
++define C4MudiInf {ி} -> {ிய} || {முட} _ "^" [{அ}];
+ define C4R6 {ி} -> {ிக்க}  || _ "^" [{அ}];
+ define C4R7 {ர்} -> {ர்க்க} || _ "^" [{அ}];
+ define C4R8 [{தீ}] -> {தீய} || _ "^" [{அ}|{ா}];
+@@ -28,6 +30,7 @@
+ 		C4R3	.o.
+ 		C4R4	.o.
+ 		C4R5	.o.
++		C4MudiInf	.o.
+ 		C4R6	.o.
+ 		C4R7	.o.
+ 		C4R8	.o.

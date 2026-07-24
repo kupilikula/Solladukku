@@ -1,0 +1,226 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -3688,6 +3688,13 @@
+ +noun+dat+sandhit:^வுக்குத் #;
+ +noun+dat+sandhik:^வுக்குக் #;
+ +noun+dat:^விற்கு #;
+++noun+dat+psp_ul:^விற்குள் #;
+++noun+dat+psp_ul+add:^விற்குளும் #;
+++noun+dat+psp_ul_iruntu:^விற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^விற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^விற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^விற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^விற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^விற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^விற்கான #;
+ +noun+dat+foc:^விற்குத்தான் #;
+@@ -54898,6 +54905,13 @@
+ +noun+dat+sandhit:^ுக்குத் #;
+ +noun+dat+sandhik:^ுக்குக் #;
+ +noun+dat:^ிற்கு #;
+++noun+dat+psp_ul:^ிற்குள் #;
+++noun+dat+psp_ul+add:^ிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^ிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^ிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^ிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^ிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^ிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^ிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^ிற்கான #;
+ +noun+dat+foc:^ிற்குத்தான் #;
+@@ -56046,6 +56060,13 @@
+ +noun+dat+sandhit:^ட்டுக்குத் #;
+ +noun+dat+sandhik:^ட்டுக்குக் #;
+ +noun+dat:^ட்டிற்கு #;
+++noun+dat+psp_ul:^ட்டிற்குள் #;
+++noun+dat+psp_ul+add:^ட்டிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^ட்டிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^ட்டிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^ட்டிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^ட்டிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^ட்டிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^ட்டிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^ட்டிற்கான #;
+ +noun+dat+foc:^ட்டிற்குத்தான் #;
+@@ -56553,6 +56574,13 @@
+ +noun+dat+sandhit:^ட்டுக்குத் #;
+ +noun+dat+sandhik:^ட்டுக்குக் #;
+ +noun+dat:^ட்டிற்கு #;
+++noun+dat+psp_ul:^ட்டிற்குள் #;
+++noun+dat+psp_ul+add:^ட்டிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^ட்டிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^ட்டிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^ட்டிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^ட்டிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^ட்டிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^ட்டிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^ட்டிற்கான #;
+ +noun+dat+foc:^ட்டிற்குத்தான் #;
+@@ -70061,6 +70089,13 @@
+ +noun+dat+sandhit:^க்குத் #;
+ +noun+dat+sandhik:^க்குக் #;
+ +noun+dat:^ஆிற்கு #;
+++noun+dat+psp_ul:^ஆிற்குள் #;
+++noun+dat+psp_ul+add:^ஆிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^ஆிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^ஆிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^ஆிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^ஆிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^ஆிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^ஆிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^ஆிற்கான #;
+ +noun+dat+foc:^ஆிற்குத்தான் #;
+@@ -70667,6 +70702,13 @@
+ +noun+dat+sandhit:^றுக்குத் #;
+ +noun+dat+sandhik:^றுக்குக் #;
+ +noun+dat:^றிற்கு #;
+++noun+dat+psp_ul:^றிற்குள் #;
+++noun+dat+psp_ul+add:^றிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^றிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^றிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^றிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^றிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^றிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^றிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^றிற்கான #;
+ +noun+dat+foc:^றிற்குத்தான் #;
+@@ -71924,6 +71966,13 @@
+ +noun+dat+sandhit:^ணுக்குத் #;
+ +noun+dat+sandhik:^ணுக்குக் #;
+ +noun+dat:^ணிற்கு #;
+++noun+dat+psp_ul:^ணிற்குள் #;
+++noun+dat+psp_ul+add:^ணிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^ணிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^ணிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^ணிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^ணிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^ணிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^ணிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^ணிற்கான #;
+ +noun+dat+foc:^ணிற்குத்தான் #;
+@@ -72498,6 +72547,13 @@
+ +noun+dat+sandhit:^னுக்குத் #;
+ +noun+dat+sandhik:^னுக்குக் #;
+ +noun+dat:^னிற்கு #;
+++noun+dat+psp_ul:^னிற்குள் #;
+++noun+dat+psp_ul+add:^னிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^னிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^னிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^னிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^னிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^னிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^னிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^னிற்கான #;
+ +noun+dat+foc:^னிற்குத்தான் #;
+@@ -93953,6 +94009,13 @@
+ +noun+dat+sandhit:^னுக்குத் #;
+ +noun+dat+sandhik:^னுக்குக் #;
+ +noun+dat:^னிற்கு #;
+++noun+dat+psp_ul:^னிற்குள் #;
+++noun+dat+psp_ul+add:^னிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^னிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^னிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^னிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^னிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^னிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^னிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^னிற்கான #;
+ +noun+dat+foc:^னிற்குத்தான் #;
+@@ -94479,6 +94542,13 @@
+ +noun+dat+sandhit:^லுக்குத் #;
+ +noun+dat+sandhik:^லுக்குக் #;
+ +noun+dat:^லிற்கு #;
+++noun+dat+psp_ul:^லிற்குள் #;
+++noun+dat+psp_ul+add:^லிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^லிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^லிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^லிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^லிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^லிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^லிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^லிற்கான #;
+ +noun+dat+foc:^லிற்குத்தான் #;
+@@ -94997,6 +95067,13 @@
+ +noun+dat+sandhit:^ளுக்குத் #;
+ +noun+dat+sandhik:^ளுக்குக் #;
+ +noun+dat:^ளிற்கு #;
+++noun+dat+psp_ul:^ளிற்குள் #;
+++noun+dat+psp_ul+add:^ளிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^ளிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^ளிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^ளிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^ளிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^ளிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^ளிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^ளிற்கான #;
+ +noun+dat+foc:^ளிற்குத்தான் #;
+@@ -98644,6 +98721,13 @@
+ +noun+dat+sandhik:^ுக்குக் #;
+ 
+ +noun+dat:^ிற்கு #;
+++noun+dat+psp_ul:^ிற்குள் #;
+++noun+dat+psp_ul+add:^ிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^ிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^ிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^ிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^ிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^ிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^ிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^ிற்கான #;
+ +noun+dat+foc:^ிற்குத்தான் #;
+@@ -133606,6 +133690,13 @@
+ +noun+infInc+dat+add:^த்துக்கும் #;
+ +noun+infInc+dat+cop%=ஆ+adjpart%=ன:^த்துக்கான #;
+ +noun+infInc+dat:^த்திற்கு #;
+++noun+infInc+dat+psp_ul:^த்திற்குள் #;
+++noun+infInc+dat+psp_ul+add:^த்திற்குளும் #;
+++noun+infInc+dat+psp_ul_iruntu:^த்திற்குள்ளிருந்து #;
+++noun+infInc+dat+psp_ul_iruntu+add:^த்திற்குள்ளிருந்தும் #;
+++noun+infInc+dat+psp_ule:^த்திற்குள்ளே #;
+++noun+infInc+dat+psp_ule_iruntu:^த்திற்குள்ளேயிருந்து #;
+++noun+infInc+dat+psp_ule_iruntu+add:^த்திற்குள்ளேயிருந்தும் #;
+ +noun+infInc+dat+add:^த்திற்கும் #;
+ +noun+infInc+dat+cop%=ஆ+adjpart%=ன:^த்திற்கான #;
+ +noun+infInc+dat+foc:^த்திற்குத்தான் #;
+@@ -138293,6 +138384,13 @@
+ +noun+dat+sandhik:^க்குக் #;
+ 
+ +noun+dat:^ிற்கு #;
+++noun+dat+psp_ul:^ிற்குள் #;
+++noun+dat+psp_ul+add:^ிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^ிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^ிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^ிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^ிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^ிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^ிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^ிற்கான #;
+ +noun+dat+foc:^ிற்குத்தான் #;
+@@ -138925,6 +139023,13 @@
+ +noun+dat+sandhik:^ுக்குக் #;
+ 
+ +noun+dat:^ிற்கு #;
+++noun+dat+psp_ul:^ிற்குள் #;
+++noun+dat+psp_ul+add:^ிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^ிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^ிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^ிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^ிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^ிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^ிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^ிற்கான #;
+ +noun+dat+foc:^ிற்குத்தான் #;
+@@ -138933,6 +139038,13 @@
+ +noun+dat+sandhit:^ிற்குத் #;
+ +noun+dat+sandhik:^ிற்குக் #;
+ +noun+dat:^ற்றிற்கு #;
+++noun+dat+psp_ul:^ற்றிற்குள் #;
+++noun+dat+psp_ul+add:^ற்றிற்குளும் #;
+++noun+dat+psp_ul_iruntu:^ற்றிற்குள்ளிருந்து #;
+++noun+dat+psp_ul_iruntu+add:^ற்றிற்குள்ளிருந்தும் #;
+++noun+dat+psp_ule:^ற்றிற்குள்ளே #;
+++noun+dat+psp_ule_iruntu:^ற்றிற்குள்ளேயிருந்து #;
+++noun+dat+psp_ule_iruntu+add:^ற்றிற்குள்ளேயிருந்தும் #;
+ +noun+dat+add:^ற்றிற்கும் #;
+ +noun+dat+cop%=ஆ+adjpart%=ன:^ற்றிற்கான #;
+ +noun+dat+foc:^ற்றிற்குத்தான் #;

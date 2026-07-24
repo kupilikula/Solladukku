@@ -1,0 +1,18 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -2584,6 +2584,7 @@
+ +verb+nonfin+sim+inf%=அ+add%=உம்:வும் #;
+ 
+ LEXICON ClassFive
++உரையாற்று	C5Vinf;
+ படுத்து	C5Vinf;
+ 
+ ! Corpus-attested roots with inherited paradigm evidence
+@@ -11310,6 +11311,7 @@
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+vpart_potu%=போது:போது #;
+ 
+ LEXICON ClassVaaModern
++முன்வா:முன்வரு	VaaModernVinf;
+ 
+ ! Corpus-attested roots with inherited paradigm evidence
+ ! Canonical passive-perfect hooks synchronized with active infinitive analyses.

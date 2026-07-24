@@ -1,0 +1,29 @@
+--- ThamizhiFST-C12.foma
++++ ThamizhiFST-C12.foma
+@@ -15,5 +15,7 @@
+ define C12Rule7 {ட} -> {டக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+ define C12Rule8A {ு} -> {ுக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
++define C12IruProtect {ு} -> {Q} || {ர} _ "^" {க};
+ define C12Rule8B {ு} -> {க்க}  || _ "^" [{க} | {அ}];
++define C12IruRestore {Q} -> {ு};
+ 
+ define C12CitationDouble {த} -> {த்த} || [{ய}|{ண}|{ள}|{ல}|{ற}|{ழ}|{ட}|{ர}|{வ}|{ச}|{க}|{த}|{ம}|{ு}] "^" _;
+@@ -34,6 +36,8 @@
+ 			C12Rule6           	.o.
+ 			C12Rule7           	.o.
+ 			C12Rule8A          	.o.
++			C12IruProtect      	.o.
+ 			C12Rule8B          	.o.
++			C12IruRestore      	.o.
+ 			C12CitationDouble  	.o.
+ 			C12CitationUDelete 	.o.
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -178,7 +178,6 @@
+ இட      C12Vinf;
+ இய      C12Vinf;
+ இர      C12Vinf;
+-இரு      C12Vinf;
+ இழ      C12Vinf;
+ இற      C12Vinf;
+ உக      C12Vinf;

@@ -1,0 +1,18 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -6907,7 +6907,6 @@
+ நாசிக்கப்படமுடி            ClassMudi11Inf; 
+ நைவேதிக்கப்படமுடி            ClassMudi11Inf; 
+ நைக்கப்படமுடி            ClassMudi11Inf; 
+-நெய்க்கப்படமுடி            ClassMudi11Inf; 
+ நெரிக்கப்படமுடி            ClassMudi11Inf; 
+ நெருநெருக்கப்படமுடி            ClassMudi11Inf; 
+ நொளுநொளுக்கப்படமுடி            ClassMudi11Inf; 
+@@ -19207,7 +19206,6 @@
+ நாசிக்கப்படப்பார்            ClassPar11Inf; 
+ நைவேதிக்கப்படப்பார்            ClassPar11Inf; 
+ நைக்கப்படப்பார்            ClassPar11Inf; 
+-நெய்க்கப்படப்பார்            ClassPar11Inf; 
+ நெரிக்கப்படப்பார்            ClassPar11Inf; 
+ நெருநெருக்கப்படப்பார்            ClassPar11Inf; 
+ நொளுநொளுக்கப்படப்பார்            ClassPar11Inf; 

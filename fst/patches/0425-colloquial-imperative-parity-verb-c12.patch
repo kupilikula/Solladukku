@@ -1,0 +1,18 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -554,6 +554,7 @@
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+1sg%=ஏன்:^ப்பித்தேன் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+1pl%=ஓம்:^ப்பித்தோம் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+1sg%=அன்:^ப்பித்தன் VerbQuestion;
+@@ -4623,6 +4624,7 @@
+ +verb+fin+complex+aspect+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+1sg%=ஏன்:^ப்பித்தேன் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+1pl%=ஓம்:^ப்பித்தோம் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+1sg%=அன்:^ப்பித்தன் VerbQuestion;

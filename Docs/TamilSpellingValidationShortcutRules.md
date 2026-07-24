@@ -34,9 +34,10 @@ For a candidate word that already failed local dictionary lookup:
 
 ## Why These Are Safe
 
-Corpus check (current local data as of February 16, 2026):
+Historical corpus check (February 16, 2026 data; table below has not been recomputed for the compact-client dictionary split):
 
-- `public/tamil_dictionary.txt`: `1,841,588` words
+- `public/tamil_dictionary.txt` was then the full generated browser dictionary: `1,841,588` words
+- Current full-surface checks should use `static-word-list/full_tamil_dictionary.txt`; current browser lookup uses compact `public/tamil_dictionary.txt`
 - extracted FST lexicon lemmas from `fst/reports/artifacts/build/**/*.lexc`: `131,100`
 
 Initial-letter counts in current corpus:

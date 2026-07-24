@@ -1,0 +1,29 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -123,6 +123,8 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgm%=அன்:^கின்றனன் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+nonfin+sim+verbalnoun%=தல்:^தல் #;
+++verb+nonfin+sim+verbalnoun%=அது:^வது #;
+++verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -251,6 +253,8 @@
+ 
+ 
+ 
+++verb+nonfin+sim+verbalnoun%=அது:^வது #;
+++verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+fin+sim+strong+past%=ட்+1sg%=ஏன்:^ண்டேன் #;
+ +verb+fin+sim+strong+past%=ட்+1pl%=ஓம்:^ண்டோம் #;
+ +verb+fin+sim+strong+past%=ட்+1sg%=அன்:^ண்டன் #;
+@@ -11705,6 +11709,8 @@
+ 
+ LEXICON C6Vinf
+ +verb+nonfin+sim+verbalnoun%=தல்:^தல் #;
+++verb+nonfin+sim+verbalnoun%=அது:^வது #;
+++verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^வதும் #;
+ 
+ 
+ 

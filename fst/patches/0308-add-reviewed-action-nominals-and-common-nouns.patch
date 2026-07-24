@@ -1,0 +1,158 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -398,6 +398,13 @@
+ 
+ 
+ LEXICON DerivedActionNominals
++! Reviewed lexical/citation action nominals retain their verbal lemmas.
++விடு+verb+nonfin+sim+verbalnoun%=தல்:விடல்	DerivedActionNominalC4Inflections;
++கொள்+verb+nonfin+sim+verbalnoun%=தல்:கொளல்	DerivedActionNominalC4Inflections;
++வா+verb+nonfin+sim+verbalnoun%=தல்:வருதல்	DerivedActionNominalC4Inflections;
++கொள்+verb+nonfin+sim+verbalnoun%=தல்:கொள்ளுதல்	DerivedActionNominalC4Inflections;
++வா+verb+nonfin+sim+verbalnoun%=கை:வருகை	DerivedActionNominalC2Inflections;
++தொழு+verb+nonfin+sim+verbalnoun%=கை:தொழுகை	DerivedActionNominalC2Inflections;
+ ! Reviewed case-inflecting action nominals retain their source verb lemma.
+ அஃகு+verb+nonfin+sim+verbalnoun%=தல்:அஃகல்	DerivedActionNominalC4Inflections;
+ அகற்று+verb+nonfin+sim+verbalnoun%=தல்:அகற்றல்	DerivedActionNominalC4Inflections;
+@@ -806,6 +813,7 @@
+ வைகு+verb+nonfin+sim+verbalnoun%=தல்:வைகல்	DerivedActionNominalC4Inflections;
+ 
+ LEXICON DerivedActionNominalC2Inflections
+++nom: #;
+ +nom+add:^யும் #;
+ +nom+all:^யெல்லாம் #;
+ +trans:^யாக #;
+@@ -1237,6 +1245,7 @@
+ +pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ 
+ LEXICON DerivedActionNominalC7Inflections
+++nom: #;
+ +nom+add:^ம் #;
+ +nom+all:^எல்லாம் #;
+ +trans:^ஆாக #;
+@@ -1448,6 +1457,11 @@
+ +pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ 
+ LEXICON C1Sg
++! Final corpus-attested modern common-noun review.
++பைசா	C1SgRoot;
++மீடியா	C1SgRoot;
++யோகா	C1SgRoot;
++ராஜினாமா	C1SgRoot;
+ கடா	 	C1SgRoot;
+ பசு	 	C1SgRoot;
+ தெரு	C1SgRoot;
+@@ -3565,6 +3579,30 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++! Final corpus-attested modern common-noun review.
++அதிருப்தி	C2SgRoot;
++அரசியல்வாதி	C2SgRoot;
++அறிவுடைமை	C2SgRoot;
++அறிவுரை	C2SgRoot;
++ஆளுமை	C2SgRoot;
++உயர்கல்வி	C2SgRoot;
++காலனி	C2SgRoot;
++கீதை	C2SgRoot;
++குழாய்	C2SgRoot;
++சட்டத்தரணி	C2SgRoot;
++சலுகை	C2SgRoot;
++சீருடை	C2SgRoot;
++செயல்முறை	C2SgRoot;
++திரைக்கதை	C2SgRoot;
++தேயிலை	C2SgRoot;
++பதிலடி	C2SgRoot;
++பற்றாக்குறை	C2SgRoot;
++மக்கள்தொகை	C2SgRoot;
++முன்னுரிமை	C2SgRoot;
++வன்கொடுமை	C2SgRoot;
++வானிலை	C2SgRoot;
++விஞ்ஞானி	C2SgRoot;
++வேட்கை	C2SgRoot;
+ ! Final reviewed common-lexeme coverage.
+ காவல்துறை	C2SgRoot;
+ சனவரி	C2SgRoot;
+@@ -44653,6 +44691,12 @@
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^க்களின்கீழேயிருந்தும் #;
+ LEXICON C4Sg
++! Final corpus-attested modern common-noun review.
++அசல்	C4SgRoot;
++ஆப்பிள்	C4SgRoot;
++இயற்பியல்	C4SgRoot;
++சைக்கிள்	C4SgRoot;
++வசூல்	C4SgRoot;
+ ! Final reviewed common-lexeme coverage.
+ சான்றிதழ்	C4SgRoot;
+ அக்கீம்	  C4SgRoot ;
+@@ -54730,6 +54774,8 @@
+ 
+ 
+ LEXICON C6Sg
++! Final corpus-attested modern common-noun review.
++மதிப்பீடு	C6SgRoot;
+ தகடு 			C6SgRoot;
+ உதடு		C6SgRoot;
+ நாடு			C6SgRoot;
+@@ -56072,6 +56118,17 @@
+ 
+ 
+ LEXICON C7Sg
++! Final corpus-attested modern common-noun review.
++அடகு	C7SgRoot;
++அணுக்கரு	C7SgRoot;
++துறவு	C7SgRoot;
++தென்மேற்கு	C7SgRoot;
++பரப்பளவு	C7SgRoot;
++மரபணு	C7SgRoot;
++மீட்பு	C7SgRoot;
++முன்பதிவு	C7SgRoot;
++வரைவு	C7SgRoot;
++வாக்குப்பதிவு	C7SgRoot;
+ ! Final reviewed common-lexeme coverage.
+ உலகு	C7SgRoot;
+ எளிது	C7SgRoot;
+@@ -71294,6 +71351,13 @@
+ +noun+pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ LEXICON C10Sg
++! Final corpus-attested modern common-noun review.
++அயோடின்	C10SgRoot;
++குளோரின்	C10SgRoot;
++நலன்	C10SgRoot;
++புரோட்டான்	C10SgRoot;
++புளோரின்	C10SgRoot;
++லத்தீன்	C10SgRoot;
+ ! Corpus-proven -ன்கள் subclass; singular oblique behavior matches C10.
+ அணிகலன்	C10SgRoot;
+ அண்ணன்	C10SgRoot;
+@@ -97624,6 +97688,12 @@
+ +noun+gen+psp_keele_iruntu+add:^ின்கீழேயிருந்தும் #;
+ 
+ LEXICON C15Sg
++! Final corpus-attested modern common-noun review.
++ஏதம்	C15SgRoot;
++கீதம்	C15SgRoot;
++சதம்	C15SgRoot;
++பாதாம்	C15SgRoot;
++வையம்	C15SgRoot;
+ இஸ்லாம்	  C15SgRoot ;
+ மரம்	  			C15SgRoot ; 
+ குணம்			  C15SgRoot ; 
+@@ -132780,6 +132850,15 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^ங்களின்கீழேயிருந்தும் #;
+ 
+ LEXICON C16Sg
++! Final corpus-attested modern common-noun review.
++அறங்காவலர்	C16SgRoot;
++ஊழியர்	C16SgRoot;
++காவலர்	C16SgRoot;
++சகோதரர்	C16SgRoot;
++டாலர்	C16SgRoot;
++தூதர்	C16SgRoot;
++நிபுணர்	C16SgRoot;
++நுகர்வோர்	C16SgRoot;
+ ! Final reviewed common-lexeme coverage.
+ தேவர்	C16SgRoot;
+ ஓவியர்	C16SgRoot;

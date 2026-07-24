@@ -1,0 +1,558 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -9441,7 +9441,6 @@
+ அவி:அவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ அவிர்:அவிர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ அவிழ்:அவிழப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-அவிழ்:அவிழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ அவிழ்:அவிழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ அவை:அவைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ அவ்வி:அவ்விக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -9529,7 +9528,6 @@
+ இமிசி:இமிசிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ இமிர்:இமிர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ இமிழ்:இமிழப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-இமிழ்:இமிழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ இமிழ்:இமிழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ இமை:இமைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ இய:இயக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -9600,7 +9598,6 @@
+ இவர்:இவர்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ இவறு:இவறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ ஈகு:ஈகப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-ஈன்ன:ஈன்னப்பட்டுள்ள ModernPassivePerfectNeut;
+ ஈ:ஈயப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ ஈரி:ஈரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ ஈர்:ஈர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -9634,7 +9631,6 @@
+ உட்டணி:உட்டணிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உணக்கு:உணக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உணர்:உணர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-உண்ண:உண்ணப்பட்டுள்ள ModernPassivePerfectNeut;
+ உதகரி:உதகரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உதாகரி:உதாகரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உதாசனி:உதாசனிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -9672,7 +9668,6 @@
+ உயிர்:உயிர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உய்:உய்ப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உய்:உய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-உர:உரப்பட்டுள்ள ModernPassivePerfectNeut;
+ உர:உரக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உரசு:உரசப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உரப்பு:உரப்பப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -9682,7 +9677,6 @@
+ உராய்:உராய்ப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உராய்ஞ்சு:உராய்ஞ்சப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உராவு:உராவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-உரி:உரிப்பட்டுள்ள ModernPassivePerfectNeut;
+ உரி:உரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உரிஞ்சு:உரிஞ்சப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உருகு:உருகப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -9748,7 +9742,6 @@
+ உளறு:உளறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உளு:உளுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உளுக்கு:உளுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-உளுக்கா:உளுக்காப்பட்டுள்ள ModernPassivePerfectNeut;
+ உளுக்கா:உளுக்காக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உளை:உளைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ உளை:உளையப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -9790,7 +9783,6 @@
+ ஊற்றால்கவி:ஊற்றால்கவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ ஊழ்:ஊழப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ ஊழலி:ஊழலிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-ஊழ்:ஊழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ ஊழ்கு:ஊழ்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ ஊழ்:ஊழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ எஃகு:எஃகப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -9929,7 +9921,6 @@
+ ஔவி:ஔவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கக்கு:கக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கசகு:கசகப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-கசகச:கசகசப்பட்டுள்ள ModernPassivePerfectNeut;
+ கசகச:கசகசக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கச:கசக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கசக்கு:கசக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -9938,7 +9929,6 @@
+ கஞற்று:கஞற்றப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கஞல்:கஞலப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கடு:கடப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-கடகட:கடகடப்பட்டுள்ள ModernPassivePerfectNeut;
+ கடகட:கடகடக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கட:கடக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கடத்து:கடத்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -9987,7 +9977,6 @@
+ கனி:கனிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கனை:கனையப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கன்று:கன்றப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-கபளீ:கபளீப்பட்டுள்ள ModernPassivePerfectNeut;
+ கபளீ:கபளீக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கப்பு:கப்பப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கப்பி:கப்பிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10023,9 +10012,7 @@
+ கறும்பு:கறும்பப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கறுவு:கறுவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கறைக்கணி:கறைக்கணிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-கற்க:கற்கப்பட்டுள்ள ModernPassivePerfectNeut;
+ கற்பி:கற்பிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-கலகல:கலகலப்பட்டுள்ள ModernPassivePerfectNeut;
+ கலகல:கலகலக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கலகி:கலகிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கலக்கு:கலக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10042,7 +10029,6 @@
+ கலை:கலைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கலை:கலையப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கல்லு:கல்லப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-கள:களப்பட்டுள்ள ModernPassivePerfectNeut;
+ களி:களிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ களுக்கு:களுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ களை:களைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10060,10 +10046,8 @@
+ கவவு:கவவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கவி:கவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கவிழ்:கவிழப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-கவிழ்:கவிழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ கவிழ்:கவிழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கவை:கவைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-கா:காப்பட்டுள்ள ModernPassivePerfectNeut;
+ கா:காக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ காட்டு:காட்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ காண்:காணப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10079,7 +10063,6 @@
+ காலி:காலிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கால்:கால்லப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கால்வளைவி:கால்வளைவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-காழ்:காழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ காழ்:காழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ காெலுகொலு:காெலுகொலுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ காெழு:காெழுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10105,7 +10088,6 @@
+ கிறாவு:கிறாவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கிறுக்கு:கிறுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கிறுங்கு:கிறுங்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-கிற்க:கிற்கப்பட்டுள்ள ModernPassivePerfectNeut;
+ கிலாய்:கிலாய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கிலுக்கு:கிலுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கிலுங்கு:கிலுங்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10162,7 +10144,6 @@
+ குமிறு:குமிறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ குமிழ்:குமிழப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ குமிழி:குமிழிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-குமிழ்:குமிழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ குமிழ்:குமிழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ குமுகுமு:குமுகுமுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ குமுக்கு:குமுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10223,7 +10204,6 @@
+ கூம்பு:கூம்பப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கூர்:கூர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கூறு:கூறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-கூழ்:கூழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ கூழ்:கூழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கூவு:கூவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கெக்கரி:கெக்கரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10252,7 +10232,6 @@
+ கேது:கேதப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கேந்திரி:கேந்திரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கேரு:கேரப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-கேள:கேளப்பட்டுள்ள ModernPassivePerfectNeut;
+ கேவு:கேவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கைகவி:கைகவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கைகுவி:கைகுவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10290,7 +10269,6 @@
+ கொள்:கொள்ளப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கொழுது:கொழுதப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கொழுந்து:கொழுந்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-கோ:கோப்பட்டுள்ள ModernPassivePerfectNeut;
+ கோ:கோக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கோசரி:கோசரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ கோடு:கோடப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10316,7 +10294,6 @@
+ சங்கிரகி:சங்கிரகிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சங்கிரமி:சங்கிரமிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சஞ்சரி:சஞ்சரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-சடபுட:சடபுடப்பட்டுள்ள ModernPassivePerfectNeut;
+ சடபுட:சடபுடக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சடாய்:சடாய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சடை:சடைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10325,7 +10302,6 @@
+ சணாய்:சணாய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சண்ணி:சண்ணிப்பட்டுள்ள ModernPassivePerfectNeut;
+ சண்ணி:சண்ணிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-சதசத:சதசதப்பட்டுள்ள ModernPassivePerfectNeut;
+ சதசத:சதசதக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சதாவு:சதாவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சதி:சதிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10354,7 +10330,6 @@
+ சமர்த்தி:சமர்த்திக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சமர்ப்பி:சமர்ப்பிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சமழ்:சமழப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-சமழ்:சமழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ சமழ்:சமழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சமாய்:சமாய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சமாளி:சமாளிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10453,13 +10428,11 @@
+ சிமிட்டு:சிமிட்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சிமிண்டு:சிமிண்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சிமிளி:சிமிளிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-சிமிழ்:சிமிழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ சிமிழ்:சிமிழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சிம்பு:சிம்பப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சிம்பிளி:சிம்பிளிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சிம்மு:சிம்மப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சிம்மா:சிம்மாக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-சிர:சிரப்பட்டுள்ள ModernPassivePerfectNeut;
+ சிர:சிரக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சிரறு:சிரறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சிரற்று:சிரற்றப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10503,7 +10476,6 @@
+ சிழகு:சிழகப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சிவணு:சிவணப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சிவிறு:சிவிறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-சீ:சீப்பட்டுள்ள ModernPassivePerfectNeut;
+ சீ:சீக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சீடு:சீடப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சீண்டு:சீண்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10700,9 +10672,7 @@
+ தடு:தடப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தடக்கு:தடக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தடங்கு:தடங்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-தடதட:தடதடப்பட்டுள்ள ModernPassivePerfectNeut;
+ தடதட:தடதடக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-தடபட:தடபடப்பட்டுள்ள ModernPassivePerfectNeut;
+ தடபட:தடபடக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தடவு:தடவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தடாய்:தடாய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10753,7 +10723,6 @@
+ தருவி:தருவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தரை:தரையப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தறு:தறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-தறதற:தறதறப்பட்டுள்ள ModernPassivePerfectNeut;
+ தறதற:தறதறக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தறி:தறிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தறுகு:தறுகப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10765,8 +10734,6 @@
+ தல:தலக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தலை:தலையப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தல்லு:தல்லப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-தள:தளப்பட்டுள்ள ModernPassivePerfectNeut;
+-தளதள:தளதளப்பட்டுள்ள ModernPassivePerfectNeut;
+ தளதள:தளதளக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தளம்பு:தளம்பப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தளர்த்து:தளர்த்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10819,7 +10786,6 @@
+ தாளு:தாளப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தாளி:தாளிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தாழ்:தாழப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-தாழ்:தாழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ தாழ்:தாழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தாழ்த்து:தாழ்த்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தாவு:தாவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10849,7 +10815,6 @@
+ தித்து:தித்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தித்தி:தித்திக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தித்திவி:தித்திவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-தின்ன:தின்னப்பட்டுள்ள ModernPassivePerfectNeut;
+ திமிர்:திமிர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ திமை:திமைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தியக்கு:தியக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10882,7 +10847,6 @@
+ திவறு:திவறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ திவள்:திவளப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ திஷேதி:திஷேதிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-தீ:தீப்பட்டுள்ள ModernPassivePerfectNeut;
+ தீ:தீக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தீட்டு:தீட்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தீண்டு:தீண்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11015,7 +10979,6 @@
+ தெறி:தெறிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தெறு:தெறுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தெற்று:தெற்றப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-தெள:தெளப்பட்டுள்ள ModernPassivePerfectNeut;
+ தெளி:தெளிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தெளிர்:தெளிர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தெளிவி:தெளிவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11072,9 +11035,7 @@
+ தோய்:தோய்ப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தோய்:தோய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ தோர்:தோர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-தோற்க:தோற்கப்பட்டுள்ள ModernPassivePerfectNeut;
+ தோற்று:தோற்றப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-தோள:தோளப்பட்டுள்ள ModernPassivePerfectNeut;
+ தோஷி:தோஷிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நகட்டு:நகட்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நகர்:நகர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11111,7 +11072,6 @@
+ நனை:நனைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நனை:நனையப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நன்னு:நன்னப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-நம:நமப்பட்டுள்ள ModernPassivePerfectNeut;
+ நம:நமக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நமக்கரி:நமக்கரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நமர்:நமர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11125,7 +11085,6 @@
+ நமை:நமைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நமை:நமையப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நம்பு:நம்பப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-நய:நயப்பட்டுள்ள ModernPassivePerfectNeut;
+ நய:நயக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நயப்பி:நயப்பிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நரற்று:நரற்றப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11166,7 +11125,6 @@
+ நவிர்:நவிர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நவிற்று:நவிற்றப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நவில்:நவிலப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-நவிழ்:நவிழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ நவிழ்:நவிழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நவுட்டு:நவுட்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நவை:நவைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11202,7 +11160,6 @@
+ நிந்தி:நிந்திக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நினை:நினைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நினை:நினையப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-நிப்பாட்டு:நிப்பாட்டுப்பட்டுள்ள ModernPassivePerfectNeut;
+ நிமி:நிமிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நிமிடு:நிமிடப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நிமிட்டு:நிமிட்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11255,7 +11212,6 @@
+ நிவறு:நிவறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நிவிர்த்தி:நிவிர்த்திக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நிவேதி:நிவேதிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-நீ:நீப்பட்டுள்ள ModernPassivePerfectNeut;
+ நீ:நீக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நீக்கு:நீக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நீங்கு:நீங்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11311,9 +11267,7 @@
+ நுாறு:நுாறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நுாவு:நுாவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நூர்:நூர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-நூற்க:நூற்கப்பட்டுள்ள ModernPassivePerfectNeut;
+ நெகிழ்:நெகிழப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-நெகிழ்:நெகிழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ நெகிழ்:நெகிழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நெகு:நெகுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நெக்கு:நெக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11323,7 +11277,6 @@
+ நெட்டு:நெட்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நெண்டு:நெண்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நெம்பு:நெம்பப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-நெய்க்க:நெய்க்கப்பட்டுள்ள ModernPassivePerfectNeut;
+ நெரடு:நெரடப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நெரி:நெரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நெருக்கு:நெருக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11363,7 +11316,6 @@
+ நொறுங்கு:நொறுங்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நொறுநொறு:நொறுநொறுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நொள்:நொளப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-நொளநொள:நொளநொளப்பட்டுள்ள ModernPassivePerfectNeut;
+ நொளநொள:நொளநொளக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நொளுநொளு:நொளுநொளுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நொள்கு:நொள்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11371,11 +11323,9 @@
+ நொவ்வு:நொவ்வப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நோக்கு:நோக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நோண்டு:நோண்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-நோன்ன:நோன்னப்பட்டுள்ள ModernPassivePerfectNeut;
+ நோம்பு:நோம்பப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நோய்:நோய்ப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ நோய்:நோய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-நோற்க:நோற்கப்பட்டுள்ள ModernPassivePerfectNeut;
+ பகட்டு:பகட்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பகர்:பகர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பகர்த்து:பகர்த்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11387,7 +11337,6 @@
+ பக்கி:பக்கிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பங்கி:பங்கிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பச:பசக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-பசபச:பசபசப்பட்டுள்ள ModernPassivePerfectNeut;
+ பசபச:பசபசக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பசப்பு:பசப்பப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பசி:பசிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11399,7 +11348,6 @@
+ பஞ்சலி:பஞ்சலிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பஞ்சீகரி:பஞ்சீகரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ படு:படப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-படபட:படபடப்பட்டுள்ள ModernPassivePerfectNeut;
+ படபட:படபடக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ படர்:படர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ படி:படிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11436,7 +11384,6 @@
+ பரக்கு:பரக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பரசு:பரசப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பரதவி:பரதவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-பரபர:பரபரப்பட்டுள்ள ModernPassivePerfectNeut;
+ பரபர:பரபரக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பரப்பு:பரப்பப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பரமபதி:பரமபதிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11478,7 +11425,6 @@
+ பறை:பறைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பறை:பறையப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பற்று:பற்றப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-பல:பலப்பட்டுள்ள ModernPassivePerfectNeut;
+ பல:பலக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பலி:பலிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பலுகு:பலுகப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11493,7 +11439,6 @@
+ பழுனு:பழுனப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பவர்:பவர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பவி:பவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-பா:பாப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பாகி:பாகிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பா:பாக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பாசுரஞ்சேவி:பாசுரஞ்சேவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11502,7 +11447,6 @@
+ பாடி:பாடிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பாணி:பாணிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பாதி:பாதிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-பாதுகா:பாதுகாப்பட்டுள்ள ModernPassivePerfectNeut;
+ பாதுகா:பாதுகாக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பாத்து:பாத்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பாந்து:பாந்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11669,12 +11613,10 @@
+ புழுங்கு:புழுங்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ புழை:புழைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ புஷ்பி:புஷ்பிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-பூ:பூப்பட்டுள்ள ModernPassivePerfectNeut;
+ பூ:பூக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பூசு:பூசப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பூசி:பூசிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பூட்டு:பூட்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-பூண:பூணப்பட்டுள்ள ModernPassivePerfectNeut;
+ பூணி:பூணிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பூய்:பூய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பூரு:பூரப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11695,7 +11637,6 @@
+ பெறு:பெறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பெறுக்கு:பெறுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பெறுத்து:பெறுத்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-பெள:பெளப்பட்டுள்ள ModernPassivePerfectNeut;
+ பேகணி:பேகணிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பேசு:பேசப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பேடி:பேடிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11710,7 +11651,6 @@
+ பேழ்கணி:பேழ்கணிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பை:பைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பையர்:பையர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-பையா:பையாப்பட்டுள்ள ModernPassivePerfectNeut;
+ பையா:பையாக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பொகு:பொகுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ பொக்கு:பொக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11774,7 +11714,6 @@
+ மசகு:மசகப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மசக்கு:மசக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மசங்கு:மசங்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-மசமச:மசமசப்பட்டுள்ள ModernPassivePerfectNeut;
+ மசமச:மசமசக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மசி:மசிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மடக்கு:மடக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11804,7 +11743,6 @@
+ மயங்கு:மயங்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மயர்:மயர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மயிந்து:மயிந்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-மர:மரப்பட்டுள்ள ModernPassivePerfectNeut;
+ மர:மரக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மரணி:மரணிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மரி:மரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11840,7 +11778,6 @@
+ மல்லா:மல்லாக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மல்லாத்து:மல்லாத்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மல்லார்:மல்லார்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-மளமள:மளமளப்பட்டுள்ள ModernPassivePerfectNeut;
+ மளமள:மளமளக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மழறு:மழறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மழி:மழிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11851,7 +11788,6 @@
+ மழை:மழைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மாட்டு:மாட்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மாட்டுவி:மாட்டுவிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-மாண:மாணப்பட்டுள்ள ModernPassivePerfectNeut;
+ மாந்து:மாந்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மானி:மானிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மாய்:மாய்ப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11894,7 +11830,6 @@
+ மீள்:மீளப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ முகி:முகிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ முகிழ்:முகிழப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-முகிழ்:முகிழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ முகிழ்:முகிழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ முகுளி:முகுளிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ முகை:முகைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11976,7 +11911,6 @@
+ முழுவு:முழுவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ முழை:முழைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ முழை:முழையப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-மூ:மூப்பட்டுள்ள ModernPassivePerfectNeut;
+ மூ:மூக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மூசு:மூசப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மூஞ்சு:மூஞ்சப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11986,7 +11920,6 @@
+ மூரலி:மூரலிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மூர்ச்சி:மூர்ச்சிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மூர்த்தீகரி:மூர்த்தீகரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-மூழ்:மூழ்ப்பட்டுள்ள ModernPassivePerfectNeut;
+ மூழ்கு:மூழ்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மூழ்:மூழ்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மூழ்த்து:மூழ்த்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -12021,7 +11954,6 @@
+ மொட்டி:மொட்டிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மொத்து:மொத்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மொய்:மொய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-மொரமொர:மொரமொரப்பட்டுள்ள ModernPassivePerfectNeut;
+ மொரமொர:மொரமொரக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மொருமொரு:மொருமொருக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மொறுமொறு:மொறுமொறுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -12036,7 +11968,6 @@
+ மோசி:மோசிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மோது:மோதப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ மோறா:மோறாக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-யா:யாப்பட்டுள்ள ModernPassivePerfectNeut;
+ யா:யாக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ யாசி:யாசிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ யாபி:யாபிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -12122,7 +12053,6 @@
+ வறுகு:வறுகப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வறு:வறுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வற்று:வற்றப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-வல:வலப்பட்டுள்ள ModernPassivePerfectNeut;
+ வல:வலக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வலி:வலிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வலு:வலுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -12130,7 +12060,6 @@
+ வளர்:வளர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வளர்த்து:வளர்த்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வளவு:வளவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-வளவள:வளவளப்பட்டுள்ள ModernPassivePerfectNeut;
+ வளவள:வளவளக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வளாவு:வளாவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வளுந்து:வளுந்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -12141,7 +12070,6 @@
+ வழட்டு:வழட்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வழண்டு:வழண்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வழற்று:வழற்றப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-வழவழ:வழவழப்பட்டுள்ள ModernPassivePerfectNeut;
+ வழவழ:வழவழக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வழி:வழிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வழுக்கு:வழுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -12239,7 +12167,6 @@
+ விறுமி:விறுமிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ விறுவிறு:விறுவிறுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ விறை:விறைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-விற்க:விற்கப்பட்டுள்ள ModernPassivePerfectNeut;
+ விலகு:விலகப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ விலக்கு:விலக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ விலங்கு:விலங்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -12310,7 +12237,6 @@
+ வெருள்:வெருளப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வெருவு:வெருவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வெறி:வெறிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-வெலவெல:வெலவெலப்பட்டுள்ள ModernPassivePerfectNeut;
+ வெலவெல:வெலவெலக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வெல்:வெல்லப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வெளி:வெளிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -12332,8 +12258,6 @@
+ வேய்:வேய்ப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வேய்:வேய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வேர்:வேர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-வேள:வேளப்பட்டுள்ள ModernPassivePerfectNeut;
+-வை:வைப்பட்டுள்ள ModernPassivePerfectNeut;
+ வைகு:வைகப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வை:வைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வௌவு:வௌவப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;

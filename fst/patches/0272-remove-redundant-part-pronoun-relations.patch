@@ -1,0 +1,19 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -42,16 +42,8 @@
+ எஸ்+abbrev+letter:எஸ் #;
+ 
+ LEXICON pronounQuantifiers
+-அது+pron+dem+dist+3sgn+acc:அதனை #;
+-அது+pron+dem+dist+3sgn+acc+add:அதனையும் #;
+-அது+pron+dem+dist+3sgn+acc+sandhic:அதனைச் #;
+-அது+pron+dem+dist+3sgn+acc+sandhit:அதனைத் #;
+-அது+pron+dem+dist+3sgn+acc+sandhik:அதனைக் #;
+-அது+pron+dem+dist+3sgn+acc+sandhip:அதனைப் #;
+ அது+pron+dem+dist+3sgn+dat:அதற்கு #;
+ அது+pron+dem+dist+3sgn+dat+add:அதற்கும் #;
+-அது+pron+dem+dist+3sgn+loc+add:அதிலும் #;
+-அது+pron+dem+dist+3sgn+nom+add:அதுவும் #;
+ அவர்கள்+pron+dem+dist+3pl+nom+add:அவர்களும் #;
+ யார்+pron+inter+human+acc:யாரை #;
+ யார்+pron+inter+human+acc+add:யாரையும் #;

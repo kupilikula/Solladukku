@@ -1,0 +1,10 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -166,6 +166,7 @@
+ என்று  complimentiser;
+ என  complimentiser;
+ என+comp+sandhip%=ப்:எனப் #;
++என+comp+add%=உம்:எனவும் #;
+ என்பது  complimentiser;
+ என்பதை+comp+acc:என்பதை #;
+ என்பதற்கு+comp+dat:என்பதற்கு #;

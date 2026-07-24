@@ -1,0 +1,99 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -13150,6 +13150,7 @@
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^காத #;
+ LEXICON Class16
++தா:தரு C16Daru;
+ 
+ தா     C16Vinf;
+ 
+@@ -13170,35 +13171,9 @@
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் #;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது #;
+ +verb+fin+sim+strong+past%=த்+3pln%=அன:^ந்தன #;
+-+verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:^கிறேன் #;
+-+verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:^கிறோம் #;
+-+verb+fin+sim+strong+pres%=கிற்+1sg%=அன்:^கிறன் #;
+-+verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்:^கிறாய் #;
+-+verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்:^கிறீர் #;
+-+verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்:^கிறீர்கள் #;
+-+verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்:^கிறான் #;
+-+verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் #;
+-+verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் #;
+-+verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் #;
+-+verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் #;
+-+verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது #;
+-+verb+fin+sim+strong+pres%=கிற்+3pln%=அன:^கிறன #;
+-+verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் #;
+-+verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:^வோம் #;
+-+verb+fin+sim+weak+fut%=வ்+2sg%=ஆய்:^வாய் #;
+-+verb+fin+sim+weak+fut%=வ்+2sgh%=ஈர்:^வீர் #;
+-+verb+fin+sim+weak+fut%=வ்+2pl%=ஈர்கள்:^வீர்கள் #;
+-+verb+fin+sim+weak+fut%=வ்+3sgm%=ஆன்:^வான் #;
+-+verb+fin+sim+weak+fut%=வ்+3sgf%=ஆள்:^வாள் #;
+-+verb+fin+sim+weak+fut%=வ்+3sge%=அர்:^வர் #;
+-+verb+fin+sim+weak+fut%=வ்+3ple%=ஆர்கள்:^வார்கள் #;
+-+verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்கள்:^வார்கள் #;
+ +verb+fin+sim+strong+past%=த்+euph%=அன்+1sg%=அன்:^ந்தனன் #;
+ +verb+fin+sim+strong+past%=த்+euph%=அன்+3sgm%=அன்:^ந்தனன் #;
+ +verb+fin+sim+strong+past%=த்+euph%=அன்+3sgf%=அள்:^ந்தனள் #;
+-+verb+fin+sim+strong+pres%=கிற்+euph%=அன்+1sg%=அன்:^கிறனன் #;
+-+verb+fin+sim+strong+pres%=கிற்+euph%=அன்+3sgm%=அன்:^கிறனன் #;
+-+verb+fin+sim+strong+pres%=கிற்+euph%=அன்+3sgf%=அள்:^கிறனள் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+@@ -13259,10 +13234,38 @@
+ +verb+nonfin+sim+con%=ஆல்:^ந்தால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^ந்த #;
+-+verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+-+verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
++
++! Modern suppletive nonpast and verbal-noun realizations
++LEXICON C16Daru
+++verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்:கிறேன் #;
+++verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:கிறோம் #;
+++verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்:கிறாய் #;
+++verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்:கிறீர் #;
+++verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்:கிறீர்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்:கிறான் #;
+++verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:கிறாள் #;
+++verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:கிறார்கள் #;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:கிறார் #;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:கிறது #;
+++verb+fin+sim+strong+pres%=கிற்+3pln%=அன:கின்றன #;
+++verb+fin+sim+strong+pres%=கிற்+3ple%=னர்:கின்றனர் #;
+++verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:வேன் #;
+++verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:வோம் #;
+++verb+fin+sim+weak+fut%=வ்+2sg%=ஆய்:வாய் #;
+++verb+fin+sim+weak+fut%=வ்+2sgh%=ஈர்:வீர் #;
+++verb+fin+sim+weak+fut%=வ்+2pl%=ஈர்கள்:வீர்கள் #;
+++verb+fin+sim+weak+fut%=வ்+3sgm%=ஆன்:வான் #;
+++verb+fin+sim+weak+fut%=வ்+3sgf%=ஆள்:வாள் #;
+++verb+fin+sim+weak+fut%=வ்+3ple%=ஆர்கள்:வார்கள் #;
+++verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்:வார் #;
+++verb+nonfin+sim+futANDadjpart%=உம்:ம் #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ:கிற #;
+++verb+nonfin+sim+verbalnoun%=அது:வது #;
+++verb+nonfin+sim+verbalnoun%=அது+add%=உம்:வதும் #;
++
+ LEXICON Class17
++வா:வரு C17VaruVN;
+ 
+ வா     C17Vinf;
+ 
+@@ -13375,6 +13378,11 @@
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
++
++! Modern suppletive verbal noun
++LEXICON C17VaruVN
+++verb+nonfin+sim+verbalnoun%=அது:வது #;
+++verb+nonfin+sim+verbalnoun%=அது+add%=உம்:வதும் #;
+ LEXICON Class18
+ 
+ வே     C18Vinf;

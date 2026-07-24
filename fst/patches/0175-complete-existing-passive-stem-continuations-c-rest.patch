@@ -1,0 +1,29 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -87254,7 +87254,7 @@
+ +verb+fin+complex+passive+strong+past%=ட்+3sgm%=ஆன்:^ட்டான் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3sgf%=ஆள்:^ட்டாள் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3sge%=அர்:^ட்டர் #;
+-+verb+fin+complex+passive+strong+past%=ட்+3sge%=அர்:^ட்டனர் #;
+++verb+fin+complex+passive+strong+past%=ட்+3ple%=னர்:^ட்டனர் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் #;
+ +verb+fin+complex+passive+strong+past%=ட்+3sgn%=அது:^ட்டது #;
+@@ -87284,6 +87284,7 @@
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+complex+passive+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+complex+passive+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+@@ -87310,6 +87311,9 @@
+ +verb+fin+complex+passive+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+passive+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+ +verb+nonfin+complex+passive+verbalnoun%=அது:^வது #;
+++verb+fin+complex+passive+neg%=இல்லை:^அவில்லை #;
+++verb+nonfin+complex+passive+perfect+past%=ட்+adjpart%=அ:^ட்டுள்ள #;
+++verb+fin+complex+passive+perfect+past%=ட்+3ple%=னர்:^ட்டுள்ளனர் #;
+ +verb+nonfin+complex+passive+verbalnoun+neg%=இல்லை:^வதில்லை #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+passive+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;

@@ -1,0 +1,26 @@
+--- ThamizhiVerbs-C62.lexc
++++ ThamizhiVerbs-C62.lexc
+@@ -511,6 +511,23 @@
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற HumanGenderedPartNoun;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq:^குற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அது+nom:^குறது #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அது+nom+add%=உம்:^குறதும் #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அது+acc%=ஐ:^குறதை #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அது+acc%=ஐ+add%=உம்:^குறதையும் #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அது+dat%=க்கு:^குறதுக்கு #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அது+inst%=ஆல்:^குறதால் #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அது+gen%=இன்:^குறதன் #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அது+loc%=இல்:^குறதில் #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அது+soc%=உடன்:^குறதுடன் #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அது+trans%=ஆக:^குறதாக #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அது+ques%=ஆ:^குறதா #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அது+comp%=என்று:^குறதுன்னு #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அவன்+human+3sgm+nom:^குறவன் #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அவன்+human+3sgm+acc%=ஐ:^குறவனை #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அவள்+human+3sgf+nom:^குறவள் #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அவர்+human+3sghe+nom:^குறவர் #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq+PartNoun%=அவர்+human+pl+nom:^குறவங்க #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ+psp_padi%=படி:^கிறபடி #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ+vpart_pin%=பின்:^கிறபின் #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ+vpart_potu%=போது:^கிறபோது #;

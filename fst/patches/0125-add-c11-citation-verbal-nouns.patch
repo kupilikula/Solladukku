@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -1365,6 +1365,7 @@
+ +verb+fin+complex+perfect+past%=த்+3ple%=ஆர்கள்:^த்துள்ளார்கள் #;
+ +verb+nonfin+sim+verbalnoun%=அது:^ப்பது #;
+ +verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^ப்பதும் #;
+++verb+nonfin+sim+verbalnoun%=தல்:^த்தல் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;

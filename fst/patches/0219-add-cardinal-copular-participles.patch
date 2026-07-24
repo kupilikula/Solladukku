@@ -1,0 +1,74 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn
++Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart
+ 
+ LEXICON Root
+ abbreviations;
+@@ -12,6 +12,7 @@
+ demonstrativesDist;
+ demonstrativesProx;
+ intensifiers ;
++cardinalCopularParticiples;
+ cardinals;
+ ordinals;
+ fractions;
+@@ -143,6 +144,54 @@
+ அரைமா      fraction; 
+ காணி      fraction; 
+ அரைக்காணி      fraction; 
++
++LEXICON cardinalCopularParticiples
++! Productive cardinal predicates with the copular adjectival participle -ஆன.
++பூஜ்ஜியம்:பூஜ்ஜியமான	cardinalCopularParticiple;
++சைபர்:சைபரான	cardinalCopularParticiple;
++ஒன்று:ஒன்றான	cardinalCopularParticiple;
++இரண்டு:இரண்டான	cardinalCopularParticiple;
++மூன்று:மூன்றான	cardinalCopularParticiple;
++நான்கு:நான்கான	cardinalCopularParticiple;
++ஐந்து:ஐந்தான	cardinalCopularParticiple;
++ஆறு:ஆறான	cardinalCopularParticiple;
++ஏழு:ஏழான	cardinalCopularParticiple;
++எட்டு:எட்டான	cardinalCopularParticiple;
++ஒன்பது:ஒன்பதான	cardinalCopularParticiple;
++பத்து:பத்தான	cardinalCopularParticiple;
++பதினொன்று:பதினொன்றான	cardinalCopularParticiple;
++பன்னிரண்டு:பன்னிரண்டான	cardinalCopularParticiple;
++பதின்மூன்று:பதின்மூன்றான	cardinalCopularParticiple;
++பதினான்கு:பதினான்கான	cardinalCopularParticiple;
++பதினைந்து:பதினைந்தான	cardinalCopularParticiple;
++பதினாறு:பதினாறான	cardinalCopularParticiple;
++பதினேழு:பதினேழான	cardinalCopularParticiple;
++பதினெட்டு:பதினெட்டான	cardinalCopularParticiple;
++பத்தொன்பது:பத்தொன்பதான	cardinalCopularParticiple;
++இருபது:இருபதான	cardinalCopularParticiple;
++இருபத்தியொன்று:இருபத்தியொன்றான	cardinalCopularParticiple;
++இருபத்தியிரண்டு:இருபத்தியிரண்டான	cardinalCopularParticiple;
++இருபத்திமூன்று:இருபத்திமூன்றான	cardinalCopularParticiple;
++இருபத்திநான்கு:இருபத்திநான்கான	cardinalCopularParticiple;
++இருபத்தியைந்து:இருபத்தியைந்தான	cardinalCopularParticiple;
++இருபத்தியாறு:இருபத்தியாறான	cardinalCopularParticiple;
++இருபத்தியேழு:இருபத்தியேழான	cardinalCopularParticiple;
++இருபத்தியெட்டு:இருபத்தியெட்டான	cardinalCopularParticiple;
++இருபத்தியொன்பது:இருபத்தியொன்பதான	cardinalCopularParticiple;
++முப்பது:முப்பதான	cardinalCopularParticiple;
++நாற்பது:நாற்பதான	cardinalCopularParticiple;
++இருநூறு:இருநூறான	cardinalCopularParticiple;
++ஐம்பது:ஐம்பதான	cardinalCopularParticiple;
++அறுபது:அறுபதான	cardinalCopularParticiple;
++தொண்ணூறு:தொண்ணூறான	cardinalCopularParticiple;
++நூறு:நூறான	cardinalCopularParticiple;
++எழுநூறு:எழுநூறான	cardinalCopularParticiple;
++ஆயிரம்:ஆயிரமான	cardinalCopularParticiple;
++லட்சம்:லட்சமான	cardinalCopularParticiple;
++கோடி:கோடியான	cardinalCopularParticiple;
++
++LEXICON cardinalCopularParticiple
+++cardinal+cop%=ஆ+adjpart%=ன:0 #;
+ 
+ LEXICON cardinals
+ பூஜ்ஜியம்      cardinal; 

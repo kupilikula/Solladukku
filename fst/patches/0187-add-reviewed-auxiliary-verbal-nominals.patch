@@ -1,0 +1,46 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -16568,6 +16568,8 @@
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+complex+aspect+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+aspect+verbalnoun%=அது:^வது #;
+++verb+nonfin+complex+aspect+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+nonfin+complex+aspect+neg%=ஆ+verbalnoun%=மை:^ாமை #;
+ +verb+nonfin+complex+aspect+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+aspect+con%=ஆல்:^டால் #;
+@@ -25709,6 +25711,8 @@
+ +verb+nonfin+complex+attitude+vpart%=இ+sandhik%=க்:^ிக் #;
+ +verb+nonfin+complex+attitude+vpart%=இ+sandhip%=ப்:^ிப் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+attitude+verbalnoun%=அது:^வது #;
+++verb+nonfin+complex+attitude+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+verbalnoun%=மை:^ாமை #;
+ +verb+nonfin+complex+attitude+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+attitude+con%=ஆல்:^ினால் #;
+@@ -28928,6 +28932,8 @@
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+attitude+verbalnoun%=அது:^வது #;
+++verb+nonfin+complex+attitude+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+verbalnoun%=மை:^ாமை #;
+ +verb+nonfin+complex+attitude+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+attitude+con%=ஆல்:^டால் #;
+@@ -80962,6 +80968,8 @@
+ +verb+nonfin+complex+nonattitude+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+complex+nonattitude+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+nonattitude+verbalnoun%=அது:^வது #;
+++verb+nonfin+complex+nonattitude+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+verbalnoun%=மை:^ாமை #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+nonattitude+con%=ஆல்:^டால் #;
+@@ -87407,6 +87415,7 @@
+ +verb+nonfin+complex+passive+vpart%=உ+sandhik%=க்:^டுக் #;
+ +verb+nonfin+complex+passive+vpart%=உ+sandhip%=ப்:^டுப் #;
+ +verb+nonfin+complex+passive+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+complex+passive+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+nonfin+complex+passive+neg%=ஆ+verbalnoun%=மை:^ாமை #;
+ +verb+nonfin+complex+passive+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+complex+passive+con%=ஆல்:^டால் #;

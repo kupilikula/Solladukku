@@ -1,0 +1,11 @@
+--- tamil-adverbs.lexc
++++ tamil-adverbs.lexc
+@@ -113,7 +113,7 @@
+ வகையாக	 adverbSandhi;
+ லேசாக	 adverbSandhi;
+ லபக்-என்று	 adverb; 
+-ரொம்ப	 adverbSandhi;
++ரொம்ப+intensifier:ரொம்ப	 adverbSandhi;
+ ரத்தினச்சுருக்கமாக	 adverbSandhi;
+ மொழுமொழு-என்று	 adverb; 
+ மொத்தத்தில்	 adverb; 

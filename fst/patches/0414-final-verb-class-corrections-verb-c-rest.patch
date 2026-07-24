@@ -1,0 +1,45 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -5,6 +5,9 @@
+ 
+ 
+ LEXICON Root
++கேள்+verb+fin+sim+imp%=∅+2sgh%=ஈர்:கேளீர் #;
++கேள்+verb+fin+sim+imp%=∅+2pl%=உங்கள்:கேளுங்கள் #;
++கேள்+verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:கேளுங்க #;
+ ! Complete prefixed ஏல் paradigms.
+ பங்கேறு+verb+fin+sim+imp%=∅+2sg%=∅:பங்கேறு #;
+ பங்கேறு+verb+fin+sim+middle+fut%=ப்+1pl%=ஓம்:பங்கேற்போம் #;
+@@ -2461,6 +2464,7 @@
+ +verb+nonfin+sim+inf%=அ+add%=உம்:வும் #;
+ 
+ LEXICON ClassFive
++படுத்து	C5Vinf;
+ 
+ ! Corpus-attested roots with inherited paradigm evidence
+ அடையாளப்படுத்து    C5Vinf;
+@@ -4719,7 +4723,6 @@
+ ஒன்றுகூடு	C5Vinf;
+ ஒன்றுக்கிருத்து	C5Vinf;
+ ஒப்பங்கொடுத்து	C5Vinf;
+-ஒப்படைத்து	C5Vinf;
+ ஒப்பனைகாட்டு	C5Vinf;
+ ஒப்பமிடு	C5Vinf;
+ ஒப்பாரிவைத்து	C5Vinf;
+@@ -18664,11 +18667,11 @@
+ +verb+nonfin+sim+vpart%=உ+sandhit%=த்:^றுத் #;
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^றுக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^றுப் #;
+-+verb+nonfin+sim+con%=ஆல்:^றால் #;
+-+verb+nonfin+sim+con%=ஆல்+foc%=ஏ:^றாலே #;
+-+verb+nonfin+sim+con%=ஆல்+foc%=தான்:^றால்தான் #;
+-+verb+nonfin+sim+con%=ஆல்+colloq:^றா #;
+-+verb+nonfin+sim+con%=ஆல்+add%=உம்:^றாலும் #;
+++verb+nonfin+sim+con%=ஆல்:^ற்றால் #;
+++verb+nonfin+sim+con%=ஆல்+foc%=ஏ:^ற்றாலே #;
+++verb+nonfin+sim+con%=ஆல்+foc%=தான்:^ற்றால்தான் #;
+++verb+nonfin+sim+con%=ஆல்+colloq:^ற்றா #;
+++verb+nonfin+sim+con%=ஆல்+add%=உம்:^ற்றாலும் #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ற்ற #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ற்ற HumanGenderedPartNoun;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ+psp_padi%=படி:^ற்றபடி #;

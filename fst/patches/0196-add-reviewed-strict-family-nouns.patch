@@ -1,0 +1,39 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -51989,6 +51989,11 @@
+ மாண்	C4SgRoot;
+ முனைவர்	C4SgRoot;
+ வியர்	C4SgRoot;
++
++! Reviewed strict ending-family noun coverage
++அறிவாய்வியல்	C4SgRoot;
++நிலப்படவரைவியல்	C4SgRoot;
++வேதவியல்	C4SgRoot;
+ LEXICON C4SgRoot
+ !        Root;
+         C4Inflections;
+@@ -66077,6 +66082,9 @@
+ 
+ ! Reviewed source-POS noun homographs; preserve existing non-noun readings
+ கண்டு	C7SgRoot;
++
++! Reviewed strict ending-family noun coverage
++கருப்பு	C7SgRoot;
+ LEXICON C7SgRoot
+ !        Root;
+         C7Inflections;
+@@ -126572,6 +126580,14 @@
+ 
+ ! Reviewed source-POS noun homographs; preserve existing non-noun readings
+ மூலம்	C15SgRoot;
++
++! Reviewed strict ending-family noun coverage
++சிதறியம்	C15SgRoot;
++நீரியம்	C15SgRoot;
++பரிதியம்	C15SgRoot;
++ரம்மியம்	C15SgRoot;
++வினைவியம்	C15SgRoot;
++வெடியம்	C15SgRoot;
+ LEXICON C15SgRoot
+ !        Root;
+         C15Inflections;

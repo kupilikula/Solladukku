@@ -1,0 +1,46 @@
+--- ThamizhiVerbs-C62.lexc
++++ ThamizhiVerbs-C62.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist +psp_padi +vpart_pin
+ 
+ LEXICON Root
+ 
+@@ -398,15 +398,25 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^ாவிட்டாலும் #;
+ +verb+nonfin+sim+past%=க்+adjpart%=அ:^க்க #;
+++verb+nonfin+sim+past%=க்+adjpart%=அ+psp_padi%=படி:^க்கபடி #;
+++verb+nonfin+sim+past%=க்+adjpart%=அ+vpart_pin%=பின்:^க்கபின் #;
+ +verb+nonfin+sim+past%=க்+adjpart%=அ+vpart_potu%=போது:^க்கபோது #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+++verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ+psp_padi%=படி:^கின்றபடி #;
+++verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ+vpart_pin%=பின்:^கின்றபின் #;
+ +verb+nonfin+sim+pres%=கின்ற்+adjpart%=அ+vpart_potu%=போது:^கின்றபோது #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+psp_padi%=படி:^கிறபடி #;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+vpart_pin%=பின்:^கிறபின் #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ+vpart_potu%=போது:^கிறபோது #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+psp_padi%=படி:^ும்படி #;
+++verb+nonfin+sim+futANDadjpart%=உம்+vpart_pin%=பின்:^ும்பின் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+vpart_maaru%=மாறு:^ுமாறு #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+vpart_potu%=போது:^ும்போது #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+++verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+psp_padi%=படி:^ாதபடி #;
+++verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+vpart_pin%=பின்:^ாதபின் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+vpart_potu%=போது:^ாதபோது #;
+ 
+ ! Complete modern present-perfect and short past human-plural paradigms.
+@@ -454,6 +464,8 @@
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^க்குள்ளதாகும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக+add%=உம்:^க்குள்ளதாகவும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ:^க்குள்ள #;
+++verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+psp_padi%=படி:^க்குள்ளபடி #;
+++verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+vpart_pin%=பின்:^க்குள்ளபின் #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+vpart_potu%=போது:^க்குள்ளபோது #;
+ 
+ ! Productive participial human and future-neuter nominals.

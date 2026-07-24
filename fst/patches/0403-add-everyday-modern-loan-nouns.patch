@@ -1,0 +1,128 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -193,6 +193,48 @@
+ இயக்குநர்	C16DirectSgRoot;
+ 
+ LEXICON ForeignFinalSg
++! Reviewed everyday modern loans from five-corpus saturation.
++மாஸ்	ForeignFinalNom;
++மாஸ்:மாஸ	ForeignSFinalInflections;
++எக்ஸ்	ForeignFinalNom;
++எக்ஸ்:எக்ஸ	ForeignSFinalInflections;
++எக்ஸ்பிரஸ்	ForeignFinalNom;
++எக்ஸ்பிரஸ்:எக்ஸ்பிரஸ	ForeignSFinalInflections;
++செக்ஸ்	ForeignFinalNom;
++செக்ஸ்:செக்ஸ	ForeignSFinalInflections;
++மிஸ்	ForeignFinalNom;
++மிஸ்:மிஸ	ForeignSFinalInflections;
++போஸ்	ForeignFinalNom;
++போஸ்:போஸ	ForeignSFinalInflections;
++டோஸ்	ForeignFinalNom;
++டோஸ்:டோஸ	ForeignSFinalInflections;
++பாலிவுட்	ForeignFinalNom;
++பாலிவுட்:பாலிவுட	ForeignDoubledTTFinalInflections;
++நீட்	ForeignFinalNom;
++நீட்:நீட	ForeignDoubledTTFinalInflections;
++அப்டேட்	ForeignFinalNom;
++அப்டேட்:அப்டேட	ForeignDoubledTTFinalInflections;
++லைட்	ForeignFinalNom;
++லைட்:லைட	ForeignDoubledTTFinalInflections;
++எஸ்டேட்	ForeignFinalNom;
++எஸ்டேட்:எஸ்டேட	ForeignDoubledTTFinalInflections;
++வெஸ்ட்	ForeignFinalNom;
++வெஸ்ட்:வெஸ்ட	ForeignDoubledTTFinalInflections;
++மார்க்கெட்	ForeignFinalNom;
++மார்க்கெட்:மார்க்கெட	ForeignDoubledTTFinalInflections;
++சீட்	ForeignFinalNom;
++சீட்:சீட	ForeignDoubledTTFinalInflections;
++கான்கிரீட்	ForeignFinalNom;
++கான்கிரீட்:கான்கிரீட	ForeignDoubledTTFinalInflections;
++கார்ப்பரேட்	ForeignFinalNom;
++கார்ப்பரேட்:கார்ப்பரேட	ForeignDoubledTTFinalInflections;
++பேக்	ForeignFinalNom;
++பேக்:பேக	ForeignDoubledKKFinalInflections;
++ஒலிம்பிக்	ForeignFinalNom;
++ஒலிம்பிக்:ஒலிம்பிக	ForeignDoubledKKFinalInflections;
++குரூப்	ForeignFinalNom;
++குரூப்:குரூப	ForeignDoubledPPFinalInflections;
++பஸ்:பஸ்ச	ForeignSFinalInflections;
+ ! Reviewed recurrent modern common nouns from five-corpus saturation.
+ பிளஸ்	ForeignFinalNom;
+ பிளஸ்:பிளஸ	ForeignSFinalInflections;
+@@ -1921,6 +1963,12 @@
+ +pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ 
+ LEXICON C1Sg
++! Reviewed everyday modern loans from five-corpus saturation.
++டெல்டா	C1SgRoot;
++மெட்ரோ	C1SgRoot;
++தாலுகா	C1SgRoot;
++டேட்டா	C1SgRoot;
++விசா	C1SgRoot;
+ ! Reviewed recurrent modern common nouns from five-corpus saturation.
+ ஹீரோ	C1SgRoot;
+ ஆடியோ	C1SgRoot;
+@@ -4086,6 +4134,9 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++! Reviewed everyday modern loans from five-corpus saturation.
++கமிட்டி	C2SgRoot;
++டெலிவரி	C2SgRoot;
+ ! Reviewed recurrent modern common nouns from five-corpus saturation.
+ காமெடி	C2SgRoot;
+ ! Reviewed frequent modern-Tamil roots from five-corpus saturation.
+@@ -45387,6 +45438,15 @@
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^க்களின்கீழேயிருந்தும் #;
+ LEXICON C4Sg
++! Reviewed everyday modern loans from five-corpus saturation.
++டைம்	C4SgRoot;
++ரியல்	C4SgRoot;
++ரெயில்வே	C4SgRoot;
++கவுன்சில்	C4SgRoot;
++சார்ஜ்	C4SgRoot;
++பில்	C4SgRoot;
++சீல்	C4SgRoot;
++செல்	C4SgRoot;
+ ! Reviewed recurrent modern common nouns from five-corpus saturation.
+ ரெயில்	C4SgRoot;
+ ! Reviewed frequent modern-Tamil roots from five-corpus saturation.
+@@ -56932,6 +56992,8 @@
+ 
+ 
+ LEXICON C7Sg
++! Reviewed everyday modern loans from five-corpus saturation.
++ஆண்ட்ராய்டு	C7SgRoot;
+ ! Reviewed recurrent modern common nouns from five-corpus saturation.
+ வார்டு	C7SgRoot;
+ சொகுசு	C7SgRoot;
+@@ -72864,6 +72926,10 @@
+ +noun+pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ LEXICON C11Sg
++! Reviewed everyday modern loans from five-corpus saturation.
++டவுன்	C11SgRoot;
++லோன்	C11SgRoot;
++ஸ்பூன்	C11SgRoot;
+ ! Reviewed recurrent modern common nouns from five-corpus saturation.
+ சீசன்	C11SgRoot;
+ ஸ்மார்ட்போன்	C11SgRoot;
+@@ -98793,6 +98859,8 @@
+ +noun+gen+psp_keele_iruntu+add:^ின்கீழேயிருந்தும் #;
+ 
+ LEXICON C15Sg
++! Reviewed everyday modern loans from five-corpus saturation.
++கால்சியம்	C15SgRoot;
+ ! Reviewed frequent modern-Tamil roots from five-corpus saturation.
+ உச்சநீதிமன்றம்	C15SgRoot;
+ ! Reviewed common lexical readings recurring across development corpora.
+@@ -133987,6 +134055,8 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^ங்களின்கீழேயிருந்தும் #;
+ 
+ LEXICON C16Sg
++! Reviewed everyday modern loans from five-corpus saturation.
++டைரக்டர்	C16DirectSgRoot;
+ ! Reviewed recurrent modern common nouns from five-corpus saturation.
+ மாஸ்டர்	C16DirectSgRoot;
+ மேயர்	C16DirectSgRoot;

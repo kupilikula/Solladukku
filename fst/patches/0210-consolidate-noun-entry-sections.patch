@@ -1,0 +1,16 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -3162,13 +3162,6 @@
+ Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit
+ 
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+-
+-LEXICON Root
+-
+-nounClasses ;
+-
+-LEXICON nounClasses
+-C2Sg;    !எலி, நெய் 
+ 
+ LEXICON C2Sg
+ நிதி	  C2SgRoot ;

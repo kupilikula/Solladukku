@@ -1,0 +1,16 @@
+--- ThamizhiFST-C3.foma
++++ ThamizhiFST-C3.foma
+@@ -29,7 +29,12 @@
+ 	  	C3R5A		.o.
+ 	  	C3R5B;
+ 
+-regex ClassThreeGrammar;
++! Reviewed citations whose literal ல்த sequence must bypass global C3R4
++regex ClassThreeGrammar
++    | ["அகல்+verb+nonfin+sim+verbalnoun=தல்" .x. "அகல்தல்"]
++    | ["அயல்+verb+nonfin+sim+verbalnoun=தல்" .x. "அயல்தல்"]
++    | ["அயில்+verb+nonfin+sim+verbalnoun=தல்" .x. "அயில்தல்"]
++    | ["அழல்+verb+nonfin+sim+verbalnoun=தல்" .x. "அழல்தல்"];
+ 
+ 
+ 

@@ -1,0 +1,33 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -45,6 +45,7 @@
+ ஏல்+verb+fin+sim+middle+fut%=ப்+3pln%=∅:ஏற்கும் #;
+ ஏல்+verb+fin+sim+imp%=∅+2sg%=∅:ஏல் #;
+ ஏல்+verb+nonfin+sim+inf%=அ:ஏற்க #;
++ஏல்+verb+nonfin+sim+inf%=அ+foc%=ஏ:ஏற்கவே #;
+ ஏல்+verb+nonfin+sim+vpart%=உ:ஏற்று #;
+ ஏல்+verb+nonfin+sim+past%=த்+adjpart%=அ:ஏற்ற #;
+ ஏல்+verb+nonfin+sim+pres%=கிற்+adjpart%=அ:ஏற்கிற #;
+@@ -57,11 +58,14 @@
+ ஏல்+verb+nonfin+sim+verbalnoun%=தல்:ஏற்றல் #;
+ ஏல்+verb+nonfin+sim+con%=ஆல்:ஏற்றால் #;
+ பங்கேறு+verb+nonfin+sim+inf%=அ:பங்கேற்க #;
++பங்கேறு+verb+nonfin+sim+inf%=அ+foc%=ஏ:பங்கேற்கவே #;
+ பதவியேறு+verb+nonfin+sim+inf%=அ:பதவியேற்க #;
++பதவியேறு+verb+nonfin+sim+inf%=அ+foc%=ஏ:பதவியேற்கவே #;
+ வெளியிடு+verb+nonfin+sim+verbalnoun%=தல்:வெளியிடல் #;
+ ModernC9Imperatives;
+ ! Irregular infinitive of என், required by the productive passive எனப்படு.
+ என்+verb+nonfin+sim+inf%=அ:என #;
++என்+verb+nonfin+sim+inf%=அ+foc%=ஏ:எனவே #;
+ என்+verb+nonfin+sim+inf%=அ+add%=உம்:எனவும் #;
+ ClassOne ;
+ ClassTwo ;
+@@ -2231,6 +2235,7 @@
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+PartNoun%=அவர்+human+pl+soc+add:^ண்டுள்ளவர்களுடனும் #;
+ LEXICON ModernBareInf
+ +verb+nonfin+sim+inf%=அ: #;
+++verb+nonfin+sim+inf%=அ+foc%=ஏ:வே #;
+ +verb+nonfin+sim+inf%=அ+add%=உம்:வும் #;
+ 
+ LEXICON ClassFive

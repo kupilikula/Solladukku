@@ -1,0 +1,12 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -241,6 +241,9 @@
+ 
+ 
+ LEXICON C12Vinf
++
++! Reviewed dictionary citation continuation
+++verb+nonfin+sim+verbalnoun%=தல்:^த்தல் #;
+ 
+ +verb+fin+sim+strong+past%=த்+1sg%=ஏன்:^ந்தேன் #;
+ +verb+fin+sim+strong+past%=த்+1pl%=ஓம்:^ந்தோம் #;

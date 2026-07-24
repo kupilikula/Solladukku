@@ -1,0 +1,33 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -75218,8 +75218,10 @@
+ +verb+nonfin+complex+nonattitude+strong+pres%=கின்ற்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^கின்றதாகவும் #;
+ +verb+fin+complex+nonattitude+strong+pres%=கின்ற்+3pln%=அன:^கின்றன VerbQuestionNeuterPlural;
+ +verb+fin+complex+nonattitude+weak+fut%=வ்+3sghe%=ஆர்:^வார் VerbQuestion;
+-+verb+fin+complex+nonattitude+strong+fut%=உம்+3sgn%=∅:^ம் VerbQuestion;
+-+verb+fin+complex+nonattitude+strong+fut%=உம்+3pln%=∅:^ம் VerbQuestion;
+++verb+fin+complex+nonattitude+strong+fut%=உம்+3sgn%=∅:^ம் #;
+++verb+fin+complex+nonattitude+strong+fut%=உம்+3sgn%=∅+ques%=ஆ:^ுமா #;
+++verb+fin+complex+nonattitude+strong+fut%=உம்+3pln%=∅:^ம் #;
+++verb+fin+complex+nonattitude+strong+fut%=உம்+3pln%=∅+ques%=ஆ:^ுமா #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ:^கின்ற #;
+ +verb+nonfin+complex+nonattitude+weak+fut%=வ்+PartNoun%=அவர்+human+nom:^பவர் #;
+ +verb+nonfin+complex+nonattitude+weak+fut%=வ்+PartNoun%=அவர்+human+nom+add:^பவரும் #;
+--- ThamizhiFST-otherthan-3-4-62-11-12.foma
++++ ThamizhiFST-otherthan-3-4-62-11-12.foma
+@@ -93,6 +93,7 @@
+ define C17Present {வா} -> {வரு} || _ "^" [{க}];
+ define C17WeakFuture {வா} -> {வரு} || _ "^" [{வ}];
+ define C17NeuterFutureU {வா} -> {வர} || _ "^" [{ும்}];
++define C17QuestionNeuterFuture {வா} -> {வர} || _ "^" [{ுமா}];
+ define C17NeuterFutureM {வா} -> {வரு} || _ "^" [{ம்}];
+ 
+ define C17Rule1 {வா} -> {வ}  || _ "^" [{ந்}];
+@@ -175,6 +176,7 @@
+ 			C17Present         	.o.
+ 			C17WeakFuture      	.o.
+ 			C17NeuterFutureU   	.o.
++			C17QuestionNeuterFuture	.o.
+ 			C17NeuterFutureM   	.o.
+ 			C17Rule1           	.o.
+ 			C17Rule2           	.o.

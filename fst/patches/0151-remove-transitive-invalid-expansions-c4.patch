@@ -1,0 +1,3176 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -4671,7 +4671,6 @@
+ 
+ LEXICON ClassMudi11
+ அழப்படமுடி            ClassMudi11Inf; 
+-வைப்படமுடி            ClassMudi11Inf; 
+ கொய்யப்படமுடி            ClassMudi11Inf; 
+ எய்யப்படமுடி            ClassMudi11Inf; 
+ செய்யப்படமுடி            ClassMudi11Inf; 
+@@ -4679,16 +4678,9 @@
+ பொரப்படமுடி            ClassMudi11Inf; 
+ பெய்யப்படமுடி            ClassMudi11Inf; 
+ தொழப்படமுடி            ClassMudi11Inf; 
+-விற்கப்படமுடி            ClassMudi11Inf; 
+-நூற்கப்படமுடி            ClassMudi11Inf; 
+-நோற்கப்படமுடி            ClassMudi11Inf; 
+-தோற்கப்படமுடி            ClassMudi11Inf; 
+-கற்கப்படமுடி            ClassMudi11Inf; 
+-கிற்கப்படமுடி            ClassMudi11Inf; 
+ அழிக்கப்படமுடி            ClassMudi11Inf; 
+ அழைக்கப்படமுடி            ClassMudi11Inf; 
+ அளிக்கப்படமுடி            ClassMudi11Inf; 
+-அவிழ்ப்படமுடி            ClassMudi11Inf; 
+ அவிக்கப்படமுடி            ClassMudi11Inf; 
+ அவ்விக்கப்படமுடி            ClassMudi11Inf; 
+ அவைக்கப்படமுடி            ClassMudi11Inf; 
+@@ -4762,7 +4754,6 @@
+ அஞ்சிக்கப்படமுடி            ClassMudi11Inf; 
+ அஞ்சலிக்கப்படமுடி            ClassMudi11Inf; 
+ வழிக்கப்படமுடி            ClassMudi11Inf; 
+-வழவழப்படமுடி            ClassMudi11Inf; 
+ விழிக்கப்படமுடி            ClassMudi11Inf; 
+ விழுக்கப்படமுடி            ClassMudi11Inf; 
+ விளிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -4815,7 +4806,6 @@
+ விசனிக்கப்படமுடி            ClassMudi11Inf; 
+ விசேடிக்கப்படமுடி            ClassMudi11Inf; 
+ விங்களிக்கப்படமுடி            ClassMudi11Inf; 
+-வளவளப்படமுடி            ClassMudi11Inf; 
+ வளர்க்கப்படமுடி            ClassMudi11Inf; 
+ வளைக்கப்படமுடி            ClassMudi11Inf; 
+ வயிர்க்கப்படமுடி            ClassMudi11Inf; 
+@@ -4855,7 +4845,6 @@
+ வெக்களிக்கப்படமுடி            ClassMudi11Inf; 
+ வெக்காளிக்கப்படமுடி            ClassMudi11Inf; 
+ வெந்திக்கப்படமுடி            ClassMudi11Inf; 
+-வெலவெலப்படமுடி            ClassMudi11Inf; 
+ வெறிக்கப்படமுடி            ClassMudi11Inf; 
+ வெடிக்கப்படமுடி            ClassMudi11Inf; 
+ வெடுவெடுக்கப்படமுடி            ClassMudi11Inf; 
+@@ -4874,7 +4863,6 @@
+ வன்னிக்கப்படமுடி            ClassMudi11Inf; 
+ வலிக்கப்படமுடி            ClassMudi11Inf; 
+ வலுக்கப்படமுடி            ClassMudi11Inf; 
+-வலப்படமுடி            ClassMudi11Inf; 
+ வறுக்கப்படமுடி            ClassMudi11Inf; 
+ வடிக்கப்படமுடி            ClassMudi11Inf; 
+ வட்டிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -4893,7 +4881,6 @@
+ வஞ்சிக்கப்படமுடி            ClassMudi11Inf; 
+ யாபிக்கப்படமுடி            ClassMudi11Inf; 
+ யாசிக்கப்படமுடி            ClassMudi11Inf; 
+-யாப்படமுடி            ClassMudi11Inf; 
+ யோகிக்கப்படமுடி            ClassMudi11Inf; 
+ யோசிக்கப்படமுடி            ClassMudi11Inf; 
+ யூகிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -4924,7 +4911,6 @@
+ திஷேதிக்கப்படமுடி            ClassMudi11Inf; 
+ தளிர்க்கப்படமுடி            ClassMudi11Inf; 
+ தளிக்கப்படமுடி            ClassMudi11Inf; 
+-தளதளப்படமுடி            ClassMudi11Inf; 
+ தளைக்கப்படமுடி            ClassMudi11Inf; 
+ தவிர்க்கப்படமுடி            ClassMudi11Inf; 
+ தவிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -4973,7 +4959,6 @@
+ தமிக்கப்படமுடி            ClassMudi11Inf; 
+ தம்பிக்கப்படமுடி            ClassMudi11Inf; 
+ தமரிக்கப்படமுடி            ClassMudi11Inf; 
+-தாழ்ப்படமுடி            ClassMudi11Inf; 
+ தாளிக்கப்படமுடி            ClassMudi11Inf; 
+ தாவிக்கப்படமுடி            ClassMudi11Inf; 
+ தாவரிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5020,18 +5005,15 @@
+ தப்பிக்கப்படமுடி            ClassMudi11Inf; 
+ தனிக்கப்படமுடி            ClassMudi11Inf; 
+ தறிக்கப்படமுடி            ClassMudi11Inf; 
+-தறதறப்படமுடி            ClassMudi11Inf; 
+ தற்கிக்கப்படமுடி            ClassMudi11Inf; 
+ தற்காலிக்கப்படமுடி            ClassMudi11Inf; 
+ தற்பிக்கப்படமுடி            ClassMudi11Inf; 
+ தடிக்கப்படமுடி            ClassMudi11Inf; 
+ தடுபுடுக்கப்படமுடி            ClassMudi11Inf; 
+ தடுக்கப்படமுடி            ClassMudi11Inf; 
+-தடதடப்படமுடி            ClassMudi11Inf; 
+ தடாய்க்கப்படமுடி            ClassMudi11Inf; 
+ தடாரிக்கப்படமுடி            ClassMudi11Inf; 
+ தடைக்கப்படமுடி            ClassMudi11Inf; 
+-தடபடப்படமுடி            ClassMudi11Inf; 
+ தசைக்கப்படமுடி            ClassMudi11Inf; 
+ தேய்க்கப்படமுடி            ClassMudi11Inf; 
+ தேர்க்கப்படமுடி            ClassMudi11Inf; 
+@@ -5048,7 +5030,6 @@
+ தீய்க்கப்படமுடி            ClassMudi11Inf; 
+ தீர்மானிக்கப்படமுடி            ClassMudi11Inf; 
+ தீர்க்கப்படமுடி            ClassMudi11Inf; 
+-தீப்படமுடி            ClassMudi11Inf; 
+ ருசிக்கப்படமுடி            ClassMudi11Inf; 
+ ரமிக்கப்படமுடி            ClassMudi11Inf; 
+ ரசிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5066,7 +5047,6 @@
+ மிறைக்கப்படமுடி            ClassMudi11Inf; 
+ மிடிக்கப்படமுடி            ClassMudi11Inf; 
+ மிடுமிடுக்கப்படமுடி            ClassMudi11Inf; 
+-மளமளப்படமுடி            ClassMudi11Inf; 
+ முழிக்கப்படமுடி            ClassMudi11Inf; 
+ முழுக்கப்படமுடி            ClassMudi11Inf; 
+ முழைக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5077,7 +5057,6 @@
+ முருமுருக்கப்படமுடி            ClassMudi11Inf; 
+ மும்முரிக்கப்படமுடி            ClassMudi11Inf; 
+ முண்டிக்கப்படமுடி            ClassMudi11Inf; 
+-முகிழ்ப்படமுடி            ClassMudi11Inf; 
+ முகிக்கப்படமுடி            ClassMudi11Inf; 
+ முகுளிக்கப்படமுடி            ClassMudi11Inf; 
+ முக்குளிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5097,7 +5076,6 @@
+ மரிக்கப்படமுடி            ClassMudi11Inf; 
+ மர்த்திக்கப்படமுடி            ClassMudi11Inf; 
+ மரணிக்கப்படமுடி            ClassMudi11Inf; 
+-மரப்படமுடி            ClassMudi11Inf; 
+ மாய்க்கப்படமுடி            ClassMudi11Inf; 
+ மானிக்கப்படமுடி            ClassMudi11Inf; 
+ மண்டலிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5135,16 +5113,12 @@
+ மட்டிக்கப்படமுடி            ClassMudi11Inf; 
+ மடலிக்கப்படமுடி            ClassMudi11Inf; 
+ மசிக்கப்படமுடி            ClassMudi11Inf; 
+-மசமசப்படமுடி            ClassMudi11Inf; 
+ மேய்க்கப்படமுடி            ClassMudi11Inf; 
+ மோகரிக்கப்படமுடி            ClassMudi11Inf; 
+ மோசிக்கப்படமுடி            ClassMudi11Inf; 
+-மூழ்ப்படமுடி            ClassMudi11Inf; 
+ மூர்த்தீகரிக்கப்படமுடி            ClassMudi11Inf; 
+ மூர்ச்சிக்கப்படமுடி            ClassMudi11Inf; 
+ மூரலிக்கப்படமுடி            ClassMudi11Inf; 
+-மூப்படமுடி            ClassMudi11Inf; 
+-மொரமொரப்படமுடி            ClassMudi11Inf; 
+ கழிக்கப்படமுடி            ClassMudi11Inf; 
+ கழுகுழுக்கப்படமுடி            ClassMudi11Inf; 
+ கிழிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5160,7 +5134,6 @@
+ கிடைக்கப்படமுடி            ClassMudi11Inf; 
+ களிக்கப்படமுடி            ClassMudi11Inf; 
+ களைக்கப்படமுடி            ClassMudi11Inf; 
+-கவிழ்ப்படமுடி            ClassMudi11Inf; 
+ கவிக்கப்படமுடி            ClassMudi11Inf; 
+ கவர்க்கப்படமுடி            ClassMudi11Inf; 
+ கவைக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5177,7 +5150,6 @@
+ குருப்பிக்கப்படமுடி            ClassMudi11Inf; 
+ குருக்கப்படமுடி            ClassMudi11Inf; 
+ குமிழிக்கப்படமுடி            ClassMudi11Inf; 
+-குமிழ்ப்படமுடி            ClassMudi11Inf; 
+ குமிட்டிக்கப்படமுடி            ClassMudi11Inf; 
+ குமிக்கப்படமுடி            ClassMudi11Inf; 
+ குமுகுமுக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5212,7 +5184,6 @@
+ கம்பலைக்கப்படமுடி            ClassMudi11Inf; 
+ கம்பீரிக்கப்படமுடி            ClassMudi11Inf; 
+ கமைக்கப்படமுடி            ClassMudi11Inf; 
+-காழ்ப்படமுடி            ClassMudi11Inf; 
+ காய்க்கப்படமுடி            ClassMudi11Inf; 
+ காதலிக்கப்படமுடி            ClassMudi11Inf; 
+ கார்க்கப்படமுடி            ClassMudi11Inf; 
+@@ -5220,7 +5191,6 @@
+ காெழுக்கப்படமுடி            ClassMudi11Inf; 
+ காெலுகொலுக்கப்படமுடி            ClassMudi11Inf; 
+ காலிக்கப்படமுடி            ClassMudi11Inf; 
+-காப்படமுடி            ClassMudi11Inf; 
+ கணிசிக்கப்படமுடி            ClassMudi11Inf; 
+ கணிக்கப்படமுடி            ClassMudi11Inf; 
+ கண்காணிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5241,7 +5211,6 @@
+ கெலிக்கப்படமுடி            ClassMudi11Inf; 
+ கெடிக்கப்படமுடி            ClassMudi11Inf; 
+ கெட்டிக்கப்படமுடி            ClassMudi11Inf; 
+-கபளீப்படமுடி            ClassMudi11Inf; 
+ கப்பிக்கப்படமுடி            ClassMudi11Inf; 
+ கந்திக்கப்படமுடி            ClassMudi11Inf; 
+ கனிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5252,7 +5221,6 @@
+ கலாப்பிக்கப்படமுடி            ClassMudi11Inf; 
+ கலைக்கப்படமுடி            ClassMudi11Inf; 
+ கலகிக்கப்படமுடி            ClassMudi11Inf; 
+-கலகலப்படமுடி            ClassMudi11Inf; 
+ கறுகறுக்கப்படமுடி            ClassMudi11Inf; 
+ கற்பிக்கப்படமுடி            ClassMudi11Inf; 
+ கறைக்கணிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5261,13 +5229,10 @@
+ கடுகடுக்கப்படமுடி            ClassMudi11Inf; 
+ கடுக்கப்படமுடி            ClassMudi11Inf; 
+ கடாட்சிக்கப்படமுடி            ClassMudi11Inf; 
+-கடகடப்படமுடி            ClassMudi11Inf; 
+-கசகசப்படமுடி            ClassMudi11Inf; 
+ கோர்க்கப்படமுடி            ClassMudi11Inf; 
+ கோப்படமுடி            ClassMudi11Inf; 
+ கேந்திரிக்கப்படமுடி            ClassMudi11Inf; 
+ கேடாய்க்கப்படமுடி            ClassMudi11Inf; 
+-கூழ்ப்படமுடி            ClassMudi11Inf; 
+ கூர்க்கப்படமுடி            ClassMudi11Inf; 
+ கூடலிக்கப்படமுடி            ClassMudi11Inf; 
+ கீா்த்திக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5376,10 +5341,8 @@
+ பராமரிக்கப்படமுடி            ClassMudi11Inf; 
+ பராக்கிரமிக்கப்படமுடி            ClassMudi11Inf; 
+ பராபரிக்கப்படமுடி            ClassMudi11Inf; 
+-பரபரப்படமுடி            ClassMudi11Inf; 
+ பாவிக்கப்படமுடி            ClassMudi11Inf; 
+ பாதிக்கப்படமுடி            ClassMudi11Inf; 
+-பாதுகாப்படமுடி            ClassMudi11Inf; 
+ பாரிக்கப்படமுடி            ClassMudi11Inf; 
+ பார்க்கப்படமுடி            ClassMudi11Inf; 
+ பாணிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5388,11 +5351,9 @@
+ பானிக்கப்படமுடி            ClassMudi11Inf; 
+ பாலிக்கப்படமுடி            ClassMudi11Inf; 
+ பாடிக்கப்படமுடி            ClassMudi11Inf; 
+-பாப்படமுடி            ClassMudi11Inf; 
+ பணிக்கப்படமுடி            ClassMudi11Inf; 
+ பணைக்கப்படமுடி            ClassMudi11Inf; 
+ பையர்க்கப்படமுடி            ClassMudi11Inf; 
+-பையாப்படமுடி            ClassMudi11Inf; 
+ பைக்கப்படமுடி            ClassMudi11Inf; 
+ பெயர்க்கப்படமுடி            ClassMudi11Inf; 
+ பெருக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5419,17 +5380,14 @@
+ பந்திக்கப்படமுடி            ClassMudi11Inf; 
+ பனிக்கப்படமுடி            ClassMudi11Inf; 
+ பலிக்கப்படமுடி            ClassMudi11Inf; 
+-பலப்படமுடி            ClassMudi11Inf; 
+ பறிக்கப்படமுடி            ClassMudi11Inf; 
+ பறைக்கப்படமுடி            ClassMudi11Inf; 
+ படிக்கப்படமுடி            ClassMudi11Inf; 
+ பட்சிக்கப்படமுடி            ClassMudi11Inf; 
+ படைக்கப்படமுடி            ClassMudi11Inf; 
+-படபடப்படமுடி            ClassMudi11Inf; 
+ பசிக்கப்படமுடி            ClassMudi11Inf; 
+ பசுக்கப்படமுடி            ClassMudi11Inf; 
+ பசைக்கப்படமுடி            ClassMudi11Inf; 
+-பசபசப்படமுடி            ClassMudi11Inf; 
+ பேழ்கணிக்கப்படமுடி            ClassMudi11Inf; 
+ பேதிக்கப்படமுடி            ClassMudi11Inf; 
+ பேதலிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5450,7 +5408,6 @@
+ பூலிக்கப்படமுடி            ClassMudi11Inf; 
+ பூசிக்கப்படமுடி            ClassMudi11Inf; 
+ பூஷிக்கப்படமுடி            ClassMudi11Inf; 
+-பூப்படமுடி            ClassMudi11Inf; 
+ பீழிக்கப்படமுடி            ClassMudi11Inf; 
+ பீடிக்கப்படமுடி            ClassMudi11Inf; 
+ பஞ்சரிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5487,11 +5444,9 @@
+ நிச்சயிக்கப்படமுடி            ClassMudi11Inf; 
+ நளிர்விக்கப்படமுடி            ClassMudi11Inf; 
+ நளுநொளுக்கப்படமுடி            ClassMudi11Inf; 
+-நவிழ்ப்படமுடி            ClassMudi11Inf; 
+ நவிக்கப்படமுடி            ClassMudi11Inf; 
+ நவைக்கப்படமுடி            ClassMudi11Inf; 
+ நயப்பிக்கப்படமுடி            ClassMudi11Inf; 
+-நயப்படமுடி            ClassMudi11Inf; 
+ நுழைக்கப்படமுடி            ClassMudi11Inf; 
+ நுதிக்கப்படமுடி            ClassMudi11Inf; 
+ நுதுக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5512,7 +5467,6 @@
+ நமைக்கப்படமுடி            ClassMudi11Inf; 
+ நமக்கரிக்கப்படமுடி            ClassMudi11Inf; 
+ நமற்கரிக்கப்படமுடி            ClassMudi11Inf; 
+-நமப்படமுடி            ClassMudi11Inf; 
+ நாணிக்கப்படமுடி            ClassMudi11Inf; 
+ நாசிக்கப்படமுடி            ClassMudi11Inf; 
+ நைவேதிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5529,7 +5483,6 @@
+ நொடிக்கப்படமுடி            ClassMudi11Inf; 
+ நொடுக்கப்படமுடி            ClassMudi11Inf; 
+ நொசிக்கப்படமுடி            ClassMudi11Inf; 
+-நெகிழ்ப்படமுடி            ClassMudi11Inf; 
+ நெறிக்கப்படமுடி            ClassMudi11Inf; 
+ நெறுமுக்கப்படமுடி            ClassMudi11Inf; 
+ நெறுநெறுக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5553,8 +5506,6 @@
+ நீர்க்கப்படமுடி            ClassMudi11Inf; 
+ நீடிக்கப்படமுடி            ClassMudi11Inf; 
+ நீட்டிக்கப்படமுடி            ClassMudi11Inf; 
+-நீப்படமுடி            ClassMudi11Inf; 
+-நொளநொளப்படமுடி            ClassMudi11Inf; 
+ லிபிக்கப்படமுடி            ClassMudi11Inf; 
+ லபிக்கப்படமுடி            ClassMudi11Inf; 
+ லச்சிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5570,8 +5521,6 @@
+ சிருட்டிக்கப்படமுடி            ClassMudi11Inf; 
+ சிராய்க்கப்படமுடி            ClassMudi11Inf; 
+ சிரைக்கப்படமுடி            ClassMudi11Inf; 
+-சிரப்படமுடி            ClassMudi11Inf; 
+-சிமிழ்ப்படமுடி            ClassMudi11Inf; 
+ சிமிளிக்கப்படமுடி            ClassMudi11Inf; 
+ சிம்பிளிக்கப்படமுடி            ClassMudi11Inf; 
+ சிமாளிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5637,11 +5586,9 @@
+ சத்திக்கப்படமுடி            ClassMudi11Inf; 
+ சத்தாய்க்கப்படமுடி            ClassMudi11Inf; 
+ சதைக்கப்படமுடி            ClassMudi11Inf; 
+-சதசதப்படமுடி            ClassMudi11Inf; 
+ சரிக்கப்படமுடி            ClassMudi11Inf; 
+ சர்த்திக்கப்படமுடி            ClassMudi11Inf; 
+ சரைக்கப்படமுடி            ClassMudi11Inf; 
+-சமழ்ப்படமுடி            ClassMudi11Inf; 
+ சமிக்கப்படமுடி            ClassMudi11Inf; 
+ சமுதாய்க்கப்படமுடி            ClassMudi11Inf; 
+ சம்ரட்சிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5718,7 +5665,6 @@
+ சட்டிக்கப்படமுடி            ClassMudi11Inf; 
+ சடாய்க்கப்படமுடி            ClassMudi11Inf; 
+ சடைக்கப்படமுடி            ClassMudi11Inf; 
+-சடபுடப்படமுடி            ClassMudi11Inf; 
+ சேவிக்கப்படமுடி            ClassMudi11Inf; 
+ சேதிக்கப்படமுடி            ClassMudi11Inf; 
+ சேர்க்கப்படமுடி            ClassMudi11Inf; 
+@@ -5752,13 +5698,11 @@
+ சீரணிக்கப்படமுடி            ClassMudi11Inf; 
+ சீனிக்கப்படமுடி            ClassMudi11Inf; 
+ சீலிக்கப்படமுடி            ClassMudi11Inf; 
+-சீப்படமுடி            ClassMudi11Inf; 
+ சஞ்சரிக்கப்படமுடி            ClassMudi11Inf; 
+ ஞாபிக்கப்படமுடி            ClassMudi11Inf; 
+ ஞெமிரிக்கப்படமுடி            ClassMudi11Inf; 
+ ஞெமிர்க்கப்படமுடி            ClassMudi11Inf; 
+ ஜமாய்க்கப்படமுடி            ClassMudi11Inf; 
+-ஊழ்ப்படமுடி            ClassMudi11Inf; 
+ ஊழலிக்கப்படமுடி            ClassMudi11Inf; 
+ ஊர்க்கப்படமுடி            ClassMudi11Inf; 
+ ஊட்டிக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5825,7 +5769,6 @@
+ இரட்சிக்கப்படமுடி            ClassMudi11Inf; 
+ இரசிக்கப்படமுடி            ClassMudi11Inf; 
+ இரேசிக்கப்படமுடி            ClassMudi11Inf; 
+-இமிழ்ப்படமுடி            ClassMudi11Inf; 
+ இமிசிக்கப்படமுடி            ClassMudi11Inf; 
+ இமைக்கப்படமுடி            ClassMudi11Inf; 
+ இணைக்கப்படமுடி            ClassMudi11Inf; 
+@@ -5878,7 +5821,6 @@
+ ஆசீா்வதிக்கப்படமுடி            ClassMudi11Inf; 
+ உழுக்கப்படமுடி            ClassMudi11Inf; 
+ உழைக்கப்படமுடி            ClassMudi11Inf; 
+-உளுக்காப்படமுடி            ClassMudi11Inf; 
+ உளுக்கப்படமுடி            ClassMudi11Inf; 
+ உளைக்கப்படமுடி            ClassMudi11Inf; 
+ உவர்க்கப்படமுடி            ClassMudi11Inf; 
+@@ -5906,7 +5848,6 @@
+ உரூபிகரிக்கப்படமுடி            ClassMudi11Inf; 
+ உரூபிக்கப்படமுடி            ClassMudi11Inf; 
+ உரோசிக்கப்படமுடி            ClassMudi11Inf; 
+-உரப்படமுடி            ClassMudi11Inf; 
+ உமிக்கப்படமுடி            ClassMudi11Inf; 
+ உமைக்கப்படமுடி            ClassMudi11Inf; 
+ உகுக்கப்படமுடி            ClassMudi11Inf; 
+@@ -7402,7 +7343,6 @@
+ நிகர்த்தப்படமுடி            ClassMudi11Inf; 
+ நிகழ்த்தப்படமுடி            ClassMudi11Inf; 
+ நிவறப்படமுடி            ClassMudi11Inf; 
+-நிப்பாட்டு்ப்படமுடி            ClassMudi11Inf; 
+ நிய்த்தப்படமுடி            ClassMudi11Inf; 
+ நியதப்படமுடி            ClassMudi11Inf; 
+ நிம்பப்படமுடி            ClassMudi11Inf; 
+@@ -7631,7 +7571,6 @@
+ உரைசப்படமுடி            ClassMudi11Inf; 
+ உரைஞ்சப்படமுடி            ClassMudi11Inf; 
+ உரிஞ்சப்படமுடி            ClassMudi11Inf; 
+-உரிப்படமுடி            ClassMudi11Inf; 
+ உரசப்படமுடி            ClassMudi11Inf; 
+ உராவப்படமுடி            ClassMudi11Inf; 
+ உராய்ஞ்சப்படமுடி            ClassMudi11Inf; 
+@@ -7729,20 +7668,8 @@
+ துறப்படமுடி            ClassMudi11Inf; 
+ தெறப்படமுடி            ClassMudi11Inf; 
+ இறப்படமுடி            ClassMudi11Inf; 
+-பூணப்படமுடி            ClassMudi11Inf; 
+ முரணப்படமுடி            ClassMudi11Inf; 
+-மாணப்படமுடி            ClassMudi11Inf; 
+-உண்ணப்படமுடி            ClassMudi11Inf; 
+-நோன்னப்படமுடி            ClassMudi11Inf; 
+-தின்னப்படமுடி            ClassMudi11Inf; 
+-ஈன்னப்படமுடி            ClassMudi11Inf; 
+-பெளப்படமுடி            ClassMudi11Inf; 
+-வேளப்படமுடி            ClassMudi11Inf; 
+ மீளப்படமுடி            ClassMudi11Inf; 
+-தளப்படமுடி            ClassMudi11Inf; 
+-தெளப்படமுடி            ClassMudi11Inf; 
+-தோளப்படமுடி            ClassMudi11Inf; 
+-களப்படமுடி            ClassMudi11Inf; 
+ அழமுடி            ClassMudi11Inf; 
+ கொய்யமுடி            ClassMudi11Inf; 
+ எய்யமுடி            ClassMudi11Inf; 
+@@ -17048,7 +16975,6 @@
+ LEXICON ClassPar11
+ 
+ அழப்படப்பார்            ClassPar11Inf; 
+-வைப்படப்பார்            ClassPar11Inf; 
+ கொய்யப்படப்பார்            ClassPar11Inf; 
+ எய்யப்படப்பார்            ClassPar11Inf; 
+ செய்யப்படப்பார்            ClassPar11Inf; 
+@@ -17056,16 +16982,9 @@
+ பொரப்படப்பார்            ClassPar11Inf; 
+ பெய்யப்படப்பார்            ClassPar11Inf; 
+ தொழப்படப்பார்            ClassPar11Inf; 
+-விற்கப்படப்பார்            ClassPar11Inf; 
+-நூற்கப்படப்பார்            ClassPar11Inf; 
+-நோற்கப்படப்பார்            ClassPar11Inf; 
+-தோற்கப்படப்பார்            ClassPar11Inf; 
+-கற்கப்படப்பார்            ClassPar11Inf; 
+-கிற்கப்படப்பார்            ClassPar11Inf; 
+ அழிக்கப்படப்பார்            ClassPar11Inf; 
+ அழைக்கப்படப்பார்            ClassPar11Inf; 
+ அளிக்கப்படப்பார்            ClassPar11Inf; 
+-அவிழ்ப்படப்பார்            ClassPar11Inf; 
+ அவிக்கப்படப்பார்            ClassPar11Inf; 
+ அவ்விக்கப்படப்பார்            ClassPar11Inf; 
+ அவைக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17139,7 +17058,6 @@
+ அஞ்சிக்கப்படப்பார்            ClassPar11Inf; 
+ அஞ்சலிக்கப்படப்பார்            ClassPar11Inf; 
+ வழிக்கப்படப்பார்            ClassPar11Inf; 
+-வழவழப்படப்பார்            ClassPar11Inf; 
+ விழிக்கப்படப்பார்            ClassPar11Inf; 
+ விழுக்கப்படப்பார்            ClassPar11Inf; 
+ விளிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17192,7 +17110,6 @@
+ விசனிக்கப்படப்பார்            ClassPar11Inf; 
+ விசேடிக்கப்படப்பார்            ClassPar11Inf; 
+ விங்களிக்கப்படப்பார்            ClassPar11Inf; 
+-வளவளப்படப்பார்            ClassPar11Inf; 
+ வளர்க்கப்படப்பார்            ClassPar11Inf; 
+ வளைக்கப்படப்பார்            ClassPar11Inf; 
+ வயிர்க்கப்படப்பார்            ClassPar11Inf; 
+@@ -17232,7 +17149,6 @@
+ வெக்களிக்கப்படப்பார்            ClassPar11Inf; 
+ வெக்காளிக்கப்படப்பார்            ClassPar11Inf; 
+ வெந்திக்கப்படப்பார்            ClassPar11Inf; 
+-வெலவெலப்படப்பார்            ClassPar11Inf; 
+ வெறிக்கப்படப்பார்            ClassPar11Inf; 
+ வெடிக்கப்படப்பார்            ClassPar11Inf; 
+ வெடுவெடுக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17251,7 +17167,6 @@
+ வன்னிக்கப்படப்பார்            ClassPar11Inf; 
+ வலிக்கப்படப்பார்            ClassPar11Inf; 
+ வலுக்கப்படப்பார்            ClassPar11Inf; 
+-வலப்படப்பார்            ClassPar11Inf; 
+ வறுக்கப்படப்பார்            ClassPar11Inf; 
+ வடிக்கப்படப்பார்            ClassPar11Inf; 
+ வட்டிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17270,7 +17185,6 @@
+ வஞ்சிக்கப்படப்பார்            ClassPar11Inf; 
+ யாபிக்கப்படப்பார்            ClassPar11Inf; 
+ யாசிக்கப்படப்பார்            ClassPar11Inf; 
+-யாப்படப்பார்            ClassPar11Inf; 
+ யோகிக்கப்படப்பார்            ClassPar11Inf; 
+ யோசிக்கப்படப்பார்            ClassPar11Inf; 
+ யூகிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17301,7 +17215,6 @@
+ திஷேதிக்கப்படப்பார்            ClassPar11Inf; 
+ தளிர்க்கப்படப்பார்            ClassPar11Inf; 
+ தளிக்கப்படப்பார்            ClassPar11Inf; 
+-தளதளப்படப்பார்            ClassPar11Inf; 
+ தளைக்கப்படப்பார்            ClassPar11Inf; 
+ தவிர்க்கப்படப்பார்            ClassPar11Inf; 
+ தவிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17350,7 +17263,6 @@
+ தமிக்கப்படப்பார்            ClassPar11Inf; 
+ தம்பிக்கப்படப்பார்            ClassPar11Inf; 
+ தமரிக்கப்படப்பார்            ClassPar11Inf; 
+-தாழ்ப்படப்பார்            ClassPar11Inf; 
+ தாளிக்கப்படப்பார்            ClassPar11Inf; 
+ தாவிக்கப்படப்பார்            ClassPar11Inf; 
+ தாவரிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17397,18 +17309,15 @@
+ தப்பிக்கப்படப்பார்            ClassPar11Inf; 
+ தனிக்கப்படப்பார்            ClassPar11Inf; 
+ தறிக்கப்படப்பார்            ClassPar11Inf; 
+-தறதறப்படப்பார்            ClassPar11Inf; 
+ தற்கிக்கப்படப்பார்            ClassPar11Inf; 
+ தற்காலிக்கப்படப்பார்            ClassPar11Inf; 
+ தற்பிக்கப்படப்பார்            ClassPar11Inf; 
+ தடிக்கப்படப்பார்            ClassPar11Inf; 
+ தடுபுடுக்கப்படப்பார்            ClassPar11Inf; 
+ தடுக்கப்படப்பார்            ClassPar11Inf; 
+-தடதடப்படப்பார்            ClassPar11Inf; 
+ தடாய்க்கப்படப்பார்            ClassPar11Inf; 
+ தடாரிக்கப்படப்பார்            ClassPar11Inf; 
+ தடைக்கப்படப்பார்            ClassPar11Inf; 
+-தடபடப்படப்பார்            ClassPar11Inf; 
+ தசைக்கப்படப்பார்            ClassPar11Inf; 
+ தேய்க்கப்படப்பார்            ClassPar11Inf; 
+ தேர்க்கப்படப்பார்            ClassPar11Inf; 
+@@ -17425,7 +17334,6 @@
+ தீய்க்கப்படப்பார்            ClassPar11Inf; 
+ தீர்மானிக்கப்படப்பார்            ClassPar11Inf; 
+ தீர்க்கப்படப்பார்            ClassPar11Inf; 
+-தீப்படப்பார்            ClassPar11Inf; 
+ ருசிக்கப்படப்பார்            ClassPar11Inf; 
+ ரமிக்கப்படப்பார்            ClassPar11Inf; 
+ ரசிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17443,7 +17351,6 @@
+ மிறைக்கப்படப்பார்            ClassPar11Inf; 
+ மிடிக்கப்படப்பார்            ClassPar11Inf; 
+ மிடுமிடுக்கப்படப்பார்            ClassPar11Inf; 
+-மளமளப்படப்பார்            ClassPar11Inf; 
+ முழிக்கப்படப்பார்            ClassPar11Inf; 
+ முழுக்கப்படப்பார்            ClassPar11Inf; 
+ முழைக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17454,7 +17361,6 @@
+ முருமுருக்கப்படப்பார்            ClassPar11Inf; 
+ மும்முரிக்கப்படப்பார்            ClassPar11Inf; 
+ முண்டிக்கப்படப்பார்            ClassPar11Inf; 
+-முகிழ்ப்படப்பார்            ClassPar11Inf; 
+ முகிக்கப்படப்பார்            ClassPar11Inf; 
+ முகுளிக்கப்படப்பார்            ClassPar11Inf; 
+ முக்குளிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17474,7 +17380,6 @@
+ மரிக்கப்படப்பார்            ClassPar11Inf; 
+ மர்த்திக்கப்படப்பார்            ClassPar11Inf; 
+ மரணிக்கப்படப்பார்            ClassPar11Inf; 
+-மரப்படப்பார்            ClassPar11Inf; 
+ மாய்க்கப்படப்பார்            ClassPar11Inf; 
+ மானிக்கப்படப்பார்            ClassPar11Inf; 
+ மண்டலிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17512,16 +17417,12 @@
+ மட்டிக்கப்படப்பார்            ClassPar11Inf; 
+ மடலிக்கப்படப்பார்            ClassPar11Inf; 
+ மசிக்கப்படப்பார்            ClassPar11Inf; 
+-மசமசப்படப்பார்            ClassPar11Inf; 
+ மேய்க்கப்படப்பார்            ClassPar11Inf; 
+ மோகரிக்கப்படப்பார்            ClassPar11Inf; 
+ மோசிக்கப்படப்பார்            ClassPar11Inf; 
+-மூழ்ப்படப்பார்            ClassPar11Inf; 
+ மூர்த்தீகரிக்கப்படப்பார்            ClassPar11Inf; 
+ மூர்ச்சிக்கப்படப்பார்            ClassPar11Inf; 
+ மூரலிக்கப்படப்பார்            ClassPar11Inf; 
+-மூப்படப்பார்            ClassPar11Inf; 
+-மொரமொரப்படப்பார்            ClassPar11Inf; 
+ கழிக்கப்படப்பார்            ClassPar11Inf; 
+ கழுகுழுக்கப்படப்பார்            ClassPar11Inf; 
+ கிழிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17537,7 +17438,6 @@
+ கிடைக்கப்படப்பார்            ClassPar11Inf; 
+ களிக்கப்படப்பார்            ClassPar11Inf; 
+ களைக்கப்படப்பார்            ClassPar11Inf; 
+-கவிழ்ப்படப்பார்            ClassPar11Inf; 
+ கவிக்கப்படப்பார்            ClassPar11Inf; 
+ கவர்க்கப்படப்பார்            ClassPar11Inf; 
+ கவைக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17554,7 +17454,6 @@
+ குருப்பிக்கப்படப்பார்            ClassPar11Inf; 
+ குருக்கப்படப்பார்            ClassPar11Inf; 
+ குமிழிக்கப்படப்பார்            ClassPar11Inf; 
+-குமிழ்ப்படப்பார்            ClassPar11Inf; 
+ குமிட்டிக்கப்படப்பார்            ClassPar11Inf; 
+ குமிக்கப்படப்பார்            ClassPar11Inf; 
+ குமுகுமுக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17589,7 +17488,6 @@
+ கம்பலைக்கப்படப்பார்            ClassPar11Inf; 
+ கம்பீரிக்கப்படப்பார்            ClassPar11Inf; 
+ கமைக்கப்படப்பார்            ClassPar11Inf; 
+-காழ்ப்படப்பார்            ClassPar11Inf; 
+ காய்க்கப்படப்பார்            ClassPar11Inf; 
+ காதலிக்கப்படப்பார்            ClassPar11Inf; 
+ கார்க்கப்படப்பார்            ClassPar11Inf; 
+@@ -17597,7 +17495,6 @@
+ காெழுக்கப்படப்பார்            ClassPar11Inf; 
+ காெலுகொலுக்கப்படப்பார்            ClassPar11Inf; 
+ காலிக்கப்படப்பார்            ClassPar11Inf; 
+-காப்படப்பார்            ClassPar11Inf; 
+ கணிசிக்கப்படப்பார்            ClassPar11Inf; 
+ கணிக்கப்படப்பார்            ClassPar11Inf; 
+ கண்காணிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17618,7 +17515,6 @@
+ கெலிக்கப்படப்பார்            ClassPar11Inf; 
+ கெடிக்கப்படப்பார்            ClassPar11Inf; 
+ கெட்டிக்கப்படப்பார்            ClassPar11Inf; 
+-கபளீப்படப்பார்            ClassPar11Inf; 
+ கப்பிக்கப்படப்பார்            ClassPar11Inf; 
+ கந்திக்கப்படப்பார்            ClassPar11Inf; 
+ கனிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17629,7 +17525,6 @@
+ கலாப்பிக்கப்படப்பார்            ClassPar11Inf; 
+ கலைக்கப்படப்பார்            ClassPar11Inf; 
+ கலகிக்கப்படப்பார்            ClassPar11Inf; 
+-கலகலப்படப்பார்            ClassPar11Inf; 
+ கறுகறுக்கப்படப்பார்            ClassPar11Inf; 
+ கற்பிக்கப்படப்பார்            ClassPar11Inf; 
+ கறைக்கணிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17638,13 +17533,10 @@
+ கடுகடுக்கப்படப்பார்            ClassPar11Inf; 
+ கடுக்கப்படப்பார்            ClassPar11Inf; 
+ கடாட்சிக்கப்படப்பார்            ClassPar11Inf; 
+-கடகடப்படப்பார்            ClassPar11Inf; 
+-கசகசப்படப்பார்            ClassPar11Inf; 
+ கோர்க்கப்படப்பார்            ClassPar11Inf; 
+ கோப்படப்பார்            ClassPar11Inf; 
+ கேந்திரிக்கப்படப்பார்            ClassPar11Inf; 
+ கேடாய்க்கப்படப்பார்            ClassPar11Inf; 
+-கூழ்ப்படப்பார்            ClassPar11Inf; 
+ கூர்க்கப்படப்பார்            ClassPar11Inf; 
+ கூடலிக்கப்படப்பார்            ClassPar11Inf; 
+ கீா்த்திக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17753,10 +17645,8 @@
+ பராமரிக்கப்படப்பார்            ClassPar11Inf; 
+ பராக்கிரமிக்கப்படப்பார்            ClassPar11Inf; 
+ பராபரிக்கப்படப்பார்            ClassPar11Inf; 
+-பரபரப்படப்பார்            ClassPar11Inf; 
+ பாவிக்கப்படப்பார்            ClassPar11Inf; 
+ பாதிக்கப்படப்பார்            ClassPar11Inf; 
+-பாதுகாப்படப்பார்            ClassPar11Inf; 
+ பாரிக்கப்படப்பார்            ClassPar11Inf; 
+ பார்க்கப்படப்பார்            ClassPar11Inf; 
+ பாணிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17765,11 +17655,9 @@
+ பானிக்கப்படப்பார்            ClassPar11Inf; 
+ பாலிக்கப்படப்பார்            ClassPar11Inf; 
+ பாடிக்கப்படப்பார்            ClassPar11Inf; 
+-பாப்படப்பார்            ClassPar11Inf; 
+ பணிக்கப்படப்பார்            ClassPar11Inf; 
+ பணைக்கப்படப்பார்            ClassPar11Inf; 
+ பையர்க்கப்படப்பார்            ClassPar11Inf; 
+-பையாப்படப்பார்            ClassPar11Inf; 
+ பைக்கப்படப்பார்            ClassPar11Inf; 
+ பெயர்க்கப்படப்பார்            ClassPar11Inf; 
+ பெருக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17796,17 +17684,14 @@
+ பந்திக்கப்படப்பார்            ClassPar11Inf; 
+ பனிக்கப்படப்பார்            ClassPar11Inf; 
+ பலிக்கப்படப்பார்            ClassPar11Inf; 
+-பலப்படப்பார்            ClassPar11Inf; 
+ பறிக்கப்படப்பார்            ClassPar11Inf; 
+ பறைக்கப்படப்பார்            ClassPar11Inf; 
+ படிக்கப்படப்பார்            ClassPar11Inf; 
+ பட்சிக்கப்படப்பார்            ClassPar11Inf; 
+ படைக்கப்படப்பார்            ClassPar11Inf; 
+-படபடப்படப்பார்            ClassPar11Inf; 
+ பசிக்கப்படப்பார்            ClassPar11Inf; 
+ பசுக்கப்படப்பார்            ClassPar11Inf; 
+ பசைக்கப்படப்பார்            ClassPar11Inf; 
+-பசபசப்படப்பார்            ClassPar11Inf; 
+ பேழ்கணிக்கப்படப்பார்            ClassPar11Inf; 
+ பேதிக்கப்படப்பார்            ClassPar11Inf; 
+ பேதலிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17827,7 +17712,6 @@
+ பூலிக்கப்படப்பார்            ClassPar11Inf; 
+ பூசிக்கப்படப்பார்            ClassPar11Inf; 
+ பூஷிக்கப்படப்பார்            ClassPar11Inf; 
+-பூப்படப்பார்            ClassPar11Inf; 
+ பீழிக்கப்படப்பார்            ClassPar11Inf; 
+ பீடிக்கப்படப்பார்            ClassPar11Inf; 
+ பஞ்சரிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17864,11 +17748,9 @@
+ நிச்சயிக்கப்படப்பார்            ClassPar11Inf; 
+ நளிர்விக்கப்படப்பார்            ClassPar11Inf; 
+ நளுநொளுக்கப்படப்பார்            ClassPar11Inf; 
+-நவிழ்ப்படப்பார்            ClassPar11Inf; 
+ நவிக்கப்படப்பார்            ClassPar11Inf; 
+ நவைக்கப்படப்பார்            ClassPar11Inf; 
+ நயப்பிக்கப்படப்பார்            ClassPar11Inf; 
+-நயப்படப்பார்            ClassPar11Inf; 
+ நுழைக்கப்படப்பார்            ClassPar11Inf; 
+ நுதிக்கப்படப்பார்            ClassPar11Inf; 
+ நுதுக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17889,7 +17771,6 @@
+ நமைக்கப்படப்பார்            ClassPar11Inf; 
+ நமக்கரிக்கப்படப்பார்            ClassPar11Inf; 
+ நமற்கரிக்கப்படப்பார்            ClassPar11Inf; 
+-நமப்படப்பார்            ClassPar11Inf; 
+ நாணிக்கப்படப்பார்            ClassPar11Inf; 
+ நாசிக்கப்படப்பார்            ClassPar11Inf; 
+ நைவேதிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17906,7 +17787,6 @@
+ நொடிக்கப்படப்பார்            ClassPar11Inf; 
+ நொடுக்கப்படப்பார்            ClassPar11Inf; 
+ நொசிக்கப்படப்பார்            ClassPar11Inf; 
+-நெகிழ்ப்படப்பார்            ClassPar11Inf; 
+ நெறிக்கப்படப்பார்            ClassPar11Inf; 
+ நெறுமுக்கப்படப்பார்            ClassPar11Inf; 
+ நெறுநெறுக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17930,8 +17810,6 @@
+ நீர்க்கப்படப்பார்            ClassPar11Inf; 
+ நீடிக்கப்படப்பார்            ClassPar11Inf; 
+ நீட்டிக்கப்படப்பார்            ClassPar11Inf; 
+-நீப்படப்பார்            ClassPar11Inf; 
+-நொளநொளப்படப்பார்            ClassPar11Inf; 
+ லிபிக்கப்படப்பார்            ClassPar11Inf; 
+ லபிக்கப்படப்பார்            ClassPar11Inf; 
+ லச்சிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -17947,8 +17825,6 @@
+ சிருட்டிக்கப்படப்பார்            ClassPar11Inf; 
+ சிராய்க்கப்படப்பார்            ClassPar11Inf; 
+ சிரைக்கப்படப்பார்            ClassPar11Inf; 
+-சிரப்படப்பார்            ClassPar11Inf; 
+-சிமிழ்ப்படப்பார்            ClassPar11Inf; 
+ சிமிளிக்கப்படப்பார்            ClassPar11Inf; 
+ சிம்பிளிக்கப்படப்பார்            ClassPar11Inf; 
+ சிமாளிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -18014,11 +17890,9 @@
+ சத்திக்கப்படப்பார்            ClassPar11Inf; 
+ சத்தாய்க்கப்படப்பார்            ClassPar11Inf; 
+ சதைக்கப்படப்பார்            ClassPar11Inf; 
+-சதசதப்படப்பார்            ClassPar11Inf; 
+ சரிக்கப்படப்பார்            ClassPar11Inf; 
+ சர்த்திக்கப்படப்பார்            ClassPar11Inf; 
+ சரைக்கப்படப்பார்            ClassPar11Inf; 
+-சமழ்ப்படப்பார்            ClassPar11Inf; 
+ சமிக்கப்படப்பார்            ClassPar11Inf; 
+ சமுதாய்க்கப்படப்பார்            ClassPar11Inf; 
+ சம்ரட்சிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -18095,7 +17969,6 @@
+ சட்டிக்கப்படப்பார்            ClassPar11Inf; 
+ சடாய்க்கப்படப்பார்            ClassPar11Inf; 
+ சடைக்கப்படப்பார்            ClassPar11Inf; 
+-சடபுடப்படப்பார்            ClassPar11Inf; 
+ சேவிக்கப்படப்பார்            ClassPar11Inf; 
+ சேதிக்கப்படப்பார்            ClassPar11Inf; 
+ சேர்க்கப்படப்பார்            ClassPar11Inf; 
+@@ -18129,13 +18002,11 @@
+ சீரணிக்கப்படப்பார்            ClassPar11Inf; 
+ சீனிக்கப்படப்பார்            ClassPar11Inf; 
+ சீலிக்கப்படப்பார்            ClassPar11Inf; 
+-சீப்படப்பார்            ClassPar11Inf; 
+ சஞ்சரிக்கப்படப்பார்            ClassPar11Inf; 
+ ஞாபிக்கப்படப்பார்            ClassPar11Inf; 
+ ஞெமிரிக்கப்படப்பார்            ClassPar11Inf; 
+ ஞெமிர்க்கப்படப்பார்            ClassPar11Inf; 
+ ஜமாய்க்கப்படப்பார்            ClassPar11Inf; 
+-ஊழ்ப்படப்பார்            ClassPar11Inf; 
+ ஊழலிக்கப்படப்பார்            ClassPar11Inf; 
+ ஊர்க்கப்படப்பார்            ClassPar11Inf; 
+ ஊட்டிக்கப்படப்பார்            ClassPar11Inf; 
+@@ -18202,7 +18073,6 @@
+ இரட்சிக்கப்படப்பார்            ClassPar11Inf; 
+ இரசிக்கப்படப்பார்            ClassPar11Inf; 
+ இரேசிக்கப்படப்பார்            ClassPar11Inf; 
+-இமிழ்ப்படப்பார்            ClassPar11Inf; 
+ இமிசிக்கப்படப்பார்            ClassPar11Inf; 
+ இமைக்கப்படப்பார்            ClassPar11Inf; 
+ இணைக்கப்படப்பார்            ClassPar11Inf; 
+@@ -18255,7 +18125,6 @@
+ ஆசீா்வதிக்கப்படப்பார்            ClassPar11Inf; 
+ உழுக்கப்படப்பார்            ClassPar11Inf; 
+ உழைக்கப்படப்பார்            ClassPar11Inf; 
+-உளுக்காப்படப்பார்            ClassPar11Inf; 
+ உளுக்கப்படப்பார்            ClassPar11Inf; 
+ உளைக்கப்படப்பார்            ClassPar11Inf; 
+ உவர்க்கப்படப்பார்            ClassPar11Inf; 
+@@ -18283,7 +18152,6 @@
+ உரூபிகரிக்கப்படப்பார்            ClassPar11Inf; 
+ உரூபிக்கப்படப்பார்            ClassPar11Inf; 
+ உரோசிக்கப்படப்பார்            ClassPar11Inf; 
+-உரப்படப்பார்            ClassPar11Inf; 
+ உமிக்கப்படப்பார்            ClassPar11Inf; 
+ உமைக்கப்படப்பார்            ClassPar11Inf; 
+ உகுக்கப்படப்பார்            ClassPar11Inf; 
+@@ -19779,7 +19647,6 @@
+ நிகர்த்தப்படப்பார்            ClassPar11Inf; 
+ நிகழ்த்தப்படப்பார்            ClassPar11Inf; 
+ நிவறப்படப்பார்            ClassPar11Inf; 
+-நிப்பாட்டு்ப்படப்பார்            ClassPar11Inf; 
+ நிய்த்தப்படப்பார்            ClassPar11Inf; 
+ நியதப்படப்பார்            ClassPar11Inf; 
+ நிம்பப்படப்பார்            ClassPar11Inf; 
+@@ -20008,7 +19875,6 @@
+ உரைசப்படப்பார்            ClassPar11Inf; 
+ உரைஞ்சப்படப்பார்            ClassPar11Inf; 
+ உரிஞ்சப்படப்பார்            ClassPar11Inf; 
+-உரிப்படப்பார்            ClassPar11Inf; 
+ உரசப்படப்பார்            ClassPar11Inf; 
+ உராவப்படப்பார்            ClassPar11Inf; 
+ உராய்ஞ்சப்படப்பார்            ClassPar11Inf; 
+@@ -20106,20 +19972,8 @@
+ துறப்படப்பார்            ClassPar11Inf; 
+ தெறப்படப்பார்            ClassPar11Inf; 
+ இறப்படப்பார்            ClassPar11Inf; 
+-பூணப்படப்பார்            ClassPar11Inf; 
+ முரணப்படப்பார்            ClassPar11Inf; 
+-மாணப்படப்பார்            ClassPar11Inf; 
+-உண்ணப்படப்பார்            ClassPar11Inf; 
+-நோன்னப்படப்பார்            ClassPar11Inf; 
+-தின்னப்படப்பார்            ClassPar11Inf; 
+-ஈன்னப்படப்பார்            ClassPar11Inf; 
+-பெளப்படப்பார்            ClassPar11Inf; 
+-வேளப்படப்பார்            ClassPar11Inf; 
+ மீளப்படப்பார்            ClassPar11Inf; 
+-தளப்படப்பார்            ClassPar11Inf; 
+-தெளப்படப்பார்            ClassPar11Inf; 
+-தோளப்படப்பார்            ClassPar11Inf; 
+-களப்படப்பார்            ClassPar11Inf; 
+ அழப்பார்            ClassPar11Inf; 
+ கொய்யப்பார்            ClassPar11Inf; 
+ எய்யப்பார்            ClassPar11Inf; 
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -13406,7 +13406,6 @@
+ 
+ LEXICON ClassPo5
+ அழப்படப்போ            ClassPo5Inf; 
+-வைப்படப்போ            ClassPo5Inf; 
+ கொய்யப்படப்போ            ClassPo5Inf; 
+ எய்யப்படப்போ            ClassPo5Inf; 
+ செய்யப்படப்போ            ClassPo5Inf; 
+@@ -13414,16 +13413,9 @@
+ பொரப்படப்போ            ClassPo5Inf; 
+ பெய்யப்படப்போ            ClassPo5Inf; 
+ தொழப்படப்போ            ClassPo5Inf; 
+-விற்கப்படப்போ            ClassPo5Inf; 
+-நூற்கப்படப்போ            ClassPo5Inf; 
+-நோற்கப்படப்போ            ClassPo5Inf; 
+-தோற்கப்படப்போ            ClassPo5Inf; 
+-கற்கப்படப்போ            ClassPo5Inf; 
+-கிற்கப்படப்போ            ClassPo5Inf; 
+ அழிக்கப்படப்போ            ClassPo5Inf; 
+ அழைக்கப்படப்போ            ClassPo5Inf; 
+ அளிக்கப்படப்போ            ClassPo5Inf; 
+-அவிழ்ப்படப்போ            ClassPo5Inf; 
+ அவிக்கப்படப்போ            ClassPo5Inf; 
+ அவ்விக்கப்படப்போ            ClassPo5Inf; 
+ அவைக்கப்படப்போ            ClassPo5Inf; 
+@@ -13497,7 +13489,6 @@
+ அஞ்சிக்கப்படப்போ            ClassPo5Inf; 
+ அஞ்சலிக்கப்படப்போ            ClassPo5Inf; 
+ வழிக்கப்படப்போ            ClassPo5Inf; 
+-வழவழப்படப்போ            ClassPo5Inf; 
+ விழிக்கப்படப்போ            ClassPo5Inf; 
+ விழுக்கப்படப்போ            ClassPo5Inf; 
+ விளிக்கப்படப்போ            ClassPo5Inf; 
+@@ -13550,7 +13541,6 @@
+ விசனிக்கப்படப்போ            ClassPo5Inf; 
+ விசேடிக்கப்படப்போ            ClassPo5Inf; 
+ விங்களிக்கப்படப்போ            ClassPo5Inf; 
+-வளவளப்படப்போ            ClassPo5Inf; 
+ வளர்க்கப்படப்போ            ClassPo5Inf; 
+ வளைக்கப்படப்போ            ClassPo5Inf; 
+ வயிர்க்கப்படப்போ            ClassPo5Inf; 
+@@ -13590,7 +13580,6 @@
+ வெக்களிக்கப்படப்போ            ClassPo5Inf; 
+ வெக்காளிக்கப்படப்போ            ClassPo5Inf; 
+ வெந்திக்கப்படப்போ            ClassPo5Inf; 
+-வெலவெலப்படப்போ            ClassPo5Inf; 
+ வெறிக்கப்படப்போ            ClassPo5Inf; 
+ வெடிக்கப்படப்போ            ClassPo5Inf; 
+ வெடுவெடுக்கப்படப்போ            ClassPo5Inf; 
+@@ -13609,7 +13598,6 @@
+ வன்னிக்கப்படப்போ            ClassPo5Inf; 
+ வலிக்கப்படப்போ            ClassPo5Inf; 
+ வலுக்கப்படப்போ            ClassPo5Inf; 
+-வலப்படப்போ            ClassPo5Inf; 
+ வறுக்கப்படப்போ            ClassPo5Inf; 
+ வடிக்கப்படப்போ            ClassPo5Inf; 
+ வட்டிக்கப்படப்போ            ClassPo5Inf; 
+@@ -13628,7 +13616,6 @@
+ வஞ்சிக்கப்படப்போ            ClassPo5Inf; 
+ யாபிக்கப்படப்போ            ClassPo5Inf; 
+ யாசிக்கப்படப்போ            ClassPo5Inf; 
+-யாப்படப்போ            ClassPo5Inf; 
+ யோகிக்கப்படப்போ            ClassPo5Inf; 
+ யோசிக்கப்படப்போ            ClassPo5Inf; 
+ யூகிக்கப்படப்போ            ClassPo5Inf; 
+@@ -13659,7 +13646,6 @@
+ திஷேதிக்கப்படப்போ            ClassPo5Inf; 
+ தளிர்க்கப்படப்போ            ClassPo5Inf; 
+ தளிக்கப்படப்போ            ClassPo5Inf; 
+-தளதளப்படப்போ            ClassPo5Inf; 
+ தளைக்கப்படப்போ            ClassPo5Inf; 
+ தவிர்க்கப்படப்போ            ClassPo5Inf; 
+ தவிக்கப்படப்போ            ClassPo5Inf; 
+@@ -13708,7 +13694,6 @@
+ தமிக்கப்படப்போ            ClassPo5Inf; 
+ தம்பிக்கப்படப்போ            ClassPo5Inf; 
+ தமரிக்கப்படப்போ            ClassPo5Inf; 
+-தாழ்ப்படப்போ            ClassPo5Inf; 
+ தாளிக்கப்படப்போ            ClassPo5Inf; 
+ தாவிக்கப்படப்போ            ClassPo5Inf; 
+ தாவரிக்கப்படப்போ            ClassPo5Inf; 
+@@ -13755,14 +13740,12 @@
+ தப்பிக்கப்படப்போ            ClassPo5Inf; 
+ தனிக்கப்படப்போ            ClassPo5Inf; 
+ தறிக்கப்படப்போ            ClassPo5Inf; 
+-தறதறப்படப்போ            ClassPo5Inf; 
+ தற்கிக்கப்படப்போ            ClassPo5Inf; 
+ தற்காலிக்கப்படப்போ            ClassPo5Inf; 
+ தற்பிக்கப்படப்போ            ClassPo5Inf; 
+ தடிக்கப்படப்போ            ClassPo5Inf; 
+ தடுபுடுக்கப்படப்போ            ClassPo5Inf; 
+ தடுக்கப்படப்போ            ClassPo5Inf; 
+-தடதடப்படப்போ            ClassPo5Inf; 
+ தடாய்க்கப்படப்போ            ClassPo5Inf; 
+ தடாரிக்கப்படப்போ            ClassPo5Inf; 
+ தடைக்கப்படப்போ            ClassPo5Inf; 
+@@ -13782,7 +13765,6 @@
+ தீய்க்கப்படப்போ            ClassPo5Inf; 
+ தீர்மானிக்கப்படப்போ            ClassPo5Inf; 
+ தீர்க்கப்படப்போ            ClassPo5Inf; 
+-தீப்படப்போ            ClassPo5Inf; 
+ ருசிக்கப்படப்போ            ClassPo5Inf; 
+ ரமிக்கப்படப்போ            ClassPo5Inf; 
+ ரசிக்கப்படப்போ            ClassPo5Inf; 
+@@ -13800,7 +13782,6 @@
+ மிறைக்கப்படப்போ            ClassPo5Inf; 
+ மிடிக்கப்படப்போ            ClassPo5Inf; 
+ மிடுமிடுக்கப்படப்போ            ClassPo5Inf; 
+-மளமளப்படப்போ            ClassPo5Inf; 
+ முழிக்கப்படப்போ            ClassPo5Inf; 
+ முழுக்கப்படப்போ            ClassPo5Inf; 
+ முழைக்கப்படப்போ            ClassPo5Inf; 
+@@ -13811,7 +13792,6 @@
+ முருமுருக்கப்படப்போ            ClassPo5Inf; 
+ மும்முரிக்கப்படப்போ            ClassPo5Inf; 
+ முண்டிக்கப்படப்போ            ClassPo5Inf; 
+-முகிழ்ப்படப்போ            ClassPo5Inf; 
+ முகிக்கப்படப்போ            ClassPo5Inf; 
+ முகுளிக்கப்படப்போ            ClassPo5Inf; 
+ முக்குளிக்கப்படப்போ            ClassPo5Inf; 
+@@ -13831,7 +13811,6 @@
+ மரிக்கப்படப்போ            ClassPo5Inf; 
+ மர்த்திக்கப்படப்போ            ClassPo5Inf; 
+ மரணிக்கப்படப்போ            ClassPo5Inf; 
+-மரப்படப்போ            ClassPo5Inf; 
+ மாய்க்கப்படப்போ            ClassPo5Inf; 
+ மானிக்கப்படப்போ            ClassPo5Inf; 
+ மண்டலிக்கப்படப்போ            ClassPo5Inf; 
+@@ -13869,16 +13848,12 @@
+ மட்டிக்கப்படப்போ            ClassPo5Inf; 
+ மடலிக்கப்படப்போ            ClassPo5Inf; 
+ மசிக்கப்படப்போ            ClassPo5Inf; 
+-மசமசப்படப்போ            ClassPo5Inf; 
+ மேய்க்கப்படப்போ            ClassPo5Inf; 
+ மோகரிக்கப்படப்போ            ClassPo5Inf; 
+ மோசிக்கப்படப்போ            ClassPo5Inf; 
+-மூழ்ப்படப்போ            ClassPo5Inf; 
+ மூர்த்தீகரிக்கப்படப்போ            ClassPo5Inf; 
+ மூர்ச்சிக்கப்படப்போ            ClassPo5Inf; 
+ மூரலிக்கப்படப்போ            ClassPo5Inf; 
+-மூப்படப்போ            ClassPo5Inf; 
+-மொரமொரப்படப்போ            ClassPo5Inf; 
+ கழிக்கப்படப்போ            ClassPo5Inf; 
+ கழுகுழுக்கப்படப்போ            ClassPo5Inf; 
+ கிழிக்கப்படப்போ            ClassPo5Inf; 
+@@ -13894,7 +13869,6 @@
+ கிடைக்கப்படப்போ            ClassPo5Inf; 
+ களிக்கப்படப்போ            ClassPo5Inf; 
+ களைக்கப்படப்போ            ClassPo5Inf; 
+-கவிழ்ப்படப்போ            ClassPo5Inf; 
+ கவிக்கப்படப்போ            ClassPo5Inf; 
+ கவர்க்கப்படப்போ            ClassPo5Inf; 
+ கவைக்கப்படப்போ            ClassPo5Inf; 
+@@ -13911,7 +13885,6 @@
+ குருப்பிக்கப்படப்போ            ClassPo5Inf; 
+ குருக்கப்படப்போ            ClassPo5Inf; 
+ குமிழிக்கப்படப்போ            ClassPo5Inf; 
+-குமிழ்ப்படப்போ            ClassPo5Inf; 
+ குமிட்டிக்கப்படப்போ            ClassPo5Inf; 
+ குமிக்கப்படப்போ            ClassPo5Inf; 
+ குமுகுமுக்கப்படப்போ            ClassPo5Inf; 
+@@ -13946,7 +13919,6 @@
+ கம்பலைக்கப்படப்போ            ClassPo5Inf; 
+ கம்பீரிக்கப்படப்போ            ClassPo5Inf; 
+ கமைக்கப்படப்போ            ClassPo5Inf; 
+-காழ்ப்படப்போ            ClassPo5Inf; 
+ காய்க்கப்படப்போ            ClassPo5Inf; 
+ காதலிக்கப்படப்போ            ClassPo5Inf; 
+ கார்க்கப்படப்போ            ClassPo5Inf; 
+@@ -13954,7 +13926,6 @@
+ காெழுக்கப்படப்போ            ClassPo5Inf; 
+ காெலுகொலுக்கப்படப்போ            ClassPo5Inf; 
+ காலிக்கப்படப்போ            ClassPo5Inf; 
+-காப்படப்போ            ClassPo5Inf; 
+ கணிசிக்கப்படப்போ            ClassPo5Inf; 
+ கணிக்கப்படப்போ            ClassPo5Inf; 
+ கண்காணிக்கப்படப்போ            ClassPo5Inf; 
+@@ -13975,7 +13946,6 @@
+ கெலிக்கப்படப்போ            ClassPo5Inf; 
+ கெடிக்கப்படப்போ            ClassPo5Inf; 
+ கெட்டிக்கப்படப்போ            ClassPo5Inf; 
+-கபளீப்படப்போ            ClassPo5Inf; 
+ கப்பிக்கப்படப்போ            ClassPo5Inf; 
+ கந்திக்கப்படப்போ            ClassPo5Inf; 
+ கனிக்கப்படப்போ            ClassPo5Inf; 
+@@ -13986,7 +13956,6 @@
+ கலாப்பிக்கப்படப்போ            ClassPo5Inf; 
+ கலைக்கப்படப்போ            ClassPo5Inf; 
+ கலகிக்கப்படப்போ            ClassPo5Inf; 
+-கலகலப்படப்போ            ClassPo5Inf; 
+ கறுகறுக்கப்படப்போ            ClassPo5Inf; 
+ கற்பிக்கப்படப்போ            ClassPo5Inf; 
+ கறைக்கணிக்கப்படப்போ            ClassPo5Inf; 
+@@ -13995,13 +13964,10 @@
+ கடுகடுக்கப்படப்போ            ClassPo5Inf; 
+ கடுக்கப்படப்போ            ClassPo5Inf; 
+ கடாட்சிக்கப்படப்போ            ClassPo5Inf; 
+-கடகடப்படப்போ            ClassPo5Inf; 
+-கசகசப்படப்போ            ClassPo5Inf; 
+ கோர்க்கப்படப்போ            ClassPo5Inf; 
+ கோப்படப்போ            ClassPo5Inf; 
+ கேந்திரிக்கப்படப்போ            ClassPo5Inf; 
+ கேடாய்க்கப்படப்போ            ClassPo5Inf; 
+-கூழ்ப்படப்போ            ClassPo5Inf; 
+ கூர்க்கப்படப்போ            ClassPo5Inf; 
+ கூடலிக்கப்படப்போ            ClassPo5Inf; 
+ கீா்த்திக்கப்படப்போ            ClassPo5Inf; 
+@@ -14110,10 +14076,8 @@
+ பராமரிக்கப்படப்போ            ClassPo5Inf; 
+ பராக்கிரமிக்கப்படப்போ            ClassPo5Inf; 
+ பராபரிக்கப்படப்போ            ClassPo5Inf; 
+-பரபரப்படப்போ            ClassPo5Inf; 
+ பாவிக்கப்படப்போ            ClassPo5Inf; 
+ பாதிக்கப்படப்போ            ClassPo5Inf; 
+-பாதுகாப்படப்போ            ClassPo5Inf; 
+ பாரிக்கப்படப்போ            ClassPo5Inf; 
+ பார்க்கப்படப்போ            ClassPo5Inf; 
+ பாணிக்கப்படப்போ            ClassPo5Inf; 
+@@ -14122,11 +14086,9 @@
+ பானிக்கப்படப்போ            ClassPo5Inf; 
+ பாலிக்கப்படப்போ            ClassPo5Inf; 
+ பாடிக்கப்படப்போ            ClassPo5Inf; 
+-பாப்படப்போ            ClassPo5Inf; 
+ பணிக்கப்படப்போ            ClassPo5Inf; 
+ பணைக்கப்படப்போ            ClassPo5Inf; 
+ பையர்க்கப்படப்போ            ClassPo5Inf; 
+-பையாப்படப்போ            ClassPo5Inf; 
+ பைக்கப்படப்போ            ClassPo5Inf; 
+ பெயர்க்கப்படப்போ            ClassPo5Inf; 
+ பெருக்கப்படப்போ            ClassPo5Inf; 
+@@ -14153,7 +14115,6 @@
+ பந்திக்கப்படப்போ            ClassPo5Inf; 
+ பனிக்கப்படப்போ            ClassPo5Inf; 
+ பலிக்கப்படப்போ            ClassPo5Inf; 
+-பலப்படப்போ            ClassPo5Inf; 
+ பறிக்கப்படப்போ            ClassPo5Inf; 
+ பறைக்கப்படப்போ            ClassPo5Inf; 
+ படிக்கப்படப்போ            ClassPo5Inf; 
+@@ -14162,7 +14123,6 @@
+ பசிக்கப்படப்போ            ClassPo5Inf; 
+ பசுக்கப்படப்போ            ClassPo5Inf; 
+ பசைக்கப்படப்போ            ClassPo5Inf; 
+-பசபசப்படப்போ            ClassPo5Inf; 
+ பேழ்கணிக்கப்படப்போ            ClassPo5Inf; 
+ பேதிக்கப்படப்போ            ClassPo5Inf; 
+ பேதலிக்கப்படப்போ            ClassPo5Inf; 
+@@ -14183,7 +14143,6 @@
+ பூலிக்கப்படப்போ            ClassPo5Inf; 
+ பூசிக்கப்படப்போ            ClassPo5Inf; 
+ பூஷிக்கப்படப்போ            ClassPo5Inf; 
+-பூப்படப்போ            ClassPo5Inf; 
+ பீழிக்கப்படப்போ            ClassPo5Inf; 
+ பீடிக்கப்படப்போ            ClassPo5Inf; 
+ பஞ்சரிக்கப்படப்போ            ClassPo5Inf; 
+@@ -14220,11 +14179,9 @@
+ நிச்சயிக்கப்படப்போ            ClassPo5Inf; 
+ நளிர்விக்கப்படப்போ            ClassPo5Inf; 
+ நளுநொளுக்கப்படப்போ            ClassPo5Inf; 
+-நவிழ்ப்படப்போ            ClassPo5Inf; 
+ நவிக்கப்படப்போ            ClassPo5Inf; 
+ நவைக்கப்படப்போ            ClassPo5Inf; 
+ நயப்பிக்கப்படப்போ            ClassPo5Inf; 
+-நயப்படப்போ            ClassPo5Inf; 
+ நுழைக்கப்படப்போ            ClassPo5Inf; 
+ நுதிக்கப்படப்போ            ClassPo5Inf; 
+ நுதுக்கப்படப்போ            ClassPo5Inf; 
+@@ -14245,7 +14202,6 @@
+ நமைக்கப்படப்போ            ClassPo5Inf; 
+ நமக்கரிக்கப்படப்போ            ClassPo5Inf; 
+ நமற்கரிக்கப்படப்போ            ClassPo5Inf; 
+-நமப்படப்போ            ClassPo5Inf; 
+ நாணிக்கப்படப்போ            ClassPo5Inf; 
+ நாசிக்கப்படப்போ            ClassPo5Inf; 
+ நைவேதிக்கப்படப்போ            ClassPo5Inf; 
+@@ -14262,7 +14218,6 @@
+ நொடிக்கப்படப்போ            ClassPo5Inf; 
+ நொடுக்கப்படப்போ            ClassPo5Inf; 
+ நொசிக்கப்படப்போ            ClassPo5Inf; 
+-நெகிழ்ப்படப்போ            ClassPo5Inf; 
+ நெறிக்கப்படப்போ            ClassPo5Inf; 
+ நெறுமுக்கப்படப்போ            ClassPo5Inf; 
+ நெறுநெறுக்கப்படப்போ            ClassPo5Inf; 
+@@ -14286,8 +14241,6 @@
+ நீர்க்கப்படப்போ            ClassPo5Inf; 
+ நீடிக்கப்படப்போ            ClassPo5Inf; 
+ நீட்டிக்கப்படப்போ            ClassPo5Inf; 
+-நீப்படப்போ            ClassPo5Inf; 
+-நொளநொளப்படப்போ            ClassPo5Inf; 
+ லிபிக்கப்படப்போ            ClassPo5Inf; 
+ லபிக்கப்படப்போ            ClassPo5Inf; 
+ லச்சிக்கப்படப்போ            ClassPo5Inf; 
+@@ -14303,8 +14256,6 @@
+ சிருட்டிக்கப்படப்போ            ClassPo5Inf; 
+ சிராய்க்கப்படப்போ            ClassPo5Inf; 
+ சிரைக்கப்படப்போ            ClassPo5Inf; 
+-சிரப்படப்போ            ClassPo5Inf; 
+-சிமிழ்ப்படப்போ            ClassPo5Inf; 
+ சிமிளிக்கப்படப்போ            ClassPo5Inf; 
+ சிம்பிளிக்கப்படப்போ            ClassPo5Inf; 
+ சிமாளிக்கப்படப்போ            ClassPo5Inf; 
+@@ -14370,11 +14321,9 @@
+ சத்திக்கப்படப்போ            ClassPo5Inf; 
+ சத்தாய்க்கப்படப்போ            ClassPo5Inf; 
+ சதைக்கப்படப்போ            ClassPo5Inf; 
+-சதசதப்படப்போ            ClassPo5Inf; 
+ சரிக்கப்படப்போ            ClassPo5Inf; 
+ சர்த்திக்கப்படப்போ            ClassPo5Inf; 
+ சரைக்கப்படப்போ            ClassPo5Inf; 
+-சமழ்ப்படப்போ            ClassPo5Inf; 
+ சமிக்கப்படப்போ            ClassPo5Inf; 
+ சமுதாய்க்கப்படப்போ            ClassPo5Inf; 
+ சம்ரட்சிக்கப்படப்போ            ClassPo5Inf; 
+@@ -14451,7 +14400,6 @@
+ சட்டிக்கப்படப்போ            ClassPo5Inf; 
+ சடாய்க்கப்படப்போ            ClassPo5Inf; 
+ சடைக்கப்படப்போ            ClassPo5Inf; 
+-சடபுடப்படப்போ            ClassPo5Inf; 
+ சேவிக்கப்படப்போ            ClassPo5Inf; 
+ சேதிக்கப்படப்போ            ClassPo5Inf; 
+ சேர்க்கப்படப்போ            ClassPo5Inf; 
+@@ -14485,13 +14433,11 @@
+ சீரணிக்கப்படப்போ            ClassPo5Inf; 
+ சீனிக்கப்படப்போ            ClassPo5Inf; 
+ சீலிக்கப்படப்போ            ClassPo5Inf; 
+-சீப்படப்போ            ClassPo5Inf; 
+ சஞ்சரிக்கப்படப்போ            ClassPo5Inf; 
+ ஞாபிக்கப்படப்போ            ClassPo5Inf; 
+ ஞெமிரிக்கப்படப்போ            ClassPo5Inf; 
+ ஞெமிர்க்கப்படப்போ            ClassPo5Inf; 
+ ஜமாய்க்கப்படப்போ            ClassPo5Inf; 
+-ஊழ்ப்படப்போ            ClassPo5Inf; 
+ ஊழலிக்கப்படப்போ            ClassPo5Inf; 
+ ஊர்க்கப்படப்போ            ClassPo5Inf; 
+ ஊட்டிக்கப்படப்போ            ClassPo5Inf; 
+@@ -14558,7 +14504,6 @@
+ இரட்சிக்கப்படப்போ            ClassPo5Inf; 
+ இரசிக்கப்படப்போ            ClassPo5Inf; 
+ இரேசிக்கப்படப்போ            ClassPo5Inf; 
+-இமிழ்ப்படப்போ            ClassPo5Inf; 
+ இமிசிக்கப்படப்போ            ClassPo5Inf; 
+ இமைக்கப்படப்போ            ClassPo5Inf; 
+ இணைக்கப்படப்போ            ClassPo5Inf; 
+@@ -14611,7 +14556,6 @@
+ ஆசீா்வதிக்கப்படப்போ            ClassPo5Inf; 
+ உழுக்கப்படப்போ            ClassPo5Inf; 
+ உழைக்கப்படப்போ            ClassPo5Inf; 
+-உளுக்காப்படப்போ            ClassPo5Inf; 
+ உளுக்கப்படப்போ            ClassPo5Inf; 
+ உளைக்கப்படப்போ            ClassPo5Inf; 
+ உவர்க்கப்படப்போ            ClassPo5Inf; 
+@@ -14639,7 +14583,6 @@
+ உரூபிகரிக்கப்படப்போ            ClassPo5Inf; 
+ உரூபிக்கப்படப்போ            ClassPo5Inf; 
+ உரோசிக்கப்படப்போ            ClassPo5Inf; 
+-உரப்படப்போ            ClassPo5Inf; 
+ உமிக்கப்படப்போ            ClassPo5Inf; 
+ உமைக்கப்படப்போ            ClassPo5Inf; 
+ உகுக்கப்படப்போ            ClassPo5Inf; 
+@@ -16134,7 +16077,6 @@
+ நிகர்த்தப்படப்போ            ClassPo5Inf; 
+ நிகழ்த்தப்படப்போ            ClassPo5Inf; 
+ நிவறப்படப்போ            ClassPo5Inf; 
+-நிப்பாட்டு்ப்படப்போ            ClassPo5Inf; 
+ நிய்த்தப்படப்போ            ClassPo5Inf; 
+ நியதப்படப்போ            ClassPo5Inf; 
+ நிம்பப்படப்போ            ClassPo5Inf; 
+@@ -16363,7 +16305,6 @@
+ உரைசப்படப்போ            ClassPo5Inf; 
+ உரைஞ்சப்படப்போ            ClassPo5Inf; 
+ உரிஞ்சப்படப்போ            ClassPo5Inf; 
+-உரிப்படப்போ            ClassPo5Inf; 
+ உரசப்படப்போ            ClassPo5Inf; 
+ உராவப்படப்போ            ClassPo5Inf; 
+ உராய்ஞ்சப்படப்போ            ClassPo5Inf; 
+@@ -16460,20 +16401,8 @@
+ துறப்படப்போ            ClassPo5Inf; 
+ தெறப்படப்போ            ClassPo5Inf; 
+ இறப்படப்போ            ClassPo5Inf; 
+-பூணப்படப்போ            ClassPo5Inf; 
+ முரணப்படப்போ            ClassPo5Inf; 
+-மாணப்படப்போ            ClassPo5Inf; 
+-உண்ணப்படப்போ            ClassPo5Inf; 
+-நோன்னப்படப்போ            ClassPo5Inf; 
+-தின்னப்படப்போ            ClassPo5Inf; 
+-ஈன்னப்படப்போ            ClassPo5Inf; 
+-பெளப்படப்போ            ClassPo5Inf; 
+-வேளப்படப்போ            ClassPo5Inf; 
+ மீளப்படப்போ            ClassPo5Inf; 
+-தளப்படப்போ            ClassPo5Inf; 
+-தெளப்படப்போ            ClassPo5Inf; 
+-தோளப்படப்போ            ClassPo5Inf; 
+-களப்படப்போ            ClassPo5Inf; 
+ அழப்போ            ClassPo5Inf; 
+ கொய்யப்போ            ClassPo5Inf; 
+ எய்யப்போ            ClassPo5Inf; 
+@@ -29063,7 +28992,6 @@
+ 
+ LEXICON ClassPannu5
+ அழப்படப்பண்ணு                  ClassPannu5Inf; 
+-வைப்படப்பண்ணு                  ClassPannu5Inf; 
+ கொய்யப்படப்பண்ணு                  ClassPannu5Inf; 
+ எய்யப்படப்பண்ணு                  ClassPannu5Inf; 
+ செய்யப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29071,16 +28999,9 @@
+ பொரப்படப்பண்ணு                  ClassPannu5Inf; 
+ பெய்யப்படப்பண்ணு                  ClassPannu5Inf; 
+ தொழப்படப்பண்ணு                  ClassPannu5Inf; 
+-விற்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-நூற்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-நோற்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-தோற்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-கற்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-கிற்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ அழிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ அழைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ அளிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-அவிழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ அவிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ அவ்விக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ அவைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29154,7 +29075,6 @@
+ அஞ்சிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ அஞ்சலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வழிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-வழவழப்படப்பண்ணு                  ClassPannu5Inf; 
+ விழிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ விழுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ விளிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29207,7 +29127,6 @@
+ விசனிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ விசேடிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ விங்களிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-வளவளப்படப்பண்ணு                  ClassPannu5Inf; 
+ வளர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வளைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வயிர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29247,7 +29166,6 @@
+ வெக்களிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வெக்காளிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வெந்திக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-வெலவெலப்படப்பண்ணு                  ClassPannu5Inf; 
+ வெறிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வெடிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வெடுவெடுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29266,7 +29184,6 @@
+ வன்னிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வலுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-வலப்படப்பண்ணு                  ClassPannu5Inf; 
+ வறுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வடிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வட்டிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29285,7 +29202,6 @@
+ வஞ்சிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ யாபிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ யாசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-யாப்படப்பண்ணு                  ClassPannu5Inf; 
+ யோகிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ யோசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ யூகிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29316,7 +29232,6 @@
+ திஷேதிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தளிர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தளிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-தளதளப்படப்பண்ணு                  ClassPannu5Inf; 
+ தளைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தவிர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தவிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29365,7 +29280,6 @@
+ தமிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தம்பிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தமரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-தாழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ தாளிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தாவிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தாவரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29412,14 +29326,12 @@
+ தப்பிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தனிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தறிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-தறதறப்படப்பண்ணு                  ClassPannu5Inf; 
+ தற்கிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தற்காலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தற்பிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தடிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தடுபுடுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தடுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-தடதடப்படப்பண்ணு                  ClassPannu5Inf; 
+ தடாய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தடாரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தடைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29439,7 +29351,6 @@
+ தீய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தீர்மானிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ தீர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-தீப்படப்பண்ணு                  ClassPannu5Inf; 
+ ருசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ ரமிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ ரசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29457,7 +29368,6 @@
+ மிறைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மிடிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மிடுமிடுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-மளமளப்படப்பண்ணு                  ClassPannu5Inf; 
+ முழிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ முழுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ முழைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29468,7 +29378,6 @@
+ முருமுருக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மும்முரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ முண்டிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-முகிழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ முகிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ முகுளிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ முக்குளிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29488,7 +29397,6 @@
+ மரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மர்த்திக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மரணிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-மரப்படப்பண்ணு                  ClassPannu5Inf; 
+ மாய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மானிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மண்டலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29526,16 +29434,12 @@
+ மட்டிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மடலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-மசமசப்படப்பண்ணு                  ClassPannu5Inf; 
+ மேய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மோகரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மோசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-மூழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ மூர்த்தீகரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மூர்ச்சிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ மூரலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-மூப்படப்பண்ணு                  ClassPannu5Inf; 
+-மொரமொரப்படப்பண்ணு                  ClassPannu5Inf; 
+ கழிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கழுகுழுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கிழிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29551,7 +29455,6 @@
+ கிடைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ களிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ களைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-கவிழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ கவிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கவர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கவைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29568,7 +29471,6 @@
+ குருப்பிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ குருக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ குமிழிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-குமிழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ குமிட்டிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ குமிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ குமுகுமுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29603,7 +29505,6 @@
+ கம்பலைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கம்பீரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கமைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-காழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ காய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ காதலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கார்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29611,7 +29512,6 @@
+ காெழுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ காெலுகொலுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ காலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-காப்படப்பண்ணு                  ClassPannu5Inf; 
+ கணிசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கணிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கண்காணிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29632,7 +29532,6 @@
+ கெலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கெடிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கெட்டிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-கபளீப்படப்பண்ணு                  ClassPannu5Inf; 
+ கப்பிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கந்திக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கனிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29643,7 +29542,6 @@
+ கலாப்பிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கலைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கலகிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-கலகலப்படப்பண்ணு                  ClassPannu5Inf; 
+ கறுகறுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கற்பிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கறைக்கணிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29652,13 +29550,10 @@
+ கடுகடுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கடுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கடாட்சிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-கடகடப்படப்பண்ணு                  ClassPannu5Inf; 
+-கசகசப்படப்பண்ணு                  ClassPannu5Inf; 
+ கோர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கோப்படப்பண்ணு                  ClassPannu5Inf; 
+ கேந்திரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கேடாய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-கூழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ கூர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கூடலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ கீா்த்திக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29767,10 +29662,8 @@
+ பராமரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பராக்கிரமிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பராபரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-பரபரப்படப்பண்ணு                  ClassPannu5Inf; 
+ பாவிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பாதிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-பாதுகாப்படப்பண்ணு                  ClassPannu5Inf; 
+ பாரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பார்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பாணிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29779,11 +29672,9 @@
+ பானிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பாலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பாடிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-பாப்படப்பண்ணு                  ClassPannu5Inf; 
+ பணிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பணைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பையர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-பையாப்படப்பண்ணு                  ClassPannu5Inf; 
+ பைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பெயர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பெருக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29810,7 +29701,6 @@
+ பந்திக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பனிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-பலப்படப்பண்ணு                  ClassPannu5Inf; 
+ பறிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பறைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ படிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29819,7 +29709,6 @@
+ பசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பசுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பசைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-பசபசப்படப்பண்ணு                  ClassPannu5Inf; 
+ பேழ்கணிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பேதிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பேதலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29840,7 +29729,6 @@
+ பூலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பூசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பூஷிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-பூப்படப்பண்ணு                  ClassPannu5Inf; 
+ பீழிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பீடிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பஞ்சரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29877,11 +29765,9 @@
+ நிச்சயிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நளிர்விக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நளுநொளுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-நவிழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ நவிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நவைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நயப்பிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-நயப்படப்பண்ணு                  ClassPannu5Inf; 
+ நுழைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நுதிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நுதுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29902,7 +29788,6 @@
+ நமைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நமக்கரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நமற்கரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-நமப்படப்பண்ணு                  ClassPannu5Inf; 
+ நாணிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நாசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நைவேதிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29919,7 +29804,6 @@
+ நொடிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நொடுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நொசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-நெகிழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ நெறிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நெறுமுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நெறுநெறுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29943,8 +29827,6 @@
+ நீர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நீடிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ நீட்டிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-நீப்படப்பண்ணு                  ClassPannu5Inf; 
+-நொளநொளப்படப்பண்ணு                  ClassPannu5Inf; 
+ லிபிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ லபிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ லச்சிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -29960,8 +29842,6 @@
+ சிருட்டிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சிராய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சிரைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-சிரப்படப்பண்ணு                  ClassPannu5Inf; 
+-சிமிழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ சிமிளிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சிம்பிளிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சிமாளிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -30027,11 +29907,9 @@
+ சத்திக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சத்தாய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சதைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-சதசதப்படப்பண்ணு                  ClassPannu5Inf; 
+ சரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சர்த்திக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சரைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-சமழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ சமிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சமுதாய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சம்ரட்சிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -30108,7 +29986,6 @@
+ சட்டிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சடாய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சடைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-சடபுடப்படப்பண்ணு                  ClassPannu5Inf; 
+ சேவிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சேதிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சேர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -30142,13 +30019,11 @@
+ சீரணிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சீனிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சீலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-சீப்படப்பண்ணு                  ClassPannu5Inf; 
+ சஞ்சரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ ஞாபிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ ஞெமிரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ ஞெமிர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ ஜமாய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-ஊழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ ஊழலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ ஊர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ ஊட்டிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -30215,7 +30090,6 @@
+ இரட்சிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ இரசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ இரேசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-இமிழ்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ இமிசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ இமைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ இணைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -30268,7 +30142,6 @@
+ ஆசீா்வதிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ உழுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ உழைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-உளுக்காப்படப்பண்ணு                  ClassPannu5Inf; 
+ உளுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ உளைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ உவர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -30296,7 +30169,6 @@
+ உரூபிகரிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ உரூபிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ உரோசிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-உரப்படப்பண்ணு                  ClassPannu5Inf; 
+ உமிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ உமைக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ உகுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -31790,7 +31662,6 @@
+ நிகர்த்தப்படப்பண்ணு                  ClassPannu5Inf; 
+ நிகழ்த்தப்படப்பண்ணு                  ClassPannu5Inf; 
+ நிவறப்படப்பண்ணு                  ClassPannu5Inf; 
+-நிப்பாட்டு்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ நிய்த்தப்படப்பண்ணு                  ClassPannu5Inf; 
+ நியதப்படப்பண்ணு                  ClassPannu5Inf; 
+ நிம்பப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -32019,7 +31890,6 @@
+ உரைசப்படப்பண்ணு                  ClassPannu5Inf; 
+ உரைஞ்சப்படப்பண்ணு                  ClassPannu5Inf; 
+ உரிஞ்சப்படப்பண்ணு                  ClassPannu5Inf; 
+-உரிப்படப்பண்ணு                  ClassPannu5Inf; 
+ உரசப்படப்பண்ணு                  ClassPannu5Inf; 
+ உராவப்படப்பண்ணு                  ClassPannu5Inf; 
+ உராய்ஞ்சப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -32116,20 +31986,8 @@
+ துறப்படப்பண்ணு                  ClassPannu5Inf; 
+ தெறப்படப்பண்ணு                  ClassPannu5Inf; 
+ இறப்படப்பண்ணு                  ClassPannu5Inf; 
+-பூணப்படப்பண்ணு                  ClassPannu5Inf; 
+ முரணப்படப்பண்ணு                  ClassPannu5Inf; 
+-மாணப்படப்பண்ணு                  ClassPannu5Inf; 
+-உண்ணப்படப்பண்ணு                  ClassPannu5Inf; 
+-நோன்னப்படப்பண்ணு                  ClassPannu5Inf; 
+-தின்னப்படப்பண்ணு                  ClassPannu5Inf; 
+-ஈன்னப்படப்பண்ணு                  ClassPannu5Inf; 
+-பெளப்படப்பண்ணு                  ClassPannu5Inf; 
+-வேளப்படப்பண்ணு                  ClassPannu5Inf; 
+ மீளப்படப்பண்ணு                  ClassPannu5Inf; 
+-தளப்படப்பண்ணு                  ClassPannu5Inf; 
+-தெளப்படப்பண்ணு                  ClassPannu5Inf; 
+-தோளப்படப்பண்ணு                  ClassPannu5Inf; 
+-களப்படப்பண்ணு                  ClassPannu5Inf; 
+ அழப்பண்ணு                  ClassPannu5Inf; 
+ கொய்யப்பண்ணு                  ClassPannu5Inf; 
+ எய்யப்பண்ணு                  ClassPannu5Inf; 
+@@ -38277,7 +38135,6 @@
+ 
+ LEXICON ClassSei1
+ அழப்படச்செய்            ClassSei1Inf; 
+-வைப்படச்செய்            ClassSei1Inf; 
+ கொய்யப்படச்செய்            ClassSei1Inf; 
+ எய்யப்படச்செய்            ClassSei1Inf; 
+ செய்யப்படச்செய்            ClassSei1Inf; 
+@@ -38285,16 +38142,9 @@
+ பொரப்படச்செய்            ClassSei1Inf; 
+ பெய்யப்படச்செய்            ClassSei1Inf; 
+ தொழப்படச்செய்            ClassSei1Inf; 
+-விற்கப்படச்செய்            ClassSei1Inf; 
+-நூற்கப்படச்செய்            ClassSei1Inf; 
+-நோற்கப்படச்செய்            ClassSei1Inf; 
+-தோற்கப்படச்செய்            ClassSei1Inf; 
+-கற்கப்படச்செய்            ClassSei1Inf; 
+-கிற்கப்படச்செய்            ClassSei1Inf; 
+ அழிக்கப்படச்செய்            ClassSei1Inf; 
+ அழைக்கப்படச்செய்            ClassSei1Inf; 
+ அளிக்கப்படச்செய்            ClassSei1Inf; 
+-அவிழ்ப்படச்செய்            ClassSei1Inf; 
+ அவிக்கப்படச்செய்            ClassSei1Inf; 
+ அவ்விக்கப்படச்செய்            ClassSei1Inf; 
+ அவைக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38368,7 +38218,6 @@
+ அஞ்சிக்கப்படச்செய்            ClassSei1Inf; 
+ அஞ்சலிக்கப்படச்செய்            ClassSei1Inf; 
+ வழிக்கப்படச்செய்            ClassSei1Inf; 
+-வழவழப்படச்செய்            ClassSei1Inf; 
+ விழிக்கப்படச்செய்            ClassSei1Inf; 
+ விழுக்கப்படச்செய்            ClassSei1Inf; 
+ விளிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38421,7 +38270,6 @@
+ விசனிக்கப்படச்செய்            ClassSei1Inf; 
+ விசேடிக்கப்படச்செய்            ClassSei1Inf; 
+ விங்களிக்கப்படச்செய்            ClassSei1Inf; 
+-வளவளப்படச்செய்            ClassSei1Inf; 
+ வளர்க்கப்படச்செய்            ClassSei1Inf; 
+ வளைக்கப்படச்செய்            ClassSei1Inf; 
+ வயிர்க்கப்படச்செய்            ClassSei1Inf; 
+@@ -38461,7 +38309,6 @@
+ வெக்களிக்கப்படச்செய்            ClassSei1Inf; 
+ வெக்காளிக்கப்படச்செய்            ClassSei1Inf; 
+ வெந்திக்கப்படச்செய்            ClassSei1Inf; 
+-வெலவெலப்படச்செய்            ClassSei1Inf; 
+ வெறிக்கப்படச்செய்            ClassSei1Inf; 
+ வெடிக்கப்படச்செய்            ClassSei1Inf; 
+ வெடுவெடுக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38480,7 +38327,6 @@
+ வன்னிக்கப்படச்செய்            ClassSei1Inf; 
+ வலிக்கப்படச்செய்            ClassSei1Inf; 
+ வலுக்கப்படச்செய்            ClassSei1Inf; 
+-வலப்படச்செய்            ClassSei1Inf; 
+ வறுக்கப்படச்செய்            ClassSei1Inf; 
+ வடிக்கப்படச்செய்            ClassSei1Inf; 
+ வட்டிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38499,7 +38345,6 @@
+ வஞ்சிக்கப்படச்செய்            ClassSei1Inf; 
+ யாபிக்கப்படச்செய்            ClassSei1Inf; 
+ யாசிக்கப்படச்செய்            ClassSei1Inf; 
+-யாப்படச்செய்            ClassSei1Inf; 
+ யோகிக்கப்படச்செய்            ClassSei1Inf; 
+ யோசிக்கப்படச்செய்            ClassSei1Inf; 
+ யூகிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38530,7 +38375,6 @@
+ திஷேதிக்கப்படச்செய்            ClassSei1Inf; 
+ தளிர்க்கப்படச்செய்            ClassSei1Inf; 
+ தளிக்கப்படச்செய்            ClassSei1Inf; 
+-தளதளப்படச்செய்            ClassSei1Inf; 
+ தளைக்கப்படச்செய்            ClassSei1Inf; 
+ தவிர்க்கப்படச்செய்            ClassSei1Inf; 
+ தவிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38579,7 +38423,6 @@
+ தமிக்கப்படச்செய்            ClassSei1Inf; 
+ தம்பிக்கப்படச்செய்            ClassSei1Inf; 
+ தமரிக்கப்படச்செய்            ClassSei1Inf; 
+-தாழ்ப்படச்செய்            ClassSei1Inf; 
+ தாளிக்கப்படச்செய்            ClassSei1Inf; 
+ தாவிக்கப்படச்செய்            ClassSei1Inf; 
+ தாவரிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38626,14 +38469,12 @@
+ தப்பிக்கப்படச்செய்            ClassSei1Inf; 
+ தனிக்கப்படச்செய்            ClassSei1Inf; 
+ தறிக்கப்படச்செய்            ClassSei1Inf; 
+-தறதறப்படச்செய்            ClassSei1Inf; 
+ தற்கிக்கப்படச்செய்            ClassSei1Inf; 
+ தற்காலிக்கப்படச்செய்            ClassSei1Inf; 
+ தற்பிக்கப்படச்செய்            ClassSei1Inf; 
+ தடிக்கப்படச்செய்            ClassSei1Inf; 
+ தடுபுடுக்கப்படச்செய்            ClassSei1Inf; 
+ தடுக்கப்படச்செய்            ClassSei1Inf; 
+-தடதடப்படச்செய்            ClassSei1Inf; 
+ தடாய்க்கப்படச்செய்            ClassSei1Inf; 
+ தடாரிக்கப்படச்செய்            ClassSei1Inf; 
+ தடைக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38653,7 +38494,6 @@
+ தீய்க்கப்படச்செய்            ClassSei1Inf; 
+ தீர்மானிக்கப்படச்செய்            ClassSei1Inf; 
+ தீர்க்கப்படச்செய்            ClassSei1Inf; 
+-தீப்படச்செய்            ClassSei1Inf; 
+ ருசிக்கப்படச்செய்            ClassSei1Inf; 
+ ரமிக்கப்படச்செய்            ClassSei1Inf; 
+ ரசிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38671,7 +38511,6 @@
+ மிறைக்கப்படச்செய்            ClassSei1Inf; 
+ மிடிக்கப்படச்செய்            ClassSei1Inf; 
+ மிடுமிடுக்கப்படச்செய்            ClassSei1Inf; 
+-மளமளப்படச்செய்            ClassSei1Inf; 
+ முழிக்கப்படச்செய்            ClassSei1Inf; 
+ முழுக்கப்படச்செய்            ClassSei1Inf; 
+ முழைக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38682,7 +38521,6 @@
+ முருமுருக்கப்படச்செய்            ClassSei1Inf; 
+ மும்முரிக்கப்படச்செய்            ClassSei1Inf; 
+ முண்டிக்கப்படச்செய்            ClassSei1Inf; 
+-முகிழ்ப்படச்செய்            ClassSei1Inf; 
+ முகிக்கப்படச்செய்            ClassSei1Inf; 
+ முகுளிக்கப்படச்செய்            ClassSei1Inf; 
+ முக்குளிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38702,7 +38540,6 @@
+ மரிக்கப்படச்செய்            ClassSei1Inf; 
+ மர்த்திக்கப்படச்செய்            ClassSei1Inf; 
+ மரணிக்கப்படச்செய்            ClassSei1Inf; 
+-மரப்படச்செய்            ClassSei1Inf; 
+ மாய்க்கப்படச்செய்            ClassSei1Inf; 
+ மானிக்கப்படச்செய்            ClassSei1Inf; 
+ மண்டலிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38740,16 +38577,12 @@
+ மட்டிக்கப்படச்செய்            ClassSei1Inf; 
+ மடலிக்கப்படச்செய்            ClassSei1Inf; 
+ மசிக்கப்படச்செய்            ClassSei1Inf; 
+-மசமசப்படச்செய்            ClassSei1Inf; 
+ மேய்க்கப்படச்செய்            ClassSei1Inf; 
+ மோகரிக்கப்படச்செய்            ClassSei1Inf; 
+ மோசிக்கப்படச்செய்            ClassSei1Inf; 
+-மூழ்ப்படச்செய்            ClassSei1Inf; 
+ மூர்த்தீகரிக்கப்படச்செய்            ClassSei1Inf; 
+ மூர்ச்சிக்கப்படச்செய்            ClassSei1Inf; 
+ மூரலிக்கப்படச்செய்            ClassSei1Inf; 
+-மூப்படச்செய்            ClassSei1Inf; 
+-மொரமொரப்படச்செய்            ClassSei1Inf; 
+ கழிக்கப்படச்செய்            ClassSei1Inf; 
+ கழுகுழுக்கப்படச்செய்            ClassSei1Inf; 
+ கிழிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38765,7 +38598,6 @@
+ கிடைக்கப்படச்செய்            ClassSei1Inf; 
+ களிக்கப்படச்செய்            ClassSei1Inf; 
+ களைக்கப்படச்செய்            ClassSei1Inf; 
+-கவிழ்ப்படச்செய்            ClassSei1Inf; 
+ கவிக்கப்படச்செய்            ClassSei1Inf; 
+ கவர்க்கப்படச்செய்            ClassSei1Inf; 
+ கவைக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38782,7 +38614,6 @@
+ குருப்பிக்கப்படச்செய்            ClassSei1Inf; 
+ குருக்கப்படச்செய்            ClassSei1Inf; 
+ குமிழிக்கப்படச்செய்            ClassSei1Inf; 
+-குமிழ்ப்படச்செய்            ClassSei1Inf; 
+ குமிட்டிக்கப்படச்செய்            ClassSei1Inf; 
+ குமிக்கப்படச்செய்            ClassSei1Inf; 
+ குமுகுமுக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38817,7 +38648,6 @@
+ கம்பலைக்கப்படச்செய்            ClassSei1Inf; 
+ கம்பீரிக்கப்படச்செய்            ClassSei1Inf; 
+ கமைக்கப்படச்செய்            ClassSei1Inf; 
+-காழ்ப்படச்செய்            ClassSei1Inf; 
+ காய்க்கப்படச்செய்            ClassSei1Inf; 
+ காதலிக்கப்படச்செய்            ClassSei1Inf; 
+ கார்க்கப்படச்செய்            ClassSei1Inf; 
+@@ -38825,7 +38655,6 @@
+ காெழுக்கப்படச்செய்            ClassSei1Inf; 
+ காெலுகொலுக்கப்படச்செய்            ClassSei1Inf; 
+ காலிக்கப்படச்செய்            ClassSei1Inf; 
+-காப்படச்செய்            ClassSei1Inf; 
+ கணிசிக்கப்படச்செய்            ClassSei1Inf; 
+ கணிக்கப்படச்செய்            ClassSei1Inf; 
+ கண்காணிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38846,7 +38675,6 @@
+ கெலிக்கப்படச்செய்            ClassSei1Inf; 
+ கெடிக்கப்படச்செய்            ClassSei1Inf; 
+ கெட்டிக்கப்படச்செய்            ClassSei1Inf; 
+-கபளீப்படச்செய்            ClassSei1Inf; 
+ கப்பிக்கப்படச்செய்            ClassSei1Inf; 
+ கந்திக்கப்படச்செய்            ClassSei1Inf; 
+ கனிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38857,7 +38685,6 @@
+ கலாப்பிக்கப்படச்செய்            ClassSei1Inf; 
+ கலைக்கப்படச்செய்            ClassSei1Inf; 
+ கலகிக்கப்படச்செய்            ClassSei1Inf; 
+-கலகலப்படச்செய்            ClassSei1Inf; 
+ கறுகறுக்கப்படச்செய்            ClassSei1Inf; 
+ கற்பிக்கப்படச்செய்            ClassSei1Inf; 
+ கறைக்கணிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38866,13 +38693,10 @@
+ கடுகடுக்கப்படச்செய்            ClassSei1Inf; 
+ கடுக்கப்படச்செய்            ClassSei1Inf; 
+ கடாட்சிக்கப்படச்செய்            ClassSei1Inf; 
+-கடகடப்படச்செய்            ClassSei1Inf; 
+-கசகசப்படச்செய்            ClassSei1Inf; 
+ கோர்க்கப்படச்செய்            ClassSei1Inf; 
+ கோப்படச்செய்            ClassSei1Inf; 
+ கேந்திரிக்கப்படச்செய்            ClassSei1Inf; 
+ கேடாய்க்கப்படச்செய்            ClassSei1Inf; 
+-கூழ்ப்படச்செய்            ClassSei1Inf; 
+ கூர்க்கப்படச்செய்            ClassSei1Inf; 
+ கூடலிக்கப்படச்செய்            ClassSei1Inf; 
+ கீா்த்திக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38981,10 +38805,8 @@
+ பராமரிக்கப்படச்செய்            ClassSei1Inf; 
+ பராக்கிரமிக்கப்படச்செய்            ClassSei1Inf; 
+ பராபரிக்கப்படச்செய்            ClassSei1Inf; 
+-பரபரப்படச்செய்            ClassSei1Inf; 
+ பாவிக்கப்படச்செய்            ClassSei1Inf; 
+ பாதிக்கப்படச்செய்            ClassSei1Inf; 
+-பாதுகாப்படச்செய்            ClassSei1Inf; 
+ பாரிக்கப்படச்செய்            ClassSei1Inf; 
+ பார்க்கப்படச்செய்            ClassSei1Inf; 
+ பாணிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -38993,11 +38815,9 @@
+ பானிக்கப்படச்செய்            ClassSei1Inf; 
+ பாலிக்கப்படச்செய்            ClassSei1Inf; 
+ பாடிக்கப்படச்செய்            ClassSei1Inf; 
+-பாப்படச்செய்            ClassSei1Inf; 
+ பணிக்கப்படச்செய்            ClassSei1Inf; 
+ பணைக்கப்படச்செய்            ClassSei1Inf; 
+ பையர்க்கப்படச்செய்            ClassSei1Inf; 
+-பையாப்படச்செய்            ClassSei1Inf; 
+ பைக்கப்படச்செய்            ClassSei1Inf; 
+ பெயர்க்கப்படச்செய்            ClassSei1Inf; 
+ பெருக்கப்படச்செய்            ClassSei1Inf; 
+@@ -39024,7 +38844,6 @@
+ பந்திக்கப்படச்செய்            ClassSei1Inf; 
+ பனிக்கப்படச்செய்            ClassSei1Inf; 
+ பலிக்கப்படச்செய்            ClassSei1Inf; 
+-பலப்படச்செய்            ClassSei1Inf; 
+ பறிக்கப்படச்செய்            ClassSei1Inf; 
+ பறைக்கப்படச்செய்            ClassSei1Inf; 
+ படிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -39033,7 +38852,6 @@
+ பசிக்கப்படச்செய்            ClassSei1Inf; 
+ பசுக்கப்படச்செய்            ClassSei1Inf; 
+ பசைக்கப்படச்செய்            ClassSei1Inf; 
+-பசபசப்படச்செய்            ClassSei1Inf; 
+ பேழ்கணிக்கப்படச்செய்            ClassSei1Inf; 
+ பேதிக்கப்படச்செய்            ClassSei1Inf; 
+ பேதலிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -39054,7 +38872,6 @@
+ பூலிக்கப்படச்செய்            ClassSei1Inf; 
+ பூசிக்கப்படச்செய்            ClassSei1Inf; 
+ பூஷிக்கப்படச்செய்            ClassSei1Inf; 
+-பூப்படச்செய்            ClassSei1Inf; 
+ பீழிக்கப்படச்செய்            ClassSei1Inf; 
+ பீடிக்கப்படச்செய்            ClassSei1Inf; 
+ பஞ்சரிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -39091,11 +38908,9 @@
+ நிச்சயிக்கப்படச்செய்            ClassSei1Inf; 
+ நளிர்விக்கப்படச்செய்            ClassSei1Inf; 
+ நளுநொளுக்கப்படச்செய்            ClassSei1Inf; 
+-நவிழ்ப்படச்செய்            ClassSei1Inf; 
+ நவிக்கப்படச்செய்            ClassSei1Inf; 
+ நவைக்கப்படச்செய்            ClassSei1Inf; 
+ நயப்பிக்கப்படச்செய்            ClassSei1Inf; 
+-நயப்படச்செய்            ClassSei1Inf; 
+ நுழைக்கப்படச்செய்            ClassSei1Inf; 
+ நுதிக்கப்படச்செய்            ClassSei1Inf; 
+ நுதுக்கப்படச்செய்            ClassSei1Inf; 
+@@ -39116,7 +38931,6 @@
+ நமைக்கப்படச்செய்            ClassSei1Inf; 
+ நமக்கரிக்கப்படச்செய்            ClassSei1Inf; 
+ நமற்கரிக்கப்படச்செய்            ClassSei1Inf; 
+-நமப்படச்செய்            ClassSei1Inf; 
+ நாணிக்கப்படச்செய்            ClassSei1Inf; 
+ நாசிக்கப்படச்செய்            ClassSei1Inf; 
+ நைவேதிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -39133,7 +38947,6 @@
+ நொடிக்கப்படச்செய்            ClassSei1Inf; 
+ நொடுக்கப்படச்செய்            ClassSei1Inf; 
+ நொசிக்கப்படச்செய்            ClassSei1Inf; 
+-நெகிழ்ப்படச்செய்            ClassSei1Inf; 
+ நெறிக்கப்படச்செய்            ClassSei1Inf; 
+ நெறுமுக்கப்படச்செய்            ClassSei1Inf; 
+ நெறுநெறுக்கப்படச்செய்            ClassSei1Inf; 
+@@ -39157,8 +38970,6 @@
+ நீர்க்கப்படச்செய்            ClassSei1Inf; 
+ நீடிக்கப்படச்செய்            ClassSei1Inf; 
+ நீட்டிக்கப்படச்செய்            ClassSei1Inf; 
+-நீப்படச்செய்            ClassSei1Inf; 
+-நொளநொளப்படச்செய்            ClassSei1Inf; 
+ லிபிக்கப்படச்செய்            ClassSei1Inf; 
+ லபிக்கப்படச்செய்            ClassSei1Inf; 
+ லச்சிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -39174,8 +38985,6 @@
+ சிருட்டிக்கப்படச்செய்            ClassSei1Inf; 
+ சிராய்க்கப்படச்செய்            ClassSei1Inf; 
+ சிரைக்கப்படச்செய்            ClassSei1Inf; 
+-சிரப்படச்செய்            ClassSei1Inf; 
+-சிமிழ்ப்படச்செய்            ClassSei1Inf; 
+ சிமிளிக்கப்படச்செய்            ClassSei1Inf; 
+ சிம்பிளிக்கப்படச்செய்            ClassSei1Inf; 
+ சிமாளிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -39241,11 +39050,9 @@
+ சத்திக்கப்படச்செய்            ClassSei1Inf; 
+ சத்தாய்க்கப்படச்செய்            ClassSei1Inf; 
+ சதைக்கப்படச்செய்            ClassSei1Inf; 
+-சதசதப்படச்செய்            ClassSei1Inf; 
+ சரிக்கப்படச்செய்            ClassSei1Inf; 
+ சர்த்திக்கப்படச்செய்            ClassSei1Inf; 
+ சரைக்கப்படச்செய்            ClassSei1Inf; 
+-சமழ்ப்படச்செய்            ClassSei1Inf; 
+ சமிக்கப்படச்செய்            ClassSei1Inf; 
+ சமுதாய்க்கப்படச்செய்            ClassSei1Inf; 
+ சம்ரட்சிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -39322,7 +39129,6 @@
+ சட்டிக்கப்படச்செய்            ClassSei1Inf; 
+ சடாய்க்கப்படச்செய்            ClassSei1Inf; 
+ சடைக்கப்படச்செய்            ClassSei1Inf; 
+-சடபுடப்படச்செய்            ClassSei1Inf; 
+ சேவிக்கப்படச்செய்            ClassSei1Inf; 
+ சேதிக்கப்படச்செய்            ClassSei1Inf; 
+ சேர்க்கப்படச்செய்            ClassSei1Inf; 
+@@ -39356,13 +39162,11 @@
+ சீரணிக்கப்படச்செய்            ClassSei1Inf; 
+ சீனிக்கப்படச்செய்            ClassSei1Inf; 
+ சீலிக்கப்படச்செய்            ClassSei1Inf; 
+-சீப்படச்செய்            ClassSei1Inf; 
+ சஞ்சரிக்கப்படச்செய்            ClassSei1Inf; 
+ ஞாபிக்கப்படச்செய்            ClassSei1Inf; 
+ ஞெமிரிக்கப்படச்செய்            ClassSei1Inf; 
+ ஞெமிர்க்கப்படச்செய்            ClassSei1Inf; 
+ ஜமாய்க்கப்படச்செய்            ClassSei1Inf; 
+-ஊழ்ப்படச்செய்            ClassSei1Inf; 
+ ஊழலிக்கப்படச்செய்            ClassSei1Inf; 
+ ஊர்க்கப்படச்செய்            ClassSei1Inf; 
+ ஊட்டிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -39429,7 +39233,6 @@
+ இரட்சிக்கப்படச்செய்            ClassSei1Inf; 
+ இரசிக்கப்படச்செய்            ClassSei1Inf; 
+ இரேசிக்கப்படச்செய்            ClassSei1Inf; 
+-இமிழ்ப்படச்செய்            ClassSei1Inf; 
+ இமிசிக்கப்படச்செய்            ClassSei1Inf; 
+ இமைக்கப்படச்செய்            ClassSei1Inf; 
+ இணைக்கப்படச்செய்            ClassSei1Inf; 
+@@ -39482,7 +39285,6 @@
+ ஆசீா்வதிக்கப்படச்செய்            ClassSei1Inf; 
+ உழுக்கப்படச்செய்            ClassSei1Inf; 
+ உழைக்கப்படச்செய்            ClassSei1Inf; 
+-உளுக்காப்படச்செய்            ClassSei1Inf; 
+ உளுக்கப்படச்செய்            ClassSei1Inf; 
+ உளைக்கப்படச்செய்            ClassSei1Inf; 
+ உவர்க்கப்படச்செய்            ClassSei1Inf; 
+@@ -39510,7 +39312,6 @@
+ உரூபிகரிக்கப்படச்செய்            ClassSei1Inf; 
+ உரூபிக்கப்படச்செய்            ClassSei1Inf; 
+ உரோசிக்கப்படச்செய்            ClassSei1Inf; 
+-உரப்படச்செய்            ClassSei1Inf; 
+ உமிக்கப்படச்செய்            ClassSei1Inf; 
+ உமைக்கப்படச்செய்            ClassSei1Inf; 
+ உகுக்கப்படச்செய்            ClassSei1Inf; 
+@@ -41004,7 +40805,6 @@
+ நிகர்த்தப்படச்செய்            ClassSei1Inf; 
+ நிகழ்த்தப்படச்செய்            ClassSei1Inf; 
+ நிவறப்படச்செய்            ClassSei1Inf; 
+-நிப்பாட்டு்ப்படச்செய்            ClassSei1Inf; 
+ நிய்த்தப்படச்செய்            ClassSei1Inf; 
+ நியதப்படச்செய்            ClassSei1Inf; 
+ நிம்பப்படச்செய்            ClassSei1Inf; 
+@@ -41233,7 +41033,6 @@
+ உரைசப்படச்செய்            ClassSei1Inf; 
+ உரைஞ்சப்படச்செய்            ClassSei1Inf; 
+ உரிஞ்சப்படச்செய்            ClassSei1Inf; 
+-உரிப்படச்செய்            ClassSei1Inf; 
+ உரசப்படச்செய்            ClassSei1Inf; 
+ உராவப்படச்செய்            ClassSei1Inf; 
+ உராய்ஞ்சப்படச்செய்            ClassSei1Inf; 
+@@ -41330,20 +41129,8 @@
+ துறப்படச்செய்            ClassSei1Inf; 
+ தெறப்படச்செய்            ClassSei1Inf; 
+ இறப்படச்செய்            ClassSei1Inf; 
+-பூணப்படச்செய்            ClassSei1Inf; 
+ முரணப்படச்செய்            ClassSei1Inf; 
+-மாணப்படச்செய்            ClassSei1Inf; 
+-உண்ணப்படச்செய்            ClassSei1Inf; 
+-நோன்னப்படச்செய்            ClassSei1Inf; 
+-தின்னப்படச்செய்            ClassSei1Inf; 
+-ஈன்னப்படச்செய்            ClassSei1Inf; 
+-பெளப்படச்செய்            ClassSei1Inf; 
+-வேளப்படச்செய்            ClassSei1Inf; 
+ மீளப்படச்செய்            ClassSei1Inf; 
+-தளப்படச்செய்            ClassSei1Inf; 
+-தெளப்படச்செய்            ClassSei1Inf; 
+-தோளப்படச்செய்            ClassSei1Inf; 
+-களப்படச்செய்            ClassSei1Inf; 
+ அழச்செய்            ClassSei1Inf; 
+ கொய்யச்செய்            ClassSei1Inf; 
+ எய்யச்செய்            ClassSei1Inf; 
+@@ -47490,7 +47277,6 @@
+ 
+ LEXICON ClassVai1
+ அழப்படவை            ClassVai1Inf; 
+-வைப்படவை            ClassVai1Inf; 
+ கொய்யப்படவை            ClassVai1Inf; 
+ எய்யப்படவை            ClassVai1Inf; 
+ செய்யப்படவை            ClassVai1Inf; 
+@@ -47498,16 +47284,9 @@
+ பொரப்படவை            ClassVai1Inf; 
+ பெய்யப்படவை            ClassVai1Inf; 
+ தொழப்படவை            ClassVai1Inf; 
+-விற்கப்படவை            ClassVai1Inf; 
+-நூற்கப்படவை            ClassVai1Inf; 
+-நோற்கப்படவை            ClassVai1Inf; 
+-தோற்கப்படவை            ClassVai1Inf; 
+-கற்கப்படவை            ClassVai1Inf; 
+-கிற்கப்படவை            ClassVai1Inf; 
+ அழிக்கப்படவை            ClassVai1Inf; 
+ அழைக்கப்படவை            ClassVai1Inf; 
+ அளிக்கப்படவை            ClassVai1Inf; 
+-அவிழ்ப்படவை            ClassVai1Inf; 
+ அவிக்கப்படவை            ClassVai1Inf; 
+ அவ்விக்கப்படவை            ClassVai1Inf; 
+ அவைக்கப்படவை            ClassVai1Inf; 
+@@ -47581,7 +47360,6 @@
+ அஞ்சிக்கப்படவை            ClassVai1Inf; 
+ அஞ்சலிக்கப்படவை            ClassVai1Inf; 
+ வழிக்கப்படவை            ClassVai1Inf; 
+-வழவழப்படவை            ClassVai1Inf; 
+ விழிக்கப்படவை            ClassVai1Inf; 
+ விழுக்கப்படவை            ClassVai1Inf; 
+ விளிக்கப்படவை            ClassVai1Inf; 
+@@ -47634,7 +47412,6 @@
+ விசனிக்கப்படவை            ClassVai1Inf; 
+ விசேடிக்கப்படவை            ClassVai1Inf; 
+ விங்களிக்கப்படவை            ClassVai1Inf; 
+-வளவளப்படவை            ClassVai1Inf; 
+ வளர்க்கப்படவை            ClassVai1Inf; 
+ வளைக்கப்படவை            ClassVai1Inf; 
+ வயிர்க்கப்படவை            ClassVai1Inf; 
+@@ -47674,7 +47451,6 @@
+ வெக்களிக்கப்படவை            ClassVai1Inf; 
+ வெக்காளிக்கப்படவை            ClassVai1Inf; 
+ வெந்திக்கப்படவை            ClassVai1Inf; 
+-வெலவெலப்படவை            ClassVai1Inf; 
+ வெறிக்கப்படவை            ClassVai1Inf; 
+ வெடிக்கப்படவை            ClassVai1Inf; 
+ வெடுவெடுக்கப்படவை            ClassVai1Inf; 
+@@ -47693,7 +47469,6 @@
+ வன்னிக்கப்படவை            ClassVai1Inf; 
+ வலிக்கப்படவை            ClassVai1Inf; 
+ வலுக்கப்படவை            ClassVai1Inf; 
+-வலப்படவை            ClassVai1Inf; 
+ வறுக்கப்படவை            ClassVai1Inf; 
+ வடிக்கப்படவை            ClassVai1Inf; 
+ வட்டிக்கப்படவை            ClassVai1Inf; 
+@@ -47712,7 +47487,6 @@
+ வஞ்சிக்கப்படவை            ClassVai1Inf; 
+ யாபிக்கப்படவை            ClassVai1Inf; 
+ யாசிக்கப்படவை            ClassVai1Inf; 
+-யாப்படவை            ClassVai1Inf; 
+ யோகிக்கப்படவை            ClassVai1Inf; 
+ யோசிக்கப்படவை            ClassVai1Inf; 
+ யூகிக்கப்படவை            ClassVai1Inf; 
+@@ -47743,7 +47517,6 @@
+ திஷேதிக்கப்படவை            ClassVai1Inf; 
+ தளிர்க்கப்படவை            ClassVai1Inf; 
+ தளிக்கப்படவை            ClassVai1Inf; 
+-தளதளப்படவை            ClassVai1Inf; 
+ தளைக்கப்படவை            ClassVai1Inf; 
+ தவிர்க்கப்படவை            ClassVai1Inf; 
+ தவிக்கப்படவை            ClassVai1Inf; 
+@@ -47792,7 +47565,6 @@
+ தமிக்கப்படவை            ClassVai1Inf; 
+ தம்பிக்கப்படவை            ClassVai1Inf; 
+ தமரிக்கப்படவை            ClassVai1Inf; 
+-தாழ்ப்படவை            ClassVai1Inf; 
+ தாளிக்கப்படவை            ClassVai1Inf; 
+ தாவிக்கப்படவை            ClassVai1Inf; 
+ தாவரிக்கப்படவை            ClassVai1Inf; 
+@@ -47839,14 +47611,12 @@
+ தப்பிக்கப்படவை            ClassVai1Inf; 
+ தனிக்கப்படவை            ClassVai1Inf; 
+ தறிக்கப்படவை            ClassVai1Inf; 
+-தறதறப்படவை            ClassVai1Inf; 
+ தற்கிக்கப்படவை            ClassVai1Inf; 
+ தற்காலிக்கப்படவை            ClassVai1Inf; 
+ தற்பிக்கப்படவை            ClassVai1Inf; 
+ தடிக்கப்படவை            ClassVai1Inf; 
+ தடுபுடுக்கப்படவை            ClassVai1Inf; 
+ தடுக்கப்படவை            ClassVai1Inf; 
+-தடதடப்படவை            ClassVai1Inf; 
+ தடாய்க்கப்படவை            ClassVai1Inf; 
+ தடாரிக்கப்படவை            ClassVai1Inf; 
+ தடைக்கப்படவை            ClassVai1Inf; 
+@@ -47866,7 +47636,6 @@
+ தீய்க்கப்படவை            ClassVai1Inf; 
+ தீர்மானிக்கப்படவை            ClassVai1Inf; 
+ தீர்க்கப்படவை            ClassVai1Inf; 
+-தீப்படவை            ClassVai1Inf; 
+ ருசிக்கப்படவை            ClassVai1Inf; 
+ ரமிக்கப்படவை            ClassVai1Inf; 
+ ரசிக்கப்படவை            ClassVai1Inf; 
+@@ -47884,7 +47653,6 @@
+ மிறைக்கப்படவை            ClassVai1Inf; 
+ மிடிக்கப்படவை            ClassVai1Inf; 
+ மிடுமிடுக்கப்படவை            ClassVai1Inf; 
+-மளமளப்படவை            ClassVai1Inf; 
+ முழிக்கப்படவை            ClassVai1Inf; 
+ முழுக்கப்படவை            ClassVai1Inf; 
+ முழைக்கப்படவை            ClassVai1Inf; 
+@@ -47895,7 +47663,6 @@
+ முருமுருக்கப்படவை            ClassVai1Inf; 
+ மும்முரிக்கப்படவை            ClassVai1Inf; 
+ முண்டிக்கப்படவை            ClassVai1Inf; 
+-முகிழ்ப்படவை            ClassVai1Inf; 
+ முகிக்கப்படவை            ClassVai1Inf; 
+ முகுளிக்கப்படவை            ClassVai1Inf; 
+ முக்குளிக்கப்படவை            ClassVai1Inf; 
+@@ -47915,7 +47682,6 @@
+ மரிக்கப்படவை            ClassVai1Inf; 
+ மர்த்திக்கப்படவை            ClassVai1Inf; 
+ மரணிக்கப்படவை            ClassVai1Inf; 
+-மரப்படவை            ClassVai1Inf; 
+ மாய்க்கப்படவை            ClassVai1Inf; 
+ மானிக்கப்படவை            ClassVai1Inf; 
+ மண்டலிக்கப்படவை            ClassVai1Inf; 
+@@ -47953,16 +47719,12 @@
+ மட்டிக்கப்படவை            ClassVai1Inf; 
+ மடலிக்கப்படவை            ClassVai1Inf; 
+ மசிக்கப்படவை            ClassVai1Inf; 
+-மசமசப்படவை            ClassVai1Inf; 
+ மேய்க்கப்படவை            ClassVai1Inf; 
+ மோகரிக்கப்படவை            ClassVai1Inf; 
+ மோசிக்கப்படவை            ClassVai1Inf; 
+-மூழ்ப்படவை            ClassVai1Inf; 
+ மூர்த்தீகரிக்கப்படவை            ClassVai1Inf; 
+ மூர்ச்சிக்கப்படவை            ClassVai1Inf; 
+ மூரலிக்கப்படவை            ClassVai1Inf; 
+-மூப்படவை            ClassVai1Inf; 
+-மொரமொரப்படவை            ClassVai1Inf; 
+ கழிக்கப்படவை            ClassVai1Inf; 
+ கழுகுழுக்கப்படவை            ClassVai1Inf; 
+ கிழிக்கப்படவை            ClassVai1Inf; 
+@@ -47978,7 +47740,6 @@
+ கிடைக்கப்படவை            ClassVai1Inf; 
+ களிக்கப்படவை            ClassVai1Inf; 
+ களைக்கப்படவை            ClassVai1Inf; 
+-கவிழ்ப்படவை            ClassVai1Inf; 
+ கவிக்கப்படவை            ClassVai1Inf; 
+ கவர்க்கப்படவை            ClassVai1Inf; 
+ கவைக்கப்படவை            ClassVai1Inf; 
+@@ -47995,7 +47756,6 @@
+ குருப்பிக்கப்படவை            ClassVai1Inf; 
+ குருக்கப்படவை            ClassVai1Inf; 
+ குமிழிக்கப்படவை            ClassVai1Inf; 
+-குமிழ்ப்படவை            ClassVai1Inf; 
+ குமிட்டிக்கப்படவை            ClassVai1Inf; 
+ குமிக்கப்படவை            ClassVai1Inf; 
+ குமுகுமுக்கப்படவை            ClassVai1Inf; 
+@@ -48030,7 +47790,6 @@
+ கம்பலைக்கப்படவை            ClassVai1Inf; 
+ கம்பீரிக்கப்படவை            ClassVai1Inf; 
+ கமைக்கப்படவை            ClassVai1Inf; 
+-காழ்ப்படவை            ClassVai1Inf; 
+ காய்க்கப்படவை            ClassVai1Inf; 
+ காதலிக்கப்படவை            ClassVai1Inf; 
+ கார்க்கப்படவை            ClassVai1Inf; 
+@@ -48038,7 +47797,6 @@
+ காெழுக்கப்படவை            ClassVai1Inf; 
+ காெலுகொலுக்கப்படவை            ClassVai1Inf; 
+ காலிக்கப்படவை            ClassVai1Inf; 
+-காப்படவை            ClassVai1Inf; 
+ கணிசிக்கப்படவை            ClassVai1Inf; 
+ கணிக்கப்படவை            ClassVai1Inf; 
+ கண்காணிக்கப்படவை            ClassVai1Inf; 
+@@ -48059,7 +47817,6 @@
+ கெலிக்கப்படவை            ClassVai1Inf; 
+ கெடிக்கப்படவை            ClassVai1Inf; 
+ கெட்டிக்கப்படவை            ClassVai1Inf; 
+-கபளீப்படவை            ClassVai1Inf; 
+ கப்பிக்கப்படவை            ClassVai1Inf; 
+ கந்திக்கப்படவை            ClassVai1Inf; 
+ கனிக்கப்படவை            ClassVai1Inf; 
+@@ -48070,7 +47827,6 @@
+ கலாப்பிக்கப்படவை            ClassVai1Inf; 
+ கலைக்கப்படவை            ClassVai1Inf; 
+ கலகிக்கப்படவை            ClassVai1Inf; 
+-கலகலப்படவை            ClassVai1Inf; 
+ கறுகறுக்கப்படவை            ClassVai1Inf; 
+ கற்பிக்கப்படவை            ClassVai1Inf; 
+ கறைக்கணிக்கப்படவை            ClassVai1Inf; 
+@@ -48079,13 +47835,10 @@
+ கடுகடுக்கப்படவை            ClassVai1Inf; 
+ கடுக்கப்படவை            ClassVai1Inf; 
+ கடாட்சிக்கப்படவை            ClassVai1Inf; 
+-கடகடப்படவை            ClassVai1Inf; 
+-கசகசப்படவை            ClassVai1Inf; 
+ கோர்க்கப்படவை            ClassVai1Inf; 
+ கோப்படவை            ClassVai1Inf; 
+ கேந்திரிக்கப்படவை            ClassVai1Inf; 
+ கேடாய்க்கப்படவை            ClassVai1Inf; 
+-கூழ்ப்படவை            ClassVai1Inf; 
+ கூர்க்கப்படவை            ClassVai1Inf; 
+ கூடலிக்கப்படவை            ClassVai1Inf; 
+ கீா்த்திக்கப்படவை            ClassVai1Inf; 
+@@ -48194,10 +47947,8 @@
+ பராமரிக்கப்படவை            ClassVai1Inf; 
+ பராக்கிரமிக்கப்படவை            ClassVai1Inf; 
+ பராபரிக்கப்படவை            ClassVai1Inf; 
+-பரபரப்படவை            ClassVai1Inf; 
+ பாவிக்கப்படவை            ClassVai1Inf; 
+ பாதிக்கப்படவை            ClassVai1Inf; 
+-பாதுகாப்படவை            ClassVai1Inf; 
+ பாரிக்கப்படவை            ClassVai1Inf; 
+ பார்க்கப்படவை            ClassVai1Inf; 
+ பாணிக்கப்படவை            ClassVai1Inf; 
+@@ -48206,11 +47957,9 @@
+ பானிக்கப்படவை            ClassVai1Inf; 
+ பாலிக்கப்படவை            ClassVai1Inf; 
+ பாடிக்கப்படவை            ClassVai1Inf; 
+-பாப்படவை            ClassVai1Inf; 
+ பணிக்கப்படவை            ClassVai1Inf; 
+ பணைக்கப்படவை            ClassVai1Inf; 
+ பையர்க்கப்படவை            ClassVai1Inf; 
+-பையாப்படவை            ClassVai1Inf; 
+ பைக்கப்படவை            ClassVai1Inf; 
+ பெயர்க்கப்படவை            ClassVai1Inf; 
+ பெருக்கப்படவை            ClassVai1Inf; 
+@@ -48237,7 +47986,6 @@
+ பந்திக்கப்படவை            ClassVai1Inf; 
+ பனிக்கப்படவை            ClassVai1Inf; 
+ பலிக்கப்படவை            ClassVai1Inf; 
+-பலப்படவை            ClassVai1Inf; 
+ பறிக்கப்படவை            ClassVai1Inf; 
+ பறைக்கப்படவை            ClassVai1Inf; 
+ படிக்கப்படவை            ClassVai1Inf; 
+@@ -48246,7 +47994,6 @@
+ பசிக்கப்படவை            ClassVai1Inf; 
+ பசுக்கப்படவை            ClassVai1Inf; 
+ பசைக்கப்படவை            ClassVai1Inf; 
+-பசபசப்படவை            ClassVai1Inf; 
+ பேழ்கணிக்கப்படவை            ClassVai1Inf; 
+ பேதிக்கப்படவை            ClassVai1Inf; 
+ பேதலிக்கப்படவை            ClassVai1Inf; 
+@@ -48267,7 +48014,6 @@
+ பூலிக்கப்படவை            ClassVai1Inf; 
+ பூசிக்கப்படவை            ClassVai1Inf; 
+ பூஷிக்கப்படவை            ClassVai1Inf; 
+-பூப்படவை            ClassVai1Inf; 
+ பீழிக்கப்படவை            ClassVai1Inf; 
+ பீடிக்கப்படவை            ClassVai1Inf; 
+ பஞ்சரிக்கப்படவை            ClassVai1Inf; 
+@@ -48304,11 +48050,9 @@
+ நிச்சயிக்கப்படவை            ClassVai1Inf; 
+ நளிர்விக்கப்படவை            ClassVai1Inf; 
+ நளுநொளுக்கப்படவை            ClassVai1Inf; 
+-நவிழ்ப்படவை            ClassVai1Inf; 
+ நவிக்கப்படவை            ClassVai1Inf; 
+ நவைக்கப்படவை            ClassVai1Inf; 
+ நயப்பிக்கப்படவை            ClassVai1Inf; 
+-நயப்படவை            ClassVai1Inf; 
+ நுழைக்கப்படவை            ClassVai1Inf; 
+ நுதிக்கப்படவை            ClassVai1Inf; 
+ நுதுக்கப்படவை            ClassVai1Inf; 
+@@ -48329,7 +48073,6 @@
+ நமைக்கப்படவை            ClassVai1Inf; 
+ நமக்கரிக்கப்படவை            ClassVai1Inf; 
+ நமற்கரிக்கப்படவை            ClassVai1Inf; 
+-நமப்படவை            ClassVai1Inf; 
+ நாணிக்கப்படவை            ClassVai1Inf; 
+ நாசிக்கப்படவை            ClassVai1Inf; 
+ நைவேதிக்கப்படவை            ClassVai1Inf; 
+@@ -48346,7 +48089,6 @@
+ நொடிக்கப்படவை            ClassVai1Inf; 
+ நொடுக்கப்படவை            ClassVai1Inf; 
+ நொசிக்கப்படவை            ClassVai1Inf; 
+-நெகிழ்ப்படவை            ClassVai1Inf; 
+ நெறிக்கப்படவை            ClassVai1Inf; 
+ நெறுமுக்கப்படவை            ClassVai1Inf; 
+ நெறுநெறுக்கப்படவை            ClassVai1Inf; 
+@@ -48370,8 +48112,6 @@
+ நீர்க்கப்படவை            ClassVai1Inf; 
+ நீடிக்கப்படவை            ClassVai1Inf; 
+ நீட்டிக்கப்படவை            ClassVai1Inf; 
+-நீப்படவை            ClassVai1Inf; 
+-நொளநொளப்படவை            ClassVai1Inf; 
+ லிபிக்கப்படவை            ClassVai1Inf; 
+ லபிக்கப்படவை            ClassVai1Inf; 
+ லச்சிக்கப்படவை            ClassVai1Inf; 
+@@ -48387,8 +48127,6 @@
+ சிருட்டிக்கப்படவை            ClassVai1Inf; 
+ சிராய்க்கப்படவை            ClassVai1Inf; 
+ சிரைக்கப்படவை            ClassVai1Inf; 
+-சிரப்படவை            ClassVai1Inf; 
+-சிமிழ்ப்படவை            ClassVai1Inf; 
+ சிமிளிக்கப்படவை            ClassVai1Inf; 
+ சிம்பிளிக்கப்படவை            ClassVai1Inf; 
+ சிமாளிக்கப்படவை            ClassVai1Inf; 
+@@ -48454,11 +48192,9 @@
+ சத்திக்கப்படவை            ClassVai1Inf; 
+ சத்தாய்க்கப்படவை            ClassVai1Inf; 
+ சதைக்கப்படவை            ClassVai1Inf; 
+-சதசதப்படவை            ClassVai1Inf; 
+ சரிக்கப்படவை            ClassVai1Inf; 
+ சர்த்திக்கப்படவை            ClassVai1Inf; 
+ சரைக்கப்படவை            ClassVai1Inf; 
+-சமழ்ப்படவை            ClassVai1Inf; 
+ சமிக்கப்படவை            ClassVai1Inf; 
+ சமுதாய்க்கப்படவை            ClassVai1Inf; 
+ சம்ரட்சிக்கப்படவை            ClassVai1Inf; 
+@@ -48535,7 +48271,6 @@
+ சட்டிக்கப்படவை            ClassVai1Inf; 
+ சடாய்க்கப்படவை            ClassVai1Inf; 
+ சடைக்கப்படவை            ClassVai1Inf; 
+-சடபுடப்படவை            ClassVai1Inf; 
+ சேவிக்கப்படவை            ClassVai1Inf; 
+ சேதிக்கப்படவை            ClassVai1Inf; 
+ சேர்க்கப்படவை            ClassVai1Inf; 
+@@ -48569,13 +48304,11 @@
+ சீரணிக்கப்படவை            ClassVai1Inf; 
+ சீனிக்கப்படவை            ClassVai1Inf; 
+ சீலிக்கப்படவை            ClassVai1Inf; 
+-சீப்படவை            ClassVai1Inf; 
+ சஞ்சரிக்கப்படவை            ClassVai1Inf; 
+ ஞாபிக்கப்படவை            ClassVai1Inf; 
+ ஞெமிரிக்கப்படவை            ClassVai1Inf; 
+ ஞெமிர்க்கப்படவை            ClassVai1Inf; 
+ ஜமாய்க்கப்படவை            ClassVai1Inf; 
+-ஊழ்ப்படவை            ClassVai1Inf; 
+ ஊழலிக்கப்படவை            ClassVai1Inf; 
+ ஊர்க்கப்படவை            ClassVai1Inf; 
+ ஊட்டிக்கப்படவை            ClassVai1Inf; 
+@@ -48642,7 +48375,6 @@
+ இரட்சிக்கப்படவை            ClassVai1Inf; 
+ இரசிக்கப்படவை            ClassVai1Inf; 
+ இரேசிக்கப்படவை            ClassVai1Inf; 
+-இமிழ்ப்படவை            ClassVai1Inf; 
+ இமிசிக்கப்படவை            ClassVai1Inf; 
+ இமைக்கப்படவை            ClassVai1Inf; 
+ இணைக்கப்படவை            ClassVai1Inf; 
+@@ -48695,7 +48427,6 @@
+ ஆசீா்வதிக்கப்படவை            ClassVai1Inf; 
+ உழுக்கப்படவை            ClassVai1Inf; 
+ உழைக்கப்படவை            ClassVai1Inf; 
+-உளுக்காப்படவை            ClassVai1Inf; 
+ உளுக்கப்படவை            ClassVai1Inf; 
+ உளைக்கப்படவை            ClassVai1Inf; 
+ உவர்க்கப்படவை            ClassVai1Inf; 
+@@ -48723,7 +48454,6 @@
+ உரூபிகரிக்கப்படவை            ClassVai1Inf; 
+ உரூபிக்கப்படவை            ClassVai1Inf; 
+ உரோசிக்கப்படவை            ClassVai1Inf; 
+-உரப்படவை            ClassVai1Inf; 
+ உமிக்கப்படவை            ClassVai1Inf; 
+ உமைக்கப்படவை            ClassVai1Inf; 
+ உகுக்கப்படவை            ClassVai1Inf; 
+@@ -50217,7 +49947,6 @@
+ நிகர்த்தப்படவை            ClassVai1Inf; 
+ நிகழ்த்தப்படவை            ClassVai1Inf; 
+ நிவறப்படவை            ClassVai1Inf; 
+-நிப்பாட்டு்ப்படவை            ClassVai1Inf; 
+ நிய்த்தப்படவை            ClassVai1Inf; 
+ நியதப்படவை            ClassVai1Inf; 
+ நிம்பப்படவை            ClassVai1Inf; 
+@@ -50446,7 +50175,6 @@
+ உரைசப்படவை            ClassVai1Inf; 
+ உரைஞ்சப்படவை            ClassVai1Inf; 
+ உரிஞ்சப்படவை            ClassVai1Inf; 
+-உரிப்படவை            ClassVai1Inf; 
+ உரசப்படவை            ClassVai1Inf; 
+ உராவப்படவை            ClassVai1Inf; 
+ உராய்ஞ்சப்படவை            ClassVai1Inf; 
+@@ -50543,20 +50271,8 @@
+ துறப்படவை            ClassVai1Inf; 
+ தெறப்படவை            ClassVai1Inf; 
+ இறப்படவை            ClassVai1Inf; 
+-பூணப்படவை            ClassVai1Inf; 
+ முரணப்படவை            ClassVai1Inf; 
+-மாணப்படவை            ClassVai1Inf; 
+-உண்ணப்படவை            ClassVai1Inf; 
+-நோன்னப்படவை            ClassVai1Inf; 
+-தின்னப்படவை            ClassVai1Inf; 
+-ஈன்னப்படவை            ClassVai1Inf; 
+-பெளப்படவை            ClassVai1Inf; 
+-வேளப்படவை            ClassVai1Inf; 
+ மீளப்படவை            ClassVai1Inf; 
+-தளப்படவை            ClassVai1Inf; 
+-தெளப்படவை            ClassVai1Inf; 
+-தோளப்படவை            ClassVai1Inf; 
+-களப்படவை            ClassVai1Inf; 
+ அழவை            ClassVai1Inf; 
+ கொய்யவை            ClassVai1Inf; 
+ எய்யவை            ClassVai1Inf; 
+@@ -56661,7 +56377,6 @@
+ LEXICON ClassKoodu5
+ 
+ அழப்படக்கூடு            ClassKoodu5Inf; 
+-வைப்படக்கூடு            ClassKoodu5Inf; 
+ கொய்யப்படக்கூடு            ClassKoodu5Inf; 
+ எய்யப்படக்கூடு            ClassKoodu5Inf; 
+ செய்யப்படக்கூடு            ClassKoodu5Inf; 
+@@ -56669,16 +56384,9 @@
+ பொரப்படக்கூடு            ClassKoodu5Inf; 
+ பெய்யப்படக்கூடு            ClassKoodu5Inf; 
+ தொழப்படக்கூடு            ClassKoodu5Inf; 
+-விற்கப்படக்கூடு            ClassKoodu5Inf; 
+-நூற்கப்படக்கூடு            ClassKoodu5Inf; 
+-நோற்கப்படக்கூடு            ClassKoodu5Inf; 
+-தோற்கப்படக்கூடு            ClassKoodu5Inf; 
+-கற்கப்படக்கூடு            ClassKoodu5Inf; 
+-கிற்கப்படக்கூடு            ClassKoodu5Inf; 
+ அழிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ அழைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ அளிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-அவிழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ அவிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ அவ்விக்கப்படக்கூடு            ClassKoodu5Inf; 
+ அவைக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -56752,7 +56460,6 @@
+ அஞ்சிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ அஞ்சலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வழிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-வழவழப்படக்கூடு            ClassKoodu5Inf; 
+ விழிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ விழுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ விளிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -56805,7 +56512,6 @@
+ விசனிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ விசேடிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ விங்களிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-வளவளப்படக்கூடு            ClassKoodu5Inf; 
+ வளர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ வளைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வயிர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -56845,7 +56551,6 @@
+ வெக்களிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வெக்காளிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வெந்திக்கப்படக்கூடு            ClassKoodu5Inf; 
+-வெலவெலப்படக்கூடு            ClassKoodu5Inf; 
+ வெறிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வெடிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வெடுவெடுக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -56864,7 +56569,6 @@
+ வன்னிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வலுக்கப்படக்கூடு            ClassKoodu5Inf; 
+-வலப்படக்கூடு            ClassKoodu5Inf; 
+ வறுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வடிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வட்டிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -56883,7 +56587,6 @@
+ வஞ்சிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ யாபிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ யாசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-யாப்படக்கூடு            ClassKoodu5Inf; 
+ யோகிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ யோசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ யூகிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -56914,7 +56617,6 @@
+ திஷேதிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தளிர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ தளிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-தளதளப்படக்கூடு            ClassKoodu5Inf; 
+ தளைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தவிர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ தவிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -56963,7 +56665,6 @@
+ தமிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தம்பிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தமரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-தாழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ தாளிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தாவிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தாவரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57010,14 +56711,12 @@
+ தப்பிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தனிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தறிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-தறதறப்படக்கூடு            ClassKoodu5Inf; 
+ தற்கிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தற்காலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தற்பிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தடிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தடுபுடுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தடுக்கப்படக்கூடு            ClassKoodu5Inf; 
+-தடதடப்படக்கூடு            ClassKoodu5Inf; 
+ தடாய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ தடாரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தடைக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57037,7 +56736,6 @@
+ தீய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ தீர்மானிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ தீர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+-தீப்படக்கூடு            ClassKoodu5Inf; 
+ ருசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ ரமிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ ரசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57055,7 +56753,6 @@
+ மிறைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ மிடிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ மிடுமிடுக்கப்படக்கூடு            ClassKoodu5Inf; 
+-மளமளப்படக்கூடு            ClassKoodu5Inf; 
+ முழிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ முழுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ முழைக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57066,7 +56763,6 @@
+ முருமுருக்கப்படக்கூடு            ClassKoodu5Inf; 
+ மும்முரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ முண்டிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-முகிழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ முகிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ முகுளிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ முக்குளிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57086,7 +56782,6 @@
+ மரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ மர்த்திக்கப்படக்கூடு            ClassKoodu5Inf; 
+ மரணிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-மரப்படக்கூடு            ClassKoodu5Inf; 
+ மாய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ மானிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ மண்டலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57124,16 +56819,12 @@
+ மட்டிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ மடலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ மசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-மசமசப்படக்கூடு            ClassKoodu5Inf; 
+ மேய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ மோகரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ மோசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-மூழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ மூர்த்தீகரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ மூர்ச்சிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ மூரலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-மூப்படக்கூடு            ClassKoodu5Inf; 
+-மொரமொரப்படக்கூடு            ClassKoodu5Inf; 
+ கழிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கழுகுழுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கிழிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57149,7 +56840,6 @@
+ கிடைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ களிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ களைக்கப்படக்கூடு            ClassKoodu5Inf; 
+-கவிழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ கவிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கவர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ கவைக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57166,7 +56856,6 @@
+ குருப்பிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ குருக்கப்படக்கூடு            ClassKoodu5Inf; 
+ குமிழிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-குமிழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ குமிட்டிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ குமிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ குமுகுமுக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57201,7 +56890,6 @@
+ கம்பலைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கம்பீரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கமைக்கப்படக்கூடு            ClassKoodu5Inf; 
+-காழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ காய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ காதலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கார்க்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57209,7 +56897,6 @@
+ காெழுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ காெலுகொலுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ காலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-காப்படக்கூடு            ClassKoodu5Inf; 
+ கணிசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கணிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கண்காணிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57230,7 +56917,6 @@
+ கெலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கெடிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கெட்டிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-கபளீப்படக்கூடு            ClassKoodu5Inf; 
+ கப்பிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கந்திக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கனிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57241,7 +56927,6 @@
+ கலாப்பிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கலைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கலகிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-கலகலப்படக்கூடு            ClassKoodu5Inf; 
+ கறுகறுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கற்பிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கறைக்கணிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57250,13 +56935,10 @@
+ கடுகடுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கடுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கடாட்சிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-கடகடப்படக்கூடு            ClassKoodu5Inf; 
+-கசகசப்படக்கூடு            ClassKoodu5Inf; 
+ கோர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ கோப்படக்கூடு            ClassKoodu5Inf; 
+ கேந்திரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கேடாய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+-கூழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ கூர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ கூடலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ கீா்த்திக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57365,10 +57047,8 @@
+ பராமரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பராக்கிரமிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பராபரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-பரபரப்படக்கூடு            ClassKoodu5Inf; 
+ பாவிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பாதிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-பாதுகாப்படக்கூடு            ClassKoodu5Inf; 
+ பாரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பார்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ பாணிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57377,11 +57057,9 @@
+ பானிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பாலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பாடிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-பாப்படக்கூடு            ClassKoodu5Inf; 
+ பணிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பணைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பையர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+-பையாப்படக்கூடு            ClassKoodu5Inf; 
+ பைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பெயர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ பெருக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57408,7 +57086,6 @@
+ பந்திக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பனிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-பலப்படக்கூடு            ClassKoodu5Inf; 
+ பறிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பறைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ படிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57417,7 +57094,6 @@
+ பசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பசுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பசைக்கப்படக்கூடு            ClassKoodu5Inf; 
+-பசபசப்படக்கூடு            ClassKoodu5Inf; 
+ பேழ்கணிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பேதிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பேதலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57438,7 +57114,6 @@
+ பூலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பூசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பூஷிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-பூப்படக்கூடு            ClassKoodu5Inf; 
+ பீழிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பீடிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பஞ்சரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57475,11 +57150,9 @@
+ நிச்சயிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நளிர்விக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நளுநொளுக்கப்படக்கூடு            ClassKoodu5Inf; 
+-நவிழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ நவிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நவைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நயப்பிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-நயப்படக்கூடு            ClassKoodu5Inf; 
+ நுழைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நுதிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நுதுக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57500,7 +57173,6 @@
+ நமைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நமக்கரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நமற்கரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-நமப்படக்கூடு            ClassKoodu5Inf; 
+ நாணிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நாசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நைவேதிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57517,7 +57189,6 @@
+ நொடிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நொடுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நொசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-நெகிழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ நெறிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நெறுமுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நெறுநெறுக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57541,8 +57212,6 @@
+ நீர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ நீடிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ நீட்டிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-நீப்படக்கூடு            ClassKoodu5Inf; 
+-நொளநொளப்படக்கூடு            ClassKoodu5Inf; 
+ லிபிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ லபிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ லச்சிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57558,8 +57227,6 @@
+ சிருட்டிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சிராய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ சிரைக்கப்படக்கூடு            ClassKoodu5Inf; 
+-சிரப்படக்கூடு            ClassKoodu5Inf; 
+-சிமிழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ சிமிளிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சிம்பிளிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சிமாளிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57625,11 +57292,9 @@
+ சத்திக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சத்தாய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ சதைக்கப்படக்கூடு            ClassKoodu5Inf; 
+-சதசதப்படக்கூடு            ClassKoodu5Inf; 
+ சரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சர்த்திக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சரைக்கப்படக்கூடு            ClassKoodu5Inf; 
+-சமழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ சமிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சமுதாய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ சம்ரட்சிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57706,7 +57371,6 @@
+ சட்டிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சடாய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ சடைக்கப்படக்கூடு            ClassKoodu5Inf; 
+-சடபுடப்படக்கூடு            ClassKoodu5Inf; 
+ சேவிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சேதிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சேர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57740,13 +57404,11 @@
+ சீரணிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சீனிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சீலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-சீப்படக்கூடு            ClassKoodu5Inf; 
+ சஞ்சரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ ஞாபிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ ஞெமிரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ ஞெமிர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ ஜமாய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+-ஊழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ ஊழலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ ஊர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ ஊட்டிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57813,7 +57475,6 @@
+ இரட்சிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ இரசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ இரேசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-இமிழ்ப்படக்கூடு            ClassKoodu5Inf; 
+ இமிசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ இமைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ இணைக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57866,7 +57527,6 @@
+ ஆசீா்வதிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ உழுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ உழைக்கப்படக்கூடு            ClassKoodu5Inf; 
+-உளுக்காப்படக்கூடு            ClassKoodu5Inf; 
+ உளுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ உளைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ உவர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57894,7 +57554,6 @@
+ உரூபிகரிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ உரூபிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ உரோசிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-உரப்படக்கூடு            ClassKoodu5Inf; 
+ உமிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ உமைக்கப்படக்கூடு            ClassKoodu5Inf; 
+ உகுக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -59388,7 +59047,6 @@
+ நிகர்த்தப்படக்கூடு            ClassKoodu5Inf; 
+ நிகழ்த்தப்படக்கூடு            ClassKoodu5Inf; 
+ நிவறப்படக்கூடு            ClassKoodu5Inf; 
+-நிப்பாட்டு்ப்படக்கூடு            ClassKoodu5Inf; 
+ நிய்த்தப்படக்கூடு            ClassKoodu5Inf; 
+ நியதப்படக்கூடு            ClassKoodu5Inf; 
+ நிம்பப்படக்கூடு            ClassKoodu5Inf; 
+@@ -59617,7 +59275,6 @@
+ உரைசப்படக்கூடு            ClassKoodu5Inf; 
+ உரைஞ்சப்படக்கூடு            ClassKoodu5Inf; 
+ உரிஞ்சப்படக்கூடு            ClassKoodu5Inf; 
+-உரிப்படக்கூடு            ClassKoodu5Inf; 
+ உரசப்படக்கூடு            ClassKoodu5Inf; 
+ உராவப்படக்கூடு            ClassKoodu5Inf; 
+ உராய்ஞ்சப்படக்கூடு            ClassKoodu5Inf; 
+@@ -59714,20 +59371,8 @@
+ துறப்படக்கூடு            ClassKoodu5Inf; 
+ தெறப்படக்கூடு            ClassKoodu5Inf; 
+ இறப்படக்கூடு            ClassKoodu5Inf; 
+-பூணப்படக்கூடு            ClassKoodu5Inf; 
+ முரணப்படக்கூடு            ClassKoodu5Inf; 
+-மாணப்படக்கூடு            ClassKoodu5Inf; 
+-உண்ணப்படக்கூடு            ClassKoodu5Inf; 
+-நோன்னப்படக்கூடு            ClassKoodu5Inf; 
+-தின்னப்படக்கூடு            ClassKoodu5Inf; 
+-ஈன்னப்படக்கூடு            ClassKoodu5Inf; 
+-பெளப்படக்கூடு            ClassKoodu5Inf; 
+-வேளப்படக்கூடு            ClassKoodu5Inf; 
+ மீளப்படக்கூடு            ClassKoodu5Inf; 
+-தளப்படக்கூடு            ClassKoodu5Inf; 
+-தெளப்படக்கூடு            ClassKoodu5Inf; 
+-தோளப்படக்கூடு            ClassKoodu5Inf; 
+-களப்படக்கூடு            ClassKoodu5Inf; 
+ அழக்கூடு            ClassKoodu5Inf; 
+ கொய்யக்கூடு            ClassKoodu5Inf; 
+ எய்யக்கூடு            ClassKoodu5Inf; 
+@@ -65877,7 +65522,6 @@
+ 
+ LEXICON ClassVendu5
+ அழப்படவேண்டு            ClassVendu5Inf; 
+-வைப்படவேண்டு            ClassVendu5Inf; 
+ கொய்யப்படவேண்டு            ClassVendu5Inf; 
+ எய்யப்படவேண்டு            ClassVendu5Inf; 
+ செய்யப்படவேண்டு            ClassVendu5Inf; 
+@@ -65885,16 +65529,9 @@
+ பொரப்படவேண்டு            ClassVendu5Inf; 
+ பெய்யப்படவேண்டு            ClassVendu5Inf; 
+ தொழப்படவேண்டு            ClassVendu5Inf; 
+-விற்கப்படவேண்டு            ClassVendu5Inf; 
+-நூற்கப்படவேண்டு            ClassVendu5Inf; 
+-நோற்கப்படவேண்டு            ClassVendu5Inf; 
+-தோற்கப்படவேண்டு            ClassVendu5Inf; 
+-கற்கப்படவேண்டு            ClassVendu5Inf; 
+-கிற்கப்படவேண்டு            ClassVendu5Inf; 
+ அழிக்கப்படவேண்டு            ClassVendu5Inf; 
+ அழைக்கப்படவேண்டு            ClassVendu5Inf; 
+ அளிக்கப்படவேண்டு            ClassVendu5Inf; 
+-அவிழ்ப்படவேண்டு            ClassVendu5Inf; 
+ அவிக்கப்படவேண்டு            ClassVendu5Inf; 
+ அவ்விக்கப்படவேண்டு            ClassVendu5Inf; 
+ அவைக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -65968,7 +65605,6 @@
+ அஞ்சிக்கப்படவேண்டு            ClassVendu5Inf; 
+ அஞ்சலிக்கப்படவேண்டு            ClassVendu5Inf; 
+ வழிக்கப்படவேண்டு            ClassVendu5Inf; 
+-வழவழப்படவேண்டு            ClassVendu5Inf; 
+ விழிக்கப்படவேண்டு            ClassVendu5Inf; 
+ விழுக்கப்படவேண்டு            ClassVendu5Inf; 
+ விளிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66021,7 +65657,6 @@
+ விசனிக்கப்படவேண்டு            ClassVendu5Inf; 
+ விசேடிக்கப்படவேண்டு            ClassVendu5Inf; 
+ விங்களிக்கப்படவேண்டு            ClassVendu5Inf; 
+-வளவளப்படவேண்டு            ClassVendu5Inf; 
+ வளர்க்கப்படவேண்டு            ClassVendu5Inf; 
+ வளைக்கப்படவேண்டு            ClassVendu5Inf; 
+ வயிர்க்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66061,7 +65696,6 @@
+ வெக்களிக்கப்படவேண்டு            ClassVendu5Inf; 
+ வெக்காளிக்கப்படவேண்டு            ClassVendu5Inf; 
+ வெந்திக்கப்படவேண்டு            ClassVendu5Inf; 
+-வெலவெலப்படவேண்டு            ClassVendu5Inf; 
+ வெறிக்கப்படவேண்டு            ClassVendu5Inf; 
+ வெடிக்கப்படவேண்டு            ClassVendu5Inf; 
+ வெடுவெடுக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66080,7 +65714,6 @@
+ வன்னிக்கப்படவேண்டு            ClassVendu5Inf; 
+ வலிக்கப்படவேண்டு            ClassVendu5Inf; 
+ வலுக்கப்படவேண்டு            ClassVendu5Inf; 
+-வலப்படவேண்டு            ClassVendu5Inf; 
+ வறுக்கப்படவேண்டு            ClassVendu5Inf; 
+ வடிக்கப்படவேண்டு            ClassVendu5Inf; 
+ வட்டிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66099,7 +65732,6 @@
+ வஞ்சிக்கப்படவேண்டு            ClassVendu5Inf; 
+ யாபிக்கப்படவேண்டு            ClassVendu5Inf; 
+ யாசிக்கப்படவேண்டு            ClassVendu5Inf; 
+-யாப்படவேண்டு            ClassVendu5Inf; 
+ யோகிக்கப்படவேண்டு            ClassVendu5Inf; 
+ யோசிக்கப்படவேண்டு            ClassVendu5Inf; 
+ யூகிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66130,7 +65762,6 @@
+ திஷேதிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தளிர்க்கப்படவேண்டு            ClassVendu5Inf; 
+ தளிக்கப்படவேண்டு            ClassVendu5Inf; 
+-தளதளப்படவேண்டு            ClassVendu5Inf; 
+ தளைக்கப்படவேண்டு            ClassVendu5Inf; 
+ தவிர்க்கப்படவேண்டு            ClassVendu5Inf; 
+ தவிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66179,7 +65810,6 @@
+ தமிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தம்பிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தமரிக்கப்படவேண்டு            ClassVendu5Inf; 
+-தாழ்ப்படவேண்டு            ClassVendu5Inf; 
+ தாளிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தாவிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தாவரிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66226,14 +65856,12 @@
+ தப்பிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தனிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தறிக்கப்படவேண்டு            ClassVendu5Inf; 
+-தறதறப்படவேண்டு            ClassVendu5Inf; 
+ தற்கிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தற்காலிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தற்பிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தடிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தடுபுடுக்கப்படவேண்டு            ClassVendu5Inf; 
+ தடுக்கப்படவேண்டு            ClassVendu5Inf; 
+-தடதடப்படவேண்டு            ClassVendu5Inf; 
+ தடாய்க்கப்படவேண்டு            ClassVendu5Inf; 
+ தடாரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தடைக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66253,7 +65881,6 @@
+ தீய்க்கப்படவேண்டு            ClassVendu5Inf; 
+ தீர்மானிக்கப்படவேண்டு            ClassVendu5Inf; 
+ தீர்க்கப்படவேண்டு            ClassVendu5Inf; 
+-தீப்படவேண்டு            ClassVendu5Inf; 
+ ருசிக்கப்படவேண்டு            ClassVendu5Inf; 
+ ரமிக்கப்படவேண்டு            ClassVendu5Inf; 
+ ரசிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66271,7 +65898,6 @@
+ மிறைக்கப்படவேண்டு            ClassVendu5Inf; 
+ மிடிக்கப்படவேண்டு            ClassVendu5Inf; 
+ மிடுமிடுக்கப்படவேண்டு            ClassVendu5Inf; 
+-மளமளப்படவேண்டு            ClassVendu5Inf; 
+ முழிக்கப்படவேண்டு            ClassVendu5Inf; 
+ முழுக்கப்படவேண்டு            ClassVendu5Inf; 
+ முழைக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66282,7 +65908,6 @@
+ முருமுருக்கப்படவேண்டு            ClassVendu5Inf; 
+ மும்முரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ முண்டிக்கப்படவேண்டு            ClassVendu5Inf; 
+-முகிழ்ப்படவேண்டு            ClassVendu5Inf; 
+ முகிக்கப்படவேண்டு            ClassVendu5Inf; 
+ முகுளிக்கப்படவேண்டு            ClassVendu5Inf; 
+ முக்குளிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66302,7 +65927,6 @@
+ மரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ மர்த்திக்கப்படவேண்டு            ClassVendu5Inf; 
+ மரணிக்கப்படவேண்டு            ClassVendu5Inf; 
+-மரப்படவேண்டு            ClassVendu5Inf; 
+ மாய்க்கப்படவேண்டு            ClassVendu5Inf; 
+ மானிக்கப்படவேண்டு            ClassVendu5Inf; 
+ மண்டலிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66340,16 +65964,12 @@
+ மட்டிக்கப்படவேண்டு            ClassVendu5Inf; 
+ மடலிக்கப்படவேண்டு            ClassVendu5Inf; 
+ மசிக்கப்படவேண்டு            ClassVendu5Inf; 
+-மசமசப்படவேண்டு            ClassVendu5Inf; 
+ மேய்க்கப்படவேண்டு            ClassVendu5Inf; 
+ மோகரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ மோசிக்கப்படவேண்டு            ClassVendu5Inf; 
+-மூழ்ப்படவேண்டு            ClassVendu5Inf; 
+ மூர்த்தீகரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ மூர்ச்சிக்கப்படவேண்டு            ClassVendu5Inf; 
+ மூரலிக்கப்படவேண்டு            ClassVendu5Inf; 
+-மூப்படவேண்டு            ClassVendu5Inf; 
+-மொரமொரப்படவேண்டு            ClassVendu5Inf; 
+ கழிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கழுகுழுக்கப்படவேண்டு            ClassVendu5Inf; 
+ கிழிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66365,7 +65985,6 @@
+ கிடைக்கப்படவேண்டு            ClassVendu5Inf; 
+ களிக்கப்படவேண்டு            ClassVendu5Inf; 
+ களைக்கப்படவேண்டு            ClassVendu5Inf; 
+-கவிழ்ப்படவேண்டு            ClassVendu5Inf; 
+ கவிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கவர்க்கப்படவேண்டு            ClassVendu5Inf; 
+ கவைக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66382,7 +66001,6 @@
+ குருப்பிக்கப்படவேண்டு            ClassVendu5Inf; 
+ குருக்கப்படவேண்டு            ClassVendu5Inf; 
+ குமிழிக்கப்படவேண்டு            ClassVendu5Inf; 
+-குமிழ்ப்படவேண்டு            ClassVendu5Inf; 
+ குமிட்டிக்கப்படவேண்டு            ClassVendu5Inf; 
+ குமிக்கப்படவேண்டு            ClassVendu5Inf; 
+ குமுகுமுக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66417,7 +66035,6 @@
+ கம்பலைக்கப்படவேண்டு            ClassVendu5Inf; 
+ கம்பீரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கமைக்கப்படவேண்டு            ClassVendu5Inf; 
+-காழ்ப்படவேண்டு            ClassVendu5Inf; 
+ காய்க்கப்படவேண்டு            ClassVendu5Inf; 
+ காதலிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கார்க்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66425,7 +66042,6 @@
+ காெழுக்கப்படவேண்டு            ClassVendu5Inf; 
+ காெலுகொலுக்கப்படவேண்டு            ClassVendu5Inf; 
+ காலிக்கப்படவேண்டு            ClassVendu5Inf; 
+-காப்படவேண்டு            ClassVendu5Inf; 
+ கணிசிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கணிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கண்காணிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66446,7 +66062,6 @@
+ கெலிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கெடிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கெட்டிக்கப்படவேண்டு            ClassVendu5Inf; 
+-கபளீப்படவேண்டு            ClassVendu5Inf; 
+ கப்பிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கந்திக்கப்படவேண்டு            ClassVendu5Inf; 
+ கனிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66457,7 +66072,6 @@
+ கலாப்பிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கலைக்கப்படவேண்டு            ClassVendu5Inf; 
+ கலகிக்கப்படவேண்டு            ClassVendu5Inf; 
+-கலகலப்படவேண்டு            ClassVendu5Inf; 
+ கறுகறுக்கப்படவேண்டு            ClassVendu5Inf; 
+ கற்பிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கறைக்கணிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66466,13 +66080,10 @@
+ கடுகடுக்கப்படவேண்டு            ClassVendu5Inf; 
+ கடுக்கப்படவேண்டு            ClassVendu5Inf; 
+ கடாட்சிக்கப்படவேண்டு            ClassVendu5Inf; 
+-கடகடப்படவேண்டு            ClassVendu5Inf; 
+-கசகசப்படவேண்டு            ClassVendu5Inf; 
+ கோர்க்கப்படவேண்டு            ClassVendu5Inf; 
+ கோப்படவேண்டு            ClassVendu5Inf; 
+ கேந்திரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கேடாய்க்கப்படவேண்டு            ClassVendu5Inf; 
+-கூழ்ப்படவேண்டு            ClassVendu5Inf; 
+ கூர்க்கப்படவேண்டு            ClassVendu5Inf; 
+ கூடலிக்கப்படவேண்டு            ClassVendu5Inf; 
+ கீா்த்திக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66581,10 +66192,8 @@
+ பராமரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பராக்கிரமிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பராபரிக்கப்படவேண்டு            ClassVendu5Inf; 
+-பரபரப்படவேண்டு            ClassVendu5Inf; 
+ பாவிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பாதிக்கப்படவேண்டு            ClassVendu5Inf; 
+-பாதுகாப்படவேண்டு            ClassVendu5Inf; 
+ பாரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பார்க்கப்படவேண்டு            ClassVendu5Inf; 
+ பாணிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66593,11 +66202,9 @@
+ பானிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பாலிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பாடிக்கப்படவேண்டு            ClassVendu5Inf; 
+-பாப்படவேண்டு            ClassVendu5Inf; 
+ பணிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பணைக்கப்படவேண்டு            ClassVendu5Inf; 
+ பையர்க்கப்படவேண்டு            ClassVendu5Inf; 
+-பையாப்படவேண்டு            ClassVendu5Inf; 
+ பைக்கப்படவேண்டு            ClassVendu5Inf; 
+ பெயர்க்கப்படவேண்டு            ClassVendu5Inf; 
+ பெருக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66624,7 +66231,6 @@
+ பந்திக்கப்படவேண்டு            ClassVendu5Inf; 
+ பனிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பலிக்கப்படவேண்டு            ClassVendu5Inf; 
+-பலப்படவேண்டு            ClassVendu5Inf; 
+ பறிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பறைக்கப்படவேண்டு            ClassVendu5Inf; 
+ படிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66633,7 +66239,6 @@
+ பசிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பசுக்கப்படவேண்டு            ClassVendu5Inf; 
+ பசைக்கப்படவேண்டு            ClassVendu5Inf; 
+-பசபசப்படவேண்டு            ClassVendu5Inf; 
+ பேழ்கணிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பேதிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பேதலிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66654,7 +66259,6 @@
+ பூலிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பூசிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பூஷிக்கப்படவேண்டு            ClassVendu5Inf; 
+-பூப்படவேண்டு            ClassVendu5Inf; 
+ பீழிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பீடிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பஞ்சரிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66691,11 +66295,9 @@
+ நிச்சயிக்கப்படவேண்டு            ClassVendu5Inf; 
+ நளிர்விக்கப்படவேண்டு            ClassVendu5Inf; 
+ நளுநொளுக்கப்படவேண்டு            ClassVendu5Inf; 
+-நவிழ்ப்படவேண்டு            ClassVendu5Inf; 
+ நவிக்கப்படவேண்டு            ClassVendu5Inf; 
+ நவைக்கப்படவேண்டு            ClassVendu5Inf; 
+ நயப்பிக்கப்படவேண்டு            ClassVendu5Inf; 
+-நயப்படவேண்டு            ClassVendu5Inf; 
+ நுழைக்கப்படவேண்டு            ClassVendu5Inf; 
+ நுதிக்கப்படவேண்டு            ClassVendu5Inf; 
+ நுதுக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66716,7 +66318,6 @@
+ நமைக்கப்படவேண்டு            ClassVendu5Inf; 
+ நமக்கரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ நமற்கரிக்கப்படவேண்டு            ClassVendu5Inf; 
+-நமப்படவேண்டு            ClassVendu5Inf; 
+ நாணிக்கப்படவேண்டு            ClassVendu5Inf; 
+ நாசிக்கப்படவேண்டு            ClassVendu5Inf; 
+ நைவேதிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66733,7 +66334,6 @@
+ நொடிக்கப்படவேண்டு            ClassVendu5Inf; 
+ நொடுக்கப்படவேண்டு            ClassVendu5Inf; 
+ நொசிக்கப்படவேண்டு            ClassVendu5Inf; 
+-நெகிழ்ப்படவேண்டு            ClassVendu5Inf; 
+ நெறிக்கப்படவேண்டு            ClassVendu5Inf; 
+ நெறுமுக்கப்படவேண்டு            ClassVendu5Inf; 
+ நெறுநெறுக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66757,8 +66357,6 @@
+ நீர்க்கப்படவேண்டு            ClassVendu5Inf; 
+ நீடிக்கப்படவேண்டு            ClassVendu5Inf; 
+ நீட்டிக்கப்படவேண்டு            ClassVendu5Inf; 
+-நீப்படவேண்டு            ClassVendu5Inf; 
+-நொளநொளப்படவேண்டு            ClassVendu5Inf; 
+ லிபிக்கப்படவேண்டு            ClassVendu5Inf; 
+ லபிக்கப்படவேண்டு            ClassVendu5Inf; 
+ லச்சிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66774,8 +66372,6 @@
+ சிருட்டிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சிராய்க்கப்படவேண்டு            ClassVendu5Inf; 
+ சிரைக்கப்படவேண்டு            ClassVendu5Inf; 
+-சிரப்படவேண்டு            ClassVendu5Inf; 
+-சிமிழ்ப்படவேண்டு            ClassVendu5Inf; 
+ சிமிளிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சிம்பிளிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சிமாளிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66841,11 +66437,9 @@
+ சத்திக்கப்படவேண்டு            ClassVendu5Inf; 
+ சத்தாய்க்கப்படவேண்டு            ClassVendu5Inf; 
+ சதைக்கப்படவேண்டு            ClassVendu5Inf; 
+-சதசதப்படவேண்டு            ClassVendu5Inf; 
+ சரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சர்த்திக்கப்படவேண்டு            ClassVendu5Inf; 
+ சரைக்கப்படவேண்டு            ClassVendu5Inf; 
+-சமழ்ப்படவேண்டு            ClassVendu5Inf; 
+ சமிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சமுதாய்க்கப்படவேண்டு            ClassVendu5Inf; 
+ சம்ரட்சிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66922,7 +66516,6 @@
+ சட்டிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சடாய்க்கப்படவேண்டு            ClassVendu5Inf; 
+ சடைக்கப்படவேண்டு            ClassVendu5Inf; 
+-சடபுடப்படவேண்டு            ClassVendu5Inf; 
+ சேவிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சேதிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சேர்க்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -66956,13 +66549,11 @@
+ சீரணிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சீனிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சீலிக்கப்படவேண்டு            ClassVendu5Inf; 
+-சீப்படவேண்டு            ClassVendu5Inf; 
+ சஞ்சரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ ஞாபிக்கப்படவேண்டு            ClassVendu5Inf; 
+ ஞெமிரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ ஞெமிர்க்கப்படவேண்டு            ClassVendu5Inf; 
+ ஜமாய்க்கப்படவேண்டு            ClassVendu5Inf; 
+-ஊழ்ப்படவேண்டு            ClassVendu5Inf; 
+ ஊழலிக்கப்படவேண்டு            ClassVendu5Inf; 
+ ஊர்க்கப்படவேண்டு            ClassVendu5Inf; 
+ ஊட்டிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -67029,7 +66620,6 @@
+ இரட்சிக்கப்படவேண்டு            ClassVendu5Inf; 
+ இரசிக்கப்படவேண்டு            ClassVendu5Inf; 
+ இரேசிக்கப்படவேண்டு            ClassVendu5Inf; 
+-இமிழ்ப்படவேண்டு            ClassVendu5Inf; 
+ இமிசிக்கப்படவேண்டு            ClassVendu5Inf; 
+ இமைக்கப்படவேண்டு            ClassVendu5Inf; 
+ இணைக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -67082,7 +66672,6 @@
+ ஆசீா்வதிக்கப்படவேண்டு            ClassVendu5Inf; 
+ உழுக்கப்படவேண்டு            ClassVendu5Inf; 
+ உழைக்கப்படவேண்டு            ClassVendu5Inf; 
+-உளுக்காப்படவேண்டு            ClassVendu5Inf; 
+ உளுக்கப்படவேண்டு            ClassVendu5Inf; 
+ உளைக்கப்படவேண்டு            ClassVendu5Inf; 
+ உவர்க்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -67110,7 +66699,6 @@
+ உரூபிகரிக்கப்படவேண்டு            ClassVendu5Inf; 
+ உரூபிக்கப்படவேண்டு            ClassVendu5Inf; 
+ உரோசிக்கப்படவேண்டு            ClassVendu5Inf; 
+-உரப்படவேண்டு            ClassVendu5Inf; 
+ உமிக்கப்படவேண்டு            ClassVendu5Inf; 
+ உமைக்கப்படவேண்டு            ClassVendu5Inf; 
+ உகுக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -68604,7 +68192,6 @@
+ நிகர்த்தப்படவேண்டு            ClassVendu5Inf; 
+ நிகழ்த்தப்படவேண்டு            ClassVendu5Inf; 
+ நிவறப்படவேண்டு            ClassVendu5Inf; 
+-நிப்பாட்டு்ப்படவேண்டு            ClassVendu5Inf; 
+ நிய்த்தப்படவேண்டு            ClassVendu5Inf; 
+ நியதப்படவேண்டு            ClassVendu5Inf; 
+ நிம்பப்படவேண்டு            ClassVendu5Inf; 
+@@ -68833,7 +68420,6 @@
+ உரைசப்படவேண்டு            ClassVendu5Inf; 
+ உரைஞ்சப்படவேண்டு            ClassVendu5Inf; 
+ உரிஞ்சப்படவேண்டு            ClassVendu5Inf; 
+-உரிப்படவேண்டு            ClassVendu5Inf; 
+ உரசப்படவேண்டு            ClassVendu5Inf; 
+ உராவப்படவேண்டு            ClassVendu5Inf; 
+ உராய்ஞ்சப்படவேண்டு            ClassVendu5Inf; 
+@@ -68930,20 +68516,8 @@
+ துறப்படவேண்டு            ClassVendu5Inf; 
+ தெறப்படவேண்டு            ClassVendu5Inf; 
+ இறப்படவேண்டு            ClassVendu5Inf; 
+-பூணப்படவேண்டு            ClassVendu5Inf; 
+ முரணப்படவேண்டு            ClassVendu5Inf; 
+-மாணப்படவேண்டு            ClassVendu5Inf; 
+-உண்ணப்படவேண்டு            ClassVendu5Inf; 
+-நோன்னப்படவேண்டு            ClassVendu5Inf; 
+-தின்னப்படவேண்டு            ClassVendu5Inf; 
+-ஈன்னப்படவேண்டு            ClassVendu5Inf; 
+-பெளப்படவேண்டு            ClassVendu5Inf; 
+-வேளப்படவேண்டு            ClassVendu5Inf; 
+ மீளப்படவேண்டு            ClassVendu5Inf; 
+-தளப்படவேண்டு            ClassVendu5Inf; 
+-தெளப்படவேண்டு            ClassVendu5Inf; 
+-தோளப்படவேண்டு            ClassVendu5Inf; 
+-களப்படவேண்டு            ClassVendu5Inf; 
+ அழவேண்டு            ClassVendu5Inf; 
+ கொய்யவேண்டு            ClassVendu5Inf; 
+ எய்யவேண்டு            ClassVendu5Inf; 

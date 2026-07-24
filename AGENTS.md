@@ -552,6 +552,7 @@ Analytics calls are added **after** existing `broadcastToRoom` calls — no chan
 - **Splitting**: Double-click an Uyirmey tile to split it back into Mey + Uyir components
 - **Bonus Selection**: Double-click a bonus tile to open the letter selection modal
 - **Activation**: Double-click activates a tile (shaking + darkening animation). Only one tile can be activated at a time. Used for merging (drag activated tile onto another), splitting Uyirmey, and selecting bonus letters. Swap mode uses a separate red border selection style.
+- **Rack text selection**: Rack tiles and their fitted letter/point contents disable browser text selection, so mouse dragging interacts with the tile without highlighting its text.
 
 ### Swap Mode
 - Click the swap button to enter swap mode (button turns red)

@@ -1,0 +1,55 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart +1pl +3pl +adv +time +cardinal +foc +3sgm +3sgf +3pln +abl +soc +unit +part +conjunction +intj +presentative +pp-particle +trans +fut +2sg +vpart_pin +vpart_patti +vpart_parttu +psp_mathiri +purpose +verb +nonfin +sim +past +PartNoun
++Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart +1pl +3pl +adv +time +cardinal +foc +3sgm +3sgf +3pln +abl +soc +unit +part +conjunction +intj +presentative +pp-particle +trans +fut +2sg +vpart_pin +vpart_patti +vpart_parttu +psp_mathiri +purpose +verb +nonfin +sim +past +PartNoun +honorific_title +colloq +compoundmodifier
+ 
+ LEXICON Root
+ abbreviations;
+@@ -52,6 +52,43 @@
+ எஸ்+abbrev+letter:எஸ் #;
+ 
+ LEXICON pronounQuantifiers
++! Reviewed high-frequency closed-class and temporal lexical items.
++ஒருநாள்+noun+nom+time:ஒருநாள் #;
++ஒருநாள்+adv+time:ஒருநாள் #;
++ஸ்ரீ+part+honorific_title:ஸ்ரீ #;
++மகாத்மா+part+honorific_title:மகாத்மா #;
++மற்று+part+conjunction:மற்று #;
++இப்போது+adv+time+dem+prox+colloq:இப்போ #;
++என்+verb+nonfin+sim+middle+fut%=ப்+adjpart%=அ:என்ப #;
++ஆயிரம்+cardinal+compoundmodifier:ஆயிரத்து #;
++லட்சம்+cardinal+compoundmodifier:லட்சத்து #;
++அது+pron+dem+dist+3sgn+inst+colloq:அதனால #;
++எல்லாம்+quant+all+foc%=ஏ:எல்லாமே #;
++அப்போது+adv+dem+dist+time+foc%=தான்:அப்போதுதான் #;
++மட்டும்+part+foc%=தான்:மட்டும்தான் #;
++அது+pron+dem+dist+3sgn+foc%=ஏ+psp_mathiri:அதேபோல #;
++எங்கு+adv+inter+indef%=ஓ:எங்கோ #;
++இல்லை+exist+neg+ques%=ஆ:இல்லையா #;
++பின்+pp-particle+time+add%=உம்:பின்னரும் #;
++ஆங்கு+adv+distrib+foc%=ஏ:ஆங்காங்கே #;
++ஊடு+pp-particle+trans%=ஆக:ஊடாக #;
++வேண்டும்+modal+comp%=என:வேண்டுமென #;
++நான்கு+cardinal+colloq:நாலு #;
++பெரிது+adj:பெரிது #;
++யா+pron+quant+all+add%=உம்:யாவும் #;
++தலா+quant+distrib:தலா #;
++பிறர்+pron+human+3pl+nom:பிறர் #;
++வாறு+noun+nom+type:வாறு #;
++மறுபடி+adv+add%=உம்:மறுபடியும் #;
++பல+quant+distrib:பலபல #;
++சிறிது+quant+degree:சிறிதளவு #;
++அது+pron+dem+dist+3sgn+pp-particle+time:அதுவரை #;
++ஆண்டு+noun+time+distrib:ஆண்டுதோறும் #;
++ஒன்று+cardinal+fraction%=அரை:ஒன்றரை #;
++இடது+adj:இடது #;
++எப்பொழுது+adv+inter+time+add%=உம்:எப்பொழுதும் #;
++இது+pron+dem+prox+3sgn+nom:இஃது #;
++அங்ஙனம்+adv+dem+dist+situation:அங்ஙனம் #;
+ ! Reviewed compositional deictic, postpositional, focus and unit relations.
+ இது+pron+dem+prox+3sgn+nom+foc%=ஏ:இதே #;
+ என்+comp+foc%=ஏ:என்றே #;

@@ -1,0 +1,11 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -231,7 +231,6 @@
+ ஏமா      C12Vinf;
+ சிம்மா      C12Vinf;
+ செம்மா      C12Vinf;
+ தண்ணா      C12Vinf;
+-தொண்ணா      C12Vinf;
+ மல்கா      C12Vinf;
+ மல்லா      C12Vinf;
+ மாழா      C12Vinf;

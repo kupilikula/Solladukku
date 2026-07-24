@@ -1,0 +1,609 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -18544,7 +18544,6 @@
+ போக்கிவிடு     CVidu61Inf; 
+ போட்டிவிடு     CVidu61Inf; 
+ போதிவிடு     CVidu61Inf; 
+-போிவிடு     CVidu61Inf; 
+ பொக்கிவிடு     CVidu61Inf; 
+ பொம்மிவிடு     CVidu61Inf; 
+ பொசுக்கிவிடு     CVidu61Inf; 
+@@ -19307,7 +19306,6 @@
+ ஆராட்டிவிடு     CVidu61Inf; 
+ ஆழ்த்திவிடு     CVidu61Inf; 
+ அற்கிவிடு     CVidu61Inf; 
+-அறவிடிவிடு     CVidu61Inf; 
+ அறிவுறுத்திவிடு     CVidu61Inf; 
+ அறாவிவிடு     CVidu61Inf; 
+ அகற்றிவிடு     CVidu61Inf; 
+@@ -19338,14 +19336,12 @@
+ அடக்கிவிடு     CVidu61Inf; 
+ அடைச்சிவிடு     CVidu61Inf; 
+ அடைசிவிடு     CVidu61Inf; 
+-அடிபடிவிடு     CVidu61Inf; 
+ அடிமையாக்கிவிடு     CVidu61Inf; 
+ அடசிவிடு     CVidu61Inf; 
+ அடங்கிவிடு     CVidu61Inf; 
+ அளுக்கிவிடு     CVidu61Inf; 
+ அள்ளிவிடு     CVidu61Inf; 
+ அளறிவிடு     CVidu61Inf; 
+-அளவிடிவிடு     CVidu61Inf; 
+ அளவிவிடு     CVidu61Inf; 
+ அளாவிவிடு     CVidu61Inf; 
+ அணுகிவிடு     CVidu61Inf; 
+@@ -19450,6 +19446,10 @@
+ ஈன்றுவிடு     CVidu61Inf; 
+ கேட்டுவிடு     CVidu61Inf; 
+ 
++அடிபட்டுவிடு    CVidu61Inf;
++அறவிட்டுவிடு    CVidu61Inf;
++அளவிட்டுவிடு    CVidu61Inf;
++போய்விடு    CVidu61Inf;
+ LEXICON CVidu61Inf
+ 
+ ! Reviewed dictionary citation continuation
+@@ -21356,7 +21356,6 @@
+ பொழிக்கப்படப்போ            ClassPo5Inf; 
+ பொலிக்கப்படப்போ            ClassPo5Inf; 
+ பொதிக்கப்படப்போ            ClassPo5Inf; 
+-பெயர்ப்படப்போ            ClassPo5Inf; 
+ பீழப்படப்போ            ClassPo5Inf; 
+ போழப்படப்போ            ClassPo5Inf; 
+ பேர்ப்படப்போ            ClassPo5Inf; 
+@@ -21445,7 +21444,6 @@
+ அகட்டப்படப்போ            ClassPo5Inf; 
+ அகற்றப்படப்போ            ClassPo5Inf; 
+ அகவப்படப்போ            ClassPo5Inf; 
+-அகப்படப்போ            ClassPo5Inf; 
+ அவாவப்படப்போ            ClassPo5Inf; 
+ அப்பப்படப்போ            ClassPo5Inf; 
+ அயக்கப்படப்போ            ClassPo5Inf; 
+@@ -24266,12 +24264,10 @@
+ அடக்கப்போ            ClassPo5Inf; 
+ அடைச்சப்போ            ClassPo5Inf; 
+ அடைசப்போ            ClassPo5Inf; 
+-அடிபடப்போ            ClassPo5Inf; 
+ அடிமையாக்கப்போ            ClassPo5Inf; 
+ அடசப்போ            ClassPo5Inf; 
+ அடங்கப்போ            ClassPo5Inf; 
+ அற்கப்போ            ClassPo5Inf; 
+-அறவிடப்போ            ClassPo5Inf; 
+ அறிவுறுத்தப்போ            ClassPo5Inf; 
+ அறாவப்போ            ClassPo5Inf; 
+ அகட்டப்போ            ClassPo5Inf; 
+@@ -24297,7 +24293,6 @@
+ அளுக்கப்போ            ClassPo5Inf; 
+ அள்ளப்போ            ClassPo5Inf; 
+ அளறப்போ            ClassPo5Inf; 
+-அளவிடப்போ            ClassPo5Inf; 
+ அளவப்போ            ClassPo5Inf; 
+ அளாவப்போ            ClassPo5Inf; 
+ அணுகப்போ            ClassPo5Inf; 
+@@ -24725,7 +24720,6 @@
+ போற்றப்போ            ClassPo5Inf; 
+ போக்கப்போ            ClassPo5Inf; 
+ போதப்போ            ClassPo5Inf; 
+-போப்போ            ClassPo5Inf; 
+ பொக்கப்போ            ClassPo5Inf; 
+ பொம்மப்போ            ClassPo5Inf; 
+ பொசுக்கப்போ            ClassPo5Inf; 
+@@ -25496,6 +25490,11 @@
+ தெறப்போ            ClassPo5Inf; 
+ இறப்போ            ClassPo5Inf; 
+ 
++அகப்படப்போ    ClassPo5Inf;
++அடிபடப்போ    ClassPo5Inf;
++அறவிடப்போ    ClassPo5Inf;
++அளவிடப்போ    ClassPo5Inf;
++போகப்போ    ClassPo5Inf;
+ LEXICON ClassPo5Inf
+ 
+ ! Reviewed dictionary citation continuation
+@@ -27984,7 +27983,6 @@
+ போக்கிப்போடு	VpoduInf;
+ போட்டிப்போடு	VpoduInf;
+ போதிப்போடு	VpoduInf;
+-போிப்போடு	VpoduInf;
+ பொக்கிப்போடு	VpoduInf;
+ பொம்மிப்போடு	VpoduInf;
+ பொசுக்கிப்போடு	VpoduInf;
+@@ -28747,7 +28745,6 @@
+ ஆராட்டிப்போடு	VpoduInf;
+ ஆழ்த்திப்போடு	VpoduInf;
+ அற்கிப்போடு	VpoduInf;
+-அறவிடிப்போடு	VpoduInf;
+ அறிவுறுத்திப்போடு	VpoduInf;
+ அறாவிப்போடு	VpoduInf;
+ அகற்றிப்போடு	VpoduInf;
+@@ -28778,14 +28775,12 @@
+ அடக்கிப்போடு	VpoduInf;
+ அடைச்சிப்போடு	VpoduInf;
+ அடைசிப்போடு	VpoduInf;
+-அடிபடிப்போடு	VpoduInf;
+ அடிமையாக்கிப்போடு	VpoduInf;
+ அடசிப்போடு	VpoduInf;
+ அடங்கிப்போடு	VpoduInf;
+ அளுக்கிப்போடு	VpoduInf;
+ அள்ளிப்போடு	VpoduInf;
+ அளறிப்போடு	VpoduInf;
+-அளவிடிப்போடு	VpoduInf;
+ அளவிப்போடு	VpoduInf;
+ அளாவிப்போடு	VpoduInf;
+ அணுகிப்போடு	VpoduInf;
+@@ -28891,6 +28886,10 @@
+ கேட்டுப்போடு	VpoduInf;
+ 
+ 
++அடிபட்டுப்போடு    VpoduInf;
++அறவிட்டுப்போடு    VpoduInf;
++அளவிட்டுப்போடு    VpoduInf;
++போய்ப்போடு    VpoduInf;
+ LEXICON VpoduInf
+ 
+ ! Reviewed dictionary citation continuation
+@@ -31376,7 +31375,6 @@
+ போக்கித்தள்ளு	VthalluInf;
+ போட்டித்தள்ளு	VthalluInf;
+ போதித்தள்ளு	VthalluInf;
+-போித்தள்ளு	VthalluInf;
+ பொக்கித்தள்ளு	VthalluInf;
+ பொம்மித்தள்ளு	VthalluInf;
+ பொசுக்கித்தள்ளு	VthalluInf;
+@@ -32139,12 +32137,10 @@
+ ஆராட்டித்தள்ளு	VthalluInf;
+ ஆழ்த்தித்தள்ளு	VthalluInf;
+ அற்கித்தள்ளு	VthalluInf;
+-அறவிடித்தள்ளு	VthalluInf;
+ அறிவுறுத்தித்தள்ளு	VthalluInf;
+ அறாவித்தள்ளு	VthalluInf;
+ அகற்றித்தள்ளு	VthalluInf;
+ அகவித்தள்ளு	VthalluInf;
+-அகப்படித்தள்ளு	VthalluInf;
+ அகட்டித்தள்ளு	VthalluInf;
+ அவாவித்தள்ளு	VthalluInf;
+ அப்புறப்படுத்தித்தள்ளு	VthalluInf;
+@@ -32170,14 +32166,12 @@
+ அடக்கித்தள்ளு	VthalluInf;
+ அடைச்சித்தள்ளு	VthalluInf;
+ அடைசித்தள்ளு	VthalluInf;
+-அடிபடித்தள்ளு	VthalluInf;
+ அடிமையாக்கித்தள்ளு	VthalluInf;
+ அடசித்தள்ளு	VthalluInf;
+ அடங்கித்தள்ளு	VthalluInf;
+ அளுக்கித்தள்ளு	VthalluInf;
+ அள்ளித்தள்ளு	VthalluInf;
+ அளறித்தள்ளு	VthalluInf;
+-அளவிடித்தள்ளு	VthalluInf;
+ அளவித்தள்ளு	VthalluInf;
+ அளாவித்தள்ளு	VthalluInf;
+ அணுகித்தள்ளு	VthalluInf;
+@@ -32283,6 +32277,11 @@
+ கேட்டுத்தள்ளு	VthalluInf;
+ 
+ 
++அகப்பட்டுத்தள்ளு    VthalluInf;
++அடிபட்டுத்தள்ளு    VthalluInf;
++அறவிட்டுத்தள்ளு    VthalluInf;
++அளவிட்டுத்தள்ளு    VthalluInf;
++போய்த்தள்ளு    VthalluInf;
+ LEXICON VthalluInf
+ 
+ ! Reviewed dictionary citation continuation
+@@ -34108,7 +34107,6 @@
+ பொழிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பொலிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ பொதிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-பெயர்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ பீழப்படப்பண்ணு                  ClassPannu5Inf; 
+ போழப்படப்பண்ணு                  ClassPannu5Inf; 
+ பேர்ப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -37017,18 +37015,15 @@
+ அடக்கப்பண்ணு                  ClassPannu5Inf; 
+ அடைச்சப்பண்ணு                  ClassPannu5Inf; 
+ அடைசப்பண்ணு                  ClassPannu5Inf; 
+-அடிபடப்பண்ணு                  ClassPannu5Inf; 
+ அடிமையாக்கப்பண்ணு                  ClassPannu5Inf; 
+ அடசப்பண்ணு                  ClassPannu5Inf; 
+ அடங்கப்பண்ணு                  ClassPannu5Inf; 
+ அற்கப்பண்ணு                  ClassPannu5Inf; 
+-அறவிடப்பண்ணு                  ClassPannu5Inf; 
+ அறிவுறுத்தப்பண்ணு                  ClassPannu5Inf; 
+ அறாவப்பண்ணு                  ClassPannu5Inf; 
+ அகட்டப்பண்ணு                  ClassPannu5Inf; 
+ அகற்றப்பண்ணு                  ClassPannu5Inf; 
+ அகவப்பண்ணு                  ClassPannu5Inf; 
+-அகப்படப்பண்ணு                  ClassPannu5Inf; 
+ அவாவப்பண்ணு                  ClassPannu5Inf; 
+ அப்பப்பண்ணு                  ClassPannu5Inf; 
+ அயக்கப்பண்ணு                  ClassPannu5Inf; 
+@@ -37049,7 +37044,6 @@
+ அளுக்கப்பண்ணு                  ClassPannu5Inf; 
+ அள்ளப்பண்ணு                  ClassPannu5Inf; 
+ அளறப்பண்ணு                  ClassPannu5Inf; 
+-அளவிடப்பண்ணு                  ClassPannu5Inf; 
+ அளவப்பண்ணு                  ClassPannu5Inf; 
+ அளாவப்பண்ணு                  ClassPannu5Inf; 
+ அணுகப்பண்ணு                  ClassPannu5Inf; 
+@@ -37477,7 +37471,6 @@
+ போற்றப்பண்ணு                  ClassPannu5Inf; 
+ போக்கப்பண்ணு                  ClassPannu5Inf; 
+ போதப்பண்ணு                  ClassPannu5Inf; 
+-போப்பண்ணு                  ClassPannu5Inf; 
+ பொக்கப்பண்ணு                  ClassPannu5Inf; 
+ பொம்மப்பண்ணு                  ClassPannu5Inf; 
+ பொசுக்கப்பண்ணு                  ClassPannu5Inf; 
+@@ -38248,6 +38241,11 @@
+ தெறப்பண்ணு                  ClassPannu5Inf; 
+ இறப்பண்ணு                  ClassPannu5Inf; 
+ 
++அகப்படப்பண்ணு    ClassPannu5Inf;
++அடிபடப்பண்ணு    ClassPannu5Inf;
++அறவிடப்பண்ணு    ClassPannu5Inf;
++அளவிடப்பண்ணு    ClassPannu5Inf;
++போகப்பண்ணு    ClassPannu5Inf;
+ LEXICON ClassPannu5Inf
+ 
+ ! Reviewed dictionary citation continuation
+@@ -40071,7 +40069,6 @@
+ பொழிக்கப்படச்செய்            ClassSei1Inf; 
+ பொலிக்கப்படச்செய்            ClassSei1Inf; 
+ பொதிக்கப்படச்செய்            ClassSei1Inf; 
+-பெயர்ப்படச்செய்            ClassSei1Inf; 
+ பீழப்படச்செய்            ClassSei1Inf; 
+ போழப்படச்செய்            ClassSei1Inf; 
+ பேர்ப்படச்செய்            ClassSei1Inf; 
+@@ -42980,18 +42977,15 @@
+ அடக்கச்செய்            ClassSei1Inf; 
+ அடைச்சச்செய்            ClassSei1Inf; 
+ அடைசச்செய்            ClassSei1Inf; 
+-அடிபடச்செய்            ClassSei1Inf; 
+ அடிமையாக்கச்செய்            ClassSei1Inf; 
+ அடசச்செய்            ClassSei1Inf; 
+ அடங்கச்செய்            ClassSei1Inf; 
+ அற்கச்செய்            ClassSei1Inf; 
+-அறவிடச்செய்            ClassSei1Inf; 
+ அறிவுறுத்தச்செய்            ClassSei1Inf; 
+ அறாவச்செய்            ClassSei1Inf; 
+ அகட்டச்செய்            ClassSei1Inf; 
+ அகற்றச்செய்            ClassSei1Inf; 
+ அகவச்செய்            ClassSei1Inf; 
+-அகப்படச்செய்            ClassSei1Inf; 
+ அவாவச்செய்            ClassSei1Inf; 
+ அப்பச்செய்            ClassSei1Inf; 
+ அயக்கச்செய்            ClassSei1Inf; 
+@@ -43012,7 +43006,6 @@
+ அளுக்கச்செய்            ClassSei1Inf; 
+ அள்ளச்செய்            ClassSei1Inf; 
+ அளறச்செய்            ClassSei1Inf; 
+-அளவிடச்செய்            ClassSei1Inf; 
+ அளவச்செய்            ClassSei1Inf; 
+ அளாவச்செய்            ClassSei1Inf; 
+ அணுகச்செய்            ClassSei1Inf; 
+@@ -43440,7 +43433,6 @@
+ போற்றச்செய்            ClassSei1Inf; 
+ போக்கச்செய்            ClassSei1Inf; 
+ போதச்செய்            ClassSei1Inf; 
+-போச்செய்            ClassSei1Inf; 
+ பொக்கச்செய்            ClassSei1Inf; 
+ பொம்மச்செய்            ClassSei1Inf; 
+ பொசுக்கச்செய்            ClassSei1Inf; 
+@@ -44211,6 +44203,11 @@
+ தெறச்செய்            ClassSei1Inf; 
+ இறச்செய்            ClassSei1Inf; 
+ 
++அகப்படச்செய்    ClassSei1Inf;
++அடிபடச்செய்    ClassSei1Inf;
++அறவிடச்செய்    ClassSei1Inf;
++அளவிடச்செய்    ClassSei1Inf;
++போகச்செய்    ClassSei1Inf;
+ LEXICON ClassSei1Inf
+ 
+ 
+@@ -46030,7 +46027,6 @@
+ பொழிக்கப்படவை            ClassVai1Inf; 
+ பொலிக்கப்படவை            ClassVai1Inf; 
+ பொதிக்கப்படவை            ClassVai1Inf; 
+-பெயர்ப்படவை            ClassVai1Inf; 
+ பீழப்படவை            ClassVai1Inf; 
+ போழப்படவை            ClassVai1Inf; 
+ பேர்ப்படவை            ClassVai1Inf; 
+@@ -48946,18 +48942,15 @@
+ அடக்கவை            ClassVai1Inf; 
+ அடைச்சவை            ClassVai1Inf; 
+ அடைசவை            ClassVai1Inf; 
+-அடிபடவை            ClassVai1Inf; 
+ அடிமையாக்கவை            ClassVai1Inf; 
+ அடசவை            ClassVai1Inf; 
+ அடங்கவை            ClassVai1Inf; 
+ அற்கவை            ClassVai1Inf; 
+-அறவிடவை            ClassVai1Inf; 
+ அறிவுறுத்தவை            ClassVai1Inf; 
+ அறாவவை            ClassVai1Inf; 
+ அகட்டவை            ClassVai1Inf; 
+ அகற்றவை            ClassVai1Inf; 
+ அகவவை            ClassVai1Inf; 
+-அகப்படவை            ClassVai1Inf; 
+ அவாவவை            ClassVai1Inf; 
+ அப்பவை            ClassVai1Inf; 
+ அயக்கவை            ClassVai1Inf; 
+@@ -48976,7 +48969,6 @@
+ அளுக்கவை            ClassVai1Inf; 
+ அள்ளவை            ClassVai1Inf; 
+ அளறவை            ClassVai1Inf; 
+-அளவிடவை            ClassVai1Inf; 
+ அளவவை            ClassVai1Inf; 
+ அளாவவை            ClassVai1Inf; 
+ அணுகவை            ClassVai1Inf; 
+@@ -49398,7 +49390,6 @@
+ போற்றவை            ClassVai1Inf; 
+ போக்கவை            ClassVai1Inf; 
+ போதவை            ClassVai1Inf; 
+-போவை            ClassVai1Inf; 
+ பொக்கவை            ClassVai1Inf; 
+ பொம்மவை            ClassVai1Inf; 
+ பொசுக்கவை            ClassVai1Inf; 
+@@ -50149,6 +50140,11 @@
+ இறவை            ClassVai1Inf; 
+ மாணவை            ClassVai1Inf; 
+ 
++அகப்படவை    ClassVai1Inf;
++அடிபடவை    ClassVai1Inf;
++அறவிடவை    ClassVai1Inf;
++அளவிடவை    ClassVai1Inf;
++போகவை    ClassVai1Inf;
+ LEXICON ClassVai1Inf
+ 
+ 
+@@ -51970,7 +51966,6 @@
+ பொழிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பொலிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ பொதிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-பெயர்ப்படக்கூடு            ClassKoodu5Inf; 
+ பீழப்படக்கூடு            ClassKoodu5Inf; 
+ போழப்படக்கூடு            ClassKoodu5Inf; 
+ பேர்ப்படக்கூடு            ClassKoodu5Inf; 
+@@ -54879,18 +54874,15 @@
+ அடக்கக்கூடு            ClassKoodu5Inf; 
+ அடைச்சக்கூடு            ClassKoodu5Inf; 
+ அடைசக்கூடு            ClassKoodu5Inf; 
+-அடிபடக்கூடு            ClassKoodu5Inf; 
+ அடிமையாக்கக்கூடு            ClassKoodu5Inf; 
+ அடசக்கூடு            ClassKoodu5Inf; 
+ அடங்கக்கூடு            ClassKoodu5Inf; 
+ அற்கக்கூடு            ClassKoodu5Inf; 
+-அறவிடக்கூடு            ClassKoodu5Inf; 
+ அறிவுறுத்தக்கூடு            ClassKoodu5Inf; 
+ அறாவக்கூடு            ClassKoodu5Inf; 
+ அகட்டக்கூடு            ClassKoodu5Inf; 
+ அகற்றக்கூடு            ClassKoodu5Inf; 
+ அகவக்கூடு            ClassKoodu5Inf; 
+-அகப்படக்கூடு            ClassKoodu5Inf; 
+ அவாவக்கூடு            ClassKoodu5Inf; 
+ அப்பக்கூடு            ClassKoodu5Inf; 
+ அயக்கக்கூடு            ClassKoodu5Inf; 
+@@ -54911,7 +54903,6 @@
+ அளுக்கக்கூடு            ClassKoodu5Inf; 
+ அள்ளக்கூடு            ClassKoodu5Inf; 
+ அளறக்கூடு            ClassKoodu5Inf; 
+-அளவிடக்கூடு            ClassKoodu5Inf; 
+ அளவக்கூடு            ClassKoodu5Inf; 
+ அளாவக்கூடு            ClassKoodu5Inf; 
+ அணுகக்கூடு            ClassKoodu5Inf; 
+@@ -55339,7 +55330,6 @@
+ போற்றக்கூடு            ClassKoodu5Inf; 
+ போக்கக்கூடு            ClassKoodu5Inf; 
+ போதக்கூடு            ClassKoodu5Inf; 
+-போக்கூடு            ClassKoodu5Inf; 
+ பொக்கக்கூடு            ClassKoodu5Inf; 
+ பொம்மக்கூடு            ClassKoodu5Inf; 
+ பொசுக்கக்கூடு            ClassKoodu5Inf; 
+@@ -56110,6 +56100,11 @@
+ தெறக்கூடு            ClassKoodu5Inf; 
+ இறக்கூடு            ClassKoodu5Inf; 
+ 
++அகப்படக்கூடு    ClassKoodu5Inf;
++அடிபடக்கூடு    ClassKoodu5Inf;
++அறவிடக்கூடு    ClassKoodu5Inf;
++அளவிடக்கூடு    ClassKoodu5Inf;
++போகக்கூடு    ClassKoodu5Inf;
+ LEXICON ClassKoodu5Inf
+ 
+ 
+@@ -57932,7 +57927,6 @@
+ பொழிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பொலிக்கப்படவேண்டு            ClassVendu5Inf; 
+ பொதிக்கப்படவேண்டு            ClassVendu5Inf; 
+-பெயர்ப்படவேண்டு            ClassVendu5Inf; 
+ பீழப்படவேண்டு            ClassVendu5Inf; 
+ போழப்படவேண்டு            ClassVendu5Inf; 
+ பேர்ப்படவேண்டு            ClassVendu5Inf; 
+@@ -60840,18 +60834,15 @@
+ அடக்கவேண்டு            ClassVendu5Inf; 
+ அடைச்சவேண்டு            ClassVendu5Inf; 
+ அடைசவேண்டு            ClassVendu5Inf; 
+-அடிபடவேண்டு            ClassVendu5Inf; 
+ அடிமையாக்கவேண்டு            ClassVendu5Inf; 
+ அடசவேண்டு            ClassVendu5Inf; 
+ அடங்கவேண்டு            ClassVendu5Inf; 
+ அற்கவேண்டு            ClassVendu5Inf; 
+-அறவிடவேண்டு            ClassVendu5Inf; 
+ அறிவுறுத்தவேண்டு            ClassVendu5Inf; 
+ அறாவவேண்டு            ClassVendu5Inf; 
+ அகட்டவேண்டு            ClassVendu5Inf; 
+ அகற்றவேண்டு            ClassVendu5Inf; 
+ அகவவேண்டு            ClassVendu5Inf; 
+-அகப்படவேண்டு            ClassVendu5Inf; 
+ அவாவவேண்டு            ClassVendu5Inf; 
+ அப்பவேண்டு            ClassVendu5Inf; 
+ அயக்கவேண்டு            ClassVendu5Inf; 
+@@ -60870,7 +60861,6 @@
+ அளுக்கவேண்டு            ClassVendu5Inf; 
+ அள்ளவேண்டு            ClassVendu5Inf; 
+ அளறவேண்டு            ClassVendu5Inf; 
+-அளவிடவேண்டு            ClassVendu5Inf; 
+ அளவவேண்டு            ClassVendu5Inf; 
+ அளாவவேண்டு            ClassVendu5Inf; 
+ அணுகவேண்டு            ClassVendu5Inf; 
+@@ -61292,7 +61282,6 @@
+ போற்றவேண்டு            ClassVendu5Inf; 
+ போக்கவேண்டு            ClassVendu5Inf; 
+ போதவேண்டு            ClassVendu5Inf; 
+-போவேண்டு            ClassVendu5Inf; 
+ பொக்கவேண்டு            ClassVendu5Inf; 
+ பொம்மவேண்டு            ClassVendu5Inf; 
+ பொசுக்கவேண்டு            ClassVendu5Inf; 
+@@ -62040,6 +62029,11 @@
+ தெறவேண்டு            ClassVendu5Inf; 
+ இறவேண்டு            ClassVendu5Inf; 
+ 
++அகப்படவேண்டு    ClassVendu5Inf;
++அடிபடவேண்டு    ClassVendu5Inf;
++அறவிடவேண்டு    ClassVendu5Inf;
++அளவிடவேண்டு    ClassVendu5Inf;
++போகவேண்டு    ClassVendu5Inf;
+ LEXICON ClassVendu5Inf
+ 
+ 
+@@ -64497,7 +64491,6 @@
+ போக்கியிடு      CIdu61Inf;  
+ போட்டியிடு      CIdu61Inf;  
+ போதியிடு      CIdu61Inf;  
+-போியிடு      CIdu61Inf;  
+ பொக்கியிடு      CIdu61Inf;  
+ பொம்மியிடு      CIdu61Inf;  
+ பொசுக்கியிடு      CIdu61Inf;  
+@@ -65261,12 +65254,10 @@
+ ஆராட்டியிடு      CIdu61Inf;  
+ ஆழ்த்தியிடு      CIdu61Inf;  
+ அற்கியிடு      CIdu61Inf;  
+-அறவிடியிடு      CIdu61Inf;  
+ அறிவுறுத்தியிடு      CIdu61Inf;  
+ அறாவியிடு      CIdu61Inf;  
+ அகற்றியிடு      CIdu61Inf;  
+ அகவியிடு      CIdu61Inf;  
+-அகப்படியிடு      CIdu61Inf;  
+ அகட்டியிடு      CIdu61Inf;  
+ அவாவியிடு      CIdu61Inf;  
+ அப்புறப்படுத்தியிடு      CIdu61Inf;  
+@@ -65292,14 +65283,12 @@
+ அடக்கியிடு      CIdu61Inf;  
+ அடைச்சியிடு      CIdu61Inf;  
+ அடைசியிடு      CIdu61Inf;  
+-அடிபடியிடு      CIdu61Inf;  
+ அடிமையாக்கியிடு      CIdu61Inf;  
+ அடசியிடு      CIdu61Inf;  
+ அடங்கியிடு      CIdu61Inf;  
+ அளுக்கியிடு      CIdu61Inf;  
+ அள்ளியிடு      CIdu61Inf;  
+ அளறியிடு      CIdu61Inf;  
+-அளவிடியிடு      CIdu61Inf;  
+ அளவியிடு      CIdu61Inf;  
+ அளாவியிடு      CIdu61Inf;  
+ அணுகியிடு      CIdu61Inf;  
+@@ -65404,6 +65393,11 @@
+ ஈன்றிடு      CIdu61Inf;  
+ கேட்டிடு      CIdu61Inf;  
+ 
++அகப்பட்டிடு    CIdu61Inf;
++அடிபட்டிடு    CIdu61Inf;
++அறவிட்டிடு    CIdu61Inf;
++அளவிட்டிடு    CIdu61Inf;
++போயிடு    CIdu61Inf;
+ LEXICON CIdu61Inf
+ 
+ ! Reviewed dictionary citation continuation
+@@ -67888,7 +67882,6 @@
+ போக்கிவா	VvaaInf;
+ போட்டிவா	VvaaInf;
+ போதிவா	VvaaInf;
+-போிவா	VvaaInf;
+ பொக்கிவா	VvaaInf;
+ பொம்மிவா	VvaaInf;
+ பொசுக்கிவா	VvaaInf;
+@@ -68651,12 +68644,10 @@
+ ஆராட்டிவா	VvaaInf;
+ ஆழ்த்திவா	VvaaInf;
+ அற்கிவா	VvaaInf;
+-அறவிடிவா	VvaaInf;
+ அறிவுறுத்திவா	VvaaInf;
+ அறாவிவா	VvaaInf;
+ அகற்றிவா	VvaaInf;
+ அகவிவா	VvaaInf;
+-அகப்படிவா	VvaaInf;
+ அகட்டிவா	VvaaInf;
+ அவாவிவா	VvaaInf;
+ அப்புறப்படுத்திவா	VvaaInf;
+@@ -68682,14 +68673,12 @@
+ அடக்கிவா	VvaaInf;
+ அடைச்சிவா	VvaaInf;
+ அடைசிவா	VvaaInf;
+-அடிபடிவா	VvaaInf;
+ அடிமையாக்கிவா	VvaaInf;
+ அடசிவா	VvaaInf;
+ அடங்கிவா	VvaaInf;
+ அளுக்கிவா	VvaaInf;
+ அள்ளிவா	VvaaInf;
+ அளறிவா	VvaaInf;
+-அளவிடிவா	VvaaInf;
+ அளவிவா	VvaaInf;
+ அளாவிவா	VvaaInf;
+ அணுகிவா	VvaaInf;
+@@ -68795,6 +68784,11 @@
+ கேட்டுவா	VvaaInf;
+ 
+ 
++அகப்பட்டுவா    VvaaInf;
++அடிபட்டுவா    VvaaInf;
++அறவிட்டுவா    VvaaInf;
++அளவிட்டுவா    VvaaInf;
++போய்வா    VvaaInf;
+ LEXICON VvaaInf
+ 
+ +verb+fin+complex+nonattitude+strong+past%=த்+1sg%=ஏன்:^ந்தேன் #;
+@@ -73994,18 +73988,15 @@
+ அடக்கப்பெறு                CPeru63Vinf; 
+ அடைச்சப்பெறு                CPeru63Vinf; 
+ அடைசப்பெறு                CPeru63Vinf; 
+-அடிபடப்பெறு                CPeru63Vinf; 
+ அடிமையாக்கப்பெறு                CPeru63Vinf; 
+ அடசப்பெறு                CPeru63Vinf; 
+ அடங்கப்பெறு                CPeru63Vinf; 
+ அற்கப்பெறு                CPeru63Vinf; 
+-அறவிடப்பெறு                CPeru63Vinf; 
+ அறிவுறுத்தப்பெறு                CPeru63Vinf; 
+ அறாவப்பெறு                CPeru63Vinf; 
+ அகட்டப்பெறு                CPeru63Vinf; 
+ அகற்றப்பெறு                CPeru63Vinf; 
+ அகவப்பெறு                CPeru63Vinf; 
+-அகப்படப்பெறு                CPeru63Vinf; 
+ அவாவப்பெறு                CPeru63Vinf; 
+ அப்புறப்படுத்தப்பெறு                CPeru63Vinf; 
+ அப்பப்பெறு                CPeru63Vinf; 
+@@ -74028,7 +74019,6 @@
+ அளுக்கப்பெறு                CPeru63Vinf; 
+ அள்ளப்பெறு                CPeru63Vinf; 
+ அளறப்பெறு                CPeru63Vinf; 
+-அளவிடப்பெறு                CPeru63Vinf; 
+ அளவப்பெறு                CPeru63Vinf; 
+ அளாவப்பெறு                CPeru63Vinf; 
+ அணுகப்பெறு                CPeru63Vinf; 
+@@ -74458,7 +74448,6 @@
+ போற்றப்பெறு                CPeru63Vinf; 
+ போக்கப்பெறு                CPeru63Vinf; 
+ போதப்பெறு                CPeru63Vinf; 
+-போப்பெறு                CPeru63Vinf; 
+ பொக்கப்பெறு                CPeru63Vinf; 
+ பொம்மப்பெறு                CPeru63Vinf; 
+ பொசுக்கப்பெறு                CPeru63Vinf; 
+@@ -75230,6 +75219,11 @@
+ இறப்பெறு                CPeru63Vinf; 
+ கேள
+ 
++அகப்படப்பெறு    CPeru63Vinf;
++அடிபடப்பெறு    CPeru63Vinf;
++அறவிடப்பெறு    CPeru63Vinf;
++அளவிடப்பெறு    CPeru63Vinf;
++போகப்பெறு    CPeru63Vinf;
+ LEXICON CPeru63Vinf
+ 
+ ! Reviewed dictionary citation continuation

@@ -1,0 +1,21 @@
+--- ThamizhiFST-C3.foma
++++ ThamizhiFST-C3.foma
+@@ -13,6 +13,9 @@
+ define C3ShortFuture {ல்} -> {ல்ல} || [{கொ}|{செ}|{சொ}|{மெ}|{வெ}] _ "^" [{ு}];
+ define C3R22 {ல்} -> {ல}  || _ "^" [{ு}|{அ}];
+ define C3R3 {ல்} -> {ல}  || _ "^" [{ா}];
++# சொல் has the lexical past stem சொன்ன-, unlike regular C3 ல்த -> ன்ற.
++define C3IrregularSolPast {சொல்த} -> {சொன்ன};
++define C3IrregularSolPastSurface {சொன்ற} -> {சொன்ன};
+ # To Cleanup: remove morpheme boundaries
+ define Cleanup1 "அ" -> 0 || "^" _;
+ define Cleanup2 "^" -> 0;
+@@ -28,6 +31,8 @@
+ 	  	C3R3		.o.
+ 		Cleanup1		.o.
+ 		Cleanup2		.o.
++	  C3IrregularSolPast	.o.
++	  C3IrregularSolPastSurface	.o.
+ 	  	C3R4		.o.
+ 	  	C3R5A		.o.
+ 	  	C3R5B;

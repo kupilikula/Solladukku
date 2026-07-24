@@ -1,0 +1,95 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -2063,6 +2063,10 @@
+ +pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ 
+ LEXICON C1Sg
++! Frequent reviewed source-backed common nouns.
++பாக்டீரியா	C1SgRoot;
++வளைகுடா	C1SgRoot;
++புதினா	C1SgRoot;
+ ! Reviewed everyday modern loans from five-corpus saturation.
+ டெல்டா	C1SgRoot;
+ மெட்ரோ	C1SgRoot;
+@@ -4249,6 +4253,21 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++! Frequent reviewed source-backed common nouns.
++கேலி	C2SgRoot;
++மேஜை	C2SgRoot;
++தோட்டக்கலை	C2SgRoot;
++பரிவர்த்தனை	C2SgRoot;
++சேனை	C2SgRoot;
++சமையலறை	C2SgRoot;
++ஆட்சேபனை	C2SgRoot;
++சைகை	C2SgRoot;
++படைப்பாளி	C2SgRoot;
++மின்தடை	C2SgRoot;
++வாக்குச்சாவடி	C2SgRoot;
++பேராசை	C2SgRoot;
++மேதை	C2SgRoot;
++மாற்றுத்திறனாளி	C2SgRoot;
+ ! Reviewed final common noun readings.
+ சிலை	C2SgRoot;
+ ஓட்டி	C2SgRoot;
+@@ -45587,6 +45606,9 @@
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^க்களின்கீழேயிருந்தும் #;
+ LEXICON C4Sg
++! Frequent reviewed source-backed common nouns.
++நாளிதழ்	C4SgRoot;
++அழகியல்	C4SgRoot;
+ ! Reviewed common noun homographs.
+ அமல்	C4SgRoot;
+ வருவாய்	C4SgRoot;
+@@ -57193,6 +57215,18 @@
+ 
+ 
+ LEXICON C7Sg
++! Frequent reviewed source-backed common nouns.
++அவதூறு	C7SgRoot;
++திருநீறு	C7SgRoot;
++முகப்பரு	C7SgRoot;
++கொள்ளளவு	C7SgRoot;
++பொடுகு	C7SgRoot;
++உடலுறவு	C7SgRoot;
++தலையீடு	C7SgRoot;
++கணக்கீடு	C7SgRoot;
++பிசாசு	C7SgRoot;
++பிளவு	C7SgRoot;
++ரசீது	C7SgRoot;
+ ! Reviewed final native and calendrical nouns.
+ மலிவு	C7SgRoot;
+ ! Reviewed common source-backed residual nouns.
+@@ -73207,6 +73241,9 @@
+ +noun+pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ LEXICON C11Sg
++! Frequent reviewed source-backed common nouns.
++ஜாமீன்	C11SgRoot;
++புலன்	C11SgRoot;
+ ! Reviewed everyday modern loans from five-corpus saturation.
+ டவுன்	C11SgRoot;
+ லோன்	C11SgRoot;
+@@ -99214,6 +99251,8 @@
+ +noun+gen+psp_keele_iruntu+add:^ின்கீழேயிருந்தும் #;
+ 
+ LEXICON C15Sg
++! Frequent reviewed source-backed common nouns.
++உரம்	C15SgRoot;
+ ! Reviewed final native and calendrical nouns.
+ சமீபகாலம்	C15SgRoot;
+ பலவிதம்	C15SgRoot;
+@@ -134429,6 +134468,11 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^ங்களின்கீழேயிருந்தும் #;
+ 
+ LEXICON C16Sg
++! Frequent reviewed source-backed common nouns.
++தேநீர்	C16DirectSgRoot;
++பல்லுயிர்	C16DirectSgRoot;
++முகவர்	C16DirectSgRoot;
++புதர்	C16DirectSgRoot;
+ ! Reviewed final common noun readings.
+ சிறுவர்	C16DirectSgRoot;
+ ! Reviewed everyday modern loans from five-corpus saturation.

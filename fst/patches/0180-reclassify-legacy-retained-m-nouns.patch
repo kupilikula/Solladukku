@@ -1,0 +1,36 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -42737,6 +42737,9 @@
+ +noun+gen+psp_keele_iruntu:^யின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ LEXICON C4Sg
++அட்டகிராம்	  C4SgRoot ;
++அஷ்டகிராம்	  C4SgRoot ;
++சீக்கிராம்	  C4SgRoot ;
+ கிராம்	  C4SgRoot ;
+ கிலோகிராம்	  C4SgRoot ;
+ முகாம்	  C4SgRoot ;
+@@ -109493,7 +109496,6 @@
+ அவ்வியயம்	C15SgRoot;
+ அவ்வெதிரேகம்	C15SgRoot;
+ அஷட்டாளம்	C15SgRoot;
+-அஷ்டகிராம்	C15SgRoot;
+ அஷ்டசுபம்	C15SgRoot;
+ அஷ்டசெல்வம்	C15SgRoot;
+ அஷ்டதிக்கஜம்	C15SgRoot;
+@@ -113347,7 +113349,6 @@
+ அட்டகருமம்	C15SgRoot;
+ அட்டகவர்க்கம்	C15SgRoot;
+ அட்டகவுடலம்	C15SgRoot;
+-அட்டகிராம்	C15SgRoot;
+ அட்டகீடம்	C15SgRoot;
+ அட்டகுட்டம்	C15SgRoot;
+ அட்டகுணச்செல்வம்	C15SgRoot;
+@@ -120366,7 +120367,6 @@
+ சீக்காய்நிறம்	C15SgRoot;
+ சீக்கிரகேந்திரம்	C15SgRoot;
+ சீக்கிராத்தம்	C15SgRoot;
+-சீக்கிராம்	C15SgRoot;
+ சீக்கிரார்த்தம்	C15SgRoot;
+ சீசபத்திரம்	C15SgRoot;
+ சீசியம்	C15SgRoot;

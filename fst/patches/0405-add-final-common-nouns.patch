@@ -1,0 +1,27 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -4134,6 +4134,12 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++! Reviewed common source-backed residual nouns.
++அமைச்சரவை	C2SgRoot;
++அதிகப்படி	C2SgRoot;
++முதன்முறை	C2SgRoot;
++முதுகலை	C2SgRoot;
++நேர்மறை	C2SgRoot;
+ ! Reviewed everyday modern loans from five-corpus saturation.
+ கமிட்டி	C2SgRoot;
+ டெலிவரி	C2SgRoot;
+@@ -56992,6 +56998,11 @@
+ 
+ 
+ LEXICON C7Sg
++! Reviewed common source-backed residual nouns.
++குறுக்கீடு	C7SgRoot;
++செறிவு	C7SgRoot;
++வேட்பு	C7SgRoot;
++மனது	C7SgRoot;
+ ! Reviewed everyday modern loans from five-corpus saturation.
+ ஆண்ட்ராய்டு	C7SgRoot;
+ ! Reviewed recurrent modern common nouns from five-corpus saturation.

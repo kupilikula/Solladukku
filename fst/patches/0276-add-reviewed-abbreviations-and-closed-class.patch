@@ -1,0 +1,49 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart +1pl +3pl +adv +time +cardinal +foc +3sgm +3sgf +3pln +abl +soc
++Multichar_Symbols  +noun +nom +intensifier +sandhik +sandhic +sandhip +sandhit +pron +quant +all +human +inter +poss +det +degree +same +distrib +indef +modal +neg +exist +ques +prohib +abbrev +letter +comp +acc +dat +loc +inst +gen +comparative +add +prox +dist +3sgn +cop +adjpart +1pl +3pl +adv +time +cardinal +foc +3sgm +3sgf +3pln +abl +soc +unit +part +conjunction +intj +presentative +pp-particle
+ 
+ LEXICON Root
+ abbreviations;
+@@ -23,6 +23,16 @@
+ copulas;
+ 
+ LEXICON abbreviations
++! Reviewed calendrical, measurement, media and letter-name abbreviations.
++கிபி+abbrev+time:கிபி #;
++கிமு+abbrev+time:கிமு #;
++கிமீ+abbrev+unit:கிமீ #;
++மிமீ+abbrev+unit:மிமீ #;
++டிவி+abbrev:டிவி #;
++ஐடி+abbrev:ஐடி #;
++எச்+abbrev+letter:எச் #;
++ஹெச்+abbrev+letter:ஹெச் #;
++எப்+abbrev+letter:எப் #;
+ ! Common abbreviation letter names seen in Tamil news/business text.
+ பி+abbrev+letter:பி #;
+ பி+abbrev+letter+sandhip%=ப்:பிப் #;
+@@ -42,6 +52,20 @@
+ எஸ்+abbrev+letter:எஸ் #;
+ 
+ LEXICON pronounQuantifiers
++! Reviewed high-frequency closed-class and presentative relations.
++என்+comp:என்னும் #;
++எனினும்+part+conjunction:எனினும் #;
++என்றாலும்+part+conjunction:என்றாலும் #;
++எதிர்+pp-particle+trans:எதிராக #;
++எதிர்+pp-particle+cop+adjpart:எதிரான #;
++உட்பட+pp-particle:உட்பட #;
++கிடை+exist+neg+3sgn:கிடையாது #;
++நன்றி+intj:நன்றி #;
++அன்று+adv+time+foc%=ஏ:அன்றே #;
++முன்+pp-particle+foc%=ஏ:முன்பே #;
++யார்+pron+inter+human+nom+indef:யாரோ #;
++எத்தனை+quant+inter+indef:எத்தனையோ #;
++இது+pron+dem+prox+3sgn+nom+presentative:இதோ #;
+ அது+pron+dem+dist+3sgn+dat:அதற்கு #;
+ அது+pron+dem+dist+3sgn+dat+add:அதற்கும் #;
+ அவர்கள்+pron+dem+dist+3pl+nom+add:அவர்களும் #;

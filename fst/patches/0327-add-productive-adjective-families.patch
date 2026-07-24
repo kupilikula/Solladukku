@@ -1,0 +1,57 @@
+--- tamil-adjectives.lexc
++++ tamil-adjectives.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r +dem +prox +dist +inter +type +noun +nom +cop +adjpart
++Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r +dem +prox +dist +inter +type +noun +nom +cop +adjpart +PartNoun +privative +exist
+ 
+ LEXICON Root
+ nominalCopularParticiples ;
+@@ -496,6 +496,7 @@
+ ஸ்தானம்:ஸ்தானமான	nominalCopularParticiple;
+ 
+ LEXICON nominalCopularParticiple
+++noun+nom+cop%=ஆ+adjpart%=ன+PartNoun%=அது:து #;
+ +noun+nom+cop%=ஆ+adjpart%=ன:0 #;
+ 
+ LEXICON deicticAdverbCopularParticiples
+@@ -511,6 +512,37 @@
+ +adv+cop%=ஆ+adjpart%=ன:0 #;
+ 
+ LEXICON adjectives
++! High-frequency adjective and reviewed compositional adjective readings.
++அன்ன+adj:அன்ன adjectiveSandhi;
++மிகப்பெரிய+adj+intensifier:மிகப்பெரிய adjectiveSandhi;
++நிறம்+privative%=அற்ற+adjpart%=அ:நிறமற்ற adjectiveSandhi;
++எண்+privative%=அற்ற+adjpart%=அ:எண்ணற்ற adjectiveSandhi;
++தேவை+privative%=அற்ற+adjpart%=அ:தேவையற்ற adjectiveSandhi;
++நோக்கு+privative%=அற்ற+adjpart%=அ:நோக்கற்ற adjectiveSandhi;
++தகுதி+privative%=அற்ற+adjpart%=அ:தகுதியற்ற adjectiveSandhi;
++சார்பு+privative%=அற்ற+adjpart%=அ:சார்பற்ற adjectiveSandhi;
++மதச்சார்பு+privative%=அற்ற+adjpart%=அ:மதச்சார்பற்ற adjectiveSandhi;
++காலவரை+privative%=அற்ற+adjpart%=அ:காலவரையற்ற adjectiveSandhi;
++கட்டு+privative%=அற்ற+adjpart%=அ:கட்டற்ற adjectiveSandhi;
++விலைமதிப்பு+privative%=அற்ற+adjpart%=அ:விலைமதிப்பற்ற adjectiveSandhi;
++மாசு+privative%=அற்ற+adjpart%=அ:மாசற்ற adjectiveSandhi;
++நீர்+privative%=அற்ற+adjpart%=அ:நீரற்ற adjectiveSandhi;
++பார்வை+privative%=அற்ற+adjpart%=அ:பார்வையற்ற adjectiveSandhi;
++பொறுப்பு+privative%=அற்ற+adjpart%=அ:பொறுப்பற்ற adjectiveSandhi;
++பொது+adj+cop%=ஆ+adjpart%=ன:பொதுவான adjectiveSandhi;
++வலு+noun+cop%=ஆ+adjpart%=ன:வலுவான adjectiveSandhi;
++அங்கு+adv+exist+adjpart%=அ:அங்குள்ள adjectiveSandhi;
++இங்கு+adv+exist+adjpart%=அ:இங்குள்ள adjectiveSandhi;
++மீதி+noun+exist+adjpart%=அ:மீதமுள்ள adjectiveSandhi;
++மதிப்பு+noun+exist+adjpart%=அ:மதிப்புள்ள adjectiveSandhi;
++ஐரோப்பா+noun+adjpart%=இய:ஐரோப்பிய adjectiveSandhi;
++பிரித்தானியா+noun+adjpart%=இய:பிரித்தானிய adjectiveSandhi;
++போர்த்துக்கல்+noun+adjpart%=இய:போர்த்துக்கீச adjectiveSandhi;
++ஆங்கிலம்+noun+adjpart%=இய:ஆங்கிலேய adjectiveSandhi;
++முகலாயம்+noun+compoundmodifier:முகலாய adjectiveSandhi;
++உதுமானியம்+noun+adjpart%=இய:உதுமானிய adjectiveSandhi;
++அதிகாரம்+noun+compoundmodifier:அதிகாரப்பூர்வ adjectiveSandhi;
++மருத்துவம்+noun+compoundmodifier+sandhik%=க்:மருத்துவக் adjectiveSandhi;
+ ! Reviewed adjectival predicates and color adjective.
+ அரிது	 adjective;
+ இனிது	 adjective;

@@ -1,0 +1,23 @@
+--- ThamizhiFST-C3.foma
++++ ThamizhiFST-C3.foma
+@@ -17,9 +17,8 @@
+ define Cleanup1 "அ" -> 0 || "^" _;
+ define Cleanup2 "^" -> 0;
+ define C3R4 {ல்த} -> {ன்ற};
+-define C3R5 {ல்து} -> {ன்று};
+-define C3R5 {விவ} -> {விப்ப};
+-define C3R5 {விவ} -> {விப்ப};
++define C3R5A {ல்து} -> {ன்று};
++define C3R5B {விவ} -> {விப்ப};
+ 
+ define ClassThreeGrammar 	Lexicon           	.o.
+ 	  	C3R1		.o.
+@@ -31,6 +30,7 @@
+ 		Cleanup1		.o.
+ 		Cleanup2		.o.
+ 	  	C3R4		.o.
+-	  	C3R5;
++	  	C3R5A		.o.
++	  	C3R5B;
+ 
+ regex ClassThreeGrammar;

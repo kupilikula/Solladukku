@@ -1,0 +1,17 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -10200,6 +10200,14 @@
+ உள்:உ UlExistentialVinf;
+ 
+ LEXICON UlExistentialVinf
++! Complete regular personal agreement.
+++verb+fin+sim+strong+pres%=∅+1sg%=ஏன்:^ள்ளேன் VerbQuestion;
+++verb+fin+sim+strong+pres%=∅+1pl%=ஓம்:^ள்ளோம் VerbQuestion;
+++verb+fin+sim+strong+pres%=∅+2sg%=ஆய்:^ள்ளாய் VerbQuestion;
+++verb+fin+sim+strong+pres%=∅+2sgh%=ஈர்:^ள்ளீர் VerbQuestion;
+++verb+fin+sim+strong+pres%=∅+2pl%=ஈர்கள்:^ள்ளீர்கள் VerbQuestion;
+++verb+fin+sim+strong+pres%=∅+3sgm%=ஆன்:^ள்ளான் VerbQuestion;
+++verb+fin+sim+strong+pres%=∅+3sgf%=ஆள்:^ள்ளாள் VerbQuestion;
+ +verb+fin+sim+strong+pres%=∅+3sgn%=அது:^ண்டு VerbQuestion;
+ +verb+fin+sim+strong+pres%=∅+3sgn%=அது:^ள்ளது VerbQuestion;
+ +verb+nonfin+sim+strong+pres%=∅+verbalnoun%=அது+comp%=ஆவது:^ள்ளதாவது #;

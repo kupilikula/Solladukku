@@ -5,14 +5,15 @@ import { isTamilOrthographyDefinitelyInvalid } from './tamilOrthography';
  * Tamil dictionary for word validation.
  *
  * Loads public/tamil_dictionary.txt (sorted, one word per line) and provides
- * O(log n) lookup via binary search on a sorted array. This is more memory-
- * efficient than a Set for 1.7M+ entries.
+ * O(log n) lookup via binary search on a sorted array. The browser payload is
+ * intentionally compact; generated inflections missing locally are checked by
+ * server-side FST validation.
  */
 
 let dictionary = null;    // sorted string array once loaded
 let loadingPromise = null; // dedup concurrent calls
 let loadError = null;
-const DICTIONARY_CACHE_VERSION = process.env.REACT_APP_DICTIONARY_CACHE_VERSION || '2026-07-07-verb-fst-1';
+const DICTIONARY_CACHE_VERSION = process.env.REACT_APP_DICTIONARY_CACHE_VERSION || '2026-07-09-client-headwords-1';
 const DICT_DB_NAME = 'solmaalai-cache';
 const DICT_DB_VERSION = 1;
 const DICT_STORE_NAME = 'assets';

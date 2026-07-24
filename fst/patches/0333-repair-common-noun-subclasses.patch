@@ -1,0 +1,1024 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1,10 +1,83 @@
+ !!!Header.lexc!!!
+ 
+-Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +trans +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add +all +verb +nonfin +sim +neg +verbalnoun +cop +adjpart +compoundmodifier +human +fut +3sgn +actionnominal
++Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +trans +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add +all +verb +nonfin +sim +neg +verbalnoun +cop +adjpart +compoundmodifier +human +fut +3sgn +actionnominal +psp_padi +psp_idaiye
+ 
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON Root
++! Productive bound proximal/distal determiners on reviewed noun roots.
++சேர்மம்+dem+prox+det+sandhic%=ச்:இச்சேர்மம்	C15SgRoot;
++சேர்மம்+dem+dist+det+sandhic%=ச்:அச்சேர்மம்	C15SgRoot;
++கோயில்+dem+prox+det+sandhik%=க்:இக்கோயில்	C4SgRoot;
++கோயில்+dem+dist+det+sandhik%=க்:அக்கோயில்	C4SgRoot;
++முறை+dem+prox+det:இம்முறை	C2SgRoot;
++முறை+dem+dist+det:அம்முறை	C2SgRoot;
++காலம்+dem+prox+det+sandhik%=க்:இக்காலம்	C15SgRoot;
++காலம்+dem+dist+det+sandhik%=க்:அக்காலம்	C15SgRoot;
++படம்+dem+prox+det+sandhip%=ப்:இப்படம்	C15SgRoot;
++படம்+dem+dist+det+sandhip%=ப்:அப்படம்	C15SgRoot;
++நூல்+dem+prox+det:இந்நூல்	C4SgRoot;
++நூல்+dem+dist+det:அந்நூல்	C4SgRoot;
++பகுதி+dem+prox+det+sandhip%=ப்:இப்பகுதி	C2SgRoot;
++பகுதி+dem+dist+det+sandhip%=ப்:அப்பகுதி	C2SgRoot;
++திரைப்படம்+dem+prox+det+sandhit%=த்:இத்திரைப்படம்	C15SgRoot;
++திரைப்படம்+dem+dist+det+sandhit%=த்:அத்திரைப்படம்	C15SgRoot;
++நாடு+dem+prox+det:இந்நாடு	C6SgRoot;
++நாடு+dem+dist+det:அந்நாடு	C6SgRoot;
++நகரம்+dem+prox+det:இந்நகரம்	C15SgRoot;
++நகரம்+dem+dist+det:அந்நகரம்	C15SgRoot;
++நிகழ்வு+dem+prox+det:இந்நிகழ்வு	C7SgRoot;
++நிகழ்வு+dem+dist+det:அந்நிகழ்வு	C7SgRoot;
++வினை+dem+prox+det:இவ்வினை	C2SgRoot;
++வினை+dem+dist+det:அவ்வினை	C2SgRoot;
++சம்பவம்+dem+prox+det+sandhic%=ச்:இச்சம்பவம்	C15SgRoot;
++சம்பவம்+dem+dist+det+sandhic%=ச்:அச்சம்பவம்	C15SgRoot;
++வழி+dem+prox+det:இவ்வழி	C2SgRoot;
++வழி+dem+dist+det:அவ்வழி	C2SgRoot;
++திரவம்+dem+prox+det+sandhit%=த்:இத்திரவம்	C15SgRoot;
++திரவம்+dem+dist+det+sandhit%=த்:அத்திரவம்	C15SgRoot;
++நிறுவனம்+dem+prox+det:இந்நிறுவனம்	C15SgRoot;
++நிறுவனம்+dem+dist+det:அந்நிறுவனம்	C15SgRoot;
++கட்சி+dem+prox+det+sandhik%=க்:இக்கட்சி	C2SgRoot;
++கட்சி+dem+dist+det+sandhik%=க்:அக்கட்சி	C2SgRoot;
++பொருள்+dem+prox+det+sandhip%=ப்:இப்பொருள்	C14DualRoot;
++பொருள்+dem+dist+det+sandhip%=ப்:அப்பொருள்	C14DualRoot;
++நிகழ்ச்சி+dem+prox+det:இந்நிகழ்ச்சி	C2SgRoot;
++நிகழ்ச்சி+dem+dist+det:அந்நிகழ்ச்சி	C2SgRoot;
++தொகுப்பு+dem+prox+det+sandhit%=த்:இத்தொகுப்பு	C7SgRoot;
++தொகுப்பு+dem+dist+det+sandhit%=த்:அத்தொகுப்பு	C7SgRoot;
++போட்டி+dem+prox+det+sandhip%=ப்:இப்போட்டி	C2SgRoot;
++போட்டி+dem+dist+det+sandhip%=ப்:அப்போட்டி	C2SgRoot;
++குழந்தை+dem+prox+det+sandhik%=க்:இக்குழந்தை	C2SgRoot;
++குழந்தை+dem+dist+det+sandhik%=க்:அக்குழந்தை	C2SgRoot;
++நெறி+dem+prox+det:இந்நெறி	C2SgRoot;
++நெறி+dem+dist+det:அந்நெறி	C2SgRoot;
++திட்டம்+dem+prox+det+sandhit%=த்:இத்திட்டம்	C15SgRoot;
++திட்டம்+dem+dist+det+sandhit%=த்:அத்திட்டம்	C15SgRoot;
++நீர்மம்+dem+prox+det:இந்நீர்மம்	C15SgRoot;
++நீர்மம்+dem+dist+det:அந்நீர்மம்	C15SgRoot;
++பெயர்+dem+prox+det+sandhip%=ப்:இப்பெயர்	C4SgRoot;
++பெயர்+dem+dist+det+sandhip%=ப்:அப்பெயர்	C4SgRoot;
++மொழி+dem+prox+det:இம்மொழி	C2SgRoot;
++மொழி+dem+dist+det:அம்மொழி	C2SgRoot;
++விடயம்+dem+prox+det:இவ்விடயம்	C15SgRoot;
++விடயம்+dem+dist+det:அவ்விடயம்	C15SgRoot;
++நேரம்+dem+prox+det:இந்நேரம்	C15SgRoot;
++நேரம்+dem+dist+det:அந்நேரம்	C15SgRoot;
++பெண்+dem+prox+det+sandhip%=ப்:இப்பெண்	C9SgRoot;
++பெண்+dem+dist+det+sandhip%=ப்:அப்பெண்	C9SgRoot;
++பொழுது+dem+prox+det+sandhip%=ப்:இப்பொழுது	C7SgRoot;
++பொழுது+dem+dist+det+sandhip%=ப்:அப்பொழுது	C7SgRoot;
++சமர்+dem+prox+det+sandhic%=ச்:இச்சமர்	C16DirectSgRoot;
++சமர்+dem+dist+det+sandhic%=ச்:அச்சமர்	C16DirectSgRoot;
++துணை+dem+prox+det+sandhit%=த்:இத்துணை	C2SgRoot;
++துணை+dem+dist+det+sandhit%=த்:அத்துணை	C2SgRoot;
++நிலை+dem+prox+det:இந்நிலை	C2SgRoot;
++நிலை+dem+dist+det:அந்நிலை	C2SgRoot;
++வழக்கு+dem+prox+det:இவ்வழக்கு	C7SgRoot;
++வழக்கு+dem+dist+det:அவ்வழக்கு	C7SgRoot;
++ஆண்டு+dem+prox+det:இவ்வாண்டு	C7SgRoot;
++ஆண்டு+dem+dist+det:அவ்வாண்டு	C7SgRoot;
+ 
+ nounClasses ;
+ C15CompoundModifierSg ;
+@@ -107,7 +180,7 @@
+ LEXICON AuditBackedCommonNounSg
+ ! Common nouns promoted from tokenizer/HF audit review.
+ விற்பனை	C2SgRoot;
+-குறைபாடு	C7SgRoot;
++
+ இங்கிலாந்து	C7SgRoot;
+ ஓட்டம்	C15SgRoot;
+ இயக்குநர்	C16DirectSgRoot;
+@@ -179,6 +252,7 @@
+ +noun+abl:^ிலிருந்து #;
+ +noun+abl+add:^ிலிருந்தும் #;
+ +noun+gen:^ின் #;
+++noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+gen:^ுடைய #;
+ +noun+loc:^ில் #;
+@@ -215,6 +289,7 @@
+ +noun+abl:^ிலிருந்து #;
+ +noun+abl+add:^ிலிருந்தும் #;
+ +noun+gen:^ின் #;
+++noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+gen:^ுடைய #;
+ +noun+loc:^ில் #;
+@@ -251,6 +326,7 @@
+ +noun+abl:^்கிலிருந்து #;
+ +noun+abl+add:^்கிலிருந்தும் #;
+ +noun+gen:^்கின் #;
+++noun+gen+psp_padi:^்கின்படி #;
+ +noun+gen+add:^்கினும் #;
+ +noun+gen:^்குடைய #;
+ +noun+loc:^்கில் #;
+@@ -287,6 +363,7 @@
+ +noun+abl:^்சிலிருந்து #;
+ +noun+abl+add:^்சிலிருந்தும் #;
+ +noun+gen:^்சின் #;
+++noun+gen+psp_padi:^்சின்படி #;
+ +noun+gen+add:^்சினும் #;
+ +noun+gen:^்சுடைய #;
+ +noun+loc:^்சில் #;
+@@ -323,6 +400,7 @@
+ +noun+abl:^்டிலிருந்து #;
+ +noun+abl+add:^்டிலிருந்தும் #;
+ +noun+gen:^்டின் #;
+++noun+gen+psp_padi:^்டின்படி #;
+ +noun+gen+add:^்டினும் #;
+ +noun+gen:^்டுடைய #;
+ +noun+loc:^்டில் #;
+@@ -359,6 +437,7 @@
+ +noun+abl:^ிலிருந்து #;
+ +noun+abl+add:^ிலிருந்தும் #;
+ +noun+gen:^ின் #;
+++noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+gen:^ுடைய #;
+ +noun+loc:^ில் #;
+@@ -395,6 +474,7 @@
+ +noun+abl:^்திலிருந்து #;
+ +noun+abl+add:^்திலிருந்தும் #;
+ +noun+gen:^்தின் #;
+++noun+gen+psp_padi:^்தின்படி #;
+ +noun+gen+add:^்தினும் #;
+ +noun+gen:^்துடைய #;
+ +noun+loc:^்தில் #;
+@@ -825,11 +905,13 @@
+ +nom+add:^யும் #;
+ +nom+all:^யெல்லாம் #;
+ +trans:^யாக #;
+++trans+sandhik%=க்:^யாகக் #;
+ +nom+sandhip:^ப் #;
+ +nom+sandhic:^ச் #;
+ +nom+sandhit:^த் #;
+ +nom+sandhik:^க் #;
+ +pl+nom:^கள் #;
+++pl+psp_idaiye:^களிடையே #;
+ +pl+nom+add:^களும் #;
+ +pl+nom+all:^களெல்லாம் #;
+ +acc:^யை #;
+@@ -866,7 +948,9 @@
+ +gen:^யது #;
+ +pl+gen:^களது #;
+ +gen:^யின் #;
+++gen+psp_padi:^யின்படி #;
+ +pl+gen:^களின் #;
+++pl+gen+psp_padi:^களின்படி #;
+ +loc:^யில் #;
+ +pl+loc:^களில் #;
+ +loc:^யிடம் #;
+@@ -1043,11 +1127,13 @@
+ +nom+add:^ும் #;
+ +nom+all:^ெல்லாம் #;
+ +trans:^ாக #;
+++trans+sandhik%=க்:^ாகக் #;
+ +nom+sandhip:^ப் #;
+ +nom+sandhic:^ச் #;
+ +nom+sandhit:^த் #;
+ +nom+sandhik:^க் #;
+ +pl+nom:^கள் #;
+++pl+psp_idaiye:^களிடையே #;
+ +pl+nom+add:^களும் #;
+ +pl+nom+all:^களெல்லாம் #;
+ +acc:^ை #;
+@@ -1079,7 +1165,9 @@
+ +gen:^து #;
+ +pl+gen:^களது #;
+ +gen:^ின் #;
+++gen+psp_padi:^ின்படி #;
+ +pl+gen:^களின் #;
+++pl+gen+psp_padi:^களின்படி #;
+ +loc:^ில் #;
+ +pl+loc:^களில் #;
+ +loc:^ிடம் #;
+@@ -1257,11 +1345,13 @@
+ +nom+add:^ம் #;
+ +nom+all:^எல்லாம் #;
+ +trans:^ஆாக #;
+++trans+sandhik%=க்:^ஆாகக் #;
+ +nom+sandhip:^ப் #;
+ +nom+sandhic:^ச் #;
+ +nom+sandhit:^த் #;
+ +nom+sandhik:^க் #;
+ +pl+nom:^கள் #;
+++pl+psp_idaiye:^களிடையே #;
+ +pl+nom+add:^களும் #;
+ +pl+nom+all:^களெல்லாம் #;
+ +acc:^ஆை #;
+@@ -1291,7 +1381,9 @@
+ +gen:^ஆது #;
+ +pl+gen:^களது #;
+ +gen:^ஆின் #;
+++gen+psp_padi:^ஆின்படி #;
+ +pl+gen:^களின் #;
+++pl+gen+psp_padi:^களின்படி #;
+ +loc:^ஆில் #;
+ +pl+loc:^களில் #;
+ +loc:^ஆிடம் #;
+@@ -1465,6 +1557,18 @@
+ +pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ 
+ LEXICON C1Sg
++அணு	C1SgRoot;
++தூமகேது	C1SgRoot;
++பிக்ஷு	C1SgRoot;
++மிருத்தியு	C1SgRoot;
++வார்ப்புரு	C1SgRoot;
++மனு	C1SgRoot;
++வலு	C1SgRoot;
++கேமரா	C1SgRoot;
++மசாலா	C1SgRoot;
++காமா	C1SgRoot;
++ஆட்டோ	C1SgRoot;
++யூரோ	C1SgRoot;
+ ! Post-0318 reviewed common lexical coverage.
+ கரோனா	C1SgRoot;
+ ! Final corpus-attested modern common-noun review.
+@@ -3101,6 +3205,7 @@
+ +noun+nom+add:^வும் #;
+ +noun+nom+all:^வெல்லாம் #;
+ +noun+trans:^வாக #;
+++noun+trans+sandhik%=க்:^வாகக் #;
+ +noun+trans+cop+fut+3sgn:^வாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+@@ -3108,7 +3213,9 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+nom:^க்கள் #;
+++noun+pl+psp_idaiye:^க்களிடையே #;
+ +noun+pl+trans%=ஆக:^க்களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^க்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^க்களாகும் #;
+ +noun+pl+nom+add:^க்களும் #;
+ +noun+pl+nom+all:^க்களெல்லாம் #;
+@@ -3189,8 +3296,10 @@
+ +noun+pl+gen:^க்களது #;
+ +noun+pl+gen+add:^க்களதும் #;
+ +noun+gen:^வின் #;
+++noun+gen+psp_padi:^வின்படி #;
+ +noun+gen+add:^வினும் #;
+ +noun+pl+gen:^க்களின் #;
+++noun+pl+gen+psp_padi:^க்களின்படி #;
+ +noun+pl+gen+add:^க்களினும் #;
+ 
+ +noun+loc:^வில் #;
+@@ -3584,11 +3693,16 @@
+ 
+ !!!C1.lexc!!!
+ 
+-Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +fut +3sgn +verbalnoun +actionnominal
++Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +fut +3sgn +verbalnoun +actionnominal +psp_padi +psp_idaiye
+ 
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++உரை	C2SgRoot;
++வேளை	C2SgRoot;
++நன்றி	C2SgRoot;
++ரயில்வே	C2SgRoot;
++டிகிரி	C2SgRoot;
+ ! Post-0318 reviewed common lexical coverage.
+ அலைவரிசை	C2SgRoot;
+ அணுகுமுறை	C2SgRoot;
+@@ -43718,7 +43832,9 @@
+ 
+ LEXICON NapiHonorificPlural
+ +noun+pl+nom:^மார்கள் #;
+++noun+pl+psp_idaiye:^மார்களிடையே #;
+ +noun+pl+trans%=ஆக:^மார்களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^மார்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^மார்களாகும் #;
+ +noun+pl+acc:^மார்களை #;
+ +noun+pl+acc+add:^மார்களையும் #;
+@@ -43733,6 +43849,7 @@
+ +noun+nom+add:^யும் #;
+ +noun+nom+all:^யெல்லாம் #;
+ +noun+trans:^யாக #;
+++noun+trans+sandhik%=க்:^யாகக் #;
+ +noun+trans+cop+fut+3sgn:^யாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+@@ -43740,7 +43857,9 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+nom:^கள் #;
+++noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+@@ -43820,8 +43939,10 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^யின் #;
+++noun+gen+psp_padi:^யின்படி #;
+ +noun+gen+add:^யினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^யில் #;
+@@ -44235,6 +44356,7 @@
+ +noun+nom+add:^யும் #;
+ +noun+nom+all:^யெல்லாம் #;
+ +noun+trans:^யாக #;
+++noun+trans+sandhik%=க்:^யாகக் #;
+ +noun+trans+cop+fut+3sgn:^யாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+@@ -44242,7 +44364,9 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+nom:^க்கள் #;
+++noun+pl+psp_idaiye:^க்களிடையே #;
+ +noun+pl+trans%=ஆக:^க்களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^க்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^க்களாகும் #;
+ +noun+pl+nom+add:^க்களும் #;
+ +noun+pl+nom+all:^க்களெல்லாம் #;
+@@ -44322,8 +44446,10 @@
+ +noun+pl+gen:^க்களது #;
+ +noun+pl+gen+add:^க்களதும் #;
+ +noun+gen:^யின் #;
+++noun+gen+psp_padi:^யின்படி #;
+ +noun+gen+add:^யினும் #;
+ +noun+pl+gen:^க்களின் #;
+++noun+pl+gen+psp_padi:^க்களின்படி #;
+ +noun+pl+gen+add:^க்களினும் #;
+ 
+ +noun+loc:^யில் #;
+@@ -44720,6 +44846,30 @@
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^க்களின்கீழேயிருந்தும் #;
+ LEXICON C4Sg
++முஸ்லிம்	C4SgRoot;
++திருக்கோயில்	C4SgRoot;
++கொவிட்	C4SgRoot;
++டையாக்சேன்	C4SgRoot;
++ரிசர்வ்	C4SgRoot;
++ரேஷன்	C4SgRoot;
++டிஜிட்டல்	C4SgRoot;
++பட்ஜெட்	C4SgRoot;
++பென்சீன்	C4SgRoot;
++ஆன்லைன்	C4SgRoot;
++கம்யூனிஸ்ட்	C4SgRoot;
++யூனியன்	C4SgRoot;
++ஸ்டார்	C4SgRoot;
++கிராபிக்ஸ்	C4SgRoot;
++கிரீம்	C4SgRoot;
++டீசல்	C4SgRoot;
++டீஸ்பூன்	C4SgRoot;
++வைட்டமின்	C4SgRoot;
++இன்ஷூரன்ஸ்	C4SgRoot;
++ஈதர்	C4SgRoot;
++ஷேர்	C4SgRoot;
++லீக்	C4SgRoot;
++நெட்	C4SgRoot;
++செல்போன்	C4SgRoot;
+ ! Post-0318 reviewed common lexical coverage.
+ கார்பன்	C4SgRoot;
+ ஜெனரல்	C4SgRoot;
+@@ -54064,13 +54214,16 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+@@ -54151,8 +54304,10 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ின் #;
+++noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ில் #;
+@@ -54562,8 +54717,11 @@
+ 
+ LEXICON C5Inflections
+ +noun+pl+nom: #;
+++noun+pl+nom+add%=உம்:^ும் #;
+++noun+pl+psp_idaiye:^ிடையே #;
+ +noun+pl+voc%=ஏ:^ே #;
+ +noun+pl+trans%=ஆக:^ாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^ாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+@@ -54604,6 +54762,7 @@
+ +noun+pl+gen:^து #;
+ +noun+pl+gen+add:^தும் #;
+ +noun+pl+gen:^ின் #;
+++noun+pl+gen+psp_padi:^ின்படி #;
+ +noun+pl+gen+add:^ினும் #;
+ 
+ +noun+pl+loc:^ில் #;
+@@ -54806,6 +54965,9 @@
+ 
+ 
+ LEXICON C6Sg
++குறைபாடு	C6SgRoot;
++செயல்பாடு	C6SgRoot;
++ரோடு	C6SgRoot;
+ ! Final corpus-attested modern common-noun review.
+ மதிப்பீடு	C6SgRoot;
+ தகடு 			C6SgRoot;
+@@ -55180,13 +55342,16 @@
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^எல்லாம் #;
+ +noun+trans:^ஆாக #;
+++noun+trans+sandhik%=க்:^ஆாகக் #;
+ +noun+trans+cop+fut+3sgn:^ஆாகும் #;
+ +noun+nom+sandhip:^ட்டுப் #;
+ +noun+nom+sandhic:^ட்டுச் #;
+ +noun+nom+sandhit:^ட்டுத் #;
+ +noun+nom+sandhik:^ட்டுக் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+@@ -55263,8 +55428,10 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ட்டின் #;
+++noun+gen+psp_padi:^ட்டின்படி #;
+ +noun+gen+add:^ட்டினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ட்டில் #;
+@@ -55675,7 +55842,9 @@
+ +noun+nom+sandhit:^ட்டுத் #;
+ +noun+nom+sandhik:^ட்டுக் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+@@ -55752,8 +55921,10 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ட்டின் #;
+++noun+gen+psp_padi:^ட்டின்படி #;
+ +noun+gen+add:^ட்டினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ட்டில் #;
+@@ -56151,6 +56322,10 @@
+ 
+ 
+ LEXICON C7Sg
++தொற்று	C7SgRoot;
++நோக்கு	C7SgRoot;
++வழக்குப்பதிவு	C7SgRoot;
++கார்டு	C7SgRoot;
+ ! Post-0318 reviewed common lexical coverage.
+ குளோரைடு	C7SgRoot;
+ மணியளவு	C7SgRoot;
+@@ -56890,6 +57065,7 @@
+ கயலழகு	C7SgRoot; 
+ கயலன்பு	C7SgRoot; 
+ கருத்து	C7SgRoot; 
++கருத்து:கருத்து	ModernKkalPlural;
+ கரும்பமுது	C7SgRoot; 
+ கரும்பு	C7SgRoot; 
+ கருவேம்பு	C7SgRoot; 
+@@ -58860,7 +59036,7 @@
+ வரணிவடிவு	C7SgRoot; 
+ வரணிவிளக்கு	C7SgRoot; 
+ வரம்பு	C7SgRoot; 
+-வலு	C7SgRoot; 
++ 
+ வல்லமுது	C7SgRoot; 
+ வல்லரசு	C7SgRoot; 
+ வல்லழகு	C7SgRoot; 
+@@ -59104,7 +59280,7 @@
+ மதகு	C7SgRoot; 
+ மரபு	C7SgRoot; 
+ மருந்து	C7SgRoot; 
+-மனு	C7SgRoot; 
++ 
+ மன்னிப்பு	C7SgRoot; 
+ மாசு	C7SgRoot; 
+ மாது	C7SgRoot; 
+@@ -59369,7 +59545,7 @@
+ தீர்ப்பு	C7SgRoot;
+ துன்புறுத்து	C7SgRoot;
+ துறப்பு	C7SgRoot;
+-தூமகேது	C7SgRoot;
++
+ தெரிப்பு	C7SgRoot;
+ தெரிவு	C7SgRoot;
+ தெருக்கூத்து	C7SgRoot;
+@@ -59448,7 +59624,7 @@
+ பாற்பசு	C7SgRoot;
+ பாலுறவு	C7SgRoot;
+ பாவிப்பு	C7SgRoot;
+-பிக்ஷு	C7SgRoot;
++
+ பிசாத்து	C7SgRoot;
+ பிசினரக்கு	C7SgRoot;
+ பிசுக்கோத்து	C7SgRoot;
+@@ -59523,7 +59699,7 @@
+ மாரடைப்பு	C7SgRoot;
+ மாற்றுமருந்து	C7SgRoot;
+ மினுமினுப்பு	C7SgRoot;
+-மிருத்தியு	C7SgRoot;
++
+ மிளகு	C7SgRoot;
+ மீச்செலவு	C7SgRoot;
+ மீன்சிறகு	C7SgRoot;
+@@ -59634,13 +59810,13 @@
+ வறடு	C7SgRoot;
+ வல்லூற்று	C7SgRoot;
+ வல்லேறு	C7SgRoot;
+-வார்ப்புரு	C7SgRoot;
++
+ வினைமுற்று	C7SgRoot;
+ வெளியீடு	C6SgRoot;
+ 
+ ! Source-backed noun tranche 3: reviewed Vuizur-backed noun candidates.
+ அடித்தட்டு	C7SgRoot;
+-அணு	C7SgRoot;
++
+ அணைக்கட்டு	C7SgRoot;
+ ஆடுமாடு	C6SgRoot;
+ இங்கிட்டு	C7SgRoot;
+@@ -69079,6 +69255,19 @@
+ ! Reviewed residual explicit noun candidates
+ ஆகஸ்டு	C7SgRoot;
+ குருடு	C7SgRoot;
++LEXICON ModernKkalPlural
+++noun+pl+nom:^க்கள் #;
+++noun+pl+psp_idaiye:^க்களிடையே #;
+++noun+pl+nom+add%=உம்:^க்களும் #;
+++noun+pl+acc:^க்களை #;
+++noun+pl+dat:^க்களுக்கு #;
+++noun+pl+gen:^க்களின் #;
+++noun+pl+gen+psp_padi:^க்களின்படி #;
+++noun+pl+inst:^க்களால் #;
+++noun+pl+loc:^க்களில் #;
+++noun+pl+abl:^க்களிலிருந்து #;
+++noun+pl+soc:^க்களுடன் #;
++
+ LEXICON C7SgRoot
+ !        Root;
+         C7Inflections;
+@@ -69091,6 +69280,7 @@
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^எல்லாம் #;
+ +noun+trans:^ஆாக #;
+++noun+trans+sandhik%=க்:^ஆாகக் #;
+ +noun+trans+cop+fut+3sgn:^ஆாகும் #;
+ 
+ +noun+nom+sandhip:^ப் #;
+@@ -69098,7 +69288,9 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+@@ -69175,8 +69367,10 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ஆின் #;
+++noun+gen+psp_padi:^ஆின்படி #;
+ +noun+gen+add:^ஆினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ஆில் #;
+@@ -69673,13 +69867,16 @@
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^ணெல்லாம் #;
+ +noun+trans:^றாக #;
+++noun+trans+sandhik%=க்:^றாகக் #;
+ +noun+trans+cop+fut+3sgn:^றாகும் #;
+ +noun+nom+sandhip:^றுப் #;
+ +noun+nom+sandhic:^றுச் #;
+ +noun+nom+sandhit:^றுத் #;
+ +noun+nom+sandhik:^றுக் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+@@ -69760,8 +69957,10 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^றின் #;
+++noun+gen+psp_padi:^றின்படி #;
+ +noun+gen+add:^றினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^றில் #;
+@@ -70913,9 +71112,12 @@
+ +noun+nom+add:^ணும் #;
+ +noun+nom+all:^ணெல்லாம் #;
+ +noun+trans:^ணாக #;
+++noun+trans+sandhik%=க்:^ணாகக் #;
+ +noun+trans+cop+fut+3sgn:^ணாகும் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+@@ -70992,8 +71194,10 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ணின் #;
+++noun+gen+psp_padi:^ணின்படி #;
+ +noun+gen+add:^ணினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ணில் #;
+@@ -71448,6 +71652,7 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ 
+ LEXICON C10Inflections
+@@ -71458,7 +71663,9 @@
+ +noun+nom+sandhit:^ற்த் #;
+ +noun+nom+sandhik:^ற்க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+@@ -71543,8 +71750,10 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^னின் #;
+++noun+gen+psp_padi:^னின்படி #;
+ +noun+gen+add:^னினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^னில் #;
+@@ -92878,13 +93087,16 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^ர்கள் #;
+++noun+pl+psp_idaiye:^ர்களிடையே #;
+ +noun+pl+trans%=ஆக:^ர்களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^ர்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^ர்களாகும் #;
+ +noun+pl+nom+add:^ர்களும் #;
+ +noun+pl+nom+all:^ர்களெல்லாம் #;
+@@ -92965,8 +93177,10 @@
+ +noun+pl+gen:^ர்களது #;
+ +noun+pl+gen+add:^ர்களதும் #;
+ +noun+gen:^னின் #;
+++noun+gen+psp_padi:^னின்படி #;
+ +noun+gen+add:^னினும் #;
+ +noun+pl+gen:^ர்களின் #;
+++noun+pl+gen+psp_padi:^ர்களின்படி #;
+ +noun+pl+gen+add:^ர்களினும் #;
+ 
+ +noun+loc:^னில் #;
+@@ -93383,13 +93597,16 @@
+ +noun+nom+add:^லும் #;
+ +noun+nom+all:^லெல்லாம் #;
+ +noun+trans:^லாக #;
+++noun+trans+sandhik%=க்:^லாகக் #;
+ +noun+trans+cop+fut+3sgn:^லாகும் #;
+ +noun+nom+sandhip:^ற்ப் #;
+ +noun+nom+sandhic:^ற்ச் #;
+ +noun+nom+sandhit:^ற்த் #;
+ +noun+nom+sandhik:^ற்க் #;
+ +noun+pl+nom:^ற்கள் #;
+++noun+pl+psp_idaiye:^ற்களிடையே #;
+ +noun+pl+trans%=ஆக:^ற்களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^ற்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^ற்களாகும் #;
+ +noun+pl+nom+add:^ற்களும் #;
+ +noun+pl+nom+all:^ற்களெல்லாம் #;
+@@ -93470,8 +93687,10 @@
+ +noun+pl+gen:^ற்களது #;
+ +noun+pl+gen+add:^ற்களதும் #;
+ +noun+gen:^லின் #;
+++noun+gen+psp_padi:^லின்படி #;
+ +noun+gen+add:^லினும் #;
+ +noun+pl+gen:^ற்களின் #;
+++noun+pl+gen+psp_padi:^ற்களின்படி #;
+ +noun+pl+gen+add:^ற்களினும் #;
+ +noun+loc:^லில் #;
+ +noun+loc+cop%=ஆ+adjpart%=ன:^லிலான #;
+@@ -93880,13 +94099,16 @@
+ +noun+nom+add:^ளும் #;
+ +noun+nom+all:^ளெல்லாம் #;
+ +noun+trans:^ளாக #;
+++noun+trans+sandhik%=க்:^ளாகக் #;
+ +noun+trans+cop+fut+3sgn:^ளாகும் #;
+ +noun+nom+sandhip:^ட்ப் #;
+ +noun+nom+sandhic:^ட்ச் #;
+ +noun+nom+sandhit:^ட்த் #;
+ +noun+nom+sandhik:^ட்க் #;
+ +noun+pl+nom:^ட்கள் #;
+++noun+pl+psp_idaiye:^ட்களிடையே #;
+ +noun+pl+trans%=ஆக:^ட்களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^ட்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^ட்களாகும் #;
+ +noun+pl+nom+add:^ட்களும் #;
+ +noun+pl+nom+all:^ட்களெல்லாம் #;
+@@ -93967,8 +94189,10 @@
+ +noun+pl+gen:^ட்களது #;
+ +noun+pl+gen+add:^ட்களதும் #;
+ +noun+gen:^ளின் #;
+++noun+gen+psp_padi:^ளின்படி #;
+ +noun+gen+add:^ளினும் #;
+ +noun+pl+gen:^ட்களின் #;
+++noun+pl+gen+psp_padi:^ட்களின்படி #;
+ +noun+pl+gen+add:^ட்களினும் #;
+ 
+ +noun+loc:^ளில் #;
+@@ -94367,6 +94591,7 @@
+ 
+ 
+ LEXICON C14Sg
++பணத்தாள்	C14RetainedRoot;
+ ஆள்		 	C14AlternatingRoot ; 
+ சித்தாள்		 C14SgRoot ; 
+ பொருள்		 C14DualRoot ; 
+@@ -96986,14 +97211,21 @@
+ ! Lexical action nominal: confiscation/seizure, not a finite verb.
+ பறிமுதல்:பறிமுதல	LexicalActionNominalL;
+ 
+-LEXICON ModernManamLocative
++LEXICON ModernManamOblique
+++noun+infInc+acc%=ஐ:^தை #;
+++noun+infInc+dat%=க்கு:^துக்கு #;
+++noun+infInc+gen%=இன்:^தின் #;
+++noun+infInc+inst%=ஆல்:^தால் #;
+ +noun+infInc+loc%=இல்:^தில் #;
+++noun+infInc+abl%=இலிருந்து:^திலிருந்து #;
+++noun+infInc+soc%=உடன்:^துடன் #;
+ 
+ LEXICON LexicalActionNominalL
+ +noun+verbalnoun+actionnominal+nom:் #;
+ +noun+verbalnoun+actionnominal+acc:ை #;
+ +noun+verbalnoun+actionnominal+dat:ுக்கு #;
+ +noun+verbalnoun+actionnominal+gen:ின் #;
+++noun+verbalnoun+actionnominal+gen+psp_padi:ின்படி #;
+ +noun+verbalnoun+actionnominal+inst:ால் #;
+ +noun+verbalnoun+actionnominal+loc:ில் #;
+ +noun+verbalnoun+actionnominal+abl:ிலிருந்து #;
+@@ -97020,7 +97252,9 @@
+ 
+ LEXICON C14AlternatingPlural
+ +noun+pl+nom:^ட்கள் #;
+++noun+pl+psp_idaiye:^ட்களிடையே #;
+ +noun+pl+trans%=ஆக:^ட்களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^ட்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^ட்களாகும் #;
+ +noun+pl+nom+add:^ட்களும் #;
+ +noun+pl+nom+all:^ட்களெல்லாம் #;
+@@ -97060,6 +97294,7 @@
+ +noun+pl+gen:^ட்களது #;
+ +noun+pl+gen+add:^ட்களதும் #;
+ +noun+pl+gen:^ட்களின் #;
+++noun+pl+gen+psp_padi:^ட்களின்படி #;
+ +noun+pl+gen+add:^ட்களினும் #;
+ +noun+pl+loc:^ட்களில் #;
+ +noun+pl+loc+cop%=ஆ+adjpart%=ன:^ட்களிலான #;
+@@ -97260,7 +97495,9 @@
+ 
+ LEXICON C14RetainedPlural
+ +noun+pl+nom:^கள் #;
+++noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+@@ -97300,6 +97537,7 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ +noun+pl+loc:^களில் #;
+ +noun+pl+loc+cop%=ஆ+adjpart%=ன:^களிலான #;
+@@ -97503,6 +97741,7 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+@@ -97550,6 +97789,7 @@
+ +noun+gen:^ளது #;
+ +noun+gen+add:^ளதும் #;
+ +noun+gen:^ின் #;
+++noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ 
+ +noun+loc:^ில் #;
+@@ -97752,6 +97992,8 @@
+ +noun+gen+psp_keele_iruntu+add:^ின்கீழேயிருந்தும் #;
+ 
+ LEXICON C15Sg
++கதாபாத்திரம்	C15SgRoot;
++சுல்தானகம்	C15SgRoot;
+ ! Post-0318 reviewed common lexical coverage.
+ சதவிகிதம்	C15SgRoot;
+ ! Final corpus-attested modern common-noun review.
+@@ -99118,7 +99360,7 @@
+ மறைவானம்	C15SgRoot ; 
+ மனம்	C15SgRoot ; 
+ ! Modern reduced locative allomorph, semantically the lemma மனம்.
+-மனம்:மன	ModernManamLocative;
++மனம்:மன	ModernManamOblique;
+ மன்குன்றம்	C15SgRoot ; 
+ மன்வானம்	C15SgRoot ; 
+ மன்றம்	C15SgRoot ; 
+@@ -101011,7 +101253,6 @@
+ நிமிடம்	C15SgRoot;
+ மட்டம்	C15SgRoot;
+ குடலிறக்கம்	C15SgRoot;
+-முஸ்லிம்	C15SgRoot;
+ ஆடுகளம்	C15SgRoot;
+ வழித்தடம்	C15SgRoot;
+ விமர்சனம்	C15SgRoot;
+@@ -132413,13 +132654,16 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^ங்கள் #;
+++noun+pl+psp_idaiye:^ங்களிடையே #;
+ +noun+pl+trans%=ஆக:^ங்களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^ங்களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^ங்களாகும் #;
+ +noun+pl+nom+add:^ங்களும் #;
+ +noun+pl+nom+all:^ங்களெல்லாம் #;
+@@ -132486,14 +132730,11 @@
+ +noun+infInc+soc+foc:^த்தோடுதான் #;
+ +noun+pl+soc:^ங்களோடு #;
+ +noun+pl+soc+add:^ங்களோடும் #;
+-+noun+infInc+soc:^த்தில் #;
+-+noun+infInc+soc+add:^த்திலும் #;
+ +noun+pl+soc:^ங்களுடன் #;
+ +noun+pl+soc+add:^ங்களுடனும் #;
+ +noun+infInc+soc:^த்துடன் #;
+ +noun+infInc+soc+add:^த்துடனும் #;
+ +noun+pl+soc+foc:^ங்களோடுதான் #;
+-+noun+infInc+soc+foc:^த்தில்தான் #;
+ 
+ +noun+pl+loc:^ங்களில் #;
+ +noun+pl+loc+cop%=ஆ+adjpart%=ன:^ங்களிலான #;
+@@ -132521,8 +132762,10 @@
+ +noun+pl+gen+add:^ங்களதும் #;
+ +noun+pl+gen+foc:^ங்களதுதான் #;
+ +noun+infInc+gen:^த்தின் #;
+++noun+infInc+gen+psp_padi:^த்தின்படி #;
+ +noun+infInc+gen+add:^த்தினும் #;
+ +noun+pl+gen:^ங்களின் #;
+++noun+pl+gen+psp_padi:^ங்களின்படி #;
+ +noun+pl+gen+add:^ங்களினும் #;
+ 
+ +noun+infInc+loc:^த்தில் #;
+@@ -137006,6 +137249,22 @@
+ நிதியமைச்சர்	C16DirectSgRoot;
+ மீனவர்	C16DirectSgRoot;
+ தொடர்	C16DirectSgRoot;
++! Reviewed modern human and profession nouns.
++காவல்துறையினர்	C16DirectSgRoot;
++ஆதரவாளர்	C16DirectSgRoot;
++ஆணையாளர்	C16DirectSgRoot;
++பணிப்பாளர்	C16DirectSgRoot;
++மெய்யியலாளர்	C16DirectSgRoot;
++யூதர்	C16DirectSgRoot;
++புனிதர்	C16DirectSgRoot;
++வாலிபர்	C16DirectSgRoot;
++அந்தணர்	C16DirectSgRoot;
++பகைவர்	C16DirectSgRoot;
++மறவர்	C16DirectSgRoot;
++திராவிடர்	C16DirectSgRoot;
++டிரைவர்	C16DirectSgRoot;
++கமிஷனர்	C16DirectSgRoot;
++கவுன்சிலர்	C16DirectSgRoot;
+ LEXICON C16SgRoot
+ !        Root;
+         C16Inflections;
+@@ -137020,13 +137279,16 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+@@ -137118,8 +137380,10 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ின் #;
+++noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ில் #;
+@@ -137525,13 +137789,16 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+sandhik%=க்:^ாகக் #;
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+sandhik%=க்:^களாகக் #;
+ +noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+@@ -137662,10 +137929,13 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ின் #;
+++noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+gen:^ற்றின் #;
+++noun+gen+psp_padi:^ற்றின்படி #;
+ +noun+gen+add:^ற்றினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ற்றில் #;

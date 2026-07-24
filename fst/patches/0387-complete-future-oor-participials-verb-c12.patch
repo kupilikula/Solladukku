@@ -1,0 +1,53 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -837,6 +837,16 @@
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^க்கும் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்:^ப்போர் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+add%=உம்:^ப்போரும் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+foc%=ஏ:^ப்போரே #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+acc%=ஐ:^ப்போரை #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+dat%=க்கு:^ப்போருக்கு #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^ப்போரால் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=இன்:^ப்போரின் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=உடைய:^ப்போருடைய #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+loc%=இடம்:^ப்போரிடம் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+soc%=உடன்:^ப்போருடன் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+psp_padi%=படி:^க்கும்படி #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+vpart_pin%=பின்:^க்கும்பின் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+vpart_maaru%=மாறு:^க்குமாறு #;
+@@ -4776,6 +4786,16 @@
+ +verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+ +verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;
+ +verb+nonfin+complex+aspect+futANDadjpart%=உம்:^க்கும் #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்:^ப்போர் #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+add%=உம்:^ப்போரும் #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+foc%=ஏ:^ப்போரே #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+acc%=ஐ:^ப்போரை #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+dat%=க்கு:^ப்போருக்கு #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^ப்போரால் #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=இன்:^ப்போரின் #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=உடைய:^ப்போருடைய #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+loc%=இடம்:^ப்போரிடம் #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+soc%=உடன்:^ப்போருடன் #;
+ +verb+nonfin+complex+aspect+futANDadjpart%=உம்+psp_padi%=படி:^க்கும்படி #;
+ +verb+nonfin+complex+aspect+futANDadjpart%=உம்+vpart_pin%=பின்:^க்கும்பின் #;
+ +verb+nonfin+complex+aspect+futANDadjpart%=உம்+vpart_potu%=போது:^க்கும்போது #;
+@@ -8627,6 +8647,16 @@
+ +verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+ +verb+nonfin+complex+aspect+pres%=க்கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;
+ +verb+nonfin+complex+aspect+futANDadjpart%=உம்:^க்கும் #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்:^ப்போர் #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+add%=உம்:^ப்போரும் #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+nom+foc%=ஏ:^ப்போரே #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+acc%=ஐ:^ப்போரை #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+dat%=க்கு:^ப்போருக்கு #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^ப்போரால் #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=இன்:^ப்போரின் #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=உடைய:^ப்போருடைய #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+loc%=இடம்:^ப்போரிடம் #;
+++verb+nonfin+complex+aspect+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+soc%=உடன்:^ப்போருடன் #;
+ +verb+nonfin+complex+aspect+futANDadjpart%=உம்+psp_padi%=படி:^க்கும்படி #;
+ +verb+nonfin+complex+aspect+futANDadjpart%=உம்+vpart_pin%=பின்:^க்கும்பின் #;
+ +verb+nonfin+complex+aspect+futANDadjpart%=உம்+vpart_potu%=போது:^க்கும்போது #;

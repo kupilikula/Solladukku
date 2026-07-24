@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -220,7 +220,6 @@
+ நிவ      C12Vinf;
+ மற      C12Vinf;
+ மித      C12Vinf;
+-வல      C12Vinf;
+ வற      C12Vinf;
+ வித      C12Vinf;
+ விய      C12Vinf;

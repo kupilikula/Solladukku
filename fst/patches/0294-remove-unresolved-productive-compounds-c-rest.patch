@@ -1,0 +1,1152 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -21464,7 +21464,6 @@
+ வேதித்துவிடு     CVidu61Inf; 
+ வேர்த்துவிடு     CVidu61Inf; 
+ வேகித்துவிடு     CVidu61Inf; 
+-வேங்குத்துவிடு     CVidu61Inf; 
+ வீதித்துவிடு     CVidu61Inf; 
+ வஞ்சித்துவிடு     CVidu61Inf; 
+ யாபித்துவிடு     CVidu61Inf; 
+@@ -22107,7 +22106,6 @@
+ நொசித்துவிடு     CVidu61Inf; 
+ நெகிழ்த்துவிடு     CVidu61Inf; 
+ நெறித்துவிடு     CVidu61Inf; 
+-நெறுமுத்துவிடு     CVidu61Inf; 
+ நெறுநெறுத்துவிடு     CVidu61Inf; 
+ நெடித்துவிடு     CVidu61Inf; 
+ நெடுத்துவிடு     CVidu61Inf; 
+@@ -22244,7 +22242,6 @@
+ சாதாளித்துவிடு     CVidu61Inf; 
+ சானித்துவிடு     CVidu61Inf; 
+ சாடித்துவிடு     CVidu61Inf; 
+-சாட்டுத்துவிடு     CVidu61Inf; 
+ சண்ணித்துவிடு     CVidu61Inf; 
+ சணாய்த்துவிடு     CVidu61Inf; 
+ சையோகித்துவிடு     CVidu61Inf; 
+@@ -22275,7 +22272,6 @@
+ செங்காரித்துவிடு     CVidu61Inf; 
+ சகித்துவிடு     CVidu61Inf; 
+ சகளீகரித்துவிடு     CVidu61Inf; 
+-சக்களித்துவிடு     CVidu61Inf; 
+ சகாரித்துவிடு     CVidu61Inf; 
+ சபித்துவிடு     CVidu61Inf; 
+ சப்பளித்துவிடு     CVidu61Inf; 
+@@ -22287,7 +22283,6 @@
+ சன்னியாசித்துவிடு     CVidu61Inf; 
+ சன்னித்துவிடு     CVidu61Inf; 
+ சலித்துவிடு     CVidu61Inf; 
+-சல்லரித்துவிடு     CVidu61Inf; 
+ சல்லாபித்துவிடு     CVidu61Inf; 
+ சற்கரித்துவிடு     CVidu61Inf; 
+ சட்டித்துவிடு     CVidu61Inf; 
+@@ -22315,7 +22310,6 @@
+ சங்கரித்துவிடு     CVidu61Inf; 
+ சங்கற்பித்துவிடு     CVidu61Inf; 
+ சூத்திரித்துவிடு     CVidu61Inf; 
+-சூர்த்துவிடு     CVidu61Inf; 
+ சூரணித்துவிடு     CVidu61Inf; 
+ சூக்குமித்துவிடு     CVidu61Inf; 
+ சூசிப்பித்துவிடு     CVidu61Inf; 
+@@ -22354,7 +22348,6 @@
+ ஒடித்துவிடு     CVidu61Inf; 
+ ஒஞ்சித்துவிடு     CVidu61Inf; 
+ ஏய்த்துவிடு     CVidu61Inf; 
+-ஏர்த்துவிடு     CVidu61Inf; 
+ ஏம்பலித்துவிடு     CVidu61Inf; 
+ ஏற்பித்துவிடு     CVidu61Inf; 
+ ஔவித்துவிடு     CVidu61Inf; 
+@@ -22725,7 +22718,6 @@
+ சுழன்றுவிடு     CVidu61Inf; 
+ சான்றுவிடு     CVidu61Inf; 
+ சோன்றுவிடு     CVidu61Inf; 
+-சொன்றுவிடு     CVidu61Inf; 
+ சூன்றுவிடு     CVidu61Inf; 
+ நிழன்றுவிடு     CVidu61Inf; 
+ நிரன்றுவிடு     CVidu61Inf; 
+@@ -22838,7 +22830,6 @@
+ தசைந்துவிடு     CVidu61Inf; 
+ துழைந்துவிடு     CVidu61Inf; 
+ துலைந்துவிடு     CVidu61Inf; 
+-துய்ந்துவிடு     CVidu61Inf; 
+ துயர்ந்துவிடு     CVidu61Inf; 
+ துமிந்துவிடு     CVidu61Inf; 
+ துதைந்துவிடு     CVidu61Inf; 
+@@ -22942,7 +22933,6 @@
+ பிணிந்துவிடு     CVidu61Inf; 
+ பிணைந்துவிடு     CVidu61Inf; 
+ பரிந்துவிடு     CVidu61Inf; 
+-பூர்ந்துவிடு     CVidu61Inf; 
+ பகிர்ந்துவிடு     CVidu61Inf; 
+ பகர்ந்துவிடு     CVidu61Inf; 
+ பகுந்துவிடு     CVidu61Inf; 
+@@ -23695,7 +23685,6 @@
+ சாடிவிடு     CVidu61Inf; 
+ சார்த்திவிடு     CVidu61Inf; 
+ சாத்திவிடு     CVidu61Inf; 
+-சண்ணிிவிடு     CVidu61Inf; 
+ சங்கிவிடு     CVidu61Inf; 
+ சலுப்பிவிடு     CVidu61Inf; 
+ சல்லிவிடு     CVidu61Inf; 
+@@ -24175,7 +24164,6 @@
+ உரைசிவிடு     CVidu61Inf; 
+ உரைஞ்சிவிடு     CVidu61Inf; 
+ உரிஞ்சிவிடு     CVidu61Inf; 
+-உரிிவிடு     CVidu61Inf; 
+ உரசிவிடு     CVidu61Inf; 
+ உராவிவிடு     CVidu61Inf; 
+ உராய்ஞ்சிவிடு     CVidu61Inf; 
+@@ -29180,7 +29168,6 @@
+ அலர்க்கப்போ            ClassPo5Inf; 
+ அலையப்போ            ClassPo5Inf; 
+ அமிழப்போ            ClassPo5Inf; 
+-அமர்ப்போ            ClassPo5Inf; 
+ அமையப்போ            ClassPo5Inf; 
+ அறிக்கப்போ            ClassPo5Inf; 
+ அறையப்போ            ClassPo5Inf; 
+@@ -29261,16 +29248,11 @@
+ தசையப்போ            ClassPo5Inf; 
+ துழையப்போ            ClassPo5Inf; 
+ துலையப்போ            ClassPo5Inf; 
+-துய்ப்போ            ClassPo5Inf; 
+-துயர்ப்போ            ClassPo5Inf; 
+ துதையப்போ            ClassPo5Inf; 
+ துளர்க்கப்போ            ClassPo5Inf; 
+ துளையப்போ            ClassPo5Inf; 
+-துடர்ப்போ            ClassPo5Inf; 
+ துனையப்போ            ClassPo5Inf; 
+-துணர்ப்போ            ClassPo5Inf; 
+ துணையப்போ            ClassPo5Inf; 
+-துவர்ப்போ            ClassPo5Inf; 
+ துவையப்போ            ClassPo5Inf; 
+ தளையப்போ            ClassPo5Inf; 
+ தேய்ப்போ            ClassPo5Inf; 
+@@ -29287,7 +29269,6 @@
+ சிறையப்போ            ClassPo5Inf; 
+ சிதையப்போ            ClassPo5Inf; 
+ சூழப்போ            ClassPo5Inf; 
+-சூர்ப்போ            ClassPo5Inf; 
+ சார்க்கப்போ            ClassPo5Inf; 
+ சாய்ப்போ            ClassPo5Inf; 
+ சமழப்போ            ClassPo5Inf; 
+@@ -29323,7 +29304,6 @@
+ பிறழப்போ            ClassPo5Inf; 
+ பிசிர்க்கப்போ            ClassPo5Inf; 
+ பிணையப்போ            ClassPo5Inf; 
+-பூர்ப்போ            ClassPo5Inf; 
+ பகிர்க்கப்போ            ClassPo5Inf; 
+ பகர்க்கப்போ            ClassPo5Inf; 
+ பாய்ப்போ            ClassPo5Inf; 
+@@ -29332,7 +29312,6 @@
+ புரையப்போ            ClassPo5Inf; 
+ புகழப்போ            ClassPo5Inf; 
+ புகையப்போ            ClassPo5Inf; 
+-புலர்ப்போ            ClassPo5Inf; 
+ புய்ப்போ            ClassPo5Inf; 
+ புதையப்போ            ClassPo5Inf; 
+ புளையப்போ            ClassPo5Inf; 
+@@ -29341,10 +29320,8 @@
+ பொழிக்கப்போ            ClassPo5Inf; 
+ பொலிக்கப்போ            ClassPo5Inf; 
+ பொதிக்கப்போ            ClassPo5Inf; 
+-பெயர்ப்போ            ClassPo5Inf; 
+ பீழப்போ            ClassPo5Inf; 
+ போழப்போ            ClassPo5Inf; 
+-பேர்ப்போ            ClassPo5Inf; 
+ பவர்க்கப்போ            ClassPo5Inf; 
+ ஞிமிர்க்கப்போ            ClassPo5Inf; 
+ ஞமர்க்கப்போ            ClassPo5Inf; 
+@@ -29357,7 +29334,6 @@
+ ஓய்ப்போ            ClassPo5Inf; 
+ ஊழப்போ            ClassPo5Inf; 
+ ஊய்ப்போ            ClassPo5Inf; 
+-ஊர்ப்போ            ClassPo5Inf; 
+ ஆழப்போ            ClassPo5Inf; 
+ ஆராய்ப்போ            ClassPo5Inf; 
+ ஒசிக்கப்போ            ClassPo5Inf; 
+@@ -29366,10 +29342,8 @@
+ உராய்ப்போ            ClassPo5Inf; 
+ உரையப்போ            ClassPo5Inf; 
+ உகையப்போ            ClassPo5Inf; 
+-உலர்ப்போ            ClassPo5Inf; 
+ உலையப்போ            ClassPo5Inf; 
+ உய்ப்போ            ClassPo5Inf; 
+-உயர்ப்போ            ClassPo5Inf; 
+ உமிழப்போ            ClassPo5Inf; 
+ உறழப்போ            ClassPo5Inf; 
+ உறிக்கப்போ            ClassPo5Inf; 
+@@ -29402,7 +29376,6 @@
+ நளிக்கப்போ            ClassPo5Inf; 
+ நனையப்போ            ClassPo5Inf; 
+ நெகிழப்போ            ClassPo5Inf; 
+-நேர்ப்போ            ClassPo5Inf; 
+ நோய்ப்போ            ClassPo5Inf; 
+ நவிர்க்கப்போ            ClassPo5Inf; 
+ இழையப்போ            ClassPo5Inf; 
+@@ -29415,7 +29388,6 @@
+ இசையப்போ            ClassPo5Inf; 
+ இடையப்போ            ClassPo5Inf; 
+ இணையப்போ            ClassPo5Inf; 
+-இவர்ப்போ            ClassPo5Inf; 
+ அட்டப்போ            ClassPo5Inf; 
+ அடக்கப்போ            ClassPo5Inf; 
+ அடைச்சப்போ            ClassPo5Inf; 
+@@ -31290,7 +31262,6 @@
+ வேதித்துப்போடு	VpoduInf;
+ வேர்த்துப்போடு	VpoduInf;
+ வேகித்துப்போடு	VpoduInf;
+-வேங்குத்துப்போடு	VpoduInf;
+ வீதித்துப்போடு	VpoduInf;
+ வஞ்சித்துப்போடு	VpoduInf;
+ யாபித்துப்போடு	VpoduInf;
+@@ -31933,7 +31904,6 @@
+ நொசித்துப்போடு	VpoduInf;
+ நெகிழ்த்துப்போடு	VpoduInf;
+ நெறித்துப்போடு	VpoduInf;
+-நெறுமுத்துப்போடு	VpoduInf;
+ நெறுநெறுத்துப்போடு	VpoduInf;
+ நெடித்துப்போடு	VpoduInf;
+ நெடுத்துப்போடு	VpoduInf;
+@@ -32070,7 +32040,6 @@
+ சாதாளித்துப்போடு	VpoduInf;
+ சானித்துப்போடு	VpoduInf;
+ சாடித்துப்போடு	VpoduInf;
+-சாட்டுத்துப்போடு	VpoduInf;
+ சண்ணித்துப்போடு	VpoduInf;
+ சணாய்த்துப்போடு	VpoduInf;
+ சையோகித்துப்போடு	VpoduInf;
+@@ -32101,7 +32070,6 @@
+ செங்காரித்துப்போடு	VpoduInf;
+ சகித்துப்போடு	VpoduInf;
+ சகளீகரித்துப்போடு	VpoduInf;
+-சக்களித்துப்போடு	VpoduInf;
+ சகாரித்துப்போடு	VpoduInf;
+ சபித்துப்போடு	VpoduInf;
+ சப்பளித்துப்போடு	VpoduInf;
+@@ -32113,7 +32081,6 @@
+ சன்னியாசித்துப்போடு	VpoduInf;
+ சன்னித்துப்போடு	VpoduInf;
+ சலித்துப்போடு	VpoduInf;
+-சல்லரித்துப்போடு	VpoduInf;
+ சல்லாபித்துப்போடு	VpoduInf;
+ சற்கரித்துப்போடு	VpoduInf;
+ சட்டித்துப்போடு	VpoduInf;
+@@ -32141,7 +32108,6 @@
+ சங்கரித்துப்போடு	VpoduInf;
+ சங்கற்பித்துப்போடு	VpoduInf;
+ சூத்திரித்துப்போடு	VpoduInf;
+-சூர்த்துப்போடு	VpoduInf;
+ சூரணித்துப்போடு	VpoduInf;
+ சூக்குமித்துப்போடு	VpoduInf;
+ சூசிப்பித்துப்போடு	VpoduInf;
+@@ -32180,7 +32146,6 @@
+ ஒடித்துப்போடு	VpoduInf;
+ ஒஞ்சித்துப்போடு	VpoduInf;
+ ஏய்த்துப்போடு	VpoduInf;
+-ஏர்த்துப்போடு	VpoduInf;
+ ஏம்பலித்துப்போடு	VpoduInf;
+ ஏற்பித்துப்போடு	VpoduInf;
+ ஔவித்துப்போடு	VpoduInf;
+@@ -32551,7 +32516,6 @@
+ சுழன்றுப்போடு	VpoduInf;
+ சான்றுப்போடு	VpoduInf;
+ சோன்றுப்போடு	VpoduInf;
+-சொன்றுப்போடு	VpoduInf;
+ சூன்றுப்போடு	VpoduInf;
+ நிழன்றுப்போடு	VpoduInf;
+ நிரன்றுப்போடு	VpoduInf;
+@@ -32664,7 +32628,6 @@
+ தசைந்துபோடு	VpoduInf;
+ துழைந்துபோடு	VpoduInf;
+ துலைந்துபோடு	VpoduInf;
+-துய்ந்துபோடு	VpoduInf;
+ துயர்ந்துபோடு	VpoduInf;
+ துமிந்துபோடு	VpoduInf;
+ துதைந்துபோடு	VpoduInf;
+@@ -32768,7 +32731,6 @@
+ பிணிந்துபோடு	VpoduInf;
+ பிணைந்துபோடு	VpoduInf;
+ பரிந்துபோடு	VpoduInf;
+-பூர்ந்துபோடு	VpoduInf;
+ பகிர்ந்துபோடு	VpoduInf;
+ பகர்ந்துபோடு	VpoduInf;
+ பகுந்துபோடு	VpoduInf;
+@@ -33521,7 +33483,6 @@
+ சாடிப்போடு	VpoduInf;
+ சார்த்திப்போடு	VpoduInf;
+ சாத்திப்போடு	VpoduInf;
+-சண்ணிிப்போடு	VpoduInf;
+ சங்கிப்போடு	VpoduInf;
+ சலுப்பிப்போடு	VpoduInf;
+ சல்லிப்போடு	VpoduInf;
+@@ -34001,7 +33962,6 @@
+ உரைசிப்போடு	VpoduInf;
+ உரைஞ்சிப்போடு	VpoduInf;
+ உரிஞ்சிப்போடு	VpoduInf;
+-உரிிப்போடு	VpoduInf;
+ உரசிப்போடு	VpoduInf;
+ உராவிப்போடு	VpoduInf;
+ உராய்ஞ்சிப்போடு	VpoduInf;
+@@ -34794,7 +34754,6 @@
+ வேதித்துத்தள்ளு	VthalluInf;
+ வேர்த்துத்தள்ளு	VthalluInf;
+ வேகித்துத்தள்ளு	VthalluInf;
+-வேங்குத்துத்தள்ளு	VthalluInf;
+ வீதித்துத்தள்ளு	VthalluInf;
+ வஞ்சித்துத்தள்ளு	VthalluInf;
+ யாபித்துத்தள்ளு	VthalluInf;
+@@ -35437,7 +35396,6 @@
+ நொசித்துத்தள்ளு	VthalluInf;
+ நெகிழ்த்துத்தள்ளு	VthalluInf;
+ நெறித்துத்தள்ளு	VthalluInf;
+-நெறுமுத்துத்தள்ளு	VthalluInf;
+ நெறுநெறுத்துத்தள்ளு	VthalluInf;
+ நெடித்துத்தள்ளு	VthalluInf;
+ நெடுத்துத்தள்ளு	VthalluInf;
+@@ -35574,7 +35532,6 @@
+ சாதாளித்துத்தள்ளு	VthalluInf;
+ சானித்துத்தள்ளு	VthalluInf;
+ சாடித்துத்தள்ளு	VthalluInf;
+-சாட்டுத்துத்தள்ளு	VthalluInf;
+ சண்ணித்துத்தள்ளு	VthalluInf;
+ சணாய்த்துத்தள்ளு	VthalluInf;
+ சையோகித்துத்தள்ளு	VthalluInf;
+@@ -35605,7 +35562,6 @@
+ செங்காரித்துத்தள்ளு	VthalluInf;
+ சகித்துத்தள்ளு	VthalluInf;
+ சகளீகரித்துத்தள்ளு	VthalluInf;
+-சக்களித்துத்தள்ளு	VthalluInf;
+ சகாரித்துத்தள்ளு	VthalluInf;
+ சபித்துத்தள்ளு	VthalluInf;
+ சப்பளித்துத்தள்ளு	VthalluInf;
+@@ -35617,7 +35573,6 @@
+ சன்னியாசித்துத்தள்ளு	VthalluInf;
+ சன்னித்துத்தள்ளு	VthalluInf;
+ சலித்துத்தள்ளு	VthalluInf;
+-சல்லரித்துத்தள்ளு	VthalluInf;
+ சல்லாபித்துத்தள்ளு	VthalluInf;
+ சற்கரித்துத்தள்ளு	VthalluInf;
+ சட்டித்துத்தள்ளு	VthalluInf;
+@@ -35645,7 +35600,6 @@
+ சங்கரித்துத்தள்ளு	VthalluInf;
+ சங்கற்பித்துத்தள்ளு	VthalluInf;
+ சூத்திரித்துத்தள்ளு	VthalluInf;
+-சூர்த்துத்தள்ளு	VthalluInf;
+ சூரணித்துத்தள்ளு	VthalluInf;
+ சூக்குமித்துத்தள்ளு	VthalluInf;
+ சூசிப்பித்துத்தள்ளு	VthalluInf;
+@@ -35684,7 +35638,6 @@
+ ஒடித்துத்தள்ளு	VthalluInf;
+ ஒஞ்சித்துத்தள்ளு	VthalluInf;
+ ஏய்த்துத்தள்ளு	VthalluInf;
+-ஏர்த்துத்தள்ளு	VthalluInf;
+ ஏம்பலித்துத்தள்ளு	VthalluInf;
+ ஏற்பித்துத்தள்ளு	VthalluInf;
+ ஔவித்துத்தள்ளு	VthalluInf;
+@@ -36055,7 +36008,6 @@
+ சுழன்றுத்தள்ளு	VthalluInf;
+ சான்றுத்தள்ளு	VthalluInf;
+ சோன்றுத்தள்ளு	VthalluInf;
+-சொன்றுத்தள்ளு	VthalluInf;
+ சூன்றுத்தள்ளு	VthalluInf;
+ நிழன்றுத்தள்ளு	VthalluInf;
+ நிரன்றுத்தள்ளு	VthalluInf;
+@@ -36168,7 +36120,6 @@
+ தசைந்துதள்ளு	VthalluInf;
+ துழைந்துதள்ளு	VthalluInf;
+ துலைந்துதள்ளு	VthalluInf;
+-துய்ந்துதள்ளு	VthalluInf;
+ துயர்ந்துதள்ளு	VthalluInf;
+ துமிந்துதள்ளு	VthalluInf;
+ துதைந்துதள்ளு	VthalluInf;
+@@ -36272,7 +36223,6 @@
+ பிணிந்துதள்ளு	VthalluInf;
+ பிணைந்துதள்ளு	VthalluInf;
+ பரிந்துதள்ளு	VthalluInf;
+-பூர்ந்துதள்ளு	VthalluInf;
+ பகிர்ந்துதள்ளு	VthalluInf;
+ பகர்ந்துதள்ளு	VthalluInf;
+ பகுந்துதள்ளு	VthalluInf;
+@@ -37025,7 +36975,6 @@
+ சாடித்தள்ளு	VthalluInf;
+ சார்த்தித்தள்ளு	VthalluInf;
+ சாத்தித்தள்ளு	VthalluInf;
+-சண்ணிித்தள்ளு	VthalluInf;
+ சங்கித்தள்ளு	VthalluInf;
+ சலுப்பித்தள்ளு	VthalluInf;
+ சல்லித்தள்ளு	VthalluInf;
+@@ -37505,7 +37454,6 @@
+ உரைசித்தள்ளு	VthalluInf;
+ உரைஞ்சித்தள்ளு	VthalluInf;
+ உரிஞ்சித்தள்ளு	VthalluInf;
+-உரிித்தள்ளு	VthalluInf;
+ உரசித்தள்ளு	VthalluInf;
+ உராவித்தள்ளு	VthalluInf;
+ உராய்ஞ்சித்தள்ளு	VthalluInf;
+@@ -42374,7 +42322,6 @@
+ அலர்க்கப்பண்ணு                  ClassPannu5Inf; 
+ அலையப்பண்ணு                  ClassPannu5Inf; 
+ அமிழப்பண்ணு                  ClassPannu5Inf; 
+-அமர்ப்பண்ணு                  ClassPannu5Inf; 
+ அமையப்பண்ணு                  ClassPannu5Inf; 
+ அறிக்கப்பண்ணு                  ClassPannu5Inf; 
+ அறையப்பண்ணு                  ClassPannu5Inf; 
+@@ -42455,16 +42402,11 @@
+ தசையப்பண்ணு                  ClassPannu5Inf; 
+ துழையப்பண்ணு                  ClassPannu5Inf; 
+ துலையப்பண்ணு                  ClassPannu5Inf; 
+-துய்ப்பண்ணு                  ClassPannu5Inf; 
+-துயர்ப்பண்ணு                  ClassPannu5Inf; 
+ துதையப்பண்ணு                  ClassPannu5Inf; 
+ துளர்க்கப்பண்ணு                  ClassPannu5Inf; 
+ துளையப்பண்ணு                  ClassPannu5Inf; 
+-துடர்ப்பண்ணு                  ClassPannu5Inf; 
+ துனையப்பண்ணு                  ClassPannu5Inf; 
+-துணர்ப்பண்ணு                  ClassPannu5Inf; 
+ துணையப்பண்ணு                  ClassPannu5Inf; 
+-துவர்ப்பண்ணு                  ClassPannu5Inf; 
+ துவையப்பண்ணு                  ClassPannu5Inf; 
+ தளையப்பண்ணு                  ClassPannu5Inf; 
+ தேய்ப்பண்ணு                  ClassPannu5Inf; 
+@@ -42481,7 +42423,6 @@
+ சிறையப்பண்ணு                  ClassPannu5Inf; 
+ சிதையப்பண்ணு                  ClassPannu5Inf; 
+ சூழப்பண்ணு                  ClassPannu5Inf; 
+-சூர்ப்பண்ணு                  ClassPannu5Inf; 
+ சார்க்கப்பண்ணு                  ClassPannu5Inf; 
+ சாய்ப்பண்ணு                  ClassPannu5Inf; 
+ சமழப்பண்ணு                  ClassPannu5Inf; 
+@@ -42517,7 +42458,6 @@
+ பிறழப்பண்ணு                  ClassPannu5Inf; 
+ பிசிர்க்கப்பண்ணு                  ClassPannu5Inf; 
+ பிணையப்பண்ணு                  ClassPannu5Inf; 
+-பூர்ப்பண்ணு                  ClassPannu5Inf; 
+ பகிர்க்கப்பண்ணு                  ClassPannu5Inf; 
+ பகர்க்கப்பண்ணு                  ClassPannu5Inf; 
+ பாய்ப்பண்ணு                  ClassPannu5Inf; 
+@@ -42526,7 +42466,6 @@
+ புரையப்பண்ணு                  ClassPannu5Inf; 
+ புகழப்பண்ணு                  ClassPannu5Inf; 
+ புகையப்பண்ணு                  ClassPannu5Inf; 
+-புலர்ப்பண்ணு                  ClassPannu5Inf; 
+ புய்ப்பண்ணு                  ClassPannu5Inf; 
+ புதையப்பண்ணு                  ClassPannu5Inf; 
+ புளையப்பண்ணு                  ClassPannu5Inf; 
+@@ -42535,10 +42474,8 @@
+ பொழிக்கப்பண்ணு                  ClassPannu5Inf; 
+ பொலிக்கப்பண்ணு                  ClassPannu5Inf; 
+ பொதிக்கப்பண்ணு                  ClassPannu5Inf; 
+-பெயர்ப்பண்ணு                  ClassPannu5Inf; 
+ பீழப்பண்ணு                  ClassPannu5Inf; 
+ போழப்பண்ணு                  ClassPannu5Inf; 
+-பேர்ப்பண்ணு                  ClassPannu5Inf; 
+ பவர்க்கப்பண்ணு                  ClassPannu5Inf; 
+ ஞிமிர்க்கப்பண்ணு                  ClassPannu5Inf; 
+ ஞமர்க்கப்பண்ணு                  ClassPannu5Inf; 
+@@ -42551,7 +42488,6 @@
+ ஓய்ப்பண்ணு                  ClassPannu5Inf; 
+ ஊழப்பண்ணு                  ClassPannu5Inf; 
+ ஊய்ப்பண்ணு                  ClassPannu5Inf; 
+-ஊர்ப்பண்ணு                  ClassPannu5Inf; 
+ ஆழப்பண்ணு                  ClassPannu5Inf; 
+ ஆராய்ப்பண்ணு                  ClassPannu5Inf; 
+ ஒசிக்கப்பண்ணு                  ClassPannu5Inf; 
+@@ -42560,10 +42496,8 @@
+ உராய்ப்பண்ணு                  ClassPannu5Inf; 
+ உரையப்பண்ணு                  ClassPannu5Inf; 
+ உகையப்பண்ணு                  ClassPannu5Inf; 
+-உலர்ப்பண்ணு                  ClassPannu5Inf; 
+ உலையப்பண்ணு                  ClassPannu5Inf; 
+ உய்ப்பண்ணு                  ClassPannu5Inf; 
+-உயர்ப்பண்ணு                  ClassPannu5Inf; 
+ உமிழப்பண்ணு                  ClassPannu5Inf; 
+ உறழப்பண்ணு                  ClassPannu5Inf; 
+ உறிக்கப்பண்ணு                  ClassPannu5Inf; 
+@@ -42596,7 +42530,6 @@
+ நளிக்கப்பண்ணு                  ClassPannu5Inf; 
+ நனையப்பண்ணு                  ClassPannu5Inf; 
+ நெகிழப்பண்ணு                  ClassPannu5Inf; 
+-நேர்ப்பண்ணு                  ClassPannu5Inf; 
+ நோய்ப்பண்ணு                  ClassPannu5Inf; 
+ நவிர்க்கப்பண்ணு                  ClassPannu5Inf; 
+ இழையப்பண்ணு                  ClassPannu5Inf; 
+@@ -42609,7 +42542,6 @@
+ இசையப்பண்ணு                  ClassPannu5Inf; 
+ இடையப்பண்ணு                  ClassPannu5Inf; 
+ இணையப்பண்ணு                  ClassPannu5Inf; 
+-இவர்ப்பண்ணு                  ClassPannu5Inf; 
+ அட்டப்பண்ணு                  ClassPannu5Inf; 
+ அடக்கப்பண்ணு                  ClassPannu5Inf; 
+ அடைச்சப்பண்ணு                  ClassPannu5Inf; 
+@@ -48443,7 +48375,6 @@
+ அலர்க்கச்செய்            ClassSei1Inf; 
+ அலையச்செய்            ClassSei1Inf; 
+ அமிழச்செய்            ClassSei1Inf; 
+-அமர்ச்செய்            ClassSei1Inf; 
+ அமையச்செய்            ClassSei1Inf; 
+ அறிக்கச்செய்            ClassSei1Inf; 
+ அறையச்செய்            ClassSei1Inf; 
+@@ -48524,16 +48455,11 @@
+ தசையச்செய்            ClassSei1Inf; 
+ துழையச்செய்            ClassSei1Inf; 
+ துலையச்செய்            ClassSei1Inf; 
+-துய்ச்செய்            ClassSei1Inf; 
+-துயர்ச்செய்            ClassSei1Inf; 
+ துதையச்செய்            ClassSei1Inf; 
+ துளர்க்கச்செய்            ClassSei1Inf; 
+ துளையச்செய்            ClassSei1Inf; 
+-துடர்ச்செய்            ClassSei1Inf; 
+ துனையச்செய்            ClassSei1Inf; 
+-துணர்ச்செய்            ClassSei1Inf; 
+ துணையச்செய்            ClassSei1Inf; 
+-துவர்ச்செய்            ClassSei1Inf; 
+ துவையச்செய்            ClassSei1Inf; 
+ தளையச்செய்            ClassSei1Inf; 
+ தேய்ச்செய்            ClassSei1Inf; 
+@@ -48550,7 +48476,6 @@
+ சிறையச்செய்            ClassSei1Inf; 
+ சிதையச்செய்            ClassSei1Inf; 
+ சூழச்செய்            ClassSei1Inf; 
+-சூர்ச்செய்            ClassSei1Inf; 
+ சார்க்கச்செய்            ClassSei1Inf; 
+ சாய்ச்செய்            ClassSei1Inf; 
+ சமழச்செய்            ClassSei1Inf; 
+@@ -48586,7 +48511,6 @@
+ பிறழச்செய்            ClassSei1Inf; 
+ பிசிர்க்கச்செய்            ClassSei1Inf; 
+ பிணையச்செய்            ClassSei1Inf; 
+-பூர்ச்செய்            ClassSei1Inf; 
+ பகிர்க்கச்செய்            ClassSei1Inf; 
+ பகர்க்கச்செய்            ClassSei1Inf; 
+ பாய்ச்செய்            ClassSei1Inf; 
+@@ -48595,7 +48519,6 @@
+ புரையச்செய்            ClassSei1Inf; 
+ புகழச்செய்            ClassSei1Inf; 
+ புகையச்செய்            ClassSei1Inf; 
+-புலர்ச்செய்            ClassSei1Inf; 
+ புய்ச்செய்            ClassSei1Inf; 
+ புதையச்செய்            ClassSei1Inf; 
+ புளையச்செய்            ClassSei1Inf; 
+@@ -48604,10 +48527,8 @@
+ பொழிக்கச்செய்            ClassSei1Inf; 
+ பொலிக்கச்செய்            ClassSei1Inf; 
+ பொதிக்கச்செய்            ClassSei1Inf; 
+-பெயர்ச்செய்            ClassSei1Inf; 
+ பீழச்செய்            ClassSei1Inf; 
+ போழச்செய்            ClassSei1Inf; 
+-பேர்ச்செய்            ClassSei1Inf; 
+ பவர்க்கச்செய்            ClassSei1Inf; 
+ ஞிமிர்க்கச்செய்            ClassSei1Inf; 
+ ஞமர்க்கச்செய்            ClassSei1Inf; 
+@@ -48620,7 +48541,6 @@
+ ஓய்ச்செய்            ClassSei1Inf; 
+ ஊழச்செய்            ClassSei1Inf; 
+ ஊய்ச்செய்            ClassSei1Inf; 
+-ஊர்ச்செய்            ClassSei1Inf; 
+ ஆழச்செய்            ClassSei1Inf; 
+ ஆராய்ச்செய்            ClassSei1Inf; 
+ ஒசிக்கச்செய்            ClassSei1Inf; 
+@@ -48629,10 +48549,8 @@
+ உராய்ச்செய்            ClassSei1Inf; 
+ உரையச்செய்            ClassSei1Inf; 
+ உகையச்செய்            ClassSei1Inf; 
+-உலர்ச்செய்            ClassSei1Inf; 
+ உலையச்செய்            ClassSei1Inf; 
+ உய்ச்செய்            ClassSei1Inf; 
+-உயர்ச்செய்            ClassSei1Inf; 
+ உமிழச்செய்            ClassSei1Inf; 
+ உறழச்செய்            ClassSei1Inf; 
+ உறிக்கச்செய்            ClassSei1Inf; 
+@@ -48665,7 +48583,6 @@
+ நளிக்கச்செய்            ClassSei1Inf; 
+ நனையச்செய்            ClassSei1Inf; 
+ நெகிழச்செய்            ClassSei1Inf; 
+-நேர்ச்செய்            ClassSei1Inf; 
+ நோய்ச்செய்            ClassSei1Inf; 
+ நவிர்க்கச்செய்            ClassSei1Inf; 
+ இழையச்செய்            ClassSei1Inf; 
+@@ -48678,7 +48595,6 @@
+ இசையச்செய்            ClassSei1Inf; 
+ இடையச்செய்            ClassSei1Inf; 
+ இணையச்செய்            ClassSei1Inf; 
+-இவர்ச்செய்            ClassSei1Inf; 
+ அட்டச்செய்            ClassSei1Inf; 
+ அடக்கச்செய்            ClassSei1Inf; 
+ அடைச்சச்செய்            ClassSei1Inf; 
+@@ -54516,7 +54432,6 @@
+ அலர்க்கவை            ClassVai1Inf; 
+ அலையவை            ClassVai1Inf; 
+ அமிழவை            ClassVai1Inf; 
+-அமர்வை            ClassVai1Inf; 
+ அமையவை            ClassVai1Inf; 
+ அறிக்கவை            ClassVai1Inf; 
+ அறையவை            ClassVai1Inf; 
+@@ -54597,16 +54512,11 @@
+ தசையவை            ClassVai1Inf; 
+ துழையவை            ClassVai1Inf; 
+ துலையவை            ClassVai1Inf; 
+-துய்வை            ClassVai1Inf; 
+-துயர்வை            ClassVai1Inf; 
+ துதையவை            ClassVai1Inf; 
+ துளர்க்கவை            ClassVai1Inf; 
+ துளையவை            ClassVai1Inf; 
+-துடர்வை            ClassVai1Inf; 
+ துனையவை            ClassVai1Inf; 
+-துணர்வை            ClassVai1Inf; 
+ துணையவை            ClassVai1Inf; 
+-துவர்வை            ClassVai1Inf; 
+ துவையவை            ClassVai1Inf; 
+ தளையவை            ClassVai1Inf; 
+ தேய்வை            ClassVai1Inf; 
+@@ -54623,7 +54533,6 @@
+ சிறையவை            ClassVai1Inf; 
+ சிதையவை            ClassVai1Inf; 
+ சூழவை            ClassVai1Inf; 
+-சூர்வை            ClassVai1Inf; 
+ சார்க்கவை            ClassVai1Inf; 
+ சாய்வை            ClassVai1Inf; 
+ சமழவை            ClassVai1Inf; 
+@@ -54659,7 +54568,6 @@
+ பிறழவை            ClassVai1Inf; 
+ பிசிர்க்கவை            ClassVai1Inf; 
+ பிணையவை            ClassVai1Inf; 
+-பூர்வை            ClassVai1Inf; 
+ பகிர்க்கவை            ClassVai1Inf; 
+ பகர்க்கவை            ClassVai1Inf; 
+ பாய்வை            ClassVai1Inf; 
+@@ -54668,7 +54576,6 @@
+ புரையவை            ClassVai1Inf; 
+ புகழவை            ClassVai1Inf; 
+ புகையவை            ClassVai1Inf; 
+-புலர்வை            ClassVai1Inf; 
+ புய்வை            ClassVai1Inf; 
+ புதையவை            ClassVai1Inf; 
+ புளையவை            ClassVai1Inf; 
+@@ -54677,10 +54584,8 @@
+ பொழிக்கவை            ClassVai1Inf; 
+ பொலிக்கவை            ClassVai1Inf; 
+ பொதிக்கவை            ClassVai1Inf; 
+-பெயர்வை            ClassVai1Inf; 
+ பீழவை            ClassVai1Inf; 
+ போழவை            ClassVai1Inf; 
+-பேர்வை            ClassVai1Inf; 
+ பவர்க்கவை            ClassVai1Inf; 
+ ஞிமிர்க்கவை            ClassVai1Inf; 
+ ஞமர்க்கவை            ClassVai1Inf; 
+@@ -54693,7 +54598,6 @@
+ ஓய்வை            ClassVai1Inf; 
+ ஊழவை            ClassVai1Inf; 
+ ஊய்வை            ClassVai1Inf; 
+-ஊர்வை            ClassVai1Inf; 
+ ஆழவை            ClassVai1Inf; 
+ ஆராய்வை            ClassVai1Inf; 
+ ஒசிக்கவை            ClassVai1Inf; 
+@@ -54702,7 +54606,6 @@
+ உராய்வை            ClassVai1Inf; 
+ உரையவை            ClassVai1Inf; 
+ உகையவை            ClassVai1Inf; 
+-உலர்வை            ClassVai1Inf; 
+ உலையவை            ClassVai1Inf; 
+ உய்வை            ClassVai1Inf; 
+ உயர்வை            ClassVai1Inf; 
+@@ -54738,7 +54641,6 @@
+ நளிக்கவை            ClassVai1Inf; 
+ நனையவை            ClassVai1Inf; 
+ நெகிழவை            ClassVai1Inf; 
+-நேர்வை            ClassVai1Inf; 
+ நோய்வை            ClassVai1Inf; 
+ நவிர்க்கவை            ClassVai1Inf; 
+ இழையவை            ClassVai1Inf; 
+@@ -54751,7 +54653,6 @@
+ இசையவை            ClassVai1Inf; 
+ இடையவை            ClassVai1Inf; 
+ இணையவை            ClassVai1Inf; 
+-இவர்வை            ClassVai1Inf; 
+ அடக்கவை            ClassVai1Inf; 
+ அடைச்சவை            ClassVai1Inf; 
+ அடைசவை            ClassVai1Inf; 
+@@ -60553,7 +60454,6 @@
+ அலர்க்கக்கூடு            ClassKoodu5Inf; 
+ அலையக்கூடு            ClassKoodu5Inf; 
+ அமிழக்கூடு            ClassKoodu5Inf; 
+-அமர்க்கூடு            ClassKoodu5Inf; 
+ அமையக்கூடு            ClassKoodu5Inf; 
+ அறிக்கக்கூடு            ClassKoodu5Inf; 
+ அறையக்கூடு            ClassKoodu5Inf; 
+@@ -60634,16 +60534,11 @@
+ தசையக்கூடு            ClassKoodu5Inf; 
+ துழையக்கூடு            ClassKoodu5Inf; 
+ துலையக்கூடு            ClassKoodu5Inf; 
+-துய்க்கூடு            ClassKoodu5Inf; 
+-துயர்க்கூடு            ClassKoodu5Inf; 
+ துதையக்கூடு            ClassKoodu5Inf; 
+ துளர்க்கக்கூடு            ClassKoodu5Inf; 
+ துளையக்கூடு            ClassKoodu5Inf; 
+-துடர்க்கூடு            ClassKoodu5Inf; 
+ துனையக்கூடு            ClassKoodu5Inf; 
+-துணர்க்கூடு            ClassKoodu5Inf; 
+ துணையக்கூடு            ClassKoodu5Inf; 
+-துவர்க்கூடு            ClassKoodu5Inf; 
+ துவையக்கூடு            ClassKoodu5Inf; 
+ தளையக்கூடு            ClassKoodu5Inf; 
+ தேய்க்கூடு            ClassKoodu5Inf; 
+@@ -60660,7 +60555,6 @@
+ சிறையக்கூடு            ClassKoodu5Inf; 
+ சிதையக்கூடு            ClassKoodu5Inf; 
+ சூழக்கூடு            ClassKoodu5Inf; 
+-சூர்க்கூடு            ClassKoodu5Inf; 
+ சார்க்கக்கூடு            ClassKoodu5Inf; 
+ சாய்க்கூடு            ClassKoodu5Inf; 
+ சமழக்கூடு            ClassKoodu5Inf; 
+@@ -60696,7 +60590,6 @@
+ பிறழக்கூடு            ClassKoodu5Inf; 
+ பிசிர்க்கக்கூடு            ClassKoodu5Inf; 
+ பிணையக்கூடு            ClassKoodu5Inf; 
+-பூர்க்கூடு            ClassKoodu5Inf; 
+ பகிர்க்கக்கூடு            ClassKoodu5Inf; 
+ பகர்க்கக்கூடு            ClassKoodu5Inf; 
+ பாய்க்கூடு            ClassKoodu5Inf; 
+@@ -60705,7 +60598,6 @@
+ புரையக்கூடு            ClassKoodu5Inf; 
+ புகழக்கூடு            ClassKoodu5Inf; 
+ புகையக்கூடு            ClassKoodu5Inf; 
+-புலர்க்கூடு            ClassKoodu5Inf; 
+ புய்க்கூடு            ClassKoodu5Inf; 
+ புதையக்கூடு            ClassKoodu5Inf; 
+ புளையக்கூடு            ClassKoodu5Inf; 
+@@ -60714,10 +60606,8 @@
+ பொழிக்கக்கூடு            ClassKoodu5Inf; 
+ பொலிக்கக்கூடு            ClassKoodu5Inf; 
+ பொதிக்கக்கூடு            ClassKoodu5Inf; 
+-பெயர்க்கூடு            ClassKoodu5Inf; 
+ பீழக்கூடு            ClassKoodu5Inf; 
+ போழக்கூடு            ClassKoodu5Inf; 
+-பேர்க்கூடு            ClassKoodu5Inf; 
+ பவர்க்கக்கூடு            ClassKoodu5Inf; 
+ ஞிமிர்க்கக்கூடு            ClassKoodu5Inf; 
+ ஞமர்க்கக்கூடு            ClassKoodu5Inf; 
+@@ -60730,7 +60620,6 @@
+ ஓய்க்கூடு            ClassKoodu5Inf; 
+ ஊழக்கூடு            ClassKoodu5Inf; 
+ ஊய்க்கூடு            ClassKoodu5Inf; 
+-ஊர்க்கூடு            ClassKoodu5Inf; 
+ ஆழக்கூடு            ClassKoodu5Inf; 
+ ஆராய்க்கூடு            ClassKoodu5Inf; 
+ ஒசிக்கக்கூடு            ClassKoodu5Inf; 
+@@ -60739,10 +60628,8 @@
+ உராய்க்கூடு            ClassKoodu5Inf; 
+ உரையக்கூடு            ClassKoodu5Inf; 
+ உகையக்கூடு            ClassKoodu5Inf; 
+-உலர்க்கூடு            ClassKoodu5Inf; 
+ உலையக்கூடு            ClassKoodu5Inf; 
+ உய்க்கூடு            ClassKoodu5Inf; 
+-உயர்க்கூடு            ClassKoodu5Inf; 
+ உமிழக்கூடு            ClassKoodu5Inf; 
+ உறழக்கூடு            ClassKoodu5Inf; 
+ உறிக்கக்கூடு            ClassKoodu5Inf; 
+@@ -60775,7 +60662,6 @@
+ நளிக்கக்கூடு            ClassKoodu5Inf; 
+ நனையக்கூடு            ClassKoodu5Inf; 
+ நெகிழக்கூடு            ClassKoodu5Inf; 
+-நேர்க்கூடு            ClassKoodu5Inf; 
+ நோய்க்கூடு            ClassKoodu5Inf; 
+ நவிர்க்கக்கூடு            ClassKoodu5Inf; 
+ இழையக்கூடு            ClassKoodu5Inf; 
+@@ -60788,7 +60674,6 @@
+ இசையக்கூடு            ClassKoodu5Inf; 
+ இடையக்கூடு            ClassKoodu5Inf; 
+ இணையக்கூடு            ClassKoodu5Inf; 
+-இவர்க்கூடு            ClassKoodu5Inf; 
+ அட்டக்கூடு            ClassKoodu5Inf; 
+ அடக்கக்கூடு            ClassKoodu5Inf; 
+ அடைச்சக்கூடு            ClassKoodu5Inf; 
+@@ -66621,7 +66506,6 @@
+ அலர்க்கவேண்டு            ClassVendu5Inf; 
+ அலையவேண்டு            ClassVendu5Inf; 
+ அமிழவேண்டு            ClassVendu5Inf; 
+-அமர்வேண்டு            ClassVendu5Inf; 
+ அமையவேண்டு            ClassVendu5Inf; 
+ அறிக்கவேண்டு            ClassVendu5Inf; 
+ அறையவேண்டு            ClassVendu5Inf; 
+@@ -66702,16 +66586,11 @@
+ தசையவேண்டு            ClassVendu5Inf; 
+ துழையவேண்டு            ClassVendu5Inf; 
+ துலையவேண்டு            ClassVendu5Inf; 
+-துய்வேண்டு            ClassVendu5Inf; 
+-துயர்வேண்டு            ClassVendu5Inf; 
+ துதையவேண்டு            ClassVendu5Inf; 
+ துளர்க்கவேண்டு            ClassVendu5Inf; 
+ துளையவேண்டு            ClassVendu5Inf; 
+-துடர்வேண்டு            ClassVendu5Inf; 
+ துனையவேண்டு            ClassVendu5Inf; 
+-துணர்வேண்டு            ClassVendu5Inf; 
+ துணையவேண்டு            ClassVendu5Inf; 
+-துவர்வேண்டு            ClassVendu5Inf; 
+ துவையவேண்டு            ClassVendu5Inf; 
+ தளையவேண்டு            ClassVendu5Inf; 
+ தேய்வேண்டு            ClassVendu5Inf; 
+@@ -66728,7 +66607,6 @@
+ சிறையவேண்டு            ClassVendu5Inf; 
+ சிதையவேண்டு            ClassVendu5Inf; 
+ சூழவேண்டு            ClassVendu5Inf; 
+-சூர்வேண்டு            ClassVendu5Inf; 
+ சார்க்கவேண்டு            ClassVendu5Inf; 
+ சாய்வேண்டு            ClassVendu5Inf; 
+ சமழவேண்டு            ClassVendu5Inf; 
+@@ -66764,7 +66642,6 @@
+ பிறழவேண்டு            ClassVendu5Inf; 
+ பிசிர்க்கவேண்டு            ClassVendu5Inf; 
+ பிணையவேண்டு            ClassVendu5Inf; 
+-பூர்வேண்டு            ClassVendu5Inf; 
+ பகிர்க்கவேண்டு            ClassVendu5Inf; 
+ பகர்க்கவேண்டு            ClassVendu5Inf; 
+ பாய்வேண்டு            ClassVendu5Inf; 
+@@ -66773,7 +66650,6 @@
+ புரையவேண்டு            ClassVendu5Inf; 
+ புகழவேண்டு            ClassVendu5Inf; 
+ புகையவேண்டு            ClassVendu5Inf; 
+-புலர்வேண்டு            ClassVendu5Inf; 
+ புய்வேண்டு            ClassVendu5Inf; 
+ புதையவேண்டு            ClassVendu5Inf; 
+ புளையவேண்டு            ClassVendu5Inf; 
+@@ -66782,10 +66658,8 @@
+ பொழிக்கவேண்டு            ClassVendu5Inf; 
+ பொலிக்கவேண்டு            ClassVendu5Inf; 
+ பொதிக்கவேண்டு            ClassVendu5Inf; 
+-பெயர்வேண்டு            ClassVendu5Inf; 
+ பீழவேண்டு            ClassVendu5Inf; 
+ போழவேண்டு            ClassVendu5Inf; 
+-பேர்வேண்டு            ClassVendu5Inf; 
+ பவர்க்கவேண்டு            ClassVendu5Inf; 
+ ஞிமிர்க்கவேண்டு            ClassVendu5Inf; 
+ ஞமர்க்கவேண்டு            ClassVendu5Inf; 
+@@ -66798,7 +66672,6 @@
+ ஓய்வேண்டு            ClassVendu5Inf; 
+ ஊழவேண்டு            ClassVendu5Inf; 
+ ஊய்வேண்டு            ClassVendu5Inf; 
+-ஊர்வேண்டு            ClassVendu5Inf; 
+ ஆழவேண்டு            ClassVendu5Inf; 
+ ஆராய்வேண்டு            ClassVendu5Inf; 
+ ஒசிக்கவேண்டு            ClassVendu5Inf; 
+@@ -66807,10 +66680,8 @@
+ உராய்வேண்டு            ClassVendu5Inf; 
+ உரையவேண்டு            ClassVendu5Inf; 
+ உகையவேண்டு            ClassVendu5Inf; 
+-உலர்வேண்டு            ClassVendu5Inf; 
+ உலையவேண்டு            ClassVendu5Inf; 
+ உய்வேண்டு            ClassVendu5Inf; 
+-உயர்வேண்டு            ClassVendu5Inf; 
+ உமிழவேண்டு            ClassVendu5Inf; 
+ உறழவேண்டு            ClassVendu5Inf; 
+ உறிக்கவேண்டு            ClassVendu5Inf; 
+@@ -66843,7 +66714,6 @@
+ நளிக்கவேண்டு            ClassVendu5Inf; 
+ நனையவேண்டு            ClassVendu5Inf; 
+ நெகிழவேண்டு            ClassVendu5Inf; 
+-நேர்வேண்டு            ClassVendu5Inf; 
+ நோய்வேண்டு            ClassVendu5Inf; 
+ நவிர்க்கவேண்டு            ClassVendu5Inf; 
+ இழையவேண்டு            ClassVendu5Inf; 
+@@ -66856,7 +66726,6 @@
+ இசையவேண்டு            ClassVendu5Inf; 
+ இடையவேண்டு            ClassVendu5Inf; 
+ இணையவேண்டு            ClassVendu5Inf; 
+-இவர்வேண்டு            ClassVendu5Inf; 
+ அடக்கவேண்டு            ClassVendu5Inf; 
+ அடைச்சவேண்டு            ClassVendu5Inf; 
+ அடைசவேண்டு            ClassVendu5Inf; 
+@@ -68612,7 +68481,6 @@
+ வேதித்திடு      CIdu61Inf;  
+ வேர்த்திடு      CIdu61Inf;  
+ வேகித்திடு      CIdu61Inf;  
+-வேங்குத்திடு      CIdu61Inf;  
+ வீதித்திடு      CIdu61Inf;  
+ வஞ்சித்திடு      CIdu61Inf;  
+ யாபித்திடு      CIdu61Inf;  
+@@ -69255,7 +69123,6 @@
+ நொசித்திடு      CIdu61Inf;  
+ நெகிழ்த்திடு      CIdu61Inf;  
+ நெறித்திடு      CIdu61Inf;  
+-நெறுமுத்திடு      CIdu61Inf;  
+ நெறுநெறுத்திடு      CIdu61Inf;  
+ நெடித்திடு      CIdu61Inf;  
+ நெடுத்திடு      CIdu61Inf;  
+@@ -69392,7 +69259,6 @@
+ சாதாளித்திடு      CIdu61Inf;  
+ சானித்திடு      CIdu61Inf;  
+ சாடித்திடு      CIdu61Inf;  
+-சாட்டுத்திடு      CIdu61Inf;  
+ சண்ணித்திடு      CIdu61Inf;  
+ சணாய்த்திடு      CIdu61Inf;  
+ சையோகித்திடு      CIdu61Inf;  
+@@ -69423,7 +69289,6 @@
+ செங்காரித்திடு      CIdu61Inf;  
+ சகித்திடு      CIdu61Inf;  
+ சகளீகரித்திடு      CIdu61Inf;  
+-சக்களித்திடு      CIdu61Inf;  
+ சகாரித்திடு      CIdu61Inf;  
+ சபித்திடு      CIdu61Inf;  
+ சப்பளித்திடு      CIdu61Inf;  
+@@ -69435,7 +69300,6 @@
+ சன்னியாசித்திடு      CIdu61Inf;  
+ சன்னித்திடு      CIdu61Inf;  
+ சலித்திடு      CIdu61Inf;  
+-சல்லரித்திடு      CIdu61Inf;  
+ சல்லாபித்திடு      CIdu61Inf;  
+ சற்கரித்திடு      CIdu61Inf;  
+ சட்டித்திடு      CIdu61Inf;  
+@@ -69463,7 +69327,6 @@
+ சங்கரித்திடு      CIdu61Inf;  
+ சங்கற்பித்திடு      CIdu61Inf;  
+ சூத்திரித்திடு      CIdu61Inf;  
+-சூர்த்திடு      CIdu61Inf;  
+ சூரணித்திடு      CIdu61Inf;  
+ சூக்குமித்திடு      CIdu61Inf;  
+ சூசிப்பித்திடு      CIdu61Inf;  
+@@ -69502,7 +69365,6 @@
+ ஒடித்திடு      CIdu61Inf;  
+ ஒஞ்சித்திடு      CIdu61Inf;  
+ ஏய்த்திடு      CIdu61Inf;  
+-ஏர்த்திடு      CIdu61Inf;  
+ ஏம்பலித்திடு      CIdu61Inf;  
+ ஏற்பித்திடு      CIdu61Inf;  
+ ஔவித்திடு      CIdu61Inf;  
+@@ -69873,7 +69735,6 @@
+ சுழன்றிடு      CIdu61Inf;  
+ சான்றிடு      CIdu61Inf;  
+ சோன்றிடு      CIdu61Inf;  
+-சொன்றிடு      CIdu61Inf;  
+ சூன்றிடு      CIdu61Inf;  
+ நிழன்றிடு      CIdu61Inf;  
+ நிரன்றிடு      CIdu61Inf;  
+@@ -69986,7 +69847,6 @@
+ தசைந்திடு      CIdu61Inf;  
+ துழைந்திடு      CIdu61Inf;  
+ துலைந்திடு      CIdu61Inf;  
+-துய்ந்திடு      CIdu61Inf;  
+ துயர்ந்திடு      CIdu61Inf;  
+ துமிந்திடு      CIdu61Inf;  
+ துதைந்திடு      CIdu61Inf;  
+@@ -70090,7 +69950,6 @@
+ பிணிந்திடு      CIdu61Inf;  
+ பிணைந்திடு      CIdu61Inf;  
+ பரிந்திடு      CIdu61Inf;  
+-பூர்ந்திடு      CIdu61Inf;  
+ பகிர்ந்திடு      CIdu61Inf;  
+ பகர்ந்திடு      CIdu61Inf;  
+ பகுந்திடு      CIdu61Inf;  
+@@ -70843,7 +70702,6 @@
+ சாடியிடு      CIdu61Inf;  
+ சார்த்தியிடு      CIdu61Inf;  
+ சாத்தியிடு      CIdu61Inf;  
+-சண்ணிியிடு      CIdu61Inf;  
+ சங்கியிடு      CIdu61Inf;  
+ சலுப்பியிடு      CIdu61Inf;  
+ சல்லியிடு      CIdu61Inf;  
+@@ -71089,7 +70947,6 @@
+ நிகர்த்தியிடு      CIdu61Inf;  
+ நிகழ்த்தியிடு      CIdu61Inf;  
+ நிவறியிடு      CIdu61Inf;  
+-நிப்பாட்டிடு      CIdu61Inf;  
+ நிய்த்தியிடு      CIdu61Inf;  
+ நியதியிடு      CIdu61Inf;  
+ நிம்பியிடு      CIdu61Inf;  
+@@ -71324,7 +71181,6 @@
+ உரைசியிடு      CIdu61Inf;  
+ உரைஞ்சியிடு      CIdu61Inf;  
+ உரிஞ்சியிடு      CIdu61Inf;  
+-உரிியிடு      CIdu61Inf;  
+ உரசியிடு      CIdu61Inf;  
+ உராவியிடு      CIdu61Inf;  
+ உராய்ஞ்சியிடு      CIdu61Inf;  
+@@ -72115,7 +71971,6 @@
+ வேதித்துவா	VvaaInf;
+ வேர்த்துவா	VvaaInf;
+ வேகித்துவா	VvaaInf;
+-வேங்குத்துவா	VvaaInf;
+ வீதித்துவா	VvaaInf;
+ வஞ்சித்துவா	VvaaInf;
+ யாபித்துவா	VvaaInf;
+@@ -72758,7 +72613,6 @@
+ நொசித்துவா	VvaaInf;
+ நெகிழ்த்துவா	VvaaInf;
+ நெறித்துவா	VvaaInf;
+-நெறுமுத்துவா	VvaaInf;
+ நெறுநெறுத்துவா	VvaaInf;
+ நெடித்துவா	VvaaInf;
+ நெடுத்துவா	VvaaInf;
+@@ -72895,7 +72749,6 @@
+ சாதாளித்துவா	VvaaInf;
+ சானித்துவா	VvaaInf;
+ சாடித்துவா	VvaaInf;
+-சாட்டுத்துவா	VvaaInf;
+ சண்ணித்துவா	VvaaInf;
+ சணாய்த்துவா	VvaaInf;
+ சையோகித்துவா	VvaaInf;
+@@ -72926,7 +72779,6 @@
+ செங்காரித்துவா	VvaaInf;
+ சகித்துவா	VvaaInf;
+ சகளீகரித்துவா	VvaaInf;
+-சக்களித்துவா	VvaaInf;
+ சகாரித்துவா	VvaaInf;
+ சபித்துவா	VvaaInf;
+ சப்பளித்துவா	VvaaInf;
+@@ -72938,7 +72790,6 @@
+ சன்னியாசித்துவா	VvaaInf;
+ சன்னித்துவா	VvaaInf;
+ சலித்துவா	VvaaInf;
+-சல்லரித்துவா	VvaaInf;
+ சல்லாபித்துவா	VvaaInf;
+ சற்கரித்துவா	VvaaInf;
+ சட்டித்துவா	VvaaInf;
+@@ -72966,7 +72817,6 @@
+ சங்கரித்துவா	VvaaInf;
+ சங்கற்பித்துவா	VvaaInf;
+ சூத்திரித்துவா	VvaaInf;
+-சூர்த்துவா	VvaaInf;
+ சூரணித்துவா	VvaaInf;
+ சூக்குமித்துவா	VvaaInf;
+ சூசிப்பித்துவா	VvaaInf;
+@@ -73005,7 +72855,6 @@
+ ஒடித்துவா	VvaaInf;
+ ஒஞ்சித்துவா	VvaaInf;
+ ஏய்த்துவா	VvaaInf;
+-ஏர்த்துவா	VvaaInf;
+ ஏம்பலித்துவா	VvaaInf;
+ ஏற்பித்துவா	VvaaInf;
+ ஔவித்துவா	VvaaInf;
+@@ -73376,7 +73225,6 @@
+ சுழன்றுவா	VvaaInf;
+ சான்றுவா	VvaaInf;
+ சோன்றுவா	VvaaInf;
+-சொன்றுவா	VvaaInf;
+ சூன்றுவா	VvaaInf;
+ நிழன்றுவா	VvaaInf;
+ நிரன்றுவா	VvaaInf;
+@@ -73489,7 +73337,6 @@
+ தசைந்துவா	VvaaInf;
+ துழைந்துவா	VvaaInf;
+ துலைந்துவா	VvaaInf;
+-துய்ந்துவா	VvaaInf;
+ துயர்ந்துவா	VvaaInf;
+ துமிந்துவா	VvaaInf;
+ துதைந்துவா	VvaaInf;
+@@ -73593,7 +73440,6 @@
+ பிணிந்துவா	VvaaInf;
+ பிணைந்துவா	VvaaInf;
+ பரிந்துவா	VvaaInf;
+-பூர்ந்துவா	VvaaInf;
+ பகிர்ந்துவா	VvaaInf;
+ பகர்ந்துவா	VvaaInf;
+ பகுந்துவா	VvaaInf;
+@@ -74346,7 +74192,6 @@
+ சாடிவா	VvaaInf;
+ சார்த்திவா	VvaaInf;
+ சாத்திவா	VvaaInf;
+-சண்ணிிவா	VvaaInf;
+ சங்கிவா	VvaaInf;
+ சலுப்பிவா	VvaaInf;
+ சல்லிவா	VvaaInf;
+@@ -74826,7 +74671,6 @@
+ உரைசிவா	VvaaInf;
+ உரைஞ்சிவா	VvaaInf;
+ உரிஞ்சிவா	VvaaInf;
+-உரிிவா	VvaaInf;
+ உரசிவா	VvaaInf;
+ உராவிவா	VvaaInf;
+ உராய்ஞ்சிவா	VvaaInf;
+@@ -80247,7 +80091,6 @@
+ அலர்க்கப்பெறு                CPeru63Vinf; 
+ அலையப்பெறு                CPeru63Vinf; 
+ அமிழப்பெறு                CPeru63Vinf; 
+-அமர்ப்பெறு                CPeru63Vinf; 
+ அமையப்பெறு                CPeru63Vinf; 
+ அறிக்கப்பெறு                CPeru63Vinf; 
+ அறையப்பெறு                CPeru63Vinf; 
+@@ -80328,16 +80171,11 @@
+ தசையப்பெறு                CPeru63Vinf; 
+ துழையப்பெறு                CPeru63Vinf; 
+ துலையப்பெறு                CPeru63Vinf; 
+-துய்ப்பெறு                CPeru63Vinf; 
+-துயர்ப்பெறு                CPeru63Vinf; 
+ துதையப்பெறு                CPeru63Vinf; 
+ துளர்க்கப்பெறு                CPeru63Vinf; 
+ துளையப்பெறு                CPeru63Vinf; 
+-துடர்ப்பெறு                CPeru63Vinf; 
+ துனையப்பெறு                CPeru63Vinf; 
+-துணர்ப்பெறு                CPeru63Vinf; 
+ துணையப்பெறு                CPeru63Vinf; 
+-துவர்ப்பெறு                CPeru63Vinf; 
+ துவையப்பெறு                CPeru63Vinf; 
+ தளையப்பெறு                CPeru63Vinf; 
+ தேய்ப்பெறு                CPeru63Vinf; 
+@@ -80354,7 +80192,6 @@
+ சிறையப்பெறு                CPeru63Vinf; 
+ சிதையப்பெறு                CPeru63Vinf; 
+ சூழப்பெறு                CPeru63Vinf; 
+-சூர்ப்பெறு                CPeru63Vinf; 
+ சார்க்கப்பெறு                CPeru63Vinf; 
+ சாய்ப்பெறு                CPeru63Vinf; 
+ சமழப்பெறு                CPeru63Vinf; 
+@@ -80390,7 +80227,6 @@
+ பிறழப்பெறு                CPeru63Vinf; 
+ பிசிர்க்கப்பெறு                CPeru63Vinf; 
+ பிணையப்பெறு                CPeru63Vinf; 
+-பூர்ப்பெறு                CPeru63Vinf; 
+ பகிர்க்கப்பெறு                CPeru63Vinf; 
+ பகர்க்கப்பெறு                CPeru63Vinf; 
+ பாய்ப்பெறு                CPeru63Vinf; 
+@@ -80399,7 +80235,6 @@
+ புரையப்பெறு                CPeru63Vinf; 
+ புகழப்பெறு                CPeru63Vinf; 
+ புகையப்பெறு                CPeru63Vinf; 
+-புலர்ப்பெறு                CPeru63Vinf; 
+ புய்ப்பெறு                CPeru63Vinf; 
+ புதையப்பெறு                CPeru63Vinf; 
+ புளையப்பெறு                CPeru63Vinf; 
+@@ -80408,10 +80243,8 @@
+ பொழிக்கப்பெறு                CPeru63Vinf; 
+ பொலிக்கப்பெறு                CPeru63Vinf; 
+ பொதிக்கப்பெறு                CPeru63Vinf; 
+-பெயர்ப்பெறு                CPeru63Vinf; 
+ பீழப்பெறு                CPeru63Vinf; 
+ போழப்பெறு                CPeru63Vinf; 
+-பேர்ப்பெறு                CPeru63Vinf; 
+ பவர்க்கப்பெறு                CPeru63Vinf; 
+ ஞிமிர்க்கப்பெறு                CPeru63Vinf; 
+ ஞமர்க்கப்பெறு                CPeru63Vinf; 
+@@ -80424,7 +80257,6 @@
+ ஓய்ப்பெறு                CPeru63Vinf; 
+ ஊழப்பெறு                CPeru63Vinf; 
+ ஊய்ப்பெறு                CPeru63Vinf; 
+-ஊர்ப்பெறு                CPeru63Vinf; 
+ ஆழப்பெறு                CPeru63Vinf; 
+ ஆராய்ப்பெறு                CPeru63Vinf; 
+ ஒசிக்கப்பெறு                CPeru63Vinf; 
+@@ -80433,10 +80265,8 @@
+ உராய்ப்பெறு                CPeru63Vinf; 
+ உரையப்பெறு                CPeru63Vinf; 
+ உகையப்பெறு                CPeru63Vinf; 
+-உலர்ப்பெறு                CPeru63Vinf; 
+ உலையப்பெறு                CPeru63Vinf; 
+ உய்ப்பெறு                CPeru63Vinf; 
+-உயர்ப்பெறு                CPeru63Vinf; 
+ உமிழப்பெறு                CPeru63Vinf; 
+ உறழப்பெறு                CPeru63Vinf; 
+ உறிக்கப்பெறு                CPeru63Vinf; 
+@@ -80469,7 +80299,6 @@
+ நளிக்கப்பெறு                CPeru63Vinf; 
+ நனையப்பெறு                CPeru63Vinf; 
+ நெகிழப்பெறு                CPeru63Vinf; 
+-நேர்ப்பெறு                CPeru63Vinf; 
+ நோய்ப்பெறு                CPeru63Vinf; 
+ நவிர்க்கப்பெறு                CPeru63Vinf; 
+ இழையப்பெறு                CPeru63Vinf; 
+@@ -80482,7 +80311,6 @@
+ இசையப்பெறு                CPeru63Vinf; 
+ இடையப்பெறு                CPeru63Vinf; 
+ இணையப்பெறு                CPeru63Vinf; 
+-இவர்ப்பெறு                CPeru63Vinf; 
+ அட்டப்பெறு                CPeru63Vinf; 
+ அடக்கப்பெறு                CPeru63Vinf; 
+ அடைச்சப்பெறு                CPeru63Vinf; 

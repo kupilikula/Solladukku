@@ -1,0 +1,138 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -271,6 +271,16 @@
+ +noun+nom: #;
+ 
+ LEXICON ForeignSFinalInflections
++! Productive borrowed-noun plural and core oblique cases.
+++noun+pl+nom:^்கள் #;
+++noun+pl+acc%=ஐ:^்களை #;
+++noun+pl+acc%=ஐ+sandhik%=க்:^்களைக் #;
+++noun+pl+dat%=க்கு:^்களுக்கு #;
+++noun+pl+inst%=ஆல்:^்களால் #;
+++noun+pl+gen%=இன்:^்களின் #;
+++noun+pl+gen%=உடைய:^்களுடைய #;
+++noun+pl+loc%=இல்:^்களில் #;
+++noun+pl+soc%=உடன்:^்களுடன் #;
+ +noun+acc:^ை #;
+ +noun+acc+foc%=ஏ:^ையே #;
+ +noun+acc+all:^ையெல்லாம் #;
+@@ -311,6 +321,16 @@
+ +noun+loc+add:^ிடமும் #;
+ 
+ LEXICON ForeignKFinalInflections
++! Productive borrowed-noun plural and core oblique cases.
+++noun+pl+nom:^்குகள் #;
+++noun+pl+acc%=ஐ:^்குகளை #;
+++noun+pl+acc%=ஐ+sandhik%=க்:^்குகளைக் #;
+++noun+pl+dat%=க்கு:^்குகளுக்கு #;
+++noun+pl+inst%=ஆல்:^்குகளால் #;
+++noun+pl+gen%=இன்:^்குகளின் #;
+++noun+pl+gen%=உடைய:^்குகளுடைய #;
+++noun+pl+loc%=இல்:^்குகளில் #;
+++noun+pl+soc%=உடன்:^்குகளுடன் #;
+ +noun+acc:^ை #;
+ +noun+acc+foc%=ஏ:^ையே #;
+ +noun+acc+all:^ையெல்லாம் #;
+@@ -351,6 +371,16 @@
+ +noun+loc+add:^ிடமும் #;
+ 
+ LEXICON ForeignDoubledKKFinalInflections
++! Productive borrowed-noun plural and core oblique cases.
+++noun+pl+nom:^்குகள் #;
+++noun+pl+acc%=ஐ:^்குகளை #;
+++noun+pl+acc%=ஐ+sandhik%=க்:^்குகளைக் #;
+++noun+pl+dat%=க்கு:^்குகளுக்கு #;
+++noun+pl+inst%=ஆல்:^்குகளால் #;
+++noun+pl+gen%=இன்:^்குகளின் #;
+++noun+pl+gen%=உடைய:^்குகளுடைய #;
+++noun+pl+loc%=இல்:^்குகளில் #;
+++noun+pl+soc%=உடன்:^்குகளுடன் #;
+ +noun+acc:^்கை #;
+ +noun+acc+foc%=ஏ:^்கையே #;
+ +noun+acc+all:^்கையெல்லாம் #;
+@@ -391,6 +421,16 @@
+ +noun+loc+add:^்கிடமும் #;
+ 
+ LEXICON ForeignDoubledPPFinalInflections
++! Productive borrowed-noun plural and core oblique cases.
+++noun+pl+nom:^்புகள் #;
+++noun+pl+acc%=ஐ:^்புகளை #;
+++noun+pl+acc%=ஐ+sandhik%=க்:^்புகளைக் #;
+++noun+pl+dat%=க்கு:^்புகளுக்கு #;
+++noun+pl+inst%=ஆல்:^்புகளால் #;
+++noun+pl+gen%=இன்:^்புகளின் #;
+++noun+pl+gen%=உடைய:^்புகளுடைய #;
+++noun+pl+loc%=இல்:^்புகளில் #;
+++noun+pl+soc%=உடன்:^்புகளுடன் #;
+ +noun+acc:^்பை #;
+ +noun+acc+foc%=ஏ:^்பையே #;
+ +noun+acc+all:^்பையெல்லாம் #;
+@@ -431,6 +471,16 @@
+ +noun+loc+add:^்பிடமும் #;
+ 
+ LEXICON ForeignCHFinalInflections
++! Productive borrowed-noun plural and core oblique cases.
+++noun+pl+nom:^்சுகள் #;
+++noun+pl+acc%=ஐ:^்சுகளை #;
+++noun+pl+acc%=ஐ+sandhik%=க்:^்சுகளைக் #;
+++noun+pl+dat%=க்கு:^்சுகளுக்கு #;
+++noun+pl+inst%=ஆல்:^்சுகளால் #;
+++noun+pl+gen%=இன்:^்சுகளின் #;
+++noun+pl+gen%=உடைய:^்சுகளுடைய #;
+++noun+pl+loc%=இல்:^்சுகளில் #;
+++noun+pl+soc%=உடன்:^்சுகளுடன் #;
+ +noun+acc:^்சை #;
+ +noun+acc+foc%=ஏ:^்சையே #;
+ +noun+acc+all:^்சையெல்லாம் #;
+@@ -471,6 +521,16 @@
+ +noun+loc+add:^்சிடமும் #;
+ 
+ LEXICON ForeignDoubledTTFinalInflections
++! Productive borrowed-noun plural and core oblique cases.
+++noun+pl+nom:^்டுகள் #;
+++noun+pl+acc%=ஐ:^்டுகளை #;
+++noun+pl+acc%=ஐ+sandhik%=க்:^்டுகளைக் #;
+++noun+pl+dat%=க்கு:^்டுகளுக்கு #;
+++noun+pl+inst%=ஆல்:^்டுகளால் #;
+++noun+pl+gen%=இன்:^்டுகளின் #;
+++noun+pl+gen%=உடைய:^்டுகளுடைய #;
+++noun+pl+loc%=இல்:^்டுகளில் #;
+++noun+pl+soc%=உடன்:^்டுகளுடன் #;
+ +noun+acc:^்டை #;
+ +noun+acc+foc%=ஏ:^்டையே #;
+ +noun+acc+all:^்டையெல்லாம் #;
+@@ -511,6 +571,16 @@
+ +noun+loc+add:^்டிடமும் #;
+ 
+ LEXICON ForeignPlainTTFinalInflections
++! Productive borrowed-noun plural and core oblique cases.
+++noun+pl+nom:^ுகள் #;
+++noun+pl+acc%=ஐ:^ுகளை #;
+++noun+pl+acc%=ஐ+sandhik%=க்:^ுகளைக் #;
+++noun+pl+dat%=க்கு:^ுகளுக்கு #;
+++noun+pl+inst%=ஆல்:^ுகளால் #;
+++noun+pl+gen%=இன்:^ுகளின் #;
+++noun+pl+gen%=உடைய:^ுகளுடைய #;
+++noun+pl+loc%=இல்:^ுகளில் #;
+++noun+pl+soc%=உடன்:^ுகளுடன் #;
+ +noun+acc:^ை #;
+ +noun+acc+foc%=ஏ:^ையே #;
+ +noun+acc+all:^ையெல்லாம் #;
+@@ -551,6 +621,16 @@
+ +noun+loc+add:^ிடமும் #;
+ 
+ LEXICON ForeignTFinalInflections
++! Productive borrowed-noun plural and core oblique cases.
+++noun+pl+nom:^்துகள் #;
+++noun+pl+acc%=ஐ:^்துகளை #;
+++noun+pl+acc%=ஐ+sandhik%=க்:^்துகளைக் #;
+++noun+pl+dat%=க்கு:^்துகளுக்கு #;
+++noun+pl+inst%=ஆல்:^்துகளால் #;
+++noun+pl+gen%=இன்:^்துகளின் #;
+++noun+pl+gen%=உடைய:^்துகளுடைய #;
+++noun+pl+loc%=இல்:^்துகளில் #;
+++noun+pl+soc%=உடன்:^்துகளுடன் #;
+ +noun+acc:^்தை #;
+ +noun+acc+foc%=ஏ:^்தையே #;
+ +noun+acc+all:^்தையெல்லாம் #;

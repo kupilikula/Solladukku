@@ -1,0 +1,80 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc
+ 
+ 
+ LEXICON Root
+@@ -245,6 +245,22 @@
+ 
+ எண்ணங்கொண்டிரு    C12Vinf;
+ LEXICON C12Vinf
++
++! Productive infinitive + தக்க suitability/worthiness construction.
+++verb+nonfin+sim+inf%=க்க+worthy%=தக்க+adjpart%=அ:^க்கத்தக்க #;
+++verb+nonfin+sim+inf%=க்க+worthy%=தக்க+PartNoun%=அது:^க்கத்தக்கது #;
+++verb+nonfin+sim+inf%=க்க+worthy%=தக்க+PartNoun%=அவர்+human:^க்கத்தக்கவர் #;
+++verb+nonfin+sim+inf%=க்க+worthy%=தக்க+PartNoun%=அவர்+human+pl:^க்கத்தக்கவர்கள் #;
++
++! Productive bare negative stem in -ஆ.
+++verb+nonfin+sim+neg%=ஆ:^ா #;
++
++! Productive temporal verbal noun in locative -கையில்.
+++verb+nonfin+sim+verbalnoun%=கை+loc%=இல்:^க்கையில் #;
++
++! Productive infinitive negation and possibility missing from Class 12.
+++verb+nonfin+sim+inf%=க்க+negpart%=இல்லை:^க்கவில்லை #;
+++verb+nonfin+sim+inf%=க்க+moodpart%=ஆம்:^க்கலாம் VerbQuestion;
+ 
+ ! Reviewed dictionary citation continuation
+ +verb+nonfin+sim+verbalnoun%=தல்:^த்தல் #;
+@@ -571,6 +587,7 @@
+ +verb+nonfin+sim+inf%=க்க+sandhi-p%=ப்+sandhit%=த்:^க்கப்த் #;
+ +verb+nonfin+sim+inf%=க்க+sandhi-p%=ப்+sandhik%=க்:^க்கப்க் #;
+ +verb+nonfin+sim+vpart%=உ:^ந்து #;
+++verb+nonfin+sim+vpart%=உ+foc%=ஏ:^ந்தே #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^ந்துப் #;
+ +verb+nonfin+sim+vpart%=உ+sandhic%=ச்:^ந்துச் #;
+ +verb+nonfin+sim+vpart%=உ+sandhit%=த்:^ந்துத் #;
+@@ -3975,6 +3992,10 @@
+ போயிரு    CIru12Inf;
+ LEXICON CIru12Inf
+ 
++! Productive infinitive negation and possibility missing from Class 12.
+++verb+nonfin+complex+aspect+inf%=க்க+negpart%=இல்லை:^க்கவில்லை #;
+++verb+nonfin+complex+aspect+inf%=க்க+moodpart%=ஆம்:^க்கலாம் VerbQuestion;
++
+ +verb+fin+complex+aspect+strong+past%=த்+1sg%=ஏன்:^ந்தேன் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+1pl%=ஓம்:^ந்தோம் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+1sg%=அன்:^ந்தன் VerbQuestion;
+@@ -4269,6 +4290,7 @@
+ +verb+nonfin+complex+aspect+inf%=க்க+sandhi-p%=ப்+sandhit%=த்:^க்கப்த் #;
+ +verb+nonfin+complex+aspect+inf%=க்க+sandhi-p%=ப்+sandhik%=க்:^க்கப்க் #;
+ +verb+nonfin+complex+aspect+vpart%=உ:^ந்து #;
+++verb+nonfin+complex+aspect+vpart%=உ+foc%=ஏ:^ந்தே #;
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhip%=ப்:^ந்துப் #;
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhic%=ச்:^ந்துச் #;
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhit%=த்:^ந்துத் #;
+@@ -7596,6 +7618,10 @@
+ போய்க்கொண்டிரு    ClassKondiru12Inf;
+ LEXICON ClassKondiru12Inf
+ 
++! Productive infinitive negation and possibility missing from Class 12.
+++verb+nonfin+complex+aspect+inf%=க்க+negpart%=இல்லை:^க்கவில்லை #;
+++verb+nonfin+complex+aspect+inf%=க்க+moodpart%=ஆம்:^க்கலாம் VerbQuestion;
++
+ 
+ +verb+fin+complex+aspect+strong+past%=த்+1sg%=ஏன்:^ந்தேன் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=த்+1pl%=ஓம்:^ந்தோம் VerbQuestion;
+@@ -7891,6 +7917,7 @@
+ +verb+nonfin+complex+aspect+inf%=க்க+sandhi-p%=ப்+sandhit%=த்:^க்கப்த் #;
+ +verb+nonfin+complex+aspect+inf%=க்க+sandhi-p%=ப்+sandhik%=க்:^க்கப்க் #;
+ +verb+nonfin+complex+aspect+vpart%=உ:^ந்து #;
+++verb+nonfin+complex+aspect+vpart%=உ+foc%=ஏ:^ந்தே #;
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhip%=ப்:^ந்துப் #;
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhic%=ச்:^ந்துச் #;
+ +verb+nonfin+complex+aspect+vpart%=உ+sandhit%=த்:^ந்துத் #;

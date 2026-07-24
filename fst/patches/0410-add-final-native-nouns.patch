@@ -1,0 +1,40 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -4141,6 +4141,8 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++! Reviewed final native and calendrical nouns.
++திங்கள்கிழமை	C2SgRoot;
+ ! Reviewed common source-backed residual nouns.
+ அமைச்சரவை	C2SgRoot;
+ அதிகப்படி	C2SgRoot;
+@@ -57019,6 +57021,8 @@
+ 
+ 
+ LEXICON C7Sg
++! Reviewed final native and calendrical nouns.
++மலிவு	C7SgRoot;
+ ! Reviewed common source-backed residual nouns.
+ குறுக்கீடு	C7SgRoot;
+ செறிவு	C7SgRoot;
+@@ -95506,6 +95510,8 @@
+ 
+ 
+ LEXICON C14Sg
++! Reviewed final native and calendrical nouns.
++திரள்	C14RetainedRoot;
+ பணத்தாள்	C14RetainedRoot;
+ ஆள்		 	C14AlternatingRoot ; 
+ சித்தாள்		 C14SgRoot ; 
+@@ -98933,6 +98939,10 @@
+ +noun+gen+psp_keele_iruntu+add:^ின்கீழேயிருந்தும் #;
+ 
+ LEXICON C15Sg
++! Reviewed final native and calendrical nouns.
++சமீபகாலம்	C15SgRoot;
++பலவிதம்	C15SgRoot;
++வெற்றிகரம்	C15SgRoot;
+ ! Reviewed everyday modern loans from five-corpus saturation.
+ கால்சியம்	C15SgRoot;
+ ! Reviewed frequent modern-Tamil roots from five-corpus saturation.

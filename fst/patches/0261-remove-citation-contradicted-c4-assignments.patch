@@ -1,0 +1,18 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -417,7 +417,6 @@
+ தீய் C4Vinf;
+ தளை C4Vinf;
+ புளை C4Vinf;
+-துய் C4Vinf;
+ தறை C4Vinf;
+ புனை C4Vinf;
+ தேய் C4Vinf;
+@@ -512,7 +511,6 @@
+ புலர் C4Vinf;
+ உதிர் C4Vinf;
+ தீர் C4Vinf;
+-பூர் C4Vinf;
+ உயர் C4Vinf;
+ துடர் C4Vinf;
+ பெயர் C4Vinf;

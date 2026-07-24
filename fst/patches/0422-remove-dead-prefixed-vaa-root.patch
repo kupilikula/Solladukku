@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -11546,7 +11546,6 @@
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+vpart_potu%=போது:போது #;
+ 
+ LEXICON ClassVaaModern
+-முன்வா:முன்வரு	VaaModernVinf;
+ 
+ ! Corpus-attested roots with inherited paradigm evidence
+ ! Canonical passive-perfect hooks synchronized with active infinitive analyses.

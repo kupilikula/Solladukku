@@ -1,0 +1,33 @@
+--- ThamizhiFST-C4.foma
++++ ThamizhiFST-C4.foma
+@@ -10,11 +10,15 @@
+ 
+ ######### Rewrite rules
+ 
+-define C4R1 {ை} -> {ைய} || _ "^" [{ும்}|{அ}|{ா}];
+-define C4R2  {்} -> 0  || _ "^" [{ும்}|{ா}];
+-define C4R3 {ி} -> {ிய} || _ "^" [{ும்}|{ா}];
++define C4R1 {ை} -> {ைய} || _ "^" [{ும்}|{ுமாறு}|{அ}|{ா}];
++define C4R2  {்} -> 0  || _ "^" [{ும்}|{ுமாறு}|{ா}];
++define C4R3 {ி} -> {ிய} || _ "^" [{ும்}|{ுமாறு}|{ா}];
+ define C4WeakIModal {ி} -> {ிய} || [{அற}|{தெர}|{புர}] _ "^" [{அலாம்}|{அவில்லை}];
+-define C4R4 {ு} -> {ுக்க} || _ "^" [{ும்}|{அ}];
++define C4R4 {ு} -> {ுக்க} || _ "^" [{ும்}|{ுமாறு}|{அ}];
++define C4EluFuture {எழு} -> {எழ} || _ "^" [{ும்}|{ுமாறு}];
++define C4ViluFuture {விழு} -> {விழ} || _ "^" [{ும்}|{ுமாறு}];
++define C4PukuFuture {புகு} -> {புக} || _ "^" [{ும்}|{ுமாறு}];
++define C4MikuFuture {மிகு} -> {மிக} || _ "^" [{ும்}|{ுமாறு}];
+ define C4R5 {ழ்} -> {ழ}  || _ "^" [{அ}];
+ # Intransitive முடி takes the y-glide infinitive முடிய; transitive C11 remains முடிக்க.
+ define C4MudiInf {ி} -> {ிய} || {முட} _ "^" [{அ}];
+@@ -34,6 +38,10 @@
+ 		C4R1	.o.
+ 		C4R2	.o.
+ 		C4R3	.o.
++		C4EluFuture	.o.
++		C4ViluFuture	.o.
++		C4PukuFuture	.o.
++		C4MikuFuture	.o.
+ 		C4WeakIModal	.o.
+ 		C4R4	.o.
+ 		C4R5	.o.

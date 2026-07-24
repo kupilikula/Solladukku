@@ -1,0 +1,12 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -35,6 +35,9 @@
+ முகமா  C12Vinf;
+ வெளிச்சமா  C12Vinf;
+ LEXICON ClassTwelve
++
++! Final full-paradigm source review
++சிவ    C12Vinf;
+ 
+ ! Source-backed C12 verb tranche: remaining POS-verb citation roots.
+ அங்கையில்வட்டா  C12Vinf;

@@ -1,0 +1,24 @@
+--- tamil-adjectives.lexc
++++ tamil-adjectives.lexc
+@@ -515,6 +515,21 @@
+ +adv+cop%=ஆ+adjpart%=ன:0 #;
+ 
+ LEXICON adjectives
++! Reviewed modern loan adjectives.
++அல்ட்ரா:அல்ட்ரா	adjectiveSandhi;
++கான்கிரீட்:கான்கிரீட்	adjectiveSandhi;
++கார்ப்பரேட்:கார்ப்பரேட்	adjectiveSandhi;
++கோல்டன்:கோல்டன்	adjectiveSandhi;
++சுப்ரீம்:சுப்ரீம்	adjectiveSandhi;
++டாப்:டாப்	adjectiveSandhi;
++பக்கத்து:பக்கத்து	adjectiveSandhi;
++மெயின்:மெயின்	adjectiveSandhi;
++ரியல்:ரியல்	adjectiveSandhi;
++ரெட்:ரெட்	adjectiveSandhi;
++ரெடி:ரெடி	adjectiveSandhi;
++லைட்:லைட்	adjectiveSandhi;
++வெஸ்ட்:வெஸ்ட்	adjectiveSandhi;
++ஒலிம்பிக்:ஒலிம்பிக்	adjectiveSandhi;
+ ! Reviewed high-frequency modern attributive forms.
+ அம்மாநில:அம்மாநில	adjectiveSandhi;
+ அரபு:அரபு	adjectiveSandhi;

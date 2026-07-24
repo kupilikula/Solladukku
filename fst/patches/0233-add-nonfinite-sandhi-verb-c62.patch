@@ -1,0 +1,45 @@
+--- ThamizhiVerbs-C62.lexc
++++ ThamizhiVerbs-C62.lexc
+@@ -157,9 +157,25 @@
+ +verb+fin+sim+caus%=வி+fut%=உம்+3pln%=∅:^விும் #;
+ +verb+fin+sim+opt%=க:^க #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை:^அவில்லை #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhip%=ப்:^அவில்லைப் #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhic%=ச்:^அவில்லைச் #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhit%=த்:^அவில்லைத் #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhik%=க்:^அவில்லைக் #;
+ +verb+nonfin+sim+inf%=அ+moodpart%=ஆம்:^அலாம் #;
+++verb+nonfin+sim+inf%=அ+moodpart%=ஆம்+sandhip%=ப்:^அலாம்ப் #;
+++verb+nonfin+sim+inf%=அ+moodpart%=ஆம்+sandhic%=ச்:^அலாம்ச் #;
+++verb+nonfin+sim+inf%=அ+moodpart%=ஆம்+sandhit%=த்:^அலாம்த் #;
+++verb+nonfin+sim+inf%=அ+moodpart%=ஆம்+sandhik%=க்:^அலாம்க் #;
+ +verb+nonfin+sim+inf%=அ+moodpart%=அட்டும்:^அட்டும் #;
+++verb+nonfin+sim+inf%=அ+moodpart%=அட்டும்+sandhip%=ப்:^அட்டும்ப் #;
+++verb+nonfin+sim+inf%=அ+moodpart%=அட்டும்+sandhic%=ச்:^அட்டும்ச் #;
+++verb+nonfin+sim+inf%=அ+moodpart%=அட்டும்+sandhit%=த்:^அட்டும்த் #;
+++verb+nonfin+sim+inf%=அ+moodpart%=அட்டும்+sandhik%=க்:^அட்டும்க் #;
+ +verb+nonfin+sim+inf%=அ+moodpart%=ஆகாது:^அலாகாது #;
+++verb+nonfin+sim+inf%=அ+moodpart%=ஆகாது+sandhip%=ப்:^அலாகாதுப் #;
+++verb+nonfin+sim+inf%=அ+moodpart%=ஆகாது+sandhic%=ச்:^அலாகாதுச் #;
+++verb+nonfin+sim+inf%=அ+moodpart%=ஆகாது+sandhit%=த்:^அலாகாதுத் #;
+++verb+nonfin+sim+inf%=அ+moodpart%=ஆகாது+sandhik%=க்:^அலாகாதுக் #;
+ +verb+nonfin+sim+inf%=அ:^அ #;
+ +verb+nonfin+sim+inf%=அ+sandhic%=ச்:^அச் #;
+ +verb+nonfin+sim+inf%=அ+sandhit%=த்:^அத் #;
+@@ -171,8 +187,16 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^ந்துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^ந்துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+sandhip%=ப்:^ாமல்ப் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+sandhic%=ச்:^ாமல்ச் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+sandhit%=த்:^ாமல்த் #;
+++verb+nonfin+sim+neg%=ஆ+vpart%=மல்+sandhik%=க்:^ாமல்க் #;
+ +verb+nonfin+sim+neg%=ஆ+verbalnoun%=மை:^ாமை #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ாது #;
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhip%=ப்:^ாதுப் #;
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhic%=ச்:^ாதுச் #;
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhit%=த்:^ாதுத் #;
+++verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhik%=க்:^ாதுக் #;
+ +verb+nonfin+sim+con%=ஆல்:^கால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=க்+adjpart%=அ:^க்க #;

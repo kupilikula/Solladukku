@@ -1,0 +1,32 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -11,6 +11,29 @@
+ ClassIru12 ;
+ ClassKondiru12 ;
+ 
++
++! Source-backed C12 verb tranche: tier-2 multi-source simple citation roots.
++அகமுகமா  C12Vinf;
++அரூபமா  C12Vinf;
++இலயமா  C12Vinf;
++கட்டுங்காவலுமா  C12Vinf;
++குணமா  C12Vinf;
++சூனியமா  C12Vinf;
++தன்மயமா  C12Vinf;
++தாம்புந்தோண்டியுமா  C12Vinf;
++தெய்வீகமா  C12Vinf;
++தொண்ணா  C12Vinf;
++நிர்வாகமா  C12Vinf;
++நீர்ப்பண்டமா  C12Vinf;
++நெஞ்சுபுண்ணா  C12Vinf;
++பக்குவமா  C12Vinf;
++பாகமா  C12Vinf;
++பிரசன்னமா  C12Vinf;
++பிரசவமா  C12Vinf;
++பிரவேசமா  C12Vinf;
++பூபரிசமா  C12Vinf;
++முகமா  C12Vinf;
++வெளிச்சமா  C12Vinf;
+ LEXICON ClassTwelve
+ 
+ அண      C12Vinf;

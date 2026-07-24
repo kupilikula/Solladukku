@@ -1,0 +1,11 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -29,6 +29,8 @@
+ வளமைகொழி  C11Vinf;
+ வளமைகொழி  C11IColloqPastVinf;
+ LEXICON ClassEleven
++ஒப்படை	C11Vinf;
++ஒன்றிணை	C11Vinf;
+ 
+ ! Corpus-attested roots with inherited paradigm evidence
+ அனுமதியளி    C11Vinf;

@@ -1,0 +1,51 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -16324,6 +16324,48 @@
+ +verb+nonfin+complex+aspect+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+ LEXICON ClassPo5
++
++! Source citations with runtime-verified participial prefixes
++அற்றுப்போ    ClassPo5Inf;
++ஆடிப்போ    ClassPo5Inf;
++இருந்துபோ    ClassPo5Inf;
++இற்றுப்போ    ClassPo5Inf;
++உருண்டுபோ    ClassPo5Inf;
++ஏங்கிப்போ    ClassPo5Inf;
++ஏமாந்துபோ    ClassPo5Inf;
++ஒட்டிப்போ    ClassPo5Inf;
++ஒற்றிப்போ    ClassPo5Inf;
++ஒழுகிப்போ    ClassPo5Inf;
++ஓடிப்போ    ClassPo5Inf;
++காந்திப்போ    ClassPo5Inf;
++காலம்பண்ணிப்போ    ClassPo5Inf;
++குறண்டிப்போ    ClassPo5Inf;
++கூட்டிப்போ    ClassPo5Inf;
++கூனிப்போ    ClassPo5Inf;
++கெட்டுப்போ    ClassPo5Inf;
++கைசோர்ந்துபோ    ClassPo5Inf;
++கொண்டுபோ    ClassPo5Inf;
++சாறிப்போ    ClassPo5Inf;
++சுருண்டுபோ    ClassPo5Inf;
++சென்றுபோ    ClassPo5Inf;
++தக்கிப்போ    ClassPo5Inf;
++தாழ்ந்துபோ    ClassPo5Inf;
++திரைந்துபோ    ClassPo5Inf;
++தெறித்துப்போ    ClassPo5Inf;
++தொங்கிப்போ    ClassPo5Inf;
++நீர்த்துப்போ    ClassPo5Inf;
++நேர்ந்துபோ    ClassPo5Inf;
++நொடித்துப்போ    ClassPo5Inf;
++பட்டுப்போ    ClassPo5Inf;
++புளித்துப்போ    ClassPo5Inf;
++பூத்துப்போ    ClassPo5Inf;
++பொக்கிப்போ    ClassPo5Inf;
++மரத்துப்போ    ClassPo5Inf;
++மறுத்துப்போ    ClassPo5Inf;
++மிஞ்சிப்போ    ClassPo5Inf;
++முழுகிப்போ    ClassPo5Inf;
++விட்டுப்போ    ClassPo5Inf;
++வீசிப்போ    ClassPo5Inf;
+ அழப்படப்போ            ClassPo5Inf; 
+ கொய்யப்படப்போ            ClassPo5Inf; 
+ எய்யப்படப்போ            ClassPo5Inf; 

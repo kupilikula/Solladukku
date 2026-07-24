@@ -1,0 +1,59 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -5854,6 +5854,7 @@
+ இடி C4Vinf;
+ குவி C4Vinf;
+ தெரி C4Vinf;
++தெரி:தெரிய IFinalStativeSpokenNeuter;
+ தெரி:தெரிய ModernBareInf;
+ இரி C4Vinf;
+ குழி C4Vinf;
+@@ -5916,6 +5917,7 @@
+ பிறி C4Vinf;
+ வழி C4Vinf;
+ புரி C4Vinf;
++புரி:புரிய IFinalStativeSpokenNeuter;
+ வினைபுரி C4Vinf;
+ புரி:புரிய ModernBareInf;
+ விசி C4Vinf;
+@@ -6524,6 +6526,7 @@
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^ந்தார் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது VerbQuestion;
+++verb+fin+sim+strong+past%=த்+3sgn%=அது+colloq:^ந்துச்சு VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது+add%=உம்:^ந்ததும் VerbQuestion;
+ +verb+nonfin+sim+strong+past%=த்+vpart_tum%=தும்:^ந்ததும் VerbQuestion;
+ +verb+nonfin+sim+strong+past%=த்+verbalnoun%=அது+comp%=ஆவது:^ந்ததாவது #;
+@@ -6750,6 +6753,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+colloq:^வித்துச்சு VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+ +verb+nonfin+sim+caus%=வி+past%=த்+vpart_tum%=தும்:^வித்ததும் VerbQuestion;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+comp%=ஆவது:^வித்ததாவது #;
+@@ -10446,6 +10450,7 @@
+ +verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது:^ந்தது VerbQuestion;
+++verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது+colloq:^ந்துச்சு VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது+add%=உம்:^ந்ததும் VerbQuestion;
+ +verb+nonfin+complex+attitude+strong+past%=த்+vpart_tum%=தும்:^ந்ததும் VerbQuestion;
+ +verb+nonfin+complex+attitude+strong+past%=த்+verbalnoun%=அது+comp%=ஆவது:^ந்ததாவது #;
+@@ -10630,6 +10635,7 @@
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+++verb+fin+complex+attitude+caus%=வி+past%=த்+3sgn%=அது+colloq:^வித்துச்சு VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+ +verb+nonfin+complex+attitude+caus%=வி+past%=த்+vpart_tum%=தும்:^வித்ததும் VerbQuestion;
+ +verb+nonfin+complex+attitude+caus%=வி+past%=த்+verbalnoun%=அது+comp%=ஆவது:^வித்ததாவது #;
+@@ -11137,3 +11143,8 @@
+ +report%=ஆம்:~ளாம் #;
+ +comp%=என்று+colloq:~ன்னு #;
+ 
++
++
++! Root-conditioned spoken stative predicate.
++LEXICON IFinalStativeSpokenNeuter
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:ுது VerbQuestion;

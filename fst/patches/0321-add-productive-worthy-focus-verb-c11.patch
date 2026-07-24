@@ -1,0 +1,54 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc
+ 
+ LEXICON Root
+ 
+@@ -2697,6 +2697,18 @@
+ 
+ LEXICON C11Vinf
+ 
++! Productive infinitive + தக்க suitability/worthiness construction.
+++verb+nonfin+sim+inf%=க்க+worthy%=தக்க+adjpart%=அ:^க்கத்தக்க #;
+++verb+nonfin+sim+inf%=க்க+worthy%=தக்க+PartNoun%=அது:^க்கத்தக்கது #;
+++verb+nonfin+sim+inf%=க்க+worthy%=தக்க+PartNoun%=அவர்+human:^க்கத்தக்கவர் #;
+++verb+nonfin+sim+inf%=க்க+worthy%=தக்க+PartNoun%=அவர்+human+pl:^க்கத்தக்கவர்கள் #;
++
++! Productive bare negative stem in -ஆ.
+++verb+nonfin+sim+neg%=ஆ:^க்கா #;
++
++! Productive temporal verbal noun in locative -கையில்.
+++verb+nonfin+sim+verbalnoun%=கை+loc%=இல்:^க்கையில் #;
++
+ +verb+fin+sim+strong+past%=த்+1sg%=ஏன்:^த்தேன் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+1pl%=ஓம்:^த்தோம் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+1sg%=அன்:^த்தன் VerbQuestion;
+@@ -3044,6 +3056,7 @@
+ +verb+nonfin+sim+inf%=க்க+sandhik%=க்:^க்கக் #;
+ +verb+nonfin+sim+inf%=க்க+sandhip%=ப்:^க்கப் #;
+ +verb+nonfin+sim+vpart%=உ:^த்து #;
+++verb+nonfin+sim+vpart%=உ+foc%=ஏ:^த்தே #;
+ +verb+nonfin+sim+vpart%=உ+sandhic%=ச்:^த்துச் #;
+ +verb+nonfin+sim+vpart%=உ+sandhit%=த்:^த்துத் #;
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^த்துக் #;
+@@ -6679,6 +6692,7 @@
+ +verb+nonfin+complex+attitude+inf%=க்க+sandhik%=க்:^க்கக் #;
+ +verb+nonfin+complex+attitude+inf%=க்க+sandhip%=ப்:^க்கப் #;
+ +verb+nonfin+complex+attitude+vpart%=உ:^த்து #;
+++verb+nonfin+complex+attitude+vpart%=உ+foc%=ஏ:^த்தே #;
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhic%=ச்:^த்துச் #;
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhit%=த்:^த்துத் #;
+ +verb+nonfin+complex+attitude+vpart%=உ+sandhik%=க்:^த்துக் #;
+@@ -16197,6 +16211,7 @@
+ +verb+nonfin+complex+nonattitude+inf%=க்க+sandhik%=க்:^க்கக் #;
+ +verb+nonfin+complex+nonattitude+inf%=க்க+sandhip%=ப்:^க்கப் #;
+ +verb+nonfin+complex+nonattitude+vpart%=உ:^த்து #;
+++verb+nonfin+complex+nonattitude+vpart%=உ+foc%=ஏ:^த்தே #;
+ +verb+nonfin+complex+nonattitude+vpart%=உ+sandhic%=ச்:^த்துச் #;
+ +verb+nonfin+complex+nonattitude+vpart%=உ+sandhit%=த்:^த்துத் #;
+ +verb+nonfin+complex+nonattitude+vpart%=உ+sandhik%=க்:^த்துக் #;

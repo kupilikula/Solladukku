@@ -1,0 +1,282 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -5349,6 +5349,7 @@
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+dat%=க்கு:^த்தோருக்கு #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^த்தோரால் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=இன்:^த்தோரின் #;
+++verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=அது:^த்தோரது #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=உடைய:^த்தோருடைய #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+loc%=இடம்:^த்தோரிடம் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+soc%=உடன்:^த்தோருடன் #;
+@@ -5398,6 +5399,7 @@
+ +verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+dat%=க்கு:^ப்போருக்கு #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^ப்போரால் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=இன்:^ப்போரின் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=அது:^ப்போரது #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=உடைய:^ப்போருடைய #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+loc%=இடம்:^ப்போரிடம் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+soc%=உடன்:^ப்போருடன் #;
+@@ -5452,7 +5454,9 @@
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+pl+inst:^ப்பவர்களால் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+pl+inst+add:^ப்பவர்களாலும் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+gen:^ப்பவரின் #;
+++verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+gen%=அது:^ப்பவரது #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+pl+gen:^ப்பவர்களின் #;
+++verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+pl+gen%=அது:^ப்பவர்களது #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+loc:^ப்பவரிடம் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+loc+add:^ப்பவரிடமும் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+pl+loc:^ப்பவர்களிடம் #;
+@@ -5533,7 +5537,9 @@
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+pl+inst:^ப்பிப்பவர்களால் #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+pl+inst+add:^ப்பிப்பவர்களாலும் #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+gen:^ப்பிப்பவரின் #;
+++verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+gen%=அது:^ப்பிப்பவரது #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+pl+gen:^ப்பிப்பவர்களின் #;
+++verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+pl+gen%=அது:^ப்பிப்பவர்களது #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+loc:^ப்பிப்பவரிடம் #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+loc+add:^ப்பிப்பவரிடமும் #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+pl+loc:^ப்பிப்பவர்களிடம் #;
+@@ -5612,7 +5618,9 @@
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^த்தவர்களால் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^த்தவர்களாலும் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+gen:^த்தவரின் #;
+++verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^த்தவரது #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^த்தவர்களின் #;
+++verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^த்தவர்களது #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+loc:^த்தவரிடம் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^த்தவரிடமும் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^த்தவர்களிடம் #;
+@@ -5640,7 +5648,9 @@
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^த்துள்ளவர்களால் #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^த்துள்ளவர்களாலும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+PartNoun%=அவர்+human+gen:^த்துள்ளவரின் #;
+++verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^த்துள்ளவரது #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^த்துள்ளவர்களின் #;
+++verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^த்துள்ளவர்களது #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+PartNoun%=அவர்+human+loc:^த்துள்ளவரிடம் #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^த்துள்ளவரிடமும் #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^த்துள்ளவர்களிடம் #;
+@@ -5668,7 +5678,9 @@
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^த்திருந்தவர்களால் #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^த்திருந்தவர்களாலும் #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+PartNoun%=அவர்+human+gen:^த்திருந்தவரின் #;
+++verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^த்திருந்தவரது #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^த்திருந்தவர்களின் #;
+++verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^த்திருந்தவர்களது #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+PartNoun%=அவர்+human+loc:^த்திருந்தவரிடம் #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^த்திருந்தவரிடமும் #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^த்திருந்தவர்களிடம் #;
+@@ -5696,7 +5708,9 @@
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^க்கின்றவர்களால் #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^க்கின்றவர்களாலும் #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+gen:^க்கின்றவரின் #;
+++verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^க்கின்றவரது #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^க்கின்றவர்களின் #;
+++verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^க்கின்றவர்களது #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+loc:^க்கின்றவரிடம் #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^க்கின்றவரிடமும் #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^க்கின்றவர்களிடம் #;
+@@ -5724,7 +5738,9 @@
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^க்கிறவர்களால் #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^க்கிறவர்களாலும் #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+gen:^க்கிறவரின் #;
+++verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^க்கிறவரது #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^க்கிறவர்களின் #;
+++verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^க்கிறவர்களது #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+loc:^க்கிறவரிடம் #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^க்கிறவரிடமும் #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^க்கிறவர்களிடம் #;
+@@ -5752,7 +5768,9 @@
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^க்காதவர்களால் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^க்காதவர்களாலும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+gen:^க்காதவரின் #;
+++verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^க்காதவரது #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^க்காதவர்களின் #;
+++verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^க்காதவர்களது #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+loc:^க்காதவரிடம் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^க்காதவரிடமும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^க்காதவர்களிடம் #;
+@@ -9312,6 +9330,7 @@
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+dat%=க்கு:^ப்போருக்கு #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^ப்போரால் #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=இன்:^ப்போரின் #;
+++verb+nonfin+complex+attitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=அது:^ப்போரது #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=உடைய:^ப்போருடைய #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+loc%=இடம்:^ப்போரிடம் #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+soc%=உடன்:^ப்போருடன் #;
+@@ -9334,6 +9353,7 @@
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+dat%=க்கு:^த்தோருக்கு #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^த்தோரால் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=இன்:^த்தோரின் #;
+++verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=அது:^த்தோரது #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=உடைய:^த்தோருடைய #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+loc%=இடம்:^த்தோரிடம் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+soc%=உடன்:^த்தோருடன் #;
+@@ -9355,7 +9375,9 @@
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^த்தவர்களால் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^த்தவர்களாலும் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+gen:^த்தவரின் #;
+++verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^த்தவரது #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^த்தவர்களின் #;
+++verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^த்தவர்களது #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+loc:^த்தவரிடம் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^த்தவரிடமும் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^த்தவர்களிடம் #;
+@@ -9383,7 +9405,9 @@
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^க்கின்றவர்களால் #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^க்கின்றவர்களாலும் #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+gen:^க்கின்றவரின் #;
+++verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^க்கின்றவரது #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^க்கின்றவர்களின் #;
+++verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^க்கின்றவர்களது #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+loc:^க்கின்றவரிடம் #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^க்கின்றவரிடமும் #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^க்கின்றவர்களிடம் #;
+@@ -9411,7 +9435,9 @@
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^க்கிறவர்களால் #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^க்கிறவர்களாலும் #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+gen:^க்கிறவரின் #;
+++verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^க்கிறவரது #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^க்கிறவர்களின் #;
+++verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^க்கிறவர்களது #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+loc:^க்கிறவரிடம் #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^க்கிறவரிடமும் #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^க்கிறவர்களிடம் #;
+@@ -9439,7 +9465,9 @@
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^ாதவர்களால் #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^ாதவர்களாலும் #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+gen:^ாதவரின் #;
+++verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^ாதவரது #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^ாதவர்களின் #;
+++verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^ாதவர்களது #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+loc:^ாதவரிடம் #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^ாதவரிடமும் #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^ாதவர்களிடம் #;
+@@ -13008,6 +13036,7 @@
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+dat%=க்கு:^ுவோருக்கு #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^ுவோரால் #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=இன்:^ுவோரின் #;
+++verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=அது:^ுவோரது #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=உடைய:^ுவோருடைய #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+loc%=இடம்:^ுவோரிடம் #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+soc%=உடன்:^ுவோருடன் #;
+@@ -13031,6 +13060,7 @@
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=ஓர்+human+pl+dat%=க்கு:^ினோருக்கு #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^ினோரால் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=இன்:^ினோரின் #;
+++verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=அது:^ினோரது #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=உடைய:^ினோருடைய #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=ஓர்+human+pl+loc%=இடம்:^ினோரிடம் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=ஓர்+human+pl+soc%=உடன்:^ினோருடன் #;
+@@ -13052,7 +13082,9 @@
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^ினவர்களால் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^ினவர்களாலும் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=அவர்+human+gen:^ினவரின் #;
+++verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^ினவரது #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^ினவர்களின் #;
+++verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^ினவர்களது #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=அவர்+human+loc:^ினவரிடம் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^ினவரிடமும் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^ினவர்களிடம் #;
+@@ -13080,7 +13112,9 @@
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^க்கின்றவர்களால் #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^க்கின்றவர்களாலும் #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+gen:^க்கின்றவரின் #;
+++verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^க்கின்றவரது #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^க்கின்றவர்களின் #;
+++verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^க்கின்றவர்களது #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+loc:^க்கின்றவரிடம் #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^க்கின்றவரிடமும் #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^க்கின்றவர்களிடம் #;
+@@ -13108,7 +13142,9 @@
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^க்கிறவர்களால் #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^க்கிறவர்களாலும் #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+PartNoun%=அவர்+human+gen:^க்கிறவரின் #;
+++verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^க்கிறவரது #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^க்கிறவர்களின் #;
+++verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^க்கிறவர்களது #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+PartNoun%=அவர்+human+loc:^க்கிறவரிடம் #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^க்கிறவரிடமும் #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^க்கிறவர்களிடம் #;
+@@ -13136,7 +13172,9 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^ாதவர்களால் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^ாதவர்களாலும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+gen:^ாதவரின் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^ாதவரது #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^ாதவர்களின் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^ாதவர்களது #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+loc:^ாதவரிடம் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^ாதவரிடமும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^ாதவர்களிடம் #;
+@@ -19303,6 +19341,7 @@
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+dat%=க்கு:^ப்போருக்கு #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^ப்போரால் #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=இன்:^ப்போரின் #;
+++verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=அது:^ப்போரது #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+gen%=உடைய:^ப்போருடைய #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+loc%=இடம்:^ப்போரிடம் #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+PartNoun%=ஓர்+human+pl+soc%=உடன்:^ப்போருடன் #;
+@@ -19324,6 +19363,7 @@
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+dat%=க்கு:^த்தோருக்கு #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+inst%=ஆல்:^த்தோரால் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=இன்:^த்தோரின் #;
+++verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=அது:^த்தோரது #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+gen%=உடைய:^த்தோருடைய #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+loc%=இடம்:^த்தோரிடம் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+soc%=உடன்:^த்தோருடன் #;
+@@ -19345,7 +19385,9 @@
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^த்தவர்களால் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^த்தவர்களாலும் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+gen:^த்தவரின் #;
+++verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^த்தவரது #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^த்தவர்களின் #;
+++verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^த்தவர்களது #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+loc:^த்தவரிடம் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^த்தவரிடமும் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^த்தவர்களிடம் #;
+@@ -19373,7 +19415,9 @@
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^க்கின்றவர்களால் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^க்கின்றவர்களாலும் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+gen:^க்கின்றவரின் #;
+++verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^க்கின்றவரது #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^க்கின்றவர்களின் #;
+++verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^க்கின்றவர்களது #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+loc:^க்கின்றவரிடம் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^க்கின்றவரிடமும் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^க்கின்றவர்களிடம் #;
+@@ -19401,7 +19445,9 @@
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^க்கிறவர்களால் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^க்கிறவர்களாலும் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+gen:^க்கிறவரின் #;
+++verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^க்கிறவரது #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^க்கிறவர்களின் #;
+++verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^க்கிறவர்களது #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+loc:^க்கிறவரிடம் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^க்கிறவரிடமும் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^க்கிறவர்களிடம் #;
+@@ -19429,7 +19475,9 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst:^ாதவர்களால் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+inst+add:^ாதவர்களாலும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+gen:^ாதவரின் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+gen%=அது:^ாதவரது #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen:^ாதவர்களின் #;
+++verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+gen%=அது:^ாதவர்களது #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+loc:^ாதவரிடம் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+loc+add:^ாதவரிடமும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+loc:^ாதவர்களிடம் #;
+@@ -19479,6 +19527,7 @@
+ +PartNoun%=அவன்+human+3sgm+inst%=ஆல்:வனால் #;
+ +PartNoun%=அவன்+human+3sgm+inst%=ஆல்+add%=உம்:வனாலும் #;
+ +PartNoun%=அவன்+human+3sgm+gen%=இன்:வனின் #;
+++PartNoun%=அவன்+human+3sgm+gen%=அது:வனது #;
+ +PartNoun%=அவன்+human+3sgm+gen%=உடைய:வனுடைய #;
+ +PartNoun%=அவன்+human+3sgm+loc%=இடம்:வனிடம் #;
+ +PartNoun%=அவன்+human+3sgm+loc%=இடம்+add%=உம்:வனிடமும் #;
+@@ -19505,6 +19554,7 @@
+ +PartNoun%=அவள்+human+3sgf+inst%=ஆல்:வளால் #;
+ +PartNoun%=அவள்+human+3sgf+inst%=ஆல்+add%=உம்:வளாலும் #;
+ +PartNoun%=அவள்+human+3sgf+gen%=இன்:வளின் #;
+++PartNoun%=அவள்+human+3sgf+gen%=அது:வளது #;
+ +PartNoun%=அவள்+human+3sgf+gen%=உடைய:வளுடைய #;
+ +PartNoun%=அவள்+human+3sgf+loc%=இடம்:வளிடம் #;
+ +PartNoun%=அவள்+human+3sgf+loc%=இடம்+add%=உம்:வளிடமும் #;

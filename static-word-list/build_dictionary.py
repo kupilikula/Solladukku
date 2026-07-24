@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 """
-Build a combined Tamil dictionary for Solmaalai word validation.
+Build Solmaalai static dictionary artifacts.
 
 Sources:
 1. Tamil Lexicon headwords (local file)
-2. Vuizur Wiktionary Tamil-English TSV (GitHub/cache)
+2. Tamil Wiktionary / Vuizur Wiktionary headwords
 3. Local FST-generated forms from `generate_fst_forms.py` (includes verb classes)
 
-Output: public/tamil_dictionary.txt (one word per line, sorted, deduplicated)
+Outputs:
+- public/tamil_dictionary.txt: compact browser lookup dictionary, headwords only
+- static-word-list/full_tamil_dictionary.txt: full generated surface inventory
+- static-word-list/lemma_dictionary.txt: source headword/lemma inventory
 """
 
 import re
@@ -19,7 +22,8 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent
-OUTPUT_FILE = PROJECT_ROOT / "public" / "tamil_dictionary.txt"
+CLIENT_DICTIONARY_FILE = PROJECT_ROOT / "public" / "tamil_dictionary.txt"
+FULL_DICTIONARY_FILE = SCRIPT_DIR / "full_tamil_dictionary.txt"
 LEMMA_DICTIONARY_FILE = SCRIPT_DIR / "lemma_dictionary.txt"
 LEXICON_FILE = SCRIPT_DIR / "tamillexicon_headwords.txt"
 FST_FORMS_FILE = SCRIPT_DIR / "fst_generated_forms.txt"
@@ -212,20 +216,29 @@ def load_heuristic_forms() -> set:
 
 
 
-def write_lemma_dictionary(words: set[str]) -> None:
-    """Write source lexical headwords for tokenizer/root-lemma use.
-
-    This intentionally excludes FST-generated inflected forms. Scrabble uses
-    public/tamil_dictionary.txt; tokenizer experiments should prefer this lemma
-    inventory when they need a static dictionary.
-    """
-    sorted_words = sorted(w for w in words if is_lexical_headword(w))
-    with open(LEMMA_DICTIONARY_FILE, 'w', encoding='utf-8') as f:
+def write_word_list(path: Path, words: set[str], label: str) -> list[str]:
+    """Write a sorted word list and report its size."""
+    sorted_words = sorted(words)
+    path.parent.mkdir(exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as f:
         for word in sorted_words:
             f.write(word + '\n')
-    size_mb = LEMMA_DICTIONARY_FILE.stat().st_size / (1024 * 1024)
-    print(f"  Lemma dictionary: {len(sorted_words)} headwords, {size_mb:.1f} MB")
-    print(f"  Lemma output: {LEMMA_DICTIONARY_FILE}")
+    size_mb = path.stat().st_size / (1024 * 1024)
+    print(f"  {label}: {len(sorted_words)} words, {size_mb:.1f} MB")
+    print(f"  Output: {path}")
+    return sorted_words
+
+
+def write_lemma_dictionary(words: set[str]) -> set[str]:
+    """Write source lexical headwords for tokenizer/root-lemma use.
+
+    This intentionally excludes FST-generated inflected forms. The browser uses
+    the same compact headword inventory for local lookup and asks the server FST
+    to validate generated inflections that are not present locally.
+    """
+    lemma_words = {w for w in words if is_lexical_headword(w)}
+    write_word_list(LEMMA_DICTIONARY_FILE, lemma_words, "Lemma dictionary")
+    return lemma_words
 
 def main():
     print("Building Solmaalai Tamil dictionary...\n")
@@ -259,9 +272,10 @@ def main():
     print(f"  Additional new words from Vuizur: {len(new_from_vuizur)}")
     all_words |= vuizur_words
 
-    # Tokenizer/root-lemma artifact: source headwords only, no generated inflections.
-    lemma_words = (lexicon_words | wiki_dump_words | vuizur_words) - excluded_wiktionary
-    write_lemma_dictionary(lemma_words)
+    # Tokenizer/root-lemma and browser-local artifacts: source headwords only,
+    # no generated inflections. Server FST validation handles local misses.
+    lemma_source_words = (lexicon_words | wiki_dump_words | vuizur_words) - excluded_wiktionary
+    lemma_words = write_lemma_dictionary(lemma_source_words)
 
     # Step 4: FST-generated forms (noun/adj/adv/part/pronoun + verb classes)
     print("\nStep 4: Loading FST-generated surface forms...")
@@ -290,18 +304,19 @@ def main():
     all_words = {w for w in all_words if tamil_letter_count(w) <= 15}
     print(f"  Filtered: {before} → {len(all_words)} words")
 
-    # Sort and write output
-    print(f"\nStep {write_step}: Writing output to {OUTPUT_FILE}...")
-    sorted_words = sorted(all_words)
-    OUTPUT_FILE.parent.mkdir(exist_ok=True)
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        for word in sorted_words:
-            f.write(word + '\n')
+    print(f"\nStep {write_step}: Writing dictionary artifacts...")
+    full_words = set(all_words)
+    client_words = {w for w in lemma_words if tamil_letter_count(w) <= 15}
 
-    file_size = OUTPUT_FILE.stat().st_size
-    size_mb = file_size / (1024 * 1024)
-    print(f"\nDone! {len(sorted_words)} words, {size_mb:.1f} MB")
-    print(f"Output: {OUTPUT_FILE}")
+    print("  Full generated dictionary keeps lexical sources plus generated forms.")
+    full_sorted = write_word_list(FULL_DICTIONARY_FILE, full_words, "Full generated dictionary")
+
+    print("  Client dictionary is compact headword lookup; server FST validates misses.")
+    client_sorted = write_word_list(CLIENT_DICTIONARY_FILE, client_words, "Client dictionary")
+
+    print("\nDone!")
+    print(f"Full generated dictionary: {len(full_sorted)} words")
+    print(f"Client dictionary: {len(client_sorted)} words")
 
 
 if __name__ == '__main__':

@@ -1,0 +1,39 @@
+--- tamil-adjectives.lexc
++++ tamil-adjectives.lexc
+@@ -1,7 +1,7 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r +dem +prox +dist +inter +type +noun +nom +cop +adjpart +PartNoun +privative +exist +adj +loc +pp-particle
++Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r +dem +prox +dist +inter +type +noun +nom +cop +adjpart +PartNoun +privative +exist +adj +loc +pp-particle +ques
+ 
+ LEXICON Root
+ nominalCopularParticiples ;
+@@ -500,5 +500,6 @@
+ LEXICON nominalCopularParticiple
+ +noun+nom+cop%=ஆ+adjpart%=ன+PartNoun%=அது:து #;
+++noun+nom+cop%=ஆ+adjpart%=ன+PartNoun%=அது+ques%=ஆ:தா #;
+ +noun+nom+cop%=ஆ+adjpart%=ன:0 #;
+ 
+ LEXICON deicticAdverbCopularParticiples
+@@ -557,9 +558,9 @@
+ மருத்துவம்+noun+compoundmodifier+sandhik%=க்:மருத்துவக் adjectiveSandhi;
+ ! Reviewed adjectival predicates and color adjective.
+-அரிது	 adjective;
+-இனிது	 adjective;
++அரிது:அரித	 adjectiveUFinal;
++இனிது:இனித	 adjectiveUFinal;
+ இன்னா	 adjective;
+-நன்று	 adjective;
++நன்று:நன்ற	 adjectiveUFinal;
+ பச்சை	 adjective;
+ இவ்வகை+dem+prox+type:இவ்வகை	 adjectiveSandhi;
+ அவ்வகை+dem+dist+type:அவ்வகை	 adjectiveSandhi;
+@@ -1184,2 +1185,7 @@
+ LEXICON adjective
+ +adj: #;
++
++LEXICON adjectiveUFinal
+++adj:ு #;
+++adj+ques%=ஆ:ா #;
++

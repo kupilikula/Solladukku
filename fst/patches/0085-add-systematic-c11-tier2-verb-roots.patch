@@ -1,0 +1,29 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -12,6 +12,26 @@
+ ClassTheer11 ;
+ 
+ 
++
++! Source-backed C11 verb tranche: tier-2 multi-source simple citation roots.
++எடுத்துமொழி  C11Vinf;
++ஒன்றுமொழி  C11Vinf;
++கண்குழி  C11Vinf;
++கனகமாரிபொழி  C11Vinf;
++காதுகிழி  C11Vinf;
++குமுறப்பிழி  C11Vinf;
++கையொழி  C11Vinf;
++சாறுபிழி  C11Vinf;
++செக்குக்கிழி  C11Vinf;
++தாறுதாறாய்க்கிழி  C11Vinf;
++படைத்துமொழி  C11Vinf;
++பால்பொழி  C11Vinf;
++முகிழி  C11Vinf;
++மூக்குச்சுழி  C11Vinf;
++வலஞ்சுழி  C11Vinf;
++வளமைகொழி  C11Vinf;
++வழிமொழி  C11Vinf;
++வாய்மொழி  C11Vinf;
+ LEXICON ClassEleven
+ 
+ ! Source-backed C11 verb tranche: tier-1 Tamil Lexicon + Tamil Wiktionary citation roots.

@@ -1,0 +1,37 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -45621,6 +45621,9 @@
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^க்களின்கீழேயிருந்தும் #;
+ LEXICON C4Sg
++! Final reviewed occupational and common nouns.
++இடைத்தேர்தல்	C4SgRoot;
++பந்தல்	C4SgRoot;
+ ! Final frequency-reviewed common nouns.
+ கலந்துரையாடல்	C4SgRoot;
+ கேட்டல்	C4SgRoot;
+@@ -57239,6 +57242,8 @@
+ 
+ 
+ LEXICON C7Sg
++! Final reviewed occupational and common nouns.
++திசு	C7SgRoot;
+ ! Final frequency-reviewed common nouns.
+ கொள்வனவு	C7SgRoot;
+ விறகு	C7SgRoot;
+@@ -134498,6 +134503,15 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^ங்களின்கீழேயிருந்தும் #;
+ 
+ LEXICON C16Sg
++! Final reviewed occupational and common nouns.
++துணைத்தலைவர்	C16DirectSgRoot;
++வட்டாட்சியர்	C16DirectSgRoot;
++ஆதிதிராவிடர்	C16DirectSgRoot;
++ஆர்வலர்	C16DirectSgRoot;
++பாதிரியார்	C16DirectSgRoot;
++தொழிலதிபர்	C16DirectSgRoot;
++தூதுவர்	C16DirectSgRoot;
++பாதுகாவலர்	C16DirectSgRoot;
+ ! Final frequency-reviewed common nouns.
+ ஆடவர்	C16DirectSgRoot;
+ புத்துயிர்	C16DirectSgRoot;

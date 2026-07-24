@@ -1,0 +1,18 @@
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -93,6 +93,7 @@
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்:^ன்றார் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்கள்:^ன்றார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது:^ன்றது VerbQuestion;
+++verb+fin+sim+strong+past%=ற்+3sgn%=அது+colloq:^ன்றுச்சு VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது+add%=உம்:^ன்றதும் VerbQuestion;
+ +verb+nonfin+sim+strong+past%=ற்+vpart_tum%=தும்:^ன்றதும் VerbQuestion;
+ +verb+nonfin+sim+strong+past%=ற்+verbalnoun%=அது+comp%=ஆவது:^ன்றதாவது #;
+@@ -318,6 +319,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+colloq:^வித்துச்சு VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+ +verb+nonfin+sim+caus%=வி+past%=த்+vpart_tum%=தும்:^வித்ததும் VerbQuestion;
+ +verb+nonfin+sim+caus%=வி+past%=த்+verbalnoun%=அது+comp%=ஆவது:^வித்ததாவது #;

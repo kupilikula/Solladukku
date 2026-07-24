@@ -1,0 +1,623 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -275,7 +275,7 @@
+ மது		C1SgRoot;
+ வழு		C1SgRoot;
+ வாயு		C1SgRoot;
+-ரோஜா	C1SgRoot;
++ரோஜா	C1SgRoot;
+ அகக்கண்ணு	C1SgRoot;
+ அகக்கோ	C1SgRoot;
+ அகநிலா	C1SgRoot;
+@@ -2252,7 +2252,7 @@
+ அகரநகை	C2SgRoot;
+ அகரநங்கை	C2SgRoot;
+ அகரநெறி	C2SgRoot;
+-அகரப்ப10வை	C2SgRoot;
++அகரப்பாவை	C2SgRoot;
+ அகரப்பரிதி	C2SgRoot;
+ அகரப்பாடி	C2SgRoot;
+ அகரப்பிள்ளை	C2SgRoot;
+@@ -2397,7 +2397,7 @@
+ அகன்செல்வி	C2SgRoot;
+ அகன்சென்னி	C2SgRoot;
+ அகன்சோலை	C2SgRoot;
+-அகன்ப10வை	C2SgRoot;
++அகன்பாவை	C2SgRoot;
+ அகன்படை	C2SgRoot;
+ அகன்பணை	C2SgRoot;
+ அகன்பரிதி	C2SgRoot;
+@@ -7706,7 +7706,7 @@
+ கோல்வளை	C2SgRoot;
+ கோல்வேங்கை	C2SgRoot;
+ கோவணி	C2SgRoot;
+-கோவரசி	C2SgRoot;
++கோவரசி	C2SgRoot;
+ கோவருவி	C2SgRoot;
+ கோவல்லி	C2SgRoot;
+ கோவழகி	C2SgRoot;
+@@ -9340,7 +9340,7 @@
+ தண்ணொச்சி	C2SgRoot;
+ தண்ணொளி	C2SgRoot;
+ தண்ணோதி	C2SgRoot;
+-தண்ப10வை	C2SgRoot;
++தண்பாவை	C2SgRoot;
+ தண்பணை	C2SgRoot;
+ தண்பரிதி	C2SgRoot;
+ தண்பனி	C2SgRoot;
+@@ -9433,7 +9433,7 @@
+ தமிழ்நன்னி	C2SgRoot;
+ தமிழ்நாச்சி	C2SgRoot;
+ தமிழ்நெறி	C2SgRoot;
+-தமிழ்ப்ப10வை	C2SgRoot;
++தமிழ்ப்பாவை	C2SgRoot;
+ தமிழ்ப்பரிதி	C2SgRoot;
+ தமிழ்ப்பாடினி	C2SgRoot;
+ தமிழ்ப்பாரி	C2SgRoot;
+@@ -9771,7 +9771,7 @@
+ திகழ்நாச்சி	C2SgRoot;
+ திகழ்நெறி	C2SgRoot;
+ திகழ்நொச்சி	C2SgRoot;
+-திகழ்ப10வை	C2SgRoot;
++திகழ்பாவை	C2SgRoot;
+ திகழ்பகன்றை	C2SgRoot;
+ திகழ்பணை	C2SgRoot;
+ திகழ்பரிதி	C2SgRoot;
+@@ -10355,7 +10355,7 @@
+ தூயநம்பி	C2SgRoot;
+ தூயநாச்சி	C2SgRoot;
+ தூயநெறி	C2SgRoot;
+-தூயப10வை	C2SgRoot;
++தூயபாவை	C2SgRoot;
+ தூயபணை	C2SgRoot;
+ தூயபரிதி	C2SgRoot;
+ தூயபிணை	C2SgRoot;
+@@ -10676,7 +10676,7 @@
+ தொடிக்கிளி	C2SgRoot;
+ தொடிச்செல்வி	C2SgRoot;
+ தொடிநங்கை	C2SgRoot;
+-தொடிப்ப10வை	C2SgRoot;
++தொடிப்பாவை	C2SgRoot;
+ தொடிமங்கை	C2SgRoot;
+ தொடிமடந்தை	C2SgRoot;
+ தொடிமணி	C2SgRoot;
+@@ -11394,7 +11394,7 @@
+ நாண்கிள்ளை	C2SgRoot;
+ நாண்குமரி	C2SgRoot;
+ நாண்செல்வி	C2SgRoot;
+-நாண்ப10வை	C2SgRoot;
++நாண்பாவை	C2SgRoot;
+ நாண்பிடி	C2SgRoot;
+ நாண்பிணை	C2SgRoot;
+ நாண்மங்கை	C2SgRoot;
+@@ -11752,7 +11752,7 @@
+ நெகிழ்தன்மை	C2SgRoot;
+ நெகிழ்தொடை	C2SgRoot;
+ நெகிழ்நகை	C2SgRoot;
+-நெகிழ்ப10வை	C2SgRoot;
++நெகிழ்பாவை	C2SgRoot;
+ நெகிழ்பிணை	C2SgRoot;
+ நெகிழ்மதி	C2SgRoot;
+ நெகிழ்மாலை	C2SgRoot;
+@@ -11938,7 +11938,7 @@
+ நெய்தற்கோதை	C2SgRoot;
+ நெய்தற்செல்வி	C2SgRoot;
+ நெய்தற்சோலை	C2SgRoot;
+-நெய்தற்ப10வை	C2SgRoot;
++நெய்தற்பாவை	C2SgRoot;
+ நெய்தற்பணை	C2SgRoot;
+ நெய்தற்பரிதி	C2SgRoot;
+ நெய்தற்பாடி	C2SgRoot;
+@@ -12021,7 +12021,7 @@
+ நேயநகை	C2SgRoot;
+ நேயநங்கை	C2SgRoot;
+ நேயநெறி	C2SgRoot;
+-நேயப்ப10வை	C2SgRoot;
++நேயப்பாவை	C2SgRoot;
+ நேயப்பரிதி	C2SgRoot;
+ நேயப்பிறை	C2SgRoot;
+ நேயப்புணை	C2SgRoot;
+@@ -12273,7 +12273,7 @@
+ படர்நகை	C2SgRoot;
+ படர்நங்கை	C2SgRoot;
+ படர்நெறி	C2SgRoot;
+-படர்ப10வை	C2SgRoot;
++படர்பாவை	C2SgRoot;
+ படர்படை	C2SgRoot;
+ படர்பணை	C2SgRoot;
+ படர்பரவுகை	C2SgRoot;
+@@ -12327,7 +12327,7 @@
+ படைநெறி	C2SgRoot;
+ படைபோரணி	C2SgRoot;
+ படைபோர்க்கருவி	C2SgRoot;
+-படைப்ப10வை	C2SgRoot;
++படைப்பாவை	C2SgRoot;
+ படைப்பரிதி	C2SgRoot;
+ படைப்பாடி	C2SgRoot;
+ படைப்பாடினி	C2SgRoot;
+@@ -13062,7 +13062,7 @@
+ பாற்குமரி	C2SgRoot;
+ பாற்சுரபி	C2SgRoot;
+ பாற்செல்வி	C2SgRoot;
+-பாற்ப10வை	C2SgRoot;
++பாற்பாவை	C2SgRoot;
+ பாற்பரிதி	C2SgRoot;
+ பாற்பிள்ளை	C2SgRoot;
+ பாற்பொருநை	C2SgRoot;
+@@ -13288,7 +13288,7 @@
+ புகழ்நன்னி	C2SgRoot;
+ புகழ்நாச்சி	C2SgRoot;
+ புகழ்நெறி	C2SgRoot;
+-புகழ்ப்ப10வை	C2SgRoot;
++புகழ்ப்பாவை	C2SgRoot;
+ புகழ்ப்பகன்றை	C2SgRoot;
+ புகழ்ப்படை	C2SgRoot;
+ புகழ்ப்பணை	C2SgRoot;
+@@ -13533,7 +13533,7 @@
+ புரட்சிநங்கை	C2SgRoot;
+ புரட்சிநம்பி	C2SgRoot;
+ புரட்சிநெறி	C2SgRoot;
+-புரட்சிப்ப10வை	C2SgRoot;
++புரட்சிப்பாவை	C2SgRoot;
+ புரட்சிப்படை	C2SgRoot;
+ புரட்சிப்பரிதி	C2SgRoot;
+ புரட்சிப்பாரி	C2SgRoot;
+@@ -51956,7 +51956,7 @@
+ +noun+dat+pl+sandhit:^களுக்குத் #;
+ +noun+dat+pl+sandhik:^களுக்குக் #;
+ 
+-+noun+soc:^ ோடு #;
+++noun+soc:^ோடு #;
+ +noun+pl+soc:^களோடு #;
+ +noun+soc:^ுடன் #;
+ +noun+pl+soc:^களுடன் #;
+@@ -52187,7 +52187,7 @@
+ +noun+dat+pl+sandhit:^ுக்குத் #;
+ +noun+dat+pl+sandhik:^ுக்குக் #;
+ 
+-+noun+pl+soc:^ ோடு #;
+++noun+pl+soc:^ோடு #;
+ +noun+pl+soc:^ுடன் #;
+ 
+ +noun+pl+abl:^ில் #;
+@@ -53114,7 +53114,7 @@
+ உணவு			 C7SgRoot; 
+ கிழங்கு			 C7SgRoot; 
+ பந்து			 	C7SgRoot; 
+-கொத்து			 C7SgRoot; 
++கொத்து			 C7SgRoot; 
+ வெண்ணிலவு		C7SgRoot; 
+ கள்ளு			 C7SgRoot; 
+ எள்ளு			 C7SgRoot; 
+@@ -68411,9 +68411,9 @@
+ அணிமுத்தன்	C11SgRoot ;
+ அணிமுருகன்	C11SgRoot ;
+ அணிமுறையோன்	C11SgRoot ;
+-அணிய10ரன்	C11SgRoot ;
+-அணிய10ரான்	C11SgRoot ;
+-அணிய10ரோன்	C11SgRoot ;
++அணியாரன்	C11SgRoot ;
++அணியாரான்	C11SgRoot ;
++அணியாரோன்	C11SgRoot ;
+ அணியகன்	C11SgRoot ;
+ அணியப்பன்	C11SgRoot ;
+ அணியறிஞன்	C11SgRoot ;
+@@ -69190,7 +69190,7 @@
+ அருமைப்பேகன்	C11SgRoot ;
+ அருமைமகன்	C11SgRoot ;
+ அருமைமுகன்	C11SgRoot ;
+-அருமைய10ரன்	C11SgRoot ;
++அருமையாரன்	C11SgRoot ;
+ அருமையப்பன்	C11SgRoot ;
+ அருமையமுதன்	C11SgRoot ;
+ அருமையரசன்	C11SgRoot ;
+@@ -72850,8 +72850,8 @@
+ கல்விமுருகன்	C11SgRoot ;
+ கல்விமுனைவன்	C11SgRoot ;
+ கல்விமைந்தன்	C11SgRoot ;
+-கல்விய10ரன்	C11SgRoot ;
+-கல்விய10ரான்	C11SgRoot ;
++கல்வியாரன்	C11SgRoot ;
++கல்வியாரான்	C11SgRoot ;
+ கல்வியப்பன்	C11SgRoot ;
+ கல்வியமுதன்	C11SgRoot ;
+ கல்வியரசன்	C11SgRoot ;
+@@ -72970,7 +72970,7 @@
+ கழைமலையன்	C11SgRoot ;
+ கழைமுகிலன்	C11SgRoot ;
+ கழைமுத்தன்	C11SgRoot ;
+-கழைய10ரன்	C11SgRoot ;
++கழையாரன்	C11SgRoot ;
+ கழையழகன்	C11SgRoot ;
+ கழையன்பன்	C11SgRoot ;
+ கழையெழிலன்	C11SgRoot ;
+@@ -73100,8 +73100,8 @@
+ களிமுத்தன்	C11SgRoot ;
+ களிமுருகன்	C11SgRoot ;
+ களிமைந்தன்	C11SgRoot ;
+-களிய10ரன்	C11SgRoot ;
+-களிய10ரான்	C11SgRoot ;
++களியாரன்	C11SgRoot ;
++களியாரான்	C11SgRoot ;
+ களியகன்	C11SgRoot ;
+ களியப்பன்	C11SgRoot ;
+ களியமுதன்	C11SgRoot ;
+@@ -73202,8 +73202,8 @@
+ கனிமுத்தன்	C11SgRoot ;
+ கனிமுருகன்	C11SgRoot ;
+ கனிமைந்தன்	C11SgRoot ;
+-கனிய10ரன்	C11SgRoot ;
+-கனிய10ரான்	C11SgRoot ;
++கனியாரன்	C11SgRoot ;
++கனியாரான்	C11SgRoot ;
+ கனியகன்	C11SgRoot ;
+ கனியப்பன்	C11SgRoot ;
+ கனியமுதன்	C11SgRoot ;
+@@ -73388,8 +73388,8 @@
+ காஞ்சிமுத்தன்	C11SgRoot ;
+ காஞ்சிமுருகன்	C11SgRoot ;
+ காஞ்சிமைந்தன்	C11SgRoot ;
+-காஞ்சிய10ரன்	C11SgRoot ;
+-காஞ்சிய10ரான்	C11SgRoot ;
++காஞ்சியாரன்	C11SgRoot ;
++காஞ்சியாரான்	C11SgRoot ;
+ காஞ்சியப்பன்	C11SgRoot ;
+ காஞ்சியமுதன்	C11SgRoot ;
+ காஞ்சியரசன்	C11SgRoot ;
+@@ -73503,8 +73503,8 @@
+ கார்மைந்தன்	C11SgRoot ;
+ கார்வண்ணன்	C11SgRoot ;
+ கார்வளத்தன்	C11SgRoot ;
+-காவ10ரன்	C11SgRoot ;
+-காவ10ரான்	C11SgRoot ;
++காவாரன்	C11SgRoot ;
++காவாரான்	C11SgRoot ;
+ காவண்ணன்	C11SgRoot ;
+ காவமுதன்	C11SgRoot ;
+ காவரசன்	C11SgRoot ;
+@@ -73622,8 +73622,8 @@
+ காவிரிமுதல்வன்	C11SgRoot ;
+ காவிரிமுத்தன்	C11SgRoot ;
+ காவிரிமைந்தன்	C11SgRoot ;
+-காவிரிய10ரன்	C11SgRoot ;
+-காவிரிய10ரான்	C11SgRoot ;
++காவிரியாரன்	C11SgRoot ;
++காவிரியாரான்	C11SgRoot ;
+ காவிரியகன்	C11SgRoot ;
+ காவிரியப்பன்	C11SgRoot ;
+ காவிரியமுதன்	C11SgRoot ;
+@@ -74310,7 +74310,7 @@
+ குறிஞ்சிமுத்தன்	C11SgRoot ;
+ குறிஞ்சிமுருகன்	C11SgRoot ;
+ குறிஞ்சிமைந்தன்	C11SgRoot ;
+-குறிஞ்சிய10ரன்	C11SgRoot ;
++குறிஞ்சியாரன்	C11SgRoot ;
+ குறிஞ்சியகன்	C11SgRoot ;
+ குறிஞ்சியப்பன்	C11SgRoot ;
+ குறிஞ்சியமுதன்	C11SgRoot ;
+@@ -76538,7 +76538,7 @@
+ ஞாலவேலன்	C11SgRoot ;
+ ஞாலவேலோன்	C11SgRoot ;
+ ஞாலன்	C11SgRoot ;
+-தகவ10ரன்	C11SgRoot ;
++தகவாரன்	C11SgRoot ;
+ தகவப்பன்	C11SgRoot ;
+ தகவமுதன்	C11SgRoot ;
+ தகவரசன்	C11SgRoot ;
+@@ -76630,7 +76630,7 @@
+ தகைமுருகன்	C11SgRoot ;
+ தகைமுறையோன்	C11SgRoot ;
+ தகைமைந்தன்	C11SgRoot ;
+-தகைய10ரன்	C11SgRoot ;
++தகையாரன்	C11SgRoot ;
+ தகையப்பன்	C11SgRoot ;
+ தகையமுதன்	C11SgRoot ;
+ தகையரசன்	C11SgRoot ;
+@@ -76814,7 +76814,7 @@
+ தணிகைமுத்தன்	C11SgRoot ;
+ தணிகைமுருகன்	C11SgRoot ;
+ தணிகைமைந்தன்	C11SgRoot ;
+-தணிகைய10ரன்	C11SgRoot ;
++தணிகையாரன்	C11SgRoot ;
+ தணிகையப்பன்	C11SgRoot ;
+ தணிகையமுதன்	C11SgRoot ;
+ தணிகையரசன்	C11SgRoot ;
+@@ -77192,7 +77192,7 @@
+ தில்லைமாறன்	C11SgRoot ;
+ தில்லைமான்	C11SgRoot ;
+ தில்லைமுத்தன்	C11SgRoot ;
+-தில்லைய10ரன்	C11SgRoot ;
++தில்லையாரன்	C11SgRoot ;
+ தில்லையப்பன்	C11SgRoot ;
+ தில்லையரசன்	C11SgRoot ;
+ தில்லையழகன்	C11SgRoot ;
+@@ -77343,7 +77343,7 @@
+ தொடுவேலன்	C11SgRoot ;
+ தொண்டைநாடன்	C11SgRoot ;
+ தொண்டைமான்	C11SgRoot ;
+-தொண்டைய10ரன்	C11SgRoot ;
++தொண்டையாரன்	C11SgRoot ;
+ தொண்டைவீரன்	C11SgRoot ;
+ தொல்கலைஞன்	C11SgRoot ;
+ தொல்காடன்	C11SgRoot ;
+@@ -77417,7 +77417,7 @@
+ நடுநெஞ்சன்	C11SgRoot ;
+ நடுமகன்	C11SgRoot ;
+ நடுமைந்தன்	C11SgRoot ;
+-நடுவ10ரன்	C11SgRoot ;
++நடுவாரன்	C11SgRoot ;
+ நடுவாளன்	C11SgRoot ;
+ நடைக்குமரன்	C11SgRoot ;
+ நடைக்குன்றன்	C11SgRoot ;
+@@ -77518,7 +77518,7 @@
+ நாகமன்னன்	C11SgRoot ;
+ நாகமுத்தன்	C11SgRoot ;
+ நாகரசன்	C11SgRoot ;
+-நாகவ10ரன்	C11SgRoot ;
++நாகவாரன்	C11SgRoot ;
+ நாகவேந்தன்	C11SgRoot ;
+ நாகன்	C11SgRoot ;
+ நாகையன்	C11SgRoot ;
+@@ -77721,7 +77721,7 @@
+ நெறிமுதல்வன்	C11SgRoot ;
+ நெறிமுறையன்	C11SgRoot ;
+ நெறிமைந்தன்	C11SgRoot ;
+-நெறிய10ரன்	C11SgRoot ;
++நெறியாரன்	C11SgRoot ;
+ நெறியமுதன்	C11SgRoot ;
+ நெறியழகன்	C11SgRoot ;
+ நெறியன்	C11SgRoot ;
+@@ -77850,7 +77850,7 @@
+ பணிவன்பன்	C11SgRoot ;
+ பணிவாளன்	C11SgRoot ;
+ பண்டைநாடன்	C11SgRoot ;
+-பண்டைய10ரன்	C11SgRoot ;
++பண்டையாரன்	C11SgRoot ;
+ பண்ணமுதன்	C11SgRoot ;
+ பண்ணரசன்	C11SgRoot ;
+ பண்ணறிஞன்	C11SgRoot ;
+@@ -77973,7 +77973,7 @@
+ பருவாணன்	C11SgRoot ;
+ பருவாளன்	C11SgRoot ;
+ பருவீரன்	C11SgRoot ;
+-பலாவ10ரன்	C11SgRoot ;
++பலாவாரன்	C11SgRoot ;
+ பலாவமுதன்	C11SgRoot ;
+ பலாவினியன்	C11SgRoot ;
+ பல்லவன்	C11SgRoot ;
+@@ -77996,7 +77996,7 @@
+ பழமுத்தன்	C11SgRoot ;
+ பழம்பொன்	C11SgRoot ;
+ பழயன்	C11SgRoot ;
+-பழவ10ரன்	C11SgRoot ;
++பழவாரன்	C11SgRoot ;
+ பழவமுதன்	C11SgRoot ;
+ பழவினியன்	C11SgRoot ;
+ பழனிகோமான்	C11SgRoot ;
+@@ -78018,7 +78018,7 @@
+ பழனிமுதல்வன்	C11SgRoot ;
+ பழனிமுத்தன்	C11SgRoot ;
+ பழனிமைந்தன்	C11SgRoot ;
+-பழனிய10ரன்	C11SgRoot ;
++பழனியாரன்	C11SgRoot ;
+ பழனியப்பன்	C11SgRoot ;
+ பழனியமுதன்	C11SgRoot ;
+ பழனியரசன்	C11SgRoot ;
+@@ -78343,7 +78343,7 @@
+ புரட்சிமுருகன்	C11SgRoot ;
+ புரட்சிமுறையோன்	C11SgRoot ;
+ புரட்சிமைந்தன்	C11SgRoot ;
+-புரட்சிய10ரன்	C11SgRoot ;
++புரட்சியாரன்	C11SgRoot ;
+ புரட்சியப்பன்	C11SgRoot ;
+ புரட்சியமுதன்	C11SgRoot ;
+ புரட்சியரசன்	C11SgRoot ;
+@@ -78388,7 +78388,7 @@
+ புலநாடன்	C11SgRoot ;
+ புலமையன்	C11SgRoot ;
+ புலமைவாணன்	C11SgRoot ;
+-புலவ10ரன்	C11SgRoot ;
++புலவாரன்	C11SgRoot ;
+ புலவன்	C11SgRoot ;
+ புலிக்கண்ணன்	C11SgRoot ;
+ புலிக்காடன்	C11SgRoot ;
+@@ -78425,9 +78425,9 @@
+ புலிமார்பன்	C11SgRoot ;
+ புலிமானன்	C11SgRoot ;
+ புலிமைந்தன்	C11SgRoot ;
+-புலிய10ரன்	C11SgRoot ;
+-புலிய10ரான்	C11SgRoot ;
+-புலிய10ரோன்	C11SgRoot ;
++புலியாரன்	C11SgRoot ;
++புலியாரான்	C11SgRoot ;
++புலியாரோன்	C11SgRoot ;
+ புலியரசன்	C11SgRoot ;
+ புலியழகன்	C11SgRoot ;
+ புலியுரவோன்	C11SgRoot ;
+@@ -78464,7 +78464,7 @@
+ பூம்பொழிலன்	C11SgRoot ;
+ பூம்பொன்	C11SgRoot ;
+ பூரணன்	C11SgRoot ;
+-பூவ10ரன்	C11SgRoot ;
++பூவாரன்	C11SgRoot ;
+ பூவண்ணன்	C11SgRoot ;
+ பூவரசன்	C11SgRoot ;
+ பூவழகன்	C11SgRoot ;
+@@ -78597,7 +78597,7 @@
+ பொலிநாடன்	C11SgRoot ;
+ பொலிமான்	C11SgRoot ;
+ பொலிமுகன்	C11SgRoot ;
+-பொலிய10ரன்	C11SgRoot ;
++பொலியாரன்	C11SgRoot ;
+ பொலியமுதன்	C11SgRoot ;
+ பொலியழகன்	C11SgRoot ;
+ பொலியுருவன்	C11SgRoot ;
+@@ -78624,7 +78624,7 @@
+ பொறிநாடன்	C11SgRoot ;
+ பொறிமன்னன்	C11SgRoot ;
+ பொறிமாறன்	C11SgRoot ;
+-பொறிய10ரன்	C11SgRoot ;
++பொறியாரன்	C11SgRoot ;
+ பொறியரசன்	C11SgRoot ;
+ பொறியறிஞன்	C11SgRoot ;
+ பொறியறிவன்	C11SgRoot ;
+@@ -78640,7 +78640,7 @@
+ பொறைத்தேவன்	C11SgRoot ;
+ பொறைநெஞ்சன்	C11SgRoot ;
+ பொறைமான்	C11SgRoot ;
+-பொறைய10ரன்	C11SgRoot ;
++பொறையாரன்	C11SgRoot ;
+ பொறையப்பன்	C11SgRoot ;
+ பொறையரசன்	C11SgRoot ;
+ பொறையன்	C11SgRoot ;
+@@ -80143,7 +80143,7 @@
+ வாகரைமுத்தன்	C11SgRoot ;
+ வாகரைமுருகன்	C11SgRoot ;
+ வாகரைமைந்தன்	C11SgRoot ;
+-வாகரைய10ரன்	C11SgRoot ;
++வாகரையாரன்	C11SgRoot ;
+ வாகரையப்பன்	C11SgRoot ;
+ வாகரையரசன்	C11SgRoot ;
+ வாகரையழகன்	C11SgRoot ;
+@@ -80187,7 +80187,7 @@
+ வாகைமுதல்வன்	C11SgRoot ;
+ வாகைமுருகன்	C11SgRoot ;
+ வாகைமைந்தன்	C11SgRoot ;
+-வாகைய10ரான்	C11SgRoot ;
++வாகையாரான்	C11SgRoot ;
+ வாகையப்பன்	C11SgRoot ;
+ வாகையரசன்	C11SgRoot ;
+ வாகையன்	C11SgRoot ;
+@@ -80204,7 +80204,7 @@
+ வாரிநெஞ்சன்	C11SgRoot ;
+ வாரிமாறன்	C11SgRoot ;
+ வாரிமுத்தன்	C11SgRoot ;
+-வாரிய10ரன்	C11SgRoot ;
++வாரியாரன்	C11SgRoot ;
+ வாரியப்பன்	C11SgRoot ;
+ வாரியமுதன்	C11SgRoot ;
+ வாரியழகன்	C11SgRoot ;
+@@ -90391,7 +90391,7 @@
+ படைநெஞ்சள்	C14SgRoot ; 
+ படைநேரியள்	C14SgRoot ; 
+ படைமகள்	C14SgRoot ; 
+-படைய10ராள்	C14SgRoot ; 
++படையாராள்	C14SgRoot ; 
+ படையம்மாள்	C14SgRoot ; 
+ படையாள்	C14SgRoot ; 
+ படையினியாள்	C14SgRoot ; 
+@@ -90428,7 +90428,7 @@
+ பவளநேரியள்	C14SgRoot ; 
+ பவளமகள்	C14SgRoot ; 
+ பவளமலையள்	C14SgRoot ; 
+-பவளவ10ராள்	C14SgRoot ; 
++பவளவாராள்	C14SgRoot ; 
+ பவளவிழையாள்	C14SgRoot ; 
+ பவளவினியள்	C14SgRoot ; 
+ பவளவினியாள்	C14SgRoot ; 
+@@ -90437,9 +90437,9 @@
+ பழங்குளத்தள்	C14SgRoot ; 
+ பழமகள்	C14SgRoot ; 
+ பழமலையள்	C14SgRoot ; 
+-பழவ10ராள்	C14SgRoot ; 
++பழவாராள்	C14SgRoot ; 
+ பழனிவேள்	C14SgRoot ; 
+-பறம்ப10ராள்	C14SgRoot ; 
++பறம்பாராள்	C14SgRoot ; 
+ பறம்பாள்	C14SgRoot ; 
+ பறம்பினியாள்	C14SgRoot ; 
+ பறம்புக்குடிமகள்	C14SgRoot ; 
+@@ -90477,7 +90477,7 @@
+ பாலினியாள்	C14SgRoot ; 
+ பாலூராள்	C14SgRoot ; 
+ பாலைக்குளத்தள்	C14SgRoot ; 
+-பாலைய10ராள்	C14SgRoot ; 
++பாலையாராள்	C14SgRoot ; 
+ பாவல்லாள்	C14SgRoot ; 
+ பாவினியள்	C14SgRoot ; 
+ பாவினியாள்	C14SgRoot ; 
+@@ -90554,7 +90554,7 @@
+ புலவினியாள்	C14SgRoot ; 
+ புலிமகள்	C14SgRoot ; 
+ புலிமலையள்	C14SgRoot ; 
+-புலிய10ராள்	C14SgRoot ; 
++புலியாராள்	C14SgRoot ; 
+ புனைமகள்	C14SgRoot ; 
+ புனையிழையாள்	C14SgRoot ; 
+ பூங்காந்தள்	C14SgRoot ; 
+@@ -90563,7 +90563,7 @@
+ பூநெஞ்சள்	C14SgRoot ; 
+ பூந்திங்கள்	C14SgRoot ; 
+ பூமகள்	C14SgRoot ; 
+-பூவ10ராள்	C14SgRoot ; 
++பூவாராள்	C14SgRoot ; 
+ பூவிழையாள்	C14SgRoot ; 
+ பூவினியாள்	C14SgRoot ; 
+ பூவைமகள்	C14SgRoot ; 
+@@ -90591,13 +90591,13 @@
+ பொதிகைநல்லள்	C14SgRoot ; 
+ பொதிகைமகள்	C14SgRoot ; 
+ பொதிகைமலையள்	C14SgRoot ; 
+-பொதிகைய10ராள்	C14SgRoot ; 
++பொதிகையாராள்	C14SgRoot ; 
+ பொதிகையாள்	C14SgRoot ; 
+ பொதிகையினியள்	C14SgRoot ; 
+ பொதிகையினியாள்	C14SgRoot ; 
+ பொய்இல்பொருள்	C14SgRoot ; 
+ பொய்கைமகள்	C14SgRoot ; 
+-பொய்கைய10ராள்	C14SgRoot ; 
++பொய்கையாராள்	C14SgRoot ; 
+ பொய்கையாள்	C14SgRoot ; 
+ பொய்கையினியள்	C14SgRoot ; 
+ பொய்கையினியாள்	C14SgRoot ; 
+@@ -90684,7 +90684,7 @@
+ மணிப்பொறையள்	C14SgRoot ; 
+ மணிமகள்	C14SgRoot ; 
+ மணிமலையள்	C14SgRoot ; 
+-மணிய10ராள்	C14SgRoot ; 
++மணியாராள்	C14SgRoot ; 
+ மணியம்மாள்	C14SgRoot ; 
+ மணியாள்	C14SgRoot ; 
+ மணியிழையாள்	C14SgRoot ; 
+@@ -90695,7 +90695,7 @@
+ மதிநல்லள்	C14SgRoot ; 
+ மதிமகள்	C14SgRoot ; 
+ மதிமலையள்	C14SgRoot ; 
+-மதிய10ராள்	C14SgRoot ; 
++மதியாராள்	C14SgRoot ; 
+ மதியினியள்	C14SgRoot ; 
+ மதியினியாள்	C14SgRoot ; 
+ மதிவல்லாள்	C14SgRoot ; 
+@@ -90960,12 +90960,12 @@
+ வளைமகள்	C14SgRoot ; 
+ வளையாள்	C14SgRoot ; 
+ வளையுடையாள்	C14SgRoot ; 
+-வாகரைய10ராள்	C14SgRoot ; 
++வாகரையாராள்	C14SgRoot ; 
+ வாகரையராள்	C14SgRoot ; 
+ வாகரையாள்	C14SgRoot ; 
+ வாகைத்திங்கள்	C14SgRoot ; 
+ வாகைமகள்	C14SgRoot ; 
+-வாகைய10ராள்	C14SgRoot ; 
++வாகையாராள்	C14SgRoot ; 
+ வாகையள்	C14SgRoot ; 
+ வாகையாள்	C14SgRoot ; 
+ வாகையினியள்	C14SgRoot ; 
+@@ -90976,7 +90976,7 @@
+ வாணெஞ்சள்	C14SgRoot ; 
+ வாண்மகள்	C14SgRoot ; 
+ வாரிமகள்	C14SgRoot ; 
+-வாரிய10ராள்	C14SgRoot ; 
++வாரியாராள்	C14SgRoot ; 
+ வாரியாள்	C14SgRoot ; 
+ வாழ்தகையள்	C14SgRoot ; 
+ வாழ்நல்லள்	C14SgRoot ; 
+@@ -93928,7 +93928,7 @@
+ வளிமம்	 C15SgRoot; 
+ சாணம்	 C15SgRoot; 
+ இராணுவம்	 C15SgRoot; 
+-திருகோணம்	 C15SgRoot; 
++திருகோணம்	 C15SgRoot; 
+ ஈழம்	 C15SgRoot; 
+ விகிதம்	 C15SgRoot; 
+ சமம்	 C15SgRoot; 

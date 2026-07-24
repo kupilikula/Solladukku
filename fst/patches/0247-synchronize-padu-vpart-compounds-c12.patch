@@ -1,0 +1,106 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -243,6 +243,7 @@
+ அச	C12Vinf;
+ 
+ 
++எண்ணங்கொண்டிரு    C12Vinf;
+ LEXICON C12Vinf
+ 
+ ! Reviewed dictionary citation continuation
+@@ -2777,7 +2778,6 @@
+ போக்கியிரு      CIru12Inf; 
+ போட்டியிரு      CIru12Inf; 
+ போதியிரு      CIru12Inf; 
+-போியிரு      CIru12Inf; 
+ பொக்கியிரு      CIru12Inf; 
+ பொம்மியிரு      CIru12Inf; 
+ பொசுக்கியிரு      CIru12Inf; 
+@@ -3540,12 +3540,10 @@
+ ஆராட்டியிரு      CIru12Inf; 
+ ஆழ்த்தியிரு      CIru12Inf; 
+ அற்கியிரு      CIru12Inf; 
+-அறவிடியிரு      CIru12Inf; 
+ அறிவுறுத்தியிரு      CIru12Inf; 
+ அறாவியிரு      CIru12Inf; 
+ அகற்றியிரு      CIru12Inf; 
+ அகவியிரு      CIru12Inf; 
+-அகப்படியிரு      CIru12Inf; 
+ அகட்டியிரு      CIru12Inf; 
+ அவாவியிரு      CIru12Inf; 
+ அப்புறப்படுத்தியிரு      CIru12Inf; 
+@@ -3571,14 +3569,12 @@
+ அடக்கியிரு      CIru12Inf; 
+ அடைச்சியிரு      CIru12Inf; 
+ அடைசியிரு      CIru12Inf; 
+-அடிபடியிரு      CIru12Inf; 
+ அடிமையாக்கியிரு      CIru12Inf; 
+ அடசியிரு      CIru12Inf; 
+ அடங்கியிரு      CIru12Inf; 
+ அளுக்கியிரு      CIru12Inf; 
+ அள்ளியிரு      CIru12Inf; 
+ அளறியிரு      CIru12Inf; 
+-அளவிடியிரு      CIru12Inf; 
+ அளவியிரு      CIru12Inf; 
+ அளாவியிரு      CIru12Inf; 
+ அணுகியிரு      CIru12Inf; 
+@@ -3684,6 +3680,11 @@
+ கேட்டிரு      CIru12Inf; 
+ கட்டிரு 
+ 
++அகப்பட்டிரு    CIru12Inf;
++அடிபட்டிரு    CIru12Inf;
++அறவிட்டிரு    CIru12Inf;
++அளவிட்டிரு    CIru12Inf;
++போயிரு    CIru12Inf;
+ LEXICON CIru12Inf
+ 
+ +verb+fin+complex+aspect+strong+past%=த்+1sg%=ஏன்:^ந்தேன் #;
+@@ -6187,7 +6188,6 @@
+ போக்கிக்கொண்டிரு     ClassKondiru12Inf; 
+ போட்டிக்கொண்டிரு     ClassKondiru12Inf; 
+ போதிக்கொண்டிரு     ClassKondiru12Inf; 
+-போிக்கொண்டிரு     ClassKondiru12Inf; 
+ பொக்கிக்கொண்டிரு     ClassKondiru12Inf; 
+ பொம்மிக்கொண்டிரு     ClassKondiru12Inf; 
+ பொசுக்கிக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -6950,12 +6950,10 @@
+ ஆராட்டிக்கொண்டிரு     ClassKondiru12Inf; 
+ ஆழ்த்திக்கொண்டிரு     ClassKondiru12Inf; 
+ அற்கிக்கொண்டிரு     ClassKondiru12Inf; 
+-அறவிடிக்கொண்டிரு     ClassKondiru12Inf; 
+ அறிவுறுத்திக்கொண்டிரு     ClassKondiru12Inf; 
+ அறாவிக்கொண்டிரு     ClassKondiru12Inf; 
+ அகற்றிக்கொண்டிரு     ClassKondiru12Inf; 
+ அகவிக்கொண்டிரு     ClassKondiru12Inf; 
+-அகப்படிக்கொண்டிரு     ClassKondiru12Inf; 
+ அகட்டிக்கொண்டிரு     ClassKondiru12Inf; 
+ அவாவிக்கொண்டிரு     ClassKondiru12Inf; 
+ அப்புறப்படுத்திக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -6981,14 +6979,12 @@
+ அடக்கிக்கொண்டிரு     ClassKondiru12Inf; 
+ அடைச்சிக்கொண்டிரு     ClassKondiru12Inf; 
+ அடைசிக்கொண்டிரு     ClassKondiru12Inf; 
+-அடிபடிக்கொண்டிரு     ClassKondiru12Inf; 
+ அடிமையாக்கிக்கொண்டிரு     ClassKondiru12Inf; 
+ அடசிக்கொண்டிரு     ClassKondiru12Inf; 
+ அடங்கிக்கொண்டிரு     ClassKondiru12Inf; 
+ அளுக்கிக்கொண்டிரு     ClassKondiru12Inf; 
+ அள்ளிக்கொண்டிரு     ClassKondiru12Inf; 
+ அளறிக்கொண்டிரு     ClassKondiru12Inf; 
+-அளவிடிக்கொண்டிரு     ClassKondiru12Inf; 
+ அளவிக்கொண்டிரு     ClassKondiru12Inf; 
+ அளாவிக்கொண்டிரு     ClassKondiru12Inf; 
+ அணுகிக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -7093,6 +7089,11 @@
+ ஈன்றுகொண்டிரு     ClassKondiru12Inf; 
+ கேட்டுக்கொண்டிரு     ClassKondiru12Inf; 
+ 
++அகப்பட்டுக்கொண்டிரு    ClassKondiru12Inf;
++அடிபட்டுக்கொண்டிரு    ClassKondiru12Inf;
++அறவிட்டுக்கொண்டிரு    ClassKondiru12Inf;
++அளவிட்டுக்கொண்டிரு    ClassKondiru12Inf;
++போய்க்கொண்டிரு    ClassKondiru12Inf;
+ LEXICON ClassKondiru12Inf
+ 
+ 

@@ -1,0 +1,18 @@
+--- tamil-noun.foma
++++ tamil-noun.foma
+@@ -33,11 +33,15 @@
+ define R16 {ன்} -> 0 || _ "^" [{ற்}]; #பொன் - பொற்
+ 
+ 
++# ய்-final nouns take direct -க்கு: ரூபாய் + உக்கு -> ரூபாய்க்கு.
++define YFinalDative {ு} -> 0 || {ய்} "^" _ {க்க};
++
+ define Cleanup1 "ஆ" -> 0 || "^" _;
+ define CleanupX "^" -> 0;
+ 
+ 
+ define TamilNouns		 	Lexicon           	.o.
++						YFinalDative		.o.
+ 						R1				.o.
+ 						R101				.o.
+ 						R2				.o.

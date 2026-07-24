@@ -2,6 +2,28 @@
   "models": {
     "noun.fst": {
       "must_analyze": {
+        "வெளிநாட்டில்": "வெளிநாடு+noun+loc",
+        "வெளிநாட்டு": "வெளிநாடு+noun+compoundmodifier",
+        "கட்டுப்பாட்டில்": "கட்டுப்பாடு+noun+loc",
+        "முதலீட்டை": "முதலீடு+noun+acc",
+        "தொடர்புடைய": "தொடர்பு+noun+gen",
+        "வடிவுடை": "வடிவு+noun+gen+adjpart=அ",
+        "காலையில்": "காலை+noun+loc",
+        "மத்தியில்": "மத்தி+noun+loc",
+        "மக்களவைத்": "மக்களவை+noun+nom+sandhit",
+        "பொலிஸார்": "பொலிஸ்+noun+human+pl+nom",
+        "சேர்மமாகும்": "சேர்மம்+noun+trans+cop+fut+3sgn",
+        "உலகில்": "உலகு+noun+loc",
+        "ரீதியாக": "ரீதி+noun+trans",
+        "மூலக்கூற்று": "மூலக்கூற்று+noun+nom",
+        "சான்றிதழ்கள்": "சான்றிதழ்+noun+pl+nom",
+        "மரத்தைக்": "மரம்+noun+infInc+acc+sandhik",
+        "அம்சங்களையும்": "அம்சம்+noun+pl+acc+add",
+        "வீட்டிலேயே": "வீடு+noun+loc+foc=ஏயே",
+        "அரசுக்கும்": "அரசு+noun+dat+add",
+        "நிதியை": "நிதி+noun+acc",
+        "குறைவை": "குறைவு+noun+acc",
+        "இஸ்லாத்தை": "இஸ்லாம்+noun+infInc+acc",
         "தேர்தல்": "தேர்தல்+noun+nom",
         "பாலம்": "பாலம்+noun+nom",
         "பாலத்தை": "பாலம்+noun+infInc+acc",
@@ -48,6 +70,14 @@
         "டிக்கெட்": "டிக்கெட்+noun+nom",
         "டிக்கெட்டை": "டிக்கெட்+noun+acc",
         "போலீஸ்": "போலீஸ்+noun+nom",
+        "போலீசார்": "போலீஸ்+noun+human+pl+nom",
+        "பொலிசார்": "பொலிஸ்+noun+human+pl+nom",
+        "உலக": "உலகம்+noun+compoundmodifier",
+        "சமூக": "சமூகம்+noun+compoundmodifier",
+        "தலைமையிலான": "தலைமை+noun+loc+cop=ஆ+adjpart=ன",
+        "அடிப்படையில்": "அடிப்படை+noun+loc",
+        "பதிவை": "பதிவு+noun+acc",
+        "கிரிக்கெட்டில்": "கிரிக்கெட்+noun+loc",
         "டாக்டர்": "டாக்டர்+noun+nom",
         "ரயில்": "ரயில்+noun+nom",
         "பஸ்": "பஸ்+noun+nom",
@@ -125,17 +155,81 @@
         "புரவலர்": "புரவலர்+noun+nom",
         "வழக்கறிஞர்": "வழக்கறிஞர்+noun+nom",
         "வழித்தடங்களும்": "வழித்தடம்+noun+pl+nom+add",
-        "விமர்சனங்களும்": "விமர்சனம்+noun+pl+nom+add"
+        "விமர்சனங்களும்": "விமர்சனம்+noun+pl+nom+add",
+        "மக்களுக்கான": "மக்கள்+noun+pl+dat+cop=ஆ+adjpart=ன",
+        "இந்தியாவுக்கான": "இந்தியா+noun+dat+cop=ஆ+adjpart=ன",
+        "தேர்தலுக்கான": "தேர்தல்+noun+dat+cop=ஆ+adjpart=ன",
+        "மரத்திற்கான": "மரம்+noun+infInc+dat+cop=ஆ+adjpart=ன",
+        "மரங்களுக்கான": "மரம்+noun+dat+pl+cop=ஆ+adjpart=ன",
+        "மேற்கோள்கள்": "மேற்கோள்+noun+pl+nom",
+        "பொருட்கள்": "பொருள்+noun+pl+nom",
+        "பொருள்கள்": "பொருள்+noun+pl+nom",
+        "நாட்கள்": "நாள்+noun+pl+nom",
+        "நாள்கள்": "நாள்+noun+pl+nom",
+        "கடவுள்கள்": "கடவுள்+noun+pl+nom",
+        "ஒலிநூல்கள்": "ஒலிநூல்+noun+pl+nom",
+        "மதித்தல்": "மதி+verb+nonfin+sim+verbalnoun=தல்+nom",
+        "மதித்தலை": "மதி+verb+nonfin+sim+verbalnoun=தல்+acc",
+        "நெய்தல்": "நெய்தல்+noun+nom"
+      },
+      "must_not_analyze": {
+        "ஆற்றை": ["ஆர்+noun+acc"],
+        "மேற்கோட்கள்": ["மேற்கோள்+noun+pl+nom"],
+        "கடவுட்கள்": ["கடவுள்+noun+pl+nom"],
+        "மகட்கள்": ["மகள்+noun+pl+nom"],
+        "கோட்கள்": ["கோள்+noun+pl+nom"],
+        "ஒலிநூட்கள்": ["ஒலிநூல்+noun+pl+nom"],
+        "ஆர்தல்": ["ஆர்தல்+noun+nom"],
+        "இலங்குதல்": ["இலங்குதல்+noun+nom"],
+        "ஏந்துதல்": ["ஏந்துதல்+noun+nom"],
+        "ஒண்ணுதல்": ["ஒண்ணுதல்+noun+nom"],
+        "செறுதல்": ["செறுதல்+noun+nom"],
+        "சொரிதல்": ["சொரிதல்+noun+nom"],
+        "தாங்குதல்": ["தாங்குதல்+noun+nom"],
+        "தெறுதல்": ["தெறுதல்+noun+nom"],
+        "நன்னுதல்": ["நன்னுதல்+noun+nom"],
+        "பாய்தல்": ["பாய்தல்+noun+nom"],
+        "மதித்தல்": ["மதித்தல்+noun+nom"],
+        "மாறுதல்": ["மாறுதல்+noun+nom"],
+        "மென்னுதல்": ["மென்னுதல்+noun+nom"]
       }
     },
     "part.fst": {
       "must_analyze": {
+        "இதற்காக": "இது+pron+dem+prox+3sgn+dat+purpose",
+        "தேவையில்லை": "தேவை+noun+nom+exist+neg",
+        "ஆகியவற்றை": "ஆகு+verb+nonfin+sim+past=இ+adjpart=அ+PartNoun=அது+pl+acc",
+        "இதையடுத்து": "இது+pron+dem+prox+3sgn+acc+vpart_pin",
+        "என்னும்": "என்+comp",
+        "எதிராக": "எதிர்+pp-particle+trans",
+        "எதிரான": "எதிர்+pp-particle+cop+adjpart",
+        "உட்பட": "உட்பட+pp-particle",
+        "கிபி": "கிபி+abbrev+time",
+        "கிமீ": "கிமீ+abbrev+unit",
+        "கிடையாது": "கிடை+exist+neg+3sgn",
+        "இதோ": "இது+pron+dem+prox+3sgn+nom+presentative",
+        "இல்": "இல்+noun+nom",
+        "எவ்வளவு": "எவ்வளவு+quant+inter+degree",
+        "இத்தனை": "இத்தனை+quant+prox+degree",
+        "அத்தனை": "அத்தனை+quant+dist+degree",
+        "யார்": "யார்+pron+inter+human+nom",
+        "யாரும்": "யார்+pron+inter+human+nom+add",
+        "யாராவது": "யாராவது+pron+inter+human+indef",
+        "எது": "எது+pron+inter+3sgn+nom",
+        "எதுவும்": "எது+pron+inter+3sgn+nom+add",
+        "ஏதும்": "எது+pron+inter+3sgn+indef",
+        "ஏதோ": "எது+pron+inter+3sgn+indef",
         "என": "என+comp",
+        "எனப்": "என+comp+sandhip=ப்",
+        "எனவும்": "என+comp+add=உம்",
+        "போலக்": "போல+pp-particle+sandhik=க்",
+        "எல்லாப்": "எல்லா+quant+all+det+sandhip=ப்",
+        "அதற்கும்": "அது+pron+dem+dist+3sgn+dat+add",
         "மட்டும்": "மட்டும்+pp-particle",
         "இல்லை": "இல்லை+cop",
         "தங்கள்": "தங்கள்+pron+poss",
         "ஒருவர்": "ஒருவர்+pron+human+sg",
-        "அனைவரும்": "அனைவரும்+pron+human+pl+all+add",
+        "அனைவரும்": "அனைவர்+quant+all+human+nom+add",
         "எல்லா": "எல்லா+quant+all+det",
         "என்ன": "என்ன+pron+inter",
         "எத்தனை": "எத்தனை+quant+inter",
@@ -152,11 +246,41 @@
         "என்பதை": "என்பதை+comp+acc",
         "எனக்": "என+comp+sandhik",
         "க்கும்": "க்கும்+pp-particle+comparative+add",
-        "ஏதேனும்": "ஏதேனும்+quant+indef+add"
+        "ஏதேனும்": "ஏதேனும்+quant+indef+add",
+        "ஒன்றாக": "ஒன்று+cardinal+trans",
+        "இரண்டாக": "இரண்டு+cardinal+trans",
+        "ஆறாக": "ஆறு+cardinal+trans",
+        "ஆயிரமாக": "ஆயிரம்+cardinal+trans",
+        "ஒன்றான": "ஒன்று+cardinal+cop=ஆ+adjpart=ன",
+        "இரண்டான": "இரண்டு+cardinal+cop=ஆ+adjpart=ன",
+        "ஆயிரமான": "ஆயிரம்+cardinal+cop=ஆ+adjpart=ன",
+        "கோடியான": "கோடி+cardinal+cop=ஆ+adjpart=ன",
+        "முதலாம்": "முதல்+ordinal",
+        "இரண்டாம்": "இரண்டு+ordinal",
+        "பதினோராம்": "பதினொன்று+ordinal",
+        "இரண்டாவது": "இரண்டாவது+ordinal",
+        "அதற்கு": "அது+pron+dem+dist+3sgn+dat",
+        "யாருக்கு": "யார்+pron+inter+human+dat",
+        "அனைத்தும்": "அனைத்து+quant+all+add",
+        "ஒன்றில்": "ஒன்று+cardinal+loc",
+        "ஒன்றுக்கு": "ஒன்று+cardinal+dat",
+        "ஒன்றிலிருந்து": "ஒன்று+cardinal+abl",
+        "ஒன்றாகும்": "ஒன்று+cardinal+trans+cop+fut+3sgn",
+        "ஆயிரத்தால்": "ஆயிரம்+cardinal+inst",
+        "கோடியுடன்": "கோடி+cardinal+soc"
+      },
+      "must_not_analyze": {
+        "ஒரான": ["ஒரு+cardinal+cop=ஆ+adjpart=ன"],
+        "இரண்டாது": ["இரண்டாது+ordinal"],
+        "எட்டாது": ["எட்டாது+ordinal"],
+        "ஒரில்": ["ஒரு+cardinal+loc"]
       }
     },
     "adv.fst": {
       "must_analyze": {
+        "புதிதாக": "புதிது+adj+trans=ஆக",
+        "கூடுதலாக": "கூடு+verb+nonfin+sim+verbalnoun=தல்+trans=ஆக",
+        "நல்லா": "நல்லா+adv",
         "ஏன்": "ஏன்+adv",
         "சுமார்": "சுமார்+adv",
         "அதனால்": "அதனால்+adv",
@@ -172,10 +296,15 @@
         "குறைவாக": "குறைவாக+adv",
         "வலுவின்றி": "வலுவின்றி+adv",
         "அதனால்தான்": "அதனால்தான்+dem+dist+foc+adv"
+        ,"நன்றாகப்": "நன்றாக+adv+sandhip=ப்"
+        ,"இப்படிப்": "இப்படி+adv+sandhip=ப்"
       }
     },
     "adj.fst": {
       "must_analyze": {
+        "இனிது": "இனிது+adj",
+        "நன்று": "நன்று+adj",
+        "பச்சை": "பச்சை+adj",
         "இவ்வகை": "இவ்வகை+dem+prox+type+adj",
         "அவ்வகை": "அவ்வகை+dem+dist+type+adj",
         "எவ்வகை": "எவ்வகை+dem+inter+type+adj",
@@ -187,20 +316,195 @@
         "சரியான": "சரியான+adj",
         "தேசியக்": "தேசியக்+adj",
         "நீர்வாழ்": "நீர்வாழ்+adj",
-        "துடுப்பாட்ட": "துடுப்பாட்ட+adj"
+        "துடுப்பாட்ட": "துடுப்பாட்ட+adj",
+        "முக்கியமான": "முக்கியம்+noun+nom+cop=ஆ+adjpart=ன",
+        "தேவையான": "தேவை+noun+nom+cop=ஆ+adjpart=ன",
+        "தொடர்பான": "தொடர்பு+noun+nom+cop=ஆ+adjpart=ன",
+        "இவ்வாறான": "இவ்வாறு+adv+cop=ஆ+adjpart=ன",
+        "இப்படியான": "இப்படி+adv+cop=ஆ+adjpart=ன",
+        "எப்படியான": "எப்படி+adv+cop=ஆ+adjpart=ன",
+        "அதிக": "அதிக+adj",
+        "பாரம்பரிய": "பாரம்பரிய+adj",
+        "நவீன": "நவீன+adj"
+        ,"அனைத்துப்": "அனைத்து+adj+sandhip=ப்"
+        ,"இந்தியக்": "இந்திய+adj+sandhik=க்"
+      },
+      "must_not_analyze": {
+        "மக்களுக்கான": ["மக்களுக்கு+noun+nom+cop=ஆ+adjpart=ன"],
+        "ஒன்றான": ["ஒன்று+noun+nom+cop=ஆ+adjpart=ன"],
+        "கட்டுமான": ["கட்டும்+noun+nom+cop=ஆ+adjpart=ன"]
       }
     },
     "verb-c-rest.fst": {
       "must_analyze": {
+        "கூறுகையில்": "கூறு+verb+nonfin+sim+verbalnoun=கை+loc=இல்",
+        "வேண்டா": "வேண்டு+verb+nonfin+sim+neg=ஆ",
+        "கொள்ளலாம்": "கொள்+verb+nonfin+sim+inf=அ+moodpart=ஆம்",
+        "கொண்டே": "கொள்+verb+nonfin+sim+vpart=உ+foc=ஏ",
+        "செய்யப்பட்டார்": "செய்+verb+fin+complex+passive+strong+past=ட்+3sghe=ஆர்",
+        "வந்தனர்": "வா+verb+fin+sim+strong+past=த்+3ple=னர்",
+        "உள்ளனர்": "உள்+verb+fin+sim+strong+pres=∅+3ple=னர்",
+        "அமைக்கப்படவில்லை": "அமை+verb+fin+complex+passive+neg=இல்லை",
+        "அமைக்கப்பட்டுள்ள": "அமை+verb+nonfin+complex+passive+perfect+pres=∅+adjpart=அ",
+        "அமைக்கப்பட்டுள்ளனர்": "அமை+verb+fin+complex+passive+perfect+pres=∅+3ple=னர்",
+        "அமைக்கப்படுகின்றனர்": "அமை+verb+fin+complex+passive+strong+pres=கின்ற்+3ple=னர்",
+        "அமைக்கப்பட்டனர்": "அமை+verb+fin+complex+passive+strong+past=ட்+3ple=னர்",
+        "வருகின்றனர்": "வா+verb+fin+sim+strong+pres=கின்ற்+3ple=னர்",
         "பேசிய": "பேசு+verb+nonfin+sim+past=இ+adjpart=அ",
         "வருகின்ற": "வா+verb+nonfin+sim+pres=கின்ற்+adjpart=அ",
         "என்றார்": "என்+verb+fin+sim+strong+past=ற்+3sghe=ஆர்",
-        "ஆவார்": "ஆ+verb+fin+sim+weak+fut=வ்+3sghe=ஆர்"
+        "ஆவார்": "ஆகு+verb+fin+sim+weak+fut=வ்+3sghe=ஆர்",
+        "காணும்": "காண்+verb+fin+sim+strong+fut=உம்+3pln=∅",
+        "சாகும்": "சா+verb+fin+sim+strong+fut=உம்+3pln=∅",
+        "தரும்": "தா+verb+fin+sim+strong+fut=உம்+3pln=∅",
+        "வேகும்": "வே+verb+fin+sim+strong+fut=உம்+3pln=∅",
+        "செய்கிறார்": "செய்+verb+fin+sim+strong+pres=கிற்+3sghe=ஆர்",
+        "கொள்கின்றார்": "கொள்+verb+fin+sim+strong+pres=கின்ற்+3sghe=ஆர்",
+        "விளங்கினர்": "விளங்கு+verb+fin+sim+strong+past=இன்+3sge=அர்",
+        "விளங்குகிறார்": "விளங்கு+verb+fin+sim+strong+pres=கிற்+3sghe=ஆர்",
+        "விளங்குகின்றார்": "விளங்கு+verb+fin+sim+strong+pres=கின்ற்+3sghe=ஆர்",
+        "சாப்பிட்டார்": "சாப்பிடு+verb+fin+sim+strong+past=ட்+3sghe=ஆர்",
+        "சாப்பிடுவார்": "சாப்பிடு+verb+fin+sim+weak+fut=வ்+3sghe=ஆர்",
+        "பெறுவார்": "பெறு+verb+fin+sim+weak+fut=வ்+3sghe=ஆர்",
+        "உண்டார்": "உண்+verb+fin+sim+strong+past=ட்+3sghe=ஆர்",
+        "உண்கிறார்": "உண்+verb+fin+sim+strong+pres=கிற்+3sghe=ஆர்",
+        "உண்பார்": "உண்+verb+fin+sim+middle+fut=ப்+3sghe=ஆர்",
+        "கேட்டார்": "கேள்+verb+fin+sim+strong+past=ட்+3sghe=ஆர்",
+        "கேட்கிறார்": "கேள்+verb+fin+sim+strong+pres=கிற்+3sghe=ஆர்",
+        "கேட்பார்": "கேள்+verb+fin+sim+middle+fut=ப்+3sghe=ஆர்",
+        "ஆகினர்": "ஆகு+verb+fin+sim+strong+past=இன்+3sge=அர்",
+        "ஆகும்": "ஆகு+verb+fin+sim+strong+fut=உம்+3pln=∅",
+        "செத்தார்": "சா+verb+fin+sim+strong+past=த்+3sghe=ஆர்",
+        "சாகிறார்": "சா+verb+fin+sim+strong+pres=கிற்+3sghe=ஆர்",
+        "சாவார்": "சா+verb+fin+sim+weak+fut=வ்+3sghe=ஆர்",
+        "தந்தார்": "தா+verb+fin+sim+strong+past=த்+3sghe=ஆர்",
+        "தருகிறர்": "தா+verb+fin+sim+strong+pres=கிற்+3sge=அர்",
+        "தருவர்": "தா+verb+fin+sim+weak+fut=வ்+3sge=அர்",
+        "வெந்தார்": "வே+verb+fin+sim+strong+past=த்+3sghe=ஆர்",
+        "வேகிறார்": "வே+verb+fin+sim+strong+pres=கிற்+3sghe=ஆர்",
+        "வேவார்": "வே+verb+fin+sim+weak+fut=வ்+3sghe=ஆர்",
+        "போனர்": "போ+verb+fin+sim+strong+past=இன்+3sge=அர்",
+        "போனார்": "போ+verb+fin+sim+strong+past=இன்+3sghe=ஆர்",
+        "போயின": "போ+verb+fin+sim+strong+past=இன்+3pln=அன",
+        "காணப்படுகிறது": "காண்+verb+fin+complex+passive+strong+pres=கிற்+3sgn=அது",
+        "அறியப்பட்டுள்ள": "அறி+verb+nonfin+complex+passive+perfect+pres=∅+adjpart=அ",
+        "வெளியிடப்பட்ட": "வெளியிடு+verb+nonfin+complex+passive+past=ட்+adjpart=அ"
+        ,"உள்ளதாக": "உள்+verb+nonfin+sim+strong+pres=∅+verbalnoun=அது+trans=ஆக"
+        ,"கொண்டதாகவும்": "கொள்+verb+nonfin+sim+strong+past=ட்+verbalnoun=அது+trans=ஆக+add=உம்"
+        ,"வழங்குவதில்": "வழங்கு+verb+nonfin+sim+verbalnoun=அது+loc=இல்"
+        ,"செய்ததால்": "செய்+verb+nonfin+sim+strong+past=த்+verbalnoun=அது+inst=ஆல்"
+        ,"செய்யப்": "செய்+verb+nonfin+sim+inf=அ+sandhip=ப்"
+        ,"கேட்டுக்": "கேள்+verb+nonfin+sim+vpart=உ+sandhik=க்"
+        ,"செய்யப்பட்டுள்ளது": "செய்+verb+fin+complex+passive+perfect+pres=∅+3sgn=அது"
+        ,"செய்யப்பட்டுள்ளன": "செய்+verb+fin+complex+passive+perfect+pres=∅+3pln=அன"
+        ,"குறிப்பிடப்பட்டுள்ளது": "குறிப்பிடு+verb+fin+complex+passive+perfect+pres=∅+3sgn=அது"
+        ,"பாக்கப்பட்டுள்ளது": "பா+verb+fin+complex+passive+perfect+pres=∅+3sgn=அது"
+      },
+      "must_not_analyze": {
+        "கொளலாம்": ["கொள்+verb+nonfin+sim+inf=அ+moodpart=ஆம்"],
+        "வந்தனர்": ["வா+verb+fin+sim+strong+past=த்+3sge=அர்"],
+        "உள்ளனர்": ["உள்+verb+fin+sim+strong+pres=∅+3sge=அர்"],
+        "பாப்பட்டுள்ளது": ["பா+verb+fin+complex+passive+perfect+past=த்+3sgn=அது"],
+        "செய்கிறார்": ["செய்+verb+fin+sim+strong+pres=கிற்+3sghe=ஆர்கள்"],
+        "கொள்கின்றார்": ["கொள்+verb+fin+sim+strong+pres=கின்ற்+3sghe=ஆர்கள்"],
+        "வேந்தார்": ["வே+verb+fin+sim+strong+past=த்+3sghe=ஆர்"]
+        ,"கொறுகொறுதல்": ["கொறுகொறு+verb+nonfin+sim+verbalnoun=தல்"]
       }
     },
     "verb-c11.fst": {
       "must_analyze": {
-        "விமர்சித்து": "விமர்சி+verb+nonfin+sim+vpart=உ"
+        "தெரிவிக்கையில்": "தெரிவி+verb+nonfin+sim+verbalnoun=கை+loc=இல்",
+        "படிக்கா": "படி+verb+nonfin+sim+neg=ஆ",
+        "படிக்கின்றனர்": "படி+verb+fin+sim+strong+pres=க்கின்ற்+3ple=னர்",
+        "விமர்சித்து": "விமர்சி+verb+nonfin+sim+vpart=உ",
+        "படித்தர்": "படி+verb+fin+sim+strong+past=த்+3sge=அர்",
+        "படிக்கிறர்": "படி+verb+fin+sim+strong+pres=க்கிற்+3sge=அர்"
+        ,"நாகரீகம்விடுத்தல்": "நாகரீகம்விடு+verb+nonfin+sim+verbalnoun=தல்"
+        ,"நூதனம்விடுத்தல்": "நூதனம்விடு+verb+nonfin+sim+verbalnoun=தல்"
+      },
+      "must_not_analyze": {
+        "படிக்கிறனர்": ["படி+verb+fin+sim+strong+pres=க்கிற்+3sge=அர்"],
+        "இட்டுப்பிரித்தல்": ["இட்டுப்பிரி+verb+nonfin+sim+verbalnoun=தல்"],
+        "இருத்தான்": ["இரு+verb+fin+sim+strong+past=த்+3sgm=ஆன்"],
+        "இருத்து": ["இரு+verb+nonfin+sim+vpart=உ"]
+      }
+    },
+    "verb-c3.fst": {
+      "must_analyze": {
+        "செல்கையில்": "செல்+verb+nonfin+sim+verbalnoun=கை+loc=இல்",
+        "செல்லா": "செல்+verb+nonfin+sim+neg=ஆ",
+        "செல்கின்றனர்": "செல்+verb+fin+sim+strong+pres=கின்ற்+3ple=னர்",
+        "செல்லும்": "செல்+verb+fin+sim+strong+fut=உம்+3sgn=∅",
+        "சொல்லும்": "சொல்+verb+nonfin+sim+futANDadjpart=ம்",
+        "செல்வார்": "செல்+verb+fin+sim+weak+fut=வ்+3sghe=ஆர்",
+        "சொன்னான்": "சொல்+verb+fin+sim+strong+past=ற்+3sgm=ஆன்",
+        "சொன்னார்": "சொல்+verb+fin+sim+strong+past=ற்+3sghe=ஆர்",
+        "சொன்னால்": "சொல்+verb+nonfin+sim+con=ஆல்",
+        "சொன்னவர்கள்": "சொல்+verb+nonfin+sim+past=ற்+adjpart=அ+PartNoun=அவர்+human+pl+nom"
+      },
+      "must_not_analyze": {
+        "செலும்": ["செல்+verb+fin+sim+strong+fut=உம்+3sgn=∅"],
+        "சொலும்": ["சொல்+verb+nonfin+sim+futANDadjpart=ம்"],
+        "சொன்றார்": ["சொல்+verb+fin+sim+strong+past=ற்+3sghe=ஆர்"]
+      }
+    },
+    "verb-c4.fst": {
+      "must_analyze": {
+        "தெரியலாம்": "தெரி+verb+nonfin+sim+inf=அ+moodpart=ஆம்",
+        "தெரியா": "தெரி+verb+nonfin+sim+neg=ஆ",
+        "வாழ்கின்றனர்": "வாழ்+verb+fin+sim+strong+pres=கின்ற்+3ple=னர்"
+      },
+      "must_not_analyze": {
+        "தெரிக்கலாம்": ["தெரி+verb+nonfin+sim+inf=அ+moodpart=ஆம்"],
+        "துய்தல்": ["துய்+verb+nonfin+sim+verbalnoun=தல்"]
+      }
+    },
+    "verb-c12.fst": {
+      "must_analyze": {
+        "இருக்கலாம்": "இரு+verb+nonfin+sim+inf=க்க+moodpart=ஆம்",
+        "இருக்கவில்லை": "இரு+verb+nonfin+sim+inf=க்க+negpart=இல்லை",
+        "செய்திருக்கிறார்": "செய்திரு+verb+fin+complex+aspect+strong+pres=க்கிற்+3sghe=ஆர்",
+        "கொண்டிருக்கிறது": "கொண்டிரு+verb+fin+complex+aspect+strong+pres=க்கிற்+3sgn=அது",
+        "கிடக்கின்றனர்": "கிட+verb+fin+sim+strong+pres=க்கின்ற்+3ple=னர்",
+        "இருந்து": "இரு+verb+nonfin+sim+vpart=உ",
+        "இருந்தது": "இரு+verb+fin+sim+strong+past=த்+3sgn=அது",
+        "இருந்தால்": "இரு+verb+nonfin+sim+con=ஆல்",
+        "இருந்தார்": "இரு+verb+fin+sim+strong+past=த்+3sghe=ஆர்",
+        "இருக்கிறது": "இரு+verb+fin+sim+strong+pres=க்கிற்+3sgn=அது",
+        "இருத்தல்": "இரு+verb+nonfin+sim+verbalnoun=தல்",
+        "இருப்பதாக": "இரு+verb+nonfin+sim+strong+fut=ப்ப்+verbalnoun=அது+trans=ஆக"
+      },
+      "must_not_analyze": {
+        "செய்திரக்கக்கிறது": ["செய்திரு+verb+fin+complex+aspect+strong+pres=க்கிற்+3sgn=அது"]
+      }
+    },
+    "verb-c62.fst": {
+      "must_analyze": {
+        "புகா": "புகு+verb+nonfin+sim+neg=ஆ",
+        "நகுகின்றனர்": "நகு+verb+fin+sim+strong+pres=கின்ற்+3ple=னர்"
+      }
+    },
+    "pronoun.fst": {
+      "must_analyze": {
+        "இது": "இது+pron+dem+prox+3sgn+nom",
+        "நானும்": "நான்+pron+1sg+nom+add",
+        "என்னைப்": "நான்+pron+1sg+acc+sandhip",
+        "என்னையும்": "நான்+pron+1sg+acc+add",
+        "அதிலேயே": "அது+pron+dem+dist+3sgn+loc+foc=ஏயே"
+        ,"தானே": "தான்+pron+3sg+refl+nom+foc=ஏ"
+        ,"என்னால்": "நான்+pron+1sg+inst"
+        ,"என்னாலே": "நான்+pron+1sg+inst+foc=ஏ"
+        ,"இதனை": "இது+pron+dem+prox+3sgn+acc"
+        ,"இதனைக்": "இது+pron+dem+prox+3sgn+acc+sandhik"
+        ,"அவருடைய": "அவர்+pron+dem+dist+3sgh+gen"
+        ,"தன்னுடைய": "தான்+pron+3sg+refl+gen"
+        ,"அதற்கான": "அது+pron+dem+dist+3sgn+dat+cop=ஆ+adjpart=ன"
+      },
+      "must_not_analyze": {
+        "இது": ["இது+pron+dem+prox+pl+2sgn+nom"],
+        "என்னைப்": ["என்+pron+pssd+1sg+acc+sandhip"],
+        "என்னாலே": ["என்+pron+pssd+1sg+inst+foc=ஏ"],
+        "தன்னுடைய": ["தன்+pron+3sg+refl+gen"]
       }
     }
   }

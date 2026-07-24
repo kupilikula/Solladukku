@@ -1,0 +1,15 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -913,6 +913,12 @@
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+PartNoun%=அவர்+human+pl+soc:^ந்துள்ளவர்களுடன் #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+PartNoun%=அவர்+human+pl+soc+add:^ந்துள்ளவர்களுடனும் #;
+ LEXICON ClassIru12
++! Corpus-attested participial chains headed by இரு.
++வந்திரு      CIru12Inf;
++கொண்டுவந்திரு      CIru12Inf;
++செய்துவந்திரு      CIru12Inf;
++சிவந்திரு      CIru12Inf;
++உருவாகியிரு      CIru12Inf;
+ வைதிரு      CIru12Inf; 
+ கொய்திரு      CIru12Inf; 
+ எய்திரு      CIru12Inf; 

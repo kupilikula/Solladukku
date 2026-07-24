@@ -1,0 +1,98 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -1642,7 +1642,6 @@
+ வேதித்துத்தொலை	VtholaiInf;
+ வேர்த்துத்தொலை	VtholaiInf;
+ வேகித்துத்தொலை	VtholaiInf;
+-வேங்குத்துத்தொலை	VtholaiInf;
+ வீதித்துத்தொலை	VtholaiInf;
+ வஞ்சித்துத்தொலை	VtholaiInf;
+ யாபித்துத்தொலை	VtholaiInf;
+@@ -2285,7 +2284,6 @@
+ நொசித்துத்தொலை	VtholaiInf;
+ நெகிழ்த்துத்தொலை	VtholaiInf;
+ நெறித்துத்தொலை	VtholaiInf;
+-நெறுமுத்துத்தொலை	VtholaiInf;
+ நெறுநெறுத்துத்தொலை	VtholaiInf;
+ நெடித்துத்தொலை	VtholaiInf;
+ நெடுத்துத்தொலை	VtholaiInf;
+@@ -2422,7 +2420,6 @@
+ சாதாளித்துத்தொலை	VtholaiInf;
+ சானித்துத்தொலை	VtholaiInf;
+ சாடித்துத்தொலை	VtholaiInf;
+-சாட்டுத்துத்தொலை	VtholaiInf;
+ சண்ணித்துத்தொலை	VtholaiInf;
+ சணாய்த்துத்தொலை	VtholaiInf;
+ சையோகித்துத்தொலை	VtholaiInf;
+@@ -2453,7 +2450,6 @@
+ செங்காரித்துத்தொலை	VtholaiInf;
+ சகித்துத்தொலை	VtholaiInf;
+ சகளீகரித்துத்தொலை	VtholaiInf;
+-சக்களித்துத்தொலை	VtholaiInf;
+ சகாரித்துத்தொலை	VtholaiInf;
+ சபித்துத்தொலை	VtholaiInf;
+ சப்பளித்துத்தொலை	VtholaiInf;
+@@ -2465,7 +2461,6 @@
+ சன்னியாசித்துத்தொலை	VtholaiInf;
+ சன்னித்துத்தொலை	VtholaiInf;
+ சலித்துத்தொலை	VtholaiInf;
+-சல்லரித்துத்தொலை	VtholaiInf;
+ சல்லாபித்துத்தொலை	VtholaiInf;
+ சற்கரித்துத்தொலை	VtholaiInf;
+ சட்டித்துத்தொலை	VtholaiInf;
+@@ -2493,7 +2488,6 @@
+ சங்கரித்துத்தொலை	VtholaiInf;
+ சங்கற்பித்துத்தொலை	VtholaiInf;
+ சூத்திரித்துத்தொலை	VtholaiInf;
+-சூர்த்துத்தொலை	VtholaiInf;
+ சூரணித்துத்தொலை	VtholaiInf;
+ சூக்குமித்துத்தொலை	VtholaiInf;
+ சூசிப்பித்துத்தொலை	VtholaiInf;
+@@ -2532,7 +2526,6 @@
+ ஒடித்துத்தொலை	VtholaiInf;
+ ஒஞ்சித்துத்தொலை	VtholaiInf;
+ ஏய்த்துத்தொலை	VtholaiInf;
+-ஏர்த்துத்தொலை	VtholaiInf;
+ ஏம்பலித்துத்தொலை	VtholaiInf;
+ ஏற்பித்துத்தொலை	VtholaiInf;
+ ஔவித்துத்தொலை	VtholaiInf;
+@@ -2903,7 +2896,6 @@
+ சுழன்றுத்தொலை	VtholaiInf;
+ சான்றுத்தொலை	VtholaiInf;
+ சோன்றுத்தொலை	VtholaiInf;
+-சொன்றுத்தொலை	VtholaiInf;
+ சூன்றுத்தொலை	VtholaiInf;
+ நிழன்றுத்தொலை	VtholaiInf;
+ நிரன்றுத்தொலை	VtholaiInf;
+@@ -3016,7 +3008,6 @@
+ தசைந்துதொலை	VtholaiInf;
+ துழைந்துதொலை	VtholaiInf;
+ துலைந்துதொலை	VtholaiInf;
+-துய்ந்துதொலை	VtholaiInf;
+ துயர்ந்துதொலை	VtholaiInf;
+ துமிந்துதொலை	VtholaiInf;
+ துதைந்துதொலை	VtholaiInf;
+@@ -3120,7 +3111,6 @@
+ பிணிந்துதொலை	VtholaiInf;
+ பிணைந்துதொலை	VtholaiInf;
+ பரிந்துதொலை	VtholaiInf;
+-பூர்ந்துதொலை	VtholaiInf;
+ பகிர்ந்துதொலை	VtholaiInf;
+ பகர்ந்துதொலை	VtholaiInf;
+ பகுந்துதொலை	VtholaiInf;
+@@ -3873,7 +3863,6 @@
+ சாடித்தொலை	VtholaiInf;
+ சார்த்தித்தொலை	VtholaiInf;
+ சாத்தித்தொலை	VtholaiInf;
+-சண்ணிித்தொலை	VtholaiInf;
+ சங்கித்தொலை	VtholaiInf;
+ சலுப்பித்தொலை	VtholaiInf;
+ சல்லித்தொலை	VtholaiInf;
+@@ -4353,7 +4342,6 @@
+ உரைசித்தொலை	VtholaiInf;
+ உரைஞ்சித்தொலை	VtholaiInf;
+ உரிஞ்சித்தொலை	VtholaiInf;
+-உரிித்தொலை	VtholaiInf;
+ உரசித்தொலை	VtholaiInf;
+ உராவித்தொலை	VtholaiInf;
+ உராய்ஞ்சித்தொலை	VtholaiInf;

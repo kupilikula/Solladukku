@@ -1,0 +1,33 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -349,6 +349,10 @@
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+ LEXICON ClassTwo
++
++! Final full-paradigm source review
++ஒத்துக்கொள்    C2Vinf;
++வைத்துக்கொள்    C2Vinf;
+ 
+ அரள்   C2Vinf;
+ உருள்   C2Vinf;
+@@ -12611,6 +12615,9 @@
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON Class13
+ 
++! Citation/second-person singular imperative surface retained by Class13
++ஆகு:ஆகு AakuBareImp;
++
+ ஆகு:ஆ      C13Vinf;
+ உண்டாகு:உண்டா      C13Vinf;
+ ஆளாகு:ஆளா      C13Vinf;
+@@ -12619,6 +12626,9 @@
+ மேலாகு:மேலா      C13Vinf;
+ வெளியாகு:வெளியா      C13Vinf;
+ 
++
++LEXICON AakuBareImp
+++verb+fin+sim+imp%=∅+2sg%=∅: #;
+ 
+ LEXICON C13Vinf
+ 

@@ -1,0 +1,69 @@
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist +psp_padi +vpart_pin +colloq
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist +psp_padi +vpart_pin +colloq +report
+ 
+ LEXICON Root
+ 
+@@ -475,7 +475,13 @@
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3pln%=∅:^விும் VerbQuestion;
+ +verb+fin+sim+opt%=க:^க #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை:^அவில்லை #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+ques%=ஆ:^அவில்லையா #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+foc%=ஏ:^அவில்லையே #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+report%=ஆம்:^அவில்லையாம் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq:^அல #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq+ques%=ஆ:^அலையா #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq+foc%=ஏ:^அலையே #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq+report%=ஆம்:^அலையாம் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhip%=ப்:^அவில்லைப் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhic%=ச்:^அவில்லைச் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhit%=த்:^அவில்லைத் #;
+@@ -542,9 +548,13 @@
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhit%=த்:^ாதுத் #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅+sandhik%=க்:^ாதுக் #;
+ +verb+nonfin+sim+con%=ஆல்:^தால் #;
+++verb+nonfin+sim+con%=ஆல்+foc%=ஏ:^தாலே #;
+++verb+nonfin+sim+con%=ஆல்+foc%=தான்:^தால்தான் #;
+ +verb+nonfin+sim+con%=ஆல்+colloq:^தா #;
+ +verb+nonfin+sim+con%=ஆல்+add%=உம்:^தாலும் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+foc%=ஏ:^ாவிட்டாலே #;
+++verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+foc%=தான்:^ாவிட்டால்தான் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^ாவிட்டாலும் #;
+ +verb+nonfin+sim+past%=ற்+adjpart%=அ:^ன்ற #;
+@@ -876,11 +886,19 @@
+ ! Productive polar-question clitic; imperatives and optatives do not enter here.
+ : #;
+ +ques%=ஆ:~ா #;
+++ques%=ஓ:~ோ #;
+++foc%=ஏ:~ே #;
+++report%=ஆம்:~ாம் #;
+++comp%=என்று+colloq:~னு #;
+ 
+ LEXICON VerbQuestionNeuterPlural
+ ! Past/present neuter plural ends in bare -na and takes the -vaa allomorph.
+ : #;
+ +ques%=ஆ:~வா #;
+++ques%=ஓ:~வோ #;
+++foc%=ஏ:~வே #;
+++report%=ஆம்:~வாம் #;
+++comp%=என்று+colloq:~னு #;
+ 
+ ! Productive gendered singular human participial nouns. The incoming lower
+ ! side is the realized adjectival or future-participial stem.
+@@ -942,4 +960,8 @@
+ LEXICON VerbQuestionColloquialNg
+ : #;
+ +ques%=ஆ:~ளா #;
+-
+++ques%=ஓ:~ளோ #;
+++foc%=ஏ:~ளே #;
+++report%=ஆம்:~ளாம் #;
+++comp%=என்று+colloq:~ன்னு #;
++

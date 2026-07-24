@@ -1,0 +1,22 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -11602,6 +11602,9 @@
+ 
+ LEXICON ClassMudi11Inf
+ 
++! Reviewed dictionary citation continuation
+++verb+nonfin+complex+mood+verbalnoun%=தல்:^த்தல் #;
++
+ 
+ 
+ 
+@@ -20625,6 +20628,9 @@
+ 
+ LEXICON ClassPar11Inf
+ 
++! Reviewed dictionary citation continuation
+++verb+nonfin+complex+nonattitude+verbalnoun%=தல்:^த்தல் #;
++
+ 
+ 
+ 

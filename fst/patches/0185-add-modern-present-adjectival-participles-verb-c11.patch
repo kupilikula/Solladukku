@@ -1,0 +1,41 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -1447,6 +1447,7 @@
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^த்த #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்:^த்தோர் #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^க்கும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -4668,6 +4669,7 @@
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ:^த்த #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்:^க்கும் #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -13750,6 +13752,7 @@
+ +verb+nonfin+complex+mood+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+ +verb+nonfin+complex+mood+past%=த்+adjpart%=அ:^த்த #;
+ +verb+nonfin+complex+mood+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+complex+mood+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+ +verb+nonfin+complex+mood+futANDadjpart%=உம்:^க்கும் #;
+ +verb+nonfin+complex+mood+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -16967,6 +16970,7 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ:^ின #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ:^க்கிற #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+@@ -26115,5 +26119,6 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ:^த்த #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்:^க்கும் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ:^ாத #;

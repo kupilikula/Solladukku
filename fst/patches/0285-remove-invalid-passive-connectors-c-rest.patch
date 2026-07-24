@@ -1,0 +1,427 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -9924,7 +9924,6 @@
+ இயை:இயைக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ இயை:இயையப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ இர:இரக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-இரு:இரக்கக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ இரங்கு:இரங்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ இரசி:இரசிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ இரட்சி:இரட்சிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -10768,7 +10767,6 @@
+ சாடு:சாடப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சாடி:சாடிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சாட்டு:சாட்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-சாட்டு:சாட்டுக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சாதாளி:சாதாளிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சாதி:சாதிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ சாத்து:சாத்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -11280,7 +11278,6 @@
+ துயல்:துயலப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ துயிற்று:துயிற்றப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ துயில்:துயிலப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-துய்:துய்ப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ துய்:துய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ துர:துரக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ துரத்து:துரத்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -12633,7 +12630,6 @@
+ வெள்விளர்:வெள்விளர்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வேகி:வேகிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வேங்கு:வேங்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+-வேங்கு:வேங்குக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வேசறு:வேசறப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வேண்டு:வேண்டப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ வேதி:வேதிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+@@ -25205,7 +25201,6 @@
+ வேதிக்கப்படப்போ            ClassPo5Inf; 
+ வேர்க்கப்படப்போ            ClassPo5Inf; 
+ வேகிக்கப்படப்போ            ClassPo5Inf; 
+-வேங்குக்கப்படப்போ            ClassPo5Inf; 
+ வீதிக்கப்படப்போ            ClassPo5Inf; 
+ வஞ்சிக்கப்படப்போ            ClassPo5Inf; 
+ யாபிக்கப்படப்போ            ClassPo5Inf; 
+@@ -25942,7 +25937,6 @@
+ சாதாளிக்கப்படப்போ            ClassPo5Inf; 
+ சானிக்கப்படப்போ            ClassPo5Inf; 
+ சாடிக்கப்படப்போ            ClassPo5Inf; 
+-சாட்டுக்கப்படப்போ            ClassPo5Inf; 
+ சண்ணிக்கப்படப்போ            ClassPo5Inf; 
+ சணாய்க்கப்படப்போ            ClassPo5Inf; 
+ சையோகிக்கப்படப்போ            ClassPo5Inf; 
+@@ -26268,7 +26262,6 @@
+ இறக்கப்படப்போ            ClassPo5Inf; 
+ இயக்கப்படப்போ            ClassPo5Inf; 
+ இழக்கப்படப்போ            ClassPo5Inf; 
+-இரக்கக்கப்படப்போ            ClassPo5Inf; 
+ இரக்கப்படப்போ            ClassPo5Inf; 
+ இடக்கப்படப்போ            ClassPo5Inf; 
+ அல்லாக்கப்படப்போ            ClassPo5Inf; 
+@@ -26444,7 +26437,6 @@
+ தசையப்படப்போ            ClassPo5Inf; 
+ துழையப்படப்போ            ClassPo5Inf; 
+ துலையப்படப்போ            ClassPo5Inf; 
+-துய்ப்படப்போ            ClassPo5Inf; 
+ துயர்ப்படப்போ            ClassPo5Inf; 
+ துதையப்படப்போ            ClassPo5Inf; 
+ துளர்க்கப்படப்போ            ClassPo5Inf; 
+@@ -28034,7 +28026,6 @@
+ வேதிக்கப்போ            ClassPo5Inf; 
+ வேர்க்கப்போ            ClassPo5Inf; 
+ வேகிக்கப்போ            ClassPo5Inf; 
+-வேங்குக்கப்போ            ClassPo5Inf; 
+ வீதிக்கப்போ            ClassPo5Inf; 
+ வஞ்சிக்கப்போ            ClassPo5Inf; 
+ யாபிக்கப்போ            ClassPo5Inf; 
+@@ -28771,7 +28762,6 @@
+ சாதாளிக்கப்போ            ClassPo5Inf; 
+ சானிக்கப்போ            ClassPo5Inf; 
+ சாடிக்கப்போ            ClassPo5Inf; 
+-சாட்டுக்கப்போ            ClassPo5Inf; 
+ சண்ணிக்கப்போ            ClassPo5Inf; 
+ சணாய்க்கப்போ            ClassPo5Inf; 
+ சையோகிக்கப்போ            ClassPo5Inf; 
+@@ -29097,7 +29087,6 @@
+ இறக்கப்போ            ClassPo5Inf; 
+ இயக்கப்போ            ClassPo5Inf; 
+ இழக்கப்போ            ClassPo5Inf; 
+-இரக்கக்கப்போ            ClassPo5Inf; 
+ இரக்கப்போ            ClassPo5Inf; 
+ இடக்கப்போ            ClassPo5Inf; 
+ அல்லாக்கப்போ            ClassPo5Inf; 
+@@ -38410,7 +38399,6 @@
+ வேதிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வேர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வேகிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-வேங்குக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வீதிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ வஞ்சிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ யாபிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -39147,7 +39135,6 @@
+ சாதாளிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சானிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சாடிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-சாட்டுக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சண்ணிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சணாய்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ சையோகிக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -39473,7 +39460,6 @@
+ இறக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ இயக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ இழக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+-இரக்கக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ இரக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ இடக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+ அல்லாக்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -39649,7 +39635,6 @@
+ தசையப்படப்பண்ணு                  ClassPannu5Inf; 
+ துழையப்படப்பண்ணு                  ClassPannu5Inf; 
+ துலையப்படப்பண்ணு                  ClassPannu5Inf; 
+-துய்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ துயர்ப்படப்பண்ணு                  ClassPannu5Inf; 
+ துதையப்படப்பண்ணு                  ClassPannu5Inf; 
+ துளர்க்கப்படப்பண்ணு                  ClassPannu5Inf; 
+@@ -41239,7 +41224,6 @@
+ வேதிக்கப்பண்ணு                  ClassPannu5Inf; 
+ வேர்க்கப்பண்ணு                  ClassPannu5Inf; 
+ வேகிக்கப்பண்ணு                  ClassPannu5Inf; 
+-வேங்குக்கப்பண்ணு                  ClassPannu5Inf; 
+ வீதிக்கப்பண்ணு                  ClassPannu5Inf; 
+ வஞ்சிக்கப்பண்ணு                  ClassPannu5Inf; 
+ யாபிக்கப்பண்ணு                  ClassPannu5Inf; 
+@@ -41976,7 +41960,6 @@
+ சாதாளிக்கப்பண்ணு                  ClassPannu5Inf; 
+ சானிக்கப்பண்ணு                  ClassPannu5Inf; 
+ சாடிக்கப்பண்ணு                  ClassPannu5Inf; 
+-சாட்டுக்கப்பண்ணு                  ClassPannu5Inf; 
+ சண்ணிக்கப்பண்ணு                  ClassPannu5Inf; 
+ சணாய்க்கப்பண்ணு                  ClassPannu5Inf; 
+ சையோகிக்கப்பண்ணு                  ClassPannu5Inf; 
+@@ -42302,7 +42285,6 @@
+ இறக்கப்பண்ணு                  ClassPannu5Inf; 
+ இயக்கப்பண்ணு                  ClassPannu5Inf; 
+ இழக்கப்பண்ணு                  ClassPannu5Inf; 
+-இரக்கக்கப்பண்ணு                  ClassPannu5Inf; 
+ இரக்கப்பண்ணு                  ClassPannu5Inf; 
+ இடக்கப்பண்ணு                  ClassPannu5Inf; 
+ அல்லாக்கப்பண்ணு                  ClassPannu5Inf; 
+@@ -44486,7 +44468,6 @@
+ வேதிக்கப்படச்செய்            ClassSei1Inf; 
+ வேர்க்கப்படச்செய்            ClassSei1Inf; 
+ வேகிக்கப்படச்செய்            ClassSei1Inf; 
+-வேங்குக்கப்படச்செய்            ClassSei1Inf; 
+ வீதிக்கப்படச்செய்            ClassSei1Inf; 
+ வஞ்சிக்கப்படச்செய்            ClassSei1Inf; 
+ யாபிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -45223,7 +45204,6 @@
+ சாதாளிக்கப்படச்செய்            ClassSei1Inf; 
+ சானிக்கப்படச்செய்            ClassSei1Inf; 
+ சாடிக்கப்படச்செய்            ClassSei1Inf; 
+-சாட்டுக்கப்படச்செய்            ClassSei1Inf; 
+ சண்ணிக்கப்படச்செய்            ClassSei1Inf; 
+ சணாய்க்கப்படச்செய்            ClassSei1Inf; 
+ சையோகிக்கப்படச்செய்            ClassSei1Inf; 
+@@ -45549,7 +45529,6 @@
+ இறக்கப்படச்செய்            ClassSei1Inf; 
+ இயக்கப்படச்செய்            ClassSei1Inf; 
+ இழக்கப்படச்செய்            ClassSei1Inf; 
+-இரக்கக்கப்படச்செய்            ClassSei1Inf; 
+ இரக்கப்படச்செய்            ClassSei1Inf; 
+ இடக்கப்படச்செய்            ClassSei1Inf; 
+ அல்லாக்கப்படச்செய்            ClassSei1Inf; 
+@@ -45725,7 +45704,6 @@
+ தசையப்படச்செய்            ClassSei1Inf; 
+ துழையப்படச்செய்            ClassSei1Inf; 
+ துலையப்படச்செய்            ClassSei1Inf; 
+-துய்ப்படச்செய்            ClassSei1Inf; 
+ துயர்ப்படச்செய்            ClassSei1Inf; 
+ துதையப்படச்செய்            ClassSei1Inf; 
+ துளர்க்கப்படச்செய்            ClassSei1Inf; 
+@@ -47315,7 +47293,6 @@
+ வேதிக்கச்செய்            ClassSei1Inf; 
+ வேர்க்கச்செய்            ClassSei1Inf; 
+ வேகிக்கச்செய்            ClassSei1Inf; 
+-வேங்குக்கச்செய்            ClassSei1Inf; 
+ வீதிக்கச்செய்            ClassSei1Inf; 
+ வஞ்சிக்கச்செய்            ClassSei1Inf; 
+ யாபிக்கச்செய்            ClassSei1Inf; 
+@@ -48052,7 +48029,6 @@
+ சாதாளிக்கச்செய்            ClassSei1Inf; 
+ சானிக்கச்செய்            ClassSei1Inf; 
+ சாடிக்கச்செய்            ClassSei1Inf; 
+-சாட்டுக்கச்செய்            ClassSei1Inf; 
+ சண்ணிக்கச்செய்            ClassSei1Inf; 
+ சணாய்க்கச்செய்            ClassSei1Inf; 
+ சையோகிக்கச்செய்            ClassSei1Inf; 
+@@ -48378,7 +48354,6 @@
+ இறக்கச்செய்            ClassSei1Inf; 
+ இயக்கச்செய்            ClassSei1Inf; 
+ இழக்கச்செய்            ClassSei1Inf; 
+-இரக்கக்கச்செய்            ClassSei1Inf; 
+ இரக்கச்செய்            ClassSei1Inf; 
+ இடக்கச்செய்            ClassSei1Inf; 
+ அல்லாக்கச்செய்            ClassSei1Inf; 
+@@ -50558,7 +50533,6 @@
+ வேதிக்கப்படவை            ClassVai1Inf; 
+ வேர்க்கப்படவை            ClassVai1Inf; 
+ வேகிக்கப்படவை            ClassVai1Inf; 
+-வேங்குக்கப்படவை            ClassVai1Inf; 
+ வீதிக்கப்படவை            ClassVai1Inf; 
+ வஞ்சிக்கப்படவை            ClassVai1Inf; 
+ யாபிக்கப்படவை            ClassVai1Inf; 
+@@ -51295,7 +51269,6 @@
+ சாதாளிக்கப்படவை            ClassVai1Inf; 
+ சானிக்கப்படவை            ClassVai1Inf; 
+ சாடிக்கப்படவை            ClassVai1Inf; 
+-சாட்டுக்கப்படவை            ClassVai1Inf; 
+ சண்ணிக்கப்படவை            ClassVai1Inf; 
+ சணாய்க்கப்படவை            ClassVai1Inf; 
+ சையோகிக்கப்படவை            ClassVai1Inf; 
+@@ -51621,7 +51594,6 @@
+ இறக்கப்படவை            ClassVai1Inf; 
+ இயக்கப்படவை            ClassVai1Inf; 
+ இழக்கப்படவை            ClassVai1Inf; 
+-இரக்கக்கப்படவை            ClassVai1Inf; 
+ இரக்கப்படவை            ClassVai1Inf; 
+ இடக்கப்படவை            ClassVai1Inf; 
+ அல்லாக்கப்படவை            ClassVai1Inf; 
+@@ -51797,7 +51769,6 @@
+ தசையப்படவை            ClassVai1Inf; 
+ துழையப்படவை            ClassVai1Inf; 
+ துலையப்படவை            ClassVai1Inf; 
+-துய்ப்படவை            ClassVai1Inf; 
+ துயர்ப்படவை            ClassVai1Inf; 
+ துதையப்படவை            ClassVai1Inf; 
+ துளர்க்கப்படவை            ClassVai1Inf; 
+@@ -53388,7 +53359,6 @@
+ வேதிக்கவை            ClassVai1Inf; 
+ வேர்க்கவை            ClassVai1Inf; 
+ வேகிக்கவை            ClassVai1Inf; 
+-வேங்குக்கவை            ClassVai1Inf; 
+ வீதிக்கவை            ClassVai1Inf; 
+ வஞ்சிக்கவை            ClassVai1Inf; 
+ யாபிக்கவை            ClassVai1Inf; 
+@@ -54131,7 +54101,6 @@
+ சாதாளிக்கவை            ClassVai1Inf; 
+ சானிக்கவை            ClassVai1Inf; 
+ சாடிக்கவை            ClassVai1Inf; 
+-சாட்டுக்கவை            ClassVai1Inf; 
+ சண்ணிக்கவை            ClassVai1Inf; 
+ சணாய்க்கவை            ClassVai1Inf; 
+ சையோகிக்கவை            ClassVai1Inf; 
+@@ -54458,7 +54427,6 @@
+ இறக்கவை            ClassVai1Inf; 
+ இயக்கவை            ClassVai1Inf; 
+ இழக்கவை            ClassVai1Inf; 
+-இரக்கக்கவை            ClassVai1Inf; 
+ இரக்கவை            ClassVai1Inf; 
+ இடக்கவை            ClassVai1Inf; 
+ அல்லாக்கவை            ClassVai1Inf; 
+@@ -56611,7 +56579,6 @@
+ வேதிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வேர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ வேகிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-வேங்குக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வீதிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ வஞ்சிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ யாபிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57348,7 +57315,6 @@
+ சாதாளிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சானிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சாடிக்கப்படக்கூடு            ClassKoodu5Inf; 
+-சாட்டுக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சண்ணிக்கப்படக்கூடு            ClassKoodu5Inf; 
+ சணாய்க்கப்படக்கூடு            ClassKoodu5Inf; 
+ சையோகிக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57674,7 +57640,6 @@
+ இறக்கப்படக்கூடு            ClassKoodu5Inf; 
+ இயக்கப்படக்கூடு            ClassKoodu5Inf; 
+ இழக்கப்படக்கூடு            ClassKoodu5Inf; 
+-இரக்கக்கப்படக்கூடு            ClassKoodu5Inf; 
+ இரக்கப்படக்கூடு            ClassKoodu5Inf; 
+ இடக்கப்படக்கூடு            ClassKoodu5Inf; 
+ அல்லாக்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -57850,7 +57815,6 @@
+ தசையப்படக்கூடு            ClassKoodu5Inf; 
+ துழையப்படக்கூடு            ClassKoodu5Inf; 
+ துலையப்படக்கூடு            ClassKoodu5Inf; 
+-துய்ப்படக்கூடு            ClassKoodu5Inf; 
+ துயர்ப்படக்கூடு            ClassKoodu5Inf; 
+ துதையப்படக்கூடு            ClassKoodu5Inf; 
+ துளர்க்கப்படக்கூடு            ClassKoodu5Inf; 
+@@ -59440,7 +59404,6 @@
+ வேதிக்கக்கூடு            ClassKoodu5Inf; 
+ வேர்க்கக்கூடு            ClassKoodu5Inf; 
+ வேகிக்கக்கூடு            ClassKoodu5Inf; 
+-வேங்குக்கக்கூடு            ClassKoodu5Inf; 
+ வீதிக்கக்கூடு            ClassKoodu5Inf; 
+ வஞ்சிக்கக்கூடு            ClassKoodu5Inf; 
+ யாபிக்கக்கூடு            ClassKoodu5Inf; 
+@@ -60177,7 +60140,6 @@
+ சாதாளிக்கக்கூடு            ClassKoodu5Inf; 
+ சானிக்கக்கூடு            ClassKoodu5Inf; 
+ சாடிக்கக்கூடு            ClassKoodu5Inf; 
+-சாட்டுக்கக்கூடு            ClassKoodu5Inf; 
+ சண்ணிக்கக்கூடு            ClassKoodu5Inf; 
+ சணாய்க்கக்கூடு            ClassKoodu5Inf; 
+ சையோகிக்கக்கூடு            ClassKoodu5Inf; 
+@@ -60503,8 +60465,6 @@
+ இறக்கக்கூடு            ClassKoodu5Inf; 
+ இயக்கக்கூடு            ClassKoodu5Inf; 
+ இழக்கக்கூடு            ClassKoodu5Inf; 
+-இரக்கக்கக்கூடு            ClassKoodu5Inf; 
+-இரக்கக்கூடு            ClassKoodu5Inf; 
+ இடக்கக்கூடு            ClassKoodu5Inf; 
+ அல்லாக்கக்கூடு            ClassKoodu5Inf; 
+ அலமலக்கக்கூடு            ClassKoodu5Inf; 
+@@ -62686,7 +62646,6 @@
+ வேதிக்கப்படவேண்டு            ClassVendu5Inf; 
+ வேர்க்கப்படவேண்டு            ClassVendu5Inf; 
+ வேகிக்கப்படவேண்டு            ClassVendu5Inf; 
+-வேங்குக்கப்படவேண்டு            ClassVendu5Inf; 
+ வீதிக்கப்படவேண்டு            ClassVendu5Inf; 
+ வஞ்சிக்கப்படவேண்டு            ClassVendu5Inf; 
+ யாபிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -63423,7 +63382,6 @@
+ சாதாளிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சானிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சாடிக்கப்படவேண்டு            ClassVendu5Inf; 
+-சாட்டுக்கப்படவேண்டு            ClassVendu5Inf; 
+ சண்ணிக்கப்படவேண்டு            ClassVendu5Inf; 
+ சணாய்க்கப்படவேண்டு            ClassVendu5Inf; 
+ சையோகிக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -63749,7 +63707,6 @@
+ இறக்கப்படவேண்டு            ClassVendu5Inf; 
+ இயக்கப்படவேண்டு            ClassVendu5Inf; 
+ இழக்கப்படவேண்டு            ClassVendu5Inf; 
+-இரக்கக்கப்படவேண்டு            ClassVendu5Inf; 
+ இரக்கப்படவேண்டு            ClassVendu5Inf; 
+ இடக்கப்படவேண்டு            ClassVendu5Inf; 
+ அல்லாக்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -63925,7 +63882,6 @@
+ தசையப்படவேண்டு            ClassVendu5Inf; 
+ துழையப்படவேண்டு            ClassVendu5Inf; 
+ துலையப்படவேண்டு            ClassVendu5Inf; 
+-துய்ப்படவேண்டு            ClassVendu5Inf; 
+ துயர்ப்படவேண்டு            ClassVendu5Inf; 
+ துதையப்படவேண்டு            ClassVendu5Inf; 
+ துளர்க்கப்படவேண்டு            ClassVendu5Inf; 
+@@ -65515,7 +65471,6 @@
+ வேதிக்கவேண்டு            ClassVendu5Inf; 
+ வேர்க்கவேண்டு            ClassVendu5Inf; 
+ வேகிக்கவேண்டு            ClassVendu5Inf; 
+-வேங்குக்கவேண்டு            ClassVendu5Inf; 
+ வீதிக்கவேண்டு            ClassVendu5Inf; 
+ வஞ்சிக்கவேண்டு            ClassVendu5Inf; 
+ யாபிக்கவேண்டு            ClassVendu5Inf; 
+@@ -66252,7 +66207,6 @@
+ சாதாளிக்கவேண்டு            ClassVendu5Inf; 
+ சானிக்கவேண்டு            ClassVendu5Inf; 
+ சாடிக்கவேண்டு            ClassVendu5Inf; 
+-சாட்டுக்கவேண்டு            ClassVendu5Inf; 
+ சண்ணிக்கவேண்டு            ClassVendu5Inf; 
+ சணாய்க்கவேண்டு            ClassVendu5Inf; 
+ சையோகிக்கவேண்டு            ClassVendu5Inf; 
+@@ -66578,7 +66532,6 @@
+ இறக்கவேண்டு            ClassVendu5Inf; 
+ இயக்கவேண்டு            ClassVendu5Inf; 
+ இழக்கவேண்டு            ClassVendu5Inf; 
+-இரக்கக்கவேண்டு            ClassVendu5Inf; 
+ இரக்கவேண்டு            ClassVendu5Inf; 
+ இடக்கவேண்டு            ClassVendu5Inf; 
+ அல்லாக்கவேண்டு            ClassVendu5Inf; 
+@@ -75669,7 +75622,6 @@
+ வேதி:%<PV%>வேதிக்கப்படு    CPadu61Vinf;
+ வேர்:%<PV%>வேர்க்கப்படு    CPadu61Vinf;
+ வேகி:%<PV%>வேகிக்கப்படு    CPadu61Vinf;
+-வேங்கு:%<PV%>வேங்குக்கப்படு    CPadu61Vinf;
+ வீதி:%<PV%>வீதிக்கப்படு    CPadu61Vinf;
+ வஞ்சி:%<PV%>வஞ்சிக்கப்படு    CPadu61Vinf;
+ யாபி:%<PV%>யாபிக்கப்படு    CPadu61Vinf;
+@@ -76421,7 +76373,6 @@
+ சாதாளி:%<PV%>சாதாளிக்கப்படு    CPadu61Vinf;
+ சானி:%<PV%>சானிக்கப்படு    CPadu61Vinf;
+ சாடி:%<PV%>சாடிக்கப்படு    CPadu61Vinf;
+-சாட்டு:%<PV%>சாட்டுக்கப்படு    CPadu61Vinf;
+ சண்ணி:%<PV%>சண்ணிக்கப்படு    CPadu61Vinf;
+ சணாய்:%<PV%>சணாய்க்கப்படு    CPadu61Vinf;
+ சையோகி:%<PV%>சையோகிக்கப்படு    CPadu61Vinf;
+@@ -76762,7 +76713,6 @@
+ இய:%<PV%>இயக்கப்படு    CPadu61Vinf;
+ இயக்கு:%<PV%>இயக்கப்படு    CPadu61Vinf;
+ இழ:%<PV%>இழக்கப்படு    CPadu61Vinf;
+-இரு:%<PV%>இரக்கக்கப்படு    CPadu61Vinf;
+ இர:%<PV%>இரக்கப்படு    CPadu61Vinf;
+ இட:%<PV%>இடக்கப்படு    CPadu61Vinf;
+ இடக்கு:%<PV%>இடக்கப்படு    CPadu61Vinf;
+@@ -76944,7 +76894,6 @@
+ தசை:%<PV%>தசையப்படு    CPadu61Vinf;
+ துழை:%<PV%>துழையப்படு    CPadu61Vinf;
+ துலை:%<PV%>துலையப்படு    CPadu61Vinf;
+-துய்:%<PV%>துய்ப்படு    CPadu61Vinf;
+ துயர்:%<PV%>துயர்ப்படு    CPadu61Vinf;
+ துதை:%<PV%>துதையப்படு    CPadu61Vinf;
+ துளர்:%<PV%>துளர்க்கப்படு    CPadu61Vinf;
+@@ -79151,7 +79100,6 @@
+ வேதிக்கப்பெறு                CPeru63Vinf; 
+ வேர்க்கப்பெறு                CPeru63Vinf; 
+ வேகிக்கப்பெறு                CPeru63Vinf; 
+-வேங்குக்கப்பெறு                CPeru63Vinf; 
+ வீதிக்கப்பெறு                CPeru63Vinf; 
+ வஞ்சிக்கப்பெறு                CPeru63Vinf; 
+ யாபிக்கப்பெறு                CPeru63Vinf; 
+@@ -79889,7 +79837,6 @@
+ சாதாளிக்கப்பெறு                CPeru63Vinf; 
+ சானிக்கப்பெறு                CPeru63Vinf; 
+ சாடிக்கப்பெறு                CPeru63Vinf; 
+-சாட்டுக்கப்பெறு                CPeru63Vinf; 
+ சண்ணிக்கப்பெறு                CPeru63Vinf; 
+ சணாய்க்கப்பெறு                CPeru63Vinf; 
+ சையோகிக்கப்பெறு                CPeru63Vinf; 
+@@ -80215,7 +80162,6 @@
+ இறக்கப்பெறு                CPeru63Vinf; 
+ இயக்கப்பெறு                CPeru63Vinf; 
+ இழக்கப்பெறு                CPeru63Vinf; 
+-இரக்கக்கப்பெறு                CPeru63Vinf; 
+ இரக்கப்பெறு                CPeru63Vinf; 
+ இடக்கப்பெறு                CPeru63Vinf; 
+ அல்லாக்கப்பெறு                CPeru63Vinf; 

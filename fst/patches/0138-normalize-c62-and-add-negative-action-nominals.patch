@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C62.lexc
++++ ThamizhiVerbs-C62.lexc
+@@ -154,6 +154,7 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^ந்துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^ந்துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+verbalnoun%=மை:^ாமை #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+sim+con%=ஆல்:^கால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;

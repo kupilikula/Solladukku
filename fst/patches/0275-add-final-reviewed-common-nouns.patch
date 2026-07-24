@@ -1,0 +1,58 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -3555,6 +3555,14 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++! Final reviewed common-lexeme coverage.
++காவல்துறை	C2SgRoot;
++சனவரி	C2SgRoot;
++பச்சை	C2SgRoot;
++பெப்ரவரி	C2SgRoot;
++பேதைமை	C2SgRoot;
++ரீதி	C2SgRoot;
++உடைமை	C2SgRoot;
+ அடிப்படை	C2SgRoot;
+ ஜோதி	C2SgRoot;
+ கூட்டணி	C2SgRoot;
+@@ -44630,6 +44638,8 @@
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^க்களின்கீழேயிருந்தும் #;
+ LEXICON C4Sg
++! Final reviewed common-lexeme coverage.
++சான்றிதழ்	C4SgRoot;
+ அக்கீம்	  C4SgRoot ;
+ தீம்	  C4SgRoot ;
+ வாக்குண்டாம்	  C4SgRoot ;
+@@ -56017,6 +56027,11 @@
+ 
+ 
+ LEXICON C7Sg
++! Final reviewed common-lexeme coverage.
++உலகு	C7SgRoot;
++எளிது	C7SgRoot;
++தூது	C7SgRoot;
++மூலக்கூற்று	C7SgRoot;
+ பதிவு	C7SgRoot;
+ குறைவு	  C7SgRoot ;
+ நிறைவு	  C7SgRoot ;
+@@ -71704,6 +71719,9 @@
+ +noun+pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ LEXICON C11Sg
++! Final reviewed common-lexeme coverage.
++சூன்	C11SgRoot;
++பலன்	C11SgRoot;
+ திறன்	C11SgRoot;
+ 
+ மனிதன்		  C11SgRoot ; 
+@@ -132632,6 +132650,9 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^ங்களின்கீழேயிருந்தும் #;
+ 
+ LEXICON C16Sg
++! Final reviewed common-lexeme coverage.
++தேவர்	C16SgRoot;
++ஓவியர்	C16SgRoot;
+ அதிபர்	C16SgRoot;
+ நண்பர்	C16SgRoot;
+ செயலர்	C16SgRoot;

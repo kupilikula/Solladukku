@@ -1,0 +1,34 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -4422,6 +4422,7 @@
+ பதர்  C11Vinf;
+ பயிர்  C11Vinf;
+ பார்  C11Vinf;
++பார்:பா PaarSpokenPresent;
+ பிதிர்  C11Vinf;
+ பிளிர்  C11Vinf;
+ புணர்  C11Vinf;
+@@ -19222,3 +19223,23 @@
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+PartNoun%=அவர்+human+pl+soc+colloq:ச்சிருந்தவர்களுடன் #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+PartNoun%=அவர்+human+pl+soc+add+colloq:ச்சிருந்தவர்களுடனும் #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:ங்க #;
++
++
++! Root-conditioned spoken-present subclass.
++LEXICON PaarSpokenPresent
++
+++verb+fin+sim+strong+pres%=கிற்+1sg%=ஏன்+colloq:க்குறேன் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்+colloq:க்குறோம் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+1sg%=அன்+colloq:க்குறன் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்+colloq:க்குறாய் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்+colloq:க்குறிய VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்+colloq:க்குறீர் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்+colloq:க்குறீங்க VerbQuestionColloquialNg;
+++verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்+colloq:க்குறான் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்+colloq:க்குறாள் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3sge%=அர்+colloq:க்குறர் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்+colloq:க்குறாங்க VerbQuestionColloquialNg;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்+colloq:க்குறார் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்+colloq:க்குறாங்க VerbQuestionColloquialNg;
+++verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:க்குறது VerbQuestion;
+++verb+nonfin+sim+pres%=கிற்+adjpart%=அ+colloq:க்குற #;

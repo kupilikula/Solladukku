@@ -1,0 +1,316 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -3107,7 +3107,6 @@
+ அரிவழுதி	C2SgRoot;
+ அரிவாகை	C2SgRoot;
+ அரிவை	C2SgRoot;
+-அரு(மை	C2SgRoot;
+ அருங்கணை	C2SgRoot;
+ அருங்கண்ணி	C2SgRoot;
+ அருங்கரை	C2SgRoot;
+@@ -4419,7 +4418,6 @@
+ இலுப்பை	C2SgRoot;
+ இழை	C2SgRoot;
+ இழைநுண்மை	C2SgRoot;
+-இள(மை	C2SgRoot;
+ இளங்கண்ணி	C2SgRoot;
+ இளங்கலை	C2SgRoot;
+ இளங்கனி	C2SgRoot;
+@@ -5003,7 +5001,6 @@
+ ஊற்றுநம்பி	C2SgRoot;
+ ஊற்றுவாரி	C2SgRoot;
+ ஊற்றொலி	C2SgRoot;
+-எipன்மலை	C2SgRoot;
+ எட்டி	C2SgRoot;
+ எண்ணாழி	C2SgRoot;
+ எண்ணெய்	C2SgRoot;
+@@ -8494,7 +8491,6 @@
+ செந்தமிழிசை	C2SgRoot;
+ செந்தமிழேந்தி	C2SgRoot;
+ செந்தமிழொளி	C2SgRoot;
+-செந்தமிழௌpனி	C2SgRoot;
+ செந்தமிழ்க்காரி	C2SgRoot;
+ செந்தமிழ்க்கிள்ளி	C2SgRoot;
+ செந்தமிழ்க்கோதை	C2SgRoot;
+@@ -8723,7 +8719,6 @@
+ செவ்வேங்கை	C2SgRoot;
+ செவ்வேரி	C2SgRoot;
+ செவ்வொளி	C2SgRoot;
+-செழு(மை	C2SgRoot;
+ செழுங்கணை	C2SgRoot;
+ செழுங்கண்ணி	C2SgRoot;
+ செழுங்கலை	C2SgRoot;
+@@ -9403,7 +9398,6 @@
+ தமிழேரி	C2SgRoot;
+ தமிழொலி	C2SgRoot;
+ தமிழொளி	C2SgRoot;
+-தமிழௌpலி	C2SgRoot;
+ தமிழ்இனிமை	C2SgRoot;
+ தமிழ்இனியமொழி	C2SgRoot;
+ தமிழ்க்கலை	C2SgRoot;
+@@ -9720,8 +9714,6 @@
+ திகழேரி	C2SgRoot;
+ திகழொளி	C2SgRoot;
+ திகழோதி	C2SgRoot;
+-திகழௌpலி	C2SgRoot;
+-திகழௌpனி	C2SgRoot;
+ திகழ்கணை	C2SgRoot;
+ திகழ்கண்ணி	C2SgRoot;
+ திகழ்கரை	C2SgRoot;
+@@ -11664,7 +11656,6 @@
+ நிறைவெள்ளி	C2SgRoot;
+ நிறைவெற்றி	C2SgRoot;
+ நீரருவி	C2SgRoot;
+-நீர்(மை	C2SgRoot;
+ நீர்ச்சுனை	C2SgRoot;
+ நீர்நொச்சி	C2SgRoot;
+ நீர்ப்பருத்தி	C2SgRoot;
+@@ -13236,8 +13227,6 @@
+ புகழொலி	C2SgRoot;
+ புகழொளி	C2SgRoot;
+ புகழோதி	C2SgRoot;
+-புகழௌpலி	C2SgRoot;
+-புகழௌpனி	C2SgRoot;
+ புகழ்இசை	C2SgRoot;
+ புகழ்க்கணை	C2SgRoot;
+ புகழ்க்கலை	C2SgRoot;
+@@ -14506,8 +14495,6 @@
+ மகிழொலி	C2SgRoot;
+ மகிழொளி	C2SgRoot;
+ மகிழோதி	C2SgRoot;
+-மகிழௌpலி	C2SgRoot;
+-மகிழௌpனி	C2SgRoot;
+ மகிழ்உவகை	C2SgRoot;
+ மகிழ்கணை	C2SgRoot;
+ மகிழ்கண்ணி	C2SgRoot;
+@@ -15684,7 +15671,6 @@
+ முகிழலரி	C2SgRoot;
+ முகிழல்லி	C2SgRoot;
+ முகிழழகி	C2SgRoot;
+-முகிழௌpலி	C2SgRoot;
+ முகிழ்நகை	C2SgRoot;
+ முகிழ்மதி	C2SgRoot;
+ முகிழ்முகை	C2SgRoot;
+@@ -15829,7 +15815,6 @@
+ முத்தமிழேந்தி	C2SgRoot;
+ முத்தமிழொலி	C2SgRoot;
+ முத்தமிழொளி	C2SgRoot;
+-முத்தமிழௌpனி	C2SgRoot;
+ முத்தமிழ்க்கனி	C2SgRoot;
+ முத்தமிழ்க்கிளி	C2SgRoot;
+ முத்தமிழ்க்குமரி	C2SgRoot;
+@@ -16511,13 +16496,11 @@
+ யாழேரி	C2SgRoot;
+ யாழொலி	C2SgRoot;
+ யாழொளி	C2SgRoot;
+-யாழௌpலி	C2SgRoot;
+ யாழ்க்கனி	C2SgRoot;
+ யாழ்க்கிளி	C2SgRoot;
+ யாழ்க்குட்டி	C2SgRoot;
+ யாழ்க்குமரி	C2SgRoot;
+ யாழ்ச்செல்வி	C2SgRoot;
+-யாழ்த்Nதவி	C2SgRoot;
+ யாழ்த்தங்கை	C2SgRoot;
+ யாழ்த்தம்பி	C2SgRoot;
+ யாழ்த்துணை	C2SgRoot;
+@@ -45322,7 +45305,6 @@
+ தமிழண்ணல்	C4SgRoot; 
+ தமிழாற்றல்	C4SgRoot; 
+ தமிழேந்தல்	C4SgRoot; 
+-தமிழௌpல்	C4SgRoot; 
+ தமிழ்	C4SgRoot; 
+ தமிழ்க்கடல்	C4SgRoot; 
+ தமிழ்க்குயில்	C4SgRoot; 
+@@ -45432,7 +45414,6 @@
+ திகழண்ணல்	C4SgRoot; 
+ திகழாம்பல்	C4SgRoot; 
+ திகழாற்றல்	C4SgRoot; 
+-திகழௌpல்	C4SgRoot; 
+ திகழ்	C4SgRoot; 
+ திகழ்கடல்	C4SgRoot; 
+ திகழ்கயல்	C4SgRoot; 
+@@ -46462,7 +46443,6 @@
+ பிறைநுதல்	C4SgRoot; 
+ பிறைமுறுவல்	C4SgRoot; 
+ பிறையெழில்	C4SgRoot; 
+-பீPடுமயில்	C4SgRoot; 
+ பீக்கருவேல்	C4SgRoot; 
+ பீடாற்றல்	C4SgRoot; 
+ பீடுயாழ்	C4SgRoot; 
+@@ -46482,7 +46462,6 @@
+ புகழாம்பல்	C4SgRoot; 
+ புகழாற்றல்	C4SgRoot; 
+ புகழேந்தல்	C4SgRoot; 
+-புகழௌpல்	C4SgRoot; 
+ புகழ்	C4SgRoot; 
+ புகழ்க்கடல்	C4SgRoot; 
+ புகழ்க்கயல்	C4SgRoot; 
+@@ -46871,7 +46850,6 @@
+ மகிழண்ணல்	C4SgRoot; 
+ மகிழாம்பல்	C4SgRoot; 
+ மகிழாற்றல்	C4SgRoot; 
+-மகிழௌpல்	C4SgRoot; 
+ மகிழ்	C4SgRoot; 
+ மகிழ்கயல்	C4SgRoot; 
+ மகிழ்கழல்	C4SgRoot; 
+@@ -47200,7 +47178,6 @@
+ முகிலெழில்	C4SgRoot; 
+ முகில்	C4SgRoot; 
+ முகில்வள்ளல்	C4SgRoot; 
+-முகிழௌpல்	C4SgRoot; 
+ முகிழ்	C4SgRoot; 
+ முகிழ்முறுவல்	C4SgRoot; 
+ முகிற்கடல்	C4SgRoot; 
+@@ -47234,7 +47211,6 @@
+ முதற்பொழில்	C4SgRoot; 
+ முதனெய்தல்	C4SgRoot; 
+ முதன்மயில்	C4SgRoot; 
+-முத்தமிழௌpல்	C4SgRoot; 
+ முத்தமிழ்	C4SgRoot; 
+ முத்தமிழ்க்கடல்	C4SgRoot; 
+ முத்தமிழ்க்குயில்	C4SgRoot; 
+@@ -47426,7 +47402,6 @@
+ யாணர்வயல்	C4SgRoot; 
+ யாழண்ணல்	C4SgRoot; 
+ யாழேந்தல்	C4SgRoot; 
+-யாழௌpல்	C4SgRoot; 
+ யாழ்	C4SgRoot; 
+ யாழ்க்குயில்	C4SgRoot; 
+ யாழ்க்குரல்	C4SgRoot; 
+@@ -54265,7 +54240,6 @@
+ சமன்வடிவு	C7SgRoot; 
+ சவ்வு	C7SgRoot; 
+ சன்னத்துருக்குவேம்பு	C7SgRoot; 
+-சாhல்பு	C7SgRoot; 
+ சாஇறப்பு	C7SgRoot; 
+ சாந்தழகு	C7SgRoot; 
+ சாந்து	C7SgRoot; 
+@@ -54327,7 +54301,6 @@
+ சிற்றிலைப்பொலவு	C7SgRoot; 
+ சின்னவடிவு	C7SgRoot; 
+ சின்னன்சிறியது	C7SgRoot; 
+-சீPர்முருகு	C7SgRoot; 
+ சீமைநூக்கு	C7SgRoot; 
+ சீரமுது	C7SgRoot; 
+ சீரரசு	C7SgRoot; 
+@@ -54419,7 +54392,6 @@
+ செவ்வழகு	C7SgRoot; 
+ செவ்வறிவு	C7SgRoot; 
+ செழிப்பு	C7SgRoot; 
+-செழு(மைசெழிப்பு	C7SgRoot; 
+ செழுஞ்சாந்து	C7SgRoot; 
+ செழுஞ்சிலம்பு	C7SgRoot; 
+ செழுநிலவு	C7SgRoot; 
+@@ -54925,7 +54897,6 @@
+ நிறைவடிவு	C7SgRoot; 
+ நிறைவிளக்கு	C7SgRoot; 
+ நீரரசு	C7SgRoot; 
+-நீர்(மைசிறப்பு	C7SgRoot; 
+ நீர்க்கடம்பு	C7SgRoot; 
+ நீர்ப்புன்கு	C7SgRoot; 
+ நீர்மருது	C7SgRoot; 
+@@ -69024,8 +68995,6 @@
+ அரிவேந்தன்	C11SgRoot ;
+ அரிவேலன்	C11SgRoot ;
+ அரிவேலோன்	C11SgRoot ;
+-அரு@ரன்	C11SgRoot ;
+-அரு@ரான்	C11SgRoot ;
+ அருங்கலைஞன்	C11SgRoot ;
+ அருங்கழியான்	C11SgRoot ;
+ அருங்காடன்	C11SgRoot ;
+@@ -69518,7 +69487,6 @@
+ அறக்களியான்	C11SgRoot ;
+ அறக்காவலன்	C11SgRoot ;
+ அறக்கிழான்	C11SgRoot ;
+-அறக்கீPரன்	C11SgRoot ;
+ அறக்குமரன்	C11SgRoot ;
+ அறக்குன்றன்	C11SgRoot ;
+ அறக்கூத்தன்	C11SgRoot ;
+@@ -74178,7 +74146,6 @@
+ குளநாடன்	C11SgRoot ;
+ குளநேயன்	C11SgRoot ;
+ குளவளத்தன்	C11SgRoot ;
+-குற@ரன்	C11SgRoot ;
+ குறஞ்சிமள்ளன்	C11SgRoot ;
+ குறட்காவலன்	C11SgRoot ;
+ குறட்கிழான்	C11SgRoot ;
+@@ -75799,8 +75766,6 @@
+ செந்தமிழின்பன்	C11SgRoot ;
+ செந்தமிழூரன்	C11SgRoot ;
+ செந்தமிழையன்	C11SgRoot ;
+-செந்தமிழௌpலன்	C11SgRoot ;
+-செந்தமிழௌpலோன்	C11SgRoot ;
+ செந்தமிழ்க்கிழான்	C11SgRoot ;
+ செந்தமிழ்க்கீரன்	C11SgRoot ;
+ செந்தமிழ்க்குமரன்	C11SgRoot ;
+@@ -76893,8 +76858,6 @@
+ தமிழூரன்	C11SgRoot ;
+ தமிழையன்	C11SgRoot ;
+ தமிழோவியன்	C11SgRoot ;
+-தமிழௌpலன்	C11SgRoot ;
+-தமிழௌpலோன்	C11SgRoot ;
+ தமிழ்க்கலைஞன்	C11SgRoot ;
+ தமிழ்க்காவலன்	C11SgRoot ;
+ தமிழ்க்கிழான்	C11SgRoot ;
+@@ -77093,7 +77056,6 @@
+ திகழாளன்	C11SgRoot ;
+ திகழூரன்	C11SgRoot ;
+ திகழோவியன்	C11SgRoot ;
+-திகழௌpலோன்	C11SgRoot ;
+ திகழ்கூத்தன்	C11SgRoot ;
+ திகழ்சீரன்	C11SgRoot ;
+ திகழ்தாரான்	C11SgRoot ;
+@@ -78105,7 +78067,6 @@
+ பார்வையொளியன்	C11SgRoot ;
+ பார்வைவளத்தன்	C11SgRoot ;
+ பார்வைவளவன்	C11SgRoot ;
+-பார்வைவீPரன்	C11SgRoot ;
+ பாலமுதன்	C11SgRoot ;
+ பாலைக்காடன்	C11SgRoot ;
+ பாலைக்காவலன்	C11SgRoot ;
+@@ -78190,8 +78151,6 @@
+ புகழொளியன்	C11SgRoot ;
+ புகழோவியன்	C11SgRoot ;
+ புகழோன்	C11SgRoot ;
+-புகழௌpலான்	C11SgRoot ;
+-புகழௌpலோன்	C11SgRoot ;
+ புகழ்க்கலைஞன்	C11SgRoot ;
+ புகழ்க்கீரன்	C11SgRoot ;
+ புகழ்க்குமரன்	C11SgRoot ;
+@@ -79497,7 +79456,6 @@
+ முன்னவன்	C11SgRoot ;
+ மூக்கையன்	C11SgRoot ;
+ மூதறிஞன்	C11SgRoot ;
+-மூதூhக்குமரன்	C11SgRoot ;
+ மூதூரப்பன்	C11SgRoot ;
+ மூதூரமுதன்	C11SgRoot ;
+ மூதூரரசன்	C11SgRoot ;
+@@ -89552,7 +89510,6 @@
+ அரண்வேள்	C14SgRoot ; 
+ அரிமாவேள்	C14SgRoot ; 
+ அரிவேள்	C14SgRoot ; 
+-அரு@ராள்	C14SgRoot ; 
+ அருங்காந்தள்	C14SgRoot ; 
+ அருட்குடிமகள்	C14SgRoot ; 
+ அருட்பொறையள்	C14SgRoot ; 
+@@ -93949,7 +93906,6 @@
+ நேரம்	 C15SgRoot; 
+ குடம்	 C15SgRoot; 
+ பயங்கரம்	 C15SgRoot; 
+-﻿அகம்	 C15SgRoot; 
+ விண்பயணம்	 C15SgRoot; 
+ கட்டிடம்	 C15SgRoot; 
+ அகலிடம்	 C15SgRoot; 
+@@ -94615,12 +94571,9 @@
+ ஜென்மம்	 C15SgRoot; 
+ ஜைனம்	 C15SgRoot; 
+ ஜோதிடம்	 C15SgRoot; 
+-þவரம்	 C15SgRoot; 
+-#ேமம்	 C15SgRoot; 
+ காலம்	 C15SgRoot; 
+ பெரும்ம்	 C15SgRoot; 
+ அதிநவீனம்	 C15SgRoot; 
+-பெருங்zம்	 C15SgRoot; 
+ பெருந்ம்	 C15SgRoot; 
+ பெட்ரோலியம்	 C15SgRoot; 
+ படம்	 C15SgRoot; 

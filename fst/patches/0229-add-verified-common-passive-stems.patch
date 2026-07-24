@@ -1,0 +1,68 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -8552,6 +8552,32 @@
+ +verb+nonfin+sim+past%=த்+adjpart%=அ: #;
+ 
+ LEXICON ClassVaaModern
++
++! Corpus-attested roots with inherited paradigm evidence
++அச்சிட:அச்சிடப்பட்டுள்ள    ModernPassivePerfectNeut;
++அடையாளப்படுத்த:அடையாளப்படுத்தப்பட்டுள்ள    ModernPassivePerfectNeut;
++அறிமுகப்படுத்த:அறிமுகப்படுத்தப்பட்டுள்ள    ModernPassivePerfectNeut;
++ஆவணப்படுத்த:ஆவணப்படுத்தப்பட்டுள்ள    ModernPassivePerfectNeut;
++உத்தரவிட:உத்தரவிடப்பட்டுள்ள    ModernPassivePerfectNeut;
++எதிர்பார்க்க:எதிர்பார்க்கப்பட்டுள்ள    ModernPassivePerfectNeut;
++கண்டறிய:கண்டறியப்பட்டுள்ள    ModernPassivePerfectNeut;
++செயல்படுத்த:செயல்படுத்தப்பட்டுள்ள    ModernPassivePerfectNeut;
++தனிமைப்படுத்த:தனிமைப்படுத்தப்பட்டுள்ள    ModernPassivePerfectNeut;
++தயாரிக்க:தயாரிக்கப்பட்டுள்ள    ModernPassivePerfectNeut;
++திட்டமிட:திட்டமிடப்பட்டுள்ள    ModernPassivePerfectNeut;
++துன்புறுத்த:துன்புறுத்தப்பட்டுள்ள    ModernPassivePerfectNeut;
++தேர்ந்தெடுக்க:தேர்ந்தெடுக்கப்பட்டுள்ள    ModernPassivePerfectNeut;
++நாடுகடத்த:நாடுகடத்தப்பட்டுள்ள    ModernPassivePerfectNeut;
++பட்டியலிட:பட்டியலிடப்பட்டுள்ள    ModernPassivePerfectNeut;
++பரிந்துரைக்க:பரிந்துரைக்கப்பட்டுள்ள    ModernPassivePerfectNeut;
++பிற்படுத்த:பிற்படுத்தப்பட்டுள்ள    ModernPassivePerfectNeut;
++மதிப்பிட:மதிப்பிடப்பட்டுள்ள    ModernPassivePerfectNeut;
++மிகைப்படுத்த:மிகைப்படுத்தப்பட்டுள்ள    ModernPassivePerfectNeut;
++முன்னெடுக்க:முன்னெடுக்கப்பட்டுள்ள    ModernPassivePerfectNeut;
++முன்வைக்க:முன்வைக்கப்பட்டுள்ள    ModernPassivePerfectNeut;
++மேற்கொள்ள:மேற்கொள்ளப்பட்டுள்ள    ModernPassivePerfectNeut;
++வடிவமைக்க:வடிவமைக்கப்பட்டுள்ள    ModernPassivePerfectNeut;
++விநியோகிக்க:விநியோகிக்கப்பட்டுள்ள    ModernPassivePerfectNeut;
+ 
+ வா:வரு VaaModernVinf;
+ வா:வ VaaModernPastShortRVinf;
+@@ -64403,6 +64429,32 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 
+ LEXICON ClassPadu61
++
++! Corpus-attested roots with inherited paradigm evidence
++அச்சிடப்படு    CPadu61Vinf;
++அடையாளப்படுத்தப்படு    CPadu61Vinf;
++அறிமுகப்படுத்தப்படு    CPadu61Vinf;
++ஆவணப்படுத்தப்படு    CPadu61Vinf;
++உத்தரவிடப்படு    CPadu61Vinf;
++எதிர்பார்க்கப்படு    CPadu61Vinf;
++கண்டறியப்படு    CPadu61Vinf;
++செயல்படுத்தப்படு    CPadu61Vinf;
++தனிமைப்படுத்தப்படு    CPadu61Vinf;
++தயாரிக்கப்படு    CPadu61Vinf;
++திட்டமிடப்படு    CPadu61Vinf;
++துன்புறுத்தப்படு    CPadu61Vinf;
++தேர்ந்தெடுக்கப்படு    CPadu61Vinf;
++நாடுகடத்தப்படு    CPadu61Vinf;
++பட்டியலிடப்படு    CPadu61Vinf;
++பரிந்துரைக்கப்படு    CPadu61Vinf;
++பிற்படுத்தப்படு    CPadu61Vinf;
++மதிப்பிடப்படு    CPadu61Vinf;
++மிகைப்படுத்தப்படு    CPadu61Vinf;
++முன்னெடுக்கப்படு    CPadu61Vinf;
++முன்வைக்கப்படு    CPadu61Vinf;
++மேற்கொள்ளப்படு    CPadu61Vinf;
++வடிவமைக்கப்படு    CPadu61Vinf;
++விநியோகிக்கப்படு    CPadu61Vinf;
+ அறியப்படு                   CPadu61Vinf;
+ உருவாக்கப்படு                   CPadu61Vinf;
+ உறுதிப்படுத்தப்படு                   CPadu61Vinf;

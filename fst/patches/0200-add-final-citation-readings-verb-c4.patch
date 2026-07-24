@@ -1,0 +1,15 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -666,6 +666,12 @@
+ வெள்ளையெறி  C4Vinf;
+ வேட்டுப்பறி  C4Vinf;
+ வேர்த்துவடி  C4Vinf;
++
++! Reviewed final citation exceptions
++பொறி C4Vinf;
++நெய் C4StrongCitationOnly;
++LEXICON C4StrongCitationOnly
+++verb+nonfin+sim+verbalnoun%=தல்:^த்தல் #;
+ LEXICON C4UFinalFutureVinf
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+ +verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ும் #;

@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -19059,6 +19059,7 @@
+ +verb+fin+complex+nonattitude+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+complex+nonattitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+1sg%=ஏன்:^ப்பித்தேன் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+1pl%=ஓம்:^ப்பித்தோம் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=ப்பி+past%=த்+1sg%=அன்:^ப்பித்தன் VerbQuestion;

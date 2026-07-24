@@ -1,5 +1,5 @@
 {
-  "built_at_utc": "2026-07-09T11:29:26.556873+00:00",
+  "built_at_utc": "2026-07-24T05:28:00.714234+00:00",
   "submodule": {
     "path": "vendor/thamizhi-morph",
     "commit": "a296417ac603fd44eda35645369f1257d96bed89"
@@ -36,7 +36,117 @@
         "0054-add-corpus-backed-noun-gap-tranche.patch",
         "0057-add-remaining-corpus-noun-roots.patch",
         "0058-add-triaged-common-noun-coverage.patch",
-        "0059-add-c15-irkku-dative-variant.patch"
+        "0059-add-c15-irkku-dative-variant.patch",
+        "0073-add-systematic-noun-root-candidates.patch",
+        "0074-add-systematic-c2-kkai-noun-roots.patch",
+        "0075-add-systematic-c2-compound-head-nouns.patch",
+        "0076-add-systematic-c15-compound-head-nouns.patch",
+        "0077-add-high-confidence-c15-m-final-nouns.patch",
+        "0078-add-systematic-c2-head-family-nouns-2.patch",
+        "0079-add-systematic-c2-head-family-nouns-3.patch",
+        "0080-add-systematic-c15-nominal-head-nouns.patch",
+        "0093-add-systematic-c15-high-confidence-m-final-nouns.patch",
+        "0094-add-systematic-c15-dual-source-productive-nouns.patch",
+        "0095-add-systematic-c2-dual-source-productive-nouns.patch",
+        "0096-add-systematic-c9-dual-source-retroflex-n-nouns.patch",
+        "0097-add-systematic-c15-dual-source-noun-families-2.patch",
+        "0098-add-systematic-c2-dual-source-noun-families-2.patch",
+        "0099-add-systematic-c4-dual-source-head-nouns.patch",
+        "0100-add-systematic-c15-dual-source-noun-families-3.patch",
+        "0101-add-systematic-c2-dual-source-noun-families-3.patch",
+        "0102-add-systematic-c11-dual-source-human-head-nouns.patch",
+        "0103-add-systematic-c14-dual-source-retained-l-head-nouns.patch",
+        "0104-add-megabatch-c15-dual-source-nouns.patch",
+        "0105-add-megabatch-c2-dual-source-nouns.patch",
+        "0106-add-megabatch-c4-dual-source-nouns.patch",
+        "0107-add-megabatch-c11-dual-source-nouns.patch",
+        "0108-add-megabatch-c14-dual-source-nouns.patch",
+        "0109-add-high-confidence-c16-r-final-nouns.patch",
+        "0110-add-next-c2-dual-source-noun-batch.patch",
+        "0111-add-next-c7-dual-source-noun-batch.patch",
+        "0112-add-high-confidence-c11-n-final-nouns.patch",
+        "0113-add-next-dual-source-c2-nouns.patch",
+        "0114-add-next-dual-source-c7-nouns.patch",
+        "0115-add-source-backed-c15-m-final-nouns.patch",
+        "0116-add-single-source-c2-productive-nouns.patch",
+        "0117-add-single-source-c7-productive-nouns.patch",
+        "0118-add-c11-person-head-nouns.patch",
+        "0119-add-c16-person-profession-nouns.patch",
+        "0120-add-conservative-c4-noun-families.patch",
+        "0121-add-conservative-c14-retained-l-nouns.patch",
+        "0122-add-conservative-c9-retroflex-n-nouns.patch",
+        "0123-add-conservative-c1-aa-and-puu-nouns.patch",
+        "0132-add-residual-multisource-explicit-nouns.patch",
+        "0133-fix-noun-encoding-and-sociative-rules.patch",
+        "0141-remove-corrupt-noun-lexemes.patch",
+        "0143-remove-malformed-double-hyphen-noun.patch",
+        "0156-add-missing-c2-noun-homograph-readings.patch",
+        "0157-fix-c6ttu-c8-noun-realization.patch",
+        "0158-add-reviewed-u-final-noun-homographs.patch",
+        "0160-add-inflected-spelling-c2-noun-homographs.patch",
+        "0161-add-reviewed-residual-noun-homographs.patch",
+        "0162-add-final-regular-noun-homographs.patch",
+        "0173-reclassify-aar-as-direct-oblique-noun.patch",
+        "0178-add-reviewed-mozhi-news-nouns.patch",
+        "0179-reclassify-retained-m-nouns.patch",
+        "0180-reclassify-legacy-retained-m-nouns.patch",
+        "0181-correct-long-vowel-retained-m-nouns.patch",
+        "0182-add-productive-noun-ellaam.patch",
+        "0183-add-dependent-e-noun-rewrite.patch",
+        "0184-reclassify-retained-m-title-classical-nouns.patch",
+        "0192-repair-invalid-combining-sequences-noun.patch",
+        "0193-deduplicate-noun-entries.patch",
+        "0196-add-reviewed-strict-family-nouns.patch",
+        "0197-add-reviewed-remaining-noun-candidates.patch",
+        "0207-add-derived-action-nominal-paradigms.patch",
+        "0209-reclassify-long-vowel-aal-noun.patch",
+        "0210-consolidate-noun-entry-sections.patch",
+        "0218-add-dative-copular-participles.patch",
+        "0221-split-c14-plural-subclasses.patch",
+        "0230-add-productive-noun-case-continuations.patch",
+        "0256-remove-redundant-action-nominal-nouns.patch",
+        "0262-add-attested-c15-compound-modifiers.patch",
+        "0264-add-noun-locative-adjectivals.patch",
+        "0265-add-reviewed-modern-nouns-and-loans.patch",
+        "0267-complete-noun-vocative-and-plural-translative.patch",
+        "0274-add-productive-translative-copular-future.patch",
+        "0275-add-final-reviewed-common-nouns.patch",
+        "0295-add-formal-dative-allomorphs.patch",
+        "0296-fix-y-final-dative-sandhi.patch",
+        "0297-reclassify-corpus-proven-n-final-plurals.patch",
+        "0308-add-reviewed-action-nominals-and-common-nouns.patch",
+        "0309-split-c16-direct-and-cuvar-obliques.patch",
+        "0310-complete-c10-n-final-rewrite.patch",
+        "0314-complete-c16-direct-subclass-move.patch",
+        "0315-split-c10-n-final-allomorphs.patch",
+        "0324-add-reviewed-common-residual-nouns.patch",
+        "0326-add-core-nouns-and-action-nominal.patch",
+        "0333-repair-common-noun-subclasses.patch",
+        "0337-complete-noun-realization-and-common-readings.patch",
+        "0343-complete-c15-modifier-continuations.patch",
+        "0347-final-common-noun-families.patch",
+        "0349-systematic-colloquial-noun.patch",
+        "0351-complete-common-nouns-and-accusative-clitics.patch",
+        "0363-add-colloquial-noun-locatives.patch",
+        "0368-complete-noun-vocative-parity.patch",
+        "0376-complete-colloquial-noun-locatives.patch",
+        "0386-add-kaathiruppu-c7-noun.patch",
+        "0393-add-common-modern-noun-roots.patch",
+        "0394-complete-foreign-noun-plurals.patch",
+        "0399-add-modern-loan-noun-subclass.patch",
+        "0403-add-everyday-modern-loan-nouns.patch",
+        "0405-add-final-common-nouns.patch",
+        "0407-complete-formal-dative-postpositions.patch",
+        "0410-add-final-native-nouns.patch",
+        "0411-complete-c10-singular-translatives.patch",
+        "0413-add-common-homograph-nouns.patch",
+        "0416-complete-genitive-instrumental-nouns.patch",
+        "0429-add-final-common-noun-readings.patch",
+        "0432-add-frequency-reviewed-common-nouns.patch",
+        "0433-add-final-frequency-common-nouns.patch",
+        "0434-reclassify-u-final-common-nouns.patch",
+        "0435-add-final-occupational-common-nouns.patch",
+        "0436-complete-infinc-possessive-genitive.patch"
       ]
     },
     {
@@ -48,7 +158,20 @@
       "patches": [
         "0029-add-deictic-adjective-forms.patch",
         "0035-add-corpus-backed-adjectival-stems.patch",
-        "0045-add-audit-backed-adjective-forms.patch"
+        "0045-add-audit-backed-adjective-forms.patch",
+        "0142-remove-corrupt-adjective-lexemes.patch",
+        "0217-add-nominal-copular-participles.patch",
+        "0220-add-deictic-adverb-copular-participles.patch",
+        "0223-add-modern-attributive-adjectives.patch",
+        "0234-add-productive-adj-sandhi.patch",
+        "0277-add-reviewed-adjectival-predicates.patch",
+        "0307-add-ottrai-adjective-family.patch",
+        "0327-add-productive-adjective-families.patch",
+        "0332-remove-redundant-adjective-tags.patch",
+        "0350-complete-predicate-questions.patch",
+        "0402-add-common-modern-adjectives.patch",
+        "0404-add-modern-loan-adjectives.patch",
+        "0424-add-adjective-neuter-nominals.patch"
       ]
     },
     {
@@ -64,7 +187,30 @@
         "0031-add-corpus-backed-common-adverbs.patch",
         "0036-add-corpus-backed-adverbial-stems.patch",
         "0055-add-focused-adverb-form.patch",
-        "0068-add-focused-causal-adverb-family.patch"
+        "0068-add-focused-causal-adverb-family.patch",
+        "0234-add-productive-adv-sandhi.patch",
+        "0278-add-reviewed-colloquial-adverb.patch",
+        "0325-add-reviewed-compositional-adverbs.patch",
+        "0328-add-colloquial-time-adverb.patch",
+        "0353-classify-romba-intensifier.patch",
+        "0397-complete-short-u-adverb-clitics.patch"
+      ],
+      "pair_extensions": [
+        {
+          "file": "0349-systematic-colloquial-adv.fst.tsv",
+          "sha256": "f64920b44474c5dce9ce12030f720604e2bbbbded1726cdd890b1e7a3667dd29",
+          "added_pairs": 5
+        },
+        {
+          "file": "0398-add-closed-class-parity-adv.tsv",
+          "sha256": "33d944dbfe82df8c3ff0b47520d89d00e0001955cd5139e4059b3d5ba5aca416",
+          "added_pairs": 1
+        },
+        {
+          "file": "0400-add-final-closed-class-relations-adv.tsv",
+          "sha256": "22e0389b91b63ec60bd7b61aa1759fe66d6e02d532736fdd967e0e4368f88e74",
+          "added_pairs": 7
+        }
       ]
     },
     {
@@ -81,7 +227,75 @@
         "0042-add-comparative-kkum-particle.patch",
         "0056-add-indefinite-quantifier-particle.patch",
         "0067-add-complementizer-and-quantifier-family-coverage.patch",
-        "0071-canonicalize-sandhi-complementizers.patch"
+        "0071-canonicalize-sandhi-complementizers.patch",
+        "0140-normalize-particle-lexicon.patch",
+        "0159-add-cardinal-translative-forms.patch",
+        "0177-complete-interrogative-quantifier-families.patch",
+        "0195-add-reviewed-closed-class-readings.patch",
+        "0219-add-cardinal-copular-participles.patch",
+        "0222-correct-and-expand-ordinal-families.patch",
+        "0225-add-reviewed-closed-class-paradigms.patch",
+        "0235-add-productive-closed-class-continuations.patch",
+        "0240-add-complementizer-additive.patch",
+        "0269-complete-human-quantifier-paradigms.patch",
+        "0272-remove-redundant-part-pronoun-relations.patch",
+        "0276-add-reviewed-abbreviations-and-closed-class.patch",
+        "0281-complete-nonhuman-cardinal-relations.patch",
+        "0306-add-reviewed-classical-and-colloquial-function-words.patch",
+        "0323-add-reviewed-compositional-function-relations.patch",
+        "0329-add-core-closed-class-relations.patch",
+        "0334-add-reviewed-common-function-forms.patch",
+        "0339-complete-colloquial-pronoun-postpositions.patch",
+        "0344-complete-participial-and-function-families.patch",
+        "0348-final-common-function-readings.patch",
+        "0420-complete-human-possessive-parity.patch"
+      ],
+      "pair_extensions": [
+        {
+          "file": "0349-systematic-colloquial-part.fst.tsv",
+          "sha256": "a2718cd94ca4c21431ad877d58d29ee4617e518a922c84e254fb91bd746904fa",
+          "added_pairs": 51
+        },
+        {
+          "file": "0351-reviewed-colloquial-closed-class.fst.tsv",
+          "sha256": "4c75aca47103f03962ad2513e9bfe86d7a1b514dc926bd1baa3017fe1ed1c506",
+          "added_pairs": 25
+        },
+        {
+          "file": "0354-reviewed-colloquial-vocative.fst.tsv",
+          "sha256": "81108fb1f0a28b8afb4d84605898f3d32233e50d7ebe12d79389efce138e1e35",
+          "added_pairs": 1
+        },
+        {
+          "file": "0361-add-distributive-paradigms.tsv",
+          "sha256": "21da1b7ed6e00972ca3f9f5d5db8ec0a6ceebd03a04d7816abad396d007d038d",
+          "added_pairs": 37
+        },
+        {
+          "file": "0369-complete-closed-class-clitic-matrix.tsv",
+          "sha256": "cc409b3740e9065a524dcc49776051eabdc20576d53c98ca991fe532bfcc15f0",
+          "added_pairs": 34
+        },
+        {
+          "file": "0382-complete-closed-class-colloquial-locatives.tsv",
+          "sha256": "68df7f34e8bc20eced189b7c13610182a61658eb1c5df1b6c749e2add603e9f6",
+          "added_pairs": 46
+        },
+        {
+          "file": "0398-add-closed-class-parity-part.tsv",
+          "sha256": "c693cac23779a7e7053480c9bef39e1e4281f37a19b3653c4e4373d4c412fe16",
+          "added_pairs": 4
+        },
+        {
+          "file": "0400-add-final-closed-class-relations-part.tsv",
+          "sha256": "2a782a4a04f001b8f9da0773f4d8d782431547da42ca5114cf637585bb190473",
+          "added_pairs": 9
+        },
+        {
+          "file": "0409-add-joined-discourse-relations.tsv",
+          "sha256": "f9788d6c1292fbb073a4403a0495e5f42e60a4322120c595bc79044cdacb340a",
+          "added_pairs": 174
+        }
       ]
     },
     {
@@ -101,8 +315,68 @@
         "0019-add-participial-person-nominals.patch",
         "0023-add-source-backed-c5-primary-verb-stems.patch",
         "0024-add-source-backed-c5-primary-verb-stems-2.patch",
+        "0082-add-systematic-c5-light-verb-compounds.patch",
+        "0086-add-source-backed-c5-verb-roots-lexicon-light.patch",
+        "0091-add-source-backed-c5-remaining-verb-roots.patch",
         "0061-add-modern-present-finite-coverage.patch",
-        "0065-add-class-level-modern-perfect-and-verbal-nouns.patch"
+        "0065-add-class-level-modern-perfect-and-verbal-nouns.patch",
+        "0134-normalize-c3-and-add-negative-action-nominals.patch",
+        "0144-remove-invalid-productive-expansions-c3.patch",
+        "0150-remove-transitive-invalid-expansions-c3.patch",
+        "0174-add-present-human-plural-continuations-verb-c3.patch",
+        "0176-correct-nar-agreement-verb-c3.patch",
+        "0185-add-modern-present-adjectival-participles-verb-c3.patch",
+        "0194-disambiguate-c3-rule-names.patch",
+        "0200-add-citation-rule-verb-c3.patch",
+        "0232-add-reported-complements-verb-c3.patch",
+        "0233-add-nonfinite-sandhi-verb-c3.patch",
+        "0236-add-verbal-noun-cases-verb-c3.patch",
+        "0237-fix-c3-short-future-gemination.patch",
+        "0253-complete-c3-agreement-matrix.patch",
+        "0266-complete-modern-perfect-and-past-plural-verb-c3.patch",
+        "0271-complete-participial-nominals-verb-c3.patch",
+        "0280-repair-irregular-sol-past.patch",
+        "0311-add-verb-question-clitic-verb-c3.patch",
+        "0321-add-productive-worthy-focus-verb-c3.patch",
+        "0330-add-purpose-reporting-verb-c3.patch",
+        "0335-add-temporal-and-common-roots-verb-c3.patch",
+        "0338-complete-c3-temporal-and-participial-oor.patch",
+        "0340-add-c3-literary-conditional-rewrite.patch",
+        "0342-final-systemic-verb-c3.patch",
+        "0346-final-common-verb-c3.patch",
+        "0349-systematic-colloquial-verb-c3.patch",
+        "0355-add-gendered-participial-nouns-verb-c3.patch",
+        "0357-fix-colloquial-ng-questions-verb-c3.patch",
+        "0358-complete-finite-second-person-questions-verb-c3.patch",
+        "0362-add-colloquial-finite-negative-verb-c3.patch",
+        "0364-add-infinitive-focus-verb-c3.patch",
+        "0366-add-colloquial-participial-nominals-verb-c3.patch",
+        "0367-complete-finite-conditional-clitics-verb-c3.patch",
+        "0370-add-spoken-predicate-repairs-verb-c3.patch",
+        "0371-repair-finite-clitic-realization-verb-c3.patch",
+        "0381-add-non-nominal-colloquial-locatives-verb-c3.patch",
+        "0387-complete-future-oor-participials-verb-c3.patch",
+        "0415-formal-verbal-noun-accusatives-verb-c3.patch",
+        "0418-complete-verbal-noun-extensions-verb-c3.patch",
+        "0419-add-participial-possessives-verb-c3.patch",
+        "0425-colloquial-imperative-parity-verb-c3.patch"
+      ],
+      "pair_extensions": [
+        {
+          "file": "0349-systematic-colloquial-verb-c3.fst.tsv",
+          "sha256": "09323c94b86e3c3ee24e38c29eec4740b72238e8ea7029f5649a06342367058d",
+          "added_pairs": 13
+        },
+        {
+          "file": "0380-complete-atomic-colloquial-questions-verb-c3.fst.tsv",
+          "sha256": "07ddf6a54a276e790bcbba9e8c8dbab82e4f61c685ec98992ad10db1ac4ee036",
+          "added_pairs": 2
+        },
+        {
+          "file": "0400-add-final-irregular-relations-verb-c3.tsv",
+          "sha256": "7d56beb27c4386998ba4e716152ff117b66db4866ff40e9479af7ab619a41c53",
+          "added_pairs": 1
+        }
       ]
     },
     {
@@ -122,10 +396,73 @@
         "0019-add-participial-person-nominals.patch",
         "0023-add-source-backed-c5-primary-verb-stems.patch",
         "0024-add-source-backed-c5-primary-verb-stems-2.patch",
+        "0082-add-systematic-c5-light-verb-compounds.patch",
+        "0086-add-source-backed-c5-verb-roots-lexicon-light.patch",
+        "0091-add-source-backed-c5-remaining-verb-roots.patch",
         "0046-add-c4-u-final-future-forms.patch",
         "0050-add-c4-modern-human-plural-verb-coverage.patch",
         "0052-add-c4-modern-nonfinite-verb-forms.patch",
-        "0069-add-reviewed-modern-bare-infinitives.patch"
+        "0069-add-reviewed-modern-bare-infinitives.patch",
+        "0072-add-nati-c4-root.patch",
+        "0127-add-c4-citation-verbal-nouns.patch",
+        "0135-normalize-c4-and-add-negative-action-nominals.patch",
+        "0145-remove-invalid-productive-expansions-c4.patch",
+        "0151-remove-transitive-invalid-expansions-c4.patch",
+        "0163-add-missing-c4-verb-homographs.patch",
+        "0164-reclassify-ney-as-c4-verb.patch",
+        "0167-remove-invalid-ney-c4-compounds.patch",
+        "0174-add-present-human-plural-continuations-verb-c4.patch",
+        "0176-correct-nar-agreement-verb-c4.patch",
+        "0185-add-modern-present-adjectival-participles-verb-c4.patch",
+        "0186-add-regular-modern-verbal-nominals-verb-c4.patch",
+        "0192-repair-invalid-combining-sequences-verb-c4.patch",
+        "0193-deduplicate-verb-c4-entries.patch",
+        "0198-add-weak-readings-for-plain-tal-citations-c4.patch",
+        "0200-add-final-citation-readings-verb-c4.patch",
+        "0201-add-dual-source-known-head-compounds-c4.patch",
+        "0213-add-final-reviewed-c4-roots.patch",
+        "0226-reclassify-nadi-and-add-kandari-c4.patch",
+        "0232-add-reported-complements-verb-c4.patch",
+        "0233-add-nonfinite-sandhi-verb-c4.patch",
+        "0236-add-verbal-noun-cases-verb-c4.patch",
+        "0245-synchronize-padu-vpart-compounds-c4.patch",
+        "0261-remove-citation-contradicted-c4-assignments.patch",
+        "0266-complete-modern-perfect-and-past-plural-verb-c4.patch",
+        "0271-complete-participial-nominals-verb-c4.patch",
+        "0287-remove-orphaned-compounds-c4.patch",
+        "0291-remove-unresolved-productive-compounds-c4.patch",
+        "0302-add-c4-ability-mudi-subclass.patch",
+        "0304-fix-c4-mudi-infinitive.patch",
+        "0311-add-verb-question-clitic-verb-c4.patch",
+        "0322-add-focus-and-repair-i-final-modal-verb-c4.patch",
+        "0330-add-purpose-reporting-verb-c4.patch",
+        "0335-add-temporal-and-common-roots-verb-c4.patch",
+        "0338-complete-c4-auxiliary-participial-oor.patch",
+        "0341-repair-c4-manner-and-u-final-future.patch",
+        "0342-final-systemic-verb-c4.patch",
+        "0345-repair-c4-weak-infinitives.patch",
+        "0346-final-common-verb-c4.patch",
+        "0349-systematic-colloquial-verb-c4.patch",
+        "0355-add-gendered-participial-nouns-verb-c4.patch",
+        "0357-fix-colloquial-ng-questions-verb-c4.patch",
+        "0358-complete-finite-second-person-questions-verb-c4.patch",
+        "0362-add-colloquial-finite-negative-verb-c4.patch",
+        "0364-add-infinitive-focus-verb-c4.patch",
+        "0366-add-colloquial-participial-nominals-verb-c4.patch",
+        "0367-complete-finite-conditional-clitics-verb-c4.patch",
+        "0370-add-spoken-predicate-repairs-verb-c4.patch",
+        "0371-repair-finite-clitic-realization-verb-c4.patch",
+        "0379-add-infinitive-focus-verb-c4.patch",
+        "0381-add-non-nominal-colloquial-locatives-verb-c4.patch",
+        "0387-complete-future-oor-participials-verb-c4.patch",
+        "0414-final-verb-class-corrections-verb-c4.patch",
+        "0415-formal-verbal-noun-accusatives-verb-c4.patch",
+        "0417-add-final-common-verb-roots-verb-c4.patch",
+        "0418-complete-verbal-noun-extensions-verb-c4.patch",
+        "0419-add-participial-possessives-verb-c4.patch",
+        "0421-add-residual-c4-compound-roots.patch",
+        "0425-colloquial-imperative-parity-verb-c4.patch",
+        "0430-fix-c4-aay-infinitives.patch"
       ]
     },
     {
@@ -145,9 +482,81 @@
         "0019-add-participial-person-nominals.patch",
         "0023-add-source-backed-c5-primary-verb-stems.patch",
         "0024-add-source-backed-c5-primary-verb-stems-2.patch",
+        "0082-add-systematic-c5-light-verb-compounds.patch",
+        "0086-add-source-backed-c5-verb-roots-lexicon-light.patch",
+        "0091-add-source-backed-c5-remaining-verb-roots.patch",
         "0063-add-reviewed-c11-verb-root-coverage.patch",
+        "0081-add-systematic-c11-tier1-verb-roots.patch",
+        "0085-add-systematic-c11-tier2-verb-roots.patch",
+        "0089-add-source-backed-c11-remaining-verb-roots.patch",
         "0039-add-c11-loan-verb-stems.patch",
-        "0065-add-class-level-modern-perfect-and-verbal-nouns.patch"
+        "0065-add-class-level-modern-perfect-and-verbal-nouns.patch",
+        "0125-add-c11-citation-verbal-nouns.patch",
+        "0136-normalize-c11-and-add-negative-action-nominals.patch",
+        "0146-remove-invalid-productive-expansions-c11.patch",
+        "0152-remove-transitive-invalid-expansions-c11.patch",
+        "0166-remove-incorrect-c11-ney-reading.patch",
+        "0168-remove-invalid-ney-c11-compounds.patch",
+        "0171-remove-invalid-ney-passive-c11-compounds.patch",
+        "0174-add-present-human-plural-continuations-verb-c11.patch",
+        "0176-correct-nar-agreement-verb-c11.patch",
+        "0185-add-modern-present-adjectival-participles-verb-c11.patch",
+        "0191-add-c11-perfect-participles.patch",
+        "0192-repair-invalid-combining-sequences-verb-c11.patch",
+        "0193-deduplicate-verb-c11-entries.patch",
+        "0198-remove-unsupported-strong-readings-c11.patch",
+        "0199-add-strong-readings-for-thal-citations-c11.patch",
+        "0200-add-citation-rules-verb-c11.patch",
+        "0215-add-final-reviewed-c11-root.patch",
+        "0227-add-corpus-attested-common-verb-roots-c11.patch",
+        "0232-add-reported-complements-verb-c11.patch",
+        "0233-add-nonfinite-sandhi-verb-c11.patch",
+        "0236-add-verbal-noun-cases-verb-c11.patch",
+        "0246-synchronize-padu-vpart-compounds-c11.patch",
+        "0254-complete-c11-agreement-matrix.patch",
+        "0257-restore-compound-strong-readings.patch",
+        "0260-remove-citation-contradicted-c11-assignments.patch",
+        "0266-complete-modern-perfect-and-past-plural-verb-c11.patch",
+        "0270-fix-c11-negative-adjectival.patch",
+        "0271-complete-participial-nominals-verb-c11.patch",
+        "0282-remove-duplicate-iru-c11-root.patch",
+        "0284-remove-invalid-passive-connectors-c11.patch",
+        "0288-remove-orphaned-compounds-c11.patch",
+        "0292-remove-unresolved-productive-compounds-c11.patch",
+        "0300-move-ability-mudi-out-of-c11.patch",
+        "0311-add-verb-question-clitic-verb-c11.patch",
+        "0312-fix-c11-simple-neuter-future.patch",
+        "0321-add-productive-worthy-focus-verb-c11.patch",
+        "0330-add-purpose-reporting-verb-c11.patch",
+        "0335-add-temporal-and-common-roots-verb-c11.patch",
+        "0338-complete-c11-auxiliary-participial-oor.patch",
+        "0342-final-systemic-verb-c11.patch",
+        "0346-final-common-verb-c11.patch",
+        "0349-systematic-colloquial-verb-c11.patch",
+        "0352-fix-c11-negative-imperatives.patch",
+        "0355-add-gendered-participial-nouns-verb-c11.patch",
+        "0356-add-c11-i-final-colloquial-past.patch",
+        "0357-fix-colloquial-ng-questions-verb-c11.patch",
+        "0358-complete-finite-second-person-questions-verb-c11.patch",
+        "0360-add-vai-colloquial-past-subclass.patch",
+        "0362-add-colloquial-finite-negative-verb-c11.patch",
+        "0364-add-infinitive-focus-verb-c11.patch",
+        "0365-add-spoken-present-subclasses-verb-c11.patch",
+        "0366-add-colloquial-participial-nominals-verb-c11.patch",
+        "0367-complete-finite-conditional-clitics-verb-c11.patch",
+        "0370-add-spoken-predicate-repairs-verb-c11.patch",
+        "0371-repair-finite-clitic-realization-verb-c11.patch",
+        "0372-complete-finite-second-person-questions-verb-c11.patch",
+        "0381-add-non-nominal-colloquial-locatives-verb-c11.patch",
+        "0387-complete-future-oor-participials-verb-c11.patch",
+        "0414-final-verb-class-corrections-verb-c11.patch",
+        "0415-formal-verbal-noun-accusatives-verb-c11.patch",
+        "0417-add-final-common-verb-roots-verb-c11.patch",
+        "0418-complete-verbal-noun-extensions-verb-c11.patch",
+        "0419-add-participial-possessives-verb-c11.patch",
+        "0425-colloquial-imperative-parity-verb-c11.patch",
+        "0426-colloquial-imperative-parity-verb-c11.patch",
+        "0427-add-i-final-colloquial-imperatives.patch"
       ]
     },
     {
@@ -166,7 +575,100 @@
         "0018-add-short-honorific-verb-forms.patch",
         "0019-add-participial-person-nominals.patch",
         "0023-add-source-backed-c5-primary-verb-stems.patch",
-        "0024-add-source-backed-c5-primary-verb-stems-2.patch"
+        "0024-add-source-backed-c5-primary-verb-stems-2.patch",
+        "0082-add-systematic-c5-light-verb-compounds.patch",
+        "0088-add-systematic-c12-tier2-verb-roots.patch",
+        "0090-add-source-backed-c12-remaining-verb-roots.patch",
+        "0086-add-source-backed-c5-verb-roots-lexicon-light.patch",
+        "0091-add-source-backed-c5-remaining-verb-roots.patch",
+        "0130-add-c12-phonological-citation-verbal-nouns.patch",
+        "0137-normalize-c12-and-add-negative-action-nominals.patch",
+        "0147-remove-invalid-productive-expansions-c12.patch",
+        "0153-remove-transitive-invalid-expansions-c12.patch",
+        "0169-remove-invalid-ney-c12-compounds.patch",
+        "0174-add-present-human-plural-continuations-verb-c12.patch",
+        "0176-correct-nar-agreement-verb-c12.patch",
+        "0185-add-modern-present-adjectival-participles-verb-c12.patch",
+        "0187-add-c12-modern-verbal-nominals.patch",
+        "0192-repair-invalid-combining-sequences-verb-c12.patch",
+        "0193-deduplicate-verb-c12-entries.patch",
+        "0194-disambiguate-c12-rule-names.patch",
+        "0200-add-citation-rule-verb-c12.patch",
+        "0212-remove-redundant-c12-iru-mood-paradigm.patch",
+        "0216-add-final-reviewed-c12-root.patch",
+        "0232-add-reported-complements-verb-c12.patch",
+        "0233-add-nonfinite-sandhi-verb-c12.patch",
+        "0236-add-verbal-noun-cases-verb-c12.patch",
+        "0247-synchronize-padu-vpart-compounds-c12.patch",
+        "0251-deduplicate-c12-thonnaa.patch",
+        "0266-complete-modern-perfect-and-past-plural-verb-c12.patch",
+        "0271-complete-participial-nominals-verb-c12.patch",
+        "0273-fix-iru-auxiliary-present.patch",
+        "0279-restore-standalone-iru-c12.patch",
+        "0282-add-iru-citation-c12.patch",
+        "0286-remove-unsupported-vala-c12.patch",
+        "0289-remove-orphaned-compounds-c12.patch",
+        "0293-remove-unresolved-productive-compounds-c12.patch",
+        "0298-add-corpus-attested-iru-chains.patch",
+        "0311-add-verb-question-clitic-verb-c12.patch",
+        "0320-complete-c12-modal-worthy-focus.patch",
+        "0330-add-purpose-reporting-verb-c12.patch",
+        "0335-add-temporal-and-common-roots-verb-c12.patch",
+        "0338-complete-c12-auxiliary-participial-oor.patch",
+        "0342-final-systemic-verb-c12.patch",
+        "0346-final-common-verb-c12.patch",
+        "0349-systematic-colloquial-verb-c12.patch",
+        "0355-add-gendered-participial-nouns-verb-c12.patch",
+        "0357-fix-colloquial-ng-questions-verb-c12.patch",
+        "0358-complete-finite-second-person-questions-verb-c12.patch",
+        "0362-add-colloquial-finite-negative-verb-c12.patch",
+        "0364-add-infinitive-focus-verb-c12.patch",
+        "0365-add-spoken-present-subclasses-verb-c12.patch",
+        "0366-add-colloquial-participial-nominals-verb-c12.patch",
+        "0367-complete-finite-conditional-clitics-verb-c12.patch",
+        "0370-add-spoken-predicate-repairs-verb-c12.patch",
+        "0371-repair-finite-clitic-realization-verb-c12.patch",
+        "0372-complete-finite-second-person-questions-verb-c12.patch",
+        "0375-add-colloquial-finite-negative-verb-c12.patch",
+        "0374-add-infinitive-focus-verb-c12.patch",
+        "0377-add-colloquial-participial-nominals-verb-c12.patch",
+        "0378-complete-finite-conditional-clitics-verb-c12.patch",
+        "0381-add-non-nominal-colloquial-locatives-verb-c12.patch",
+        "0387-complete-future-oor-participials-verb-c12.patch",
+        "0390-correct-c12-short-honorific-agreement.patch",
+        "0391-complete-c12-hortative-parity.patch",
+        "0415-formal-verbal-noun-accusatives-verb-c12.patch",
+        "0418-complete-verbal-noun-extensions-verb-c12.patch",
+        "0419-add-participial-possessives-verb-c12.patch",
+        "0425-colloquial-imperative-parity-verb-c12.patch",
+        "0426-colloquial-imperative-parity-verb-c12.patch"
+      ],
+      "pair_extensions": [
+        {
+          "file": "0349-systematic-colloquial-verb-c12.fst.tsv",
+          "sha256": "d9cc5347ca52477f52e8ca3abbdf322c067cecb143dbf3e2207378a0ebd282f0",
+          "added_pairs": 7
+        },
+        {
+          "file": "0380-complete-atomic-colloquial-questions-verb-c12.fst.tsv",
+          "sha256": "7a943d346d23323556ff4bd018ed211992363c73464e438c0319a0d82247a7b5",
+          "added_pairs": 1
+        },
+        {
+          "file": "0385-complete-iru-colloquial-finite-relations.tsv",
+          "sha256": "d017d9e3310c58970b1a07eb0d4a8e83c6a49e7beb61434bc41167ff514b990c",
+          "added_pairs": 8
+        },
+        {
+          "file": "0392-complete-iru-conditional-agreement.tsv",
+          "sha256": "3edfc83e9beebd48973761ef64ea8188b897d487e3de18df9eaa335c88e3328d",
+          "added_pairs": 4
+        },
+        {
+          "file": "0428-add-iru-colloquial-relative.tsv",
+          "sha256": "0f3b23a4760107d31b918731242a8a6218169655d794478316f1b08e6eab8cd5",
+          "added_pairs": 1
+        }
       ]
     },
     {
@@ -185,7 +687,46 @@
         "0018-add-short-honorific-verb-forms.patch",
         "0019-add-participial-person-nominals.patch",
         "0023-add-source-backed-c5-primary-verb-stems.patch",
-        "0024-add-source-backed-c5-primary-verb-stems-2.patch"
+        "0024-add-source-backed-c5-primary-verb-stems-2.patch",
+        "0082-add-systematic-c5-light-verb-compounds.patch",
+        "0086-add-source-backed-c5-verb-roots-lexicon-light.patch",
+        "0091-add-source-backed-c5-remaining-verb-roots.patch",
+        "0129-add-c62-citation-verbal-nouns.patch",
+        "0138-normalize-c62-and-add-negative-action-nominals.patch",
+        "0148-remove-invalid-productive-expansions-c62.patch",
+        "0154-remove-transitive-invalid-expansions-c62.patch",
+        "0174-add-present-human-plural-continuations-verb-c62.patch",
+        "0176-correct-nar-agreement-verb-c62.patch",
+        "0185-add-modern-present-adjectival-participles-verb-c62.patch",
+        "0186-add-regular-modern-verbal-nominals-verb-c62.patch",
+        "0232-add-reported-complements-verb-c62.patch",
+        "0233-add-nonfinite-sandhi-verb-c62.patch",
+        "0236-add-verbal-noun-cases-verb-c62.patch",
+        "0266-complete-modern-perfect-and-past-plural-verb-c62.patch",
+        "0271-complete-participial-nominals-verb-c62.patch",
+        "0311-add-verb-question-clitic-verb-c62.patch",
+        "0322-add-productive-focus-verb-c62.patch",
+        "0330-add-purpose-reporting-verb-c62.patch",
+        "0335-add-temporal-and-common-roots-verb-c62.patch",
+        "0338-complete-c62-participial-oor.patch",
+        "0342-final-systemic-verb-c62.patch",
+        "0346-final-common-verb-c62.patch",
+        "0349-systematic-colloquial-verb-c62.patch",
+        "0355-add-gendered-participial-nouns-verb-c62.patch",
+        "0357-fix-colloquial-ng-questions-verb-c62.patch",
+        "0358-complete-finite-second-person-questions-verb-c62.patch",
+        "0362-add-colloquial-finite-negative-verb-c62.patch",
+        "0364-add-infinitive-focus-verb-c62.patch",
+        "0366-add-colloquial-participial-nominals-verb-c62.patch",
+        "0367-complete-finite-conditional-clitics-verb-c62.patch",
+        "0370-add-spoken-predicate-repairs-verb-c62.patch",
+        "0371-repair-finite-clitic-realization-verb-c62.patch",
+        "0381-add-non-nominal-colloquial-locatives-verb-c62.patch",
+        "0387-complete-future-oor-participials-verb-c62.patch",
+        "0415-formal-verbal-noun-accusatives-verb-c62.patch",
+        "0418-complete-verbal-noun-extensions-verb-c62.patch",
+        "0419-add-participial-possessives-verb-c62.patch",
+        "0425-colloquial-imperative-parity-verb-c62.patch"
       ]
     },
     {
@@ -210,20 +751,269 @@
         "0043-add-audit-backed-passive-verb-stems.patch",
         "0049-add-corpus-backed-modern-verb-coverage.patch",
         "0053-add-c2-koll-modern-infinitive.patch",
+        "0083-add-systematic-c5-light-verb-compounds-c-rest.patch",
+        "0087-add-source-backed-c5-verb-roots-lexicon-light-c-rest.patch",
+        "0092-add-source-backed-c5-remaining-verb-roots-c-rest.patch",
         "0060-add-modern-verbal-nominal-forms.patch",
         "0061-add-modern-present-finite-coverage.patch",
+        "0084-add-c8-short-honorific-forms.patch",
         "0062-add-modern-passive-perfect-neuter-coverage.patch",
         "0064-add-reviewed-modern-perfect-hooks.patch",
         "0065-add-class-level-modern-perfect-and-verbal-nouns.patch",
+        "0124-add-c5-citation-verbal-nouns.patch",
+        "0126-add-c5-elided-citation-verbal-nouns.patch",
+        "0131-add-minor-rest-class-citation-verbal-nouns.patch",
         "0066-add-passive-verbal-noun-negative-rule.patch",
-        "0070-add-c11-passive-family-coverage.patch"
+        "0070-add-c11-passive-family-coverage.patch",
+        "0139-normalize-c-rest-and-add-negative-action-nominals.patch",
+        "0149-remove-invalid-productive-expansions-c-rest.patch",
+        "0155-remove-transitive-invalid-expansions-c-rest.patch",
+        "0165-add-explicit-c5-citation-stems.patch",
+        "0170-remove-invalid-ney-c-rest-compounds.patch",
+        "0172-remove-invalid-ney-passive-c-rest-compounds.patch",
+        "0174-add-present-human-plural-continuations-verb-c-rest.patch",
+        "0175-complete-existing-passive-stem-continuations-c-rest.patch",
+        "0176-correct-nar-agreement-verb-c-rest.patch",
+        "0185-add-modern-present-adjectival-participles-verb-c-rest.patch",
+        "0186-add-regular-modern-verbal-nominals-verb-c-rest.patch",
+        "0187-add-reviewed-auxiliary-verbal-nominals.patch",
+        "0188-correct-and-expand-modern-class13-aaku.patch",
+        "0189-add-passive-short-present-honorific.patch",
+        "0190-add-passive-past-perfect-participle.patch",
+        "0192-repair-invalid-combining-sequences-verb-c-rest.patch",
+        "0193-deduplicate-verb-c-rest-entries.patch",
+        "0199-remove-unsupported-weak-readings-c5.patch",
+        "0200-add-citation-rules-verb-c-rest.patch",
+        "0201-add-dual-source-known-head-compounds-c-rest.patch",
+        "0202-add-participial-po-compounds.patch",
+        "0203-add-runtime-modifier-sey-compounds.patch",
+        "0204-add-source-noun-modifier-sey-compounds.patch",
+        "0205-add-irregular-nil-paradigm.patch",
+        "0206-add-reviewed-po-connectors.patch",
+        "0208-add-nil-participial-po-compound.patch",
+        "0211-split-c61-c63-continuations.patch",
+        "0214-add-final-reviewed-c2-compounds.patch",
+        "0224-add-reviewed-passive-stems.patch",
+        "0226-reclassify-corpus-attested-idu.patch",
+        "0227-add-corpus-attested-common-verb-roots-c-rest.patch",
+        "0228-complete-suppletive-thaa-vaa-nonpast.patch",
+        "0229-add-verified-common-passive-stems.patch",
+        "0232-add-reported-complements-verb-c-rest.patch",
+        "0233-add-nonfinite-sandhi-verb-c-rest.patch",
+        "0236-add-verbal-noun-cases-verb-c-rest.patch",
+        "0239-canonicalize-passive-perfect-hooks.patch",
+        "0241-canonicalize-passive-paradigm-lemmas.patch",
+        "0242-remove-orphan-passive-perfect-hooks.patch",
+        "0243-close-passive-canonical-lemma-holds.patch",
+        "0244-reclassify-padu-head-verbs.patch",
+        "0248-synchronize-padu-vpart-compounds-c-rest.patch",
+        "0249-complete-po-modern-paradigm.patch",
+        "0250-repair-class13-and-invalid-c5-roots.patch",
+        "0252-add-irregular-future-neuter.patch",
+        "0255-complete-irregular-agreement-matrix.patch",
+        "0258-restore-c13-nonfinite-variants.patch",
+        "0259-remove-citation-contradicted-c-rest-assignments.patch",
+        "0266-complete-modern-perfect-and-past-plural-verb-c-rest.patch",
+        "0271-complete-participial-nominals-verb-c-rest.patch",
+        "0283-add-causative-iruttu-c5.patch",
+        "0285-remove-invalid-passive-connectors-c-rest.patch",
+        "0290-remove-orphaned-compounds-c-rest.patch",
+        "0294-remove-unresolved-productive-compounds-c-rest.patch",
+        "0299-add-nadanthuperu-progressive-vaa-chain.patch",
+        "0301-add-en-infinitive-and-passive.patch",
+        "0303-fix-vaa-nonpast-stems.patch",
+        "0305-complete-vaa-auxiliary-continuation.patch",
+        "0311-add-verb-question-clitic-verb-c-rest.patch",
+        "0313-fix-vaa-neuter-future-before-question.patch",
+        "0316-scope-vaa-rewrites-to-class17.patch",
+        "0317-clean-class17-scope-marker.patch",
+        "0318-complete-en-passive-perfect-hook.patch",
+        "0319-complete-passive-worthy-focus-verb-c-rest.patch",
+        "0330-add-purpose-reporting-and-core-roots-c-rest.patch",
+        "0335-add-temporal-and-common-roots-verb-c-rest.patch",
+        "0336-repair-verb-c7-realization.patch",
+        "0338-repair-c2-c8-neuter-future-rewrites.patch",
+        "0338-complete-c-rest-productive-continuations.patch",
+        "0342-final-systemic-verb-c-rest.patch",
+        "0346-final-common-verb-c-rest.patch",
+        "0349-systematic-colloquial-verb-c-rest.patch",
+        "0355-add-gendered-participial-nouns-verb-c-rest.patch",
+        "0356-complete-c5-colloquial-present.patch",
+        "0356-add-sey-colloquial-past.patch",
+        "0357-fix-colloquial-ng-questions-verb-c-rest.patch",
+        "0358-complete-finite-second-person-questions-verb-c-rest.patch",
+        "0362-add-colloquial-finite-negative-verb-c-rest.patch",
+        "0364-add-infinitive-focus-verb-c-rest.patch",
+        "0365-add-spoken-present-subclasses-verb-c-rest.patch",
+        "0366-add-colloquial-participial-nominals-verb-c-rest.patch",
+        "0367-complete-finite-conditional-clitics-verb-c-rest.patch",
+        "0370-add-spoken-predicate-repairs-verb-c-rest.patch",
+        "0371-repair-finite-clitic-realization-verb-c-rest.patch",
+        "0372-complete-finite-second-person-questions-verb-c-rest.patch",
+        "0375-add-colloquial-finite-negative-verb-c-rest.patch",
+        "0374-add-infinitive-focus-verb-c-rest.patch",
+        "0377-add-colloquial-participial-nominals-verb-c-rest.patch",
+        "0378-complete-finite-conditional-clitics-verb-c-rest.patch",
+        "0379-add-infinitive-focus-verb-c-rest.patch",
+        "0381-add-non-nominal-colloquial-locatives-verb-c-rest.patch",
+        "0387-complete-future-oor-participials-verb-c-rest.patch",
+        "0389-remove-poru-c5-misclassification.patch",
+        "0395-complete-ul-existential-agreement.patch",
+        "0401-complete-c13-negative-vpart.patch",
+        "0408-add-meet-transitive-subclass.patch",
+        "0412-complete-prefixed-eel-paradigms.patch",
+        "0414-final-verb-class-corrections-verb-c-rest.patch",
+        "0415-formal-verbal-noun-accusatives-verb-c-rest.patch",
+        "0417-add-final-common-verb-roots-verb-c-rest.patch",
+        "0418-complete-verbal-noun-extensions-verb-c-rest.patch",
+        "0419-add-participial-possessives-verb-c-rest.patch",
+        "0422-remove-dead-prefixed-vaa-root.patch",
+        "0423-add-thisai-thiruppu-c5-root.patch",
+        "0425-colloquial-imperative-parity-verb-c-rest.patch",
+        "0426-colloquial-imperative-parity-verb-c-rest.patch"
+      ],
+      "pair_extensions": [
+        {
+          "file": "0349-systematic-colloquial-verb-c-rest.fst.tsv",
+          "sha256": "092eb6fcdf4c5fc7118366a9e9159a2677d099a351883ed1f414e6f7e47eb0eb",
+          "added_pairs": 39
+        },
+        {
+          "file": "0380-complete-atomic-colloquial-questions-verb-c-rest.fst.tsv",
+          "sha256": "060a54340cdf429e33288f155ef144903c6e1e8da99dec5523a91225a5cccda0",
+          "added_pairs": 6
+        },
+        {
+          "file": "0383-add-paar-colloquial-past-relations.tsv",
+          "sha256": "c4c6774ea84052df24b90d96840c2cc495516d5a546fc16e98148f37b4f7039b",
+          "added_pairs": 579
+        },
+        {
+          "file": "0388-complete-c17-future-oor-participials.tsv",
+          "sha256": "c4efbf94f674015d4bced2287606f59eeecc4b517fb132ad1bbcf6ebd54dc1f4",
+          "added_pairs": 30
+        },
+        {
+          "file": "0396-add-reviewed-irregular-and-closed-relations.tsv",
+          "sha256": "4cbe9e1833184e370b51e7ed5e19b6d8700d241cda60e27ecfa2cf0e174cd6b0",
+          "added_pairs": 1
+        },
+        {
+          "file": "0398-add-closed-class-parity-verb-c-rest.tsv",
+          "sha256": "e3afb9b7e846996e8c552eacd56d76892cf9497a6433822adc10306c3d911159",
+          "added_pairs": 1
+        }
       ]
     },
     {
       "name": "pronoun",
       "mode": "copy-prebuilt",
       "source": "FST-Models/pronoun.fst",
-      "output": "pronoun.fst"
+      "output": "pronoun.fst",
+      "pair_extensions": [
+        {
+          "file": "0231-pronoun-case-continuations.tsv",
+          "sha256": "ad06c4c68b15ae0b5ba528a24cfcaa1e2ac04f8d523670f4ce7ae119d8ba8316",
+          "added_pairs": 585
+        },
+        {
+          "file": "0268-clean-pronoun-focus-continuations.tsv",
+          "sha256": "3c88ec188353ad8b2d2e3ee0102571c779913963eb26bf9972c6dd5c41235e89",
+          "added_pairs": 289
+        },
+        {
+          "file": "0263-add-productive-pronoun-relations.tsv",
+          "sha256": "0b3f102b4dbaa79b867f3b8153c0d927493dfa3a60f56ff2572e95f48d9d6b6a",
+          "added_pairs": 50
+        },
+        {
+          "file": "0331-add-colloquial-first-plural-possessive.tsv",
+          "sha256": "5159b39234f0dca8b2f002d20083041d5eac81acd335b96849a5b004eb5f9aae",
+          "added_pairs": 9
+        },
+        {
+          "file": "0359-add-pronoun-predicate-questions.tsv",
+          "sha256": "2eec5c71a442d3cd2fe1c5ffe01e2d0d3c01bde93771ab58621a9f6ef9d7cb6c",
+          "added_pairs": 39
+        },
+        {
+          "file": "0361-add-interrogative-utaiya.tsv",
+          "sha256": "7154a1478e9854e02bbe38daa09b43b85691866feec3f549cf91892f580ab7e8",
+          "added_pairs": 6
+        },
+        {
+          "file": "0363-add-colloquial-pronoun-locatives.tsv",
+          "sha256": "6dbaf57ae47ee0b51e07987da60d32726b0ef1a231d752a4e6668abf0dea564f",
+          "added_pairs": 37
+        },
+        {
+          "file": "0373-complete-pronoun-case-matrix.tsv",
+          "sha256": "2cd6d2d13cb528435793247ec29042038f246e53098a9e461eb81ae6917cdf0a",
+          "added_pairs": 107
+        },
+        {
+          "file": "0384-complete-pronoun-in-genitive-syncretism.tsv",
+          "sha256": "d821cdd7620bd9ec0c44ea50246f1f9e0b5a4603bd7c9eed5c53470a7c7ffc44",
+          "added_pairs": 24
+        },
+        {
+          "file": "0398-add-closed-class-parity-pronoun.tsv",
+          "sha256": "fa4c8d3d275c04e7b1f025b5d4dea971ceb38400854b4b3ef5c5380c8790f76d",
+          "added_pairs": 5
+        },
+        {
+          "file": "0406-add-final-pronoun-relations.tsv",
+          "sha256": "0105901ce36e2ddfe9c5390595a5a7330081095089da870c6e86519cdd0079bf",
+          "added_pairs": 47
+        }
+      ],
+      "pair_rejections": [
+        {
+          "file": "0373-canonicalize-pronoun-oblique-lemmas.reject.tsv",
+          "sha256": "6b827c8e01290ce639b2e6e84e18edc0dd85c14a029ee5b3a9fbd151624952a9"
+        }
+      ],
+      "canonicalized_deictic_person_pairs": 867
+    },
+    {
+      "name": "verb-auxiliary",
+      "mode": "generated-composition",
+      "builder": "fst/build/build_productive_auxiliary_fst.py",
+      "builder_sha256": "db22d428a190da784834a207f5f8f9c7af34cdb9f07cacc71000c907af9e48ef",
+      "output": "verb-auxiliary.fst",
+      "inventory": "verb-auxiliary.inventory.json",
+      "summary": {
+        "attainment_nouns": 16,
+        "become_templates": 1393,
+        "connectors": 306719,
+        "dative_postposition_rows": 517224,
+        "fst_bytes": 1380449,
+        "genitive_temporal_rows": 127252,
+        "inventory_bytes": 14308218,
+        "inventory_sha256": "b2ff425d64767ff9615cf36962cd73300f0ede11e63558cedd2f2883c3422676",
+        "iru_templates": 725,
+        "kol_compound_stems": 5,
+        "kol_templates": 584,
+        "light_predicate_families": 2,
+        "light_predicate_templates": 1577,
+        "locative_existential_lemmas": 3,
+        "locative_existential_rows": 509008,
+        "nominal_existential_lemmas": 127220,
+        "nominal_existential_rows": 1011608,
+        "predicate_lemmas": 126955,
+        "predicative_particle_rows": 725,
+        "prefixed_vaa_templates": 597,
+        "root_rows": 4913950,
+        "unique_infinitive_connectors": 87565,
+        "unique_negative_adjectival_connectors": 11697,
+        "unique_past_adjectival_connectors": 18506,
+        "unique_sandhi_k_vpart_connectors": 87562,
+        "unique_vpart_connectors": 87562,
+        "vidu_templates": 676,
+        "vpart_i_ending": 35495,
+        "vpart_u_ending": 52066,
+        "vpart_y_ending": 1
+      }
     }
   ],
   "patches": [
@@ -722,13 +1512,2197 @@
     {
       "file": "fst/patches/0071-canonicalize-sandhi-complementizers.patch",
       "sha256": "c3a99c31054c88e96d921b02528d862eb6fe42cdffc5028335b990bd9927c798"
+    },
+    {
+      "file": "fst/patches/0072-add-nati-c4-root.patch",
+      "sha256": "08ee3d4197c4aec1c1798d84cfc9e5445fd4b7fdeed7d7e1f2fb4f0de94fd45c"
+    },
+    {
+      "file": "fst/patches/0073-add-systematic-noun-root-candidates.patch",
+      "sha256": "84abafd7a4cba7e62b8f8dc713f1bb88977a5c4c981891f7f5cb0bac20e8fc53"
+    },
+    {
+      "file": "fst/patches/0074-add-systematic-c2-kkai-noun-roots.patch",
+      "sha256": "b861813b7f360e982df49bc82a6b1fa548bcfe2d127feceb518556bcaa1df527"
+    },
+    {
+      "file": "fst/patches/0075-add-systematic-c2-compound-head-nouns.patch",
+      "sha256": "d4a95b3756b2e5bc5fbcf8b2140b91ac131072fe9365d1f459647f0e530e506d"
+    },
+    {
+      "file": "fst/patches/0076-add-systematic-c15-compound-head-nouns.patch",
+      "sha256": "a617edda5b809e16a9615987a011acd26672e2b9430ae83ba1fb7655c4bbebd7"
+    },
+    {
+      "file": "fst/patches/0077-add-high-confidence-c15-m-final-nouns.patch",
+      "sha256": "13eabec9756f286cbebcef026ccd31c3425ec20857c6ca6bcba71edc82799e04"
+    },
+    {
+      "file": "fst/patches/0078-add-systematic-c2-head-family-nouns-2.patch",
+      "sha256": "7fd280f0d997867b566e259e90f3bd883ace9bc8d0b5e41df71ea4b369fadaa7"
+    },
+    {
+      "file": "fst/patches/0079-add-systematic-c2-head-family-nouns-3.patch",
+      "sha256": "0ab81e9557676e9c07b50eb9582ded379c94928fb94393f1214f0ed34cf97e2a"
+    },
+    {
+      "file": "fst/patches/0080-add-systematic-c15-nominal-head-nouns.patch",
+      "sha256": "716fc01d9bc3dfbfa6cd1472929f73a362bf20b4dcd1987484a5a8cdb4bd28a6"
+    },
+    {
+      "file": "fst/patches/0081-add-systematic-c11-tier1-verb-roots.patch",
+      "sha256": "3968412b33a577ea68d2357427acd18b4b00ddd5388056beb1ffb01dadedc988"
+    },
+    {
+      "file": "fst/patches/0082-add-systematic-c5-light-verb-compounds.patch",
+      "sha256": "c83d7d93dbd41f14c2e7e19713c19b425c8f73679e8c408a9e6c6ed8b6660f4e"
+    },
+    {
+      "file": "fst/patches/0082-add-systematic-c5-light-verb-compounds.patch",
+      "sha256": "c83d7d93dbd41f14c2e7e19713c19b425c8f73679e8c408a9e6c6ed8b6660f4e"
+    },
+    {
+      "file": "fst/patches/0082-add-systematic-c5-light-verb-compounds.patch",
+      "sha256": "c83d7d93dbd41f14c2e7e19713c19b425c8f73679e8c408a9e6c6ed8b6660f4e"
+    },
+    {
+      "file": "fst/patches/0082-add-systematic-c5-light-verb-compounds.patch",
+      "sha256": "c83d7d93dbd41f14c2e7e19713c19b425c8f73679e8c408a9e6c6ed8b6660f4e"
+    },
+    {
+      "file": "fst/patches/0082-add-systematic-c5-light-verb-compounds.patch",
+      "sha256": "c83d7d93dbd41f14c2e7e19713c19b425c8f73679e8c408a9e6c6ed8b6660f4e"
+    },
+    {
+      "file": "fst/patches/0083-add-systematic-c5-light-verb-compounds-c-rest.patch",
+      "sha256": "8ef6dd378da01e7921de74cf7d6953caf948b96ca87959cd190365b470735051"
+    },
+    {
+      "file": "fst/patches/0084-add-c8-short-honorific-forms.patch",
+      "sha256": "a1adf4a614142c7dc152007f83beab19036312cdb6860efacd6e971edebe5632"
+    },
+    {
+      "file": "fst/patches/0085-add-systematic-c11-tier2-verb-roots.patch",
+      "sha256": "a8dd2ccfa36310e12e1a5993693bf07a66111f080fdd9e077f51f9d0ec2fec10"
+    },
+    {
+      "file": "fst/patches/0086-add-source-backed-c5-verb-roots-lexicon-light.patch",
+      "sha256": "9f36594360b0397e9082b4e2a1e91ffaeba6921efc65981f686b7bbe26326c2f"
+    },
+    {
+      "file": "fst/patches/0086-add-source-backed-c5-verb-roots-lexicon-light.patch",
+      "sha256": "9f36594360b0397e9082b4e2a1e91ffaeba6921efc65981f686b7bbe26326c2f"
+    },
+    {
+      "file": "fst/patches/0086-add-source-backed-c5-verb-roots-lexicon-light.patch",
+      "sha256": "9f36594360b0397e9082b4e2a1e91ffaeba6921efc65981f686b7bbe26326c2f"
+    },
+    {
+      "file": "fst/patches/0086-add-source-backed-c5-verb-roots-lexicon-light.patch",
+      "sha256": "9f36594360b0397e9082b4e2a1e91ffaeba6921efc65981f686b7bbe26326c2f"
+    },
+    {
+      "file": "fst/patches/0086-add-source-backed-c5-verb-roots-lexicon-light.patch",
+      "sha256": "9f36594360b0397e9082b4e2a1e91ffaeba6921efc65981f686b7bbe26326c2f"
+    },
+    {
+      "file": "fst/patches/0087-add-source-backed-c5-verb-roots-lexicon-light-c-rest.patch",
+      "sha256": "01dc832eb8ef5bd614fa87db4246d1bf2090a910e4811c56ecaec7c53c28e1f1"
+    },
+    {
+      "file": "fst/patches/0088-add-systematic-c12-tier2-verb-roots.patch",
+      "sha256": "29bac85fb52c39703b5375649ecea1098c21bae8ba3c5284a31372a077d3d55d"
+    },
+    {
+      "file": "fst/patches/0089-add-source-backed-c11-remaining-verb-roots.patch",
+      "sha256": "ef5401265d9088d18af844bd067a0bbfc7e3ac184e8d24d92d5439bf5abfbf1b"
+    },
+    {
+      "file": "fst/patches/0090-add-source-backed-c12-remaining-verb-roots.patch",
+      "sha256": "a70d6ee9cebe16cde31205df2daf3e3b1490509d2c4a03371cb3668021ecbef5"
+    },
+    {
+      "file": "fst/patches/0091-add-source-backed-c5-remaining-verb-roots.patch",
+      "sha256": "93236b685a00f56892e14e76e729cd92aa9c00de39912b52bcb52057cf3c8680"
+    },
+    {
+      "file": "fst/patches/0091-add-source-backed-c5-remaining-verb-roots.patch",
+      "sha256": "93236b685a00f56892e14e76e729cd92aa9c00de39912b52bcb52057cf3c8680"
+    },
+    {
+      "file": "fst/patches/0091-add-source-backed-c5-remaining-verb-roots.patch",
+      "sha256": "93236b685a00f56892e14e76e729cd92aa9c00de39912b52bcb52057cf3c8680"
+    },
+    {
+      "file": "fst/patches/0091-add-source-backed-c5-remaining-verb-roots.patch",
+      "sha256": "93236b685a00f56892e14e76e729cd92aa9c00de39912b52bcb52057cf3c8680"
+    },
+    {
+      "file": "fst/patches/0091-add-source-backed-c5-remaining-verb-roots.patch",
+      "sha256": "93236b685a00f56892e14e76e729cd92aa9c00de39912b52bcb52057cf3c8680"
+    },
+    {
+      "file": "fst/patches/0092-add-source-backed-c5-remaining-verb-roots-c-rest.patch",
+      "sha256": "62b789a6ef6bd0e6f80743857b12a6b6019b22bf94a1c97ee678a98cb878c143"
+    },
+    {
+      "file": "fst/patches/0093-add-systematic-c15-high-confidence-m-final-nouns.patch",
+      "sha256": "d78370ce89ba27185227685f793b450eb11ec5401d5629bcae2d50eacd0f3906"
+    },
+    {
+      "file": "fst/patches/0094-add-systematic-c15-dual-source-productive-nouns.patch",
+      "sha256": "4c131c9d5b271b6ce1e24dbfd3fdc97bbc96bdb2437a8a238b40f95f961c45a1"
+    },
+    {
+      "file": "fst/patches/0095-add-systematic-c2-dual-source-productive-nouns.patch",
+      "sha256": "c90d154c78b8ceaf6659bf83e6c3ac4578efdb52a495cfb47297d9b5eb743304"
+    },
+    {
+      "file": "fst/patches/0096-add-systematic-c9-dual-source-retroflex-n-nouns.patch",
+      "sha256": "8f76d353438dc3654ad1ba783fc71383414d85ff0ca2d5f9706b019b8bef52a3"
+    },
+    {
+      "file": "fst/patches/0097-add-systematic-c15-dual-source-noun-families-2.patch",
+      "sha256": "bf9838fcbf2076206a528014a149c583e68fc828ce28f41027518fa95e8a52c9"
+    },
+    {
+      "file": "fst/patches/0098-add-systematic-c2-dual-source-noun-families-2.patch",
+      "sha256": "9485697e362e2bdd506799d5426a60fe3c112290bc9f558c6bf5e37391d68f12"
+    },
+    {
+      "file": "fst/patches/0099-add-systematic-c4-dual-source-head-nouns.patch",
+      "sha256": "8c1c7b06243d73800eb1502786d4224f10b15c2d619198c945cc33259f123019"
+    },
+    {
+      "file": "fst/patches/0100-add-systematic-c15-dual-source-noun-families-3.patch",
+      "sha256": "ab31e83cf4147358160eb80bb517f035ef08a281e42ccae9ee5c22ac097fae4d"
+    },
+    {
+      "file": "fst/patches/0101-add-systematic-c2-dual-source-noun-families-3.patch",
+      "sha256": "57f1b79412b1ae622eceb6278b0348d7ed4c05fd58863b40bf76eb67dd7d4f79"
+    },
+    {
+      "file": "fst/patches/0102-add-systematic-c11-dual-source-human-head-nouns.patch",
+      "sha256": "448e721377851e2bc0a5f8ef7bc89cddc22603ad36917d6b41fba10c87b6d071"
+    },
+    {
+      "file": "fst/patches/0103-add-systematic-c14-dual-source-retained-l-head-nouns.patch",
+      "sha256": "04e6dbec8a4dcfa72ec3a7560244c4de55274864fd3e0e14ff906949bfff2e35"
+    },
+    {
+      "file": "fst/patches/0104-add-megabatch-c15-dual-source-nouns.patch",
+      "sha256": "3e2cd5c7204e0c93f93c0ea6b00cf3da85ae41f9e81da6bea3ef77e2bf8e7a39"
+    },
+    {
+      "file": "fst/patches/0105-add-megabatch-c2-dual-source-nouns.patch",
+      "sha256": "9005ec6b1dc0c4a23172c3e6ffa3705359bce8662259f20ed5e666e9a5b7b2c4"
+    },
+    {
+      "file": "fst/patches/0106-add-megabatch-c4-dual-source-nouns.patch",
+      "sha256": "765246680056fde9ad431100ceba35de46f61c3245e4064c72b33d9cf70350e4"
+    },
+    {
+      "file": "fst/patches/0107-add-megabatch-c11-dual-source-nouns.patch",
+      "sha256": "d6213b4d879d3acbc06c43c398222ac7d27c0c6f555eaa1bc928ef6d7ca3dcc2"
+    },
+    {
+      "file": "fst/patches/0108-add-megabatch-c14-dual-source-nouns.patch",
+      "sha256": "049b00f4754ab96d9ff38c67c6e9bec8d9476ff9aae023f0d1f4e8e856d847d1"
+    },
+    {
+      "file": "fst/patches/0109-add-high-confidence-c16-r-final-nouns.patch",
+      "sha256": "1dc476529d722741f92156f60a54f7b4684b3615f1abfdb00d54537e779e60dc"
+    },
+    {
+      "file": "fst/patches/0110-add-next-c2-dual-source-noun-batch.patch",
+      "sha256": "84967bd91ca902af343c14fc6ada3e36e27c0ee47adb343830e203f5a21ad781"
+    },
+    {
+      "file": "fst/patches/0111-add-next-c7-dual-source-noun-batch.patch",
+      "sha256": "bd9b5111371dfbef7a48f54a55fa828f5480c1856ebf4996f8bea378e883f823"
+    },
+    {
+      "file": "fst/patches/0112-add-high-confidence-c11-n-final-nouns.patch",
+      "sha256": "ff1a32aaea9cd76f8ebfd13e59dcafa433b3df343e0396fcfc8f78bdf693e0cc"
+    },
+    {
+      "file": "fst/patches/0113-add-next-dual-source-c2-nouns.patch",
+      "sha256": "bc4a37b6a9cbea7c6563c2834cdaeb4b6e828f0b6fa68c5c9ec333f4eb52eb22"
+    },
+    {
+      "file": "fst/patches/0114-add-next-dual-source-c7-nouns.patch",
+      "sha256": "30644725f3c32207a752990b91058216a9270971f9f003e3f4d4cad51cc555ac"
+    },
+    {
+      "file": "fst/patches/0115-add-source-backed-c15-m-final-nouns.patch",
+      "sha256": "e31f787a797ec757237d78792623dcb9a09727dd6db269ce8d0edd0ddd03f77a"
+    },
+    {
+      "file": "fst/patches/0116-add-single-source-c2-productive-nouns.patch",
+      "sha256": "c35584c06294c630befb0f9618d7ff3c3899d48c6f90a2919683503e81d334c4"
+    },
+    {
+      "file": "fst/patches/0117-add-single-source-c7-productive-nouns.patch",
+      "sha256": "f741c9bd3a4d360ef0a8ed93d960994c180bf1472daacce6b5b3f7288e99f805"
+    },
+    {
+      "file": "fst/patches/0118-add-c11-person-head-nouns.patch",
+      "sha256": "b9d9246b5dd98c83dbf1c594962df4d864e126999f3ae4cf3e1dd4ce539e56f0"
+    },
+    {
+      "file": "fst/patches/0119-add-c16-person-profession-nouns.patch",
+      "sha256": "a7a6b0bfcd98d73d8b008494a7c444b3cacc31380e94e5ccd1eb53e32f0c4c1b"
+    },
+    {
+      "file": "fst/patches/0120-add-conservative-c4-noun-families.patch",
+      "sha256": "2713d647ba1e38faa3b8dd3a97774f1e44e4779000fae55b74e9beba05071473"
+    },
+    {
+      "file": "fst/patches/0121-add-conservative-c14-retained-l-nouns.patch",
+      "sha256": "437bc3fb25d6a98988a3e681adbd88b4a75f323d0bc3d17bbf88dc7d6a30ee3f"
+    },
+    {
+      "file": "fst/patches/0122-add-conservative-c9-retroflex-n-nouns.patch",
+      "sha256": "72f74e43475dc6831d6fcce7eefe3439af5597aed10d30b701722aec47f47c52"
+    },
+    {
+      "file": "fst/patches/0123-add-conservative-c1-aa-and-puu-nouns.patch",
+      "sha256": "f7932f8ee6fa278c5b7572ae4f064b01dbb54668e45b1cd90a94c2ef9039254c"
+    },
+    {
+      "file": "fst/patches/0124-add-c5-citation-verbal-nouns.patch",
+      "sha256": "b61d11500417f879390b90bd5fca8e771b4728f6501f0406c2d136ecf7cc3802"
+    },
+    {
+      "file": "fst/patches/0125-add-c11-citation-verbal-nouns.patch",
+      "sha256": "baa681774366bc01f81aa9a4745340ad38fca05ef681e76863e3c0e970d552b0"
+    },
+    {
+      "file": "fst/patches/0126-add-c5-elided-citation-verbal-nouns.patch",
+      "sha256": "ab9090d1a1099f38d1a91bac26fdfa6f7cd583d338189cd1bedc50b9e74b1b25"
+    },
+    {
+      "file": "fst/patches/0127-add-c4-citation-verbal-nouns.patch",
+      "sha256": "893669d3c059be02ded1a28ac0d3e955524e761e9add6dadf2ff2e0818723c08"
+    },
+    {
+      "file": "fst/patches/0129-add-c62-citation-verbal-nouns.patch",
+      "sha256": "086faa6ed409215b36169520d87df01cf1a7376c870480d3a581881c6aa3f8c3"
+    },
+    {
+      "file": "fst/patches/0130-add-c12-phonological-citation-verbal-nouns.patch",
+      "sha256": "6112d7de09d9af7eca6d1e4d6f0a02e055f50c1e2fd638f932638295bd77d84d"
+    },
+    {
+      "file": "fst/patches/0131-add-minor-rest-class-citation-verbal-nouns.patch",
+      "sha256": "d5eeb7167b42f52df306f17087fd9ef73248cb10ca8a83f66144b3432d93f46b"
+    },
+    {
+      "file": "fst/patches/0132-add-residual-multisource-explicit-nouns.patch",
+      "sha256": "c5e436bd9c5a8b1ceb47e8b3bba85667cbbdcb759ace8cad8fb78da28e4e3d89"
+    },
+    {
+      "file": "fst/patches/0133-fix-noun-encoding-and-sociative-rules.patch",
+      "sha256": "93c9b67f0ba2e131dd1cfc4ff06aa7805f8c1c07cd5d490f6f263e408344cc02"
+    },
+    {
+      "file": "fst/patches/0134-normalize-c3-and-add-negative-action-nominals.patch",
+      "sha256": "28c74f656486bff7d6f103dc34da8ef2a2e0647f0d047808b928e0ec4b00474f"
+    },
+    {
+      "file": "fst/patches/0135-normalize-c4-and-add-negative-action-nominals.patch",
+      "sha256": "0ca68b7720052b1b86ce01d2c2faa2e2455cf6f89b724e29f9c0115bf54644e4"
+    },
+    {
+      "file": "fst/patches/0136-normalize-c11-and-add-negative-action-nominals.patch",
+      "sha256": "e436bd695ee1ce8915dcf8a2644bbe7d5d3cf2d22d456ad35b35ba57d3b12bae"
+    },
+    {
+      "file": "fst/patches/0137-normalize-c12-and-add-negative-action-nominals.patch",
+      "sha256": "52e025d3a53aeecc10c7d3855a5caa810698a6cb991b71c856b3b753c13d39f3"
+    },
+    {
+      "file": "fst/patches/0138-normalize-c62-and-add-negative-action-nominals.patch",
+      "sha256": "4443a1c490ad9ba81410a8da6adc231b4d281deb478479c1efdb0c37c1194515"
+    },
+    {
+      "file": "fst/patches/0139-normalize-c-rest-and-add-negative-action-nominals.patch",
+      "sha256": "a61526716b0efa88961bfa5336f33c5d3e3512022540e5d1edc5f41693847964"
+    },
+    {
+      "file": "fst/patches/0140-normalize-particle-lexicon.patch",
+      "sha256": "40242e3edfbad939ae90f37b0039336f2780a0e4fa3b66f0074de497f3d8da00"
+    },
+    {
+      "file": "fst/patches/0141-remove-corrupt-noun-lexemes.patch",
+      "sha256": "fdeb1efdb8df3c0a96a9bdc835bf5e68d630aeefd91c29c1f02b71098ac4ed00"
+    },
+    {
+      "file": "fst/patches/0142-remove-corrupt-adjective-lexemes.patch",
+      "sha256": "3891d28c8aab2be033b6d795b6dd6ccf3f235789e3d2a4c9a3f7262cf4fa8c43"
+    },
+    {
+      "file": "fst/patches/0143-remove-malformed-double-hyphen-noun.patch",
+      "sha256": "c31d407096be8a66fb3f77e7ebe7de3bf5409aba6330101803be692704407c02"
+    },
+    {
+      "file": "fst/patches/0144-remove-invalid-productive-expansions-c3.patch",
+      "sha256": "d52222b923d287618893fb782ff9c43b442e35a6afb18294b70add8564f2cbaf"
+    },
+    {
+      "file": "fst/patches/0145-remove-invalid-productive-expansions-c4.patch",
+      "sha256": "7d7aae3ec659a5295eb0a821c78ab9d7ea0224ce6640daaacfff6cbaaf5f01f1"
+    },
+    {
+      "file": "fst/patches/0146-remove-invalid-productive-expansions-c11.patch",
+      "sha256": "da52a8f32c776e5aec46fde4b0211d171d62932cc7812015b4d860eebbb23010"
+    },
+    {
+      "file": "fst/patches/0147-remove-invalid-productive-expansions-c12.patch",
+      "sha256": "0528c193ff814ee88c7710ee29bc4a74091ddd049012501afa0f51b90391ce9d"
+    },
+    {
+      "file": "fst/patches/0148-remove-invalid-productive-expansions-c62.patch",
+      "sha256": "5f98cd165530d510acdc900876b07d3bbd98e96b88327ed14338125aa2cb0423"
+    },
+    {
+      "file": "fst/patches/0149-remove-invalid-productive-expansions-c-rest.patch",
+      "sha256": "510faa8158ae82713ea4afb2b038c568d70a5a09741e7ab0f32c86966739387f"
+    },
+    {
+      "file": "fst/patches/0150-remove-transitive-invalid-expansions-c3.patch",
+      "sha256": "6829dd575617e53b1fb44fd89dcc7d4b70a0b18d813b77e6112a332d54a3cb36"
+    },
+    {
+      "file": "fst/patches/0151-remove-transitive-invalid-expansions-c4.patch",
+      "sha256": "6d3b6ba17a0258cc9f961bc7f52db53f52bc404d3c30cf9d3f6964aecc21e1ca"
+    },
+    {
+      "file": "fst/patches/0152-remove-transitive-invalid-expansions-c11.patch",
+      "sha256": "34048525cb2a4188b47d31e1cc8c4039d38fbde99be62f621d014157075b6ee4"
+    },
+    {
+      "file": "fst/patches/0153-remove-transitive-invalid-expansions-c12.patch",
+      "sha256": "6d3b6ba17a0258cc9f961bc7f52db53f52bc404d3c30cf9d3f6964aecc21e1ca"
+    },
+    {
+      "file": "fst/patches/0154-remove-transitive-invalid-expansions-c62.patch",
+      "sha256": "6d3b6ba17a0258cc9f961bc7f52db53f52bc404d3c30cf9d3f6964aecc21e1ca"
+    },
+    {
+      "file": "fst/patches/0155-remove-transitive-invalid-expansions-c-rest.patch",
+      "sha256": "37836cdfb4f6de655d9a42a16536e192c3ae005d490e4168219e8247e155e2d2"
+    },
+    {
+      "file": "fst/patches/0156-add-missing-c2-noun-homograph-readings.patch",
+      "sha256": "7e6e52532b981b737234535b4e3f7d1ce79827fb55aef26493f0b23474c5a78a"
+    },
+    {
+      "file": "fst/patches/0157-fix-c6ttu-c8-noun-realization.patch",
+      "sha256": "e877a38cf1583f57f79a932cc6287030722df1d471863b580272a0fa52749c7c"
+    },
+    {
+      "file": "fst/patches/0158-add-reviewed-u-final-noun-homographs.patch",
+      "sha256": "1cf95c540db144fac0758de6a7ca6440f3c319d72e58ff67222f185100dfd46f"
+    },
+    {
+      "file": "fst/patches/0159-add-cardinal-translative-forms.patch",
+      "sha256": "9806b7b39747efec15daea80d45f6fabadd1cb7e8e810a349d8f76efb3492b29"
+    },
+    {
+      "file": "fst/patches/0160-add-inflected-spelling-c2-noun-homographs.patch",
+      "sha256": "d5b4814ca4d6b8b9f065a26f1df9f356303353f8cc7ca1da2adf4c5daf33497e"
+    },
+    {
+      "file": "fst/patches/0161-add-reviewed-residual-noun-homographs.patch",
+      "sha256": "334d7891a765104d1004d5255d59072cd9864ffb2e668842a229da0ddeed0ad6"
+    },
+    {
+      "file": "fst/patches/0162-add-final-regular-noun-homographs.patch",
+      "sha256": "fdc478996599dcd1b78785ff8350cad69277bfc4a8351033e574418cfbee6dd9"
+    },
+    {
+      "file": "fst/patches/0163-add-missing-c4-verb-homographs.patch",
+      "sha256": "e04d97005646bed49fd89b224f92b316e10b0dd375dd74b9586d282db4134a26"
+    },
+    {
+      "file": "fst/patches/0164-reclassify-ney-as-c4-verb.patch",
+      "sha256": "f9573578c617cacd9d63e2d9a9b3cd99e7604b71b83a9b38ba3c4860864f44d1"
+    },
+    {
+      "file": "fst/patches/0165-add-explicit-c5-citation-stems.patch",
+      "sha256": "f1b5cd1fab2883112a0e84f9a005e3e7c64f2f6694279c4d3756d68ff0ad6482"
+    },
+    {
+      "file": "fst/patches/0166-remove-incorrect-c11-ney-reading.patch",
+      "sha256": "7e5aa2461801fd9479973de6c57a0046880966524716261360e13c409e4e80bb"
+    },
+    {
+      "file": "fst/patches/0167-remove-invalid-ney-c4-compounds.patch",
+      "sha256": "01487d535e6ea7bd955bb27930177ad3d8d1d93020718faf2ecd977abc0a19a2"
+    },
+    {
+      "file": "fst/patches/0168-remove-invalid-ney-c11-compounds.patch",
+      "sha256": "9ad7fcad40159aec2cf4eda0f2436641acf6b25745f1c877420b3d5ac613b403"
+    },
+    {
+      "file": "fst/patches/0169-remove-invalid-ney-c12-compounds.patch",
+      "sha256": "ef6332cf10f2a71540a38735d42bb276785ec65dda87b53dad553110136cf8aa"
+    },
+    {
+      "file": "fst/patches/0170-remove-invalid-ney-c-rest-compounds.patch",
+      "sha256": "f09aaae7128643b2b619bfbf71bc67703029e14d816e3928e5262063dcf5cfab"
+    },
+    {
+      "file": "fst/patches/0171-remove-invalid-ney-passive-c11-compounds.patch",
+      "sha256": "0b06029c38f1c1b59d5346524bde2cb9a813e9a0e9f830287cc1637ee8339c4b"
+    },
+    {
+      "file": "fst/patches/0172-remove-invalid-ney-passive-c-rest-compounds.patch",
+      "sha256": "f4aca38cfcaf36e1162a95a36c2f20bef12b45cc138be7f9ac890c3fff9e180a"
+    },
+    {
+      "file": "fst/patches/0173-reclassify-aar-as-direct-oblique-noun.patch",
+      "sha256": "c46fcd1daddae3771e8248b9ca42e07c1e36d6faec170a3ad64ba6a47096fe18"
+    },
+    {
+      "file": "fst/patches/0174-add-present-human-plural-continuations-verb-c-rest.patch",
+      "sha256": "0f8e71a26f11ff2d7feb23457d3915540d159795962ddb8a793a13b98966e291"
+    },
+    {
+      "file": "fst/patches/0174-add-present-human-plural-continuations-verb-c11.patch",
+      "sha256": "51a7eaa9e0461351f298fae89f0ec7fd64be1a042ea27d59b642d3c9aafb4360"
+    },
+    {
+      "file": "fst/patches/0174-add-present-human-plural-continuations-verb-c12.patch",
+      "sha256": "d439b09d7e74d76db2340dfd64388ba39461d3160be810e50f8502111a440c06"
+    },
+    {
+      "file": "fst/patches/0174-add-present-human-plural-continuations-verb-c3.patch",
+      "sha256": "abc9736e0cac2f368853900405825ecbe40976f86f845766cdc78150f14953e4"
+    },
+    {
+      "file": "fst/patches/0174-add-present-human-plural-continuations-verb-c4.patch",
+      "sha256": "60ee40a01c3b524946e1dd11b2ebc1441a18e3ea73b9c3f3fd2f76164074841b"
+    },
+    {
+      "file": "fst/patches/0174-add-present-human-plural-continuations-verb-c62.patch",
+      "sha256": "6b0b51718fba678ddec4dff07e6a9e7962a66f69e9cb0cd4cc3c2818f749f5f4"
+    },
+    {
+      "file": "fst/patches/0175-complete-existing-passive-stem-continuations-c-rest.patch",
+      "sha256": "f8f6bc8dc0fef793b02e82d50b42e01d5bf9c8e987b48f0d423e980afc262b07"
+    },
+    {
+      "file": "fst/patches/0176-correct-nar-agreement-verb-c-rest.patch",
+      "sha256": "cc173bb728b197567ac5ac9c980454417e9008fd86258ea66d13338b99c469f1"
+    },
+    {
+      "file": "fst/patches/0176-correct-nar-agreement-verb-c11.patch",
+      "sha256": "2060c61d70caca21122be60a14559e2ac10ab4a60a165b58f6bb5d569ff94fca"
+    },
+    {
+      "file": "fst/patches/0176-correct-nar-agreement-verb-c12.patch",
+      "sha256": "e3f020227613345124ae11dd184df104f58b014642d272edfe4e8a8aa69d04c9"
+    },
+    {
+      "file": "fst/patches/0176-correct-nar-agreement-verb-c3.patch",
+      "sha256": "5ca6c13d6a08a067558ad185f4899746d77787dfdbdc94b77762153296c11a0e"
+    },
+    {
+      "file": "fst/patches/0176-correct-nar-agreement-verb-c4.patch",
+      "sha256": "84d9765fd22c2d7214c626c9ec37f8615711b1b6f85b170a644ecba1b871ec15"
+    },
+    {
+      "file": "fst/patches/0176-correct-nar-agreement-verb-c62.patch",
+      "sha256": "e3f020227613345124ae11dd184df104f58b014642d272edfe4e8a8aa69d04c9"
+    },
+    {
+      "file": "fst/patches/0177-complete-interrogative-quantifier-families.patch",
+      "sha256": "2641284758658874fb704f4a3f94ea1009b3cddf38b45d0282bbe2c62f639f68"
+    },
+    {
+      "file": "fst/patches/0178-add-reviewed-mozhi-news-nouns.patch",
+      "sha256": "02c45f680f7f9dd07cf314a547c9a6c8609aa5c417bd3ca9992c2484f6ccea5f"
+    },
+    {
+      "file": "fst/patches/0179-reclassify-retained-m-nouns.patch",
+      "sha256": "89faffb97cc0e62c3abe1054d8494b0f7c0ed35d847b69815577ed39e840c7b0"
+    },
+    {
+      "file": "fst/patches/0180-reclassify-legacy-retained-m-nouns.patch",
+      "sha256": "0ccd540304b48f19774fe403930879a0892259c9644e16a94069f379ffe30b08"
+    },
+    {
+      "file": "fst/patches/0181-correct-long-vowel-retained-m-nouns.patch",
+      "sha256": "caca1855aed94449ed58fa52f6a733112b46e20661cea17b867a90a74a93719b"
+    },
+    {
+      "file": "fst/patches/0182-add-productive-noun-ellaam.patch",
+      "sha256": "0ddf413c1ad837a01cd367487469e00ed5d36b560c8b042c894c465643dbf2b3"
+    },
+    {
+      "file": "fst/patches/0183-add-dependent-e-noun-rewrite.patch",
+      "sha256": "13ff29b881d538cfb5c9ec66e824c7c134fa4c77b0022098e059202ee6704cc8"
+    },
+    {
+      "file": "fst/patches/0184-reclassify-retained-m-title-classical-nouns.patch",
+      "sha256": "9e8103a0afc5d6f5cd1123ec79d9539f1fd642dcf2c37323c30eac2b011e456d"
+    },
+    {
+      "file": "fst/patches/0185-add-modern-present-adjectival-participles-verb-c-rest.patch",
+      "sha256": "08cbc26e947484b87b4585d82f27e097aed4d1efe5640a6cd0702d81e019e725"
+    },
+    {
+      "file": "fst/patches/0185-add-modern-present-adjectival-participles-verb-c11.patch",
+      "sha256": "ada559021af016357380d3cf3f6fd0ca415174a21fb6767235c16e4bf6619ef0"
+    },
+    {
+      "file": "fst/patches/0185-add-modern-present-adjectival-participles-verb-c12.patch",
+      "sha256": "787b632a498d4fa2f56dbc326052592a1ec668f81ce01884bcd3351cf21edde9"
+    },
+    {
+      "file": "fst/patches/0185-add-modern-present-adjectival-participles-verb-c3.patch",
+      "sha256": "8dd350caf41fc3b315506fa1d19c7808b74bcd63e8526914b249d8bebd4a3a48"
+    },
+    {
+      "file": "fst/patches/0185-add-modern-present-adjectival-participles-verb-c4.patch",
+      "sha256": "c5161c01aa05baee14a1ce4687ec1569fb168e6362d64ca9e3f71ee3d2bfc173"
+    },
+    {
+      "file": "fst/patches/0185-add-modern-present-adjectival-participles-verb-c62.patch",
+      "sha256": "892277b00f375f294a6f87f879ee74326a0b080e5f5e8577da75cf9847677248"
+    },
+    {
+      "file": "fst/patches/0186-add-regular-modern-verbal-nominals-verb-c-rest.patch",
+      "sha256": "bf4bc74b1b4d53bf4944d8809a29c8411df614f7d97cc1cf89c39ddf8778522b"
+    },
+    {
+      "file": "fst/patches/0186-add-regular-modern-verbal-nominals-verb-c4.patch",
+      "sha256": "aab2115e4a92032d83af5a8ff04bb538a6f9820131cc2dd3050bae69f9754cba"
+    },
+    {
+      "file": "fst/patches/0186-add-regular-modern-verbal-nominals-verb-c62.patch",
+      "sha256": "4aa179953185b4b2907f381a72261e519361ab5c9fdd78c0b5e9b5d97e527319"
+    },
+    {
+      "file": "fst/patches/0187-add-c12-modern-verbal-nominals.patch",
+      "sha256": "65d550a4ffd500f4ffb32018e36d24a20144d3b1fe3a012c53318a0716543719"
+    },
+    {
+      "file": "fst/patches/0187-add-reviewed-auxiliary-verbal-nominals.patch",
+      "sha256": "8c39658500b6d5ea557c2cfbdaa49fdc92fd5dc479123d4c926d8a48b7278534"
+    },
+    {
+      "file": "fst/patches/0188-correct-and-expand-modern-class13-aaku.patch",
+      "sha256": "c7bf572cc1aa9fbaf030252eff620ca26f30e77b10d111314ae9cf89bcf2a3aa"
+    },
+    {
+      "file": "fst/patches/0189-add-passive-short-present-honorific.patch",
+      "sha256": "66f3e346d881f4e5e39ddc76228d4e30e112bf0377462a8f04cdcd3d78a04ee9"
+    },
+    {
+      "file": "fst/patches/0190-add-passive-past-perfect-participle.patch",
+      "sha256": "1f2af4a30ce94e98a5d81979709912f1a33d4cf770c7f4da78a7315975a6fd33"
+    },
+    {
+      "file": "fst/patches/0191-add-c11-perfect-participles.patch",
+      "sha256": "c99b8a0f33e4d8d10869be5f770c9025b2419dde532e6b5ac44e5cad900eb331"
+    },
+    {
+      "file": "fst/patches/0192-repair-invalid-combining-sequences-noun.patch",
+      "sha256": "4b3bcdfd8128a0e3279a01406724a55754aafc7bdf7c669f3b6a1541ac15b574"
+    },
+    {
+      "file": "fst/patches/0192-repair-invalid-combining-sequences-verb-c-rest.patch",
+      "sha256": "3003a54f82311a170aef7ceac9ea843f3b0c25882092ccdc60a74410dbf1ce92"
+    },
+    {
+      "file": "fst/patches/0192-repair-invalid-combining-sequences-verb-c11.patch",
+      "sha256": "9b9c7943c627f131a8a8976d4eeec074120da78245b2187797d419c6fc4640fd"
+    },
+    {
+      "file": "fst/patches/0192-repair-invalid-combining-sequences-verb-c12.patch",
+      "sha256": "c2ee69cc96870765530582741e023e2d43af5b1a6dc176c42eccd9fa9f767560"
+    },
+    {
+      "file": "fst/patches/0192-repair-invalid-combining-sequences-verb-c4.patch",
+      "sha256": "a138430c2473463eeb3685d86de395da1e65bb6fa3db341008e677c57d25d7e1"
+    },
+    {
+      "file": "fst/patches/0193-deduplicate-noun-entries.patch",
+      "sha256": "8f0b5ca4318f497d163769b558fee2eef2bc09b60be7194bd7b220fb52cd4ed9"
+    },
+    {
+      "file": "fst/patches/0193-deduplicate-verb-c-rest-entries.patch",
+      "sha256": "3b0d69176ac8e423757795c1f38a2e9531736a9cde98d0c4f6acc848c7a31d74"
+    },
+    {
+      "file": "fst/patches/0193-deduplicate-verb-c11-entries.patch",
+      "sha256": "79bb601ce7c271e5c9561d8ca7129762c6556fdc5ab5afcd847d8a1d5fe2a43a"
+    },
+    {
+      "file": "fst/patches/0193-deduplicate-verb-c12-entries.patch",
+      "sha256": "8d46b8ef96f4041d1a98008a6c35067391b837b3be42a5e7b62895b7be750255"
+    },
+    {
+      "file": "fst/patches/0193-deduplicate-verb-c4-entries.patch",
+      "sha256": "f76d69c9b97b182c9e27160a91f906893810a155a468b43968c57a2f7ab412dc"
+    },
+    {
+      "file": "fst/patches/0194-disambiguate-c12-rule-names.patch",
+      "sha256": "67a2cd86e82535bfb190be81cec463f0018477174ead08188ad003996049e3eb"
+    },
+    {
+      "file": "fst/patches/0194-disambiguate-c3-rule-names.patch",
+      "sha256": "92a423d13e24a8b8443a3d02ef53ca3d9dd89d69b646b0d9de3cf3e347cee037"
+    },
+    {
+      "file": "fst/patches/0195-add-reviewed-closed-class-readings.patch",
+      "sha256": "ca282c6dc9afdb1a588f8535da3f5a7e22b1f94bbc1dcd9c9612ece62c27a879"
+    },
+    {
+      "file": "fst/patches/0196-add-reviewed-strict-family-nouns.patch",
+      "sha256": "aa79e8be04a144195ccaa0cd9f758f2c08c1bd7b54e075d335f33dc0ca5be6ea"
+    },
+    {
+      "file": "fst/patches/0197-add-reviewed-remaining-noun-candidates.patch",
+      "sha256": "cbc11331a51eb14d2333d50ac34e4129d4e1e2dda15c7a26ce2112218961c49e"
+    },
+    {
+      "file": "fst/patches/0198-add-weak-readings-for-plain-tal-citations-c4.patch",
+      "sha256": "335ad6277b84150197403c232bc5cdd31716e1428a1d7f44bba7a2f9e15e917d"
+    },
+    {
+      "file": "fst/patches/0198-remove-unsupported-strong-readings-c11.patch",
+      "sha256": "2cee4e282fb44be4fd048f15c6266a75c044e9a5419158de19fa0d7816534c45"
+    },
+    {
+      "file": "fst/patches/0199-add-strong-readings-for-thal-citations-c11.patch",
+      "sha256": "aa1af00f28cc6bfc7cd56682d81263ae05f18c0baf1a1faf8cf42db736b8c45a"
+    },
+    {
+      "file": "fst/patches/0199-remove-unsupported-weak-readings-c5.patch",
+      "sha256": "77f98d0ca757bcf4b0f268314216ffb034be6ee493ca25f5c986dc9a7531496d"
+    },
+    {
+      "file": "fst/patches/0200-add-citation-rule-verb-c12.patch",
+      "sha256": "01700c3df30fe6b280a2643b0f5d138916074dbb640a38da0e648ea15424ee5f"
+    },
+    {
+      "file": "fst/patches/0200-add-citation-rule-verb-c3.patch",
+      "sha256": "13db1d2270cff2e3cbed8cab95d02b969674f80c0b8aca10993faae8249baf53"
+    },
+    {
+      "file": "fst/patches/0200-add-citation-rules-verb-c-rest.patch",
+      "sha256": "6bbe624519c81adaf39b94c8f5dcb3fbe59e43ad40f71e1944457ae7e7d2589e"
+    },
+    {
+      "file": "fst/patches/0200-add-citation-rules-verb-c11.patch",
+      "sha256": "b3c130671e34a93686ba9ca24891e8b16244abebf45329d6e45960cf35d928ce"
+    },
+    {
+      "file": "fst/patches/0200-add-final-citation-readings-verb-c4.patch",
+      "sha256": "298890510e3f87e6c3b3d6df8db282aa7e57909f83c15dab533710d7a8ea637e"
+    },
+    {
+      "file": "fst/patches/0201-add-dual-source-known-head-compounds-c-rest.patch",
+      "sha256": "56016031df9094b9edb725e3604761aafda9a9625ed36b26d4e75ff8f98bb666"
+    },
+    {
+      "file": "fst/patches/0201-add-dual-source-known-head-compounds-c4.patch",
+      "sha256": "1e51254cb372e2222abe752b779d7a7a2e93b5d1a1fd60818a39ec4d884a59f7"
+    },
+    {
+      "file": "fst/patches/0202-add-participial-po-compounds.patch",
+      "sha256": "cfc1af4858e126784708df6e65b0bea7234b997b4e252c54796abf38f03cdac6"
+    },
+    {
+      "file": "fst/patches/0203-add-runtime-modifier-sey-compounds.patch",
+      "sha256": "b0fa06a0ad58ab8d1eab5ea2d7f4b4c8fece268904779d3a0203fe88582ddd26"
+    },
+    {
+      "file": "fst/patches/0204-add-source-noun-modifier-sey-compounds.patch",
+      "sha256": "a29e99cf138dc03781345767a47f293fa087e1c11c7ea7d81ef05afcdab68b2e"
+    },
+    {
+      "file": "fst/patches/0205-add-irregular-nil-paradigm.patch",
+      "sha256": "921baaaa1ab44d077a0ebcb2266ce00f9c9b631603efa882dee304ec61a0c683"
+    },
+    {
+      "file": "fst/patches/0206-add-reviewed-po-connectors.patch",
+      "sha256": "1cb8c80d5a340f541489a2e7c89df6896b7d97a5a23a0dcddada2f1f62031a87"
+    },
+    {
+      "file": "fst/patches/0207-add-derived-action-nominal-paradigms.patch",
+      "sha256": "a8a7ab126bd40213631467640d25ce99aa89af1f1ecfd6a89b892c196fce016b"
+    },
+    {
+      "file": "fst/patches/0208-add-nil-participial-po-compound.patch",
+      "sha256": "a5c85faef3f13c4829b7bfc330e5d946ddd7d3e01ba5b8107a2d18d35eab4750"
+    },
+    {
+      "file": "fst/patches/0209-reclassify-long-vowel-aal-noun.patch",
+      "sha256": "014d1d8c0f610b6398e6006213297788d42d7ec42828793c9f0ab6f55fbee4d7"
+    },
+    {
+      "file": "fst/patches/0210-consolidate-noun-entry-sections.patch",
+      "sha256": "d88d82b87d4e95af1ba2e4116d95111cc4aa64a841500675e98ad969f86e70de"
+    },
+    {
+      "file": "fst/patches/0211-split-c61-c63-continuations.patch",
+      "sha256": "aa807fb7267cc3945ab4a2d839570c88fdbc462a03d1b5b1510d2648d3d02a26"
+    },
+    {
+      "file": "fst/patches/0212-remove-redundant-c12-iru-mood-paradigm.patch",
+      "sha256": "3105be8cb80d93866f35af289f747f37b50224ecd27d21ff3d63a8ba6c78ceb0"
+    },
+    {
+      "file": "fst/patches/0213-add-final-reviewed-c4-roots.patch",
+      "sha256": "d046eba8250ef33432cb988b3a18a6fda1a3cf6e1ac660d2558d43b3cfcdeabb"
+    },
+    {
+      "file": "fst/patches/0214-add-final-reviewed-c2-compounds.patch",
+      "sha256": "43190ee1c87e357a17256fef60961eb9ff6d2fd3572466f8f09fc872ad82795a"
+    },
+    {
+      "file": "fst/patches/0215-add-final-reviewed-c11-root.patch",
+      "sha256": "2faa451a5eded1653835d98beb2d4496b5a42eeac3dff67db67ed9776098c3c0"
+    },
+    {
+      "file": "fst/patches/0216-add-final-reviewed-c12-root.patch",
+      "sha256": "955a18be4b8e4218adfcbec74baf0055dcd0c29f90d236fb588e33cef308f50d"
+    },
+    {
+      "file": "fst/patches/0217-add-nominal-copular-participles.patch",
+      "sha256": "300479bc024b01b00f8ee4fe78bdb0f33193d67aeff8e441d7ee519b8ceb6a58"
+    },
+    {
+      "file": "fst/patches/0218-add-dative-copular-participles.patch",
+      "sha256": "d3e421628b7abf773d5bb3a798a9a891405245fa68a1a373704404e7767933ce"
+    },
+    {
+      "file": "fst/patches/0219-add-cardinal-copular-participles.patch",
+      "sha256": "ad24c7283051f2afd9128b3d9a9a2a16b0df47f0e762d55c567d988e5a7a9fb4"
+    },
+    {
+      "file": "fst/patches/0220-add-deictic-adverb-copular-participles.patch",
+      "sha256": "e0a5372cee58529083f8fb68058a20bb7a5636c466be8cae6016eb71cdf97a47"
+    },
+    {
+      "file": "fst/patches/0221-split-c14-plural-subclasses.patch",
+      "sha256": "aed18fc32f00d2f2639cdcc4e2a5d7a2ac82112640e29bcdc4521f528f4aa918"
+    },
+    {
+      "file": "fst/patches/0222-correct-and-expand-ordinal-families.patch",
+      "sha256": "56aa21b36a06efcb1fe412db0de868ccab19d8cc64f6d4f2d148e286aac02c37"
+    },
+    {
+      "file": "fst/patches/0223-add-modern-attributive-adjectives.patch",
+      "sha256": "86d74a7faf47793835080d907eb0a19ac86f9b29bc0a41576de968f4be18f663"
+    },
+    {
+      "file": "fst/patches/0224-add-reviewed-passive-stems.patch",
+      "sha256": "a733f5b1a15823bee4af3e3c2cb6a4b0c45210db8725d64784a8c2e09594e367"
+    },
+    {
+      "file": "fst/patches/0225-add-reviewed-closed-class-paradigms.patch",
+      "sha256": "6e8bc96ecb4ca7ac0cbb4989490253fe20f5eaeacb89cca718373f6913651fd8"
+    },
+    {
+      "file": "fst/patches/0226-reclassify-corpus-attested-idu.patch",
+      "sha256": "d6f03247ded86e8bdb2d027fea9d75f1a1846df2d80a58077f0e0612eb651191"
+    },
+    {
+      "file": "fst/patches/0226-reclassify-nadi-and-add-kandari-c4.patch",
+      "sha256": "d76fed1c285e94bfcb63706e4c620ddeba4e02cf8f9e186fa52c8c9c81c267cd"
+    },
+    {
+      "file": "fst/patches/0227-add-corpus-attested-common-verb-roots-c-rest.patch",
+      "sha256": "a44269b84c40cd52cf722181ffe37d44274cc7af5579382c16a65037be2adfae"
+    },
+    {
+      "file": "fst/patches/0227-add-corpus-attested-common-verb-roots-c11.patch",
+      "sha256": "4babb10228a770b92c9cdde2ecbff3865785aefbb16924ae72c215aa97dab99a"
+    },
+    {
+      "file": "fst/patches/0228-complete-suppletive-thaa-vaa-nonpast.patch",
+      "sha256": "bfa3ec1649e4d50c6d6358a8dc7d5dc2bc78d50ba4d2901fa199621ed9428fc1"
+    },
+    {
+      "file": "fst/patches/0229-add-verified-common-passive-stems.patch",
+      "sha256": "06854cac540922d4ab158d7eb24a4d0b959c0707071c66ae900e17dd830830ac"
+    },
+    {
+      "file": "fst/patches/0230-add-productive-noun-case-continuations.patch",
+      "sha256": "4585f7c911103a2b4f3b5fd5921ca86eba2ea4621eca8c93145b32ac0c4a9856"
+    },
+    {
+      "file": "fst/patches/0232-add-reported-complements-verb-c-rest.patch",
+      "sha256": "9e66067ab7513be03d9435ef7a8912eddd25ac08e0550bf679bb1999363d51fd"
+    },
+    {
+      "file": "fst/patches/0232-add-reported-complements-verb-c11.patch",
+      "sha256": "73c172c4ae8470c06220cf152123dfa7f197a06ff6f0ea8a2182a7fa66f10876"
+    },
+    {
+      "file": "fst/patches/0232-add-reported-complements-verb-c12.patch",
+      "sha256": "6f7c0e3e0a766474886b35fbd26f935e96b62216bfc279408be87a3b7b26a23a"
+    },
+    {
+      "file": "fst/patches/0232-add-reported-complements-verb-c3.patch",
+      "sha256": "e679720a10f13ba240a82d518da05e840c0907f90251209da5bad333383360b0"
+    },
+    {
+      "file": "fst/patches/0232-add-reported-complements-verb-c4.patch",
+      "sha256": "e531b8fcb6caf1bd0d36b8ca41c54b03e56e7b2eff801b72ba6c9758596739f6"
+    },
+    {
+      "file": "fst/patches/0232-add-reported-complements-verb-c62.patch",
+      "sha256": "e74f6d845a3fec547f6e7fdfe2dd37a6f8c4bb241a030b1056541a44f1a51691"
+    },
+    {
+      "file": "fst/patches/0233-add-nonfinite-sandhi-verb-c-rest.patch",
+      "sha256": "05ca2b02efbfb0b4aecdb267419b1c8584011e4da8029db6996a877138bb0119"
+    },
+    {
+      "file": "fst/patches/0233-add-nonfinite-sandhi-verb-c11.patch",
+      "sha256": "66fb0b6f0d38f782c883e422d42108ee026275aa6d23b6b8c9d96072087d969d"
+    },
+    {
+      "file": "fst/patches/0233-add-nonfinite-sandhi-verb-c12.patch",
+      "sha256": "46438c6e93898dc66578f9e9572bd360b12a2243c0aa6ff2b272c6b3d551dbd1"
+    },
+    {
+      "file": "fst/patches/0233-add-nonfinite-sandhi-verb-c3.patch",
+      "sha256": "9fb493fb051686d0e3f5c96b2e4418f1c86daa763802cedd4cced48b0698e888"
+    },
+    {
+      "file": "fst/patches/0233-add-nonfinite-sandhi-verb-c4.patch",
+      "sha256": "9420f0db861085932f84e4d091c72ac53d2a4c33aef9749e3c371ec8c0a11323"
+    },
+    {
+      "file": "fst/patches/0233-add-nonfinite-sandhi-verb-c62.patch",
+      "sha256": "46fd72e0c47a40d3cb73fb8536c043c52da544d77d19d7a15aa5203d86c698d7"
+    },
+    {
+      "file": "fst/patches/0234-add-productive-adj-sandhi.patch",
+      "sha256": "fe71125e62c1bd0e26ce5355d14ce9cef79bdbbc37ba6b4b5d5cd581a628a152"
+    },
+    {
+      "file": "fst/patches/0234-add-productive-adv-sandhi.patch",
+      "sha256": "32422fa220614b43fa6dc6df9a8c00dd8ed77f171bbf3e66fe0f67f5958763f7"
+    },
+    {
+      "file": "fst/patches/0235-add-productive-closed-class-continuations.patch",
+      "sha256": "e33ad77c54dc4ad87ef955d5939c70f2dffcbc89e210843c9644b8b7c5567fb6"
+    },
+    {
+      "file": "fst/patches/0236-add-verbal-noun-cases-verb-c-rest.patch",
+      "sha256": "58781bf4d52e9436df28bdbb3dca99dc2a9e4011b350d0078936900e95b72d6c"
+    },
+    {
+      "file": "fst/patches/0236-add-verbal-noun-cases-verb-c11.patch",
+      "sha256": "5480e455c5795795fa227aa2657792452d9614c7baa8efe4986a84d65d618898"
+    },
+    {
+      "file": "fst/patches/0236-add-verbal-noun-cases-verb-c12.patch",
+      "sha256": "8bb6fae75da468436aab5284f785e927f1658220fed4a256a1bd8cf4922a2772"
+    },
+    {
+      "file": "fst/patches/0236-add-verbal-noun-cases-verb-c3.patch",
+      "sha256": "cf88a310778fd7ef09082fa2cb250b7c3f2ef37ff6950478a2ef2ea4248faa59"
+    },
+    {
+      "file": "fst/patches/0236-add-verbal-noun-cases-verb-c4.patch",
+      "sha256": "ca23699c196aec7283fffdef0304775e790dc64ae9fa4bdc83bfe1f666637eb4"
+    },
+    {
+      "file": "fst/patches/0236-add-verbal-noun-cases-verb-c62.patch",
+      "sha256": "864d7d8264ba1cabe4452e62a1d0b84de046b103b993342c7c6362720dfdc870"
+    },
+    {
+      "file": "fst/patches/0237-fix-c3-short-future-gemination.patch",
+      "sha256": "fd13bb8b8cbc28c0255cb2c18262bb1a31c06a59e607c3c57cd322e9a441a6cc"
+    },
+    {
+      "file": "fst/patches/0239-canonicalize-passive-perfect-hooks.patch",
+      "sha256": "81788691e2d350532a91ad081c6e4d7ac46edda79fefa827b779a8d7163c2ccf"
+    },
+    {
+      "file": "fst/patches/0240-add-complementizer-additive.patch",
+      "sha256": "e42c48117d8fa9b5320dcb8a436196ada31481676d86c5aa7397a13a6e3ca0fb"
+    },
+    {
+      "file": "fst/patches/0241-canonicalize-passive-paradigm-lemmas.patch",
+      "sha256": "138148e548e1d06dc5d378ffc338d662c369cbd58032f228b9e2b67ab6c13d70"
+    },
+    {
+      "file": "fst/patches/0242-remove-orphan-passive-perfect-hooks.patch",
+      "sha256": "5430550cc431e4af9a83af531de49b4fab15d79618073d49ab067217040db53e"
+    },
+    {
+      "file": "fst/patches/0243-close-passive-canonical-lemma-holds.patch",
+      "sha256": "16c70fe4ce38d6d1db8491cd9f24dd92c7a71ca994d974c452315fab1ec2cc10"
+    },
+    {
+      "file": "fst/patches/0244-reclassify-padu-head-verbs.patch",
+      "sha256": "6b2bac7abde8d3abc0a5801c02ca0112a2e6ded05544d41b78e05a0f856d4f85"
+    },
+    {
+      "file": "fst/patches/0245-synchronize-padu-vpart-compounds-c4.patch",
+      "sha256": "1e928a21322c70365e1f643e7b066c8de796d6a9311e2bb66f0893b97f7db300"
+    },
+    {
+      "file": "fst/patches/0246-synchronize-padu-vpart-compounds-c11.patch",
+      "sha256": "662559517cd59df50e837d421bd4a704152b503871365cc73fbc8664ddaf45d3"
+    },
+    {
+      "file": "fst/patches/0247-synchronize-padu-vpart-compounds-c12.patch",
+      "sha256": "5da0594c08c125eb8557af392d1a3e57d6e3b6f8e9c85eaeebebf1d1a00aa1bd"
+    },
+    {
+      "file": "fst/patches/0248-synchronize-padu-vpart-compounds-c-rest.patch",
+      "sha256": "c112fff286c5152b976ff3a69cbccde3384f19358982830bd729fcc0965697de"
+    },
+    {
+      "file": "fst/patches/0249-complete-po-modern-paradigm.patch",
+      "sha256": "538d97877dc3f9f6d80dc68e2bea1d8c3618310d8bbd34226eec4d476df3c807"
+    },
+    {
+      "file": "fst/patches/0250-repair-class13-and-invalid-c5-roots.patch",
+      "sha256": "4c5a91495411ace9bab1972152d59c84182ebf873bd63f714be0c748e6db2875"
+    },
+    {
+      "file": "fst/patches/0251-deduplicate-c12-thonnaa.patch",
+      "sha256": "503df0f5821ed10c5ed54a33d0293c3bcc1fdf42330b6b476134450c20f4cf9d"
+    },
+    {
+      "file": "fst/patches/0252-add-irregular-future-neuter.patch",
+      "sha256": "cc68a13381e2c43744f4e4223af2bf21956bac4a8e19739ef223e05bf953f9cc"
+    },
+    {
+      "file": "fst/patches/0253-complete-c3-agreement-matrix.patch",
+      "sha256": "97c9cb9225a4555ca5ab2f620eddbac79313418e243cdeeafc6c87b838af12f8"
+    },
+    {
+      "file": "fst/patches/0254-complete-c11-agreement-matrix.patch",
+      "sha256": "e9fba39fa48c16c0a799ca2f2332b2c7b08c1291fa85f4f9059a776420199f43"
+    },
+    {
+      "file": "fst/patches/0255-complete-irregular-agreement-matrix.patch",
+      "sha256": "4620b6a317cbd1c4eeaceed0477c9534c6b52d69a311f1f3ce13574fe60947ae"
+    },
+    {
+      "file": "fst/patches/0256-remove-redundant-action-nominal-nouns.patch",
+      "sha256": "f63efdb705070a332b7171439c8b6e782adbf9f4b22053a81411a4b9f0394882"
+    },
+    {
+      "file": "fst/patches/0257-restore-compound-strong-readings.patch",
+      "sha256": "308c378806cb0c0ae9f2f406be1f95e93026b3c87aec8109a6889fdf9b518877"
+    },
+    {
+      "file": "fst/patches/0258-restore-c13-nonfinite-variants.patch",
+      "sha256": "0783df0628ffa1f6ba8bd1b52343a029daf99b4a24f2799478e0b4346bf68e71"
+    },
+    {
+      "file": "fst/patches/0259-remove-citation-contradicted-c-rest-assignments.patch",
+      "sha256": "c45607f48f7269efdc44e6a9b8552c51b35a6f0cecb8a1c6f61fafd6fa17e7e9"
+    },
+    {
+      "file": "fst/patches/0260-remove-citation-contradicted-c11-assignments.patch",
+      "sha256": "04cdfad3392ec9f41ab3570925493ed3d65119123bff3b354c4399e2deb58294"
+    },
+    {
+      "file": "fst/patches/0261-remove-citation-contradicted-c4-assignments.patch",
+      "sha256": "43045f905aa22332de9315d1766221f13a1f1c21786186532d7fd98c430d6cd5"
+    },
+    {
+      "file": "fst/patches/0262-add-attested-c15-compound-modifiers.patch",
+      "sha256": "f4cb95a143519bc90f61b8b3fdbbf1fb869cbb472bfa29077646bf32accec399"
+    },
+    {
+      "file": "fst/patches/0264-add-noun-locative-adjectivals.patch",
+      "sha256": "5089efb4b00c96d5f1d2501354d65ac14adb388bec49f8bc845d6aa88ada90c8"
+    },
+    {
+      "file": "fst/patches/0265-add-reviewed-modern-nouns-and-loans.patch",
+      "sha256": "d63b0074c884a3ec482359cb74ddd11a48f8af05fa9f61e084a73c40306aaa03"
+    },
+    {
+      "file": "fst/patches/0266-complete-modern-perfect-and-past-plural-verb-c-rest.patch",
+      "sha256": "4eaf7cd564cc8db97ae531063d702ec73d0f7805b2f28f2de1ac15f09dfd6a2c"
+    },
+    {
+      "file": "fst/patches/0266-complete-modern-perfect-and-past-plural-verb-c11.patch",
+      "sha256": "3065a5d68733a3959312a6c29f482cc1e26a93e5ead6c538a850fb8d05da0e75"
+    },
+    {
+      "file": "fst/patches/0266-complete-modern-perfect-and-past-plural-verb-c12.patch",
+      "sha256": "4d24235e34550cadab24e42843e91014c407c519bfa4950672309c7a5ae83bdf"
+    },
+    {
+      "file": "fst/patches/0266-complete-modern-perfect-and-past-plural-verb-c3.patch",
+      "sha256": "9326ce7de5e107965e3ce14dedac54e62c4437c500410f6dd8314cfe0fe81a01"
+    },
+    {
+      "file": "fst/patches/0266-complete-modern-perfect-and-past-plural-verb-c4.patch",
+      "sha256": "f3d00aa555b4f08e38e5573730d17d2b97a081168327ef5e577a54b87d4a7198"
+    },
+    {
+      "file": "fst/patches/0266-complete-modern-perfect-and-past-plural-verb-c62.patch",
+      "sha256": "e09f476e0549fc59f4b37d05e1b39c2de58e991df340d3292c1e346587b450c8"
+    },
+    {
+      "file": "fst/patches/0267-complete-noun-vocative-and-plural-translative.patch",
+      "sha256": "3a7154706959fcf96ccb926d3c821adb49aad035aaf22828940c1ba7f833d9e2"
+    },
+    {
+      "file": "fst/patches/0269-complete-human-quantifier-paradigms.patch",
+      "sha256": "04efd49046383891070cffbbcbf5cd03724681661690b10c196d310c75368342"
+    },
+    {
+      "file": "fst/patches/0270-fix-c11-negative-adjectival.patch",
+      "sha256": "322bac3ea5a70c3c6b90104466f69250f0a0730339e177538c364c178d758825"
+    },
+    {
+      "file": "fst/patches/0271-complete-participial-nominals-verb-c-rest.patch",
+      "sha256": "b7578b5eeaa03877dcace3f69888639fd1291c09b52fdb5e216366624f46b5d0"
+    },
+    {
+      "file": "fst/patches/0271-complete-participial-nominals-verb-c11.patch",
+      "sha256": "4a36b1266f7c149bf39c9e35d7629b0b9caddabc51537e252df37a8cf4d46267"
+    },
+    {
+      "file": "fst/patches/0271-complete-participial-nominals-verb-c12.patch",
+      "sha256": "8f630da8104fda82b96b95f1d7ea159b03563e94352f882265d09a0bb7677ee8"
+    },
+    {
+      "file": "fst/patches/0271-complete-participial-nominals-verb-c3.patch",
+      "sha256": "95160292122b362272b5a21b4456f77c33fd4b78051cf53146d3daecf7e632ea"
+    },
+    {
+      "file": "fst/patches/0271-complete-participial-nominals-verb-c4.patch",
+      "sha256": "4e239b875568740f9921d79d56bef7b8d04424cfd7a3034a8c6d6bdd69417d91"
+    },
+    {
+      "file": "fst/patches/0271-complete-participial-nominals-verb-c62.patch",
+      "sha256": "6e8990de84aa91177460d0e2d443230b8caf8140e5d1b5331b3d0f9bbb9c0c0d"
+    },
+    {
+      "file": "fst/patches/0272-remove-redundant-part-pronoun-relations.patch",
+      "sha256": "e3560eaf0c4a3dc27d32dad86abf89a3bb25fb01095b6266ea341e3bdaf94c24"
+    },
+    {
+      "file": "fst/patches/0273-fix-iru-auxiliary-present.patch",
+      "sha256": "a463df7f63964acb749d5f435ec0e3d0e9c4bbeb6fc84f52356e2db3a33adbdd"
+    },
+    {
+      "file": "fst/patches/0274-add-productive-translative-copular-future.patch",
+      "sha256": "5a3594e63abd2c5565ae7388c1c0e5415cf201b771b36ae31eda0e930830d7b1"
+    },
+    {
+      "file": "fst/patches/0275-add-final-reviewed-common-nouns.patch",
+      "sha256": "1bdc33b6b68a0100e8fe21bf6559db05d9e3e04f9ac01a731d6875425f06e84b"
+    },
+    {
+      "file": "fst/patches/0276-add-reviewed-abbreviations-and-closed-class.patch",
+      "sha256": "32e8cac19bf83823dc8f273ca5b168f931d5621acec0cfa45f15a3ce83a6e44c"
+    },
+    {
+      "file": "fst/patches/0277-add-reviewed-adjectival-predicates.patch",
+      "sha256": "3df13d8f2779fdea7b3b77b9d598246180827fcc97c4f4667a7d34d000ea7cbe"
+    },
+    {
+      "file": "fst/patches/0278-add-reviewed-colloquial-adverb.patch",
+      "sha256": "ffdf0dd570a834922cbe3669a7dd262ee03e11b4e5a8039dec5b6312d3f91c8c"
+    },
+    {
+      "file": "fst/patches/0279-restore-standalone-iru-c12.patch",
+      "sha256": "58bb33c4e577e4142714244b3da4af45f1d9bbc8532deab4f302f39d862269db"
+    },
+    {
+      "file": "fst/patches/0280-repair-irregular-sol-past.patch",
+      "sha256": "fc0bd2b3940310f213da680135beb7048ee976da86850e86a70ff1aeafa522c8"
+    },
+    {
+      "file": "fst/patches/0281-complete-nonhuman-cardinal-relations.patch",
+      "sha256": "3a2ca3a71aa159cd2353b1cc74a223edeeee4caf141f663756f38fe16525487b"
+    },
+    {
+      "file": "fst/patches/0282-add-iru-citation-c12.patch",
+      "sha256": "52fba5d44c37f747f035440d700b48852ccbf2360b763aec8cf9145817a53766"
+    },
+    {
+      "file": "fst/patches/0282-remove-duplicate-iru-c11-root.patch",
+      "sha256": "f9eae5ef3d488c946bc0adbafbb8c0b76103a2431c7fff543422fdb0826663c4"
+    },
+    {
+      "file": "fst/patches/0283-add-causative-iruttu-c5.patch",
+      "sha256": "06564ec9defbb7c410c2b4238283b6b9bc6544e121de72bb9326d856b5422871"
+    },
+    {
+      "file": "fst/patches/0284-remove-invalid-passive-connectors-c11.patch",
+      "sha256": "b6c33a00ffc6fdbfd79bf46b6ea9ea0dbc2a1757fe0df443b745c8badcc7988f"
+    },
+    {
+      "file": "fst/patches/0285-remove-invalid-passive-connectors-c-rest.patch",
+      "sha256": "b95eab7516f56c63a81e496a3c3a62a5206098ca91f2c736fa25d4de0f362285"
+    },
+    {
+      "file": "fst/patches/0286-remove-unsupported-vala-c12.patch",
+      "sha256": "c0e20e0d1a411689fe7197fb834a4545c5187f3b1c7941b74bd33e3de9a7da60"
+    },
+    {
+      "file": "fst/patches/0287-remove-orphaned-compounds-c4.patch",
+      "sha256": "104a092d69e71ba48992bd0cfb0cb8e56a0060f555a87d407f300ec86eedd7cc"
+    },
+    {
+      "file": "fst/patches/0288-remove-orphaned-compounds-c11.patch",
+      "sha256": "93ff16fa0a0c9de4e3be9f10aa525e7a44a3f1048650bd39c5e36cff79bbe57e"
+    },
+    {
+      "file": "fst/patches/0289-remove-orphaned-compounds-c12.patch",
+      "sha256": "6bb05ce47acc7d34a82662b18c90a75f721ba4bfb31a3d6644aa5dc0002f48aa"
+    },
+    {
+      "file": "fst/patches/0290-remove-orphaned-compounds-c-rest.patch",
+      "sha256": "a43c60bc08f12c9a1ea400e8a690762ae44f5cb373a5dfc714a298a29545edd9"
+    },
+    {
+      "file": "fst/patches/0291-remove-unresolved-productive-compounds-c4.patch",
+      "sha256": "ce8a131dce266eda5ebed027f5dbf290fa52b60676ada438ba443aa899a09dc4"
+    },
+    {
+      "file": "fst/patches/0292-remove-unresolved-productive-compounds-c11.patch",
+      "sha256": "63910ae14306b1f1156837eeb060fd7bd64393640bd931e935fa0008fb1b010c"
+    },
+    {
+      "file": "fst/patches/0293-remove-unresolved-productive-compounds-c12.patch",
+      "sha256": "1d39a868f2a2a68f64fda993def686c27359e8ba3f9e6d9e73efa24157a1164c"
+    },
+    {
+      "file": "fst/patches/0294-remove-unresolved-productive-compounds-c-rest.patch",
+      "sha256": "6e904b0fb1b0f93438a5a324521b15da955d566bb555827c7c70710f76fc77d2"
+    },
+    {
+      "file": "fst/patches/0295-add-formal-dative-allomorphs.patch",
+      "sha256": "ec4ef9977c8037c11af7c77a45c5b7d83f2ecf612bdbc55bdffee2c948a2a30c"
+    },
+    {
+      "file": "fst/patches/0296-fix-y-final-dative-sandhi.patch",
+      "sha256": "cdf4a5ca34f65b083ef4f3f9caa3503d27052e7851c964a4f9445432c20310f9"
+    },
+    {
+      "file": "fst/patches/0297-reclassify-corpus-proven-n-final-plurals.patch",
+      "sha256": "93e04e785e3fb31c3ba4cadbdb6de4e4b6a22e396a08241db22983c53c456e63"
+    },
+    {
+      "file": "fst/patches/0298-add-corpus-attested-iru-chains.patch",
+      "sha256": "fa055699ed63a5cb425bbf07e28e91dcea4da752cd727cbf5258865fc970b3aa"
+    },
+    {
+      "file": "fst/patches/0299-add-nadanthuperu-progressive-vaa-chain.patch",
+      "sha256": "827a5c22d2e31378c2792483b0c3ef73d41434e16b713123625e7c88a4049d57"
+    },
+    {
+      "file": "fst/patches/0300-move-ability-mudi-out-of-c11.patch",
+      "sha256": "3d2bd7a9d5ddcb5e9aae556d42e05db072742c23301d2a944398387d32bf82f6"
+    },
+    {
+      "file": "fst/patches/0301-add-en-infinitive-and-passive.patch",
+      "sha256": "d97b5be1b6ae251f74198318a97bd717857696ae76de1b48c96065cc48ca88a6"
+    },
+    {
+      "file": "fst/patches/0302-add-c4-ability-mudi-subclass.patch",
+      "sha256": "44f8c86626c1a8b52a848da301820c649a458a92f4784a1b98719e6afccbc8bc"
+    },
+    {
+      "file": "fst/patches/0303-fix-vaa-nonpast-stems.patch",
+      "sha256": "1e116a31e82f5c1ceff95f8f53990d9579a6e9754bd55c24944ab0cac99a033b"
+    },
+    {
+      "file": "fst/patches/0304-fix-c4-mudi-infinitive.patch",
+      "sha256": "cc033f0d2bcab11e8f920ca2314a696eaf5febcc79c7e42f80c15588a1a1fb64"
+    },
+    {
+      "file": "fst/patches/0305-complete-vaa-auxiliary-continuation.patch",
+      "sha256": "dd2e089a37a313d8c9f2983341e970e9f644dd6dc7160ad493b7ced0461cbf3c"
+    },
+    {
+      "file": "fst/patches/0306-add-reviewed-classical-and-colloquial-function-words.patch",
+      "sha256": "ba5ff7ffac43b89963bbccaf09ce22ef47914a8ed40b2ffd3a84567084170b2a"
+    },
+    {
+      "file": "fst/patches/0307-add-ottrai-adjective-family.patch",
+      "sha256": "3dc58a0f06a709416b4ebfa8bdc007dfe5057dff39e68d38c3c32cc82634320e"
+    },
+    {
+      "file": "fst/patches/0308-add-reviewed-action-nominals-and-common-nouns.patch",
+      "sha256": "b83430fed04c5c85d6c71cae130987551bb555c87ec6c73c0158b0adf16c1c8c"
+    },
+    {
+      "file": "fst/patches/0309-split-c16-direct-and-cuvar-obliques.patch",
+      "sha256": "da7995b89cf523de427bcc2ef709eb3fd63f30efc2eed095146d28583ec99e85"
+    },
+    {
+      "file": "fst/patches/0310-complete-c10-n-final-rewrite.patch",
+      "sha256": "254e651aba1d126b40727958e75359f7d65ee6221aa706396e98d124d1c182ca"
+    },
+    {
+      "file": "fst/patches/0311-add-verb-question-clitic-verb-c-rest.patch",
+      "sha256": "50b9cd928b5d6e35da3551cacef140cb272e7ba8f3ba22aab8ba2a3b5fc43206"
+    },
+    {
+      "file": "fst/patches/0311-add-verb-question-clitic-verb-c11.patch",
+      "sha256": "c943325ea10792c05bced49344a5fc7f7bb18cf4a577f1daaddd2524deedadcb"
+    },
+    {
+      "file": "fst/patches/0311-add-verb-question-clitic-verb-c12.patch",
+      "sha256": "921406e35da6cd7bd52f5b71b549b5e27ec52126a53e9c22b7b33f48a76ed89a"
+    },
+    {
+      "file": "fst/patches/0311-add-verb-question-clitic-verb-c3.patch",
+      "sha256": "16b1dbd205ba50ee6b8e37060297deb5bc87786c786989114d5d7b279f0868e3"
+    },
+    {
+      "file": "fst/patches/0311-add-verb-question-clitic-verb-c4.patch",
+      "sha256": "8958398172e82a931da28c29fddf2fd7297edede830d58aeb9ef9e64bccee1e9"
+    },
+    {
+      "file": "fst/patches/0311-add-verb-question-clitic-verb-c62.patch",
+      "sha256": "9f8c63d3e3a267cfa162a8c1c01a1240b7cd3f6fe4bb0457c3a4a6235e6f529a"
+    },
+    {
+      "file": "fst/patches/0312-fix-c11-simple-neuter-future.patch",
+      "sha256": "3f9045563484db1d4fe21eb39290ecced3f08e22a0dada4e41cb3e909e5004b4"
+    },
+    {
+      "file": "fst/patches/0313-fix-vaa-neuter-future-before-question.patch",
+      "sha256": "2b0aa78a371278c3c824b58d961ce67700840a2f73fc45b477337aa1fb6b022b"
+    },
+    {
+      "file": "fst/patches/0314-complete-c16-direct-subclass-move.patch",
+      "sha256": "8f07ded7b67813b256ddf55873812331c6e7d5f4ab917e4747f7525c4b7afa32"
+    },
+    {
+      "file": "fst/patches/0315-split-c10-n-final-allomorphs.patch",
+      "sha256": "ad19c65b8c26181082bab733b1efc78ae668ceacbeaa17cbceeb36abb3acfb24"
+    },
+    {
+      "file": "fst/patches/0316-scope-vaa-rewrites-to-class17.patch",
+      "sha256": "e090d416a264b044e501a9ede66766f9ba3cc652b09696218827cf876ea371ff"
+    },
+    {
+      "file": "fst/patches/0317-clean-class17-scope-marker.patch",
+      "sha256": "670a1d59911410645f146609c8fa89e25aad8544f9cc255d7391805876f61b0c"
+    },
+    {
+      "file": "fst/patches/0318-complete-en-passive-perfect-hook.patch",
+      "sha256": "f4d78b49cf6787419c4a61963a7a5a1ca6320ad892061a788a03fe23826a7d3f"
+    },
+    {
+      "file": "fst/patches/0319-complete-passive-worthy-focus-verb-c-rest.patch",
+      "sha256": "25f8519cafad3a7c18daee3d6309940fdbae37a136f927bb0939f6ab42f75470"
+    },
+    {
+      "file": "fst/patches/0320-complete-c12-modal-worthy-focus.patch",
+      "sha256": "5f31533270d348cbd5bafff27b20b824f83cc9abafed53b097c861bf58508b6c"
+    },
+    {
+      "file": "fst/patches/0321-add-productive-worthy-focus-verb-c11.patch",
+      "sha256": "12198214afdd70e1da7fa527932026cd0166b83c3f204ac12b9f30b3e8fa55ec"
+    },
+    {
+      "file": "fst/patches/0321-add-productive-worthy-focus-verb-c3.patch",
+      "sha256": "2d679c92e91685322ff0d17305f3fb37dbde134f96ae654c2c1366b0c0ee5652"
+    },
+    {
+      "file": "fst/patches/0322-add-focus-and-repair-i-final-modal-verb-c4.patch",
+      "sha256": "168d474b31a12c20eecb283227e7b532e8fc2c19c6b0f0a9ac1bca3846014fcd"
+    },
+    {
+      "file": "fst/patches/0322-add-productive-focus-verb-c62.patch",
+      "sha256": "156c70a4235b23e14001fdbecc745d14716e2066dda66e64dd98d8d94c128f0a"
+    },
+    {
+      "file": "fst/patches/0323-add-reviewed-compositional-function-relations.patch",
+      "sha256": "92a82360fa5f95d5f9385de8261b1289000e970a9714cd207fb6d469c050f5cd"
+    },
+    {
+      "file": "fst/patches/0324-add-reviewed-common-residual-nouns.patch",
+      "sha256": "ec94e4d49d66533b493e393f8a2eea6f47847093f4e032648ed42f23328ff4f6"
+    },
+    {
+      "file": "fst/patches/0325-add-reviewed-compositional-adverbs.patch",
+      "sha256": "f80a01d8f68ae464dc1d5b8cd5d63a5be79a51724316b2d5aa6b713f56cdafe5"
+    },
+    {
+      "file": "fst/patches/0326-add-core-nouns-and-action-nominal.patch",
+      "sha256": "be46e15dcdaae6b88621947fa952491121508b393bd6ae0d8203656420bfcda1"
+    },
+    {
+      "file": "fst/patches/0327-add-productive-adjective-families.patch",
+      "sha256": "3ebe12fe8de40ed35eb5da67264c511cf02f5d16ffcf193fe9607f4b98ed954b"
+    },
+    {
+      "file": "fst/patches/0328-add-colloquial-time-adverb.patch",
+      "sha256": "15e6f9c7d9b2bbfe4f20fa3ef203f157b39564eedfd66c26828f9db015c829f4"
+    },
+    {
+      "file": "fst/patches/0329-add-core-closed-class-relations.patch",
+      "sha256": "59348ca3f85e38b3d8185d50c549785f7adafa8fd099dca6554c8d3768413d7a"
+    },
+    {
+      "file": "fst/patches/0330-add-purpose-reporting-and-core-roots-c-rest.patch",
+      "sha256": "ac2808b0f3423e0e2d7953ee1e39366a64a01e054a0bc6c6c62d7ea24d438670"
+    },
+    {
+      "file": "fst/patches/0330-add-purpose-reporting-verb-c11.patch",
+      "sha256": "a9e907cabeaf8bed2bd0b4b10f9933f8be52e28bcdcd8d5ed327b498384136b8"
+    },
+    {
+      "file": "fst/patches/0330-add-purpose-reporting-verb-c12.patch",
+      "sha256": "05b8f897495eaf2898b05af9aba112e3c8a253f664b1e6990cd94504d69dd10b"
+    },
+    {
+      "file": "fst/patches/0330-add-purpose-reporting-verb-c3.patch",
+      "sha256": "f45263eb130a107fa5d0b42182c4bd0f3a9d65cbcb438b24d5813acb3d18d8e2"
+    },
+    {
+      "file": "fst/patches/0330-add-purpose-reporting-verb-c4.patch",
+      "sha256": "3e04ae71fa32de6bf8cc23065de1882bb11234aa2c562d842e302b35e2b5b291"
+    },
+    {
+      "file": "fst/patches/0330-add-purpose-reporting-verb-c62.patch",
+      "sha256": "832d85332b936eadac0ade0cb179f6ad620a4562a58efddf038ac77b3c28c971"
+    },
+    {
+      "file": "fst/patches/0332-remove-redundant-adjective-tags.patch",
+      "sha256": "6902b8e6d6fd0020cea223617e9f66286a94ae8e40f08860869baed6cfdbc1c7"
+    },
+    {
+      "file": "fst/patches/0333-repair-common-noun-subclasses.patch",
+      "sha256": "8d0f66eb89418d43ac6a18a61642b3a540081ed0477c75d3209f723cddbc0d2d"
+    },
+    {
+      "file": "fst/patches/0334-add-reviewed-common-function-forms.patch",
+      "sha256": "5182036e0b4de5403d0b52c6d415a586fdb3bfa2e13a5df7c2fedde488e74f62"
+    },
+    {
+      "file": "fst/patches/0335-add-temporal-and-common-roots-verb-c-rest.patch",
+      "sha256": "2ae9f22f5a8ebf85cc4899bc3e14cef10595af96a584e2f6bb4efc28a4c98c59"
+    },
+    {
+      "file": "fst/patches/0335-add-temporal-and-common-roots-verb-c11.patch",
+      "sha256": "8d43fbf8a1c61eb0460b026572b299b62f7a1a16b09f92bd2d8d2ba5ee11c3ef"
+    },
+    {
+      "file": "fst/patches/0335-add-temporal-and-common-roots-verb-c12.patch",
+      "sha256": "ddbd67ad77819b8f03baca1b659fb0cb566036b69c0af0efff16529a892287b3"
+    },
+    {
+      "file": "fst/patches/0335-add-temporal-and-common-roots-verb-c3.patch",
+      "sha256": "6fd3795c92c99e0f97f2567c825ed7dc3ed874321c9e5fc5ade2250cf7a96f9b"
+    },
+    {
+      "file": "fst/patches/0335-add-temporal-and-common-roots-verb-c4.patch",
+      "sha256": "63b1bb8f4057a0beb52f98440b17d507242af47bd54977edb1f4e4670eb000fa"
+    },
+    {
+      "file": "fst/patches/0335-add-temporal-and-common-roots-verb-c62.patch",
+      "sha256": "de44bad354e872fa6c31803c6346ae98dd4f1b174470d8afe96280695903e9a3"
+    },
+    {
+      "file": "fst/patches/0336-repair-verb-c7-realization.patch",
+      "sha256": "a33d345b2c5ebba8f636a5b98a216d7e475561ce31d7776a345ecdfb037fb2ee"
+    },
+    {
+      "file": "fst/patches/0337-complete-noun-realization-and-common-readings.patch",
+      "sha256": "7a9966ec3ec4b741e4305491b5d58bdc99038cb84d36adf290e94632c53b6f93"
+    },
+    {
+      "file": "fst/patches/0338-complete-c-rest-productive-continuations.patch",
+      "sha256": "19737e1c77b45386c26ad87872db5c5a0d9708b5ef81fc87217de3008cf24791"
+    },
+    {
+      "file": "fst/patches/0338-complete-c11-auxiliary-participial-oor.patch",
+      "sha256": "5a62e81fa10dca035cf4d1333c037f7a1d55d94d039cc4ef4ed81846c5439148"
+    },
+    {
+      "file": "fst/patches/0338-complete-c12-auxiliary-participial-oor.patch",
+      "sha256": "eeb72b3d10f86df17a1d5c955a69ba61412d4f5726dd63b391485a17c2617ab2"
+    },
+    {
+      "file": "fst/patches/0338-complete-c3-temporal-and-participial-oor.patch",
+      "sha256": "5fccb7c180fe6bb4d04ae0e5adb60bdda523d5bb0fb63d3b92a6b6b2a0dae136"
+    },
+    {
+      "file": "fst/patches/0338-complete-c4-auxiliary-participial-oor.patch",
+      "sha256": "fc3078676b8f9dd4cfb60e21c85b8f7d575f9b578d992d07d3adf279fa2aa74e"
+    },
+    {
+      "file": "fst/patches/0338-complete-c62-participial-oor.patch",
+      "sha256": "40068e05e818affca3c07b0df2f528e5cbbc2f15fbfe3988efa2ce88e6b989fb"
+    },
+    {
+      "file": "fst/patches/0338-repair-c2-c8-neuter-future-rewrites.patch",
+      "sha256": "f7c11e645438bc13c9010a52caa36de39684439f2ad2f2420780f89409265b7f"
+    },
+    {
+      "file": "fst/patches/0339-complete-colloquial-pronoun-postpositions.patch",
+      "sha256": "9f4d68ba6d03b9efd70aeb7cc90236a0a53b832cf3d6b423ec5e4f8198285d67"
+    },
+    {
+      "file": "fst/patches/0340-add-c3-literary-conditional-rewrite.patch",
+      "sha256": "bf3d1eedd3bd8bbfcd493ced9c895ae1f48fa081487e3f4f838bbae8ce96479e"
+    },
+    {
+      "file": "fst/patches/0341-repair-c4-manner-and-u-final-future.patch",
+      "sha256": "7b47e50c210a380ebd39ab317ccf9abcf6192afebd0e1e89b14d907996bafca1"
+    },
+    {
+      "file": "fst/patches/0342-final-systemic-verb-c-rest.patch",
+      "sha256": "8476c3fc4040e99977e428edceeeee815684b45f10d364fc87f81fdb3e6e1f2e"
+    },
+    {
+      "file": "fst/patches/0342-final-systemic-verb-c11.patch",
+      "sha256": "596b1d82b6b4cc9fdf652c169a0ae4298bb86ad334d2507ca6ef048f723cb566"
+    },
+    {
+      "file": "fst/patches/0342-final-systemic-verb-c12.patch",
+      "sha256": "e5d5a6397dbd3e501de96b47530bc8d33b0f211f24445f96afeea407a72b3dd6"
+    },
+    {
+      "file": "fst/patches/0342-final-systemic-verb-c3.patch",
+      "sha256": "b3f07d867deadb33eb481e1471a4089cbba9ec99b2b69045a5d270015e4d1e89"
+    },
+    {
+      "file": "fst/patches/0342-final-systemic-verb-c4.patch",
+      "sha256": "948fb10604fa2fdfffe826b8a8db467ea29e291621a6ee1d9089a6e648cc563e"
+    },
+    {
+      "file": "fst/patches/0342-final-systemic-verb-c62.patch",
+      "sha256": "e1798f44be496ce29afbd7978ec7bc0f135f377988a214080b8faa61c3b28c10"
+    },
+    {
+      "file": "fst/patches/0343-complete-c15-modifier-continuations.patch",
+      "sha256": "2394dce9972e953b9205182345431da85a1ca9e572e3d4306e213ec9b4cb0604"
+    },
+    {
+      "file": "fst/patches/0344-complete-participial-and-function-families.patch",
+      "sha256": "0c798e3f28b513f5698c24e4bec7f309c65b8ce208ea2117bf295acf4d69768a"
+    },
+    {
+      "file": "fst/patches/0345-repair-c4-weak-infinitives.patch",
+      "sha256": "131525f33b377a9922533ec83148d7fbdb65ff698d4d74683a79a149c17321cc"
+    },
+    {
+      "file": "fst/patches/0346-final-common-verb-c-rest.patch",
+      "sha256": "d92a0f32e8ef1a174a77b2a9801c21ee5d48c106d6ca75d016af2e27ced6466b"
+    },
+    {
+      "file": "fst/patches/0346-final-common-verb-c11.patch",
+      "sha256": "86c25304a7891eff28358ce682e09ac6e54fec88e78359ec3a98934a75945509"
+    },
+    {
+      "file": "fst/patches/0346-final-common-verb-c12.patch",
+      "sha256": "5d786e3310083043670ec768a126d6f15a0be4095bac3c06d84e4f07f8fe76e6"
+    },
+    {
+      "file": "fst/patches/0346-final-common-verb-c3.patch",
+      "sha256": "06371f0e2d9d52c84d62109aadcfacc7b105012c3d1bf1e7ea18730d8cfcac03"
+    },
+    {
+      "file": "fst/patches/0346-final-common-verb-c4.patch",
+      "sha256": "c263cb9ab334f235a724e6e530b4c8e4dab2dd29b2267c551751c9500a9205df"
+    },
+    {
+      "file": "fst/patches/0346-final-common-verb-c62.patch",
+      "sha256": "29054237bbd3780de02c41056ed54603221716d48b1695f2272a58486293231a"
+    },
+    {
+      "file": "fst/patches/0347-final-common-noun-families.patch",
+      "sha256": "50acc4fb0d2092204a322404de214f66ddf3d4eb1ad3aeb3e7adc52394832500"
+    },
+    {
+      "file": "fst/patches/0348-final-common-function-readings.patch",
+      "sha256": "7691f8f5934b950fa0781dcd8b1ddd92be1b2b20e1a43a6326838a1f3782794d"
+    },
+    {
+      "file": "fst/patches/0349-systematic-colloquial-noun.patch",
+      "sha256": "a72469022fed3affa0068dcb565c94f0fe84e48b3383c8b89bb8b2b7bfb032ca"
+    },
+    {
+      "file": "fst/patches/0349-systematic-colloquial-verb-c-rest.patch",
+      "sha256": "272f084c4fc22509e92038ba0c104765a76eb191a7fa9bdd9b137c8c37fc3f45"
+    },
+    {
+      "file": "fst/patches/0349-systematic-colloquial-verb-c11.patch",
+      "sha256": "9afe4fefdf3a7a8aa674e8bbed2604f2445ee07b8396bf1c6cbac180e13f5d07"
+    },
+    {
+      "file": "fst/patches/0349-systematic-colloquial-verb-c12.patch",
+      "sha256": "cc1e5a1be4e622641e8d9e61979abbfbd41936f32c95a097235e6cc199d6df77"
+    },
+    {
+      "file": "fst/patches/0349-systematic-colloquial-verb-c3.patch",
+      "sha256": "1684b189f4b0347647aabb72186ad43d09bbffd4763d0ac600c0d1c579677505"
+    },
+    {
+      "file": "fst/patches/0349-systematic-colloquial-verb-c4.patch",
+      "sha256": "92dbb7809580b39679585adea0c63ee7157a09358b9aa2687c077b2ae2f1bddd"
+    },
+    {
+      "file": "fst/patches/0349-systematic-colloquial-verb-c62.patch",
+      "sha256": "d3d745ef4de84826baa4976b580a4e183bfe3ef131ae1da46fddc9800d292d1f"
+    },
+    {
+      "file": "fst/patches/0350-complete-predicate-questions.patch",
+      "sha256": "5237477a198f97d448e7dfb0296a7a3379a87369a8553f7f694e98b42ee56589"
+    },
+    {
+      "file": "fst/patches/0351-complete-common-nouns-and-accusative-clitics.patch",
+      "sha256": "52b2487181b6c1c66d9448fd1f9fa3951b022f4c0f535869a008e067346a1605"
+    },
+    {
+      "file": "fst/patches/0352-fix-c11-negative-imperatives.patch",
+      "sha256": "8bfed4186af580a3e15b7730976e94341fe78ee2838ee66fd24574e2e5e230b8"
+    },
+    {
+      "file": "fst/patches/0353-classify-romba-intensifier.patch",
+      "sha256": "bb0e3b8e0d6b93389be4f72fde14a6987e61f0d73ab64b04a59d227fbb00edd4"
+    },
+    {
+      "file": "fst/patches/0355-add-gendered-participial-nouns-verb-c-rest.patch",
+      "sha256": "42ffa6173e6e0f7869ee8e52a74530d35fc9786e892c307ea3d6202f4bbeaa88"
+    },
+    {
+      "file": "fst/patches/0355-add-gendered-participial-nouns-verb-c11.patch",
+      "sha256": "b8ff428fa28cdb61518bbe33ec6423efdb6f64c4b3f80d1db63b4d6b47530c9d"
+    },
+    {
+      "file": "fst/patches/0355-add-gendered-participial-nouns-verb-c12.patch",
+      "sha256": "c15da220d9eeceeac27a921fb4f5711e4d2ca00a78b82f84a4f9accf015834c5"
+    },
+    {
+      "file": "fst/patches/0355-add-gendered-participial-nouns-verb-c3.patch",
+      "sha256": "aa63532f19142f45dd929ab7caa15b8d4d3acbe1daf497cb9d2a8e6bdd4eb30e"
+    },
+    {
+      "file": "fst/patches/0355-add-gendered-participial-nouns-verb-c4.patch",
+      "sha256": "1293cb21a9744b4dba70f9d9092bb63ea23f2e4b0e487916257ad5a76c384280"
+    },
+    {
+      "file": "fst/patches/0355-add-gendered-participial-nouns-verb-c62.patch",
+      "sha256": "1cf7f45a581ce2481262e7204cbcf66f75ae8619dd3a5582367e239e3c449ae3"
+    },
+    {
+      "file": "fst/patches/0356-add-c11-i-final-colloquial-past.patch",
+      "sha256": "fce6cddd7057e391f9a5c9846451b95c71c5366c4ab9678f5540e3e5de518d2c"
+    },
+    {
+      "file": "fst/patches/0356-add-sey-colloquial-past.patch",
+      "sha256": "be8abc9869c6730f566f13fec18538e77a702aa114f24dd18f0d1cd53ac43ace"
+    },
+    {
+      "file": "fst/patches/0356-complete-c5-colloquial-present.patch",
+      "sha256": "669a255b3fdb50547e3280f46b6f6a1b32ff8ef55d535e110aeefe3309290906"
+    },
+    {
+      "file": "fst/patches/0357-fix-colloquial-ng-questions-verb-c-rest.patch",
+      "sha256": "87979fa2c875c74425b2191f7b1dfef25cfc43f80123d93b041959754bdc80b4"
+    },
+    {
+      "file": "fst/patches/0357-fix-colloquial-ng-questions-verb-c11.patch",
+      "sha256": "54f63a0c69703ef93f339b0b4c0c9b0d73708e12919b5c0df050171201ad38c3"
+    },
+    {
+      "file": "fst/patches/0357-fix-colloquial-ng-questions-verb-c12.patch",
+      "sha256": "3e84d21b6ea19140a343027724fc82e4f4c9760e6de80e75554fd2f9fffee1b9"
+    },
+    {
+      "file": "fst/patches/0357-fix-colloquial-ng-questions-verb-c3.patch",
+      "sha256": "16f16a6afede6dc042166286cac5d4c5e9061da1442a7b4a03ba4aa9701f99f6"
+    },
+    {
+      "file": "fst/patches/0357-fix-colloquial-ng-questions-verb-c4.patch",
+      "sha256": "fef9fa12f75adde0d54336a3d1561814b7ea4b32f7651f3fb1659073d28c55f7"
+    },
+    {
+      "file": "fst/patches/0357-fix-colloquial-ng-questions-verb-c62.patch",
+      "sha256": "dc22ac525cbcc3da058d9dfc807282ddcbb74c9ce63d0f2c4e79dc66a7bf523d"
+    },
+    {
+      "file": "fst/patches/0358-complete-finite-second-person-questions-verb-c-rest.patch",
+      "sha256": "c5d7c78f81c77ccb7443388c5dda1506241d77cbc3704e5105ce9258277c4816"
+    },
+    {
+      "file": "fst/patches/0358-complete-finite-second-person-questions-verb-c11.patch",
+      "sha256": "3839ad8fab0e0598f21a43ca87eae21bb0c0a7019a84ee1752b071de501c927a"
+    },
+    {
+      "file": "fst/patches/0358-complete-finite-second-person-questions-verb-c12.patch",
+      "sha256": "4cbc8c788e6ef0eae3ec4f70cc0caa952918ab6745e6be519e4514cc22473c93"
+    },
+    {
+      "file": "fst/patches/0358-complete-finite-second-person-questions-verb-c3.patch",
+      "sha256": "7b90a5be01e83e0488cd66cbaa54fea3eae84331c57f4d9db8fc0107bfdf4e98"
+    },
+    {
+      "file": "fst/patches/0358-complete-finite-second-person-questions-verb-c4.patch",
+      "sha256": "db814e224fcad99189aded2de34a28b3dc6d75a8c7d340357a35eff8d47aa43f"
+    },
+    {
+      "file": "fst/patches/0358-complete-finite-second-person-questions-verb-c62.patch",
+      "sha256": "24309e132dc2f4cbf5dd434eed4cccf09523921a0060093c9b466b76962a892a"
+    },
+    {
+      "file": "fst/patches/0360-add-vai-colloquial-past-subclass.patch",
+      "sha256": "100df22f9ef7c184741c18c89dba681aa54b3dc77eacd6964375cde1466a4744"
+    },
+    {
+      "file": "fst/patches/0362-add-colloquial-finite-negative-verb-c-rest.patch",
+      "sha256": "e2aa8a2fc9870c3f116c21bb63babe61b7ba44710dd6530d45c9b1a69884eb35"
+    },
+    {
+      "file": "fst/patches/0362-add-colloquial-finite-negative-verb-c11.patch",
+      "sha256": "93d7bc1e774fb991ea5d1c194a544829b7c4048d72664a51cb8188fb028f19f9"
+    },
+    {
+      "file": "fst/patches/0362-add-colloquial-finite-negative-verb-c12.patch",
+      "sha256": "6c9f13024901bd8accbe843239b30555e8a1eb3975c2ee14d13a24dd89744573"
+    },
+    {
+      "file": "fst/patches/0362-add-colloquial-finite-negative-verb-c3.patch",
+      "sha256": "4c4efb4ab50c45b5720cc30bff463a54b1e0e68fe87a6441d8080ee1c55f953d"
+    },
+    {
+      "file": "fst/patches/0362-add-colloquial-finite-negative-verb-c4.patch",
+      "sha256": "665398b3c14c93a5e165ce2a8b2aa061b2eba3f7ce8e2b15dc160f6b5ff9cdd8"
+    },
+    {
+      "file": "fst/patches/0362-add-colloquial-finite-negative-verb-c62.patch",
+      "sha256": "4d751235733b1d0e0c84d1687eca75ae2c0425344c03ff116ae02f9bf49cc110"
+    },
+    {
+      "file": "fst/patches/0363-add-colloquial-noun-locatives.patch",
+      "sha256": "3328f419ae9b752d293daf74a4d26cd6f831fad8c802fee6167b96cb7092d013"
+    },
+    {
+      "file": "fst/patches/0364-add-infinitive-focus-verb-c-rest.patch",
+      "sha256": "1f9b6188c1dd8c2d3cdbcedfdff0c5f844c581394c12ab58030ae5ad8a0371bf"
+    },
+    {
+      "file": "fst/patches/0364-add-infinitive-focus-verb-c11.patch",
+      "sha256": "01187736ae408e5a767a6a1de6c90ea25c214fb56cf97921bb31e1a33ff952a8"
+    },
+    {
+      "file": "fst/patches/0364-add-infinitive-focus-verb-c12.patch",
+      "sha256": "230fdc276738ba91c3c241e14037154b5ce35cc60c5fecdab05e6f8f1028a55c"
+    },
+    {
+      "file": "fst/patches/0364-add-infinitive-focus-verb-c3.patch",
+      "sha256": "53c5863a078d07c9141b2ca335d1850d20d0b856f866769f6b1d471e8b6f6fa2"
+    },
+    {
+      "file": "fst/patches/0364-add-infinitive-focus-verb-c4.patch",
+      "sha256": "03c300a6a811e45cccdbf444b7cb8ab6d8c305c978e109437079a50f29fbf9b9"
+    },
+    {
+      "file": "fst/patches/0364-add-infinitive-focus-verb-c62.patch",
+      "sha256": "65bf6770798e2ee540cf43753f9fe8fe325bf8186b845623ebcef25d2d96e68c"
+    },
+    {
+      "file": "fst/patches/0365-add-spoken-present-subclasses-verb-c-rest.patch",
+      "sha256": "234266f0c0863cec5071505c0b600598087142a912b74b010d07e61b8015767c"
+    },
+    {
+      "file": "fst/patches/0365-add-spoken-present-subclasses-verb-c11.patch",
+      "sha256": "ed03c4a6deb9d6c2aaf96f9c4874818e2e4499ca5b506325416c49f10975f2e2"
+    },
+    {
+      "file": "fst/patches/0365-add-spoken-present-subclasses-verb-c12.patch",
+      "sha256": "a2c144aed8086dc789b0270264a5e338dae1188613dc55eb504df55232942fdf"
+    },
+    {
+      "file": "fst/patches/0366-add-colloquial-participial-nominals-verb-c-rest.patch",
+      "sha256": "b1921770e6c4df836030931a3dd1fd6a881208c6d09e04865fa851922559fbdb"
+    },
+    {
+      "file": "fst/patches/0366-add-colloquial-participial-nominals-verb-c11.patch",
+      "sha256": "f25d6a0f410e0424ddce90389ecb4ddabeb39b73eefea56e759f4e72c1d80654"
+    },
+    {
+      "file": "fst/patches/0366-add-colloquial-participial-nominals-verb-c12.patch",
+      "sha256": "77055d43cd92d83d6b1cf2c2a72526c3c7f1f0b3b551ed6052d2f13e0dcd0706"
+    },
+    {
+      "file": "fst/patches/0366-add-colloquial-participial-nominals-verb-c3.patch",
+      "sha256": "e2bd6eda0296ff9b95592858b26dcdfcc48a43fe792ada7afb504dca3aaa66bd"
+    },
+    {
+      "file": "fst/patches/0366-add-colloquial-participial-nominals-verb-c4.patch",
+      "sha256": "40120ed04e37e76a734d3ec437bea6c7f1434245d89aa75526318c53abb43179"
+    },
+    {
+      "file": "fst/patches/0366-add-colloquial-participial-nominals-verb-c62.patch",
+      "sha256": "4b4ff2212201f18de84f05612574f5db4bc9f0fd9633daa0259aafcfe28784ed"
+    },
+    {
+      "file": "fst/patches/0367-complete-finite-conditional-clitics-verb-c-rest.patch",
+      "sha256": "6a53b8e08d060c700854507fc7c452edcfeac27d39639b96483304d2425a0434"
+    },
+    {
+      "file": "fst/patches/0367-complete-finite-conditional-clitics-verb-c11.patch",
+      "sha256": "ccf39e586e0ed7797c0aff6ddd8dbce34d2c3e207fe444980009585c61165959"
+    },
+    {
+      "file": "fst/patches/0367-complete-finite-conditional-clitics-verb-c12.patch",
+      "sha256": "eccfbc2da49c32bf926ef857238c56dac4b438304ba9f1809db925701edf7ec8"
+    },
+    {
+      "file": "fst/patches/0367-complete-finite-conditional-clitics-verb-c3.patch",
+      "sha256": "1c47ca68e7aa76fae1a3d2c5aa2a7af9a050ff84ae5dd530cfc5b5f572b778c8"
+    },
+    {
+      "file": "fst/patches/0367-complete-finite-conditional-clitics-verb-c4.patch",
+      "sha256": "d61f6d5a35e3c29df752cdb5e3d3f4d6c9e0f460d92caf8d163dd063564320c5"
+    },
+    {
+      "file": "fst/patches/0367-complete-finite-conditional-clitics-verb-c62.patch",
+      "sha256": "5305a070cf5e82436d10517ec80317ee4fe058e77ba79aee396cf2be23dcbad3"
+    },
+    {
+      "file": "fst/patches/0368-complete-noun-vocative-parity.patch",
+      "sha256": "4a1e17ff8129eff54bf5f49e57e418f52dfbabff0caefa346ea665cdf26689a3"
+    },
+    {
+      "file": "fst/patches/0370-add-spoken-predicate-repairs-verb-c-rest.patch",
+      "sha256": "6e2402f7b60416021131eb25cd14126f193676890aa8b4226efd2d8a18deed78"
+    },
+    {
+      "file": "fst/patches/0370-add-spoken-predicate-repairs-verb-c11.patch",
+      "sha256": "d5b700a8e30e2bcaf4a60e6b0ba20e2902fbd63d12130a2cf1c8e9cf50eba439"
+    },
+    {
+      "file": "fst/patches/0370-add-spoken-predicate-repairs-verb-c12.patch",
+      "sha256": "f3a6e25ec954ed9d95e95f1adb96d1d80acd18eb7036ff22330f75d54c90cebb"
+    },
+    {
+      "file": "fst/patches/0370-add-spoken-predicate-repairs-verb-c3.patch",
+      "sha256": "78994744da7b58e99e4792822369c02228dca730b3f6d602d14729604717d2fa"
+    },
+    {
+      "file": "fst/patches/0370-add-spoken-predicate-repairs-verb-c4.patch",
+      "sha256": "216a059e9609ac6e91895c1617488361557df1549aa742477737c79e981ff71d"
+    },
+    {
+      "file": "fst/patches/0370-add-spoken-predicate-repairs-verb-c62.patch",
+      "sha256": "983fbff514e13f39293cceeb6772e5062b1bd56d7dc7bb0d1d001d6a85f7043c"
+    },
+    {
+      "file": "fst/patches/0371-repair-finite-clitic-realization-verb-c-rest.patch",
+      "sha256": "7c7b03d112540357df5822845f348ed36ad1d7cbfcd31a1df53703f8d8755eae"
+    },
+    {
+      "file": "fst/patches/0371-repair-finite-clitic-realization-verb-c11.patch",
+      "sha256": "9aca34314aa0e1b4638f7170cee2d69639b97a6d0b5f468575b33075ebd5f526"
+    },
+    {
+      "file": "fst/patches/0371-repair-finite-clitic-realization-verb-c12.patch",
+      "sha256": "b5ae8c4ffb824fd2fdda5e4591382fe736e559e878fe62c88567fec3303d1928"
+    },
+    {
+      "file": "fst/patches/0371-repair-finite-clitic-realization-verb-c3.patch",
+      "sha256": "9e1889c66763926443e24bd3f21605ed6997bb5313030dd12787dac0056611dc"
+    },
+    {
+      "file": "fst/patches/0371-repair-finite-clitic-realization-verb-c4.patch",
+      "sha256": "9c3d011aa67909ac0db6229460bed46ee2aa61f9089fba1bdecc1606beb830fb"
+    },
+    {
+      "file": "fst/patches/0371-repair-finite-clitic-realization-verb-c62.patch",
+      "sha256": "75c73cb69e57e69686996c1aa5e4efdd13693ef45f837ef481361d98df84476a"
+    },
+    {
+      "file": "fst/patches/0372-complete-finite-second-person-questions-verb-c-rest.patch",
+      "sha256": "941efd4351d7842cc0e95a359c9e7a71f6ae788de79b3d9e29bc832fc3498ce7"
+    },
+    {
+      "file": "fst/patches/0372-complete-finite-second-person-questions-verb-c11.patch",
+      "sha256": "e67371a2f947a8157dc4500f1adc76f11c3809e4ac74124349f926c878c85cab"
+    },
+    {
+      "file": "fst/patches/0372-complete-finite-second-person-questions-verb-c12.patch",
+      "sha256": "1fc0350ecc058dd8f321b0c3d5b35526794d4b0dc99c3d1e4fc7cd63ad6ea08f"
+    },
+    {
+      "file": "fst/patches/0374-add-infinitive-focus-verb-c-rest.patch",
+      "sha256": "0602d5cdd0eb828c4e15037e46fa9dff21b46284483f4710e784aa08d2d0d0c6"
+    },
+    {
+      "file": "fst/patches/0374-add-infinitive-focus-verb-c12.patch",
+      "sha256": "add651579f94d8b86f6b601bd2a7899f53a67e6e0fe44aa68213f37cfb247c96"
+    },
+    {
+      "file": "fst/patches/0375-add-colloquial-finite-negative-verb-c-rest.patch",
+      "sha256": "8f35a103b74830d1a161ad50998b5e52a87f933fc73f7be1559f47a1de82d3ce"
+    },
+    {
+      "file": "fst/patches/0375-add-colloquial-finite-negative-verb-c12.patch",
+      "sha256": "9c10af5578e5614937c2a7159c83438cc4c3255c77b8613225badbee1966e374"
+    },
+    {
+      "file": "fst/patches/0376-complete-colloquial-noun-locatives.patch",
+      "sha256": "cb18ca07ff1ab4070d306cfb8d48f1c4233c2863d7b1cba6845181d0ca2c1a73"
+    },
+    {
+      "file": "fst/patches/0377-add-colloquial-participial-nominals-verb-c-rest.patch",
+      "sha256": "2837d3fd18d27c6511ead55c1fe2408036bd00a2186aeedc2a71de89d4c6edbf"
+    },
+    {
+      "file": "fst/patches/0377-add-colloquial-participial-nominals-verb-c12.patch",
+      "sha256": "ea0d4b4c01e12e0d2420e474383e50b60f853ce6db202ad9843cd639d33625d1"
+    },
+    {
+      "file": "fst/patches/0378-complete-finite-conditional-clitics-verb-c-rest.patch",
+      "sha256": "8401249101d683872709825b9fe6b9eb5aa514dd82bd51105a6cdb2b1bd9121c"
+    },
+    {
+      "file": "fst/patches/0378-complete-finite-conditional-clitics-verb-c12.patch",
+      "sha256": "0f6650b5754089bb7a5199317a1d980fdf99576049695ff66135e25eb6f68f4d"
+    },
+    {
+      "file": "fst/patches/0379-add-infinitive-focus-verb-c-rest.patch",
+      "sha256": "231c1016eb7fae7536f630ac060f03f30ddb79f3445b7034734bb690da9d0246"
+    },
+    {
+      "file": "fst/patches/0379-add-infinitive-focus-verb-c4.patch",
+      "sha256": "7784cbb074fb35f4a4d7b4bfbd8411fd587505f3ed9c665ee3fa8fbc565eb95c"
+    },
+    {
+      "file": "fst/patches/0381-add-non-nominal-colloquial-locatives-verb-c-rest.patch",
+      "sha256": "f6e923254739d9a38066d643802473de44150b04de368fb95f1d189d34ce5189"
+    },
+    {
+      "file": "fst/patches/0381-add-non-nominal-colloquial-locatives-verb-c11.patch",
+      "sha256": "395d4ac177c5e9243d9b66524560e8fe754bb340b8fb118d8c965c4408177022"
+    },
+    {
+      "file": "fst/patches/0381-add-non-nominal-colloquial-locatives-verb-c12.patch",
+      "sha256": "d627690f9d85bd4e0932a60ddb1692305b40e1328e952ef8ec3c6a18b35b7d33"
+    },
+    {
+      "file": "fst/patches/0381-add-non-nominal-colloquial-locatives-verb-c3.patch",
+      "sha256": "873f5e573a811c01259c38e2b787358ee9e8a77e4a79f6f799c0c2efa281bfde"
+    },
+    {
+      "file": "fst/patches/0381-add-non-nominal-colloquial-locatives-verb-c4.patch",
+      "sha256": "49a823132fef67ccddf8a02c3cbf61cdc15e112b0cc640a57ac87991f7db4795"
+    },
+    {
+      "file": "fst/patches/0381-add-non-nominal-colloquial-locatives-verb-c62.patch",
+      "sha256": "be79e4aa176602dfa4ea16f28a64d512366e214c352ec6c10b8eceb814b53594"
+    },
+    {
+      "file": "fst/patches/0386-add-kaathiruppu-c7-noun.patch",
+      "sha256": "517fb27a685076776a724987818f2d674049fa6e9e81931f97bb36b0b29380f3"
+    },
+    {
+      "file": "fst/patches/0387-complete-future-oor-participials-verb-c-rest.patch",
+      "sha256": "9991e4179c58f949248ecc4c8e5c92a77419ed32a70e2577b30b17d052987a8d"
+    },
+    {
+      "file": "fst/patches/0387-complete-future-oor-participials-verb-c11.patch",
+      "sha256": "cab721054d0b3ac3b8fe8a88e42b57d1aecc0b5713f5294f0c6beba2eda1f21f"
+    },
+    {
+      "file": "fst/patches/0387-complete-future-oor-participials-verb-c12.patch",
+      "sha256": "fb38a806bfa42e837590f8143fa5a6dfb601a867aff4893efaefef741be06ebc"
+    },
+    {
+      "file": "fst/patches/0387-complete-future-oor-participials-verb-c3.patch",
+      "sha256": "d0937a1ed5b0d2f99ab9ecb71e615fc69a70b6f3086bdc9a269739c41b8d1a47"
+    },
+    {
+      "file": "fst/patches/0387-complete-future-oor-participials-verb-c4.patch",
+      "sha256": "bbcf9fc10fed19a785d0092981d7344a2fd0880e373af40511da2d026dfc2b32"
+    },
+    {
+      "file": "fst/patches/0387-complete-future-oor-participials-verb-c62.patch",
+      "sha256": "2b58b0aa2e4f4076bc851182685c1400c1f3d43dbdea14812ccd14bfbc03d5d8"
+    },
+    {
+      "file": "fst/patches/0389-remove-poru-c5-misclassification.patch",
+      "sha256": "03f655ac2d26de87faa14bea1b655a5464520ea9c89a50de6fe79e06f1f4d8f8"
+    },
+    {
+      "file": "fst/patches/0390-correct-c12-short-honorific-agreement.patch",
+      "sha256": "d3c0203e3fb97bce697cd23264ec203416e212af26b1b9a8dee700823df7af14"
+    },
+    {
+      "file": "fst/patches/0391-complete-c12-hortative-parity.patch",
+      "sha256": "2648419f07f46b1ed16e9f0a6f0a8b61386a234ff9149242b1c5626b2f6043f3"
+    },
+    {
+      "file": "fst/patches/0393-add-common-modern-noun-roots.patch",
+      "sha256": "473c81bb971fe88046daacd3d9d5774bf008730a02db94edca03801041f9a29f"
+    },
+    {
+      "file": "fst/patches/0394-complete-foreign-noun-plurals.patch",
+      "sha256": "714be18e50f718c9b16d51fcfbc11280596cf099b10fdc787a50cf5bec6d03b1"
+    },
+    {
+      "file": "fst/patches/0395-complete-ul-existential-agreement.patch",
+      "sha256": "4d5f12b1d60e9c1867d1c827bfbffb06c16ff62e57a28c8d7c43497853d39c00"
+    },
+    {
+      "file": "fst/patches/0397-complete-short-u-adverb-clitics.patch",
+      "sha256": "945ec4c74b414e4bd61d8a2a83edbe4b2189d11e75772c64e4d58d853028e975"
+    },
+    {
+      "file": "fst/patches/0399-add-modern-loan-noun-subclass.patch",
+      "sha256": "247a22df1753aa97efe2042b0feebc0a582047b4910e880ad7f4ab3f71fd0243"
+    },
+    {
+      "file": "fst/patches/0401-complete-c13-negative-vpart.patch",
+      "sha256": "35e10865909c2eb1c273a1caebc44b8ecdaa566e196fffa6cf160f0f92c8844b"
+    },
+    {
+      "file": "fst/patches/0402-add-common-modern-adjectives.patch",
+      "sha256": "6b54072b214ed38c8443f7c1c3f5a7a0890a5b6d677291e191bb12e82046738a"
+    },
+    {
+      "file": "fst/patches/0403-add-everyday-modern-loan-nouns.patch",
+      "sha256": "8bfb36f52dd8d2ccb594dd81898d527a7b014fe0baaecbba59668a53921d947e"
+    },
+    {
+      "file": "fst/patches/0404-add-modern-loan-adjectives.patch",
+      "sha256": "bbbfa3d6c4eedae93c1108d8e71e39548a4f876607cee666b6225bcf29437b4b"
+    },
+    {
+      "file": "fst/patches/0405-add-final-common-nouns.patch",
+      "sha256": "e43f6db12efb354690ab2b6804539c76d2fb90d0f91da2cdf6ab4ce7d869e3a4"
+    },
+    {
+      "file": "fst/patches/0407-complete-formal-dative-postpositions.patch",
+      "sha256": "d42b716dc983d5d85307beca5d40a9e3dc1afd8c28ef88dc5cfb32a0635bdd02"
+    },
+    {
+      "file": "fst/patches/0408-add-meet-transitive-subclass.patch",
+      "sha256": "6771407f8b010a1033aefceadb877683c4e2ca4fb232cc0f76b1d3c088e89b69"
+    },
+    {
+      "file": "fst/patches/0410-add-final-native-nouns.patch",
+      "sha256": "2796e914a71fa96cccbb3308fd553fbfe2936a88dba068e636fef303e3e5bcd5"
+    },
+    {
+      "file": "fst/patches/0411-complete-c10-singular-translatives.patch",
+      "sha256": "b26e49ee7722b738f3c02c6394226cfb0932e2ba1a16e20171ce15b679b4c45a"
+    },
+    {
+      "file": "fst/patches/0412-complete-prefixed-eel-paradigms.patch",
+      "sha256": "ba83758a923a26e7f3150cd5990ce41f11c6c5f9953bdf997ce5d8350759253d"
+    },
+    {
+      "file": "fst/patches/0413-add-common-homograph-nouns.patch",
+      "sha256": "b9e930222a5fd343560761387956741bd0d068c1e1c30565e1f1f31eb25ac8f3"
+    },
+    {
+      "file": "fst/patches/0414-final-verb-class-corrections-verb-c-rest.patch",
+      "sha256": "0aa18fdc730c0a01b768f3c96a79d1882940b6d8bdf4fcafcd9f2663dc7ec8b1"
+    },
+    {
+      "file": "fst/patches/0414-final-verb-class-corrections-verb-c11.patch",
+      "sha256": "bff49baa338bce617ef8474ab49ffba87db15510204b06528a66f51d2e44c946"
+    },
+    {
+      "file": "fst/patches/0414-final-verb-class-corrections-verb-c4.patch",
+      "sha256": "43c1b6559d641e872849f88344384113b4d7838463771e65343236f174e20545"
+    },
+    {
+      "file": "fst/patches/0415-formal-verbal-noun-accusatives-verb-c-rest.patch",
+      "sha256": "855491cd5266ceac8f5714b7ac29ec114a237f30e94defa96d017fc2c66ccb36"
+    },
+    {
+      "file": "fst/patches/0415-formal-verbal-noun-accusatives-verb-c11.patch",
+      "sha256": "68dbcceaddd4741d90957fb84010ef8044d19b5e5c892a45c7e028c08de3e726"
+    },
+    {
+      "file": "fst/patches/0415-formal-verbal-noun-accusatives-verb-c12.patch",
+      "sha256": "c5c1c2e50f67a9adfb1bb545bba254af75cf4e173bd5dd77f70194ff6fe786ad"
+    },
+    {
+      "file": "fst/patches/0415-formal-verbal-noun-accusatives-verb-c3.patch",
+      "sha256": "943ae034973a822725851ef9ce1e59f2a716b04bea11150b032c18ff35499805"
+    },
+    {
+      "file": "fst/patches/0415-formal-verbal-noun-accusatives-verb-c4.patch",
+      "sha256": "7f929257b6a6fa1d95e685dade9bbcdc9329a6b99341626f140eba876f445eee"
+    },
+    {
+      "file": "fst/patches/0415-formal-verbal-noun-accusatives-verb-c62.patch",
+      "sha256": "a36cece2a958cd77a0fb4eafd371463f4c186610a81a36aeb628a4bf2a0c4878"
+    },
+    {
+      "file": "fst/patches/0416-complete-genitive-instrumental-nouns.patch",
+      "sha256": "41d4df1b5d7ecff324d92e3df197fa6d18853c809722848161846ed4ce914395"
+    },
+    {
+      "file": "fst/patches/0417-add-final-common-verb-roots-verb-c-rest.patch",
+      "sha256": "825403bf1e82aab858357ef8d9e6e795658d9cb0e81da35796c8535567084164"
+    },
+    {
+      "file": "fst/patches/0417-add-final-common-verb-roots-verb-c11.patch",
+      "sha256": "e4b920d7a27018fa5bc5140fd72d5c626c4bd02443a873e4b1912911582de7d1"
+    },
+    {
+      "file": "fst/patches/0417-add-final-common-verb-roots-verb-c4.patch",
+      "sha256": "83810097ff9208d2bba53e0f1eb26a9cc8428f36b68b4df6a5fbd4838d480ec7"
+    },
+    {
+      "file": "fst/patches/0418-complete-verbal-noun-extensions-verb-c-rest.patch",
+      "sha256": "0ebd0728b8e60e14c032de6fd7102dde02004bacafaf0b4cad6de2eca98b08ea"
+    },
+    {
+      "file": "fst/patches/0418-complete-verbal-noun-extensions-verb-c11.patch",
+      "sha256": "ed4aa7e760eae0f30185f176be0ac66ad7ffb4b2cee5e733e66d324f7d430e4e"
+    },
+    {
+      "file": "fst/patches/0418-complete-verbal-noun-extensions-verb-c12.patch",
+      "sha256": "ac1017878bcddb06cb58e3094be3f516fa4885383c69e55bc9a223b6ef328020"
+    },
+    {
+      "file": "fst/patches/0418-complete-verbal-noun-extensions-verb-c3.patch",
+      "sha256": "94972bf285eb5bc2804a9e99d53b13bcfe9502f09c71a5cf0c6c512484fa4c47"
+    },
+    {
+      "file": "fst/patches/0418-complete-verbal-noun-extensions-verb-c4.patch",
+      "sha256": "4bb72017d4aaaefc646ad962e48c90f417c02ee9341628e1dc98c941b91cb2ff"
+    },
+    {
+      "file": "fst/patches/0418-complete-verbal-noun-extensions-verb-c62.patch",
+      "sha256": "2de64d839621fbcbd13be192fe23df9aa9eebc4db6ffa29449ee0636d488382b"
+    },
+    {
+      "file": "fst/patches/0419-add-participial-possessives-verb-c-rest.patch",
+      "sha256": "fdc3b166cc92f923e69c60cfbc160378d83875eab8bdb83f476be0ad3cb77144"
+    },
+    {
+      "file": "fst/patches/0419-add-participial-possessives-verb-c11.patch",
+      "sha256": "a07240040f7a0bf5afbd90eb03cdbcb01dde10c8936ab2ea4203e13ac0028817"
+    },
+    {
+      "file": "fst/patches/0419-add-participial-possessives-verb-c12.patch",
+      "sha256": "8029dec9bd1c8e829baca0764142e5a089ec414c64407c18bed565e8d16d5daa"
+    },
+    {
+      "file": "fst/patches/0419-add-participial-possessives-verb-c3.patch",
+      "sha256": "0c7b80ff9b74bf0e79289fc18b94e3c8a49bf2f81d1941e44237c2b2d9bf22d7"
+    },
+    {
+      "file": "fst/patches/0419-add-participial-possessives-verb-c4.patch",
+      "sha256": "457694f889699353d36fb3ae16adab4bfced51a4fa8980847ee7fcf16abacf98"
+    },
+    {
+      "file": "fst/patches/0419-add-participial-possessives-verb-c62.patch",
+      "sha256": "39520a9fa3e256e38dac1b97a7827ced390c806419acb5e7a8326a9138e7cb4d"
+    },
+    {
+      "file": "fst/patches/0420-complete-human-possessive-parity.patch",
+      "sha256": "328ee3504eba53d6f1e3d719bdeb054433b41905e0e78a3048d0312d75b64565"
+    },
+    {
+      "file": "fst/patches/0421-add-residual-c4-compound-roots.patch",
+      "sha256": "9fe5681088d90db18e04d90097ac950d826950273d60824f3b94db80092cd620"
+    },
+    {
+      "file": "fst/patches/0422-remove-dead-prefixed-vaa-root.patch",
+      "sha256": "2e7441535c7ccd1a810c4c8784f46641a3adabe26e044eec636af6ea095ca1cf"
+    },
+    {
+      "file": "fst/patches/0423-add-thisai-thiruppu-c5-root.patch",
+      "sha256": "6bb09ebd1f3c6520216b6ef13315c694a27b67d407e971555a1afd3f1e375e44"
+    },
+    {
+      "file": "fst/patches/0424-add-adjective-neuter-nominals.patch",
+      "sha256": "8c8cbd7478fccf801d77e33ccdc9b6a4dd1b70a04c3b88985423803ec20ef63c"
+    },
+    {
+      "file": "fst/patches/0425-colloquial-imperative-parity-verb-c-rest.patch",
+      "sha256": "22dbc0cd222ac404908c6dc570774ac49836c375165bef442606badeca56a9ef"
+    },
+    {
+      "file": "fst/patches/0425-colloquial-imperative-parity-verb-c11.patch",
+      "sha256": "085f69788a2afe70eae69e332b14b32cf79bcb985c1c67ce35bcc746cb859fd3"
+    },
+    {
+      "file": "fst/patches/0425-colloquial-imperative-parity-verb-c12.patch",
+      "sha256": "f07a2394b431122559838b2f8dc48fa247fa779fd949409ebf46eee756fcda31"
+    },
+    {
+      "file": "fst/patches/0425-colloquial-imperative-parity-verb-c3.patch",
+      "sha256": "a7346eaa2743aa49820688b569960ff11bcf6b82c22b1c481a542796437859b8"
+    },
+    {
+      "file": "fst/patches/0425-colloquial-imperative-parity-verb-c4.patch",
+      "sha256": "c6364f89aa1289e8fd60b4024e19e8c5542ed4518a69647900264f68234558a8"
+    },
+    {
+      "file": "fst/patches/0425-colloquial-imperative-parity-verb-c62.patch",
+      "sha256": "02aaa69a1d4061d346a7a7bb38e06c16f18ff3fe6456aa19aaddd67f0aa315c6"
+    },
+    {
+      "file": "fst/patches/0426-colloquial-imperative-parity-verb-c-rest.patch",
+      "sha256": "c9eedc529a701d768d6019e5dd16642103d6e78221f8c5bef7137d6d5c950ade"
+    },
+    {
+      "file": "fst/patches/0426-colloquial-imperative-parity-verb-c11.patch",
+      "sha256": "49a24eb4097e1365407a01fbe94540443d6ed7b0f8a98cfdae73a9f4342be8b4"
+    },
+    {
+      "file": "fst/patches/0426-colloquial-imperative-parity-verb-c12.patch",
+      "sha256": "35787343716101f2c622e6bee1dfa4546874d11fa3f284026f7c9c09599786c5"
+    },
+    {
+      "file": "fst/patches/0427-add-i-final-colloquial-imperatives.patch",
+      "sha256": "d8e276d10dd7729463b0ffe419969362c4a8fb124aa3e281e960d9462c419d38"
+    },
+    {
+      "file": "fst/patches/0429-add-final-common-noun-readings.patch",
+      "sha256": "9a73ee0d8cf8c82cb11d0984973a457cb494f6d728cf3534233db111c13effcb"
+    },
+    {
+      "file": "fst/patches/0430-fix-c4-aay-infinitives.patch",
+      "sha256": "c5036de4172a8b812d5fe4d53bbb5f0fde3222cf0e400ae36118ac673fb2ae87"
+    },
+    {
+      "file": "fst/patches/0432-add-frequency-reviewed-common-nouns.patch",
+      "sha256": "477c800f75e4cc2f025363ce362adbc90450a706b8de44ccaa52f20753939cde"
+    },
+    {
+      "file": "fst/patches/0433-add-final-frequency-common-nouns.patch",
+      "sha256": "559a865e011e3aa99cb6c2add50845931ec54879aea83d50aad0425da0fe5151"
+    },
+    {
+      "file": "fst/patches/0434-reclassify-u-final-common-nouns.patch",
+      "sha256": "d47fb0f4f394d200b608df352d6a9fc2febb277b9433006ef06f9b0eac3092af"
+    },
+    {
+      "file": "fst/patches/0435-add-final-occupational-common-nouns.patch",
+      "sha256": "04f3ab4274f56c9197ba40b28eae2485c40d844db13ed3c40171f4859dc78e7e"
+    },
+    {
+      "file": "fst/patches/0436-complete-infinc-possessive-genitive.patch",
+      "sha256": "7638d87ae8ccaa4266911a85cdf08ff7f0839d80f6aa82ddb550c399d07c3058"
     }
   ],
   "outputs": [
     {
       "file": "adj.fst",
-      "sha256": "bbd345194f9ea28d3d88a61575c3641a02418b5828d7dc04df2a007e11e7d9af",
-      "size_bytes": 7776,
+      "sha256": "5192f864dbe1f57e40338869076daba24f1ed9ad12c262c7478657ec02bc0f26",
+      "size_bytes": 14948,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -737,8 +3711,8 @@
     },
     {
       "file": "adv.fst",
-      "sha256": "688e9abef701be91bf708711e20ac6c33c8d107810da189d1bb8f6026f38c44f",
-      "size_bytes": 14233,
+      "sha256": "f2d80a687ea6d5b20dc34391f0820fcca86169dec341ea2dcae7db8258420f40",
+      "size_bytes": 16438,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -747,8 +3721,8 @@
     },
     {
       "file": "noun.fst",
-      "sha256": "7aa3cf36853e742c3672f9d84570a2d9b909de6ea0be4057a417b536b980bc0b",
-      "size_bytes": 193881,
+      "sha256": "528071d04fcfe726e2a9e18f64502a294d0a4d1d3d6443fbc0d0e4c09f0dfa77",
+      "size_bytes": 853332,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -757,8 +3731,8 @@
     },
     {
       "file": "part.fst",
-      "sha256": "64633bc4c9b2785351de2da03a16117d5033e95eafa8b919f700d2f302ca9c07",
-      "size_bytes": 5604,
+      "sha256": "99c439c63c2bcd95c6d92df91b9169ab31b8eb97079de569e2474c5a2e11e97c",
+      "size_bytes": 34084,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -767,8 +3741,18 @@
     },
     {
       "file": "pronoun.fst",
-      "sha256": "508f4ce52c6af4beade4ea3e7d8278cc136e2090d8318cf6fd0f32e372b2ae15",
-      "size_bytes": 15958,
+      "sha256": "8b4dfb74c720301f7b8400c1df552953eeaa96fb40b6f0695f26206a6c5d9c32",
+      "size_bytes": 24094,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    },
+    {
+      "file": "verb-auxiliary.fst",
+      "sha256": "78e9317dfce2aa695c79428240dd5415a59e2a8224103181b92706969052dfd0",
+      "size_bytes": 1380449,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -777,8 +3761,8 @@
     },
     {
       "file": "verb-c-rest.fst",
-      "sha256": "5b2b51ee5c8ed9432297de2326a5af19e783cf8e7e19ef813b267b5afb2cf95e",
-      "size_bytes": 176650,
+      "sha256": "9d21d21a09c36bf8b183f6ec1dcf13e1d90cf99cbf926521935deb74802b172b",
+      "size_bytes": 771538,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -787,8 +3771,8 @@
     },
     {
       "file": "verb-c11.fst",
-      "sha256": "bbcee342d201e7e5da8879a3bba7ed5ba66e3b7a36d89783130fe90aa14580e1",
-      "size_bytes": 68514,
+      "sha256": "41eec2524af0b4c53e5550e07879057d6747351d3482bbc76f26de84fdc2a35b",
+      "size_bytes": 282991,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -797,8 +3781,8 @@
     },
     {
       "file": "verb-c12.fst",
-      "sha256": "081497be093267e502527dac2c0a006470ce99384865c085a8c3e5027f88eedc",
-      "size_bytes": 43899,
+      "sha256": "2dd1dfe433503497083b3929d26be0746d9dafa62edaa9d95ba26c643719522a",
+      "size_bytes": 173693,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -807,8 +3791,8 @@
     },
     {
       "file": "verb-c3.fst",
-      "sha256": "d029b55d7b68ef93cef1f73b579b60861a56028ef3ae4d2440973e30abb0d8b6",
-      "size_bytes": 13041,
+      "sha256": "5600b16af9dc0232917beac7925cae3ce412d448abddfd2311c0af617502b945",
+      "size_bytes": 100834,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -817,8 +3801,8 @@
     },
     {
       "file": "verb-c4.fst",
-      "sha256": "1c8f75d0570d5fc63508cdb052ef51ecae122913fed8c44f04b8eb9800794f87",
-      "size_bytes": 39838,
+      "sha256": "1ca5b4da641c072c597694fd76b28c7363594141f14c74a3d71d421c04f08e4c",
+      "size_bytes": 180279,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",
@@ -827,8 +3811,20 @@
     },
     {
       "file": "verb-c62.fst",
-      "sha256": "66de8ecbc9a4ef2b09b4f6330d413804363ee92280dc7cb62d5bc29eb2a924c8",
-      "size_bytes": 12420,
+      "sha256": "91f41d582f56143c754fb0a5de72cdf75e32b5ff597d70a1905914725d3e261c",
+      "size_bytes": 91713,
+      "copied_to": [
+        "build/fst-models",
+        "static-word-list/fst-models",
+        "server/fst-models"
+      ]
+    }
+  ],
+  "sidecars": [
+    {
+      "file": "verb-auxiliary.inventory.json",
+      "sha256": "b2ff425d64767ff9615cf36962cd73300f0ede11e63558cedd2f2883c3422676",
+      "size_bytes": 14308218,
       "copied_to": [
         "build/fst-models",
         "static-word-list/fst-models",

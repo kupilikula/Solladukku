@@ -1,0 +1,42 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -9906,7 +9906,6 @@
+ நாசிக்கமுடி            ClassMudi11Inf; 
+ நைவேதிக்கமுடி            ClassMudi11Inf; 
+ நைக்கமுடி            ClassMudi11Inf; 
+-நெய்க்கமுடி            ClassMudi11Inf; 
+ நெரிக்கமுடி            ClassMudi11Inf; 
+ நெருநெருக்கமுடி            ClassMudi11Inf; 
+ நொளுநொளுக்கமுடி            ClassMudi11Inf; 
+@@ -12874,7 +12873,6 @@
+ நாசிக்கமுடி            ClassMudi11Inf; 
+ நைவேதிக்கமுடி            ClassMudi11Inf; 
+ நைக்கமுடி            ClassMudi11Inf; 
+-நெய்க்கமுடி            ClassMudi11Inf; 
+ நெரிக்கமுடி            ClassMudi11Inf; 
+ நெருநெருக்கமுடி            ClassMudi11Inf; 
+ நொளுநொளுக்கமுடி            ClassMudi11Inf; 
+@@ -15962,7 +15960,6 @@
+ நாசித்துக்கொடு	VkoduInf;
+ நைவேதித்துக்கொடு	VkoduInf;
+ நைத்துக்கொடு	VkoduInf;
+-நெய்த்துக்கொடு	VkoduInf;
+ நெரித்துக்கொடு	VkoduInf;
+ நெருநெருத்துக்கொடு	VkoduInf;
+ நொளுநொளுத்துக்கொடு	VkoduInf;
+@@ -22209,7 +22206,6 @@
+ நாசிக்கப்பார்            ClassPar11Inf; 
+ நைவேதிக்கப்பார்            ClassPar11Inf; 
+ நைக்கப்பார்            ClassPar11Inf; 
+-நெய்க்கப்பார்            ClassPar11Inf; 
+ நெரிக்கப்பார்            ClassPar11Inf; 
+ நெருநெருக்கப்பார்            ClassPar11Inf; 
+ நொளுநொளுக்கப்பார்            ClassPar11Inf; 
+@@ -25209,7 +25205,6 @@
+ நாசிக்கப்பார்            ClassPar11Inf; 
+ நைவேதிக்கப்பார்            ClassPar11Inf; 
+ நைக்கப்பார்            ClassPar11Inf; 
+-நெய்க்கப்பார்            ClassPar11Inf; 
+ நெரிக்கப்பார்            ClassPar11Inf; 
+ நெருநெருக்கப்பார்            ClassPar11Inf; 
+ நொளுநொளுக்கப்பார்            ClassPar11Inf; 

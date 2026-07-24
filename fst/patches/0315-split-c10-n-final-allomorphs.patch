@@ -1,0 +1,134 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -71352,41 +71352,41 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ LEXICON C10Sg
+ ! Final corpus-attested modern common-noun review.
+-அயோடின்	C10SgRoot;
+-குளோரின்	C10SgRoot;
+-நலன்	C10SgRoot;
+-புரோட்டான்	C10SgRoot;
+-புளோரின்	C10SgRoot;
+-லத்தீன்	C10SgRoot;
++அயோடின்	C10RegularSgRoot;
++குளோரின்	C10RegularSgRoot;
++நலன்	C10RegularSgRoot;
++புரோட்டான்	C10RegularSgRoot;
++புளோரின்	C10RegularSgRoot;
++லத்தீன்	C10RegularSgRoot;
+ ! Corpus-proven -ன்கள் subclass; singular oblique behavior matches C10.
+-அணிகலன்	C10SgRoot;
+-அண்ணன்	C10SgRoot;
+-எம்பிரான்	C10SgRoot;
+-கடன்	C10SgRoot;
+-காளான்	C10SgRoot;
+-குடிமகன்	C10SgRoot;
+-கொள்கலன்	C10SgRoot;
+-கோன்	C10SgRoot;
+-சுடுகலன்	C10SgRoot;
+-ஜீவன்	C10SgRoot;
+-டிராகன்	C10SgRoot;
+-தங்கப்பன்	C10SgRoot;
+-திறன்	C10SgRoot;
+-பயன்	C10SgRoot;
+-பலன்	C10SgRoot;
+-பிசின்	C10SgRoot;
+-பில்லியன்	C10SgRoot;
+-பேரன்	C10SgRoot;
+-மகன்	C10SgRoot;
+-மகான்	C10SgRoot;
+-மருமகன்	C10SgRoot;
+-விண்மீன்	C10SgRoot;
+-வில்லன்	C10SgRoot;
++அணிகலன்	C10RegularSgRoot;
++அண்ணன்	C10RegularSgRoot;
++எம்பிரான்	C10RegularSgRoot;
++கடன்	C10RegularSgRoot;
++காளான்	C10RegularSgRoot;
++குடிமகன்	C10RegularSgRoot;
++கொள்கலன்	C10RegularSgRoot;
++கோன்	C10RegularSgRoot;
++சுடுகலன்	C10RegularSgRoot;
++ஜீவன்	C10RegularSgRoot;
++டிராகன்	C10RegularSgRoot;
++தங்கப்பன்	C10RegularSgRoot;
++திறன்	C10RegularSgRoot;
++பயன்	C10RegularSgRoot;
++பலன்	C10RegularSgRoot;
++பிசின்	C10RegularSgRoot;
++பில்லியன்	C10RegularSgRoot;
++பேரன்	C10RegularSgRoot;
++மகன்	C10RegularSgRoot;
++மகான்	C10RegularSgRoot;
++மருமகன்	C10RegularSgRoot;
++விண்மீன்	C10RegularSgRoot;
++வில்லன்	C10RegularSgRoot;
+ 
+-பொன்	C10SgRoot ; 
+-அன்	 C10SgRoot ; 
+-கன்	 C10SgRoot ; 
+-மன்	 C10SgRoot ; 
++பொன்	C10GeminatingSgRoot;
++அன்	 C10GeminatingSgRoot;
++கன்	 C10GeminatingSgRoot;
++மன்	 C10GeminatingSgRoot;
+ பொன்:பொன்ன	C10GeminatedNInflections ;
+ அன்:அன்ன	C10GeminatedNInflections ;
+ கன்:கன்ன	C10GeminatedNInflections ;
+@@ -71394,11 +71394,17 @@
+ 
+ 
+ ! Reviewed source-POS noun homographs; preserve existing non-noun readings
+-பின்	C10SgRoot;
++பின்	C10GeminatingSgRoot;
+ பின்:பின்ன	C10GeminatedNInflections ;
+ LEXICON C10SgRoot
+ !        Root;
+         C10Inflections;
++
++LEXICON C10RegularSgRoot
++0:Q C10Inflections;
++
++LEXICON C10GeminatingSgRoot
++0:K C10Inflections;
+ 
+ LEXICON C10GeminatedNInflections
+ +noun+nom+add:^ும் #;
+@@ -134058,7 +134064,7 @@
+ பேப்பர்	C16DirectSgRoot;
+ நகர்	C16DirectSgRoot;
+ நிறுவனர்	C16DirectSgRoot;
+-சுல்தான்	C10SgRoot;
++சுல்தான்	C10RegularSgRoot;
+ ! Selective corpus-backed loanword nouns.
+ கலெக்டர்	C16DirectSgRoot;
+ குக்கர்	C16DirectSgRoot;
+--- tamil-noun.foma
++++ tamil-noun.foma
+@@ -19,7 +19,9 @@
+ define R5 {று} -> {ற்} || _ "^" {ற}; # For ஆறு -> ஆற்றை
+ define R19 {ன்}-> 0 ||  _ "^" [{ற்த்}|{ற்ச்}|{ற்ட்}|{ற்ப்}]; #For பொற்  
+ define R6 {ன்} -> 0 || _ "^" [{ர்க}]; #For Manavan
+-define R7 {ன்} -> 0 || _ "^" [{னி}|{னோ}|{னா}|{னு}|{னை}|{னே}]; #For n-final nouns
++define R7 {ன்} -> 0 || _ "^" [{னி}|{னோ}|{னா}|{னு}]; # General n-final deletion
++define R7C10 {ன்Q} -> 0 || _ "^" [{னி}|{னோ}|{னா}|{னு}|{னை}|{னே}]; # C10 deleting subclass
++define CleanupC10 [Q|K] -> 0;
+ define R18 {ன்}-> 0 ||  _ "^" [{த்}|{ச்}|{ட்}|{ப்}]; #For மாணவப் 
+ define R8 {ல்} -> 0 || _ "^" [{ற்க}]; #For புல்
+ define R9 {ள்} -> 0 || _ "^" [{ட்க}]; #For முள்
+@@ -51,6 +53,7 @@
+ 						R5				.o.	
+ 						R6				.o.
+ 						R7				.o.						
++						R7C10			.o.
+ 						R8				.o.	
+ 						R9				.o.		
+ 						R10				.o.	
+@@ -63,6 +66,7 @@
+ 						R17				.o.
+ 						R18				.o.
+ 						R19				.o.						
++						CleanupC10			.o.
+ 						Cleanup1			.o.			
+ 						CleanupX;
+ 

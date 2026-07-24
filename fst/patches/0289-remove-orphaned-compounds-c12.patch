@@ -1,0 +1,34 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -1983,7 +1983,6 @@
+ இயைத்திரு      CIru12Inf; 
+ இயந்திரித்திரு      CIru12Inf; 
+ இரித்திரு      CIru12Inf; 
+-இருத்திரு      CIru12Inf; 
+ இரதித்திரு      CIru12Inf; 
+ இரமித்திரு      CIru12Inf; 
+ இரைத்திரு      CIru12Inf; 
+@@ -2214,7 +2213,6 @@
+ தவந்திரு      CIru12Inf; 
+ தொண்ணாந்திரு      CIru12Inf; 
+ வறந்திரு      CIru12Inf; 
+-வலந்திரு      CIru12Inf; 
+ விறந்திரு      CIru12Inf; 
+ வியந்திரு      CIru12Inf; 
+ விழுமாந்திரு      CIru12Inf; 
+@@ -5619,7 +5617,6 @@
+ இயைத்துக்கொண்டிரு     ClassKondiru12Inf; 
+ இயந்திரித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ இரித்துக்கொண்டிரு     ClassKondiru12Inf; 
+-இருத்துக்கொண்டிரு     ClassKondiru12Inf; 
+ இரதித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ இரமித்துக்கொண்டிரு     ClassKondiru12Inf; 
+ இரைத்துக்கொண்டிரு     ClassKondiru12Inf; 
+@@ -5850,7 +5847,6 @@
+ தவந்துகொண்டிரு     ClassKondiru12Inf; 
+ தொண்ணாந்துகொண்டிரு     ClassKondiru12Inf; 
+ வறந்துகொண்டிரு     ClassKondiru12Inf; 
+-வலந்துகொண்டிரு     ClassKondiru12Inf; 
+ விறந்துகொண்டிரு     ClassKondiru12Inf; 
+ வியந்துகொண்டிரு     ClassKondiru12Inf; 
+ விழுமாந்துகொண்டிரு     ClassKondiru12Inf; 

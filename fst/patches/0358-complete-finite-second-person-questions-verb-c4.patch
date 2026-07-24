@@ -1,0 +1,189 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -6511,8 +6511,10 @@
+ +verb+fin+sim+strong+past%=த்+1pl%=ஓம்:^ந்தோம் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+1sg%=அன்:^ந்தன் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+2sg%=ஆய்:^ந்தாய் VerbQuestion;
+++verb+fin+sim+strong+past%=த்+2sg%=ஆய்+colloq:^ந்திய VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+2sgh%=ஈர்:^ந்தீர் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+2pl%=ஈர்கள்:^ந்தீர்கள் VerbQuestion;
+++verb+fin+sim+strong+past%=த்+2pl%=ஈர்கள்+colloq:^ந்தீங்கள VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgm%=ஆன்:^ந்தான் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தர் VerbQuestion;
+@@ -6566,8 +6568,10 @@
+ +verb+fin+sim+strong+pres%=கிற்+1pl%=ஓம்:^கிறோம் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+1sg%=அன்:^கிறன் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்:^கிறாய் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+2sg%=ஆய்+colloq:^கிறிய VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்:^கிறீர் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்:^கிறீர்கள் VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்+colloq:^கிறீங்கள VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்:^கிறான் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் VerbQuestion;
+@@ -6616,8 +6620,10 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கின்ற்+1sg%=அன்:^கின்றன் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கின்ற்+2sg%=ஆய்:^கின்றாய் VerbQuestion;
+++verb+fin+sim+strong+pres%=கின்ற்+2sg%=ஆய்+colloq:^கின்றிய VerbQuestion;
+ +verb+fin+sim+strong+pres%=கின்ற்+2sgh%=ஈர்:^கின்றீர் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கின்ற்+2pl%=ஈர்கள்:^கின்றீர்கள் VerbQuestion;
+++verb+fin+sim+strong+pres%=கின்ற்+2pl%=ஈர்கள்+colloq:^கின்றீங்கள VerbQuestion;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் VerbQuestion;
+@@ -6665,8 +6671,10 @@
+ +verb+fin+sim+weak+fut%=வ்+1sg%=ஏன்:^வேன் VerbQuestion;
+ +verb+fin+sim+weak+fut%=வ்+1pl%=ஓம்:^வோம் VerbQuestion;
+ +verb+fin+sim+weak+fut%=வ்+2sg%=ஆய்:^வாய் VerbQuestion;
+++verb+fin+sim+weak+fut%=வ்+2sg%=ஆய்+colloq:^விய VerbQuestion;
+ +verb+fin+sim+weak+fut%=வ்+2sgh%=ஈர்:^வீர் VerbQuestion;
+ +verb+fin+sim+weak+fut%=வ்+2pl%=ஈர்கள்:^வீர்கள் VerbQuestion;
+++verb+fin+sim+weak+fut%=வ்+2pl%=ஈர்கள்+colloq:^வீங்கள VerbQuestion;
+ +verb+fin+sim+weak+fut%=வ்+3sgm%=ஆன்:^வான் VerbQuestion;
+ +verb+fin+sim+weak+fut%=வ்+3sgf%=ஆள்:^வாள் VerbQuestion;
+ +verb+fin+sim+weak+fut%=வ்+3sge%=அர்:^வர் VerbQuestion;
+@@ -6731,8 +6739,10 @@
+ +verb+fin+sim+caus%=வி+past%=த்+1pl%=ஓம்:^வித்தோம் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+1sg%=அன்:^வித்தன் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+2sg%=ஆய்:^வித்தாய் VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+2sg%=ஆய்+colloq:^வித்திய VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+2sgh%=ஈர்:^வித்தீர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+2pl%=ஈர்கள்:^வித்தீர்கள் VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+2pl%=ஈர்கள்+colloq:^வித்தீங்கள VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgm%=ஆன்:^வித்தான் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+@@ -6784,8 +6794,10 @@
+ +verb+fin+sim+caus%=வி+pres%=க்கிற்+1pl%=ஓம்:^விக்கிறோம் VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கிற்+1sg%=அன்:^விக்கிறன் VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கிற்+2sg%=ஆய்:^விக்கிறாய் VerbQuestion;
+++verb+fin+sim+caus%=வி+pres%=க்கிற்+2sg%=ஆய்+colloq:^விக்கிறிய VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கிற்+2sgh%=ஈர்:^விக்கிறீர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கிற்+2pl%=ஈர்கள்:^விக்கிறீர்கள் VerbQuestion;
+++verb+fin+sim+caus%=வி+pres%=க்கிற்+2pl%=ஈர்கள்+colloq:^விக்கிறீங்கள VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கிற்+3sgm%=ஆன்:^விக்கிறான் VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கிற்+3sgf%=ஆள்:^விக்கிறாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கிற்+3sge%=அர்:^விக்கிறர் VerbQuestion;
+@@ -6833,8 +6845,10 @@
+ +verb+fin+sim+caus%=வி+pres%=க்கின்ற்+1pl%=ஓம்:^விக்கின்றோம் VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கின்ற்+1sg%=அன்:^விக்கின்றன் VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கின்ற்+2sg%=ஆய்:^விக்கின்றாய் VerbQuestion;
+++verb+fin+sim+caus%=வி+pres%=க்கின்ற்+2sg%=ஆய்+colloq:^விக்கின்றிய VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கின்ற்+2sgh%=ஈர்:^விக்கின்றீர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கின்ற்+2pl%=ஈர்கள்:^விக்கின்றீர்கள் VerbQuestion;
+++verb+fin+sim+caus%=வி+pres%=க்கின்ற்+2pl%=ஈர்கள்+colloq:^விக்கின்றீங்கள VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கின்ற்+3sgm%=ஆன்:^விக்கின்றான் VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கின்ற்+3sgf%=ஆள்:^விக்கின்றாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+pres%=க்கின்ற்+3sge%=அர்:^விக்கின்றர் VerbQuestion;
+@@ -6880,8 +6894,10 @@
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+1sg%=ஏன்:^விப்பேன் VerbQuestion;
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+1pl%=ஓம்:^விப்போம் VerbQuestion;
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+2sg%=ஆய்:^விப்பாய் VerbQuestion;
+++verb+fin+sim+caus%=வி+fut%=ப்ப்+2sg%=ஆய்+colloq:^விப்பிய VerbQuestion;
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+2sgh%=ஈர்:^விப்பீர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+2pl%=ஈர்கள்:^விப்பீர்கள் VerbQuestion;
+++verb+fin+sim+caus%=வி+fut%=ப்ப்+2pl%=ஈர்கள்+colloq:^விப்பீங்கள VerbQuestion;
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3sgm%=ஆன்:^விப்பான் VerbQuestion;
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3sgf%=ஆள்:^விப்பாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3sge%=அர்:^விப்பர் VerbQuestion;
+@@ -7025,8 +7041,10 @@
+ +verb+fin+complex+perfect+pres%=∅+1sg%=ஏன்:^ந்துள்ளேன் VerbQuestion;
+ +verb+fin+complex+perfect+pres%=∅+1pl%=ஓம்:^ந்துள்ளோம் VerbQuestion;
+ +verb+fin+complex+perfect+pres%=∅+2sg%=ஆய்:^ந்துள்ளாய் VerbQuestion;
+++verb+fin+complex+perfect+pres%=∅+2sg%=ஆய்+colloq:^ந்துள்ளிய VerbQuestion;
+ +verb+fin+complex+perfect+pres%=∅+2sgh%=ஈர்:^ந்துள்ளீர் VerbQuestion;
+ +verb+fin+complex+perfect+pres%=∅+2pl%=ஈர்கள்:^ந்துள்ளீர்கள் VerbQuestion;
+++verb+fin+complex+perfect+pres%=∅+2pl%=ஈர்கள்+colloq:^ந்துள்ளீங்கள VerbQuestion;
+ +verb+fin+complex+perfect+pres%=∅+3sgm%=ஆன்:^ந்துள்ளான் VerbQuestion;
+ +verb+fin+complex+perfect+pres%=∅+3sgf%=ஆள்:^ந்துள்ளாள் VerbQuestion;
+ +verb+fin+complex+perfect+pres%=∅+3sghe%=ஆர்:^ந்துள்ளார் VerbQuestion;
+@@ -10349,8 +10367,10 @@
+ +verb+fin+complex+attitude+strong+past%=த்+1pl%=ஓம்:^ந்தோம் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+1sg%=அன்:^ந்தன் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+2sg%=ஆய்:^ந்தாய் VerbQuestion;
+++verb+fin+complex+attitude+strong+past%=த்+2sg%=ஆய்+colloq:^ந்திய VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+2sgh%=ஈர்:^ந்தீர் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+2pl%=ஈர்கள்:^ந்தீர்கள் VerbQuestion;
+++verb+fin+complex+attitude+strong+past%=த்+2pl%=ஈர்கள்+colloq:^ந்தீங்கள VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgm%=ஆன்:^ந்தான் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3sge%=அர்:^ந்தர் VerbQuestion;
+@@ -10402,8 +10422,10 @@
+ +verb+fin+complex+attitude+strong+pres%=கிற்+1pl%=ஓம்:^கிறோம் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+1sg%=அன்:^கிறன் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+2sg%=ஆய்:^கிறாய் VerbQuestion;
+++verb+fin+complex+attitude+strong+pres%=கிற்+2sg%=ஆய்+colloq:^கிறிய VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+2sgh%=ஈர்:^கிறீர் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+2pl%=ஈர்கள்:^கிறீர்கள் VerbQuestion;
+++verb+fin+complex+attitude+strong+pres%=கிற்+2pl%=ஈர்கள்+colloq:^கிறீங்கள VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgm%=ஆன்:^கிறான் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sge%=அர்:^கிறர் VerbQuestion;
+@@ -10451,8 +10473,10 @@
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+1pl%=ஓம்:^கின்றோம் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+1sg%=அன்:^கின்றன் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+2sg%=ஆய்:^கின்றாய் VerbQuestion;
+++verb+fin+complex+attitude+strong+pres%=கின்ற்+2sg%=ஆய்+colloq:^கின்றிய VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+2sgh%=ஈர்:^கின்றீர் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+2pl%=ஈர்கள்:^கின்றீர்கள் VerbQuestion;
+++verb+fin+complex+attitude+strong+pres%=கின்ற்+2pl%=ஈர்கள்+colloq:^கின்றீங்கள VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் VerbQuestion;
+@@ -10498,8 +10522,10 @@
+ +verb+fin+complex+attitude+weak+fut%=வ்+1sg%=ஏன்:^வேன் VerbQuestion;
+ +verb+fin+complex+attitude+weak+fut%=வ்+1pl%=ஓம்:^வோம் VerbQuestion;
+ +verb+fin+complex+attitude+weak+fut%=வ்+2sg%=ஆய்:^வாய் VerbQuestion;
+++verb+fin+complex+attitude+weak+fut%=வ்+2sg%=ஆய்+colloq:^விய VerbQuestion;
+ +verb+fin+complex+attitude+weak+fut%=வ்+2sgh%=ஈர்:^வீர் VerbQuestion;
+ +verb+fin+complex+attitude+weak+fut%=வ்+2pl%=ஈர்கள்:^வீர்கள் VerbQuestion;
+++verb+fin+complex+attitude+weak+fut%=வ்+2pl%=ஈர்கள்+colloq:^வீங்கள VerbQuestion;
+ +verb+fin+complex+attitude+weak+fut%=வ்+3sgm%=ஆன்:^வான் VerbQuestion;
+ +verb+fin+complex+attitude+weak+fut%=வ்+3sgf%=ஆள்:^வாள் VerbQuestion;
+ +verb+fin+complex+attitude+weak+fut%=வ்+3sge%=அர்:^வர் VerbQuestion;
+@@ -10525,8 +10551,10 @@
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+1pl%=ஓம்:^வித்தோம் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+1sg%=அன்:^வித்தன் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+2sg%=ஆய்:^வித்தாய் VerbQuestion;
+++verb+fin+complex+attitude+caus%=வி+past%=த்+2sg%=ஆய்+colloq:^வித்திய VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+2sgh%=ஈர்:^வித்தீர் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+2pl%=ஈர்கள்:^வித்தீர்கள் VerbQuestion;
+++verb+fin+complex+attitude+caus%=வி+past%=த்+2pl%=ஈர்கள்+colloq:^வித்தீங்கள VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sgm%=ஆன்:^வித்தான் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+@@ -10578,8 +10606,10 @@
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கிற்+1pl%=ஓம்:^விக்கிறோம் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கிற்+1sg%=அன்:^விக்கிறன் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கிற்+2sg%=ஆய்:^விக்கிறாய் VerbQuestion;
+++verb+fin+complex+attitude+caus%=வி+pres%=க்கிற்+2sg%=ஆய்+colloq:^விக்கிறிய VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கிற்+2sgh%=ஈர்:^விக்கிறீர் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கிற்+2pl%=ஈர்கள்:^விக்கிறீர்கள் VerbQuestion;
+++verb+fin+complex+attitude+caus%=வி+pres%=க்கிற்+2pl%=ஈர்கள்+colloq:^விக்கிறீங்கள VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கிற்+3sgm%=ஆன்:^விக்கிறான் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கிற்+3sgf%=ஆள்:^விக்கிறாள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கிற்+3sge%=அர்:^விக்கிறர் VerbQuestion;
+@@ -10627,8 +10657,10 @@
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கின்ற்+1pl%=ஓம்:^விக்கின்றோம் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கின்ற்+1sg%=அன்:^விக்கின்றன் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கின்ற்+2sg%=ஆய்:^விக்கின்றாய் VerbQuestion;
+++verb+fin+complex+attitude+caus%=வி+pres%=க்கின்ற்+2sg%=ஆய்+colloq:^விக்கின்றிய VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கின்ற்+2sgh%=ஈர்:^விக்கின்றீர் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கின்ற்+2pl%=ஈர்கள்:^விக்கின்றீர்கள் VerbQuestion;
+++verb+fin+complex+attitude+caus%=வி+pres%=க்கின்ற்+2pl%=ஈர்கள்+colloq:^விக்கின்றீங்கள VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கின்ற்+3sgm%=ஆன்:^விக்கின்றான் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கின்ற்+3sgf%=ஆள்:^விக்கின்றாள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+pres%=க்கின்ற்+3sge%=அர்:^விக்கின்றர் VerbQuestion;
+@@ -10674,8 +10706,10 @@
+ +verb+fin+complex+attitude+caus%=வி+fut%=ப்ப்+1sg%=ஏன்:^விப்பேன் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+fut%=ப்ப்+1pl%=ஓம்:^விப்போம் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+fut%=ப்ப்+2sg%=ஆய்:^விப்பாய் VerbQuestion;
+++verb+fin+complex+attitude+caus%=வி+fut%=ப்ப்+2sg%=ஆய்+colloq:^விப்பிய VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+fut%=ப்ப்+2sgh%=ஈர்:^விப்பீர் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+fut%=ப்ப்+2pl%=ஈர்கள்:^விப்பீர்கள் VerbQuestion;
+++verb+fin+complex+attitude+caus%=வி+fut%=ப்ப்+2pl%=ஈர்கள்+colloq:^விப்பீங்கள VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+fut%=ப்ப்+3sgm%=ஆன்:^விப்பான் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+fut%=ப்ப்+3sgf%=ஆள்:^விப்பாள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+fut%=ப்ப்+3sge%=அர்:^விப்பர் VerbQuestion;

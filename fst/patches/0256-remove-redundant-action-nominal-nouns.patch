@@ -1,0 +1,114 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1005,6 +1005,7 @@
+ +pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ 
+ LEXICON DerivedActionNominalC4Inflections
+++nom: #;
+ +nom+add:^ும் #;
+ +nom+all:^ெல்லாம் #;
+ +trans:^ாக #;
+@@ -45314,7 +45315,6 @@
+ ஆர்குழல்	C4SgRoot; 
+ ஆர்செம்மல்	C4SgRoot; 
+ ஆர்தமிழ்	C4SgRoot; 
+-ஆர்தல்	C4SgRoot; 
+ ஆர்தல்நிறைதல்	C4SgRoot; 
+ ஆர்தழல்	C4SgRoot; 
+ ஆர்திறல்	C4SgRoot; 
+@@ -45455,7 +45455,6 @@
+ இருவேந்தல்	C4SgRoot; 
+ இருவேல்	C4SgRoot; 
+ இலக்கியம்பனுவல்	C4SgRoot; 
+-இலங்குதல்	C4SgRoot; 
+ இலங்குதல்துலங்குதல்	C4SgRoot; 
+ இழஞ்சேரல்	C4SgRoot; 
+ இளங்கடல்	C4SgRoot; 
+@@ -45752,7 +45751,6 @@
+ எறுழ்	C4SgRoot; 
+ எற்பொழில்	C4SgRoot; 
+ ஏந்தல்	C4SgRoot; 
+-ஏந்துதல்	C4SgRoot; 
+ ஏந்தெழில்	C4SgRoot; 
+ ஏரண்ணல்	C4SgRoot; 
+ ஏரெழில்	C4SgRoot; 
+@@ -45787,7 +45785,6 @@
+ ஒண்சொல்	C4SgRoot; 
+ ஒண்டமிழ்	C4SgRoot; 
+ ஒண்டிறல்	C4SgRoot; 
+-ஒண்ணுதல்	C4SgRoot; 
+ ஒண்பகல்	C4SgRoot; 
+ ஒண்புகழ்	C4SgRoot; 
+ ஒண்புனல்	C4SgRoot; 
+@@ -47069,7 +47066,6 @@
+ செறுகடல்	C4SgRoot; 
+ செறுகனல்	C4SgRoot; 
+ செறுதணல்	C4SgRoot; 
+-செறுதல்	C4SgRoot; 
+ செறுதல்அழித்தல்	C4SgRoot; 
+ செறுதழல்	C4SgRoot; 
+ செறுதிறல்	C4SgRoot; 
+@@ -47100,7 +47096,6 @@
+ சேல்	C4SgRoot; 
+ சேல்வயல்	C4SgRoot; 
+ சேழவேந்தல்	C4SgRoot; 
+-சொரிதல்	C4SgRoot; 
+ சொரிதல்சிந்துதல்	C4SgRoot; 
+ சொல்லாற்றல்	C4SgRoot; 
+ சொல்வள்ளல்	C4SgRoot; 
+@@ -47362,7 +47357,6 @@
+ தனிவில்	C4SgRoot; 
+ தனிவிறல்	C4SgRoot; 
+ தனிவேல்	C4SgRoot; 
+-தாங்குதல்	C4SgRoot; 
+ தாமரைக்கழல்	C4SgRoot; 
+ தாமரைச்செம்மல்	C4SgRoot; 
+ தாமரைச்சேய்	C4SgRoot; 
+@@ -47658,7 +47652,6 @@
+ தெறுகடல்	C4SgRoot; 
+ தெறுகனல்	C4SgRoot; 
+ தெறுதணல்	C4SgRoot; 
+-தெறுதல்	C4SgRoot; 
+ தெறுதல்அழித்தல்	C4SgRoot; 
+ தெறுதழல்	C4SgRoot; 
+ தெறுதிறல்	C4SgRoot; 
+@@ -47904,7 +47897,6 @@
+ நன்மின்னல்	C4SgRoot; 
+ நன்முகில்	C4SgRoot; 
+ நன்முறுவல்	C4SgRoot; 
+-நன்னுதல்	C4SgRoot; 
+ நன்னெய்தல்	C4SgRoot; 
+ நாகணவாய்	C4SgRoot; 
+ நாகத்தாய்	C4SgRoot; 
+@@ -48411,7 +48403,6 @@
+ பாமுகில்	C4SgRoot; 
+ பாயாழ்	C4SgRoot; 
+ பாய்கயல்	C4SgRoot; 
+-பாய்தல்	C4SgRoot; 
+ பாய்தல்குதித்தல்	C4SgRoot; 
+ பாய்தாவல்	C4SgRoot; 
+ பாய்தென்றல்	C4SgRoot; 
+@@ -48925,7 +48916,6 @@
+ மதிக்குயில்	C4SgRoot; 
+ மதிச்சாரல்	C4SgRoot; 
+ மதித்தமிழ்	C4SgRoot; 
+-மதித்தல்	C4SgRoot; 
+ மதித்தழல்	C4SgRoot; 
+ மதித்தென்றல்	C4SgRoot; 
+ மதிநெய்தல்	C4SgRoot; 
+@@ -49336,7 +49326,6 @@
+ மென்மயில்	C4SgRoot; 
+ மென்முகில்	C4SgRoot; 
+ மென்முறுவல்	C4SgRoot; 
+-மென்னுதல்	C4SgRoot; 
+ மென்னெய்தல்	C4SgRoot; 
+ மேட்டுக்குயில்	C4SgRoot; 
+ மேட்டுமயில்	C4SgRoot; 
+@@ -49851,7 +49840,6 @@
+ மதில்	C4SgRoot; 
+ மரநாய்	C4SgRoot; 
+ மார்க்கத்தில்	C4SgRoot; 
+-மாறுதல்	C4SgRoot; 
+ முழங்கால்	C4SgRoot; 
+ முழிமுழித்தாய்	C4SgRoot; 
+ முன்கால்	C4SgRoot; 

@@ -1,0 +1,43 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -2127,6 +2127,15 @@
+ C2Sg;    !எலி, நெய் 
+ 
+ LEXICON C2Sg
++நிதி	  C2SgRoot ;
++நிலைமை	  C2SgRoot ;
++மீதி	  C2SgRoot ;
++ஜாதி	  C2SgRoot ;
++கைதி	  C2SgRoot ;
++முகாமை	  C2SgRoot ;
++தனிமை	  C2SgRoot ;
++பீதி	  C2SgRoot ;
++முகமை	  C2SgRoot ;
+ எலி         		C2SgRoot; 
+ புலி         		C2SgRoot; 
+ காபி         	C2SgRoot; 
+@@ -53250,6 +53259,16 @@
+ 
+ 
+ LEXICON C7Sg
++குறைவு	  C7SgRoot ;
++நிறைவு	  C7SgRoot ;
++நுழைவு	  C7SgRoot ;
++அடைவு	  C7SgRoot ;
++மறைவு	  C7SgRoot ;
++முறிவு	  C7SgRoot ;
++கசிவு	  C7SgRoot ;
++கொடுப்பனவு	  C7SgRoot ;
++சுற்றளவு	  C7SgRoot ;
++தொலைவு	  C7SgRoot ;
+ காசு			 	C7SgRoot; 
+ கதவு			 	C7SgRoot; 
+ கடுகு			 C7SgRoot; 
+@@ -92480,6 +92499,7 @@
+ 
+ 
+ LEXICON C15Sg
++இஸ்லாம்	  C15SgRoot ;
+ மரம்	  			C15SgRoot ; 
+ குணம்			  C15SgRoot ; 
+ பழம்			  C15SgRoot ; 

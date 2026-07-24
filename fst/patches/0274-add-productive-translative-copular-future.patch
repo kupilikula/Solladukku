@@ -1,0 +1,278 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1,6 +1,6 @@
+ !!!Header.lexc!!!
+ 
+-Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +trans +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add +all +verb +nonfin +sim +neg +verbalnoun +cop +adjpart +compoundmodifier +human
++Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +trans +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add +all +verb +nonfin +sim +neg +verbalnoun +cop +adjpart +compoundmodifier +human +fut +3sgn
+ 
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+@@ -3077,6 +3077,7 @@
+ +noun+nom+add:^வும் #;
+ +noun+nom+all:^வெல்லாம் #;
+ +noun+trans:^வாக #;
+++noun+trans+cop+fut+3sgn:^வாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+@@ -3084,6 +3085,7 @@
+ 
+ +noun+pl+nom:^க்கள் #;
+ +noun+pl+trans%=ஆக:^க்களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^க்களாகும் #;
+ +noun+pl+nom+add:^க்களும் #;
+ +noun+pl+nom+all:^க்களெல்லாம் #;
+ 
+@@ -3550,7 +3552,7 @@
+ 
+ !!!C1.lexc!!!
+ 
+-Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit
++Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +fut +3sgn
+ 
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+@@ -43634,6 +43636,7 @@
+ LEXICON NapiHonorificPlural
+ +noun+pl+nom:^மார்கள் #;
+ +noun+pl+trans%=ஆக:^மார்களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^மார்களாகும் #;
+ +noun+pl+acc:^மார்களை #;
+ +noun+pl+acc+add:^மார்களையும் #;
+ +noun+pl+acc+sandhip:^மார்களைப் #;
+@@ -43647,6 +43650,7 @@
+ +noun+nom+add:^யும் #;
+ +noun+nom+all:^யெல்லாம் #;
+ +noun+trans:^யாக #;
+++noun+trans+cop+fut+3sgn:^யாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+@@ -43654,6 +43658,7 @@
+ 
+ +noun+pl+nom:^கள் #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -44147,6 +44152,7 @@
+ +noun+nom+add:^யும் #;
+ +noun+nom+all:^யெல்லாம் #;
+ +noun+trans:^யாக #;
+++noun+trans+cop+fut+3sgn:^யாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+@@ -44154,6 +44160,7 @@
+ 
+ +noun+pl+nom:^க்கள் #;
+ +noun+pl+trans%=ஆக:^க்களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^க்களாகும் #;
+ +noun+pl+nom+add:^க்களும் #;
+ +noun+pl+nom+all:^க்களெல்லாம் #;
+ 
+@@ -53963,12 +53970,14 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -54453,6 +54462,7 @@
+ +noun+pl+nom: #;
+ +noun+pl+voc%=ஏ:^ே #;
+ +noun+pl+trans%=ஆக:^ாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+@@ -55065,12 +55075,14 @@
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^எல்லாம் #;
+ +noun+trans:^ஆாக #;
+++noun+trans+cop+fut+3sgn:^ஆாகும் #;
+ +noun+nom+sandhip:^ட்டுப் #;
+ +noun+nom+sandhic:^ட்டுச் #;
+ +noun+nom+sandhit:^ட்டுத் #;
+ +noun+nom+sandhik:^ட்டுக் #;
+ +noun+pl+nom:^கள் #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -55551,6 +55563,7 @@
+ +noun+nom+sandhik:^ட்டுக் #;
+ +noun+pl+nom:^கள் #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -68936,6 +68949,7 @@
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^எல்லாம் #;
+ +noun+trans:^ஆாக #;
+++noun+trans+cop+fut+3sgn:^ஆாகும் #;
+ 
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+@@ -68943,6 +68957,7 @@
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -69508,12 +69523,14 @@
+ +noun+nom+add:^ம் #;
+ +noun+nom+all:^ணெல்லாம் #;
+ +noun+trans:^றாக #;
+++noun+trans+cop+fut+3sgn:^றாகும் #;
+ +noun+nom+sandhip:^றுப் #;
+ +noun+nom+sandhic:^றுச் #;
+ +noun+nom+sandhit:^றுத் #;
+ +noun+nom+sandhik:^றுக் #;
+ +noun+pl+nom:^கள் #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -70738,8 +70755,10 @@
+ +noun+nom+add:^ணும் #;
+ +noun+nom+all:^ணெல்லாம் #;
+ +noun+trans:^ணாக #;
+++noun+trans+cop+fut+3sgn:^ணாகும் #;
+ +noun+pl+nom:^கள் #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -71226,6 +71245,7 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+cop+fut+3sgn:^ாகும் #;
+ 
+ LEXICON C10Inflections
+ +noun+nom: #;
+@@ -71236,6 +71256,7 @@
+ +noun+nom+sandhik:^ற்க் #;
+ +noun+pl+nom:^கள் #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ 
+@@ -92663,12 +92684,14 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^ர்கள் #;
+ +noun+pl+trans%=ஆக:^ர்களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^ர்களாகும் #;
+ +noun+pl+nom+add:^ர்களும் #;
+ +noun+pl+nom+all:^ர்களெல்லாம் #;
+ 
+@@ -93158,12 +93181,14 @@
+ +noun+nom+add:^லும் #;
+ +noun+nom+all:^லெல்லாம் #;
+ +noun+trans:^லாக #;
+++noun+trans+cop+fut+3sgn:^லாகும் #;
+ +noun+nom+sandhip:^ற்ப் #;
+ +noun+nom+sandhic:^ற்ச் #;
+ +noun+nom+sandhit:^ற்த் #;
+ +noun+nom+sandhik:^ற்க் #;
+ +noun+pl+nom:^ற்கள் #;
+ +noun+pl+trans%=ஆக:^ற்களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^ற்களாகும் #;
+ +noun+pl+nom+add:^ற்களும் #;
+ +noun+pl+nom+all:^ற்களெல்லாம் #;
+ 
+@@ -93645,12 +93670,14 @@
+ +noun+nom+add:^ளும் #;
+ +noun+nom+all:^ளெல்லாம் #;
+ +noun+trans:^ளாக #;
+++noun+trans+cop+fut+3sgn:^ளாகும் #;
+ +noun+nom+sandhip:^ட்ப் #;
+ +noun+nom+sandhic:^ட்ச் #;
+ +noun+nom+sandhit:^ட்த் #;
+ +noun+nom+sandhik:^ட்க் #;
+ +noun+pl+nom:^ட்கள் #;
+ +noun+pl+trans%=ஆக:^ட்களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^ட்களாகும் #;
+ +noun+pl+nom+add:^ட்களும் #;
+ +noun+pl+nom+all:^ட்களெல்லாம் #;
+ 
+@@ -96758,6 +96785,7 @@
+ LEXICON C14AlternatingPlural
+ +noun+pl+nom:^ட்கள் #;
+ +noun+pl+trans%=ஆக:^ட்களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^ட்களாகும் #;
+ +noun+pl+nom+add:^ட்களும் #;
+ +noun+pl+nom+all:^ட்களெல்லாம் #;
+ +noun+pl+acc:^ட்களினை #;
+@@ -96997,6 +97025,7 @@
+ LEXICON C14RetainedPlural
+ +noun+pl+nom:^கள் #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ +noun+pl+acc:^களினை #;
+@@ -97238,6 +97267,7 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+@@ -132129,12 +132159,14 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^ங்கள் #;
+ +noun+pl+trans%=ஆக:^ங்களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^ங்களாகும் #;
+ +noun+pl+nom+add:^ங்களும் #;
+ +noun+pl+nom+all:^ங்களெல்லாம் #;
+ +noun+infInc+acc:^த்தை #;
+@@ -136708,12 +136740,14 @@
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+++noun+trans+cop+fut+3sgn:^ாகும் #;
+ +noun+nom+sandhip:^ப் #;
+ +noun+nom+sandhic:^ச் #;
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+ +noun+pl+trans%=ஆக:^களாக #;
+++noun+pl+trans%=ஆக+cop+fut+3sgn:^களாகும் #;
+ +noun+pl+nom+add:^களும் #;
+ +noun+pl+nom+all:^களெல்லாம் #;
+ +noun+pl+nom+foc:^கள்தான் #;

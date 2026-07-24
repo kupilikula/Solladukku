@@ -1,0 +1,19 @@
+--- tamil-adverbs.lexc
++++ tamil-adverbs.lexc
+@@ -1,13 +1,15 @@
+ !!!part.lexc!!!
+ ! By K. Sarveswaran, iamsarves at gmail dot com.
+ 
+-Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r +dem +prox +dist +inter +time +situation +foc +adj +trans +noun +verb +nonfin +sim +verbalnoun
++Multichar_Symbols  |+intensifier |+sandhi-k |+sandhi-c |+sandhi-p |+sandhi-r +dem +prox +dist +inter +time +situation +foc +adj +trans +noun +verb +nonfin +sim +verbalnoun +colloq
+ 
+ LEXICON Root
+ adverbs ;
+ 
+ 
+ LEXICON adverbs
++! Canonicalized colloquial proximal-time adverb.
++இப்போது+dem+prox+time+adv+colloq:இப்போ #;
+ ! Reviewed transparent derived adverbs.
+ புதிது+adj+trans%=ஆக:புதிதாக #;
+ கூடு+verb+nonfin+sim+verbalnoun%=தல்+trans%=ஆக:கூடுதலாக #;

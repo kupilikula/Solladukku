@@ -1,0 +1,11 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -56652,6 +56652,8 @@
+ 
+ 
+ LEXICON C7Sg
++! Reviewed lexicalized action noun with regular short-u inflection.
++காத்திருப்பு	C7SgRoot;
+ ! Reviewed common lexical readings recurring across development corpora.
+ அரங்கு	C7SgRoot;
+ செயற்குழு	C7SgRoot;

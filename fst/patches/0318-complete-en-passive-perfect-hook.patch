@@ -1,0 +1,11 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -10190,6 +10190,8 @@
+ எத்து:எத்தப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ எத்தனி:எத்தனிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ எந்திரி:எந்திரிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
++! Complement-clause passive perfect: என் + infinitive + படு + உள்ள.
++என்:எனப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ என்பி:என்பிக்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ எம்பு:எம்பப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;
+ எய்:எய்க்கப்பட்டுள்ள%<PP%> ModernPassivePerfectNeut;

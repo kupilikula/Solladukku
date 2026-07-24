@@ -1,0 +1,11 @@
+--- tamil-adverbs.lexc
++++ tamil-adverbs.lexc
+@@ -8,6 +8,8 @@
+ 
+ 
+ LEXICON adverbs
++! Reviewed modern colloquial adverb.
++நல்லா	 adverb;
+ சுமார்	 adverb; 
+ அதனால்	 adverb; 
+ இதனால்தான்+dem+prox+foc:இதனால்தான்	 adverb; 

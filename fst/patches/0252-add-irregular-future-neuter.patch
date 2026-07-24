@@ -1,0 +1,34 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -15647,6 +15647,7 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=ட்+adjpart%=அ:^ட #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+++verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON Class15
+@@ -15879,6 +15880,7 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^காவிட்டால் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^த #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+++verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^காத #;
+ LEXICON Class16
+@@ -16107,6 +16109,7 @@
+ +verb+fin+sim+weak+fut%=வ்+3sgf%=ஆள்:வாள் #;
+ +verb+fin+sim+weak+fut%=வ்+3ple%=ஆர்கள்:வார்கள் #;
+ +verb+fin+sim+weak+fut%=வ்+3sghe%=ஆர்:வார் #;
+++verb+fin+sim+strong+fut%=உம்+3sgn%=∅:ம் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:ம் #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:கிற #;
+ +verb+nonfin+sim+verbalnoun%=அது:வது #;
+@@ -16625,6 +16628,7 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^ந்த #;
+ +verb+nonfin+sim+pres%=கிற்+adjpart%=அ:^கிற #;
+++verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ 

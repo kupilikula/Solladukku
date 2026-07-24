@@ -1,0 +1,125 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -1332,7 +1332,7 @@
+ +verb+fin+sim+strong+pres%=க்கின்ற்+2pl%=ஈர்கள்:^க்கின்றீர்கள் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3sgm%=ஆன்:^க்கின்றான் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3sgf%=ஆள்:^க்கின்றாள் #;
+-+verb+fin+sim+strong+pres%=க்கின்ற்+3sge%=அர்:^க்கின்றனர் #;
+++verb+fin+sim+strong+pres%=க்கின்ற்+3ple%=னர்:^க்கின்றனர் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3ple%=ஆர்கள்:^க்கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3sghe%=ஆர்:^க்கின்றார் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3sghe%=ஆர்கள்:^க்கின்றார்கள் #;
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -127,6 +127,7 @@
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3sgm%=ஆன்:^க்கின்றான் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3sgf%=ஆள்:^க்கின்றாள் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3sge%=அர்:^க்கின்றர் #;
+++verb+fin+sim+strong+pres%=க்கின்ற்+3ple%=னர்:^க்கின்றனர் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3ple%=ஆர்:^க்கின்றார் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3ple%=ஆர்கள்:^க்கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3sghe%=ஆர்கள்:^க்கின்றார்கள் #;
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -96,6 +96,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -430,6 +430,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்:^கின்றார் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+--- ThamizhiVerbs-C62.lexc
++++ ThamizhiVerbs-C62.lexc
+@@ -55,6 +55,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -94,6 +94,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்:^கின்றார் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+@@ -283,6 +284,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+@@ -8352,6 +8354,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+@@ -8610,6 +8613,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+@@ -8767,6 +8771,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+@@ -8918,6 +8923,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+@@ -9066,6 +9072,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+@@ -9224,6 +9231,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgn%=அது:^கின்றது #;
+@@ -9378,6 +9386,7 @@
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgm%=ஆன்:^கின்றான் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sgf%=ஆள்:^கின்றாள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sge%=அர்:^கின்றர் #;
+++verb+fin+sim+strong+pres%=கின்ற்+3ple%=னர்:^கின்றனர் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3ple%=ஆர்கள்:^கின்றார்கள் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்:^கின்றார் #;
+ +verb+fin+sim+strong+pres%=கின்ற்+3sghe%=ஆர்கள்:^கின்றார்கள் #;

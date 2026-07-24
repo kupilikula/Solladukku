@@ -1,0 +1,63 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -33,6 +33,13 @@
+ AuditBackedCommonNounSg; ! reviewed corpus-audit nouns
+ 
+ LEXICON CalendarPlaceLoanSg
++கிலோ	C1SgRoot;
++கிரிக்கெட்	ForeignFinalNom;
++கிரிக்கெட்:கிரிக்கெட	ForeignDoubledTTFinalInflections;
++பொலிஸ்	ForeignFinalNom;
++பொலிஸ்:பொலிஸ	ForeignSFinalInflections;
++போலீஸ்:போலீசார்	PoliceHumanPlural;
++பொலிஸ்:பொலிசார்	PoliceHumanPlural;
+ ! Reviewed common loans, month names, country names, and city names.
+ டீ	C2SgRoot;
+ ஜூஸ்	ForeignFinalNom;
+@@ -129,6 +136,9 @@
+ மத்ரித்:மத்ரித	ForeignTFinalInflections;
+ ரூத்	ForeignFinalNom;
+ ரூத்:ரூத	ForeignTFinalInflections;
++
++LEXICON PoliceHumanPlural
+++noun+human+pl+nom: #;
+ 
+ LEXICON ForeignFinalNom
+ +noun+nom: #;
+@@ -3533,6 +3543,9 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++அடிப்படை	C2SgRoot;
++ஜோதி	C2SgRoot;
++கூட்டணி	C2SgRoot;
+ நிதி	  C2SgRoot ;
+ நிலைமை	  C2SgRoot ;
+ மீதி	  C2SgRoot ;
+@@ -55968,6 +55981,7 @@
+ 
+ 
+ LEXICON C7Sg
++பதிவு	C7SgRoot;
+ குறைவு	  C7SgRoot ;
+ நிறைவு	  C7SgRoot ;
+ நுழைவு	  C7SgRoot ;
+@@ -71638,6 +71652,7 @@
+ +noun+pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ LEXICON C11Sg
++திறன்	C11SgRoot;
+ 
+ மனிதன்		  C11SgRoot ; 
+ கணவன்		  C11SgRoot ; 
+@@ -132151,6 +132166,10 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^ங்களின்கீழேயிருந்தும் #;
+ 
+ LEXICON C16Sg
++அதிபர்	C16SgRoot;
++நண்பர்	C16SgRoot;
++செயலர்	C16SgRoot;
++ரப்பர்	C16SgRoot;
+ வைஷ்ணவர்	  C16SgRoot ; 
+ சுவர்	  C16SgRoot ; 
+ தயிர் 	  C16SgRoot ; 

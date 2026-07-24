@@ -1,0 +1,12 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -22,6 +22,9 @@
+ வலஞ்சுழி  C11Vinf;
+ வளமைகொழி  C11Vinf;
+ LEXICON ClassEleven
++
++! Final full-paradigm source review
++பளபள    C11Vinf;
+ 
+ ! Source-backed C11 verb tranche: remaining Tamil Lexicon POS-verb citation roots.
+ அச்சதந்தெளி  C11Vinf;

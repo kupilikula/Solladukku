@@ -1,0 +1,634 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -310,6 +310,10 @@
+ +noun+human+pl+dat%=க்கு:^ுக்கு #;
+ +noun+human+pl+inst%=ஆல்:^ால் #;
+ +noun+human+pl+gen%=இன்:^ின் #;
+++noun+human+pl+gen%=இன்+inst%=ஆல்:^ினால் #;
+++noun+human+pl+gen%=இன்+inst%=ஆல்+add%=உம்:^ினாலும் #;
+++noun+human+pl+gen%=இன்+inst%=ஆல்+foc%=ஏ:^ினாலே #;
+++noun+human+pl+gen%=இன்+inst%=ஆல்+foc%=தான்:^ினால்தான் #;
+ +noun+human+pl+gen%=உடைய:^ுடைய #;
+ +noun+human+pl+loc%=இடம்:^ிடம் #;
+ +noun+human+pl+soc%=உடன்:^ுடன் #;
+@@ -326,6 +330,10 @@
+ +noun+pl+dat%=க்கு:^்களுக்கு #;
+ +noun+pl+inst%=ஆல்:^்களால் #;
+ +noun+pl+gen%=இன்:^்களின் #;
+++noun+pl+gen%=இன்+inst%=ஆல்:^்களினால் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+add%=உம்:^்களினாலும் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=ஏ:^்களினாலே #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=தான்:^்களினால்தான் #;
+ +noun+pl+gen%=உடைய:^்களுடைய #;
+ +noun+pl+loc%=இல்:^்களில் #;
+ +noun+pl+soc%=உடன்:^்களுடன் #;
+@@ -357,6 +365,10 @@
+ +noun+abl:^ிலிருந்து #;
+ +noun+abl+add:^ிலிருந்தும் #;
+ +noun+gen:^ின் #;
+++noun+gen+inst%=ஆல்:^ினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ினால்தான் #;
+ +noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+gen:^ுடைய #;
+@@ -490,6 +502,10 @@
+ +noun+pl+dat%=க்கு:^ுகளுக்கு #;
+ +noun+pl+inst%=ஆல்:^ுகளால் #;
+ +noun+pl+gen%=இன்:^ுகளின் #;
+++noun+pl+gen%=இன்+inst%=ஆல்:^ுகளினால் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+add%=உம்:^ுகளினாலும் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=ஏ:^ுகளினாலே #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=தான்:^ுகளினால்தான் #;
+ +noun+pl+gen%=உடைய:^ுகளுடைய #;
+ +noun+pl+loc%=இல்:^ுகளில் #;
+ +noun+pl+soc%=உடன்:^ுகளுடன் #;
+@@ -521,6 +537,10 @@
+ +noun+abl:^ிலிருந்து #;
+ +noun+abl+add:^ிலிருந்தும் #;
+ +noun+gen:^ின் #;
+++noun+gen+inst%=ஆல்:^ினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ினால்தான் #;
+ +noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+gen:^ுடைய #;
+@@ -539,6 +559,10 @@
+ +noun+pl+dat%=க்கு:^்குகளுக்கு #;
+ +noun+pl+inst%=ஆல்:^்குகளால் #;
+ +noun+pl+gen%=இன்:^்குகளின் #;
+++noun+pl+gen%=இன்+inst%=ஆல்:^்குகளினால் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+add%=உம்:^்குகளினாலும் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=ஏ:^்குகளினாலே #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=தான்:^்குகளினால்தான் #;
+ +noun+pl+gen%=உடைய:^்குகளுடைய #;
+ +noun+pl+loc%=இல்:^்குகளில் #;
+ +noun+pl+soc%=உடன்:^்குகளுடன் #;
+@@ -570,6 +594,10 @@
+ +noun+abl:^ிலிருந்து #;
+ +noun+abl+add:^ிலிருந்தும் #;
+ +noun+gen:^ின் #;
+++noun+gen+inst%=ஆல்:^ினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ினால்தான் #;
+ +noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+gen:^ுடைய #;
+@@ -589,6 +617,10 @@
+ +noun+pl+dat%=க்கு:^்குகளுக்கு #;
+ +noun+pl+inst%=ஆல்:^்குகளால் #;
+ +noun+pl+gen%=இன்:^்குகளின் #;
+++noun+pl+gen%=இன்+inst%=ஆல்:^்குகளினால் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+add%=உம்:^்குகளினாலும் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=ஏ:^்குகளினாலே #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=தான்:^்குகளினால்தான் #;
+ +noun+pl+gen%=உடைய:^்குகளுடைய #;
+ +noun+pl+loc%=இல்:^்குகளில் #;
+ +noun+pl+soc%=உடன்:^்குகளுடன் #;
+@@ -620,6 +652,10 @@
+ +noun+abl:^்கிலிருந்து #;
+ +noun+abl+add:^்கிலிருந்தும் #;
+ +noun+gen:^்கின் #;
+++noun+gen+inst%=ஆல்:^்கினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^்கினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^்கினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^்கினால்தான் #;
+ +noun+gen+psp_padi:^்கின்படி #;
+ +noun+gen+add:^்கினும் #;
+ +noun+gen:^்குடைய #;
+@@ -639,6 +675,10 @@
+ +noun+pl+dat%=க்கு:^்புகளுக்கு #;
+ +noun+pl+inst%=ஆல்:^்புகளால் #;
+ +noun+pl+gen%=இன்:^்புகளின் #;
+++noun+pl+gen%=இன்+inst%=ஆல்:^்புகளினால் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+add%=உம்:^்புகளினாலும் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=ஏ:^்புகளினாலே #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=தான்:^்புகளினால்தான் #;
+ +noun+pl+gen%=உடைய:^்புகளுடைய #;
+ +noun+pl+loc%=இல்:^்புகளில் #;
+ +noun+pl+soc%=உடன்:^்புகளுடன் #;
+@@ -670,6 +710,10 @@
+ +noun+abl:^்பிலிருந்து #;
+ +noun+abl+add:^்பிலிருந்தும் #;
+ +noun+gen:^்பின் #;
+++noun+gen+inst%=ஆல்:^்பினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^்பினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^்பினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^்பினால்தான் #;
+ +noun+gen+psp_padi:^்பின்படி #;
+ +noun+gen+add:^்பினும் #;
+ +noun+gen:^்புடைய #;
+@@ -689,6 +733,10 @@
+ +noun+pl+dat%=க்கு:^்சுகளுக்கு #;
+ +noun+pl+inst%=ஆல்:^்சுகளால் #;
+ +noun+pl+gen%=இன்:^்சுகளின் #;
+++noun+pl+gen%=இன்+inst%=ஆல்:^்சுகளினால் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+add%=உம்:^்சுகளினாலும் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=ஏ:^்சுகளினாலே #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=தான்:^்சுகளினால்தான் #;
+ +noun+pl+gen%=உடைய:^்சுகளுடைய #;
+ +noun+pl+loc%=இல்:^்சுகளில் #;
+ +noun+pl+soc%=உடன்:^்சுகளுடன் #;
+@@ -720,6 +768,10 @@
+ +noun+abl:^்சிலிருந்து #;
+ +noun+abl+add:^்சிலிருந்தும் #;
+ +noun+gen:^்சின் #;
+++noun+gen+inst%=ஆல்:^்சினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^்சினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^்சினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^்சினால்தான் #;
+ +noun+gen+psp_padi:^்சின்படி #;
+ +noun+gen+add:^்சினும் #;
+ +noun+gen:^்சுடைய #;
+@@ -739,6 +791,10 @@
+ +noun+pl+dat%=க்கு:^்டுகளுக்கு #;
+ +noun+pl+inst%=ஆல்:^்டுகளால் #;
+ +noun+pl+gen%=இன்:^்டுகளின் #;
+++noun+pl+gen%=இன்+inst%=ஆல்:^்டுகளினால் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+add%=உம்:^்டுகளினாலும் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=ஏ:^்டுகளினாலே #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=தான்:^்டுகளினால்தான் #;
+ +noun+pl+gen%=உடைய:^்டுகளுடைய #;
+ +noun+pl+loc%=இல்:^்டுகளில் #;
+ +noun+pl+soc%=உடன்:^்டுகளுடன் #;
+@@ -770,6 +826,10 @@
+ +noun+abl:^்டிலிருந்து #;
+ +noun+abl+add:^்டிலிருந்தும் #;
+ +noun+gen:^்டின் #;
+++noun+gen+inst%=ஆல்:^்டினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^்டினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^்டினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^்டினால்தான் #;
+ +noun+gen+psp_padi:^்டின்படி #;
+ +noun+gen+add:^்டினும் #;
+ +noun+gen:^்டுடைய #;
+@@ -789,6 +849,10 @@
+ +noun+pl+dat%=க்கு:^ுகளுக்கு #;
+ +noun+pl+inst%=ஆல்:^ுகளால் #;
+ +noun+pl+gen%=இன்:^ுகளின் #;
+++noun+pl+gen%=இன்+inst%=ஆல்:^ுகளினால் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+add%=உம்:^ுகளினாலும் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=ஏ:^ுகளினாலே #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=தான்:^ுகளினால்தான் #;
+ +noun+pl+gen%=உடைய:^ுகளுடைய #;
+ +noun+pl+loc%=இல்:^ுகளில் #;
+ +noun+pl+soc%=உடன்:^ுகளுடன் #;
+@@ -820,6 +884,10 @@
+ +noun+abl:^ிலிருந்து #;
+ +noun+abl+add:^ிலிருந்தும் #;
+ +noun+gen:^ின் #;
+++noun+gen+inst%=ஆல்:^ினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ினால்தான் #;
+ +noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+gen:^ுடைய #;
+@@ -839,6 +907,10 @@
+ +noun+pl+dat%=க்கு:^்துகளுக்கு #;
+ +noun+pl+inst%=ஆல்:^்துகளால் #;
+ +noun+pl+gen%=இன்:^்துகளின் #;
+++noun+pl+gen%=இன்+inst%=ஆல்:^்துகளினால் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+add%=உம்:^்துகளினாலும் #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=ஏ:^்துகளினாலே #;
+++noun+pl+gen%=இன்+inst%=ஆல்+foc%=தான்:^்துகளினால்தான் #;
+ +noun+pl+gen%=உடைய:^்துகளுடைய #;
+ +noun+pl+loc%=இல்:^்துகளில் #;
+ +noun+pl+soc%=உடன்:^்துகளுடன் #;
+@@ -870,6 +942,10 @@
+ +noun+abl:^்திலிருந்து #;
+ +noun+abl+add:^்திலிருந்தும் #;
+ +noun+gen:^்தின் #;
+++noun+gen+inst%=ஆல்:^்தினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^்தினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^்தினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^்தினால்தான் #;
+ +noun+gen+psp_padi:^்தின்படி #;
+ +noun+gen+add:^்தினும் #;
+ +noun+gen:^்துடைய #;
+@@ -1346,8 +1422,16 @@
+ +gen:^யது #;
+ +pl+gen:^களது #;
+ +gen:^யின் #;
+++gen+inst%=ஆல்:^யினால் #;
+++gen+inst%=ஆல்+add%=உம்:^யினாலும் #;
+++gen+inst%=ஆல்+foc%=ஏ:^யினாலே #;
+++gen+inst%=ஆல்+foc%=தான்:^யினால்தான் #;
+ +gen+psp_padi:^யின்படி #;
+ +pl+gen:^களின் #;
+++pl+gen+inst%=ஆல்:^களினால் #;
+++pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +pl+gen+psp_padi:^களின்படி #;
+ +loc:^யில் #;
+ +loc+colloq:^யுல #;
+@@ -1566,8 +1650,16 @@
+ +gen:^து #;
+ +pl+gen:^களது #;
+ +gen:^ின் #;
+++gen+inst%=ஆல்:^ினால் #;
+++gen+inst%=ஆல்+add%=உம்:^ினாலும் #;
+++gen+inst%=ஆல்+foc%=ஏ:^ினாலே #;
+++gen+inst%=ஆல்+foc%=தான்:^ினால்தான் #;
+ +gen+psp_padi:^ின்படி #;
+ +pl+gen:^களின் #;
+++pl+gen+inst%=ஆல்:^களினால் #;
+++pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +pl+gen+psp_padi:^களின்படி #;
+ +loc:^ில் #;
+ +loc+colloq:^ுல #;
+@@ -1785,8 +1877,16 @@
+ +gen:^ஆது #;
+ +pl+gen:^களது #;
+ +gen:^ஆின் #;
+++gen+inst%=ஆல்:^ஆினால் #;
+++gen+inst%=ஆல்+add%=உம்:^ஆினாலும் #;
+++gen+inst%=ஆல்+foc%=ஏ:^ஆினாலே #;
+++gen+inst%=ஆல்+foc%=தான்:^ஆினால்தான் #;
+ +gen+psp_padi:^ஆின்படி #;
+ +pl+gen:^களின் #;
+++pl+gen+inst%=ஆல்:^களினால் #;
+++pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +pl+gen+psp_padi:^களின்படி #;
+ +loc:^ஆில் #;
+ +loc+colloq:^ஆுல #;
+@@ -3737,9 +3837,17 @@
+ +noun+pl+gen:^க்களது #;
+ +noun+pl+gen+add:^க்களதும் #;
+ +noun+gen:^வின் #;
+++noun+gen+inst%=ஆல்:^வினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^வினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^வினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^வினால்தான் #;
+ +noun+gen+psp_padi:^வின்படி #;
+ +noun+gen+add:^வினும் #;
+ +noun+pl+gen:^க்களின் #;
+++noun+pl+gen+inst%=ஆல்:^க்களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^க்களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^க்களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^க்களினால்தான் #;
+ +noun+pl+gen+psp_padi:^க்களின்படி #;
+ +noun+pl+gen+add:^க்களினும் #;
+ 
+@@ -44450,9 +44558,17 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^யின் #;
+++noun+gen+inst%=ஆல்:^யினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^யினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^யினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^யினால்தான் #;
+ +noun+gen+psp_padi:^யின்படி #;
+ +noun+gen+add:^யினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+inst%=ஆல்:^களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+@@ -45057,9 +45173,17 @@
+ +noun+pl+gen:^க்களது #;
+ +noun+pl+gen+add:^க்களதும் #;
+ +noun+gen:^யின் #;
+++noun+gen+inst%=ஆல்:^யினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^யினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^யினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^யினால்தான் #;
+ +noun+gen+psp_padi:^யின்படி #;
+ +noun+gen+add:^யினும் #;
+ +noun+pl+gen:^க்களின் #;
+++noun+pl+gen+inst%=ஆல்:^க்களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^க்களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^க்களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^க்களினால்தான் #;
+ +noun+pl+gen+psp_padi:^க்களின்படி #;
+ +noun+pl+gen+add:^க்களினும் #;
+ 
+@@ -54965,9 +55089,17 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ின் #;
+++noun+gen+inst%=ஆல்:^ினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ினால்தான் #;
+ +noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+inst%=ஆல்:^களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+@@ -55428,6 +55560,10 @@
+ +noun+pl+gen:^து #;
+ +noun+pl+gen+add:^தும் #;
+ +noun+pl+gen:^ின் #;
+++noun+pl+gen+inst%=ஆல்:^ினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^ினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^ினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^ினால்தான் #;
+ +noun+pl+gen+psp_padi:^ின்படி #;
+ +noun+pl+gen+add:^ினும் #;
+ 
+@@ -56120,9 +56256,17 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ட்டின் #;
+++noun+gen+inst%=ஆல்:^ட்டினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ட்டினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ட்டினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ட்டினால்தான் #;
+ +noun+gen+psp_padi:^ட்டின்படி #;
+ +noun+gen+add:^ட்டினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+inst%=ஆல்:^களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+@@ -56634,9 +56778,17 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ட்டின் #;
+++noun+gen+inst%=ஆல்:^ட்டினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ட்டினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ட்டினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ட்டினால்தான் #;
+ +noun+gen+psp_padi:^ட்டின்படி #;
+ +noun+gen+add:^ட்டினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+inst%=ஆல்:^களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+@@ -70020,6 +70172,10 @@
+ +noun+pl+acc+all:^க்களையெல்லாம் #;
+ +noun+pl+dat:^க்களுக்கு #;
+ +noun+pl+gen:^க்களின் #;
+++noun+pl+gen+inst%=ஆல்:^க்களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^க்களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^க்களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^க்களினால்தான் #;
+ +noun+pl+gen+psp_padi:^க்களின்படி #;
+ +noun+pl+inst:^க்களால் #;
+ +noun+pl+loc:^க்களில் #;
+@@ -70151,9 +70307,17 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ஆின் #;
+++noun+gen+inst%=ஆல்:^ஆினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ஆினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ஆினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ஆினால்தான் #;
+ +noun+gen+psp_padi:^ஆின்படி #;
+ +noun+gen+add:^ஆினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+inst%=ஆல்:^களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+@@ -70764,9 +70928,17 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^றின் #;
+++noun+gen+inst%=ஆல்:^றினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^றினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^றினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^றினால்தான் #;
+ +noun+gen+psp_padi:^றின்படி #;
+ +noun+gen+add:^றினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+inst%=ஆல்:^களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+@@ -72028,9 +72200,17 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ணின் #;
+++noun+gen+inst%=ஆல்:^ணினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ணினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ணினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ணினால்தான் #;
+ +noun+gen+psp_padi:^ணின்படி #;
+ +noun+gen+add:^ணினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+inst%=ஆல்:^களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+@@ -72618,9 +72798,17 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^னின் #;
+++noun+gen+inst%=ஆல்:^னினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^னினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^னினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^னினால்தான் #;
+ +noun+gen+psp_padi:^னின்படி #;
+ +noun+gen+add:^னினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+inst%=ஆல்:^களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+@@ -94080,9 +94268,17 @@
+ +noun+pl+gen:^ர்களது #;
+ +noun+pl+gen+add:^ர்களதும் #;
+ +noun+gen:^னின் #;
+++noun+gen+inst%=ஆல்:^னினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^னினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^னினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^னினால்தான் #;
+ +noun+gen+psp_padi:^னின்படி #;
+ +noun+gen+add:^னினும் #;
+ +noun+pl+gen:^ர்களின் #;
+++noun+pl+gen+inst%=ஆல்:^ர்களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^ர்களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^ர்களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^ர்களினால்தான் #;
+ +noun+pl+gen+psp_padi:^ர்களின்படி #;
+ +noun+pl+gen+add:^ர்களினும் #;
+ 
+@@ -94613,9 +94809,17 @@
+ +noun+pl+gen:^ற்களது #;
+ +noun+pl+gen+add:^ற்களதும் #;
+ +noun+gen:^லின் #;
+++noun+gen+inst%=ஆல்:^லினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^லினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^லினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^லினால்தான் #;
+ +noun+gen+psp_padi:^லின்படி #;
+ +noun+gen+add:^லினும் #;
+ +noun+pl+gen:^ற்களின் #;
+++noun+pl+gen+inst%=ஆல்:^ற்களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^ற்களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^ற்களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^ற்களினால்தான் #;
+ +noun+pl+gen+psp_padi:^ற்களின்படி #;
+ +noun+pl+gen+add:^ற்களினும் #;
+ +noun+loc:^லில் #;
+@@ -95138,9 +95342,17 @@
+ +noun+pl+gen:^ட்களது #;
+ +noun+pl+gen+add:^ட்களதும் #;
+ +noun+gen:^ளின் #;
+++noun+gen+inst%=ஆல்:^ளினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ளினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ளினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ளினால்தான் #;
+ +noun+gen+psp_padi:^ளின்படி #;
+ +noun+gen+add:^ளினும் #;
+ +noun+pl+gen:^ட்களின் #;
+++noun+pl+gen+inst%=ஆல்:^ட்களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^ட்களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^ட்களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^ட்களினால்தான் #;
+ +noun+pl+gen+psp_padi:^ட்களின்படி #;
+ +noun+pl+gen+add:^ட்களினும் #;
+ 
+@@ -98168,6 +98380,10 @@
+ +noun+infInc+acc%=ஐ:^தை #;
+ +noun+infInc+dat%=க்கு:^துக்கு #;
+ +noun+infInc+gen%=இன்:^தின் #;
+++noun+infInc+gen%=இன்+inst%=ஆல்:^தினால் #;
+++noun+infInc+gen%=இன்+inst%=ஆல்+add%=உம்:^தினாலும் #;
+++noun+infInc+gen%=இன்+inst%=ஆல்+foc%=ஏ:^தினாலே #;
+++noun+infInc+gen%=இன்+inst%=ஆல்+foc%=தான்:^தினால்தான் #;
+ +noun+infInc+inst%=ஆல்:^தால் #;
+ +noun+infInc+loc%=இல்:^தில் #;
+ +noun+infInc+abl%=இலிருந்து:^திலிருந்து #;
+@@ -98180,6 +98396,10 @@
+ +noun+verbalnoun+actionnominal+acc+all:ையெல்லாம் #;
+ +noun+verbalnoun+actionnominal+dat:ுக்கு #;
+ +noun+verbalnoun+actionnominal+gen:ின் #;
+++noun+verbalnoun+actionnominal+gen+inst%=ஆல்:ினால் #;
+++noun+verbalnoun+actionnominal+gen+inst%=ஆல்+add%=உம்:ினாலும் #;
+++noun+verbalnoun+actionnominal+gen+inst%=ஆல்+foc%=ஏ:ினாலே #;
+++noun+verbalnoun+actionnominal+gen+inst%=ஆல்+foc%=தான்:ினால்தான் #;
+ +noun+verbalnoun+actionnominal+gen+psp_padi:ின்படி #;
+ +noun+verbalnoun+actionnominal+inst:ால் #;
+ +noun+verbalnoun+actionnominal+loc:ில் #;
+@@ -98256,6 +98476,10 @@
+ +noun+pl+gen:^ட்களது #;
+ +noun+pl+gen+add:^ட்களதும் #;
+ +noun+pl+gen:^ட்களின் #;
+++noun+pl+gen+inst%=ஆல்:^ட்களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^ட்களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^ட்களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^ட்களினால்தான் #;
+ +noun+pl+gen+psp_padi:^ட்களின்படி #;
+ +noun+pl+gen+add:^ட்களினும் #;
+ +noun+pl+loc:^ட்களில் #;
+@@ -98506,6 +98730,10 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+inst%=ஆல்:^களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ +noun+pl+loc:^களில் #;
+@@ -98774,6 +99002,10 @@
+ +noun+gen:^ளது #;
+ +noun+gen+add:^ளதும் #;
+ +noun+gen:^ின் #;
+++noun+gen+inst%=ஆல்:^ினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ினால்தான் #;
+ +noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ 
+@@ -133785,9 +134017,17 @@
+ +noun+pl+gen+add:^ங்களதும் #;
+ +noun+pl+gen+foc:^ங்களதுதான் #;
+ +noun+infInc+gen:^த்தின் #;
+++noun+infInc+gen+inst%=ஆல்:^த்தினால் #;
+++noun+infInc+gen+inst%=ஆல்+add%=உம்:^த்தினாலும் #;
+++noun+infInc+gen+inst%=ஆல்+foc%=ஏ:^த்தினாலே #;
+++noun+infInc+gen+inst%=ஆல்+foc%=தான்:^த்தினால்தான் #;
+ +noun+infInc+gen+psp_padi:^த்தின்படி #;
+ +noun+infInc+gen+add:^த்தினும் #;
+ +noun+pl+gen:^ங்களின் #;
+++noun+pl+gen+inst%=ஆல்:^ங்களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^ங்களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^ங்களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^ங்களினால்தான் #;
+ +noun+pl+gen+psp_padi:^ங்களின்படி #;
+ +noun+pl+gen+add:^ங்களினும் #;
+ 
+@@ -138465,9 +138705,17 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ின் #;
+++noun+gen+inst%=ஆல்:^ினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ினால்தான் #;
+ +noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+inst%=ஆல்:^களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 
+@@ -139132,12 +139380,24 @@
+ +noun+pl+gen:^களது #;
+ +noun+pl+gen+add:^களதும் #;
+ +noun+gen:^ின் #;
+++noun+gen+inst%=ஆல்:^ினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ினால்தான் #;
+ +noun+gen+psp_padi:^ின்படி #;
+ +noun+gen+add:^ினும் #;
+ +noun+gen:^ற்றின் #;
+++noun+gen+inst%=ஆல்:^ற்றினால் #;
+++noun+gen+inst%=ஆல்+add%=உம்:^ற்றினாலும் #;
+++noun+gen+inst%=ஆல்+foc%=ஏ:^ற்றினாலே #;
+++noun+gen+inst%=ஆல்+foc%=தான்:^ற்றினால்தான் #;
+ +noun+gen+psp_padi:^ற்றின்படி #;
+ +noun+gen+add:^ற்றினும் #;
+ +noun+pl+gen:^களின் #;
+++noun+pl+gen+inst%=ஆல்:^களினால் #;
+++noun+pl+gen+inst%=ஆல்+add%=உம்:^களினாலும் #;
+++noun+pl+gen+inst%=ஆல்+foc%=ஏ:^களினாலே #;
+++noun+pl+gen+inst%=ஆல்+foc%=தான்:^களினால்தான் #;
+ +noun+pl+gen+psp_padi:^களின்படி #;
+ +noun+pl+gen+add:^களினும் #;
+ 

@@ -1,0 +1,11 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -71973,6 +71973,8 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+soc:^ாதவர்களுடன் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+PartNoun%=அவர்+human+pl+soc+add:^ாதவர்களுடனும் #;
+ LEXICON ClassVVaa17
++! Corpus-attested progressive chain: நடைபெறு + vpart + வா.
++நடைபெற்றுவா      VvaaInf;
+ வைதுவா	VvaaInf;
+ கொய்துவா	VvaaInf;
+ எய்துவா	VvaaInf;

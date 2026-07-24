@@ -1,0 +1,10 @@
+--- a/Nouns.lexc
++++ b/Nouns.lexc
+@@ -134094,6 +134094,7 @@
+ +noun+pl+gen+add:^ங்களதும் #;
+ +noun+pl+gen+foc:^ங்களதுதான் #;
+ +noun+infInc+gen:^த்தின் #;
+++noun+infInc+gen:^த்தினுடைய #;
+ +noun+infInc+gen+inst%=ஆல்:^த்தினால் #;
+ +noun+infInc+gen+inst%=ஆல்+add%=உம்:^த்தினாலும் #;
+ +noun+infInc+gen+inst%=ஆல்+foc%=ஏ:^த்தினாலே #;

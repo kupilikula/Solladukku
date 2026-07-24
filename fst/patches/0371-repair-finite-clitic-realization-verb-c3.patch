@@ -1,0 +1,13 @@
+--- ThamizhiFST-C3.foma
++++ ThamizhiFST-C3.foma
+@@ -3,8 +3,8 @@
+ define Lexicon;
+ 
+ # Surface realization of the productive -aa polar-question clitic.
+-define VerbQuestionPulli {்} -> 0 || _ "~" {ா};
+-define VerbQuestionU {ு} -> 0 || _ "~" {ா};
++define VerbQuestionPulli {்} -> 0 || _ "~" [{ா}|{ே}|{ோ}];
++define VerbQuestionU {ு} -> 0 || _ "~" [{ா}|{ே}|{ோ}];
+ define VerbQuestionBoundary "~" -> 0;
+ 
+ define VM [ா | ி | ீ | ு | ூ | ெ |ே | ொ |ோ |ை];

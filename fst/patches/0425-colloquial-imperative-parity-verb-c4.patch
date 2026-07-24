@@ -1,0 +1,18 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -6802,6 +6802,7 @@
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+sim+caus%=வி+past%=த்+1sg%=ஏன்:^வித்தேன் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+1pl%=ஓம்:^வித்தோம் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+1sg%=அன்:^வித்தன் VerbQuestion;
+@@ -10798,6 +10799,7 @@
+ +verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்+colloq:^ுங்க #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+++verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்+colloq:^ாதீங்க #;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+1sg%=ஏன்:^வித்தேன் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+1pl%=ஓம்:^வித்தோம் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+1sg%=அன்:^வித்தன் VerbQuestion;

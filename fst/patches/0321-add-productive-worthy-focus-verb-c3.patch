@@ -1,0 +1,38 @@
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc
+ 
+ LEXICON Root
+ 
+@@ -57,6 +57,18 @@
+ சொல்    C3Vinf;
+ 
+ LEXICON C3Vinf
++
++! Productive infinitive + தக்க suitability/worthiness construction.
+++verb+nonfin+sim+inf%=அ+worthy%=தக்க+adjpart%=அ:^அத்தக்க #;
+++verb+nonfin+sim+inf%=அ+worthy%=தக்க+PartNoun%=அது:^அத்தக்கது #;
+++verb+nonfin+sim+inf%=அ+worthy%=தக்க+PartNoun%=அவர்+human:^அத்தக்கவர் #;
+++verb+nonfin+sim+inf%=அ+worthy%=தக்க+PartNoun%=அவர்+human+pl:^அத்தக்கவர்கள் #;
++
++! Productive bare negative stem in -ஆ.
+++verb+nonfin+sim+neg%=ஆ:^ா #;
++
++! Productive temporal verbal noun in locative -கையில்.
+++verb+nonfin+sim+verbalnoun%=கை+loc%=இல்:^கையில் #;
+ 
+ 
+ +verb+fin+sim+strong+past%=ற்+1sg%=ஏன்:^ன்றேன் VerbQuestion;
+@@ -376,6 +388,7 @@
+ +verb+nonfin+sim+inf%=அ+sandhik%=க்:^அக் #;
+ +verb+nonfin+sim+inf%=அ+sandhip%=ப்:^அப் #;
+ +verb+nonfin+sim+vpart%=உ:^து #;
+++verb+nonfin+sim+vpart%=உ+foc%=ஏ:^தே #;
+ +verb+nonfin+sim+vpart%=உ+sandhic%=ச்:^துச் #;
+ +verb+nonfin+sim+vpart%=உ+sandhit%=த்:^துத் #;
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^துக் #;

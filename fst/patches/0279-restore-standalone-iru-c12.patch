@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -178,6 +178,7 @@
+ இட      C12Vinf;
+ இய      C12Vinf;
+ இர      C12Vinf;
++இரு      C12Vinf;
+ இழ      C12Vinf;
+ இற      C12Vinf;
+ உக      C12Vinf;

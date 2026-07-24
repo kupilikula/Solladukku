@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -6501,6 +6501,7 @@
+ 
+ LEXICON ModernBareInf
+ +verb+nonfin+sim+inf%=அ: #;
+++verb+nonfin+sim+inf%=அ+foc%=ஏ:வே #;
+ +verb+nonfin+sim+inf%=அ+add%=உம்:வும் #;
+ 
+ LEXICON C4Vinf

@@ -153,6 +153,12 @@
     margin: 2px;
 }
 
+.LetterTile.RACK,
+.LetterTile.RACK * {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 .Points {
     position: absolute;
     bottom: 1px;

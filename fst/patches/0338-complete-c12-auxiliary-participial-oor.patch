@@ -1,0 +1,200 @@
+--- ThamizhiVerbs-C12.lexc
++++ ThamizhiVerbs-C12.lexc
+@@ -1,7 +1,7 @@
+ !!!ThamizhiFST!!!
+ !!!K. Sarveswaran, iamsarves@gmail.com iamsarves.com!!!
+ 
+-Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu
++Multichar_Symbols +verb %=த் % Part +PresPart +3P +2P +1P +past% %=த்% % %  +Pres +Fut +Sg +Pl +Masc +Fem +Rat +Irr +Euph +Sandhi +Neg +Comp +Imp +Inf +RelPart +Con +Causal +Temp +Neu +PartNoun % +verb% % % erbNoun +ques +worthy +foc +purpose +cop +adjpart +comp +add +vpart_tum +vpart_potu +cond +vpart_maaru +exist
+ 
+ 
+ LEXICON Root
+@@ -249,6 +249,8 @@
+ 
+ ! Productive infinitive + தக்க suitability/worthiness construction.
+ +verb+nonfin+sim+inf%=க்க+worthy%=தக்க+adjpart%=அ:^க்கத்தக்க #;
+++verb+nonfin+sim+cond%=இன்:^ப்பின் #;
+++verb+nonfin+sim+cond%=இன்+add%=உம்:^ப்பினும் #;
+ +verb+nonfin+sim+inf%=க்க+worthy%=தக்க+adjpart%=அ+vpart_potu%=போது:^க்கத்தக்கபோது #;
+ +verb+nonfin+sim+inf%=க்க+worthy%=தக்க+PartNoun%=அது:^க்கத்தக்கது #;
+ +verb+nonfin+sim+inf%=க்க+worthy%=தக்க+PartNoun%=அவர்+human:^க்கத்தக்கவர் #;
+@@ -462,7 +464,7 @@
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sge%=அர்:^ப்பித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பித்தார் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பிந்தார்கள் VerbQuestion;
+++verb+fin+sim+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+ +verb+nonfin+sim+caus%=ப்பி+past%=த்+vpart_tum%=தும்:^ப்பித்ததும் VerbQuestion;
+@@ -589,8 +591,8 @@
+ +verb+fin+sim+caus%=ப்பி+fut%=ப்ப்+3ple%=ஆர்:^ப்பிப்பார் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+fut%=ப்ப்+3ple%=ஆர்கள்:^ப்பிப்பார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=ப்பி+fut%=ப்ப்+3sghe%=ஆர்கள்:^ப்பிப்பார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=ப்பி+fut%=உம்+3sgn%=∅:^ப்போம் VerbQuestion;
+-+verb+fin+sim+caus%=ப்பி+fut%=உம்+3pln%=∅:^ப்போம் VerbQuestion;
+++verb+fin+sim+caus%=ப்பி+fut%=ப்ப்+3sgn%=∅:^ப்போம் VerbQuestion;
+++verb+fin+sim+caus%=ப்பி+fut%=ப்ப்+3pln%=∅:^ப்போம் VerbQuestion;
+ +verb+fin+sim+opt%=க்க:^க்க #;
+ +verb+nonfin+sim+inf%=க்க:^க்க #;
+ +verb+nonfin+sim+inf%=க்க+add%=உம்:^க்கவும் #;
+@@ -669,6 +671,7 @@
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+vpart_potu%=போது:^க்கிறபோது #;
+ +verb+nonfin+sim+futANDadjpart%=உம்:^க்கும் #;
+++verb+nonfin+sim+futANDadjpart%=உம்+vpart_maaru%=மாறு:^க்குமாறு #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+vpart_potu%=போது:^க்கும்போது #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+vpart_potu%=போது:^ாதபோது #;
+@@ -752,6 +755,7 @@
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+pl+soc:^ப்பவர்களுடன் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+pl+soc+add:^ப்பவர்களுடனும் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது:^ப்பது #;
+++verb+nonfin+sim+verbalnoun%=அது+exist%=இல்லை+neg:^ப்பதில்லை #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+comp%=ஆவது:^ப்பதாவது #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+add%=உம்:^ப்பதும் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+foc%=ஏ:^ப்பதே #;
+@@ -4212,7 +4216,7 @@
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sge%=அர்:^ப்பித்தர் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பித்தார் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பிந்தார்கள் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+ +verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+vpart_tum%=தும்:^ப்பித்ததும் VerbQuestion;
+@@ -4339,8 +4343,8 @@
+ +verb+fin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+3ple%=ஆர்:^ப்பிப்பார் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+3ple%=ஆர்கள்:^ப்பிப்பார்கள் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+3sghe%=ஆர்கள்:^ப்பிப்பார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+fut%=உம்+3sgn%=∅:^ப்போம் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+fut%=உம்+3pln%=∅:^ப்போம் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+3sgn%=∅:^ப்போம் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+3pln%=∅:^ப்போம் VerbQuestion;
+ +verb+fin+complex+aspect+opt%=க்க:^க்க #;
+ +verb+nonfin+complex+aspect+inf%=க்க:^க்க #;
+ +verb+nonfin+complex+aspect+inf%=க்க+add%=உம்:^க்கவும் #;
+@@ -4544,6 +4548,7 @@
+ +verb+nonfin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பிப்பதாகும் #;
+ +verb+nonfin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிப்பதாகவும் #;
+ +verb+nonfin+complex+aspect+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+nom:^ந்தவர் #;
+++verb+nonfin+complex+aspect+past%=த்+adjpart%=அ+PartNoun%=ஓர்:^ந்தோர் #;
+ +verb+nonfin+complex+aspect+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+nom+add:^ந்தவரும் #;
+ +verb+nonfin+complex+aspect+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+nom+foc%=ஏ:^ந்தவரே #;
+ +verb+nonfin+complex+aspect+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+nom+foc%=தான்:^ந்தவர்தான் #;
+@@ -7870,51 +7875,51 @@
+ +verb+fin+complex+aspect+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+aspect+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+1sg%=ஏன்:^ப்பிந்தேன் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+1pl%=ஓம்:^ப்பிந்தோம் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+1sg%=அன்:^ப்பிந்தன் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+2sg%=ஆய்:^ப்பிந்தாய் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+2sgh%=ஈர்:^ப்பிந்தீர் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+2pl%=ஈர்கள்:^ப்பிந்தீர்கள் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgm%=ஆன்:^ப்பிந்தான் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgf%=ஆள்:^ப்பிந்தாள் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sge%=அர்:^ப்பிந்தர் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பிந்தார் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பிந்தார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பிந்தார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பிந்தது VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பிந்ததும் VerbQuestion;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+vpart_tum%=தும்:^ப்பிந்ததும் VerbQuestion;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+comp%=ஆவது:^ப்பிந்ததாவது #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+comp%=ஆவது+add%=உம்:^ப்பிந்ததாவதும் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+acc%=ஐ:^ப்பிந்ததை #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^ப்பிந்ததையும் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+inst%=ஆல்:^ப்பிந்ததால் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^ப்பிந்ததாலும் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு:^ப்பிந்ததற்கு #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பிந்ததற்கான #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பிந்ததற்கும் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்:^ப்பிந்ததில் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பிந்ததிலும் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பிந்ததிலேயே #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பிந்ததிலிருந்து #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+abl%=இலிருந்து+add%=உம்:^ப்பிந்ததிலிருந்தும் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+abl%=இலிருந்து+add%=உம்:^ப்பிந்ததிலிருந்தும் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+soc%=உடன்:^ப்பிந்ததுடன் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+soc%=உடன்+add%=உம்:^ப்பிந்ததுடனும் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+gen%=இன்:^ப்பிந்ததன் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^ப்பிந்ததைப் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^ப்பிந்ததைச் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^ப்பிந்ததைத் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^ப்பிந்ததைக் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^ப்பிந்ததற்குப் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^ப்பிந்ததற்குச் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பிந்ததற்குத் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பிந்ததற்குக் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக:^ப்பிந்ததாக #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பிந்ததாகும் #;
+-+verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிந்ததாகவும் #;
+-+verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பிந்தன VerbQuestionNeuterPlural;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+1sg%=ஏன்:^ப்பித்தேன் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+1pl%=ஓம்:^ப்பித்தோம் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+1sg%=அன்:^ப்பித்தன் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+2sg%=ஆய்:^ப்பித்தாய் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+2sgh%=ஈர்:^ப்பித்தீர் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+2pl%=ஈர்கள்:^ப்பித்தீர்கள் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgm%=ஆன்:^ப்பித்தான் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgf%=ஆள்:^ப்பித்தாள் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sge%=அர்:^ப்பித்தர் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பித்தார் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+vpart_tum%=தும்:^ப்பித்ததும் VerbQuestion;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+comp%=ஆவது:^ப்பித்ததாவது #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+comp%=ஆவது+add%=உம்:^ப்பித்ததாவதும் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+acc%=ஐ:^ப்பித்ததை #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^ப்பித்ததையும் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+inst%=ஆல்:^ப்பித்ததால் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^ப்பித்ததாலும் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு:^ப்பித்ததற்கு #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+purpose+cop%=ஆ+adjpart%=ன:^ப்பித்ததற்கான #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^ப்பித்ததற்கும் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்:^ப்பித்ததில் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+add%=உம்:^ப்பித்ததிலும் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^ப்பித்ததிலேயே #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+abl%=இலிருந்து:^ப்பித்ததிலிருந்து #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+abl%=இலிருந்து+add%=உம்:^ப்பித்ததிலிருந்தும் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+abl%=இலிருந்து+add%=உம்:^ப்பித்ததிலிருந்தும் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+soc%=உடன்:^ப்பித்ததுடன் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+soc%=உடன்+add%=உம்:^ப்பித்ததுடனும் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+gen%=இன்:^ப்பித்ததன் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^ப்பித்ததைப் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^ப்பித்ததைச் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^ப்பித்ததைத் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^ப்பித்ததைக் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^ப்பித்ததற்குப் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^ப்பித்ததற்குச் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^ப்பித்ததற்குத் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^ப்பித்ததற்குக் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக:^ப்பித்ததாக #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பித்ததாகும் #;
+++verb+nonfin+complex+aspect+caus%=ப்பி+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பித்ததாகவும் #;
+++verb+fin+complex+aspect+caus%=ப்பி+past%=த்+3pln%=அன:^ப்பித்தன VerbQuestionNeuterPlural;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+1sg%=ஏன்:^ப்பிக்கிறேன் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+1pl%=ஓம்:^ப்பிக்கிறோம் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+pres%=க்கிற்+1sg%=அன்:^ப்பிக்கிறன் VerbQuestion;
+@@ -8008,8 +8013,8 @@
+ +verb+fin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+3ple%=ஆர்:^ப்பிப்பார் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+3ple%=ஆர்கள்:^ப்பிப்பார்கள் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+3sghe%=ஆர்கள்:^ப்பிப்பார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+fut%=உம்+3sgn%=∅:^ப்பிும் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=ப்பி+fut%=உம்+3pln%=∅:^ப்பிும் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+3sgn%=∅:^ப்பிும் VerbQuestion;
+++verb+fin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+3pln%=∅:^ப்பிும் VerbQuestion;
+ +verb+fin+complex+aspect+opt%=க்க:^க்க #;
+ +verb+nonfin+complex+aspect+inf%=க்க:^க்க #;
+ +verb+nonfin+complex+aspect+inf%=க்க+add%=உம்:^க்கவும் #;
+@@ -8212,6 +8217,7 @@
+ +verb+nonfin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பிப்பதாகும் #;
+ +verb+nonfin+complex+aspect+caus%=ப்பி+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பிப்பதாகவும் #;
+ +verb+nonfin+complex+aspect+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+nom:^ந்தவர் #;
+++verb+nonfin+complex+aspect+past%=த்+adjpart%=அ+PartNoun%=ஓர்:^ந்தோர் #;
+ +verb+nonfin+complex+aspect+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+nom+add:^ந்தவரும் #;
+ +verb+nonfin+complex+aspect+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+nom+foc%=ஏ:^ந்தவரே #;
+ +verb+nonfin+complex+aspect+past%=த்+adjpart%=அ+PartNoun%=அவர்+human+nom+foc%=தான்:^ந்தவர்தான் #;

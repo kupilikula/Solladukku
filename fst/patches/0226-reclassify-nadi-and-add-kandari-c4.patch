@@ -1,0 +1,23 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -11,6 +11,12 @@
+ 
+ 
+ LEXICON ClassFour
++
++! Corpus-attested roots with inherited paradigm evidence
++கண்டறி:கண்டறிய    ModernBareInf;
++
++! Corpus-attested roots with inherited paradigm evidence
++கண்டறி    C4Vinf;
+ 
+ ! Final full-paradigm source review
+ தளர்    C4Vinf;
+@@ -258,7 +264,6 @@
+ செறி C4Vinf;
+ நெறி C4Vinf;
+ நடி:நடிக்க ModernBareInf;
+-நடி C4Vinf;
+ ஒசி C4Vinf;
+ சொரி C4Vinf;
+ நொசி C4Vinf;

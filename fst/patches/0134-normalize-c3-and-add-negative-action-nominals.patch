@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -196,6 +196,7 @@
+ +verb+nonfin+sim+vpart%=உ+sandhik%=க்:^துக் #;
+ +verb+nonfin+sim+vpart%=உ+sandhip%=ப்:^துப் #;
+ +verb+nonfin+sim+neg%=ஆ+vpart%=மல்:^ாமல் #;
+++verb+nonfin+sim+neg%=ஆ+verbalnoun%=மை:^ாமை #;
+ +verb+nonfin+sim+neg%=ஆது+vpart%=∅:^ாது #;
+ +verb+nonfin+sim+con%=ஆல்:^தால் #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^ாவிட்டால் #;

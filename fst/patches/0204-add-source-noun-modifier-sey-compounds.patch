@@ -1,0 +1,25 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -43,6 +43,22 @@
+ 
+ !!!C1.lexc!!!
+ LEXICON ClassOne
++
++! Dual-source light verbs with source-backed noun modifiers
++அகடுசெய்    C1Vinf;
++ஆபாத்செய்    C1Vinf;
++உரஞ்செய்    C1Vinf;
++உல்குசெய்    C1Vinf;
++கடாஞ்செய்    C1Vinf;
++கூதைசெய்    C1Vinf;
++சலாஞ்செய்    C1Vinf;
++சேமஞ்செய்    C1Vinf;
++சோலிசெய்    C1Vinf;
++பீமாசெய்    C1Vinf;
++புதஞ்செய்    C1Vinf;
++மிடறுசெய்    C1Vinf;
++ருசுச்செய்    C1Vinf;
++வேதுசெய்    C1Vinf;
+ 
+ ! Joined light-verb compounds with runtime-analyzed modifiers
+ அசைவுசெய்    C1Vinf;

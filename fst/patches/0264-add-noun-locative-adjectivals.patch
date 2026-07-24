@@ -1,0 +1,280 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -163,6 +163,7 @@
+ +noun+gen+add:^ினும் #;
+ +noun+gen:^ுடைய #;
+ +noun+loc:^ில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ிலான #;
+ +noun+loc+add:^ிலும் #;
+ +noun+loc+foc%=ஏயே:^ிலேயே #;
+ +noun+loc:^ிடம் #;
+@@ -198,6 +199,7 @@
+ +noun+gen+add:^ினும் #;
+ +noun+gen:^ுடைய #;
+ +noun+loc:^ில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ிலான #;
+ +noun+loc+add:^ிலும் #;
+ +noun+loc+foc%=ஏயே:^ிலேயே #;
+ +noun+loc:^ிடம் #;
+@@ -233,6 +235,7 @@
+ +noun+gen+add:^்கினும் #;
+ +noun+gen:^்குடைய #;
+ +noun+loc:^்கில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^்கிலான #;
+ +noun+loc+add:^்கிலும் #;
+ +noun+loc+foc%=ஏயே:^்கிலேயே #;
+ +noun+loc:^்கிடம் #;
+@@ -268,6 +271,7 @@
+ +noun+gen+add:^்சினும் #;
+ +noun+gen:^்சுடைய #;
+ +noun+loc:^்சில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^்சிலான #;
+ +noun+loc+add:^்சிலும் #;
+ +noun+loc+foc%=ஏயே:^்சிலேயே #;
+ +noun+loc:^்சிடம் #;
+@@ -303,6 +307,7 @@
+ +noun+gen+add:^்டினும் #;
+ +noun+gen:^்டுடைய #;
+ +noun+loc:^்டில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^்டிலான #;
+ +noun+loc+add:^்டிலும் #;
+ +noun+loc+foc%=ஏயே:^்டிலேயே #;
+ +noun+loc:^்டிடம் #;
+@@ -338,6 +343,7 @@
+ +noun+gen+add:^ினும் #;
+ +noun+gen:^ுடைய #;
+ +noun+loc:^ில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ிலான #;
+ +noun+loc+add:^ிலும் #;
+ +noun+loc+foc%=ஏயே:^ிலேயே #;
+ +noun+loc:^ிடம் #;
+@@ -373,6 +379,7 @@
+ +noun+gen+add:^்தினும் #;
+ +noun+gen:^்துடைய #;
+ +noun+loc:^்தில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^்திலான #;
+ +noun+loc+add:^்திலும் #;
+ +noun+loc+foc%=ஏயே:^்திலேயே #;
+ +noun+loc:^்திடம் #;
+@@ -3140,9 +3147,11 @@
+ +noun+pl+gen+add:^க்களினும் #;
+ 
+ +noun+loc:^வில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^விலான #;
+ +noun+loc+add:^விலும் #;
+ +noun+loc+foc%=ஏயே:^விலேயே #;
+ +noun+pl+loc:^க்களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^க்களிலான #;
+ +noun+pl+loc+add:^க்களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^க்களிலேயே #;
+ +noun+loc:^விடம் #;
+@@ -43709,9 +43718,11 @@
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^யில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^யிலான #;
+ +noun+loc+add:^யிலும் #;
+ +noun+loc+foc%=ஏயே:^யிலேயே #;
+ +noun+pl+loc:^களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^களிலான #;
+ +noun+pl+loc+add:^களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^களிலேயே #;
+ +noun+loc:^யிடம் #;
+@@ -44205,9 +44216,11 @@
+ +noun+pl+gen+add:^க்களினும் #;
+ 
+ +noun+loc:^யில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^யிலான #;
+ +noun+loc+add:^யிலும் #;
+ +noun+loc+foc%=ஏயே:^யிலேயே #;
+ +noun+pl+loc:^க்களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^க்களிலான #;
+ +noun+pl+loc+add:^க்களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^க்களிலேயே #;
+ +noun+loc:^யிடம் #;
+@@ -54009,9 +54022,11 @@
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ிலான #;
+ +noun+loc+add:^ிலும் #;
+ +noun+loc+foc%=ஏயே:^ிலேயே #;
+ +noun+pl+loc:^களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^களிலான #;
+ +noun+pl+loc+add:^களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^களிலேயே #;
+ +noun+loc:^ிடம் #;
+@@ -54455,6 +54470,7 @@
+ +noun+pl+gen+add:^ினும் #;
+ 
+ +noun+pl+loc:^ில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^ிலான #;
+ +noun+pl+loc+add:^ிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^ிலேயே #;
+ +noun+pl+loc:^ிடம் #;
+@@ -55100,9 +55116,11 @@
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ட்டில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ட்டிலான #;
+ +noun+loc+add:^ட்டிலும் #;
+ +noun+loc+foc%=ஏயே:^ட்டிலேயே #;
+ +noun+pl+loc:^களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^களிலான #;
+ +noun+pl+loc+add:^களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^களிலேயே #;
+ +noun+loc:^ட்டிடம் #;
+@@ -55576,9 +55594,11 @@
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ட்டில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ட்டிலான #;
+ +noun+loc+add:^ட்டிலும் #;
+ +noun+loc+foc%=ஏயே:^ட்டிலேயே #;
+ +noun+pl+loc:^களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^களிலான #;
+ +noun+pl+loc+add:^களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^களிலேயே #;
+ +noun+loc:^ட்டிடம் #;
+@@ -68963,9 +68983,11 @@
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ஆில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ஆிலான #;
+ +noun+loc+add:^ஆிலும் #;
+ +noun+loc+foc%=ஏயே:^ஆிலேயே #;
+ +noun+pl+loc:^களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^களிலான #;
+ +noun+pl+loc+add:^களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^களிலேயே #;
+ +noun+loc:^ஆிடம் #;
+@@ -69534,9 +69556,11 @@
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^றில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^றிலான #;
+ +noun+loc+add:^றிலும் #;
+ +noun+loc+foc%=ஏயே:^றிலேயே #;
+ +noun+pl+loc:^களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^களிலான #;
+ +noun+pl+loc+add:^களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^களிலேயே #;
+ +noun+loc:^றிடம் #;
+@@ -70752,9 +70776,11 @@
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ணில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ணிலான #;
+ +noun+loc+add:^ணிலும் #;
+ +noun+loc+foc%=ஏயே:^ணிலேயே #;
+ +noun+pl+loc:^களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^களிலான #;
+ +noun+pl+loc+add:^களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^களிலேயே #;
+ +noun+loc:^ணிடம் #;
+@@ -71252,9 +71278,11 @@
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^னில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^னிலான #;
+ +noun+loc+add:^னிலும் #;
+ +noun+loc+foc%=ஏயே:^னிலேயே #;
+ +noun+pl+loc:^களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^களிலான #;
+ +noun+pl+loc+add:^களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^களிலேயே #;
+ +noun+loc:^னிடம் #;
+@@ -92676,9 +92704,11 @@
+ +noun+pl+gen+add:^ர்களினும் #;
+ 
+ +noun+loc:^னில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^னிலான #;
+ +noun+loc+add:^னிலும் #;
+ +noun+loc+foc%=ஏயே:^னிலேயே #;
+ +noun+pl+loc:^ர்களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^ர்களிலான #;
+ +noun+pl+loc+add:^ர்களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^ர்களிலேயே #;
+ +noun+loc:^னிடம் #;
+@@ -93166,9 +93196,11 @@
+ +noun+pl+gen:^ற்களின் #;
+ +noun+pl+gen+add:^ற்களினும் #;
+ +noun+loc:^லில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^லிலான #;
+ +noun+loc+add:^லிலும் #;
+ +noun+loc+foc%=ஏயே:^லிலேயே #;
+ +noun+pl+loc:^ற்களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^ற்களிலான #;
+ +noun+pl+loc+add:^ற்களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^ற்களிலேயே #;
+ +noun+loc:^லிடம் #;
+@@ -93650,9 +93682,11 @@
+ +noun+pl+gen+add:^ட்களினும் #;
+ 
+ +noun+loc:^ளில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ளிலான #;
+ +noun+loc+add:^ளிலும் #;
+ +noun+loc+foc%=ஏயே:^ளிலேயே #;
+ +noun+pl+loc:^ட்களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^ட்களிலான #;
+ +noun+pl+loc+add:^ட்களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^ட்களிலேயே #;
+ +noun+loc:^ளிடம் #;
+@@ -96718,6 +96752,7 @@
+ +noun+pl+gen:^ட்களின் #;
+ +noun+pl+gen+add:^ட்களினும் #;
+ +noun+pl+loc:^ட்களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^ட்களிலான #;
+ +noun+pl+loc+add:^ட்களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^ட்களிலேயே #;
+ +noun+pl+loc:^ட்களிடம் #;
+@@ -96955,6 +96990,7 @@
+ +noun+pl+gen:^களின் #;
+ +noun+pl+gen+add:^களினும் #;
+ +noun+pl+loc:^களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^களிலான #;
+ +noun+pl+loc+add:^களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^களிலேயே #;
+ +noun+pl+loc:^களிடம் #;
+@@ -97195,6 +97231,7 @@
+ +noun+gen+add:^ினும் #;
+ 
+ +noun+loc:^ில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ிலான #;
+ +noun+loc+add:^ிலும் #;
+ +noun+loc+foc%=ஏயே:^ிலேயே #;
+ +noun+loc:^ிடம் #;
+@@ -131731,6 +131768,7 @@
+ +noun+infInc+soc+foc:^த்தில்தான் #;
+ 
+ +noun+pl+loc:^ங்களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^ங்களிலான #;
+ +noun+pl+loc+add:^ங்களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^ங்களிலேயே #;
+ +noun+pl+loc+foc:^ங்களில்தான் #;
+@@ -131760,6 +131798,7 @@
+ +noun+pl+gen+add:^ங்களினும் #;
+ 
+ +noun+infInc+loc:^த்தில் #;
+++noun+infInc+loc+cop%=ஆ+adjpart%=ன:^த்திலான #;
+ +noun+infInc+loc+add:^த்திலும் #;
+ +noun+infInc+loc+foc%=ஏயே:^த்திலேயே #;
+ +noun+infInc+loc+foc:^த்தில்தான் #;
+@@ -136347,14 +136386,17 @@
+ +noun+pl+gen+add:^களினும் #;
+ 
+ +noun+loc:^ற்றில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ற்றிலான #;
+ +noun+loc+add:^ற்றிலும் #;
+ +noun+loc+foc%=ஏயே:^ற்றிலேயே #;
+ +noun+loc+foc:^ற்றில்தான் #;
+ +noun+loc:^ில் #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ிலான #;
+ +noun+loc+add:^ிலும் #;
+ +noun+loc+foc%=ஏயே:^ிலேயே #;
+ +noun+loc+foc:^ில்தான் #;
+ +noun+pl+loc:^களில் #;
+++noun+pl+loc+cop%=ஆ+adjpart%=ன:^களிலான #;
+ +noun+pl+loc+add:^களிலும் #;
+ +noun+pl+loc+foc%=ஏயே:^களிலேயே #;
+ +noun+pl+loc+foc:^களில்தான் #;

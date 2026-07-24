@@ -1,0 +1,9 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -2076,6 +2076,5 @@
+ வாணி  C11Vinf;
+ விவகரி  C11Vinf;
+-இரு  C11Vinf;
+ இழு  C11Vinf;
+ நது  C11Vinf;
+ இறு  C11Vinf;

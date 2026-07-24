@@ -1,0 +1,81 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -44,6 +44,14 @@
+ 
+ !!!C1.lexc!!!
+ LEXICON ClassOne
++
++! Corpus-attested roots with inherited paradigm evidence
++ஒத்திவை:ஒத்திவைக்க    ModernBareInf;
++முன்வை:முன்வைக்க    ModernBareInf;
++
++! Corpus-attested roots with inherited paradigm evidence
++ஒத்திவை    C1Vinf;
++முன்வை    C1Vinf;
+ 
+ ! Dual-source light verbs with source-backed noun modifiers
+ அகடுசெய்    C1Vinf;
+@@ -350,6 +358,16 @@
+ 
+ LEXICON ClassTwo
+ 
++! Corpus-attested roots with inherited paradigm evidence
++உட்கொள்:உட்கொள்ள    ModernBareInf;
++எதிர்கொள்:எதிர்கொள்ள    ModernBareInf;
++மேற்கொள்:மேற்கொள்ள    ModernBareInf;
++
++! Corpus-attested roots with inherited paradigm evidence
++உட்கொள்    C2Vinf;
++எதிர்கொள்    C2Vinf;
++மேற்கொள்    C2Vinf;
++
+ ! Final full-paradigm source review
+ ஒத்துக்கொள்    C2Vinf;
+ வைத்துக்கொள்    C2Vinf;
+@@ -548,6 +566,19 @@
+ +verb+nonfin+sim+inf%=அ: #;
+ 
+ LEXICON ClassFive
++
++! Corpus-attested roots with inherited paradigm evidence
++அடையாளப்படுத்து    C5Vinf;
++அமல்படுத்து    C5Vinf;
++அறிமுகப்படுத்து    C5Vinf;
++ஆவணப்படுத்து    C5Vinf;
++செயல்படுத்து    C5Vinf;
++தனிமைப்படுத்து    C5Vinf;
++துன்புறுத்து    C5Vinf;
++நாடுகடத்து    C5Vinf;
++பிற்படுத்து    C5Vinf;
++மிகைப்படுத்து    C5Vinf;
++மேம்படுத்து    C5Vinf;
+ 
+ ! Dual-source compounds inheriting a reviewed right-head class
+ அணிவிளக்கு    C5Vinf;
+@@ -11767,6 +11798,15 @@
+ 
+ LEXICON ClassSixOne
+ 
++! Corpus-attested roots with inherited paradigm evidence
++அச்சிடு    C61Vinf;
++உத்தரவிடு    C61Vinf;
++குறிப்பிடு    C61Vinf;
++திட்டமிடு    C61Vinf;
++தேவைப்படு    C61Vinf;
++பட்டியலிடு    C61Vinf;
++மதிப்பிடு    C61Vinf;
++
+ ! Dual-source compounds inheriting a reviewed right-head class
+ உருப்போடு    C61Vinf;
+ கற்போடு    C61Vinf;
+@@ -11939,6 +11979,10 @@
+ +verb+nonfin+sim+futANDadjpart%=உம்:^ும் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^ாத #;
+ LEXICON ClassSixThree
++
++! Corpus-attested roots with inherited paradigm evidence
++இடம்பெறு    C63Vinf;
++நடைபெறு    C63Vinf;
+ செறு      C63Vinf;
+ அறு      C63Vinf;
+ இறு      C63Vinf;

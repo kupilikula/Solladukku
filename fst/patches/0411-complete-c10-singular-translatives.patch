@@ -1,0 +1,18 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -72500,6 +72500,15 @@
+ +noun+trans+cop+fut+3sgn:^ாகும் #;
+ 
+ LEXICON C10Inflections
+++noun+trans:^னாக #;
+++noun+trans+colloq:^னா #;
+++noun+trans+add%=உம்:^னாகவும் #;
+++noun+trans+foc%=ஏ:^னாகவே #;
+++noun+trans+sandhic%=ச்:^னாகச் #;
+++noun+trans+sandhit%=த்:^னாகத் #;
+++noun+trans+sandhip%=ப்:^னாகப் #;
+++noun+trans+sandhik%=க்:^னாகக் #;
+++noun+trans+cop+fut+3sgn:^னாகும் #;
+ +noun+nom: #;
+ +noun+voc%=ஏ:^னே #;
+ +noun+nom+sandhip:^ற்ப் #;

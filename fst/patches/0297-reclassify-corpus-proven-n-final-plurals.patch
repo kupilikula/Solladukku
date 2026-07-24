@@ -1,0 +1,194 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -71238,6 +71238,30 @@
+ +noun+pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ LEXICON C10Sg
++! Corpus-proven -ன்கள் subclass; singular oblique behavior matches C10.
++அணிகலன்	C10SgRoot;
++அண்ணன்	C10SgRoot;
++எம்பிரான்	C10SgRoot;
++கடன்	C10SgRoot;
++காளான்	C10SgRoot;
++குடிமகன்	C10SgRoot;
++கொள்கலன்	C10SgRoot;
++கோன்	C10SgRoot;
++சுடுகலன்	C10SgRoot;
++ஜீவன்	C10SgRoot;
++டிராகன்	C10SgRoot;
++தங்கப்பன்	C10SgRoot;
++திறன்	C10SgRoot;
++பயன்	C10SgRoot;
++பலன்	C10SgRoot;
++பிசின்	C10SgRoot;
++பில்லியன்	C10SgRoot;
++பேரன்	C10SgRoot;
++மகன்	C10SgRoot;
++மகான்	C10SgRoot;
++மருமகன்	C10SgRoot;
++விண்மீன்	C10SgRoot;
++வில்லன்	C10SgRoot;
+ 
+ பொன்	C10SgRoot ; 
+ அன்	 C10SgRoot ; 
+@@ -71742,8 +71766,6 @@
+ LEXICON C11Sg
+ ! Final reviewed common-lexeme coverage.
+ சூன்	C11SgRoot;
+-பலன்	C11SgRoot;
+-திறன்	C11SgRoot;
+ 
+ மனிதன்		  C11SgRoot ; 
+ கணவன்		  C11SgRoot ; 
+@@ -77935,7 +77957,6 @@
+ குடித்திறலோன்	C11SgRoot ;
+ குடித்தோழன்	C11SgRoot ;
+ குடிநேயன்	C11SgRoot ;
+-குடிமகன்	C11SgRoot ;
+ குடிமருகன்	C11SgRoot ;
+ குடியன்பன்	C11SgRoot ;
+ குடியெழிலன்	C11SgRoot ;
+@@ -79201,7 +79222,6 @@
+ கோவைவெற்பன்	C11SgRoot ;
+ கோவைவேந்தன்	C11SgRoot ;
+ கோவைவேலன்	C11SgRoot ;
+-கோன்	C11SgRoot ;
+ சங்கன்	C11SgRoot ;
+ சங்கிசைஞன்	C11SgRoot ;
+ சங்கூரன்	C11SgRoot ;
+@@ -80650,7 +80670,6 @@
+ தங்கநெஞ்சன்	C11SgRoot ;
+ தங்கநெறியன்	C11SgRoot ;
+ தங்கநேயன்	C11SgRoot ;
+-தங்கப்பன்	C11SgRoot ;
+ தங்கப்பாண்டியன்	C11SgRoot ;
+ தங்கமகன்	C11SgRoot ;
+ தங்கமாறன்	C11SgRoot ;
+@@ -82519,7 +82538,6 @@
+ பேரறிஞன்	C11SgRoot ;
+ பேரறிவன்	C11SgRoot ;
+ பேரறிவாளன்	C11SgRoot ;
+-பேரன்	C11SgRoot ;
+ பேரன்பன்	C11SgRoot ;
+ பேராசிரியன்	C11SgRoot ;
+ பேராயன்	C11SgRoot ;
+@@ -82683,7 +82701,6 @@
+ போர்வேந்தன்	C11SgRoot ;
+ போர்வேலன்	C11SgRoot ;
+ போர்வேலோன்	C11SgRoot ;
+-மகன்	C11SgRoot ;
+ மகிழப்பன்	C11SgRoot ;
+ மகிழரசன்	C11SgRoot ;
+ மகிழன்பன்	C11SgRoot ;
+@@ -84213,7 +84230,6 @@
+ விடுதலைவேந்தன்	C11SgRoot ;
+ விண்ணகன்	C11SgRoot ;
+ விண்ணவன்	C11SgRoot ;
+-விண்மீன்	C11SgRoot ;
+ விருந்தன்	C11SgRoot ;
+ வில்யாழோன்	C11SgRoot ;
+ வில்லப்பன்	C11SgRoot ;
+@@ -84641,7 +84657,6 @@
+ வோங்குவேலோன்	C11SgRoot ;
+ பைத்தியக்காரன்	C11SgRoot ;
+ மகாராஜன்	C11SgRoot ;
+-மகான்	C11SgRoot ;
+ மகிடாசுரன்	C11SgRoot ;
+ மகிந்தராஜன்	C11SgRoot ;
+ மகிந்தன்	C11SgRoot ;
+@@ -84770,14 +84785,12 @@
+ ரங்கநாதன்	C11SgRoot;
+ ரமலான்	C11SgRoot;
+ வருணன்	C11SgRoot;
+-வில்லன்	C11SgRoot;
+ வெய்யோன்	C11SgRoot;
+ 
+ ! Source-backed noun tranche 2: high-confidence Vuizur-backed noun candidates.
+ அகனன்	C11SgRoot;
+ அச்சன்	C11SgRoot;
+ அணுக்கன்	C11SgRoot;
+-அண்ணன்	C11SgRoot;
+ அத்தியாபகன்	C11SgRoot;
+ அமைச்சன்	C11SgRoot;
+ அம்பலகாரன்	C11SgRoot;
+@@ -84804,10 +84817,8 @@
+ ஐம்பொன்	C11SgRoot;
+ ஒற்றன்	C11SgRoot;
+ ஓணான்	C11SgRoot;
+-கடன்	C11SgRoot;
+ கணிகன்	C11SgRoot;
+ கழிமுட்டான்	C11SgRoot;
+-காளான்	C11SgRoot;
+ குபேரன்	C11SgRoot;
+ குருடன்	C11SgRoot;
+ கொடிக்கையான்	C11SgRoot;
+@@ -84820,7 +84831,6 @@
+ சிநேகிதன்	C11SgRoot;
+ சிஷ்யன்	C11SgRoot;
+ சுறாமீன்	C11SgRoot;
+-டிராகன்	C11SgRoot;
+ தங்கமீன்	C11SgRoot;
+ தண்ணீர்விட்டான்	C11SgRoot;
+ தந்திரவாயன்	C11SgRoot;
+@@ -84844,13 +84854,11 @@
+ படையாளன்	C11SgRoot;
+ பணிக்கன்	C11SgRoot;
+ பண்டிதன்	C11SgRoot;
+-பயன்	C11SgRoot;
+ பய்யன்	C11SgRoot;
+ பாட்டன்	C11SgRoot;
+ பிசண்டிலன்	C11SgRoot;
+ பிசாசன்	C11SgRoot;
+ பிசான்	C11SgRoot;
+-பிசின்	C11SgRoot;
+ பிஞ்சகன்	C11SgRoot;
+ பிஞ்சின்	C11SgRoot;
+ பிஞ்சுக்கடுக்கன்	C11SgRoot;
+@@ -84869,7 +84877,6 @@
+ மங்குசுத்தான்	C11SgRoot;
+ மணமகன்	C11SgRoot;
+ மனுஷன்	C11SgRoot;
+-மருமகன்	C11SgRoot;
+ மாப்பிசின்	C11SgRoot;
+ மீநாயகன்	C11SgRoot;
+ மூக்கன்	C11SgRoot;
+@@ -90037,7 +90044,6 @@
+ ஊமைக்கோட்டான்	C11SgRoot;
+ எசமான்	C11SgRoot;
+ எண்குணத்தான்	C11SgRoot;
+-எம்பிரான்	C11SgRoot;
+ எம்பெருமான்	C11SgRoot;
+ எம்மான்	C11SgRoot;
+ எய்ம்மான்	C11SgRoot;
+@@ -90582,7 +90588,6 @@
+ அட்டவணைக்காரன்	C11SgRoot;
+ அட்டாலைச்சேவகன்	C11SgRoot;
+ அணங்கன்	C11SgRoot;
+-அணிகலன்	C11SgRoot;
+ அணியாத்தரங்கன்	C11SgRoot;
+ அணியியன்	C11SgRoot;
+ அணுகன்	C11SgRoot;
+@@ -91374,7 +91379,6 @@
+ கொல்லச்சேவகன்	C11SgRoot;
+ கொல்லத்துக்காரன்	C11SgRoot;
+ கொல்லற்றுக்காரன்	C11SgRoot;
+-கொள்கலன்	C11SgRoot;
+ கொள்ளிக்கண்ணன்	C11SgRoot;
+ கொள்ளிவிரியன்	C11SgRoot;
+ கொள்ளையன்	C11SgRoot;
+@@ -91581,7 +91585,6 @@
+ சீவதயாபரன்	C11SgRoot;
+ சுக்கிரக்கண்ணன்	C11SgRoot;
+ சுசிந்தரன்	C11SgRoot;
+-சுடுகலன்	C11SgRoot;
+ சுட்டியன்	C11SgRoot;
+ சுண்ணாம்புக்காரன்	C11SgRoot;
+ சுதந்திரன்	C11SgRoot;
+@@ -92207,7 +92210,6 @@
+ பிரிதிறன்	C11SgRoot;
+ பில்லிக்குராயன்	C11SgRoot;
+ பில்லிஞ்சன்	C11SgRoot;
+-பில்லியன்	C11SgRoot;
+ பீர்க்கன்	C11SgRoot;
+ புசிப்பன்	C11SgRoot;
+ புணர்மீன்	C11SgRoot;

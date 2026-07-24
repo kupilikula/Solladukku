@@ -1,0 +1,20 @@
+--- ThamizhiFST-C3.foma
++++ ThamizhiFST-C3.foma
+@@ -16,6 +16,8 @@
+ define C3R2 {ல்} -> {ல்ல} || .#. CON VM _ "^" [{அ}|{ா}];
+ # Short monosyllabic C3 roots geminate before future -um.
+ define C3ShortFuture {ல்} -> {ல்ல} || [{கொ}|{செ}|{சொ}|{மெ}|{வெ}] _ "^" [{ு}];
++define C3ShortLiteraryConditional {ல்} -> {ல்ல} || [{கொ}|{செ}|{சொ}|{மெ}|{வெ}] _ "^" [{ி}];
++define C3LiteraryConditional {ல்} -> {ல} || _ "^" [{ி}];
+ define C3R22 {ல்} -> {ல}  || _ "^" [{ு}|{அ}];
+ define C3R3 {ல்} -> {ல}  || _ "^" [{ா}];
+ # சொல் has the lexical past stem சொன்ன-, unlike regular C3 ல்த -> ன்ற.
+@@ -32,6 +34,8 @@
+ 	  	C3R1		.o.
+ 	  	C3R2		.o.
+ 	  C3ShortFuture	.o.
++	  C3ShortLiteraryConditional	.o.
++	  C3LiteraryConditional	.o.
+ 	  	C3R22		.o.
+ 	  	C3R3		.o.
+ 		VerbQuestionPulli	.o.

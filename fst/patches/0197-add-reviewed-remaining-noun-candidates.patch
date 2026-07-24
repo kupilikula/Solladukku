@@ -1,0 +1,106 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1875,6 +1875,9 @@
+ ! Reviewed missing u-final noun homographs from POS mismatch audit
+ குரு	C1SgRoot;
+ புழு	C1SgRoot;
++
++! Reviewed residual explicit noun candidates
++சௌசௌ	C1SgRoot;
+ LEXICON C1SgRoot
+ !        Root;
+         C1Inflections;
+@@ -42181,6 +42184,12 @@
+ 
+ ! Reviewed source-POS noun homographs; preserve existing non-noun readings
+ காணி	C2SgRoot;
++
++! Reviewed residual explicit noun candidates
++செயப்படுபொருள்குன்றாதவினை	C2SgRoot;
++செயப்படுபொருள்குன்றியவினை	C2SgRoot;
++புல்லுத்தடுக்குஞ்சூரைச்செடி	C2SgRoot;
++வெள்ளந்தி	C2SgRoot;
+ LEXICON C2SgRoot
+  !       Root;
+         C2Inflections;
+@@ -51994,6 +52003,16 @@
+ அறிவாய்வியல்	C4SgRoot;
+ நிலப்படவரைவியல்	C4SgRoot;
+ வேதவியல்	C4SgRoot;
++
++! Reviewed residual explicit noun candidates
++கணக்கியல்	C4SgRoot;
++கிஸ்மத்	C4SgRoot;
++ஜிஹாத்	C4SgRoot;
++தலாக்	C4SgRoot;
++ரயத்	C4SgRoot;
++ரோஜ்	C4SgRoot;
++வகைபாட்டியல்	C4SgRoot;
++ஹாஜ்	C4SgRoot;
+ LEXICON C4SgRoot
+ !        Root;
+         C4Inflections;
+@@ -66085,6 +66104,10 @@
+ 
+ ! Reviewed strict ending-family noun coverage
+ கருப்பு	C7SgRoot;
++
++! Reviewed residual explicit noun candidates
++ஆகஸ்டு	C7SgRoot;
++குருடு	C7SgRoot;
+ LEXICON C7SgRoot
+ !        Root;
+         C7Inflections;
+@@ -92119,6 +92142,15 @@
+ வெளிக்கோள்	C14SgRoot;
+ வெளிபொருள்	C14SgRoot;
+ வெளிப்பொருள்	C14SgRoot;
++
++! Reviewed residual explicit noun candidates
++ஆயுள்	C14SgRoot;
++ஊழிநாள்	C14SgRoot;
++ஒலிநூல்	C14SgRoot;
++செய்துகோள்	C14SgRoot;
++பின்பிறந்தாள்	C14SgRoot;
++பிறந்தநாள்	C14SgRoot;
++முட்டாள்	C14SgRoot;
+ LEXICON C14SgRoot
+ !        Root;
+         C14Inflections;
+@@ -126588,6 +126620,21 @@
+ ரம்மியம்	C15SgRoot;
+ வினைவியம்	C15SgRoot;
+ வெடியம்	C15SgRoot;
++
++! Reviewed residual explicit noun candidates
++ஆவணப்படம்	C15SgRoot;
++இயங்குதளம்	C15SgRoot;
++கல்விநிலையம்	C15SgRoot;
++நளினம்	C15SgRoot;
++நாதசுவரம்	C15SgRoot;
++பதிவகம்	C15SgRoot;
++பதிவிறக்கம்	C15SgRoot;
++பதிவேற்றம்	C15SgRoot;
++பனிமூட்டம்	C15SgRoot;
++பிறிதினியைபுநீக்கியவிசேடணம்	C15SgRoot;
++பெளதிகம்	C15SgRoot;
++மென்தங்கம்	C15SgRoot;
++வன்தங்கம்	C15SgRoot;
+ LEXICON C15SgRoot
+ !        Root;
+         C15Inflections;
+@@ -130900,6 +130947,14 @@
+ ஸபிண்டர்	C16SgRoot;
+ ஸித்தர்	C16SgRoot;
+ ஸ்மார்த்தர்	C16SgRoot;
++
++! Reviewed residual explicit noun candidates
++இந்தியர்	C16SgRoot;
++இலையுதிர்	C16SgRoot;
++கணக்காளர்	C16SgRoot;
++சலவைக்காரர்	C16SgRoot;
++நிதியமைச்சர்	C16SgRoot;
++மீனவர்	C16SgRoot;
+ LEXICON C16SgRoot
+ !        Root;
+         C16Inflections;

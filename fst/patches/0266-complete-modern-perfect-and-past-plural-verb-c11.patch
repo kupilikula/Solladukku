@@ -1,0 +1,92 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -2834,34 +2834,34 @@
+ +verb+fin+sim+strong+pres%=க்கின்ற்+euph%=அன்+1sg%=அன்:^க்கின்றனன் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+euph%=அன்+3sgm%=அன்:^க்கின்றனன் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+euph%=அன்+3sgf%=அள்:^க்கின்றனள் #;
+-+verb+fin+complex+perfect+past%=த்+3sgn%=அது:^த்துள்ளது #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+acc%=ஐ:^த்துள்ளதை #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+acc%=ஐ+add%=உம்:^த்துள்ளதையும் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+inst%=ஆல்:^த்துள்ளதால் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^த்துள்ளதாலும் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+dat%=க்கு:^த்துள்ளதற்கு #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+dat%=க்கு+add%=உம்:^த்துள்ளதற்கும் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+loc%=இல்:^த்துள்ளதில் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+loc%=இல்+add%=உம்:^த்துள்ளதிலும் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^த்துள்ளதிலேயே #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+abl%=இலிருந்து:^த்துள்ளதிலிருந்து #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+abl%=இலிருந்து+add%=உம்:^த்துள்ளதிலிருந்தும் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+soc%=உடன்:^த்துள்ளதுடன் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+soc%=உடன்+add%=உம்:^த்துள்ளதுடனும் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+gen%=இன்:^த்துள்ளதன் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^த்துள்ளதைப் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^த்துள்ளதைச் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^த்துள்ளதைத் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^த்துள்ளதைக் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^த்துள்ளதற்குப் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^த்துள்ளதற்குச் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^த்துள்ளதற்குத் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^த்துள்ளதற்குக் #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+trans%=ஆக:^த்துள்ளதாக #;
+-+verb+nonfin+complex+perfect+past%=த்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்துள்ளதாகவும் #;
+-+verb+fin+complex+perfect+past%=த்+3ple%=னர்:^த்துள்ளனர் #;
+-+verb+fin+complex+perfect+past%=த்+3sghe%=ஆர்:^த்துள்ளார் #;
+-+verb+fin+complex+perfect+past%=த்+3ple%=ஆர்கள்:^த்துள்ளார்கள் #;
+++verb+fin+complex+perfect+pres%=∅+3sgn%=அது:^த்துள்ளது #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ:^த்துள்ளதை #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+add%=உம்:^த்துள்ளதையும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+inst%=ஆல்:^த்துள்ளதால் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+inst%=ஆல்+add%=உம்:^த்துள்ளதாலும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு:^த்துள்ளதற்கு #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+add%=உம்:^த்துள்ளதற்கும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்:^த்துள்ளதில் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்+add%=உம்:^த்துள்ளதிலும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+loc%=இல்+foc%=ஏயே:^த்துள்ளதிலேயே #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+abl%=இலிருந்து:^த்துள்ளதிலிருந்து #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+abl%=இலிருந்து+add%=உம்:^த்துள்ளதிலிருந்தும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+soc%=உடன்:^த்துள்ளதுடன் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+soc%=உடன்+add%=உம்:^த்துள்ளதுடனும் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+gen%=இன்:^த்துள்ளதன் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhip%=ப்:^த்துள்ளதைப் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhic%=ச்:^த்துள்ளதைச் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhit%=த்:^த்துள்ளதைத் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+acc%=ஐ+sandhik%=க்:^த்துள்ளதைக் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhip%=ப்:^த்துள்ளதற்குப் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhic%=ச்:^த்துள்ளதற்குச் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhit%=த்:^த்துள்ளதற்குத் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+dat%=க்கு+sandhik%=க்:^த்துள்ளதற்குக் #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக:^த்துள்ளதாக #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது+trans%=ஆக+add%=உம்:^த்துள்ளதாகவும் #;
+++verb+fin+complex+perfect+pres%=∅+3ple%=னர்:^த்துள்ளனர் #;
+++verb+fin+complex+perfect+pres%=∅+3sghe%=ஆர்:^த்துள்ளார் #;
+++verb+fin+complex+perfect+pres%=∅+3ple%=ஆர்கள்:^த்துள்ளார்கள் #;
+ +verb+nonfin+sim+verbalnoun%=அது:^ப்பது #;
+ +verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ:^ப்பதை #;
+ +verb+nonfin+sim+verbalnoun%=அது+acc%=ஐ+add%=உம்:^ப்பதையும் #;
+@@ -3065,7 +3065,7 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்:^க்காவிட்டால் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^த்த #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்:^த்தோர் #;
+-+verb+nonfin+complex+perfect+past%=த்+adjpart%=அ:^த்துள்ள #;
+++verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ:^த்துள்ள #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ:^த்திருந்த #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+@@ -3076,6 +3076,17 @@
+ +verb+fin+sim+strong+pres%=க்கிற்+3sge%=அர்:^க்கிறர் #;
+ +verb+fin+sim+strong+pres%=க்கின்ற்+3sge%=அர்:^க்கின்றர் #;
+ 
++
++! Complete modern present-perfect and short past human-plural paradigms.
+++verb+fin+complex+perfect+pres%=∅+1sg%=ஏன்:^த்துள்ளேன் #;
+++verb+fin+complex+perfect+pres%=∅+1pl%=ஓம்:^த்துள்ளோம் #;
+++verb+fin+complex+perfect+pres%=∅+2sg%=ஆய்:^த்துள்ளாய் #;
+++verb+fin+complex+perfect+pres%=∅+2sgh%=ஈர்:^த்துள்ளீர் #;
+++verb+fin+complex+perfect+pres%=∅+2pl%=ஈர்கள்:^த்துள்ளீர்கள் #;
+++verb+fin+complex+perfect+pres%=∅+3sgm%=ஆன்:^த்துள்ளான் #;
+++verb+fin+complex+perfect+pres%=∅+3sgf%=ஆள்:^த்துள்ளாள் #;
+++verb+fin+complex+perfect+pres%=∅+3pln%=அன:^த்துள்ளன #;
+++verb+nonfin+complex+perfect+pres%=∅+verbalnoun%=அது:^த்துள்ளது #;
+ LEXICON ClassTheer11
+ 
+ வைதுத்தீர்	Vtheerinf;

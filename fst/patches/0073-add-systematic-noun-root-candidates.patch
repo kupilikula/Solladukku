@@ -1,0 +1,63 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -24735,6 +24735,14 @@
+ மறியல்	C4SgRoot;
+ நேர்காணல்	C4SgRoot;
+ பாலியல்	C4SgRoot;
++
++! Systematic noun-root tranche from lemma-dictionary FST audit.
++சீழ்	C4SgRoot;
++பனிக்கூழ்	C4SgRoot;
++பாழ்	C4SgRoot;
++பெரும்பாழ்	C4SgRoot;
++மிதழ்	C4SgRoot;
++முள்மகிழ்	C4SgRoot;
+ LEXICON C4SgRoot
+ !        Root;
+         C4Inflections;
+@@ -46330,6 +46338,45 @@
+ வேண்டுகோள்	C14SgRoot ; 
+ 
+ 
++
++! Systematic noun-root tranche from lemma-dictionary FST audit.
++அகவன்மகள்	C14SgRoot;
++அக்காள்	C14SgRoot;
++அக்குள்	C14SgRoot;
++ஆரிருள்	C14SgRoot;
++இயற்கைப்பொருள்	C14SgRoot;
++இல்லாள்	C14SgRoot;
++உட்பொருள்	C14SgRoot;
++உதள்	C14SgRoot;
++உறுகோள்	C14SgRoot;
++எள்	C14SgRoot;
++ஏவலாள்	C14SgRoot;
++ஓய்வுநாள்	C14SgRoot;
++கடவுள்	C14SgRoot;
++கதிர்க்கடவுள்	C14SgRoot;
++கருதுகோள்	C14SgRoot;
++கஸ்தூரிமஞ்சள்	C14SgRoot;
++காலாள்	C14SgRoot;
++குறைநாள்	C14SgRoot;
++கொடுவாள்	C14SgRoot;
++செய்தித்தாள்	C14SgRoot;
++செய்யுள்	C14SgRoot;
++பணிகோள்	C14SgRoot;
++பரம்பொருள்	C14SgRoot;
++பருப்பொருள்	C14SgRoot;
++பின்னவள்	C14SgRoot;
++பிறன்பொருளாள்	C14SgRoot;
++பையுள்	C14SgRoot;
++போதைப்பொருள்	C14SgRoot;
++மருமகள்	C14SgRoot;
++மீக்கோள்	C14SgRoot;
++மென்பொருள்	C14SgRoot;
++வன்பொருள்	C14SgRoot;
++வருபொருள்	C14SgRoot;
++வாணாள்	C14SgRoot;
++விளைபொருள்	C14SgRoot;
++வெப்புள்	C14SgRoot;
++வேலையாள்	C14SgRoot;
+ LEXICON C14SgRoot
+ !        Root;
+         C14Inflections;

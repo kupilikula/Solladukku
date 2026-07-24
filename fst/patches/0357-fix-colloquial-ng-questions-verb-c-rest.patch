@@ -1,0 +1,612 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -410,7 +410,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^தாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^தர் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^தார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^தாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்:^தார் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^தார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^தது VerbQuestion;
+@@ -629,7 +629,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்:^வித்தார் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+@@ -1332,7 +1332,7 @@
+ +verb+fin+sim+strong+past%=ட்+3sgf%=ஆள்:^ண்டாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sge%=அர்:^ண்டர் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்:^ண்டார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ண்டாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ண்டாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்:^ண்டார் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்கள்:^ண்டார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது:^ண்டது VerbQuestion;
+@@ -1513,7 +1513,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்:^வித்தார் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+@@ -8988,7 +8988,7 @@
+ +verb+fin+sim+strong+past%=இன்+3sgf%=ஆள்:^ினாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=இன்+3ple%=னர்:^ினர் VerbQuestion;
+ +verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்:^ினார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்:^ினார் VerbQuestion;
+ +verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்கள்:^ினார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=இன்+3sgn%=அது:^ினது VerbQuestion;
+@@ -9083,7 +9083,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்:^கிறீர் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்+colloq:%<C5COL%>^றீர் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்:^கிறீர்கள் VerbQuestion;
+-+verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்+colloq:%<C5COL%>^றீங்க VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்+colloq:%<C5COL%>^றீங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்:^கிறான் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்+colloq:%<C5COL%>^றான் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் VerbQuestion;
+@@ -9091,11 +9091,11 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்+colloq:%<C5COL%>^றர் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் VerbQuestion;
+-+verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்+colloq:%<C5COL%>^றாங்க VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்+colloq:%<C5COL%>^றாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்+colloq:%<C5COL%>^றார் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் VerbQuestion;
+-+verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்+colloq:%<C5COL%>^றாங்க VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்+colloq:%<C5COL%>^றாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^து VerbQuestion;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+comp%=ஆவது:^கிறதாவது #;
+@@ -9260,7 +9260,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -9948,7 +9948,7 @@
+ +verb+fin+sim+strong+past%=இன்+3sgf%=ஆள்:^னாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=இன்+3ple%=னர்:^னர் VerbQuestion;
+ +verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்:^னார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^னாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^னாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்கள்:^னார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=இன்+3sgn%=அது:^னது VerbQuestion;
+ +verb+fin+sim+strong+past%=இன்+3sgn%=அது+add%=உம்:^னதும் VerbQuestion;
+@@ -10011,7 +10011,7 @@
+ +verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்:^கிறீர் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+2sgh%=ஈர்+colloq:^றீர் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்:^கிறீர்கள் VerbQuestion;
+-+verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்+colloq:^றீங்க VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+2pl%=ஈர்கள்+colloq:^றீங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்:^கிறான் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sgm%=ஆன்+colloq:^றான் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் VerbQuestion;
+@@ -10019,11 +10019,11 @@
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்:^கிறர் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sge%=அர்+colloq:^றர் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் VerbQuestion;
+-+verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்+colloq:^றாங்க VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3ple%=ஆர்கள்+colloq:^றாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்:^கிறார் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்+colloq:^றார் VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் VerbQuestion;
+-+verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்+colloq:^றாங்க VerbQuestion;
+++verb+fin+sim+strong+pres%=கிற்+3sghe%=ஆர்கள்+colloq:^றாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது:^கிறது VerbQuestion;
+ +verb+fin+sim+strong+pres%=கிற்+3sgn%=அது+colloq:^குது VerbQuestion;
+ +verb+nonfin+sim+strong+pres%=கிற்+verbalnoun%=அது+comp%=ஆவது:^கிறதாவது #;
+@@ -13776,7 +13776,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgm%=ஆன்:^ந்தான் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது+add%=உம்:^ந்ததும் VerbQuestion;
+@@ -14096,7 +14096,7 @@
+ +verb+fin+sim+strong+past%=ற்+3sge%=அர்:^றர் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3ple%=னர்:^றனர் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்:^றார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^றாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^றாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்:^றார் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்கள்:^றார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது:^றது VerbQuestion;
+@@ -15736,7 +15736,7 @@
+ +verb+fin+sim+strong+past%=ட்+3sgf%=ஆள்:^ட்டாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sge%=அர்:^ட்டர் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது:^ட்டது VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது+add%=உம்:^ட்டதும் VerbQuestion;
+@@ -15914,7 +15914,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -16833,7 +16833,7 @@
+ +verb+fin+sim+strong+past%=ற்+3sge%=அர்:^ற்றர் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்:^ற்றார் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்:^ற்றார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^ற்றாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^ற்றாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்கள்:^ற்றார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது:^ற்றது VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது+add%=உம்:^ற்றதும் VerbQuestion;
+@@ -16890,7 +16890,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்:^வித்தார் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -17265,7 +17265,7 @@
+ +verb+fin+sim+strong+past%=ட்+3sgf%=ஆள்:^டாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sge%=அர்:^டர் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்:^டார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^டாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^டாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்கள்:^டார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது:^டது VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது+add%=உம்:^டதும் VerbQuestion;
+@@ -17442,7 +17442,7 @@
+ +verb+fin+sim+caus%=பி+past%=த்+3sgf%=ஆள்:^பித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sge%=அர்:^பித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்:^பித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்+colloq:^பித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்+colloq:^பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=பி+past%=த்+3sghe%=ஆர்கள்:^பித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sgn%=அது:^பித்தது VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sgn%=அது+add%=உம்:^பித்ததும் VerbQuestion;
+@@ -17991,7 +17991,7 @@
+ +verb+fin+sim+strong+past%=ற்+3sgf%=ஆள்:^றாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sge%=அர்:^றர் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்:^றார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^றாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^றாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்:^றார் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்கள்:^றார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது:^றது VerbQuestion;
+@@ -18173,7 +18173,7 @@
+ +verb+fin+sim+caus%=பி+past%=த்+3sge%=அர்:^பித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்:^பித்தார் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்:^பித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்+colloq:^பித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்+colloq:^பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=பி+past%=த்+3sghe%=ஆர்கள்:^பித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sgn%=அது:^பித்தது VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sgn%=அது+add%=உம்:^பித்ததும் VerbQuestion;
+@@ -18728,7 +18728,7 @@
+ +verb+fin+sim+strong+past%=ட்+3sgf%=ஆள்:^ட்டாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sge%=அர்:^ட்டர் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது:^ட்டது VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது+add%=உம்:^ட்டதும் VerbQuestion;
+@@ -18905,7 +18905,7 @@
+ +verb+fin+sim+caus%=பி+past%=த்+3sgf%=ஆள்:^பித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sge%=அர்:^பித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்:^பித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்+colloq:^பித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்+colloq:^பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=பி+past%=த்+3sghe%=ஆர்கள்:^பித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sgn%=அது:^பித்தது VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sgn%=அது+add%=உம்:^பித்ததும் VerbQuestion;
+@@ -19458,7 +19458,7 @@
+ +verb+fin+sim+strong+past%=ற்+3sgf%=ஆள்:^றாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sge%=அர்:^றர் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்:^றார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^றாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^றாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்:^றார் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்கள்:^றார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது:^றது VerbQuestion;
+@@ -19639,7 +19639,7 @@
+ +verb+fin+sim+caus%=பி+past%=த்+3sgf%=ஆள்:^பித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sge%=அர்:^பித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்:^பித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்+colloq:^பித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்+colloq:^பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=பி+past%=த்+3sghe%=ஆர்கள்:^பித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sgn%=அது:^பித்தது VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sgn%=அது+add%=உம்:^பித்ததும் VerbQuestion;
+@@ -20207,9 +20207,9 @@
+ +verb+fin+sim+strong+past%=இன்+3ple%=னர்:^னர் VerbQuestion;
+ +verb+fin+sim+strong+past%=இன்+3ple%=னர்:^கினர் VerbQuestion;
+ +verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்:^னார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^னாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^னாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்:^கினார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^கினாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^கினாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்:^னார் VerbQuestion;
+ +verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்:^கினார் VerbQuestion;
+ +verb+fin+sim+strong+past%=இன்+3sghe%=ஆர்கள்:^னார்கள் VerbQuestion;
+@@ -20585,7 +20585,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=னர்:^க்கினனர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்:^க்கினார் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^க்கினார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^க்கினாங்க VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^க்கினாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^க்கினார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^க்கினது VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^க்கினதும் VerbQuestion;
+@@ -21559,7 +21559,7 @@
+ +verb+fin+sim+strong+past%=ட்+3sge%=அர்:^டர் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3ple%=ஆர்:^டார் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்:^டார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^டாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^டாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=ட்+3sghe%=ஆர்கள்:^டார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது:^டது VerbQuestion;
+ +verb+fin+sim+strong+past%=ட்+3sgn%=அது+add%=உம்:^டதும் VerbQuestion;
+@@ -21685,7 +21685,7 @@
+ +verb+fin+sim+caus%=பி+past%=த்+3sge%=அர்:^பித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்:^பித்தார் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்:^பித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்+colloq:^பித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=பி+past%=த்+3ple%=ஆர்கள்+colloq:^பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=பி+past%=த்+3sghe%=ஆர்கள்:^பித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sgn%=அது:^பித்தது VerbQuestion;
+ +verb+fin+sim+caus%=பி+past%=த்+3sgn%=அது+add%=உம்:^பித்ததும் VerbQuestion;
+@@ -22216,7 +22216,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^தாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^தர் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^தார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^தாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^தார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^தது VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது+add%=உம்:^ததும் VerbQuestion;
+@@ -22339,7 +22339,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -22801,7 +22801,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தர் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது+add%=உம்:^ந்ததும் VerbQuestion;
+@@ -22862,7 +22862,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -23433,7 +23433,7 @@
+ +verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் VerbQuestion;
+ +verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ும் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது+add%=உம்:^ந்ததும் VerbQuestion;
+@@ -23556,7 +23556,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -23985,7 +23985,7 @@
+ +verb+fin+sim+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sge%=அர்:^ந்தர் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது:^ந்தது VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+3sgn%=அது+add%=உம்:^ந்ததும் VerbQuestion;
+@@ -24108,7 +24108,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -27608,7 +27608,7 @@
+ +verb+fin+complex+aspect+strong+past%=ட்+3sge%=அர்:^ட்டர் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=ட்+3ple%=ஆர்:^ட்டார் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க VerbQuestion;
+++verb+fin+complex+aspect+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=ட்+3sgn%=அது:^ட்டது VerbQuestion;
+ +verb+fin+complex+aspect+strong+past%=ட்+3sgn%=அது+add%=உம்:^ட்டதும் VerbQuestion;
+@@ -27790,7 +27790,7 @@
+ 
+ +verb+fin+complex+aspect+caus%=வி+past%=த்+3ple%=ஆர்:^வித்தார் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+complex+aspect+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+complex+aspect+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+aspect+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+aspect+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+complex+aspect+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -34008,7 +34008,7 @@
+ +verb+fin+complex+attitude+strong+past%=த்+3ple%=னர்:^னர் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்:^னார் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்கள்:^னார்கள் VerbQuestion;
+-+verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்கள்+colloq:^னாங்க VerbQuestion;
+++verb+fin+complex+attitude+strong+past%=த்+3ple%=ஆர்கள்+colloq:^னாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+strong+past%=த்+3sghe%=ஆர்கள்:^னார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது:^னது VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=த்+3sgn%=அது+add%=உம்:^னதும் VerbQuestion;
+@@ -34061,7 +34061,7 @@
+ +verb+fin+complex+attitude+strong+pres%=கிற்+2sgh%=ஈர்:^கிறீர் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+2sgh%=ஈர்+colloq:^றீர் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+2pl%=ஈர்கள்:^கிறீர்கள் VerbQuestion;
+-+verb+fin+complex+attitude+strong+pres%=கிற்+2pl%=ஈர்கள்+colloq:^றீங்க VerbQuestion;
+++verb+fin+complex+attitude+strong+pres%=கிற்+2pl%=ஈர்கள்+colloq:^றீங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgm%=ஆன்:^கிறான் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgm%=ஆன்+colloq:^றான் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgf%=ஆள்:^கிறாள் VerbQuestion;
+@@ -34071,9 +34071,9 @@
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3ple%=ஆர்:^கிறார் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3ple%=ஆர்+colloq:^றார் VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3ple%=ஆர்கள்:^கிறார்கள் VerbQuestion;
+-+verb+fin+complex+attitude+strong+pres%=கிற்+3ple%=ஆர்கள்+colloq:^றாங்க VerbQuestion;
+++verb+fin+complex+attitude+strong+pres%=கிற்+3ple%=ஆர்கள்+colloq:^றாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sghe%=ஆர்கள்:^கிறார்கள் VerbQuestion;
+-+verb+fin+complex+attitude+strong+pres%=கிற்+3sghe%=ஆர்கள்+colloq:^றாங்க VerbQuestion;
+++verb+fin+complex+attitude+strong+pres%=கிற்+3sghe%=ஆர்கள்+colloq:^றாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgn%=அது:^கிறது VerbQuestion;
+ +verb+fin+complex+attitude+strong+pres%=கிற்+3sgn%=அது+colloq:^குது VerbQuestion;
+ +verb+nonfin+complex+attitude+strong+pres%=கிற்+verbalnoun%=அது+comp%=ஆவது:^கிறதாவது #;
+@@ -34199,7 +34199,7 @@
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=னர்:^ப்பித்தனர் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=ஆர்:^ப்பித்தார் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+-+verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestion;
+++verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3ple%=ஆர்கள்+colloq:^ப்பித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sghe%=ஆர்கள்:^ப்பித்தார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sgn%=அது:^ப்பித்தது VerbQuestion;
+ +verb+fin+complex+attitude+caus%=ப்பி+past%=த்+3sgn%=அது+add%=உம்:^ப்பித்ததும் VerbQuestion;
+@@ -37709,7 +37709,7 @@
+ +verb+fin+complex+attitude+strong+past%=ட்+3sgf%=ஆள்:^ட்டாள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=ட்+3sge%=அர்:^ட்டர் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் VerbQuestion;
+-+verb+fin+complex+attitude+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க VerbQuestion;
+++verb+fin+complex+attitude+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=ட்+3sgn%=அது:^ட்டது VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=ட்+3sgn%=அது+add%=உம்:^ட்டதும் VerbQuestion;
+@@ -37885,7 +37885,7 @@
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+complex+attitude+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+complex+attitude+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -41329,7 +41329,7 @@
+ +verb+fin+complex+attitude+strong+past%=இன்+3sgf%=ஆள்:^ினாள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=இன்+3ple%=னர்:^ினர் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=இன்+3ple%=ஆர்கள்:^ினார்கள் VerbQuestion;
+-+verb+fin+complex+attitude+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க VerbQuestion;
+++verb+fin+complex+attitude+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+strong+past%=இன்+3sghe%=ஆர்கள்:^ினார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=இன்+3sgn%=அது:^ினது VerbQuestion;
+ +verb+fin+complex+attitude+strong+past%=இன்+3sgn%=அது+add%=உம்:^ினதும் VerbQuestion;
+@@ -41508,7 +41508,7 @@
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3ple%=ஆர்:^வித்தார் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+complex+attitude+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+complex+attitude+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -47571,7 +47571,7 @@
+ +verb+fin+complex+caus+strong+past%=இன்+3sgf%=ஆள்:^ினாள் VerbQuestion;
+ +verb+fin+complex+caus+strong+past%=இன்+3ple%=னர்:^ினர் VerbQuestion;
+ +verb+fin+complex+caus+strong+past%=இன்+3ple%=ஆர்கள்:^ினார்கள் VerbQuestion;
+-+verb+fin+complex+caus+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க VerbQuestion;
+++verb+fin+complex+caus+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+caus+strong+past%=இன்+3sghe%=ஆர்கள்:^ினார்கள் VerbQuestion;
+ +verb+fin+complex+caus+strong+past%=இன்+3sgn%=அது:^ினது VerbQuestion;
+ +verb+fin+complex+caus+strong+past%=இன்+3sgn%=அது+add%=உம்:^ினதும் VerbQuestion;
+@@ -47747,7 +47747,7 @@
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -53735,7 +53735,7 @@
+ +verb+fin+complex+caus+strong+past%=த்+3sgf%=ஆள்:^தாள் VerbQuestion;
+ +verb+fin+complex+caus+strong+past%=த்+3sge%=அர்:^தர் VerbQuestion;
+ +verb+fin+complex+caus+strong+past%=த்+3ple%=ஆர்கள்:^தார்கள் VerbQuestion;
+-+verb+fin+complex+caus+strong+past%=த்+3ple%=ஆர்கள்+colloq:^தாங்க VerbQuestion;
+++verb+fin+complex+caus+strong+past%=த்+3ple%=ஆர்கள்+colloq:^தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+caus+strong+past%=த்+3sghe%=ஆர்கள்:^தார்கள் VerbQuestion;
+ +verb+fin+complex+caus+strong+past%=த்+3sgn%=அது:^தது VerbQuestion;
+ +verb+fin+complex+caus+strong+past%=த்+3sgn%=அது+add%=உம்:^ததும் VerbQuestion;
+@@ -53911,7 +53911,7 @@
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -59883,7 +59883,7 @@
+ +verb+fin+complex+caus+strong+past%=த்+3sgf%=ஆள்:^தாள் VerbQuestion;
+ +verb+fin+complex+caus+strong+past%=த்+3sge%=அர்:^தர் VerbQuestion;
+ +verb+fin+complex+caus+strong+past%=த்+3ple%=ஆர்கள்:^தார்கள் VerbQuestion;
+-+verb+fin+complex+caus+strong+past%=த்+3ple%=ஆர்கள்+colloq:^தாங்க VerbQuestion;
+++verb+fin+complex+caus+strong+past%=த்+3ple%=ஆர்கள்+colloq:^தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+caus+strong+past%=த்+3sghe%=ஆர்கள்:^தார்கள் VerbQuestion;
+ +verb+fin+complex+caus+strong+past%=த்+3sgn%=அது:^தது VerbQuestion;
+ +verb+fin+complex+caus+strong+past%=த்+3sgn%=அது+add%=உம்:^ததும் VerbQuestion;
+@@ -60059,7 +60059,7 @@
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+complex+caus+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+complex+caus+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -66053,7 +66053,7 @@
+ +verb+fin+complex+mood+strong+past%=இன்+3sgf%=ஆள்:^ினாள் VerbQuestion;
+ +verb+fin+complex+mood+strong+past%=இன்+3ple%=னர்:^ினர் VerbQuestion;
+ +verb+fin+complex+mood+strong+past%=இன்+3ple%=ஆர்கள்:^ினார்கள் VerbQuestion;
+-+verb+fin+complex+mood+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க VerbQuestion;
+++verb+fin+complex+mood+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+mood+strong+past%=இன்+3sghe%=ஆர்கள்:^ினார்கள் VerbQuestion;
+ +verb+fin+complex+mood+strong+past%=இன்+3sgn%=அது:^ினது VerbQuestion;
+ +verb+fin+complex+mood+strong+past%=இன்+3sgn%=அது+add%=உம்:^ினதும் VerbQuestion;
+@@ -66229,7 +66229,7 @@
+ +verb+fin+complex+mood+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் VerbQuestion;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+complex+mood+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+complex+mood+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -72201,7 +72201,7 @@
+ +verb+fin+complex+mood+strong+past%=இன்+3sgf%=ஆள்:^ினாள் VerbQuestion;
+ +verb+fin+complex+mood+strong+past%=இன்+3ple%=னர்:^ினர் VerbQuestion;
+ +verb+fin+complex+mood+strong+past%=இன்+3ple%=ஆர்கள்:^ினார்கள் VerbQuestion;
+-+verb+fin+complex+mood+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க VerbQuestion;
+++verb+fin+complex+mood+strong+past%=இன்+3ple%=ஆர்கள்+colloq:^ினாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+mood+strong+past%=இன்+3sghe%=ஆர்கள்:^ினார்கள் VerbQuestion;
+ +verb+fin+complex+mood+strong+past%=இன்+3sgn%=அது:^ினது VerbQuestion;
+ +verb+fin+complex+mood+strong+past%=இன்+3sgn%=அது+add%=உம்:^ினதும் VerbQuestion;
+@@ -72377,7 +72377,7 @@
+ +verb+fin+complex+mood+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+3ple%=னர்:^வித்தனர் VerbQuestion;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+complex+mood+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+complex+mood+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+complex+mood+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -75781,7 +75781,7 @@
+ +verb+fin+complex+nonattitude+strong+past%=ட்+3sgf%=ஆள்:^ட்டாள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=ட்+3sge%=அர்:^ட்டர் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் VerbQuestion;
+-+verb+fin+complex+nonattitude+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க VerbQuestion;
+++verb+fin+complex+nonattitude+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+nonattitude+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=ட்+3sgn%=அது:^ட்டது VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=ட்+3sgn%=அது+add%=உம்:^ட்டதும் VerbQuestion;
+@@ -75957,7 +75957,7 @@
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+complex+nonattitude+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+complex+nonattitude+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -79402,7 +79402,7 @@
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sgf%=ஆள்:^ந்தாள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sge%=அர்:^ந்தர் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3ple%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+-+verb+fin+complex+nonattitude+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestion;
+++verb+fin+complex+nonattitude+strong+past%=த்+3ple%=ஆர்கள்+colloq:^ந்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sghe%=ஆர்கள்:^ந்தார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sgn%=அது:^ந்தது VerbQuestion;
+ +verb+fin+complex+nonattitude+strong+past%=த்+3sgn%=அது+add%=உம்:^ந்ததும் VerbQuestion;
+@@ -79525,7 +79525,7 @@
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+complex+nonattitude+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+complex+nonattitude+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+complex+nonattitude+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -83023,7 +83023,7 @@
+ +verb+fin+complex+passive+strong+past%=ட்+3sge%=அர்:^ட்டர் VerbQuestion;
+ +verb+fin+complex+passive+strong+past%=ட்+3ple%=னர்:^ட்டனர் VerbQuestion;
+ +verb+fin+complex+passive+strong+past%=ட்+3ple%=ஆர்கள்:^ட்டார்கள் VerbQuestion;
+-+verb+fin+complex+passive+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க VerbQuestion;
+++verb+fin+complex+passive+strong+past%=ட்+3ple%=ஆர்கள்+colloq:^ட்டாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+passive+strong+past%=ட்+3sghe%=ஆர்கள்:^ட்டார்கள் VerbQuestion;
+ +verb+fin+complex+passive+strong+past%=ட்+3sgn%=அது:^ட்டது VerbQuestion;
+ +verb+fin+complex+passive+strong+past%=ட்+3sgn%=அது+add%=உம்:^ட்டதும் VerbQuestion;
+@@ -83245,7 +83245,7 @@
+ +verb+fin+complex+passive+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+complex+passive+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+complex+passive+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -86483,7 +86483,7 @@
+ +verb+fin+complex+passive+strong+past%=ற்+3sge%=அர்:^ற்றர் VerbQuestion;
+ +verb+fin+complex+passive+strong+past%=ற்+3ple%=ஆர்:^ற்றார் VerbQuestion;
+ +verb+fin+complex+passive+strong+past%=ற்+3ple%=ஆர்கள்:^ற்றார்கள் VerbQuestion;
+-+verb+fin+complex+passive+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^ற்றாங்க VerbQuestion;
+++verb+fin+complex+passive+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^ற்றாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+passive+strong+past%=ற்+3sghe%=ஆர்கள்:^ற்றார்கள் VerbQuestion;
+ +verb+fin+complex+passive+strong+past%=ற்+3sgn%=அது:^ற்றது VerbQuestion;
+ +verb+fin+complex+passive+strong+past%=ற்+3sgn%=அது+add%=உம்:^ற்றதும் VerbQuestion;
+@@ -86660,7 +86660,7 @@
+ +verb+fin+complex+passive+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+3ple%=ஆர்:^வித்தார் VerbQuestion;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+complex+passive+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+complex+passive+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+complex+passive+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -87089,3 +87089,8 @@
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+colloq:^ஞ்ச #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+colloq:^ஞ்ச HumanGenderedPartNoun;
+ 
++! Spoken predicates ending in -ng insert -l- before the polar question -aa.
++LEXICON VerbQuestionColloquialNg
++: #;
+++ques%=ஆ:~ளா #;
++

@@ -1,0 +1,208 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1,6 +1,6 @@
+ !!!Header.lexc!!!
+ 
+-Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +trans +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add +all +verb +nonfin +sim +neg +verbalnoun +cop +adjpart +compoundmodifier +human +fut +3sgn +actionnominal +psp_padi +psp_idaiye +colloq
++Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +trans +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +add +all +verb +nonfin +sim +neg +verbalnoun +cop +adjpart +compoundmodifier +human +fut +3sgn +actionnominal +psp_padi +psp_idaiye +colloq %<C11VOC%>
+ 
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+@@ -3318,6 +3318,7 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+nom:^க்கள் #;
+++noun+pl+voc%=ஏ:^க்களே #;
+ +noun+pl+psp_idaiye:^க்களிடையே #;
+ +noun+pl+trans%=ஆக:^க்களாக #;
+ +noun+pl+trans%=ஆக+colloq:^க்களா #;
+@@ -3805,7 +3806,7 @@
+ 
+ !!!C1.lexc!!!
+ 
+-Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +fut +3sgn +verbalnoun +actionnominal +psp_padi +psp_idaiye
++Multichar_Symbols  +noun +acc +abl +gen +loc +pl +dat +inst +pro +pssd +1pl +excl +sandhip +sandhik +sandhi-r +sandhit +fut +3sgn +verbalnoun +actionnominal +psp_padi +psp_idaiye %<C11VOC%>
+ 
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+@@ -43962,6 +43963,7 @@
+ 
+ LEXICON NapiHonorificPlural
+ +noun+pl+nom:^மார்கள் #;
+++noun+pl+voc%=ஏ:^மார்களே #;
+ +noun+pl+psp_idaiye:^மார்களிடையே #;
+ +noun+pl+trans%=ஆக:^மார்களாக #;
+ +noun+pl+trans%=ஆக+colloq:^மார்களா #;
+@@ -43996,6 +43998,7 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+nom:^கள் #;
+++noun+pl+voc%=ஏ:^களே #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+trans%=ஆக+colloq:^களா #;
+@@ -44600,6 +44603,7 @@
+ +noun+nom+sandhik:^க் #;
+ 
+ +noun+pl+nom:^க்கள் #;
+++noun+pl+voc%=ஏ:^க்களே #;
+ +noun+pl+psp_idaiye:^க்களிடையே #;
+ +noun+pl+trans%=ஆக:^க்களாக #;
+ +noun+pl+trans%=ஆக+colloq:^க்களா #;
+@@ -54479,6 +54483,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+voc%=ஏ:^களே #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+trans%=ஆக+colloq:^களா #;
+@@ -55623,6 +55628,7 @@
+ +noun+nom+sandhit:^ட்டுத் #;
+ +noun+nom+sandhik:^ட்டுக் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+voc%=ஏ:^களே #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+trans%=ஆக+colloq:^களா #;
+@@ -56127,6 +56133,7 @@
+ +noun+nom+sandhit:^ட்டுத் #;
+ +noun+nom+sandhik:^ட்டுக் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+voc%=ஏ:^களே #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+trans%=ஆக+colloq:^களா #;
+@@ -69569,6 +69576,7 @@
+ குருடு	C7SgRoot;
+ LEXICON ModernKkalPlural
+ +noun+pl+nom:^க்கள் #;
+++noun+pl+voc%=ஏ:^க்களே #;
+ +noun+pl+psp_idaiye:^க்களிடையே #;
+ +noun+pl+nom+add%=உம்:^க்களும் #;
+ +noun+pl+acc:^க்களை #;
+@@ -69608,6 +69616,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+voc%=ஏ:^களே #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+trans%=ஆக+colloq:^களா #;
+@@ -70211,6 +70220,7 @@
+ +noun+nom+sandhit:^றுத் #;
+ +noun+nom+sandhik:^றுக் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+voc%=ஏ:^களே #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+trans%=ஆக+colloq:^களா #;
+@@ -71465,6 +71475,7 @@
+ +noun+trans+sandhik%=க்:^ணாகக் #;
+ +noun+trans+cop+fut+3sgn:^ணாகும் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+voc%=ஏ:^களே #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+trans%=ஆக+colloq:^களா #;
+@@ -72032,6 +72043,7 @@
+ +noun+nom+sandhit:^ற்த் #;
+ +noun+nom+sandhik:^ற்க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+voc%=ஏ:^களே #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+trans%=ஆக+colloq:^களா #;
+@@ -93461,6 +93473,7 @@
+ +noun+gen%=உடைய:^னுடைய #;
+ +noun+nom: #;
+ +noun+voc%=ஏ:^ே #;
+++noun+voc%=ஏ+colloq:^%<C11VOC%>ா #;
+ +noun+nom+add:^ும் #;
+ +noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ாக #;
+@@ -93477,6 +93490,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^ர்கள் #;
+++noun+pl+voc%=ஏ:^ர்களே #;
+ +noun+pl+psp_idaiye:^ர்களிடையே #;
+ +noun+pl+trans%=ஆக:^ர்களாக #;
+ +noun+pl+trans%=ஆக+colloq:^ர்களா #;
+@@ -94000,6 +94014,7 @@
+ +noun+nom+sandhit:^ற்த் #;
+ +noun+nom+sandhik:^ற்க் #;
+ +noun+pl+nom:^ற்கள் #;
+++noun+pl+voc%=ஏ:^ற்களே #;
+ +noun+pl+psp_idaiye:^ற்களிடையே #;
+ +noun+pl+trans%=ஆக:^ற்களாக #;
+ +noun+pl+trans%=ஆக+colloq:^ற்களா #;
+@@ -94515,6 +94530,7 @@
+ +noun+nom+sandhit:^ட்த் #;
+ +noun+nom+sandhik:^ட்க் #;
+ +noun+pl+nom:^ட்கள் #;
+++noun+pl+voc%=ஏ:^ட்களே #;
+ +noun+pl+psp_idaiye:^ட்களிடையே #;
+ +noun+pl+trans%=ஆக:^ட்களாக #;
+ +noun+pl+trans%=ஆக+colloq:^ட்களா #;
+@@ -97670,6 +97686,7 @@
+ 
+ LEXICON C14AlternatingPlural
+ +noun+pl+nom:^ட்கள் #;
+++noun+pl+voc%=ஏ:^ட்களே #;
+ +noun+pl+psp_idaiye:^ட்களிடையே #;
+ +noun+pl+trans%=ஆக:^ட்களாக #;
+ +noun+pl+trans%=ஆக+colloq:^ட்களா #;
+@@ -97918,6 +97935,7 @@
+ 
+ LEXICON C14RetainedPlural
+ +noun+pl+nom:^கள் #;
+++noun+pl+voc%=ஏ:^களே #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+trans%=ஆக+colloq:^களா #;
+@@ -133110,6 +133128,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^ங்கள் #;
+++noun+pl+voc%=ஏ:^ங்களே #;
+ +noun+pl+psp_idaiye:^ங்களிடையே #;
+ +noun+pl+trans%=ஆக:^ங்களாக #;
+ +noun+pl+trans%=ஆக+colloq:^ங்களா #;
+@@ -137763,6 +137782,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+voc%=ஏ:^களே #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+trans%=ஆக+colloq:^களா #;
+@@ -138380,6 +138400,7 @@
+ +noun+nom+sandhit:^த் #;
+ +noun+nom+sandhik:^க் #;
+ +noun+pl+nom:^கள் #;
+++noun+pl+voc%=ஏ:^களே #;
+ +noun+pl+psp_idaiye:^களிடையே #;
+ +noun+pl+trans%=ஆக:^களாக #;
+ +noun+pl+trans%=ஆக+colloq:^களா #;
+--- tamil-noun.foma
++++ tamil-noun.foma
+@@ -9,6 +9,9 @@
+ read lexc Nouns.lexc
+ 
+ define Lexicon;
++
++define C11ShortVoc {ன்} -> 0 || _ "^" %<C11VOC%>;
++define CleanupC11Voc %<C11VOC%> -> 0;
+ 
+ define R1 {்} -> 0 || LongChar CharSet1 _ "^" [{ி}|{ு}|{ோ}|{து}|{ை}|{ா}|{ெ}|{ே}];
+ define R101 {ய்} -> 0 || LongChar  _ "^" [{ோ}];
+@@ -43,6 +46,8 @@
+ 
+ 
+ define TamilNouns		 	Lexicon           	.o.
++						C11ShortVoc		.o.
++						CleanupC11Voc		.o.
+ 						YFinalDative		.o.
+ 						R1				.o.
+ 						R101				.o.

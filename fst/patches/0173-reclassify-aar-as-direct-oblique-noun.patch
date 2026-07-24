@@ -1,0 +1,11 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -127192,7 +127192,7 @@
+ ஆயமலர்	C16SgRoot ; 
+ ஆய்சுடர்	C16SgRoot ; 
+ ஆய்மலர்	C16SgRoot ; 
+-ஆர்	C16SgRoot ; 
++ஆர்	C4SgRoot ; 
+ ஆர்கதிர்	C16SgRoot ; 
+ ஆர்சுடர்	C16SgRoot ; 
+ ஆர்மலர்	C16SgRoot ; 

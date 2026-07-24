@@ -1,0 +1,87 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -1876,6 +1876,10 @@
+ ஆறுமணிப்பூ	C1SgRoot;
+ குங்குமப்பூ	C1SgRoot;
+ கூனைப்பூ	C1SgRoot;
++
++! Reviewed missing u-final noun homographs from POS mismatch audit
++குரு	C1SgRoot;
++புழு	C1SgRoot;
+ LEXICON C1SgRoot
+ !        Root;
+         C1Inflections;
+@@ -52435,6 +52439,9 @@
+ வேலைப்பாடு	C6SgRoot;
+ வேறுபாடு	C6SgRoot;
+ 
++
++! Reviewed missing u-final noun homographs from POS mismatch audit
++கூடு	C6SgRoot;
+ LEXICON C6TTUSg
+ அகச்சிட்டு	C6TTUSgRoot;
+ அகமொட்டு	C6TTUSgRoot;
+@@ -52697,6 +52704,19 @@
+ தமிழ்நாடு	C6SgRoot;
+ பத்துப்பாட்டு	C6SgRoot;
+ 
++
++! Reviewed missing u-final noun homographs from POS mismatch audit
++அட்டு	C6TTUSgRoot;
++உருட்டு	C6TTUSgRoot;
++ஊட்டு	C6TTUSgRoot;
++கொட்டு	C6TTUSgRoot;
++தட்டு	C6TTUSgRoot;
++துட்டு	C6TTUSgRoot;
++பாராட்டு	C6TTUSgRoot;
++பூட்டு	C6TTUSgRoot;
++மாட்டு	C6TTUSgRoot;
++முட்டு	C6TTUSgRoot;
++மூட்டு	C6TTUSgRoot;
+ LEXICON C6SgRoot
+ !        Root;
+         C6Inflections;
+@@ -66017,6 +66037,43 @@
+ 
+ ! Residual multi-source explicit noun coverage: productive class roots.
+ மூது	C7SgRoot;
++
++! Reviewed missing u-final noun homographs from POS mismatch audit
++அணங்கு	C7SgRoot;
++அரக்கு	C7SgRoot;
++அருகு	C7SgRoot;
++அலகு	C7SgRoot;
++அளவு	C7SgRoot;
++எஃகு	C7SgRoot;
++கந்து	C7SgRoot;
++கனவு	C7SgRoot;
++கன்று	C7SgRoot;
++கருக்கு	C7SgRoot;
++காது	C7SgRoot;
++காற்று	C7SgRoot;
++கிடப்பு	C7SgRoot;
++குழம்பு	C7SgRoot;
++கூறு	C7SgRoot;
++சுற்று	C7SgRoot;
++செருக்கு	C7SgRoot;
++சோம்பு	C7SgRoot;
++தப்பு	C7SgRoot;
++தளம்பு	C7SgRoot;
++தழும்பு	C7SgRoot;
++தவறு	C7SgRoot;
++திக்கு	C7SgRoot;
++துப்பு	C7SgRoot;
++துவக்கு	C7SgRoot;
++தெள்ளு	C7SgRoot;
++நாற்று	C7SgRoot;
++நாவு	C7SgRoot;
++நொறுங்கு	C7SgRoot;
++பஞ்சு	C7SgRoot;
++பிறாண்டு	C7SgRoot;
++மக்கு	C7SgRoot;
++மறுகு	C7SgRoot;
++முறுக்கு	C7SgRoot;
++வழக்கு	C7SgRoot;
+ LEXICON C7SgRoot
+ !        Root;
+         C7Inflections;

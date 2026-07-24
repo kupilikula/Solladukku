@@ -1,0 +1,84 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -2063,6 +2063,8 @@
+ +pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ 
+ LEXICON C1Sg
++! Final frequency-reviewed common nouns.
++ரேடியோ	C1SgRoot;
+ ! Frequent reviewed source-backed common nouns.
+ பாக்டீரியா	C1SgRoot;
+ வளைகுடா	C1SgRoot;
+@@ -4253,6 +4255,16 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++! Final frequency-reviewed common nouns.
++பிரதிஷ்டை	C2SgRoot;
++வெளியுறவுத்துறை	C2SgRoot;
++இடதுசாரி	C2SgRoot;
++சொத்துரிமை	C2SgRoot;
++படுதோல்வி	C2SgRoot;
++வகுப்பறை	C2SgRoot;
++விடாமுயற்சி	C2SgRoot;
++காட்டுத்தீ	C2SgRoot;
++வேப்பிலை	C2SgRoot;
+ ! Frequent reviewed source-backed common nouns.
+ கேலி	C2SgRoot;
+ மேஜை	C2SgRoot;
+@@ -45606,6 +45618,10 @@
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^க்களின்கீழேயிருந்தும் #;
+ LEXICON C4Sg
++! Final frequency-reviewed common nouns.
++கலந்துரையாடல்	C4SgRoot;
++கேட்டல்	C4SgRoot;
++கருத்தியல்	C4SgRoot;
+ ! Frequent reviewed source-backed common nouns.
+ நாளிதழ்	C4SgRoot;
+ அழகியல்	C4SgRoot;
+@@ -57215,6 +57231,12 @@
+ 
+ 
+ LEXICON C7Sg
++! Final frequency-reviewed common nouns.
++கையேடு	C7SgRoot;
++கொள்வனவு	C7SgRoot;
++துப்பாக்கிச்சூடு	C7SgRoot;
++காலக்கெடு	C7SgRoot;
++விறகு	C7SgRoot;
+ ! Frequent reviewed source-backed common nouns.
+ அவதூறு	C7SgRoot;
+ திருநீறு	C7SgRoot;
+@@ -95795,6 +95817,8 @@
+ 
+ 
+ LEXICON C14Sg
++! Final frequency-reviewed common nouns.
++துகள்	C14RetainedRoot;
+ ! Reviewed final native and calendrical nouns.
+ திரள்	C14RetainedRoot;
+ பணத்தாள்	C14RetainedRoot;
+@@ -99251,6 +99275,9 @@
+ +noun+gen+psp_keele_iruntu+add:^ின்கீழேயிருந்தும் #;
+ 
+ LEXICON C15Sg
++! Final frequency-reviewed common nouns.
++சீரம்	C15SgRoot;
++சிவம்	C15SgRoot;
+ ! Frequent reviewed source-backed common nouns.
+ உரம்	C15SgRoot;
+ ! Reviewed final native and calendrical nouns.
+@@ -134468,6 +134495,12 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^ங்களின்கீழேயிருந்தும் #;
+ 
+ LEXICON C16Sg
++! Final frequency-reviewed common nouns.
++ஆடவர்	C16DirectSgRoot;
++புத்துயிர்	C16DirectSgRoot;
++நுண்ணுயிர்	C16DirectSgRoot;
++புதிர்	C16DirectSgRoot;
++இரவலர்	C16DirectSgRoot;
+ ! Frequent reviewed source-backed common nouns.
+ தேநீர்	C16DirectSgRoot;
+ பல்லுயிர்	C16DirectSgRoot;

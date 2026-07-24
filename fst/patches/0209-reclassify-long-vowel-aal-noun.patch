@@ -1,0 +1,19 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -310,6 +310,7 @@
+ ஆர்+verb+nonfin+sim+verbalnoun%=தல்:ஆர்தல்	DerivedActionNominalC4Inflections;
+ ஆற்று+verb+nonfin+sim+verbalnoun%=தல்:ஆற்றல்	DerivedActionNominalC4Inflections;
+ ஆற்று+verb+nonfin+sim+neg%=ஆ+verbalnoun%=மை:ஆற்றாமை	DerivedActionNominalC2Inflections;
++ஆ+verb+nonfin+sim+verbalnoun%=தல்:ஆல்	DerivedActionNominalC4Inflections;
+ ஆவு+verb+nonfin+sim+verbalnoun%=தல்:ஆவல்	DerivedActionNominalC4Inflections;
+ இடக்கு+verb+nonfin+sim+verbalnoun%=தல்:இடக்கல்	DerivedActionNominalC4Inflections;
+ இடறு+verb+nonfin+sim+verbalnoun%=தல்:இடறல்	DerivedActionNominalC4Inflections;
+@@ -90113,7 +90114,7 @@
+ சொல்  C12SgRoot ; 
+ நெல்	  C12SgRoot ; 
+ புல்	  C12SgRoot ; 
+-ஆல்     C12SgRoot ; 
++ஆல்     C4SgRoot ; 
+ எல்      C12SgRoot ; 
+ மல்      C12SgRoot ; 
+ 

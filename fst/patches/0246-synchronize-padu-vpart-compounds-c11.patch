@@ -1,0 +1,268 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -2575,11 +2575,9 @@
+ நருபிரென்றிரு  C11Vinf;
+ நற்கருணைகொடு  C11Vinf;
+ நலமெடு  C11Vinf;
+-நாகரீகம்விடு  C11Vinf;
+ நிலமெடு  C11Vinf;
+ நீமக்கமாயிரு  C11Vinf;
+ நீலமெடு  C11Vinf;
+-நூதனம்விடு  C11Vinf;
+ நெடுநெடு  C11Vinf;
+ நெட்டியெடு  C11Vinf;
+ பச்சைப்படிகொடு  C11Vinf;
+@@ -2615,6 +2613,95 @@
+ வெள்ளமெடு  C11Vinf;
+ வெள்ளையெடு  C11Vinf;
+ வேரறு  C11Vinf;
++அபயங்கொடு    C11Vinf;
++அமர்கொடு    C11Vinf;
++அறியக்கொடு    C11Vinf;
++அலக்கொடு    C11Vinf;
++ஆடல்கொடு    C11Vinf;
++இடங்கொடு    C11Vinf;
++இரணங்கொடு    C11Vinf;
++இழவுகொடு    C11Vinf;
++ஈடுகொடு    C11Vinf;
++உதைகொடு    C11Vinf;
++உள்ளுக்குக்கொடு    C11Vinf;
++எருக்கழித்துக்கொடு    C11Vinf;
++எருக்கொடு    C11Vinf;
++ஒட்டுக்கொடு    C11Vinf;
++ஒத்துக்கொடு    C11Vinf;
++ஒப்பங்கொடு    C11Vinf;
++ஒப்புக்கொடு    C11Vinf;
++ஓட்டுக்கொடு    C11Vinf;
++கக்கக்கொடு    C11Vinf;
++கழுத்துக்கொடு    C11Vinf;
++காதுகொடு    C11Vinf;
++குருக்கொடு    C11Vinf;
++கைகொடு    C11Vinf;
++கைக்கொடு    C11Vinf;
++கைலாகுகொடு    C11Vinf;
++கொடுகொடு    C11Vinf;
++கொண்டுகொடு    C11Vinf;
++கொள்ளைகொடு    C11Vinf;
++கொழுக்கொடு    C11Vinf;
++கோத்துக்கொடு    C11Vinf;
++கோல்கொடு    C11Vinf;
++சத்துக்கொடு    C11Vinf;
++சவைக்கக்கொடு    C11Vinf;
++சாபங்கொடு    C11Vinf;
++சாப்பாக்கொடு    C11Vinf;
++சார்கொடு    C11Vinf;
++சாவிகொடு    C11Vinf;
++சீட்டுக்கொடு    C11Vinf;
++சீலைகொடு    C11Vinf;
++சுருக்குக்கொடு    C11Vinf;
++சுருதிகொடு    C11Vinf;
++செருக்கொடு    C11Vinf;
++செலவுகொடு    C11Vinf;
++செல்லங்கொடு    C11Vinf;
++செவிகொடு    C11Vinf;
++சேர்கொடு    C11Vinf;
++சோரங்கொடு    C11Vinf;
++தலைகொடு    C11Vinf;
++தளர்ந்துகொடு    C11Vinf;
++தழைவுகொடு    C11Vinf;
++தாம்பூலங்கொடு    C11Vinf;
++திதிகொடு    C11Vinf;
++தீர்த்தங்கொடு    C11Vinf;
++தூண்டிக்கொடு    C11Vinf;
++தூபங்கொடு    C11Vinf;
++தோன்றக்கொடு    C11Vinf;
++தோள்கொடு    C11Vinf;
++நிறங்கொடு    C11Vinf;
++பறிகொடு    C11Vinf;
++பலிகொடு    C11Vinf;
++பாக்குக்கொடு    C11Vinf;
++பாடங்கொடு    C11Vinf;
++பாத்தியாக்கொடு    C11Vinf;
++பாய்கொடு    C11Vinf;
++பால்கொடு    C11Vinf;
++பிடிகொடு    C11Vinf;
++பின்கொடு    C11Vinf;
++புறக்கொடு    C11Vinf;
++புறங்கொடு    C11Vinf;
++புளிகொடு    C11Vinf;
++பூசைகொடு    C11Vinf;
++பூமேல்வைத்துக்கொடு    C11Vinf;
++பேச்சுக்கொடு    C11Vinf;
++பேதிக்குக்கொடு    C11Vinf;
++மஞ்சட்பால்கொடு    C11Vinf;
++மழுவேந்திக்கொடு    C11Vinf;
++மாற்றுக்கொடு    C11Vinf;
++மீளக்கொடு    C11Vinf;
++முகங்கொடு    C11Vinf;
++முட்டுக்கொடு    C11Vinf;
++முதுகுமண்கொடு    C11Vinf;
++முலைகொடு    C11Vinf;
++யோக்கியத்துக்குக்கொடு    C11Vinf;
++வலக்கைகொடு    C11Vinf;
++வாக்குக்கொடு    C11Vinf;
++வாய்கொடு    C11Vinf;
++வார்த்தைகொடு    C11Vinf;
++விடைகொடு    C11Vinf;
++விரல்கொடு    C11Vinf;
+ LEXICON C11Vinf
+ 
+ +verb+fin+sim+strong+past%=த்+1sg%=ஏன்:^த்தேன் #;
+@@ -7882,7 +7969,6 @@
+ பொழிக்கப்படமுடி            ClassMudi11Inf; 
+ பொலிக்கப்படமுடி            ClassMudi11Inf; 
+ பொதிக்கப்படமுடி            ClassMudi11Inf; 
+-பெயர்ப்படமுடி            ClassMudi11Inf; 
+ பீழப்படமுடி            ClassMudi11Inf; 
+ போழப்படமுடி            ClassMudi11Inf; 
+ பேர்ப்படமுடி            ClassMudi11Inf; 
+@@ -10793,18 +10879,15 @@
+ அடக்கமுடி            ClassMudi11Inf; 
+ அடைச்சமுடி            ClassMudi11Inf; 
+ அடைசமுடி            ClassMudi11Inf; 
+-அடிபடமுடி            ClassMudi11Inf; 
+ அடிமையாக்கமுடி            ClassMudi11Inf; 
+ அடசமுடி            ClassMudi11Inf; 
+ அடங்கமுடி            ClassMudi11Inf; 
+ அற்கமுடி            ClassMudi11Inf; 
+-அறவிடமுடி            ClassMudi11Inf; 
+ அறிவுறுத்தமுடி            ClassMudi11Inf; 
+ அறாவமுடி            ClassMudi11Inf; 
+ அகட்டமுடி            ClassMudi11Inf; 
+ அகற்றமுடி            ClassMudi11Inf; 
+ அகவமுடி            ClassMudi11Inf; 
+-அகப்படமுடி            ClassMudi11Inf; 
+ அவாவமுடி            ClassMudi11Inf; 
+ அப்பமுடி            ClassMudi11Inf; 
+ அயக்கமுடி            ClassMudi11Inf; 
+@@ -10823,7 +10906,6 @@
+ அளுக்கமுடி            ClassMudi11Inf; 
+ அள்ளமுடி            ClassMudi11Inf; 
+ அளறமுடி            ClassMudi11Inf; 
+-அளவிடமுடி            ClassMudi11Inf; 
+ அளவமுடி            ClassMudi11Inf; 
+ அளாவமுடி            ClassMudi11Inf; 
+ அணுகமுடி            ClassMudi11Inf; 
+@@ -11245,7 +11327,6 @@
+ போற்றமுடி            ClassMudi11Inf; 
+ போக்கமுடி            ClassMudi11Inf; 
+ போதமுடி            ClassMudi11Inf; 
+-போமுடி            ClassMudi11Inf; 
+ பொக்கமுடி            ClassMudi11Inf; 
+ பொம்மமுடி            ClassMudi11Inf; 
+ பொசுக்கமுடி            ClassMudi11Inf; 
+@@ -11994,6 +12075,11 @@
+ இறமுடி            ClassMudi11Inf; 
+ 
+ 
++அகப்படமுடி    ClassMudi11Inf;
++அடிபடமுடி    ClassMudi11Inf;
++அறவிடமுடி    ClassMudi11Inf;
++அளவிடமுடி    ClassMudi11Inf;
++போகமுடி    ClassMudi11Inf;
+ LEXICON ClassMudi11Inf
+ 
+ ! Reviewed dictionary citation continuation
+@@ -14453,7 +14539,6 @@
+ போக்கிக்கொடு	VkoduInf;
+ போட்டிக்கொடு	VkoduInf;
+ போதிக்கொடு	VkoduInf;
+-போிக்கொடு	VkoduInf;
+ பொக்கிக்கொடு	VkoduInf;
+ பொம்மிக்கொடு	VkoduInf;
+ பொசுக்கிக்கொடு	VkoduInf;
+@@ -15216,12 +15301,10 @@
+ ஆராட்டிக்கொடு	VkoduInf;
+ ஆழ்த்திக்கொடு	VkoduInf;
+ அற்கிக்கொடு	VkoduInf;
+-அறவிடிக்கொடு	VkoduInf;
+ அறிவுறுத்திக்கொடு	VkoduInf;
+ அறாவிக்கொடு	VkoduInf;
+ அகற்றிக்கொடு	VkoduInf;
+ அகவிக்கொடு	VkoduInf;
+-அகப்படிக்கொடு	VkoduInf;
+ அகட்டிக்கொடு	VkoduInf;
+ அவாவிக்கொடு	VkoduInf;
+ அப்புறப்படுத்திக்கொடு	VkoduInf;
+@@ -15247,14 +15330,12 @@
+ அடக்கிக்கொடு	VkoduInf;
+ அடைச்சிக்கொடு	VkoduInf;
+ அடைசிக்கொடு	VkoduInf;
+-அடிபடிக்கொடு	VkoduInf;
+ அடிமையாக்கிக்கொடு	VkoduInf;
+ அடசிக்கொடு	VkoduInf;
+ அடங்கிக்கொடு	VkoduInf;
+ அளுக்கிக்கொடு	VkoduInf;
+ அள்ளிக்கொடு	VkoduInf;
+ அளறிக்கொடு	VkoduInf;
+-அளவிடிக்கொடு	VkoduInf;
+ அளவிக்கொடு	VkoduInf;
+ அளாவிக்கொடு	VkoduInf;
+ அணுகிக்கொடு	VkoduInf;
+@@ -15361,6 +15442,11 @@
+ 
+ 
+ 
++அகப்பட்டுக்கொடு    VkoduInf;
++அடிபட்டுக்கொடு    VkoduInf;
++அறவிட்டுக்கொடு    VkoduInf;
++அளவிட்டுக்கொடு    VkoduInf;
++போய்க்கொடு    VkoduInf;
+ LEXICON VkoduInf
+ 
+ +verb+fin+complex+nonattitude+strong+past%=இன்+1sg%=ஏன்:^த்தேன் #;
+@@ -17179,7 +17265,6 @@
+ பொழிக்கப்படப்பார்            ClassPar11Inf; 
+ பொலிக்கப்படப்பார்            ClassPar11Inf; 
+ பொதிக்கப்படப்பார்            ClassPar11Inf; 
+-பெயர்ப்படப்பார்            ClassPar11Inf; 
+ பீழப்படப்பார்            ClassPar11Inf; 
+ போழப்படப்பார்            ClassPar11Inf; 
+ பேர்ப்படப்பார்            ClassPar11Inf; 
+@@ -20091,18 +20176,15 @@
+ அடக்கப்பார்            ClassPar11Inf; 
+ அடைச்சப்பார்            ClassPar11Inf; 
+ அடைசப்பார்            ClassPar11Inf; 
+-அடிபடப்பார்            ClassPar11Inf; 
+ அடிமையாக்கப்பார்            ClassPar11Inf; 
+ அடசப்பார்            ClassPar11Inf; 
+ அடங்கப்பார்            ClassPar11Inf; 
+ அற்கப்பார்            ClassPar11Inf; 
+-அறவிடப்பார்            ClassPar11Inf; 
+ அறிவுறுத்தப்பார்            ClassPar11Inf; 
+ அறாவப்பார்            ClassPar11Inf; 
+ அகட்டப்பார்            ClassPar11Inf; 
+ அகற்றப்பார்            ClassPar11Inf; 
+ அகவப்பார்            ClassPar11Inf; 
+-அகப்படப்பார்            ClassPar11Inf; 
+ அவாவப்பார்            ClassPar11Inf; 
+ அப்பப்பார்            ClassPar11Inf; 
+ அயக்கப்பார்            ClassPar11Inf; 
+@@ -20123,7 +20205,6 @@
+ அளுக்கப்பார்            ClassPar11Inf; 
+ அள்ளப்பார்            ClassPar11Inf; 
+ அளறப்பார்            ClassPar11Inf; 
+-அளவிடப்பார்            ClassPar11Inf; 
+ அளவப்பார்            ClassPar11Inf; 
+ அளாவப்பார்            ClassPar11Inf; 
+ அணுகப்பார்            ClassPar11Inf; 
+@@ -20551,7 +20632,6 @@
+ போற்றப்பார்            ClassPar11Inf; 
+ போக்கப்பார்            ClassPar11Inf; 
+ போதப்பார்            ClassPar11Inf; 
+-போப்பார்            ClassPar11Inf; 
+ பொக்கப்பார்            ClassPar11Inf; 
+ பொம்மப்பார்            ClassPar11Inf; 
+ பொசுக்கப்பார்            ClassPar11Inf; 
+@@ -21324,6 +21404,11 @@
+ 
+ 
+ 
++அகப்படப்பார்    ClassPar11Inf;
++அடிபடப்பார்    ClassPar11Inf;
++அறவிடப்பார்    ClassPar11Inf;
++அளவிடப்பார்    ClassPar11Inf;
++போகப்பார்    ClassPar11Inf;
+ LEXICON ClassPar11Inf
+ 
+ ! Reviewed dictionary citation continuation

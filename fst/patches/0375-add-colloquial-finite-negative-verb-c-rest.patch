@@ -1,0 +1,114 @@
+--- ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
++++ ThamizhiVerbs-otherthan-3-4-62-11-12.lexc
+@@ -1741,6 +1741,7 @@
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3pln%=∅:^விக்கும் VerbQuestion;
+ +verb+fin+sim+opt%=க:^க #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை:^அவில்லை #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq:^அல #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhip%=ப்:^அவில்லைப் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhic%=ச்:^அவில்லைச் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhit%=த்:^அவில்லைத் #;
+@@ -9521,6 +9522,7 @@
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3pln%=∅:^விக்கும் VerbQuestion;
+ +verb+fin+sim+opt%=க:^க #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை:^அவில்லை #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq:^அல #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhip%=ப்:^அவில்லைப் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhic%=ச்:^அவில்லைச் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhit%=த்:^அவில்லைத் #;
+@@ -14584,6 +14586,7 @@
+ +verb+nonfin+sim+inf%=க:^க #;
+ +verb+nonfin+sim+inf%=க+add%=உம்:^கவும் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை:^கவில்லை #;
+++verb+nonfin+sim+inf%=க+negpart%=இல்லை+colloq:^கல #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhip%=ப்:^கவில்லைப் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhic%=ச்:^கவில்லைச் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhit%=த்:^கவில்லைத் #;
+@@ -17113,6 +17116,7 @@
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3pln%=∅:^விக்கும் VerbQuestion;
+ +verb+fin+sim+opt%=க:^க #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை:^அவில்லை #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq:^அல #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhip%=ப்:^அவில்லைப் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhic%=ச்:^அவில்லைச் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhit%=த்:^அவில்லைத் #;
+@@ -17807,6 +17811,7 @@
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3pln%=∅:^விக்கும் VerbQuestion;
+ +verb+fin+sim+opt%=க:^க #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை:^அவில்லை #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq:^அல #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhip%=ப்:^அவில்லைப் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhic%=ச்:^அவில்லைச் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhit%=த்:^அவில்லைத் #;
+@@ -18661,6 +18666,7 @@
+ +verb+fin+sim+caus%=பி+fut%=ப்ப்+3pln%=∅:^பிும் VerbQuestion;
+ +verb+fin+sim+opt%=க:^க #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை:^அவில்லை #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq:^அல #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhip%=ப்:^அவில்லைப் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhic%=ச்:^அவில்லைச் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhit%=த்:^அவில்லைத் #;
+@@ -19396,6 +19402,7 @@
+ +verb+fin+sim+caus%=பி+fut%=ப்ப்+3pln%=∅:^பிப்போம் VerbQuestion;
+ +verb+fin+sim+opt%=க:^க #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை:^கவில்லை #;
+++verb+nonfin+sim+inf%=க+negpart%=இல்லை+colloq:^கல #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhip%=ப்:^கவில்லைப் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhic%=ச்:^கவில்லைச் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhit%=த்:^கவில்லைத் #;
+@@ -20130,6 +20137,7 @@
+ +verb+fin+sim+caus%=பி+fut%=ப்ப்+3pln%=∅:^பிும் VerbQuestion;
+ +verb+fin+sim+opt%=க:^க #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை:^கவில்லை #;
+++verb+nonfin+sim+inf%=க+negpart%=இல்லை+colloq:^கல #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhip%=ப்:^கவில்லைப் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhic%=ச்:^கவில்லைச் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhit%=த்:^கவில்லைத் #;
+@@ -20864,6 +20872,7 @@
+ +verb+fin+sim+caus%=பி+fut%=ப்ப்+3pln%=∅:^பிும் VerbQuestion;
+ +verb+fin+sim+opt%=க:^க #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை:^கவில்லை #;
+++verb+nonfin+sim+inf%=க+negpart%=இல்லை+colloq:^கல #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhip%=ப்:^கவில்லைப் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhic%=ச்:^கவில்லைச் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhit%=த்:^கவில்லைத் #;
+@@ -22930,6 +22939,7 @@
+ +verb+fin+sim+caus%=பி+fut%=ப்ப்+3sghe%=ஆர்கள்:^பிப்பார்கள் VerbQuestion;
+ +verb+fin+sim+opt%=க:^க #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை:^அவில்லை #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq:^அல #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhip%=ப்:^அவில்லைப் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhic%=ச்:^அவில்லைச் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhit%=த்:^அவில்லைத் #;
+@@ -23582,6 +23592,7 @@
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3sghe%=ஆர்கள்:^விப்பார்கள் VerbQuestion;
+ +verb+fin+sim+opt%=க:^குக #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை:^கவில்லை #;
+++verb+nonfin+sim+inf%=க+negpart%=இல்லை+colloq:^கல #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhip%=ப்:^கவில்லைப் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhic%=ச்:^கவில்லைச் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhit%=த்:^கவில்லைத் #;
+@@ -24107,6 +24118,7 @@
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3sghe%=ஆர்கள்:^விப்பார்கள் VerbQuestion;
+ +verb+fin+sim+opt%=க:^ருக #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை:^அவில்லை #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq:^அல #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhip%=ப்:^அவில்லைப் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhic%=ச்:^அவில்லைச் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhit%=த்:^அவில்லைத் #;
+@@ -24826,6 +24838,7 @@
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3sghe%=ஆர்கள்:^விப்பார்கள் VerbQuestion;
+ +verb+fin+sim+opt%=க:^ருக #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை:^அவில்லை #;
+++verb+nonfin+sim+inf%=அ+negpart%=இல்லை+colloq:^அல #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhip%=ப்:^அவில்லைப் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhic%=ச்:^அவில்லைச் #;
+ +verb+nonfin+sim+inf%=அ+negpart%=இல்லை+sandhit%=த்:^அவில்லைத் #;
+@@ -25378,6 +25391,7 @@
+ +verb+fin+sim+caus%=வி+fut%=ப்ப்+3sghe%=ஆர்கள்:^விப்பார்கள் VerbQuestion;
+ +verb+fin+sim+opt%=க:^குக #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை:^கவில்லை #;
+++verb+nonfin+sim+inf%=க+negpart%=இல்லை+colloq:^கல #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhip%=ப்:^கவில்லைப் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhic%=ச்:^கவில்லைச் #;
+ +verb+nonfin+sim+inf%=க+negpart%=இல்லை+sandhit%=த்:^கவில்லைத் #;

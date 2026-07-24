@@ -1,0 +1,13 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -2821,8 +2821,8 @@
+ +verb+fin+sim+strong+fut%=ப்ப்+3ple%=ஆர்கள்:^ப்பார்கள் VerbQuestion;
+ +verb+fin+sim+strong+fut%=ப்ப்+3sghe%=ஆர்:^ப்பார் VerbQuestion;
+ +verb+fin+sim+strong+fut%=ப்ப்+3sghe%=ஆர்கள்:^ப்பார்கள் VerbQuestion;
+-+verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^ும் VerbQuestion;
+-+verb+fin+sim+strong+fut%=உம்+3pln%=∅:^ும் VerbQuestion;
+++verb+fin+sim+strong+fut%=உம்+3sgn%=∅:^க்கும் VerbQuestion;
+++verb+fin+sim+strong+fut%=உம்+3pln%=∅:^க்கும் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+euph%=அன்+1sg%=அன்:^த்தனன் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+euph%=அன்+3sgm%=அன்:^த்தனன் VerbQuestion;
+ +verb+fin+sim+strong+past%=த்+euph%=அன்+3sgf%=அள்:^த்தனள் VerbQuestion;

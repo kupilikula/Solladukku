@@ -1,0 +1,13 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -2702,6 +2702,10 @@
+ வார்த்தைகொடு    C11Vinf;
+ விடைகொடு    C11Vinf;
+ விரல்கொடு    C11Vinf;
++! Reviewed strong citations retained alongside C61 right-head readings
++நாகரீகம்விடு  C11Vinf;
++நூதனம்விடு  C11Vinf;
++
+ LEXICON C11Vinf
+ 
+ +verb+fin+sim+strong+past%=த்+1sg%=ஏன்:^த்தேன் #;

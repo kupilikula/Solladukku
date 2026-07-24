@@ -1,0 +1,30 @@
+--- ThamizhiVerbs-C3.lexc
++++ ThamizhiVerbs-C3.lexc
+@@ -87,7 +87,7 @@
+ +verb+fin+sim+strong+past%=ற்+3sgf%=ஆள்:^ன்றாள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sge%=அர்:^ன்றர் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்:^ன்றார்கள் VerbQuestion;
+-+verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^ன்றாங்க VerbQuestion;
+++verb+fin+sim+strong+past%=ற்+3ple%=ஆர்கள்+colloq:^ன்றாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்:^ன்றார் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sghe%=ஆர்கள்:^ன்றார்கள் VerbQuestion;
+ +verb+fin+sim+strong+past%=ற்+3sgn%=அது:^ன்றது VerbQuestion;
+@@ -305,7 +305,7 @@
+ +verb+fin+sim+caus%=வி+past%=த்+3sgf%=ஆள்:^வித்தாள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sge%=அர்:^வித்தர் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+-+verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestion;
+++verb+fin+sim+caus%=வி+past%=த்+3ple%=ஆர்கள்+colloq:^வித்தாங்க VerbQuestionColloquialNg;
+ +verb+fin+sim+caus%=வி+past%=த்+3sghe%=ஆர்கள்:^வித்தார்கள் VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது:^வித்தது VerbQuestion;
+ +verb+fin+sim+caus%=வி+past%=த்+3sgn%=அது+add%=உம்:^வித்ததும் VerbQuestion;
+@@ -881,3 +881,9 @@
+ +PartNoun%=அவள்+human+3sgf+soc%=உடன்:வளுடன் #;
+ +PartNoun%=அவள்+human+3sgf+soc%=உடன்+add%=உம்:வளுடனும் #;
+ +PartNoun%=அவள்+human+3sgf+voc%=ஏ:வளே #;
++
++! Spoken predicates ending in -ng insert -l- before the polar question -aa.
++LEXICON VerbQuestionColloquialNg
++: #;
+++ques%=ஆ:~ளா #;
++

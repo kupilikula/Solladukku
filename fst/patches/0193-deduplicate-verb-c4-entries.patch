@@ -1,0 +1,69 @@
+--- ThamizhiVerbs-C4.lexc
++++ ThamizhiVerbs-C4.lexc
+@@ -289,7 +289,6 @@
+ நவிர் C4Vinf;
+ அமர் C4Vinf;
+ ஞமர் C4Vinf;
+-நிமிர் C4Vinf;
+ அயர் C4Vinf;
+ ஞிமிர் C4Vinf;
+ பகர் C4Vinf;
+@@ -312,7 +311,6 @@
+ தவிர் C4Vinf;
+ பிதிர் C4Vinf;
+ உட்கார் C4Vinf;
+-தகர் C4Vinf;
+ புணர் C4Vinf;
+ உணர் C4Vinf;
+ திணர் C4Vinf;
+@@ -485,8 +483,6 @@
+ +verb+nonfin+sim+verbalnoun%=அது+add%=உம்:^வதும் #;
+ +verb+fin+sim+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+sim+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+-+verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+-+verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+sim+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+sim+caus%=வி+past%=த்+1sg%=ஏன்:^விந்தேன் #;
+@@ -1529,7 +1525,6 @@
+ சந்தித்துத்தொலை	VtholaiInf;
+ சந்தோஷித்துத்தொலை	VtholaiInf;
+ சந்தேகித்துத்தொலை	VtholaiInf;
+-சந்தோஷித்துத்தொலை	VtholaiInf;
+ சந்நியசித்துத்தொலை	VtholaiInf;
+ சனித்துத்தொலை	VtholaiInf;
+ சன்னியாசித்துத்தொலை	VtholaiInf;
+@@ -3614,9 +3609,7 @@
+ கெட்டுத்தொலை	VtholaiInf;
+ அட்டுத்தொலை	VtholaiInf;
+ தொகுந்துதொலை	VtholaiInf;
+-மிகுந்துதொலை	VtholaiInf;
+ உகுந்துதொலை	VtholaiInf;
+-புகுந்துதொலை	VtholaiInf;
+ இகுந்துதொலை	VtholaiInf;
+ நகுந்துதொலை	VtholaiInf;
+ நெகுந்துதொலை	VtholaiInf;
+@@ -3633,14 +3626,11 @@
+ அற்றுத்தொலை	VtholaiInf;
+ பூண்டுத்தொலை	VtholaiInf;
+ முரண்டுத்தொலை	VtholaiInf;
+-மாண்டுத்தொலை	VtholaiInf;
+ உண்டுத்தொலை	VtholaiInf;
+ நோன்றுத்தொலை	VtholaiInf;
+ தின்றுத்தொலை	VtholaiInf;
+ ஈன்றுத்தொலை	VtholaiInf;
+-தட்டுத்தொலை	VtholaiInf;
+ கேட்டுத்தொலை	VtholaiInf;
+-கட்டுத்தொலை	VtholaiInf;
+ 
+ LEXICON VtholaiInf
+ 
+@@ -3707,8 +3697,6 @@
+ +verb+fin+complex+attitude+strong+pres%=கின்ற்+euph%=அன்+3sgf%=அள்:^கின்றனள் #;
+ +verb+fin+complex+attitude+imp%=∅+2sg%=∅:^ #;
+ +verb+fin+complex+attitude+imp%=∅+2pl%=உங்கள்:^ுங்கள் #;
+-+verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+-+verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+euph%=ஏ:^ாதே #;
+ +verb+fin+complex+attitude+imp%=∅+neg%=ஆத்+2pl%=ஈர்கள்:^ாதீர்கள் #;
+ +verb+fin+complex+attitude+caus%=வி+past%=த்+1sg%=ஏன்:^விந்தேன் #;

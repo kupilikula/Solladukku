@@ -1,0 +1,12 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -29,6 +29,9 @@
+ வளமைகொழி  C11Vinf;
+ வளமைகொழி  C11IColloqPastVinf;
+ LEXICON ClassEleven
++ஒருங்கிணை	C11Vinf;
++சீரமை	C11Vinf;
++பிறப்பி	C11Vinf;
+ ஒப்படை	C11Vinf;
+ ஒன்றிணை	C11Vinf;
+ 

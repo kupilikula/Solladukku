@@ -1,0 +1,203 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -2699,6 +2699,7 @@
+ 
+ ! Productive infinitive + தக்க suitability/worthiness construction.
+ +verb+nonfin+sim+inf%=க்க+worthy%=தக்க+adjpart%=அ:^க்கத்தக்க #;
+++verb+nonfin+sim+inf%=க்க+worthy%=தக்க+adjpart%=அ:^க்கத்தக்க HumanGenderedPartNoun;
+ +verb+nonfin+sim+inf%=க்க+worthy%=தக்க+adjpart%=அ+psp_padi%=படி:^க்கத்தக்கபடி #;
+ +verb+nonfin+sim+inf%=க்க+worthy%=தக்க+adjpart%=அ+vpart_pin%=பின்:^க்கத்தக்கபின் #;
+ +verb+nonfin+sim+cond%=இன்:^ப்பின் #;
+@@ -3189,6 +3190,7 @@
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+sim+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ:^த்த #;
+++verb+nonfin+sim+past%=த்+adjpart%=அ:^த்த HumanGenderedPartNoun;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+psp_padi%=படி:^த்தபடி #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+vpart_pin%=பின்:^த்தபின் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+vpart_potu%=போது:^த்தபோது #;
+@@ -3203,18 +3205,22 @@
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+loc%=இடம்:^த்தோரிடம் #;
+ +verb+nonfin+sim+past%=த்+adjpart%=அ+PartNoun%=ஓர்+human+pl+soc%=உடன்:^த்தோருடன் #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ:^த்துள்ள #;
+++verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ:^த்துள்ள HumanGenderedPartNoun;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+psp_padi%=படி:^த்துள்ளபடி #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+vpart_pin%=பின்:^த்துள்ளபின் #;
+ +verb+nonfin+complex+perfect+pres%=∅+adjpart%=அ+vpart_potu%=போது:^த்துள்ளபோது #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ:^த்திருந்த #;
+++verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ:^த்திருந்த HumanGenderedPartNoun;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+psp_padi%=படி:^த்திருந்தபடி #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+vpart_pin%=பின்:^த்திருந்தபின் #;
+ +verb+nonfin+complex+perfect+aux%=இரு+past%=ந்த்+adjpart%=அ+vpart_potu%=போது:^த்திருந்தபோது #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற HumanGenderedPartNoun;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+psp_padi%=படி:^க்கின்றபடி #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+vpart_pin%=பின்:^க்கின்றபின் #;
+ +verb+nonfin+sim+pres%=க்கின்ற்+adjpart%=அ+vpart_potu%=போது:^க்கின்றபோது #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+++verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ:^க்கிற HumanGenderedPartNoun;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+colloq:^க்குற #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+ +verb+nonfin+sim+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+@@ -3225,6 +3231,7 @@
+ +verb+nonfin+sim+futANDadjpart%=உம்+vpart_maaru%=மாறு:^க்குமாறு #;
+ +verb+nonfin+sim+futANDadjpart%=உம்+vpart_potu%=போது:^க்கும்போது #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^க்காத #;
+++verb+nonfin+sim+neg%=ஆத்+adjpart%=அ:^க்காத HumanGenderedPartNoun;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+psp_padi%=படி:^க்காதபடி #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+vpart_pin%=பின்:^க்காதபின் #;
+ +verb+nonfin+sim+neg%=ஆத்+adjpart%=அ+vpart_potu%=போது:^க்காதபோது #;
+@@ -3248,6 +3255,7 @@
+ 
+ ! Productive participial human and future-neuter nominals.
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+nom:^ப்பவர் #;
+++verb+nonfin+sim+strong+fut%=ப்ப்:^ப்ப HumanGenderedPartNoun;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+nom+add:^ப்பவரும் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+nom+foc%=ஏ:^ப்பவரே #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+PartNoun%=அவர்+human+nom+foc%=தான்:^ப்பவர்தான் #;
+@@ -3316,6 +3324,7 @@
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக+cop+fut+3sgn:^ப்பதாகும் #;
+ +verb+nonfin+sim+strong+fut%=ப்ப்+verbalnoun%=அது+trans%=ஆக+add%=உம்:^ப்பதாகவும் #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+nom:^ப்பிப்பவர் #;
+++verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்:^ப்பிப்ப HumanGenderedPartNoun;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+nom+add:^ப்பிப்பவரும் #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+nom+foc%=ஏ:^ப்பிப்பவரே #;
+ +verb+nonfin+sim+caus%=ப்பி+fut%=ப்ப்+PartNoun%=அவர்+human+nom+foc%=தான்:^ப்பிப்பவர்தான் #;
+@@ -6968,14 +6977,17 @@
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+complex+attitude+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ:^த்த #;
+++verb+nonfin+complex+attitude+past%=த்+adjpart%=அ:^த்த HumanGenderedPartNoun;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+psp_padi%=படி:^த்தபடி #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+vpart_pin%=பின்:^த்தபின் #;
+ +verb+nonfin+complex+attitude+past%=த்+adjpart%=அ+vpart_potu%=போது:^த்தபோது #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற HumanGenderedPartNoun;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+psp_padi%=படி:^க்கின்றபடி #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+vpart_pin%=பின்:^க்கின்றபின் #;
+ +verb+nonfin+complex+attitude+pres%=க்கின்ற்+adjpart%=அ+vpart_potu%=போது:^க்கின்றபோது #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+++verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ:^க்கிற HumanGenderedPartNoun;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+colloq:^க்குற #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+ +verb+nonfin+complex+attitude+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+@@ -6985,6 +6997,7 @@
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்+vpart_pin%=பின்:^க்கும்பின் #;
+ +verb+nonfin+complex+attitude+futANDadjpart%=உம்+vpart_potu%=போது:^க்கும்போது #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+++verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ:^ாத HumanGenderedPartNoun;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+psp_padi%=படி:^ாதபடி #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+vpart_pin%=பின்:^ாதபின் #;
+ +verb+nonfin+complex+attitude+neg%=ஆத்+adjpart%=அ+vpart_potu%=போது:^ாதபோது #;
+@@ -10540,14 +10553,17 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^ாவிட்டா #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^ாவிட்டாலும் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ:^ின #;
+++verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ:^ின HumanGenderedPartNoun;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+psp_padi%=படி:^ினபடி #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+vpart_pin%=பின்:^ினபின் #;
+ +verb+nonfin+complex+nonattitude+past%=இன்+adjpart%=அ+vpart_potu%=போது:^ினபோது #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ:^க்கின்ற HumanGenderedPartNoun;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+psp_padi%=படி:^க்கின்றபடி #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+vpart_pin%=பின்:^க்கின்றபின் #;
+ +verb+nonfin+complex+nonattitude+pres%=கின்ற்+adjpart%=அ+vpart_potu%=போது:^க்கின்றபோது #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ:^க்கிற #;
+++verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ:^க்கிற HumanGenderedPartNoun;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+colloq:^க்குற #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+ +verb+nonfin+complex+nonattitude+pres%=கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+@@ -10557,6 +10573,7 @@
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+vpart_pin%=பின்:^ும்பின் #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+vpart_potu%=போது:^ும்போது #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+++verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ:^ாத HumanGenderedPartNoun;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+psp_padi%=படி:^ாதபடி #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+vpart_pin%=பின்:^ாதபின் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+vpart_potu%=போது:^ாதபோது #;
+@@ -16712,14 +16729,17 @@
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+colloq:^க்காவிட்டா #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆ+aux%=விடு+con%=ஆல்+add%=உம்:^க்காவிட்டாலும் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ:^த்த #;
+++verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ:^த்த HumanGenderedPartNoun;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+psp_padi%=படி:^த்தபடி #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+vpart_pin%=பின்:^த்தபின் #;
+ +verb+nonfin+complex+nonattitude+past%=த்+adjpart%=அ+vpart_potu%=போது:^த்தபோது #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற #;
+++verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ:^க்கின்ற HumanGenderedPartNoun;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+psp_padi%=படி:^க்கின்றபடி #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+vpart_pin%=பின்:^க்கின்றபின் #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கின்ற்+adjpart%=அ+vpart_potu%=போது:^க்கின்றபோது #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ:^க்கிற #;
+++verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ:^க்கிற HumanGenderedPartNoun;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+colloq:^க்குற #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+psp_padi%=படி:^க்கிறபடி #;
+ +verb+nonfin+complex+nonattitude+pres%=க்கிற்+adjpart%=அ+vpart_pin%=பின்:^க்கிறபின் #;
+@@ -16729,6 +16749,7 @@
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+vpart_pin%=பின்:^க்கும்பின் #;
+ +verb+nonfin+complex+nonattitude+futANDadjpart%=உம்+vpart_potu%=போது:^க்கும்போது #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ:^ாத #;
+++verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ:^ாத HumanGenderedPartNoun;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+psp_padi%=படி:^ாதபடி #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+vpart_pin%=பின்:^ாதபின் #;
+ +verb+nonfin+complex+nonattitude+neg%=ஆத்+adjpart%=அ+vpart_potu%=போது:^ாதபோது #;
+@@ -16866,3 +16887,59 @@
+ ! Past/present neuter plural ends in bare -na and takes the -vaa allomorph.
+ : #;
+ +ques%=ஆ:~வா #;
++
++! Productive gendered singular human participial nouns. The incoming lower
++! side is the realized adjectival or future-participial stem.
++LEXICON HumanGenderedPartNoun
+++PartNoun%=அவன்+human+3sgm+nom:வன் #;
+++PartNoun%=அவன்+human+3sgm+nom+add%=உம்:வனும் #;
+++PartNoun%=அவன்+human+3sgm+nom+foc%=ஏ:வனே #;
+++PartNoun%=அவன்+human+3sgm+nom+foc%=தான்:வன்தான் #;
+++PartNoun%=அவன்+human+3sgm+acc%=ஐ:வனை #;
+++PartNoun%=அவன்+human+3sgm+acc%=ஐ+add%=உம்:வனையும் #;
+++PartNoun%=அவன்+human+3sgm+acc%=ஐ+sandhip%=ப்:வனைப் #;
+++PartNoun%=அவன்+human+3sgm+acc%=ஐ+sandhic%=ச்:வனைச் #;
+++PartNoun%=அவன்+human+3sgm+acc%=ஐ+sandhit%=த்:வனைத் #;
+++PartNoun%=அவன்+human+3sgm+acc%=ஐ+sandhik%=க்:வனைக் #;
+++PartNoun%=அவன்+human+3sgm+dat%=க்கு:வனுக்கு #;
+++PartNoun%=அவன்+human+3sgm+dat%=க்கு+add%=உம்:வனுக்கும் #;
+++PartNoun%=அவன்+human+3sgm+dat%=க்கு+sandhip%=ப்:வனுக்குப் #;
+++PartNoun%=அவன்+human+3sgm+dat%=க்கு+sandhic%=ச்:வனுக்குச் #;
+++PartNoun%=அவன்+human+3sgm+dat%=க்கு+sandhit%=த்:வனுக்குத் #;
+++PartNoun%=அவன்+human+3sgm+dat%=க்கு+sandhik%=க்:வனுக்குக் #;
+++PartNoun%=அவன்+human+3sgm+inst%=ஆல்:வனால் #;
+++PartNoun%=அவன்+human+3sgm+inst%=ஆல்+add%=உம்:வனாலும் #;
+++PartNoun%=அவன்+human+3sgm+gen%=இன்:வனின் #;
+++PartNoun%=அவன்+human+3sgm+gen%=உடைய:வனுடைய #;
+++PartNoun%=அவன்+human+3sgm+loc%=இடம்:வனிடம் #;
+++PartNoun%=அவன்+human+3sgm+loc%=இடம்+add%=உம்:வனிடமும் #;
+++PartNoun%=அவன்+human+3sgm+abl%=இடமிருந்து:வனிடமிருந்து #;
+++PartNoun%=அவன்+human+3sgm+soc%=உடன்:வனுடன் #;
+++PartNoun%=அவன்+human+3sgm+soc%=உடன்+add%=உம்:வனுடனும் #;
+++PartNoun%=அவன்+human+3sgm+voc%=ஏ:வனே #;
+++PartNoun%=அவள்+human+3sgf+nom:வள் #;
+++PartNoun%=அவள்+human+3sgf+nom+add%=உம்:வளும் #;
+++PartNoun%=அவள்+human+3sgf+nom+foc%=ஏ:வளே #;
+++PartNoun%=அவள்+human+3sgf+nom+foc%=தான்:வள்தான் #;
+++PartNoun%=அவள்+human+3sgf+acc%=ஐ:வளை #;
+++PartNoun%=அவள்+human+3sgf+acc%=ஐ+add%=உம்:வளையும் #;
+++PartNoun%=அவள்+human+3sgf+acc%=ஐ+sandhip%=ப்:வளைப் #;
+++PartNoun%=அவள்+human+3sgf+acc%=ஐ+sandhic%=ச்:வளைச் #;
+++PartNoun%=அவள்+human+3sgf+acc%=ஐ+sandhit%=த்:வளைத் #;
+++PartNoun%=அவள்+human+3sgf+acc%=ஐ+sandhik%=க்:வளைக் #;
+++PartNoun%=அவள்+human+3sgf+dat%=க்கு:வளுக்கு #;
+++PartNoun%=அவள்+human+3sgf+dat%=க்கு+add%=உம்:வளுக்கும் #;
+++PartNoun%=அவள்+human+3sgf+dat%=க்கு+sandhip%=ப்:வளுக்குப் #;
+++PartNoun%=அவள்+human+3sgf+dat%=க்கு+sandhic%=ச்:வளுக்குச் #;
+++PartNoun%=அவள்+human+3sgf+dat%=க்கு+sandhit%=த்:வளுக்குத் #;
+++PartNoun%=அவள்+human+3sgf+dat%=க்கு+sandhik%=க்:வளுக்குக் #;
+++PartNoun%=அவள்+human+3sgf+inst%=ஆல்:வளால் #;
+++PartNoun%=அவள்+human+3sgf+inst%=ஆல்+add%=உம்:வளாலும் #;
+++PartNoun%=அவள்+human+3sgf+gen%=இன்:வளின் #;
+++PartNoun%=அவள்+human+3sgf+gen%=உடைய:வளுடைய #;
+++PartNoun%=அவள்+human+3sgf+loc%=இடம்:வளிடம் #;
+++PartNoun%=அவள்+human+3sgf+loc%=இடம்+add%=உம்:வளிடமும் #;
+++PartNoun%=அவள்+human+3sgf+abl%=இடமிருந்து:வளிடமிருந்து #;
+++PartNoun%=அவள்+human+3sgf+soc%=உடன்:வளுடன் #;
+++PartNoun%=அவள்+human+3sgf+soc%=உடன்+add%=உம்:வளுடனும் #;
+++PartNoun%=அவள்+human+3sgf+voc%=ஏ:வளே #;

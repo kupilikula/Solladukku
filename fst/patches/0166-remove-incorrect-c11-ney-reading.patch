@@ -1,0 +1,10 @@
+--- ThamizhiVerbs-C11.lexc
++++ ThamizhiVerbs-C11.lexc
+@@ -2615,7 +2615,6 @@
+ துய்  C11Vinf;
+ தேய்  C11Vinf;
+ தோய்  C11Vinf;
+-நெய்  C11Vinf;
+ நோய்  C11Vinf;
+ பிய்  C11Vinf;
+ புய்  C11Vinf;

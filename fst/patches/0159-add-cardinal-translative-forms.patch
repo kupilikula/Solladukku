@@ -1,0 +1,32 @@
+--- tamil-part.lexc
++++ tamil-part.lexc
+@@ -354,6 +354,7 @@
+ 
+ LEXICON cardinal
+ +cardinal: #;
+++cardinal+trans:^ாக #;
+ +cardinal+acc:^ை #;
+ +cardinal+sandhik:^ைக் #;
+ +cardinal+sandhic:^ைச் #;
+--- tamil-part.foma
++++ tamil-part.foma
+@@ -6,6 +6,9 @@
+ define cardrule1 "ு" -> 0 || _ "^" {ை};
+ define cardrule2 {ம்} -> "த" || _ "^" {ை};
+ define cardrule3 {்} -> 0 || _ "^" {ை}; 
++define cardtrans1 "ு" -> 0 || _ "^" {ா};
++define cardtrans2 {ம்} -> {ம} || _ "^" {ா};
++define cardtrans3 {்} -> 0 || _ "^" {ா};
+ 
+ define CleanupX "^" -> 0;
+ 
+@@ -14,6 +17,9 @@
+ 						cardrule1			.o.			
+ 						cardrule2			.o.			
+ 						cardrule3			.o.			
++						cardtrans1			.o.
++						cardtrans2			.o.
++						cardtrans3			.o.
+ 						CleanupX;
+ 
+ regex particles;

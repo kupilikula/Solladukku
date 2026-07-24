@@ -1,0 +1,257 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -104,6 +104,7 @@
+ C15Sg;      !மரம்
+ C16Sg;      !சுவர்
+ ForeignFinalSg; ! borrowed consonant-final names
++ForeignIngSg; ! lexicalized written -ing activity loans
+ CalendarPlaceLoanSg; ! reviewed calendar/place/loan nouns
+ AuditBackedCommonNounSg; ! reviewed corpus-audit nouns
+ 
+@@ -192,6 +193,11 @@
+ இயக்குநர்	C16DirectSgRoot;
+ 
+ LEXICON ForeignFinalSg
++! Reviewed recurrent modern common nouns from five-corpus saturation.
++பிளஸ்	ForeignFinalNom;
++பிளஸ்:பிளஸ	ForeignSFinalInflections;
++நோட்டீஸ்	ForeignFinalNom;
++நோட்டீஸ்:நோட்டீஸ	ForeignSFinalInflections;
+ ! Reviewed common pulli-final loans with productive oblique stems.
+ பாஸ்	ForeignFinalNom;
+ பாஸ்:பாஸ	ForeignSFinalInflections;
+@@ -320,6 +326,169 @@
+ +noun+loc:^ிடம் #;
+ +noun+loc+add:^ிடமும் #;
+ 
++
++LEXICON ForeignIngSg
++! Lexicalized English -ing loans: written nominative -ங், oblique -ங்க-.
++ஆக்டிங்	ForeignFinalNom;
++ஆக்டிங்:ஆக்டிங்க	ForeignIngFinalInflections;
++ஆப்பரேட்டிங்	ForeignFinalNom;
++ஆப்பரேட்டிங்:ஆப்பரேட்டிங்க	ForeignIngFinalInflections;
++இன்ஜினியரிங்	ForeignFinalNom;
++இன்ஜினியரிங்:இன்ஜினியரிங்க	ForeignIngFinalInflections;
++எடிட்டிங்	ForeignFinalNom;
++எடிட்டிங்:எடிட்டிங்க	ForeignIngFinalInflections;
++என்ஜினீயரிங்	ForeignFinalNom;
++என்ஜினீயரிங்:என்ஜினீயரிங்க	ForeignIngFinalInflections;
++ஓப்பனிங்	ForeignFinalNom;
++ஓப்பனிங்:ஓப்பனிங்க	ForeignIngFinalInflections;
++கவரிங்	ForeignFinalNom;
++கவரிங்:கவரிங்க	ForeignIngFinalInflections;
++கவுன்சிலிங்	ForeignFinalNom;
++கவுன்சிலிங்:கவுன்சிலிங்க	ForeignIngFinalInflections;
++கான்பரன்சிங்	ForeignFinalNom;
++கான்பரன்சிங்:கான்பரன்சிங்க	ForeignIngFinalInflections;
++காலிங்	ForeignFinalNom;
++காலிங்:காலிங்க	ForeignIngFinalInflections;
++கூலிங்	ForeignFinalNom;
++கூலிங்:கூலிங்க	ForeignIngFinalInflections;
++கேமிங்	ForeignFinalNom;
++கேமிங்:கேமிங்க	ForeignIngFinalInflections;
++கேட்டரிங்	ForeignFinalNom;
++கேட்டரிங்:கேட்டரிங்க	ForeignIngFinalInflections;
++கோச்சிங்	ForeignFinalNom;
++கோச்சிங்:கோச்சிங்க	ForeignIngFinalInflections;
++சாட்டிங்	ForeignFinalNom;
++சாட்டிங்:சாட்டிங்க	ForeignIngFinalInflections;
++சார்ஜிங்	ForeignFinalNom;
++சார்ஜிங்:சார்ஜிங்க	ForeignIngFinalInflections;
++சிட்டிங்	ForeignFinalNom;
++சிட்டிங்:சிட்டிங்க	ForeignIngFinalInflections;
++சூட்டிங்	ForeignFinalNom;
++சூட்டிங்:சூட்டிங்க	ForeignIngFinalInflections;
++ஷூட்டிங்	ForeignFinalNom;
++ஷூட்டிங்:ஷூட்டிங்க	ForeignIngFinalInflections;
++ஷாப்பிங்	ForeignFinalNom;
++ஷாப்பிங்:ஷாப்பிங்க	ForeignIngFinalInflections;
++ஸ்டீயரிங்	ForeignFinalNom;
++ஸ்டீயரிங்:ஸ்டீயரிங்க	ForeignIngFinalInflections;
++ஸ்விங்	ForeignFinalNom;
++ஸ்விங்:ஸ்விங்க	ForeignIngFinalInflections;
++டப்பிங்	ForeignFinalNom;
++டப்பிங்:டப்பிங்க	ForeignIngFinalInflections;
++டைனிங்	ForeignFinalNom;
++டைனிங்:டைனிங்க	ForeignIngFinalInflections;
++டிரைவிங்	ForeignFinalNom;
++டிரைவிங்:டிரைவிங்க	ForeignIngFinalInflections;
++டைவிங்	ForeignFinalNom;
++டைவிங்:டைவிங்க	ForeignIngFinalInflections;
++டிரெண்டிங்	ForeignFinalNom;
++டிரெண்டிங்:டிரெண்டிங்க	ForeignIngFinalInflections;
++ட்ரெண்டிங்	ForeignFinalNom;
++ட்ரெண்டிங்:ட்ரெண்டிங்க	ForeignIngFinalInflections;
++டேட்டிங்	ForeignFinalNom;
++டேட்டிங்:டேட்டிங்க	ForeignIngFinalInflections;
++டெஸ்டிங்	ForeignFinalNom;
++டெஸ்டிங்:டெஸ்டிங்க	ForeignIngFinalInflections;
++பவுலிங்	ForeignFinalNom;
++பவுலிங்:பவுலிங்க	ForeignIngFinalInflections;
++பாக்சிங்	ForeignFinalNom;
++பாக்சிங்:பாக்சிங்க	ForeignIngFinalInflections;
++பாண்டிங்	ForeignFinalNom;
++பாண்டிங்:பாண்டிங்க	ForeignIngFinalInflections;
++பார்க்கிங்	ForeignFinalNom;
++பார்க்கிங்:பார்க்கிங்க	ForeignIngFinalInflections;
++பில்டிங்	ForeignFinalNom;
++பில்டிங்:பில்டிங்க	ForeignIngFinalInflections;
++பீல்டிங்	ForeignFinalNom;
++பீல்டிங்:பீல்டிங்க	ForeignIngFinalInflections;
++புக்கிங்	ForeignFinalNom;
++புக்கிங்:புக்கிங்க	ForeignIngFinalInflections;
++பிரிண்டிங்	ForeignFinalNom;
++பிரிண்டிங்:பிரிண்டிங்க	ForeignIngFinalInflections;
++பிரேக்கிங்	ForeignFinalNom;
++பிரேக்கிங்:பிரேக்கிங்க	ForeignIngFinalInflections;
++பேக்கிங்	ForeignFinalNom;
++பேக்கிங்:பேக்கிங்க	ForeignIngFinalInflections;
++பேக்கேஜிங்	ForeignFinalNom;
++பேக்கேஜிங்:பேக்கேஜிங்க	ForeignIngFinalInflections;
++பேட்டிங்	ForeignFinalNom;
++பேட்டிங்:பேட்டிங்க	ForeignIngFinalInflections;
++மார்க்கெட்டிங்	ForeignFinalNom;
++மார்க்கெட்டிங்:மார்க்கெட்டிங்க	ForeignIngFinalInflections;
++மார்னிங்	ForeignFinalNom;
++மார்னிங்:மார்னிங்க	ForeignIngFinalInflections;
++மாடலிங்	ForeignFinalNom;
++மாடலிங்:மாடலிங்க	ForeignIngFinalInflections;
++மிஸ்ஸிங்	ForeignFinalNom;
++மிஸ்ஸிங்:மிஸ்ஸிங்க	ForeignIngFinalInflections;
++மீட்டிங்	ForeignFinalNom;
++மீட்டிங்:மீட்டிங்க	ForeignIngFinalInflections;
++மேக்கிங்	ForeignFinalNom;
++மேக்கிங்:மேக்கிங்க	ForeignIngFinalInflections;
++ரெக்கார்டிங்	ForeignFinalNom;
++ரெக்கார்டிங்:ரெக்கார்டிங்க	ForeignIngFinalInflections;
++ரைடிங்	ForeignFinalNom;
++ரைடிங்:ரைடிங்க	ForeignIngFinalInflections;
++லைட்டிங்	ForeignFinalNom;
++லைட்டிங்:லைட்டிங்க	ForeignIngFinalInflections;
++வாக்கிங்	ForeignFinalNom;
++வாக்கிங்:வாக்கிங்க	ForeignIngFinalInflections;
++வார்னிங்	ForeignFinalNom;
++வார்னிங்:வார்னிங்க	ForeignIngFinalInflections;
++வெயிட்டிங்	ForeignFinalNom;
++வெயிட்டிங்:வெயிட்டிங்க	ForeignIngFinalInflections;
++வெல்டிங்	ForeignFinalNom;
++வெல்டிங்:வெல்டிங்க	ForeignIngFinalInflections;
++
++LEXICON ForeignIngFinalInflections
++! Productive borrowed-noun plural and core oblique cases.
+++noun+pl+nom:^ுகள் #;
+++noun+pl+acc%=ஐ:^ுகளை #;
+++noun+pl+acc%=ஐ+sandhik%=க்:^ுகளைக் #;
+++noun+pl+dat%=க்கு:^ுகளுக்கு #;
+++noun+pl+inst%=ஆல்:^ுகளால் #;
+++noun+pl+gen%=இன்:^ுகளின் #;
+++noun+pl+gen%=உடைய:^ுகளுடைய #;
+++noun+pl+loc%=இல்:^ுகளில் #;
+++noun+pl+soc%=உடன்:^ுகளுடன் #;
+++noun+acc:^ை #;
+++noun+acc+foc%=ஏ:^ையே #;
+++noun+acc+all:^ையெல்லாம் #;
+++noun+acc+add:^ையும் #;
+++noun+acc+sandhip:^ைப் #;
+++noun+acc+sandhic:^ைச் #;
+++noun+acc+sandhit:^ைத் #;
+++noun+acc+sandhik:^ைக் #;
+++noun+inst:^ால் #;
+++noun+inst+add:^ாலும் #;
+++noun+dat:^ுக்கு #;
+++noun+dat+add:^ுக்கும் #;
+++noun+dat+cop%=ஆ+adjpart%=ன:^ுக்கான #;
+++noun+dat+sandhip:^ுக்குப் #;
+++noun+dat+sandhic:^ுக்குச் #;
+++noun+dat+sandhit:^ுக்குத் #;
+++noun+dat+sandhik:^ுக்குக் #;
+++noun+soc:^ோடு #;
+++noun+soc+add:^ோடும் #;
+++noun+soc:^ுடன் #;
+++noun+soc+add:^ுடனும் #;
+++noun+abl:^ில் #;
+++noun+abl+add:^ிலும் #;
+++noun+abl:^ின் #;
+++noun+abl+add:^ினும் #;
+++noun+abl:^ிலிருந்து #;
+++noun+abl+add:^ிலிருந்தும் #;
+++noun+gen:^ின் #;
+++noun+gen+psp_padi:^ின்படி #;
+++noun+gen+add:^ினும் #;
+++noun+gen:^ுடைய #;
+++noun+loc:^ில் #;
+++noun+loc+colloq:^ுல #;
+++noun+loc+cop%=ஆ+adjpart%=ன:^ிலான #;
+++noun+loc+add:^ிலும் #;
+++noun+loc+foc%=ஏயே:^ிலேயே #;
+++noun+loc:^ிடம் #;
+++noun+loc+add:^ிடமும் #;
+ LEXICON ForeignKFinalInflections
+ ! Productive borrowed-noun plural and core oblique cases.
+ +noun+pl+nom:^்குகள் #;
+@@ -1752,6 +1921,9 @@
+ +pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ 
+ LEXICON C1Sg
++! Reviewed recurrent modern common nouns from five-corpus saturation.
++ஹீரோ	C1SgRoot;
++ஆடியோ	C1SgRoot;
+ ! Reviewed frequent modern-Tamil roots from five-corpus saturation.
+ எரிவாயு	C1SgRoot;
+ ! Reviewed common lexical readings recurring across development corpora.
+@@ -3914,6 +4086,8 @@
+ !நான் என் நாம் நம் எம் நாங்கள் எங்கள் நீ உன் நீர் உம் நீங்கள் உங்கள் அவை இவை உவை அது இது உது தான் தாங்கள் அவன் அவள் உவன் உவள் இவன் இவள் அவர் உவர் இவர் அவர்கள் இவர்கள் உவர்கள் உவர்களுக்குப் உவர்களுக்குச் உவர்களுக்குத் உவர்களுக்குற்
+ 
+ LEXICON C2Sg
++! Reviewed recurrent modern common nouns from five-corpus saturation.
++காமெடி	C2SgRoot;
+ ! Reviewed frequent modern-Tamil roots from five-corpus saturation.
+ அமலாக்கத்துறை	C2SgRoot;
+ அரசாணை	C2SgRoot;
+@@ -45213,6 +45387,8 @@
+ +noun+pl+gen+psp_keele_iruntu:^க்களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^க்களின்கீழேயிருந்தும் #;
+ LEXICON C4Sg
++! Reviewed recurrent modern common nouns from five-corpus saturation.
++ரெயில்	C4SgRoot;
+ ! Reviewed frequent modern-Tamil roots from five-corpus saturation.
+ விசில்	C4SgRoot;
+ ரன்	C4SgRoot;
+@@ -56756,6 +56932,11 @@
+ 
+ 
+ LEXICON C7Sg
++! Reviewed recurrent modern common nouns from five-corpus saturation.
++வார்டு	C7SgRoot;
++சொகுசு	C7SgRoot;
++பொதுக்குழு	C7SgRoot;
++திரையுலகு	C7SgRoot;
+ ! Reviewed frequent modern-Tamil roots from five-corpus saturation.
+ ஆணைக்குழு	C7SgRoot;
+ இடஒதுக்கீடு	C7SgRoot;
+@@ -72683,6 +72864,10 @@
+ +noun+pl+gen+psp_keele_iruntu:^களின்கீழேயிருந்து #;
+ +noun+pl+gen+psp_keele_iruntu+add:^களின்கீழேயிருந்தும் #;
+ LEXICON C11Sg
++! Reviewed recurrent modern common nouns from five-corpus saturation.
++சீசன்	C11SgRoot;
++ஸ்மார்ட்போன்	C11SgRoot;
++சாம்பியன்	C11SgRoot;
+ ! Reviewed frequent modern-Tamil roots from five-corpus saturation.
+ செயல்திறன்	C11SgRoot;
+ ! Post-0318 reviewed common lexical coverage.
+@@ -133802,6 +133987,13 @@
+ +noun+pl+gen+psp_keele_iruntu+add:^ங்களின்கீழேயிருந்தும் #;
+ 
+ LEXICON C16Sg
++! Reviewed recurrent modern common nouns from five-corpus saturation.
++மாஸ்டர்	C16DirectSgRoot;
++மேயர்	C16DirectSgRoot;
++கவர்னர்	C16DirectSgRoot;
++ஓவர்	C16DirectSgRoot;
++போஸ்டர்	C16DirectSgRoot;
++ஆர்டர்	C16DirectSgRoot;
+ ! Reviewed frequent modern-Tamil roots from five-corpus saturation.
+ ஆலோசகர்	C16DirectSgRoot;
+ ஆராய்ச்சியாளர்	C16DirectSgRoot;
