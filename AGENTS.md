@@ -337,6 +337,10 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
    - `0004-fix-noun-plural-accusative.patch` (adds common bare plural accusative alternates such as `மரம்+noun+pl+acc -> மரங்களை` while preserving existing `...களினை` variants)
    - `0005-add-common-noun-case-variants.patch` (adds common plural instrumental `...களால்` alternates, short `இ/ஈ`-stem dative forms such as `புலிக்கு`, missing `உடன்` sociative forms for `ன்/ல்/ள்` classes, and fixes a C14 `+noun+so` tag typo to `+noun+soc`)
    - `0006-add-common-verb-coverage.patch` (adds common missing verb coverage for `கொடு`, `சாப்பிடு`, and modern allomorph forms for `போ`, `வா`, and `கேள்` across representative person/number variants; covered by `fst/tests/fixtures/verb_morph_regressions.json`)
+   - `0437-fix-u-final-ellaam-realization.patch` (realizes nominative `+all` correctly after short-`உ` noun classes, including `வீடெல்லாம்`, `மொட்டெல்லாம்`, `எழுத்தெல்லாம்`, and `ஆறெல்லாம்`)
+   - `0437-add-classical-first-relations.tsv` (adds reversible, lexically constrained relations for Kural-style `அகர`, `முதல`, and `முதற்றே`; do not generalize these stem alternations to arbitrary nouns)
+   - `0438-add-translation-training-coverage.patch` (adds reviewed common/loan noun paradigms, three explicit compound modifiers, and plural `...களிடமிருந்து`/`...ர்களிடமிருந்து` ablatives for the C2/C4/C11/C16 classes exposed by the frozen translation-training audit)
+   - `0438-add-pronoun-translative-copular.tsv` (completes the closed singular/plural `இது/அது/எது` translative and future-copular paradigm; plural predicates retain `3pln` agreement)
 
 ### Server-Side FST Validation (`server/index.js`)
 

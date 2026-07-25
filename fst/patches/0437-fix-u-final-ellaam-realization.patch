@@ -1,0 +1,49 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -56196,7 +56196,7 @@
+ +noun+nom: #;
+ +noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ம் #;
+-+noun+nom+all:^எல்லாம் #;
+++noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ஆாக #;
+ +noun+trans+colloq:^ஆா #;
+ +noun+trans+add%=உம்:^ஆாகவும் #;
+@@ -56727,7 +56727,7 @@
+ +noun+nom: #;
+ +noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ம் #;
+-+noun+nom+all:^எல்லாம் #;
+++noun+nom+all:^ெல்லாம் #;
+ +noun+nom+sandhip:^ட்டுப் #;
+ +noun+nom+sandhic:^ட்டுச் #;
+ +noun+nom+sandhit:^ட்டுத் #;
+@@ -70259,7 +70259,7 @@
+ +noun+nom: #;
+ +noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ம் #;
+-+noun+nom+all:^எல்லாம் #;
+++noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^ஆாக #;
+ +noun+trans+colloq:^ஆா #;
+ +noun+trans+add%=உம்:^ஆாகவும் #;
+@@ -70883,7 +70883,7 @@
+ +noun+nom: #;
+ +noun+voc%=ஏ:^ே #;
+ +noun+nom+add:^ம் #;
+-+noun+nom+all:^ணெல்லாம் #;
+++noun+nom+all:^ெல்லாம் #;
+ +noun+trans:^றாக #;
+ +noun+trans+colloq:^றா #;
+ +noun+trans+add%=உம்:^றாகவும் #;
+--- tamil-noun.foma
++++ tamil-noun.foma
+@@ -16,7 +16,7 @@
+ define R2 {்} -> 0 || CharSet2 _ "^" [{ி}|{ு}|{ோ}|{து}|{ை}|{ா}|{ெ}|{ே}];
+ define R3TTU {ட்டு} -> 0 || _ "^" {ட்ட}; # For மொட்டு -> மொட்டை
+ define R3 {டு} -> 0 ||  _ "^" {ட்ட};   #For Kaadu class
+-define R4 {ு} -> 0 || _ "^" [{ஆ}|{ே}]; #For Vandu
++define R4 {ு} -> 0 || _ "^" [{ஆ}|{ே}|{ெ}]; # For u-final stems before vowel-sign suffixes
+ define R5 {று} -> {ற்} || _ "^" {ற}; # For ஆறு -> ஆற்றை
+ define R19 {ன்}-> 0 ||  _ "^" [{ற்த்}|{ற்ச்}|{ற்ட்}|{ற்ப்}]; #For பொற்  
+ define R6 {ன்} -> 0 || _ "^" [{ர்க}]; #For Manavan

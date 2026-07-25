@@ -53,6 +53,22 @@
       "surface": "பொருளெல்லாம்"
     },
     {
+      "analysis": "வீடு+noun+nom+all",
+      "surface": "வீடெல்லாம்"
+    },
+    {
+      "analysis": "மொட்டு+noun+nom+all",
+      "surface": "மொட்டெல்லாம்"
+    },
+    {
+      "analysis": "எழுத்து+noun+nom+all",
+      "surface": "எழுத்தெல்லாம்"
+    },
+    {
+      "analysis": "ஆறு+noun+nom+all",
+      "surface": "ஆறெல்லாம்"
+    },
+    {
       "analysis": "அட்டகிராம்+noun+acc",
       "surface": "அட்டகிராமை"
     },

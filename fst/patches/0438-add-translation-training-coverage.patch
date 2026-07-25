@@ -1,0 +1,115 @@
+--- Nouns.lexc
++++ Nouns.lexc
+@@ -234,6 +234,10 @@
+ ஒலிம்பிக்:ஒலிம்பிக	ForeignDoubledKKFinalInflections;
+ குரூப்	ForeignFinalNom;
+ குரூப்:குரூப	ForeignDoubledPPFinalInflections;
++கிளப்	ForeignFinalNom;
++கிளப்:கிளப	ForeignDoubledPPFinalInflections;
++சாம்பியன்ஷிப்	ForeignFinalNom;
++சாம்பியன்ஷிப்:சாம்பியன்ஷிப	ForeignDoubledPPFinalInflections;
+ பஸ்:பஸ்ச	ForeignSFinalInflections;
+ ! Reviewed recurrent modern common nouns from five-corpus saturation.
+ பிளஸ்	ForeignFinalNom;
+@@ -3723,6 +3727,8 @@
+ 
+ ! Reviewed residual explicit noun candidates
+ சௌசௌ	C1SgRoot;
++இசைக்குழு	C1SgRoot;
++ஸ்டுடியோ	C1SgRoot;
+ LEXICON C1SgRoot
+ !        Root;
+         C1Inflections;
+@@ -44465,6 +44471,11 @@
+ புல்லுத்தடுக்குஞ்சூரைச்செடி	C2SgRoot;
+ வெள்ளந்தி	C2SgRoot;
+ ராசி	C2SgRoot;
++பிற்பகுதி	C2SgRoot;
++முற்பகுதி	C2SgRoot;
++நடுப்பகுதி	C2SgRoot;
++பெரும்பகுதி	C2SgRoot;
++தரவரிசை	C2SgRoot;
+ LEXICON C2SgRoot
+  !       Root;
+         C2Inflections;
+@@ -44624,6 +44635,8 @@
+ +noun+loc+add:^யிடமும் #;
+ +noun+pl+loc:^களிடம் #;
+ +noun+pl+loc+add:^களிடமும் #;
+++noun+pl+abl:^களிடமிருந்து #;
+++noun+pl+abl+add:^களிடமிருந்தும் #;
+ 
+ +noun+nom+cmpr:^போல் #;
+ +noun+pl+nom+cmpr:^கள்போல் #;
+@@ -55165,6 +55178,8 @@
+ +noun+loc+add:^ிடமும் #;
+ +noun+pl+loc:^களிடம் #;
+ +noun+pl+loc+add:^களிடமும் #;
+++noun+pl+abl:^களிடமிருந்து #;
+++noun+pl+abl+add:^களிடமிருந்தும் #;
+ 
+ +noun+nom+foc:^தான் #;
+ +noun+nom+cmpr:^போல் #;
+@@ -70228,6 +70243,7 @@
+ ! Reviewed residual explicit noun candidates
+ ஆகஸ்டு	C7SgRoot;
+ குருடு	C7SgRoot;
++படைப்பிரிவு	C7SgRoot;
+ LEXICON ModernKkalPlural
+ +noun+pl+nom:^க்கள் #;
+ +noun+pl+voc%=ஏ:^க்களே #;
+@@ -94367,6 +94383,8 @@
+ +noun+loc+add:^னிடமும் #;
+ +noun+pl+loc:^ர்களிடம் #;
+ +noun+pl+loc+add:^ர்களிடமும் #;
+++noun+pl+abl:^ர்களிடமிருந்து #;
+++noun+pl+abl+add:^ர்களிடமிருந்தும் #;
+ 
+ +noun+nom+foc:^தான் #;
+ +noun+nom+cmpr:^போல் #;
+@@ -103217,6 +103235,9 @@
+ சன்மநட்சத்திரம்	C15SgRoot;
+ சப்தமண்டலம்	C15SgRoot;
+ சமகாலம்	C15SgRoot;
++ஆல்பம்	C15SgRoot;
++வெப்பமண்டலம்	C15SgRoot;
++ஆரம்பகாலம்	C15SgRoot;
+ சமசித்தத்துவம்	C15SgRoot;
+ சமத்காரம்	C15SgRoot;
+ சமத்தானம்	C15SgRoot;
+@@ -133946,6 +133967,9 @@
+ வேலும்:வேலு	C15CompoundModifier;
+ வைணவம்:வைணவ	C15CompoundModifier;
+ வைரம்:வைர	C15CompoundModifier;
++சமகாலம்:சமகால	C15CompoundModifier;
++வெப்பமண்டலம்:வெப்பமண்டல	C15CompoundModifier;
++ஆரம்பகாலம்:ஆரம்பகால	C15CompoundModifier;
+ 
+ LEXICON C15CompoundModifier
+ +noun+compoundmodifier: #;
+@@ -138661,6 +138685,7 @@
+ டிரைவர்	C16DirectSgRoot;
+ கமிஷனர்	C16DirectSgRoot;
+ கவுன்சிலர்	C16DirectSgRoot;
++கிட்டார்	C16DirectSgRoot;
+ LEXICON C16SgRoot
+ !        Root;
+         C16Inflections;
+@@ -138838,6 +138863,8 @@
+ +noun+pl+loc:^களிடம் #;
+ +noun+pl+loc+add:^களிடமும் #;
+ +noun+pl+loc+foc:^களிடம்தான் #;
+++noun+pl+abl:^களிடமிருந்து #;
+++noun+pl+abl+add:^களிடமிருந்தும் #;
+ 
+ +noun+nom+foc:^தான் #;
+ +noun+nom+cmpr:^போல் #;
+@@ -139529,6 +139556,8 @@
+ +noun+pl+loc:^களிடம் #;
+ +noun+pl+loc+add:^களிடமும் #;
+ +noun+pl+loc+foc:^களிடம்தான் #;
+++noun+pl+abl:^களிடமிருந்து #;
+++noun+pl+abl+add:^களிடமிருந்தும் #;
+ 
+ +noun+nom+foc:^தான் #;
+ +noun+nom+cmpr:^போல் #;

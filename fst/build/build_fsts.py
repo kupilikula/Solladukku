@@ -20,6 +20,7 @@ PATCH_DIR = ROOT / "fst" / "patches"
 WORK_ROOT = ROOT / "fst" / "build" / ".work"
 MANIFEST_PATH = ROOT / "fst" / "build" / "manifest.json"
 CANONICAL_MODELS = ROOT / "build" / "fst-models"
+RUNTIME_MODELS = ROOT / "runtime"
 WORDLIST_MODELS = ROOT / "static-word-list" / "fst-models"
 SERVER_MODELS = ROOT / "server" / "fst-models"
 PINNED_UPSTREAM_ZIPS = ROOT / "fst" / "upstream-zips"
@@ -168,6 +169,8 @@ COMPONENTS = [
             "0434-reclassify-u-final-common-nouns.patch",
             "0435-add-final-occupational-common-nouns.patch",
             "0436-complete-infinc-possessive-genitive.patch",
+            "0437-fix-u-final-ellaam-realization.patch",
+            "0438-add-translation-training-coverage.patch",
         ],
     },
     {
@@ -266,6 +269,7 @@ COMPONENTS = [
             "0398-add-closed-class-parity-part.tsv",
             "0400-add-final-closed-class-relations-part.tsv",
             "0409-add-joined-discourse-relations.tsv",
+            "0437-add-classical-first-relations.tsv",
         ],
     },
     {
@@ -835,6 +839,7 @@ COMPONENTS = [
             "0384-complete-pronoun-in-genitive-syncretism.tsv",
             "0398-add-closed-class-parity-pronoun.tsv",
             "0406-add-final-pronoun-relations.tsv",
+            "0438-add-pronoun-translative-copular.tsv",
         ],
         "canonicalize_deictic_person": True,
     },
@@ -1297,15 +1302,18 @@ def union_finite_relation_extensions(
 
 def copy_outputs(built_paths: dict[str, Path]) -> list[dict]:
     CANONICAL_MODELS.mkdir(parents=True, exist_ok=True)
+    RUNTIME_MODELS.mkdir(parents=True, exist_ok=True)
     WORDLIST_MODELS.mkdir(parents=True, exist_ok=True)
     SERVER_MODELS.mkdir(parents=True, exist_ok=True)
 
     outputs = []
     for output_name, src_path in built_paths.items():
         dst_canonical = CANONICAL_MODELS / output_name
+        dst_runtime = RUNTIME_MODELS / output_name
         dst_wordlists = WORDLIST_MODELS / output_name
         dst_server = SERVER_MODELS / output_name
         shutil.copy2(src_path, dst_canonical)
+        shutil.copy2(src_path, dst_runtime)
         shutil.copy2(src_path, dst_wordlists)
         shutil.copy2(src_path, dst_server)
         outputs.append({
@@ -1314,6 +1322,7 @@ def copy_outputs(built_paths: dict[str, Path]) -> list[dict]:
             "size_bytes": src_path.stat().st_size,
             "copied_to": [
                 "build/fst-models",
+                "runtime",
                 "static-word-list/fst-models",
                 "server/fst-models",
             ],

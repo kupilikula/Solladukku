@@ -170,7 +170,26 @@
         "ஒலிநூல்கள்": "ஒலிநூல்+noun+pl+nom",
         "மதித்தல்": "மதி+verb+nonfin+sim+verbalnoun=தல்+nom",
         "மதித்தலை": "மதி+verb+nonfin+sim+verbalnoun=தல்+acc",
-        "நெய்தல்": "நெய்தல்+noun+nom"
+        "நெய்தல்": "நெய்தல்+noun+nom",
+        "ஆல்பத்தில்": "ஆல்பம்+noun+infInc+loc",
+        "வெப்பமண்டல": "வெப்பமண்டலம்+noun+compoundmodifier",
+        "ஆரம்பகாலக்": "ஆரம்பகாலம்+noun+compoundmodifier+sandhik=க்",
+        "பிற்பகுதியில்": "பிற்பகுதி+noun+loc",
+        "முற்பகுதியிலும்": "முற்பகுதி+noun+loc+add",
+        "நடுப்பகுதியை": "நடுப்பகுதி+noun+acc",
+        "பெரும்பகுதியின்": "பெரும்பகுதி+noun+gen",
+        "தரவரிசையில்": "தரவரிசை+noun+loc",
+        "இசைக்குழுவின்": "இசைக்குழு+noun+gen",
+        "படைப்பிரிவுகள்": "படைப்பிரிவு+noun+pl+nom",
+        "ஸ்டுடியோவில்": "ஸ்டுடியோ+noun+loc",
+        "கிளப்பின்": "கிளப்+noun+gen",
+        "சாம்பியன்ஷிப்பை": "சாம்பியன்ஷிப்+noun+acc",
+        "கிட்டார்": "கிட்டார்+noun+nom",
+        "விமர்சகர்களிடமிருந்து": "விமர்சகர்+noun+pl+abl",
+        "விமர்சகர்களிடமிருந்தும்": "விமர்சகர்+noun+pl+abl+add",
+        "மாணவர்களிடமிருந்து": "மாணவர்+noun+pl+abl",
+        "நண்பர்களிடமிருந்து": "நண்பன்+noun+pl+abl",
+        "கைதிகளிடமிருந்து": "கைதி+noun+pl+abl"
       },
       "must_not_analyze": {
         "ஆற்றை": ["ஆர்+noun+acc"],
@@ -196,6 +215,9 @@
     },
     "part.fst": {
       "must_analyze": {
+        "அகர": "அகரம்+noun+compoundmodifier",
+        "முதல": "முதல்+pp-particle",
+        "முதற்றே": "முதல்+pp-particle+foc=ஏ",
         "இதற்காக": "இது+pron+dem+prox+3sgn+dat+purpose",
         "தேவையில்லை": "தேவை+noun+nom+exist+neg",
         "ஆகியவற்றை": "ஆகு+verb+nonfin+sim+past=இ+adjpart=அ+PartNoun=அது+pl+acc",
@@ -499,6 +521,12 @@
         ,"அவருடைய": "அவர்+pron+dem+dist+3sgh+gen"
         ,"தன்னுடைய": "தான்+pron+3sg+refl+gen"
         ,"அதற்கான": "அது+pron+dem+dist+3sgn+dat+cop=ஆ+adjpart=ன"
+        ,"இதுவாகும்": "இது+pron+dem+prox+3sgn+trans=ஆக+cop+fut+3sgn"
+        ,"அதுவாகும்": "அது+pron+dem+dist+3sgn+trans=ஆக+cop+fut+3sgn"
+        ,"எதுவாக": "எது+pron+inter+3sgn+trans=ஆக"
+        ,"இவையாகும்": "இவை+pron+dem+prox+3pln+trans=ஆக+cop+fut+3pln"
+        ,"அவையாகும்": "அவை+pron+dem+dist+3pln+trans=ஆக+cop+fut+3pln"
+        ,"எவையாக": "எவை+pron+inter+3pln+trans=ஆக"
       },
       "must_not_analyze": {
         "இது": ["இது+pron+dem+prox+pl+2sgn+nom"],
