@@ -1019,7 +1019,10 @@ Deployed as a single Dockerfile-based service on Railway:
 - `Dockerfile` builds the React frontend, then sets up the Node.js server
 - `Dockerfile` verifies the checked-in runtime against `morphology.lock.json` before producing the frontend/server runtime image
 - Server serves the static React build for non-API routes + handles WebSocket/API on the same port
-- Static file caching is handled in `server/index.js` (not nginx): `ETag`/`Last-Modified` are emitted and respected so unchanged assets (including `tamil_dictionary.txt`) are revalidated and not re-downloaded on refresh
+- Static file caching is handled in `server/index.js` (not nginx):
+  `ETag`/`Last-Modified` are emitted and respected. Hashed assets are immutable;
+  `tamil_dictionary.txt` is fetched with a release-version query and `no-cache`
+  so policy updates replace IndexedDB/browser caches immediately.
 - Auto-deploys on push to `main` (connected via GitHub integration)
 - `railway.toml` `watchPatterns` limits rebuilds to code changes (skips doc-only commits)
 - Custom domain: `solmaalai.com` (CNAME → Railway). `சொல்மாலை.com` redirects via Namecheap.

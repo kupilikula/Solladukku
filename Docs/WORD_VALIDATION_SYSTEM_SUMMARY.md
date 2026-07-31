@@ -89,6 +89,9 @@ Static dictionary outputs:
 - `static-word-list/lemma_dictionary.txt`: source headword/lemma inventory used by tokenizer/root-lemma tooling. It excludes generated inflections.
 
 The client binary search must use JavaScript `<` and `>` comparisons, not `localeCompare()`, because locale-aware Tamil ordering does not match Python codepoint sorting.
+The dictionary request includes a release-version query string, and the server
+marks the file `no-cache`; changing the version invalidates the IndexedDB copy
+and prevents an older gameplay policy from surviving a deployment.
 
 ## FST Lineage and Models
 

@@ -1601,7 +1601,7 @@ function handleHttpRequest(req, res) {
             if (IMMUTABLE_ASSET_REGEX.test(filename)) {
                 cacheControl = 'public, max-age=31536000, immutable';
             } else if (filename === 'tamil_dictionary.txt') {
-                cacheControl = 'public, max-age=86400';
+                cacheControl = 'no-cache';
             } else if (isSpaFallback || filename === 'index.html') {
                 cacheControl = 'no-cache';
             }

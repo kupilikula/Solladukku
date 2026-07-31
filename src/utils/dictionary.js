@@ -13,7 +13,7 @@ import { isTamilOrthographyDefinitelyInvalid } from './tamilOrthography';
 let dictionary = null;    // sorted string array once loaded
 let loadingPromise = null; // dedup concurrent calls
 let loadError = null;
-const DICTIONARY_CACHE_VERSION = process.env.REACT_APP_DICTIONARY_CACHE_VERSION || '2026-07-09-client-headwords-1';
+const DICTIONARY_CACHE_VERSION = process.env.REACT_APP_DICTIONARY_CACHE_VERSION || '2026-07-31-rc8-gameplay-policy-1';
 const DICT_DB_NAME = 'solmaalai-cache';
 const DICT_DB_VERSION = 1;
 const DICT_STORE_NAME = 'assets';
@@ -121,7 +121,8 @@ export function loadDictionary() {
                 console.warn('Dictionary cache read failed, falling back to network:', err);
             }
 
-            const res = await fetch('/tamil_dictionary.txt');
+            const dictionaryUrl = `/tamil_dictionary.txt?v=${encodeURIComponent(DICTIONARY_CACHE_VERSION)}`;
+            const res = await fetch(dictionaryUrl);
             if (!res.ok) {
                 throw new Error(`Dictionary fetch failed: ${res.status}`);
             }
