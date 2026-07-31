@@ -44,3 +44,6 @@ static-word-list/tamillexicon_headwords.txt
 fst/build/.work/
 fst/reports/*
 !fst/reports/.gitkeep
+
+# Local root-level runtime copies; deployed models live in server/fst-models/.
+/runtime/
