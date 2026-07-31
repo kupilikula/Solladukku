@@ -1,91 +1,62 @@
 # FST Architecture and Workflow
 
-This is the canonical reference for Solmaalai FST source-of-truth, patching, build outputs, and deployment behavior.
+This is the canonical reference for the Tamil morphology release used by
+Solmaalai.
 
-## Directory Roles
+## Runtime source of truth
 
-- `vendor/thamizhi-morph/`
-  - Vendored upstream source (git submodule pinned to a commit).
-  - Contains upstream `foma/*.zip` bundles and upstream prebuilt `FST-Models/*`.
+`server/fst-models/` is the only checked-in runtime copy used by the game. Its
+**12 FST models** and auxiliary inventory come from the public
+[`Indic-AI-Experiments/tamil-morphology`](https://github.com/Indic-AI-Experiments/tamil-morphology)
+release. `morphology.lock.json` records the release version, source commit,
+artifact inventory and SHA-256 checksums.
 
-- `fst/upstream-zips/`
-  - Pinned local fallback source zips used when submodule contents are unavailable in CI/container checkouts.
+Run:
 
-- `fst/upstream-models/`
-  - Pinned local fallback prebuilt assets used when corresponding vendored files are unavailable.
+```bash
+npm run fst:verify-release
+npm run fst:test
+```
 
-- `fst/`
-  - Local tooling only (patches, deterministic build scripts, regressions, reports).
-  - Does **not** store runtime model copies for application usage.
+The first command fails if a model is missing, added unexpectedly or differs
+from the lock file. The Docker build runs the same check before deployment.
+`verb-auxiliary.fst` is loaded alongside the other eleven models.
 
-- `build/fst-models/`
-  - Canonical generated FST output directory produced by `npm run fst:build`.
+The older `vendor/`, `fst/upstream-*`, build script and patch directories remain
+as historical development lineage. They are not the deployed source of truth.
+`npm run fst:build:lineage` can reconstruct that older lineage for archaeology;
+it must not be used to replace the locked runtime release.
 
-- `static-word-list/fst-models/`
-  - Synced copy used by dictionary tooling compatibility paths.
+## Updating morphology
 
-- `server/fst-models/`
-  - Generated build outputs used by runtime server validation (`server/index.js`, `flookup`).
+The scheduled `update-morphology` workflow reads the latest public morphology
+repository, verifies every file against its manifest, installs the runtime into
+`server/fst-models/`, runs the canonical morphology regressions and opens a pull
+request. A manual update follows the same sequence with
+`scripts/install_morphology_release.py`.
 
-## Why Two Generated Output Directories?
+## Dictionary and gameplay policy
 
-Canonical output is generated once, then synced to consumer directories:
+The morphology system describes valid Tamil analyses; the board game applies a
+narrower word policy:
 
-- `build/fst-models`: canonical generated artifacts.
-- `static-word-list/fst-models`: dictionary generation compatibility copy.
-- `server/fst-models`: online gameplay validation pipeline.
+- Sandhi-only spellings are not independent playable words.
+- abbreviations, explicit entity/proper-name analyses and malformed inputs are
+  rejected;
+- reviewed proper names and their conservative case forms are removed from the
+  browser dictionary and rejected by the server;
+- if a reviewed name spelling is also a well-established common word, it can be
+  retained in `server/gameplay-common-word-exceptions.txt`;
+- a word with both a forbidden analysis and a genuine lexical analysis remains
+  playable.
 
-Keeping both avoids fragile cross-directory assumptions and keeps each consumer self-contained.
+`scripts/build_gameplay_exclusions.py` deterministically builds the proper-name
+list from the pinned reviewed entity snapshots under
+`static-word-list/entity-sources/`, including a small game-specific file of
+manually reviewed high-frequency names. The policy is enforced in
+`server/word-validation-policy.js` and its tests.
 
-## Build Source of Truth
-
-`npm run fst:build` runs `fst/build/build_fsts.py`, which:
-
-1. Extracts upstream source zips from `vendor/thamizhi-morph/foma/*.zip`.
-   - Fallback source: `fst/upstream-zips/*.zip` (no network download).
-2. Applies local patches from `fst/patches/` in order.
-3. Compiles FST binaries with `foma`.
-4. Writes canonical outputs to:
-   - `build/fst-models/`
-5. Syncs copies to:
-   - `static-word-list/fst-models/`
-   - `server/fst-models/`
-6. Writes build metadata to `fst/build/manifest.json`.
-
-## Patch Workflow
-
-1. Add/update patch file under `fst/patches/`.
-2. Rebuild models:
-   - `npm run fst:build`
-3. Run regressions:
-   - `npm run fst:test`
-4. If dictionary behavior changed, regenerate dictionary assets:
-   - `python3 static-word-list/generate_fst_forms.py`
-   - `python3 static-word-list/build_dictionary.py`
-   - `python3 fst/tests/run_fst_regressions.py --check-dictionary`
-
-Convenience command:
-
-- `npm run dict:build` (full rebuild + dictionary + regressions)
-
-## Runtime Setup
-
-- Server helper (`cd server && npm run setup`) is a compatibility wrapper that invokes the same root build script and patches.
-- Runtime validation reads `server/fst-models/*.fst`.
-
-## Production Behavior
-
-`Dockerfile` builds patched FSTs in-image via `npm run fst:build` after copying `vendor/` and `fst/`.
-
-This ensures production runtime validation uses the same patched model lineage as local development.
-
-## Naming Clarification
-
-- `fst/` means "FST tooling" (not model storage).
-- `vendor/thamizhi-morph` means "upstream source snapshot".
-- `build/fst-models` means "canonical generated artifacts".
-- `static-word-list/fst-models` and `server/fst-models` mean "synced consumer copies".
-
-## Current Reorganization State
-
-Generation now uses a single canonical output (`build/fst-models`) and syncs to consumer directories. This keeps build lineage explicit while preserving existing consumer paths.
+The compact `public/tamil_dictionary.txt` is a fast client-side headword cache.
+Server FST validation is authoritative for misses. Full offline dictionary
+generation may use ignored working copies under `build/fst-models/` and
+`static-word-list/fst-models/`, but production never reads them.

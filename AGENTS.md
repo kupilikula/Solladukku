@@ -17,7 +17,9 @@ A React-based Tamil Scrabble game with a landing page, real-time multiplayer via
 - **Server**: Node.js with ws library, foma/flookup for FST validation, origin/rate-limit hardening, SQLite analytics, and feature-flagged account auth (access token + HttpOnly refresh cookie sessions, double-submit CSRF token cookie/header protection for cookie-auth routes, Argon2id password hashing via `argon2`), plus Zoho SMTP email delivery integration via `nodemailer` for verification/reset flows
 - **Dictionary Build**: Python 3 scripts, foma toolkit for FST morphological generation
 - **Deployment**: Railway (Dockerfile-based, auto-deploy on push to `main`). Server serves both API/WebSocket and React static build as a single service.
-- **Dictionary Storage**: `public/tamil_dictionary.txt` has Git LFS attributes, but the current rebuilt artifact is ~45MB and is currently pushed as a normal Git blob when Git LFS is unavailable; historical/full builds may be larger. Dockerfile auto-downloads from GitHub if an LFS pointer is present instead of real contents.
+- **Dictionary Storage**: `public/tamil_dictionary.txt` is a regular
+  checked-in compact headword file (about 3.7 MB); generated full dictionaries
+  remain local artifacts.
 
 ## Project Structure
 
@@ -36,16 +38,17 @@ server/
 ├── analytics.js              # SQLite analytics: visits, games, turns tracking
 ├── auth.js                   # Auth helpers: access/refresh tokens, password hashing, cookie/session utilities
 ├── geo.js                    # Geo-IP resolver (provider + cache + IP hashing)
-├── download-fsts.js          # Backward-compatible setup wrapper that runs deterministic vendored FST build
+├── download-fsts.js          # Backward-compatible setup wrapper that verifies the locked FST release
 ├── package.json              # Server deps (ws, better-sqlite3); scripts: start, setup, test
 ├── test/
 │   └── auth-integration.test.js # Node integration tests: auth lifecycle, /api/games authz, WS auth close codes
 ├── analytics.db              # SQLite database (auto-created, gitignored)
-└── fst-models/               # Runtime FST model files (11 core models)
+└── fst-models/               # Checksum-pinned runtime files (12 FSTs + auxiliary inventory)
 static-word-list/
 ├── build_dictionary.py       # Builds combined dictionary from headword sources + local FST-generated forms (no external pre-generated verb list dependency)
 ├── extract_tawiktionary_pos.py # Parses Tamil Wiktionary pages dump and emits lemma→POS cache for classification constraints
-├── generate_fst_forms.py     # Classifies headwords against all 11 core FSTs and generates noun/verb (plus adj) forms via local flookup models
+├── generate_fst_forms.py     # Classifies headwords against the morphology FSTs and generates noun/verb (plus adj) forms via local flookup models
+├── entity-sources/           # Pinned reviewed entity snapshots used only to build gameplay rejection data
 ├── analyze_gap_vs_legacy.py  # Quantifies gap between current generated dictionary and legacy external words-C* coverage
 ├── wiktionary_exclusions.txt # Manually reviewed lemma exclusions applied globally to Lexicon/Wiktionary headword pools before generation/build
 ├── tamillexicon_headwords.txt # Tamil Lexicon source headwords (107K)
@@ -57,9 +60,9 @@ static-word-list/
 ├── fst_unclassified_vuizur_headwords.json # Output: unclassified Wiktionary lemmas after FST + heuristic pass (file name retained for compatibility)
 ├── fst_unclassified_vuizur_summary.json # Output: unclassified Wiktionary POS/source counts + preview list
 ├── cache/                    # Cached dictionary build inputs (official Tamil Wiktionary dumps + POS cache + Vuizur TSV fallback/supplement + legacy artifacts)
-└── fst-models/               # Synced FST consumer copy for dictionary tooling compatibility
+└── fst-models/               # Ignored local compatibility copy for offline dictionary work
 build/
-└── fst-models/               # Canonical generated FST artifacts (synced to server/static-word-list)
+└── fst-models/               # Ignored historical/local build output; not deployed
 fst/
 ├── README.md                 # Vendored upstream + patch/build/test workflow documentation
 ├── patches/                  # Ordered local source patches applied to upstream foma sources
@@ -316,10 +319,11 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
    - Full-mode regression fixture: `fst/tests/fixtures/full_mode_regressions.json` (checked via `run_fst_regressions.py --full-mode`)
 9. Generation also emits unclassified-modern-word reports from Wiktionary (`fst_unclassified_vuizur_headwords.json`, `fst_unclassified_vuizur_summary.json`) to drive targeted lexicon/FST improvement work
 10. Heuristic classification supports explicit lemma-level class overrides for known ambiguous endings (e.g., noun lemmas ending in `-த்தல்`)
-11. Requires: `foma`/`flookup` installed and vendored submodule sources present
+11. Runtime checks require `foma`/`flookup`; the vendored submodule is needed
+    only for the historical `fst:build:lineage` workflow
 12. `build_dictionary.py` includes heuristic outputs only when the corresponding toggle(s) are set during both generation and dictionary build
 
-### Vendored FST Build Pipeline (`fst/build/build_fsts.py`)
+### Historical vendored FST build pipeline (`fst/build/build_fsts.py`)
 
 1. Reads sources from pinned submodule `vendor/thamizhi-morph`
 2. Extracts relevant upstream zip bundles (`foma/*.zip`) into `fst/build/.work/<component>/`
@@ -894,7 +898,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - Landing page: inline styles in `App.js` `LandingPage` component
 
 ### Rebuilding the Dictionary
-1. Build/refresh local FST binaries from pinned upstream + patches: `npm run fst:build`
+1. Verify the locked public morphology runtime: `npm run fst:verify-release`
 2. Regenerate FST surface forms: `python3 static-word-list/generate_fst_forms.py`
 3. Build combined dictionary: `python3 static-word-list/build_dictionary.py`
 4. Run regression checks (including dictionary include/exclude assertions): `python3 fst/tests/run_fst_regressions.py --check-dictionary`
@@ -904,7 +908,9 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 5. Output: `public/tamil_dictionary.txt` (served to browser)
 
 Shortcut:
-- `npm run dict:build` executes the full sequence above (`fst:build` + form generation + dictionary build + regression check).
+- `npm run dict:build` executes the full sequence above (release verification +
+  proper-name exclusion generation + form generation + dictionary build +
+  regression check).
 
 ### Adding a New WebSocket Message Type
 1. Add handler in `server/index.js` switch statement
@@ -985,15 +991,16 @@ The server at `server/index.js` is an HTTP + WebSocket server on a single port:
 14. Periodically cleans expired/revoked auth sessions and consumed/expired verification/reset tokens (`AUTH_CLEANUP_INTERVAL_MINUTES`, default 30)
 15. Cleans up empty rooms after 5 minutes
 16. Gracefully shuts down flookup processes, analytics DB, and HTTP server on SIGINT
-17. Start with: `npm run fst:build && cd server && npm start` (or `cd server && npm run setup && npm start` via compatibility wrapper)
+17. Start with: `npm run fst:verify-release && cd server && npm start` (or `cd server && npm run setup && npm start` via compatibility wrapper)
 18. Serves React static assets with HTTP cache headers and conditional request handling (`ETag` + `Last-Modified`): hashed build assets are immutable for 1 year, `tamil_dictionary.txt` is cached for 24h, and fresh conditional requests return `304 Not Modified`
 
 ### FST Models
-- **Canonical output** (`build/fst-models/`): Generated by `npm run fst:build`
-- **Build-time consumer copy** (`static-word-list/fst-models/`): Used by dictionary tooling compatibility paths
-- **Runtime** (`server/fst-models/`): Used by server's flookup processes for real-time validation
-- Build command: `npm run fst:build` (also invoked by `cd server && npm run setup`)
-- Source of truth: pinned submodule `vendor/thamizhi-morph` + local patches under `fst/patches/`
+- **Runtime source of truth** (`server/fst-models/`): Checksum-pinned 12-model release used by the server's flookup processes
+- **Release lock** (`morphology.lock.json`): Records the public morphology repository commit and SHA-256 hashes
+- Verification command: `npm run fst:verify-release` (also invoked by `npm run fst:build` and `cd server && npm run setup`)
+- Historical lineage rebuild: `npm run fst:build:lineage`; this is not the deployed source of truth
+- Gameplay policy: rejects Sandhi-only analyses, abbreviations, explicit entity/proper tags, and reviewed proper-name surfaces; accepts an ambiguous surface when it has a genuine playable lexical analysis
+- Proper-name inventory: generated by `npm run gameplay-exclusions:build` from pinned reviewed entity snapshots, with narrowly reviewed common-word exceptions
 - Regression command: `npm run fst:test`
 - Canonical architecture doc: `Docs/FST_ARCHITECTURE.md`
 - End-to-end validation summary: `Docs/WORD_VALIDATION_SYSTEM_SUMMARY.md`
@@ -1010,15 +1017,16 @@ Usernames are stored in `localStorage` (`solladukku_username`) and synced to ser
 ### Deployment (Railway)
 Deployed as a single Dockerfile-based service on Railway:
 - `Dockerfile` builds the React frontend, then sets up the Node.js server
-- `Dockerfile` builds patched FST models during image build via `npm run fst:build` (using `vendor/thamizhi-morph` + `fst/patches`) before producing the frontend/server runtime image
+- `Dockerfile` verifies the checked-in runtime against `morphology.lock.json` before producing the frontend/server runtime image
 - Server serves the static React build for non-API routes + handles WebSocket/API on the same port
 - Static file caching is handled in `server/index.js` (not nginx): `ETag`/`Last-Modified` are emitted and respected so unchanged assets (including `tamil_dictionary.txt`) are revalidated and not re-downloaded on refresh
 - Auto-deploys on push to `main` (connected via GitHub integration)
 - `railway.toml` `watchPatterns` limits rebuilds to code changes (skips doc-only commits)
 - Custom domain: `solmaalai.com` (CNAME → Railway). `சொல்மாலை.com` redirects via Namecheap.
-- `Dockerfile` installs `foma`/`flookup` and `git`; FST patch application/compilation runs in-container so production always uses patched runtime models generated at build time
+- `Dockerfile` installs `foma`/`flookup`; production uses the verified checked-in morphology release rather than compiling historical patches in-container
 - `Dockerfile` also installs native build prerequisites (`python3`, `make`, `g++`) so `argon2` can compile if prebuilt binaries are unavailable
-- Dictionary file has Git LFS attributes, but the current rebuilt artifact is ~45MB and may be stored as a normal Git blob when Git LFS is unavailable; historical/full builds may be larger. Railway's Docker builder doesn't resolve LFS pointers, so the Dockerfile detects a pointer file (file < 1KB) and downloads the actual file from GitHub.
+- The compact browser dictionary is a regular checked-in file (currently about
+  3.7 MB), so Docker and Railway builds do not depend on Git LFS.
 - Railway CLI: `railway up` for manual deploy, `railway logs` to check output
 
 ### Debugging

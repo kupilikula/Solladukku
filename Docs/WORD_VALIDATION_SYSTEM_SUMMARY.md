@@ -10,14 +10,22 @@ Word validation is a two-tier system:
 2. If a formed word is missing locally, the client asks the server:
    - Multiplayer: WebSocket `validateWords`
    - Single-player: `POST /api/validate-words`
-3. The server validates the word with long-lived `flookup` processes over the core FST models.
-4. A word is accepted by server fallback only if an FST recognizes it.
+3. The server first applies the board-game policy: Tamil-only shape, **2–15
+   letters**, no reviewed proper-name surface, and no Sandhi-only,
+   abbreviation, proper-name or entity analysis.
+4. It then validates the word with long-lived `flookup` processes over all
+   **12 checksum-pinned FST models**. A word is accepted when at least one
+   analysis is playable; a forbidden analysis does not hide a legitimate
+   common-word analysis of the same spelling.
 
 The server default is strict about FST availability:
 
 - `STRICT_SERVER_VALIDATION=true`
 
-With the default settings, a dictionary miss is sent to the server and accepted if any core FST recognizes it. If server-side FST validation is unavailable, `STRICT_SERVER_VALIDATION=true` makes the server reject dictionary misses instead of accepting them permissively.
+With the default settings, a dictionary miss is sent to the server and accepted
+only when a core FST returns at least one gameplay-safe analysis. If server-side
+FST validation is unavailable, `STRICT_SERVER_VALIDATION=true` makes the server
+reject dictionary misses instead of accepting them permissively.
 
 Client implementation:
 
@@ -65,6 +73,14 @@ Inputs:
   - In full mode, controlled heuristic inflections are included in generated forms.
 
 The file `static-word-list/wiktionary_exclusions.txt` removes manually rejected noise or unsuitable lemmas from the Lexicon/Wiktionary source pools before generation/build.
+
+Reviewed entity snapshots under `static-word-list/entity-sources/` are used
+only to build a rejection list. Their **3,873 single-word name and case forms**
+are removed from the browser dictionary and rejected by the server. Two
+reviewed spellings with established common-word readings, `உலகம்` and `சாடை`,
+remain playable through an explicit exception file. This boundary is
+deterministic and substantially improves proper-name rejection, but it is not a
+claim that a finite gazetteer contains every possible personal name.
 
 Static dictionary outputs:
 
@@ -1446,8 +1462,8 @@ inverse checks, 125 accepted forward checks, 287 verb checks, 226 miscellaneous
 morphology checks, and zero rejected-form leakage.
 
 Proper-name/entity resources remain outside the Scrabble-valid common-word
-language. The tokenizer's optional gazetteer and future proper-name FST must
-not be imported into Solladukku playable-word validation.
+language. Reviewed entity snapshots are imported only as negative evidence:
+they remove names from play and never make a word playable.
 
 ### Patches 0221-0225: final systematic morphology batch
 

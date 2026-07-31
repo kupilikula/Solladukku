@@ -189,7 +189,49 @@
         "விமர்சகர்களிடமிருந்தும்": "விமர்சகர்+noun+pl+abl+add",
         "மாணவர்களிடமிருந்து": "மாணவர்+noun+pl+abl",
         "நண்பர்களிடமிருந்து": "நண்பன்+noun+pl+abl",
-        "கைதிகளிடமிருந்து": "கைதி+noun+pl+abl"
+        "கைதிகளிடமிருந்து": "கைதி+noun+pl+abl",
+        "மரமான": "மரம்+noun+nom+cop=ஆ+adjpart=ன",
+        "முக்கியமான": "முக்கியம்+noun+nom+cop=ஆ+adjpart=ன",
+        "தேவையான": "தேவை+noun+nom+cop=ஆ+adjpart=ன",
+        "தொடர்பான": "தொடர்பு+noun+nom+cop=ஆ+adjpart=ன",
+        "திடமான": "திடம்+noun+nom+cop=ஆ+adjpart=ன",
+        "சட்டப்பூர்வமான": "சட்டப்பூர்வம்+noun+nom+cop=ஆ+adjpart=ன",
+        "மரமற்ற": "மரம்+noun+privative=அற்ற+adjpart=அ+adj",
+        "மரமற்றது": "மரம்+noun+privative=அற்ற+adjpart=அ+PartNoun=அது",
+        "தடையான": "தடை+noun+nom+cop=ஆ+adjpart=ன",
+        "தடையற்ற": "தடை+noun+privative=அற்ற+adjpart=அ+adj",
+        "அளவற்ற": "அளவு+noun+privative=அற்ற+adjpart=அ+adj",
+        "கண்ணற்ற": "கண்+noun+privative=அற்ற+adjpart=அ+adj",
+        "சீரற்ற": "சீர்+noun+privative=அற்ற+adjpart=அ+adj",
+        "சாத்தியமற்ற": "சாத்தியம்+noun+privative=அற்ற+adjpart=அ+adj",
+        "சாத்தியமற்றது": "சாத்தியம்+noun+privative=அற்ற+adjpart=அ+PartNoun=அது",
+        "பயனற்ற": "பயன்+noun+privative=அற்ற+adjpart=அ+adj",
+        "பாதுகாப்பற்ற": "பாதுகாப்பு+noun+privative=அற்ற+adjpart=அ+adj",
+        "மாசற்ற": "மாசு+noun+privative=அற்ற+adjpart=அ+adj",
+        "அருகிலுள்ள": "அருகு+noun+loc=இல்+exist+adjpart=அ+adj",
+        "ஐரோப்பிய": "ஐரோப்பா+noun+adjpart=இய+adj",
+        "அதிகாரப்பூர்வ": "அதிகாரம்+noun+compoundmodifier+adj",
+        "மருத்துவக்": "மருத்துவம்+noun+compoundmodifier+sandhik=க்+adj",
+        "மரங்களான": "மரம்+noun+pl+nom+cop=ஆ+adjpart=ன",
+        "மரங்களானவை": "மரம்+noun+pl+nom+cop=ஆ+adjpart=ன+PartNoun=அவை",
+        "மரங்களற்ற": "மரம்+noun+pl+privative=அற்ற+adjpart=அ+adj",
+        "மரங்களற்றவை": "மரம்+noun+pl+privative=அற்ற+adjpart=அ+PartNoun=அவை",
+        "உறுப்பினர்களான": "உறுப்பினர்+noun+pl+nom+cop=ஆ+adjpart=ன"
+      },
+      "must_generate": {
+        "மரம்+noun+nom+cop=ஆ+adjpart=ன": "மரமான",
+        "திடம்+noun+nom+cop=ஆ+adjpart=ன": "திடமான",
+        "மரம்+noun+privative=அற்ற+adjpart=அ+adj": "மரமற்ற",
+        "மரம்+noun+privative=அற்ற+adjpart=அ+PartNoun=அது": "மரமற்றது",
+        "தடை+noun+privative=அற்ற+adjpart=அ+adj": "தடையற்ற",
+        "சாத்தியம்+noun+privative=அற்ற+adjpart=அ+adj": "சாத்தியமற்ற",
+        "சாத்தியம்+noun+privative=அற்ற+adjpart=அ+PartNoun=அது": "சாத்தியமற்றது",
+        "மாசு+noun+privative=அற்ற+adjpart=அ+adj": "மாசற்ற",
+        "அருகு+noun+loc=இல்+exist+adjpart=அ+adj": "அருகிலுள்ள",
+        "ஐரோப்பா+noun+adjpart=இய+adj": "ஐரோப்பிய",
+        "அதிகாரம்+noun+compoundmodifier+adj": "அதிகாரப்பூர்வ",
+        "மரம்+noun+pl+nom+cop=ஆ+adjpart=ன": "மரங்களான",
+        "மரம்+noun+pl+privative=அற்ற+adjpart=அ+adj": "மரங்களற்ற"
       },
       "must_not_analyze": {
         "ஆற்றை": ["ஆர்+noun+acc"],
@@ -210,7 +252,10 @@
         "பாய்தல்": ["பாய்தல்+noun+nom"],
         "மதித்தல்": ["மதித்தல்+noun+nom"],
         "மாறுதல்": ["மாறுதல்+noun+nom"],
-        "மென்னுதல்": ["மென்னுதல்+noun+nom"]
+        "மென்னுதல்": ["மென்னுதல்+noun+nom"],
+        "தோல்வியுற்ற": ["தோல்வி+noun+privative=அற்ற+adjpart=அ+adj"],
+        "பதிவேற்ற": ["பதிவு+noun+privative=அற்ற+adjpart=அ+adj"],
+        "பொறுப்பேற்ற": ["பொறுப்பு+noun+privative=அற்ற+adjpart=அ+adj"]
       }
     },
     "part.fst": {
@@ -314,12 +359,45 @@
         "எப்போது": "எப்போது+dem+inter+time+adv",
         "இம்மாசம்": "இம்மாசம்+dem+prox+time+adv",
         "இந்நிலையில்": "இந்நிலையில்+dem+prox+situation+adv",
-        "கடுமையாக": "கடுமையாக+adv",
-        "குறைவாக": "குறைவாக+adv",
+        "கடுமையாக": "கடுமை+noun+trans=ஆக+adv",
+        "குறைவாக": "குறைவு+noun+trans=ஆக+adv",
         "வலுவின்றி": "வலுவின்றி+adv",
+        "நீண்டகாலமாக": "நீண்டகாலம்+noun+trans=ஆக+adv",
+        "பிஸியாக": "பிஸி+adj+trans=ஆக+adv",
+        "சட்டப்பூர்வமாக": "சட்டப்பூர்வம்+noun+trans=ஆக+adv",
+        "வணிகரீதியாக": "வணிகரீதி+noun+trans=ஆக+adv",
+        "முன்மாதிரியாக": "முன்மாதிரி+noun+trans=ஆக+adv",
+        "துரதிர்ஷ்டவசமாக": "துரதிர்ஷ்டவசம்+noun+trans=ஆக+adv",
+        "மாதந்தோறும்": "மாதம்+noun+time+distrib+adv",
+        "வாரந்தோறும்": "வாரம்+noun+time+distrib+adv",
+        "வீடுதோறும்": "வீடு+noun+distrib+adv",
+        "முதல்முறையாக": "முதல்முறை+noun+trans=ஆக+adv",
+        "ஜாலியாக": "ஜாலி+adj+trans=ஆக+adv",
+        "அதிகாரபூர்வமாக": "அதிகாரப்பூர்வம்+noun+trans=ஆக+adv",
+        "துரதிருஷ்டவசமாக": "துரதிர்ஷ்டவசம்+noun+trans=ஆக+adv",
+        "கவனக்குறைவாக": "கவனக்குறைவு+noun+trans=ஆக+adv",
+        "மாதம்தோறும்": "மாதம்+noun+time+distrib+adv",
+        "மாவட்டந்தோறும்": "மாவட்டம்+noun+distrib+adv",
         "அதனால்தான்": "அதனால்தான்+dem+dist+foc+adv"
         ,"நன்றாகப்": "நன்றாக+adv+sandhip=ப்"
         ,"இப்படிப்": "இப்படி+adv+sandhip=ப்"
+      },
+      "must_generate": {
+        "நீண்டகாலம்+noun+trans=ஆக+adv": "நீண்டகாலமாக",
+        "பிஸி+adj+trans=ஆக+adv": "பிஸியாக",
+        "மாதம்+noun+time+distrib+adv": "மாதந்தோறும்",
+        "வீடு+noun+distrib+adv": "வீடுதோறும்",
+        "முதல்முறை+noun+trans=ஆக+adv": "முதல்முறையாக",
+        "ஜாலி+adj+trans=ஆக+adv": "ஜாலியாக",
+        "துரதிர்ஷ்டவசம்+noun+trans=ஆக+adv": [
+          "துரதிர்ஷ்டவசமாக",
+          "துரதிருஷ்டவசமாக",
+          "துரதிஷ்டவசமாக"
+        ],
+        "மாவட்டம்+noun+distrib+adv": [
+          "மாவட்டம்தோறும்",
+          "மாவட்டந்தோறும்"
+        ]
       }
     },
     "adj.fst": {
@@ -339,17 +417,18 @@
         "தேசியக்": "தேசியக்+adj",
         "நீர்வாழ்": "நீர்வாழ்+adj",
         "துடுப்பாட்ட": "துடுப்பாட்ட+adj",
-        "முக்கியமான": "முக்கியம்+noun+nom+cop=ஆ+adjpart=ன",
-        "தேவையான": "தேவை+noun+nom+cop=ஆ+adjpart=ன",
-        "தொடர்பான": "தொடர்பு+noun+nom+cop=ஆ+adjpart=ன",
         "இவ்வாறான": "இவ்வாறு+adv+cop=ஆ+adjpart=ன",
         "இப்படியான": "இப்படி+adv+cop=ஆ+adjpart=ன",
         "எப்படியான": "எப்படி+adv+cop=ஆ+adjpart=ன",
         "அதிக": "அதிக+adj",
         "பாரம்பரிய": "பாரம்பரிய+adj",
-        "நவீன": "நவீன+adj"
-        ,"அனைத்துப்": "அனைத்து+adj+sandhip=ப்"
-        ,"இந்தியக்": "இந்திய+adj+sandhik=க்"
+        "நவீன": "நவீன+adj",
+        "மெதுவான": "மெது+adj+cop=ஆ+adjpart=ன+adj",
+        "அனைத்துப்": "அனைத்து+adj+sandhip=ப்",
+        "இந்தியக்": "இந்திய+adj+sandhik=க்"
+      },
+      "must_generate": {
+        "மெது+adj+cop=ஆ+adjpart=ன+adj": "மெதுவான"
       },
       "must_not_analyze": {
         "மக்களுக்கான": ["மக்களுக்கு+noun+nom+cop=ஆ+adjpart=ன"],

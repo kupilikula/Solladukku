@@ -1,0 +1,7 @@
+{
+  "artifact": "tamil_reviewed_entities.jsonl",
+  "entries": 101,
+  "gazetteer_sha256": "9e3f8911bfeef17ccae60b069dc7f1fbdd6b0bf3205c975f4cba4c5c94955341",
+  "policy": "reviewed-only open-vocabulary entity supplement",
+  "revision": "2026-07-18"
+}

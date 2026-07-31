@@ -1,0 +1,4 @@
+# Reviewed lexical readings that must remain playable even though the same
+# spelling appears in the reviewed entity inventory.
+உலகம்
+சாடை

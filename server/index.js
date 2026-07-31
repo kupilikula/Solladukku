@@ -1,5 +1,10 @@
 const path = require('path');
 const fs = require('fs');
+const {
+    createGameplayPolicy,
+    hasPlayableAnalysis,
+    isPlayableWordShape,
+} = require('./word-validation-policy');
 
 function loadLocalEnvFile() {
     const envPath = path.join(__dirname, '.env');
@@ -54,6 +59,7 @@ const RATE_LIMIT_MAX_MESSAGES = 30;
 const MATCH_ASSIGNMENT_TTL_MS = 10 * 60 * 1000;
 const MATCHMAKING_QUEUE_TTL_MS = 2 * 60 * 1000;
 const STRICT_SERVER_VALIDATION = String(process.env.STRICT_SERVER_VALIDATION || 'true').toLowerCase() === 'true';
+const gameplayPolicy = createGameplayPolicy();
 const ANALYTICS_ADMIN_PASSWORD = process.env.ANALYTICS_ADMIN_PASSWORD || '';
 const ANALYTICS_STORE_RAW_IP = String(process.env.ANALYTICS_STORE_RAW_IP || 'true').toLowerCase() !== 'false';
 const AUTH_ENABLED = auth.isAuthEnabled();
@@ -1700,6 +1706,7 @@ const CORE_FST_FILES = [
     'verb-c12.fst',
     'verb-c62.fst',
     'verb-c-rest.fst',
+    'verb-auxiliary.fst',
 ];
 
 // Long-lived flookup child processes: Map<fstName, { process, callbackQueue, alive }>
@@ -1806,7 +1813,7 @@ function initFstProcesses() {
 
     if (!fs.existsSync(FST_DIR)) {
         console.log(`WARNING: FST models directory not found: ${FST_DIR}`);
-        console.log('Run: npm run setup  (build from vendored ThamizhiMorph + local patches)');
+        console.log('Run: npm run setup  (verify the locked morphology release)');
         if (STRICT_SERVER_VALIDATION) {
             console.log('STRICT_SERVER_VALIDATION=true: words not recognized by local dictionary will be rejected.');
         }
@@ -1838,7 +1845,7 @@ function initFstProcesses() {
 
 /**
  * Look up a single word against a single FST process.
- * Returns true if the FST recognizes the word (output is not "+?").
+ * Returns true if the FST has at least one analysis allowed by gameplay rules.
  */
 function lookupWord(fstEntry, word) {
     return new Promise((resolve) => {
@@ -1851,12 +1858,7 @@ function lookupWord(fstEntry, word) {
             lines: [],
             resolve: (lines) => {
                 clearTimeout(timeoutId);
-                // Check if any output line shows recognition (not "+?")
-                const recognized = lines.some(line => {
-                    const parts = line.split('\t');
-                    return parts.length >= 2 && parts[1].trim() !== '+?';
-                });
-                resolve(recognized);
+                resolve(hasPlayableAnalysis(lines));
             },
         };
 
@@ -1876,9 +1878,13 @@ function lookupWord(fstEntry, word) {
 
 /**
  * Validate a word against ALL FST models.
- * Returns true if ANY FST recognizes the word.
+ * Returns true if any FST returns at least one gameplay-safe analysis.
  */
 async function validateWordWithFsts(word) {
+    const normalizedWord = String(word || '').normalize('NFC');
+    if (!isPlayableWordShape(normalizedWord) || gameplayPolicy.isExcluded(normalizedWord)) {
+        return false;
+    }
     if (!flookupAvailable || fstProcesses.size === 0) {
         return !STRICT_SERVER_VALIDATION; // strict mode rejects on server-validation unavailability
     }
@@ -1893,7 +1899,7 @@ async function validateWordWithFsts(word) {
         let found = false;
 
         for (const entry of entries) {
-            lookupWord(entry, word).then((recognized) => {
+            lookupWord(entry, normalizedWord).then((recognized) => {
                 if (recognized && !found) {
                     found = true;
                     resolve(true);

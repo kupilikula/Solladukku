@@ -29,6 +29,8 @@ LEXICON_FILE = SCRIPT_DIR / "tamillexicon_headwords.txt"
 FST_FORMS_FILE = SCRIPT_DIR / "fst_generated_forms.txt"
 HEURISTIC_FORMS_FILE = SCRIPT_DIR / "fst_heuristic_forms.txt"
 WIKTIONARY_EXCLUSIONS_FILE = SCRIPT_DIR / "wiktionary_exclusions.txt"
+GAMEPLAY_EXCLUSIONS_FILE = PROJECT_ROOT / "server" / "gameplay-proper-noun-exclusions.txt"
+GAMEPLAY_EXCEPTIONS_FILE = PROJECT_ROOT / "server" / "gameplay-common-word-exceptions.txt"
 
 VUIZUR_TSV_URL = "https://raw.githubusercontent.com/Vuizur/Wiktionary-Dictionaries/master/Tamil-English%20Wiktionary%20dictionary.tsv"
 TAWIKTIONARY_TITLES_URL = (
@@ -70,6 +72,17 @@ def load_wiktionary_exclusions() -> set:
             if w and is_pure_tamil(w):
                 words.add(w)
     return words
+
+
+def load_plain_word_set(path: Path) -> set[str]:
+    """Load normalized Tamil words from a comment-friendly text file."""
+    if not path.exists():
+        return set()
+    return {
+        unicodedata.normalize("NFC", line.strip())
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.lstrip().startswith("#")
+    }
 
 
 def tamil_letter_count(word: str) -> int:
@@ -246,6 +259,13 @@ def main():
     excluded_wiktionary = load_wiktionary_exclusions()
     if excluded_wiktionary:
         print(f"Loaded Wiktionary exclusion list: {len(excluded_wiktionary)}")
+    excluded_gameplay = load_plain_word_set(GAMEPLAY_EXCLUSIONS_FILE)
+    common_word_exceptions = load_plain_word_set(GAMEPLAY_EXCEPTIONS_FILE)
+    excluded_gameplay -= common_word_exceptions
+    print(
+        f"Loaded proper-name gameplay exclusions: {len(excluded_gameplay)} "
+        f"({len(common_word_exceptions)} common-word exceptions)"
+    )
 
     # Step 1: Tamil Lexicon headwords
     print("Step 1: Cleaning Tamil Lexicon headwords...")
@@ -274,7 +294,11 @@ def main():
 
     # Tokenizer/root-lemma and browser-local artifacts: source headwords only,
     # no generated inflections. Server FST validation handles local misses.
-    lemma_source_words = (lexicon_words | wiki_dump_words | vuizur_words) - excluded_wiktionary
+    lemma_source_words = (
+        (lexicon_words | wiki_dump_words | vuizur_words)
+        - excluded_wiktionary
+        - excluded_gameplay
+    )
     lemma_words = write_lemma_dictionary(lemma_source_words)
 
     # Step 4: FST-generated forms (noun/adj/adv/part/pronoun + verb classes)
@@ -301,12 +325,16 @@ def main():
     # Filter by length (max 15 Tamil letters for the 15x15 board)
     print(f"\nStep {filter_step}: Filtering to ≤15 Tamil letters...")
     before = len(all_words)
-    all_words = {w for w in all_words if tamil_letter_count(w) <= 15}
+    all_words = {
+        w for w in all_words
+        if tamil_letter_count(w) <= 15 and w not in excluded_gameplay
+    }
     print(f"  Filtered: {before} → {len(all_words)} words")
 
     print(f"\nStep {write_step}: Writing dictionary artifacts...")
     full_words = set(all_words)
     client_words = {w for w in lemma_words if tamil_letter_count(w) <= 15}
+    assert not (client_words & excluded_gameplay), "proper-name exclusions leaked into client dictionary"
 
     print("  Full generated dictionary keeps lexical sources plus generated forms.")
     full_sorted = write_word_list(FULL_DICTIONARY_FILE, full_words, "Full generated dictionary")

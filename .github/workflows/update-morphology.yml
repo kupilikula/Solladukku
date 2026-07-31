@@ -12,49 +12,34 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    env:
-      MORPHOLOGY_DEPLOY_KEY: ${{ secrets.MORPHOLOGY_DEPLOY_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Configure read-only morphology access
-        run: |
-          test -n "$MORPHOLOGY_DEPLOY_KEY"
-          install -m 700 -d ~/.ssh
-          printf '%s\n' "$MORPHOLOGY_DEPLOY_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
       - name: Fetch newest morphology version
         run: |
-          remote=git@github.com:kupilikula/tamil-morphology.git
-          tag=$(git ls-remote --tags "$remote" 'refs/tags/v*' | sed 's#.*refs/tags/##; /^.*\^{}$/d' | sort -V | tail -1)
-          test -n "$tag"
-          git clone --depth 1 --branch "$tag" "$remote" /tmp/tamil-morphology
+          git clone --depth 1 https://github.com/Indic-AI-Experiments/tamil-morphology.git /tmp/tamil-morphology
           tar -czf /tmp/tamil-morphology-release.tar.gz \
             -C /tmp tamil-morphology/manifest.json tamil-morphology/runtime
       - name: Verify and install runtime
         run: |
           python scripts/install_morphology_release.py /tmp/tamil-morphology-release.tar.gz \
-            --runtime-dir build/fst-models \
-            --runtime-dir static-word-list/fst-models \
             --runtime-dir server/fst-models \
             --lock-file morphology.lock.json
       - name: Verify consumer copies and run FST regressions
         run: |
           sudo apt-get update
           sudo apt-get install -y foma
-          diff -qr /tmp/tamil-morphology/runtime build/fst-models
-          diff -qr /tmp/tamil-morphology/runtime static-word-list/fst-models
           diff -qr /tmp/tamil-morphology/runtime server/fst-models
+          python3 scripts/verify_morphology_lock.py --runtime-dir server/fst-models
           python3 /tmp/tamil-morphology/fst/tests/run_fst_regressions.py
       - name: Open tested update pull request
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           branch=automation/update-tamil-morphology
-          git add -f -- morphology.lock.json build/fst-models static-word-list/fst-models server/fst-models
+          git add -f -- morphology.lock.json server/fst-models
           if git diff --cached --quiet; then
             exit 0
           fi
@@ -67,4 +52,4 @@ jobs:
               --base main \
               --head "$branch" \
               --title "Update Tamil morphology release" \
-              --body "Automated checksum-verified update from kupilikula/tamil-morphology. Solladukku's FST regression suite passed."
+              --body "Automated checksum-verified update from Indic-AI-Experiments/tamil-morphology. Solladukku's FST regression suite passed."

@@ -23,11 +23,13 @@ WIKTIONARY_UNKNOWN_REVIEW_PATH = ROOT / "fst" / "tests" / "fixtures" / "wiktiona
 FULL_MODE_FIXTURE_PATH = ROOT / "fst" / "tests" / "fixtures" / "full_mode_regressions.json"
 MISC_FIXTURE_PATH = ROOT / "fst" / "tests" / "fixtures" / "misc_morph_regressions.json"
 NOUN_FST_CANDIDATES = [
+    ROOT / "runtime" / "noun.fst",
     ROOT / "build" / "fst-models" / "noun.fst",
     ROOT / "server" / "fst-models" / "noun.fst",
     ROOT / "static-word-list" / "fst-models" / "noun.fst",
 ]
 FST_MODEL_DIR_CANDIDATES = [
+    ROOT / "runtime",
     ROOT / "build" / "fst-models",
     ROOT / "server" / "fst-models",
     ROOT / "static-word-list" / "fst-models",
@@ -105,6 +107,54 @@ def resolve_fst_model(model_name: str) -> Path:
         f"Missing {model_name} in expected locations: "
         + ", ".join(str(p) for p in FST_MODEL_DIR_CANDIDATES)
     )
+
+
+def ensure_adjective_model_owns_only_non_noun_analyses() -> int:
+    """Keep noun-derived modifiers in noun.fst instead of duplicating them."""
+    model_path = resolve_fst_model("adj.fst")
+    with tempfile.TemporaryDirectory(prefix="adj-ownership-") as temp_dir:
+        pairs_path = Path(temp_dir) / "adj-pairs.tsv"
+        subprocess.run(
+            [
+                "foma",
+                "-e",
+                f"load stack {model_path}",
+                "-e",
+                f"print pairs > {pairs_path}",
+                "-e",
+                "quit",
+            ],
+            text=True,
+            capture_output=True,
+            check=True,
+        )
+        ensure_file(pairs_path, "adjective finite relation")
+        rows = pairs_path.read_text(encoding="utf-8").splitlines()
+
+    noun_owned = []
+    untyped_privatives = []
+    for row in rows:
+        if "\t" not in row:
+            continue
+        analysis, _surface = row.split("\t", 1)
+        if "+noun" in analysis:
+            noun_owned.append(analysis)
+        if "+privative=" in analysis:
+            prefix = analysis.split("+privative=", 1)[0]
+            if "+noun" not in prefix and "+adj" not in prefix:
+                untyped_privatives.append(analysis)
+
+    if noun_owned:
+        fail(
+            "adj.fst contains noun-owned analyses after ownership consolidation: "
+            f"{noun_owned[:10]}"
+        )
+    if untyped_privatives:
+        fail(
+            "adj.fst contains privatives without an explicit lexical category: "
+            f"{untyped_privatives[:10]}"
+        )
+    return len(rows)
 
 
 def ensure_pair_extensions_are_bidirectional() -> int:
@@ -263,6 +313,8 @@ def ensure_verb_infinitive_generation_expansion() -> None:
     )
     if fst_dir is None:
         fail("No FST model directory available for verb infinitive generation regression")
+    if not any(module.resolve_verb_lexc(klass) for klass in module.VERB_CLASSES):
+        return  # Template-generation checks run after a source rebuild creates .work.
 
     expected_forms = {
         "படித்தல்": {"படித்தான்", "படிக்கிறேன்", "படிப்பேன்"},
@@ -323,6 +375,14 @@ def main() -> None:
         action="store_true",
         help="Require additional full-generation assertions",
     )
+    parser.add_argument(
+        "--check-classification-artifacts",
+        action="store_true",
+        help=(
+            "Require locally generated lexical-classification audit tables. "
+            "These tables are intentionally absent from the public source release."
+        ),
+    )
     args = parser.parse_args()
 
     ensure_file(FIXTURE_PATH, "fixture")
@@ -333,6 +393,7 @@ def main() -> None:
     resolve_noun_fst()
     ensure_no_noun_class_duplicates()
     ensure_verb_infinitive_generation_expansion()
+    adjective_owned_paths = ensure_adjective_model_owns_only_non_noun_analyses()
     reversible_extension_pairs = ensure_pair_extensions_are_bidirectional()
 
     fixture = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
@@ -405,6 +466,22 @@ def main() -> None:
                     f"{word} missing {required_analysis} (got {sorted(analyses)})"
                 )
             misc_good_count += 1
+        generated = model_fixture.get("must_generate", {})
+        generated_results = run_flookup_with_model(
+            model_path, list(generated), inverse=True
+        )
+        for analysis, required_surfaces in generated.items():
+            if isinstance(required_surfaces, str):
+                required_surfaces = [required_surfaces]
+            surfaces = set(generated_results.get(analysis, []))
+            missing = set(required_surfaces) - surfaces
+            if missing:
+                fail(
+                    f"Misc inverse morphology miss in {model_name}: "
+                    f"{analysis} missing {sorted(missing)} "
+                    f"(got {sorted(surfaces)[:10]})"
+                )
+            misc_good_count += len(required_surfaces)
         forbidden = model_fixture.get("must_not_analyze", {})
         forbidden_results = run_flookup_with_model(model_path, list(forbidden), inverse=False)
         for word, forbidden_analyses in forbidden.items():
@@ -449,66 +526,75 @@ def main() -> None:
         for word in ["எனக்", "எனச்", "எனத்", "ஊராட்சித்"]:
             if word in client_words:
                 fail(f"Client dictionary contains sandhi surface: {word}")
+        for word in ["சென்னை", "மதுரை", "இந்தியா", "முருகன்", "இராமன்"]:
+            if word in client_words:
+                fail(f"Client dictionary contains reviewed proper name: {word}")
+        for word in ["உலகம்", "சாடை"]:
+            if word not in client_words:
+                fail(f"Client dictionary lost reviewed common-word exception: {word}")
 
-    combined_classes = load_combined_classification_map()
-    heuristic_fixture = json.loads(HEURISTIC_FIXTURE_PATH.read_text(encoding="utf-8"))
-    for lemma, expected_class in heuristic_fixture["must_include_class"].items():
-        seen = combined_classes.get(lemma, set())
-        if expected_class not in seen:
-            fail(f"Classification regression: {lemma} missing expected class {expected_class} (got {sorted(seen)})")
-    for lemma, forbidden_classes in heuristic_fixture["must_exclude_classes"].items():
-        seen = combined_classes.get(lemma, set())
-        overlaps = sorted(set(forbidden_classes) & seen)
-        if overlaps:
-            fail(f"Classification regression: {lemma} includes forbidden classes {overlaps}")
+    if args.check_classification_artifacts:
+        combined_classes = load_combined_classification_map()
+        heuristic_fixture = json.loads(HEURISTIC_FIXTURE_PATH.read_text(encoding="utf-8"))
+        for lemma, expected_class in heuristic_fixture["must_include_class"].items():
+            seen = combined_classes.get(lemma, set())
+            if expected_class not in seen:
+                fail(f"Classification regression: {lemma} missing expected class {expected_class} (got {sorted(seen)})")
+        for lemma, forbidden_classes in heuristic_fixture["must_exclude_classes"].items():
+            seen = combined_classes.get(lemma, set())
+            overlaps = sorted(set(forbidden_classes) & seen)
+            if overlaps:
+                fail(f"Classification regression: {lemma} includes forbidden classes {overlaps}")
 
-    ensure_file(UNCLASSIFIED_WIKTIONARY_FILE, "fst_unclassified_vuizur_headwords.json")
-    unclassified_rows = json.loads(UNCLASSIFIED_WIKTIONARY_FILE.read_text(encoding="utf-8"))
-    if not isinstance(unclassified_rows, list):
-        fail("Unclassified Wiktionary report is not a list")
-    unresolved = {row.get("lemma") for row in unclassified_rows if isinstance(row, dict)}
-    review_fixture = json.loads(WIKTIONARY_REVIEW_FIXTURE_PATH.read_text(encoding="utf-8"))
-    max_unclassified = int(review_fixture.get("max_unclassified_unknown", 10**9))
-    if len(unclassified_rows) > max_unclassified:
-        fail(
-            f"Wiktionary unresolved count regression: {len(unclassified_rows)} > {max_unclassified}"
-        )
-    for lemma in review_fixture.get("must_resolve", []):
-        if lemma in unresolved:
-            fail(f"Wiktionary resolution regression: {lemma} is still unresolved")
-    for lemma in review_fixture.get("must_remain_unresolved", []):
-        if lemma not in unresolved:
-            fail(f"Wiktionary resolution regression: {lemma} unexpectedly resolved")
+        ensure_file(UNCLASSIFIED_WIKTIONARY_FILE, "fst_unclassified_vuizur_headwords.json")
+        unclassified_rows = json.loads(UNCLASSIFIED_WIKTIONARY_FILE.read_text(encoding="utf-8"))
+        if not isinstance(unclassified_rows, list):
+            fail("Unclassified Wiktionary report is not a list")
+        unresolved = {row.get("lemma") for row in unclassified_rows if isinstance(row, dict)}
+        review_fixture = json.loads(WIKTIONARY_REVIEW_FIXTURE_PATH.read_text(encoding="utf-8"))
+        max_unclassified = int(review_fixture.get("max_unclassified_unknown", 10**9))
+        if len(unclassified_rows) > max_unclassified:
+            fail(
+                f"Wiktionary unresolved count regression: {len(unclassified_rows)} > {max_unclassified}"
+            )
+        for lemma in review_fixture.get("must_resolve", []):
+            if lemma in unresolved:
+                fail(f"Wiktionary resolution regression: {lemma} is still unresolved")
+        for lemma in review_fixture.get("must_remain_unresolved", []):
+            if lemma not in unresolved:
+                fail(f"Wiktionary resolution regression: {lemma} unexpectedly resolved")
 
-    unknown_review = json.loads(WIKTIONARY_UNKNOWN_REVIEW_PATH.read_text(encoding="utf-8"))
-    unknown_candidates = unknown_review.get("candidates", []) if isinstance(unknown_review, dict) else []
-    if not isinstance(unknown_candidates, list):
-        fail("Wiktionary unknown review candidates is not a list")
-    reviewed_lemmas = {
-        row.get("lemma")
-        for row in unknown_candidates
-        if isinstance(row, dict) and isinstance(row.get("lemma"), str)
-    }
-    if not unresolved.issubset(reviewed_lemmas):
-        missing = sorted(unresolved - reviewed_lemmas)[:20]
-        extra = sorted(reviewed_lemmas - unresolved)[:20]
-        fail(
-            "Wiktionary unknown review fixture drift: "
-            f"missing={missing} extra={extra}"
-        )
+        unknown_review = json.loads(WIKTIONARY_UNKNOWN_REVIEW_PATH.read_text(encoding="utf-8"))
+        unknown_candidates = unknown_review.get("candidates", []) if isinstance(unknown_review, dict) else []
+        if not isinstance(unknown_candidates, list):
+            fail("Wiktionary unknown review candidates is not a list")
+        reviewed_lemmas = {
+            row.get("lemma")
+            for row in unknown_candidates
+            if isinstance(row, dict) and isinstance(row.get("lemma"), str)
+        }
+        if not unresolved.issubset(reviewed_lemmas):
+            missing = sorted(unresolved - reviewed_lemmas)[:20]
+            extra = sorted(reviewed_lemmas - unresolved)[:20]
+            fail(
+                "Wiktionary unknown review fixture drift: "
+                f"missing={missing} extra={extra}"
+            )
 
     print("PASS: FST regressions")
     print(f"PASS: inverse checks={len(inverse_pairs)} forward-good={len(forward_good)}")
     print(f"PASS: verb forward-good={verb_good_count}")
     print(f"PASS: verb rejected-bad={verb_bad_count}")
     print(f"PASS: misc morphology checks={misc_good_count}")
+    print(f"PASS: adjective ownership paths={adjective_owned_paths} noun-led=0")
     print(f"PASS: rejected-bad={len(rejected_bad)} leaked-bad={len(leaked_bad)}")
     print(f"PASS: reversible finite-relation extensions={reversible_extension_pairs}")
     if args.check_dictionary:
         print("PASS: dictionary include/exclude checks")
-    print("PASS: heuristic classification checks")
-    print("PASS: Wiktionary resolution checks")
-    print("PASS: Wiktionary unknown review coverage checks")
+    if args.check_classification_artifacts:
+        print("PASS: heuristic classification checks")
+        print("PASS: Wiktionary resolution checks")
+        print("PASS: Wiktionary unknown review coverage checks")
 
     if args.full_mode:
         ensure_file(FULL_MODE_FIXTURE_PATH, "full mode fixture")

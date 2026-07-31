@@ -1,28 +1,22 @@
 FROM node:18-slim
 
-RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates foma python3 make g++ git && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates foma python3 make g++ && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Install root dependencies + copy sources required for patched FST build
+# Install root dependencies and the checksum-pinned morphology runtime.
 COPY package*.json ./
 RUN npm ci
-COPY fst/ fst/
-COPY vendor/ vendor/
+COPY morphology.lock.json ./
+COPY scripts/verify_morphology_lock.py scripts/verify_morphology_lock.py
 COPY server/ server/
 COPY public/ public/
 COPY src/ src/
 
-# Compile patched FST models (canonical build/fst-models + synced consumer copies)
-RUN npm run fst:build
+# Refuse to deploy if the checked-in FST release differs from its manifest.
+RUN npm run fst:verify-release
 
-# Build React frontend
-# Git LFS pointers aren't resolved by Railway's Docker builder — download the real file
-RUN if [ $(wc -c < public/tamil_dictionary.txt) -lt 1000 ]; then \
-      echo "Dictionary is LFS pointer, downloading from GitHub..." && \
-      curl -L -o public/tamil_dictionary.txt \
-        "https://github.com/kupilikula/Solladukku/raw/main/public/tamil_dictionary.txt"; \
-    fi
+# Build React frontend. The compact dictionary is a regular checked-in file.
 RUN npm run build
 
 # Set up server

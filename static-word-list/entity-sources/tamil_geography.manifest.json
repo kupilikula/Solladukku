@@ -1,0 +1,57 @@
+{
+  "counts": {
+    "aliases": 141,
+    "city": 3298,
+    "city_allowlist_active": 74,
+    "city_allowlist_missing": 19,
+    "city_allowlist_requested": 93,
+    "country": 203,
+    "declension:consonant": 1615,
+    "declension:du_geminate": 3,
+    "declension:indeclinable": 277,
+    "declension:m_final": 161,
+    "declension:u_drop": 2,
+    "declension:vowel_v": 1113,
+    "declension:vowel_y": 455,
+    "entries": 3626,
+    "org": 2,
+    "place": 1,
+    "region": 122,
+    "rejected": 116,
+    "review_status:candidate": 3224,
+    "review_status:reviewed": 402
+  },
+  "format_version": 1,
+  "gazetteer_sha256": "5d9a355e4c2e290a1ede83430b29b13e726734d096ab87413e96a567462aa525",
+  "sources": {
+    "city_aliases": {
+      "sha256": "fd64f801fe3cf18651e1b634db92cb1299f61d6d5fa84be4a3ce6db4c5061208"
+    },
+    "city_runtime_allowlist": {
+      "sha256": "c276650ac5fd1fe7bf38ac102aa529386bb40b707c27bca6070f3010129e8b0d"
+    },
+    "cldr": {
+      "commit": "d2988851207ba643d9ccc4c2e895e5ca1f4fbaf3",
+      "revision": "48.1.0",
+      "sha256": "f723606457ea22562fa45e31d4e24755f369dcc708bf44d523410c0a19d50743"
+    },
+    "declension_overrides": {
+      "sha256": "de37665d404694f85b1c88a5c127fc5bae275e5322a8987fbb9c3f05ba9c1a9a"
+    },
+    "surface_exclusions": {
+      "sha256": "815da3e550576c564651b47e7ec49a6643a31f4a5cd07e8284fe9421f07aae55"
+    },
+    "wikidata_cities": {
+      "sha256": "e5f50dc22d7c7d48a6e2ce3e0e6a7500e1cff8a751e6d08bc565d37ea6c0c867",
+      "snapshot": "2026-07-14"
+    },
+    "wikidata_countries": {
+      "sha256": "9bcb8e894e612fd71608a6690061c0bc4f57048a2b5cf6893a51056da1109505",
+      "snapshot": "2026-07-14"
+    },
+    "wikidata_regions": {
+      "sha256": "404d327c5984b9285af67259c149bff9d965948ae91c8f395087316acb11ff13",
+      "snapshot": "2026-07-14"
+    }
+  }
+}

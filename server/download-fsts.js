@@ -1,22 +1,26 @@
 #!/usr/bin/env node
 /**
  * Backward-compatible setup wrapper.
- * Builds FST binaries from vendored ThamizhiMorph + local patches.
+ * Verifies the checked-in, checksum-pinned tamil-morphology runtime.
  */
 
 const { spawnSync } = require('child_process');
 const path = require('path');
 
 const repoRoot = path.resolve(__dirname, '..');
-const builder = path.join(repoRoot, 'fst', 'build', 'build_fsts.py');
+const verifier = path.join(repoRoot, 'scripts', 'verify_morphology_lock.py');
 
-const result = spawnSync('python3', [builder], {
+const result = spawnSync('python3', [
+  verifier,
+  '--runtime-dir',
+  path.join(repoRoot, 'server', 'fst-models'),
+], {
   cwd: repoRoot,
   stdio: 'inherit',
 });
 
 if (result.error) {
-  console.error('Failed to run FST builder:', result.error.message);
+  console.error('Failed to verify the morphology release:', result.error.message);
   process.exit(1);
 }
 

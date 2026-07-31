@@ -35,7 +35,7 @@ A multiplayer Tamil Scrabble game built with React and WebSockets.
 
 ```bash
 npm install
-npm run fst:build   # builds patched FST artifacts (canonical build/fst-models + synced copies)
+npm run fst:build   # verifies the checksum-pinned 12-model morphology release
 cd server && npm install && npm start
 ```
 
