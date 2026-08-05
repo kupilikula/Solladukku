@@ -86,7 +86,8 @@ vendor/
 └── thamizhi-morph/           # Git submodule pinned to upstream commit (currently a296417ac603fd44eda35645369f1257d96bed89)
 public/
 ├── logo.png                  # Game logo (optional — landing page hides slot if missing)
-├── solmaalai-social-card.png # 1200×630 Open Graph/X link preview image
+├── solmaalai-social-card.png # Original 1200×630 Open Graph/X link preview retained for cached links
+├── solmaalai-social-card-v2.png # Current cache-busted 1200×630 Open Graph/X link preview image
 ├── tamil_dictionary.txt      # Generated Tamil dictionary served to browser (size/count depends on latest build)
 ├── index.html                # HTML shell with title, canonical URL, and Open Graph/X card metadata
 └── manifest.json             # PWA manifest with game name
@@ -154,7 +155,7 @@ railway.toml                  # Railway deploy config: watchPatterns to skip doc
 The app opens to a landing page before entering any game:
 
 - **Game title**: "சொல்மாலை" in large peacock blue text
-- **Social link preview**: `public/index.html` publishes absolute Open Graph and X/Twitter `summary_large_image` metadata for `https://solmaalai.com/solmaalai-social-card.png` (1200×630), so shared production links render the branded Tamil game card with Tamil-letter tiles and the multiplayer/computer-play caption.
+- **Social link preview**: `public/index.html` publishes absolute Open Graph and X/Twitter `summary_large_image` metadata for the cache-busted `https://solmaalai.com/solmaalai-social-card-v2.png` (1200×630), so shared production links render the branded Tamil game card with Tamil-letter tiles and the multiplayer/computer-play caption. The original unversioned asset remains available for older cached links.
 - **Logo**: Renders `public/logo.png` above the title (96px height). Hides gracefully via `onError` if the file is missing.
 - **Persistent username**: Editable username input (saved in `localStorage` and synced to server profile)
 - **Account auth panel (feature-flagged)**: Landing page supports login/signup plus verify-email and forgot/reset password flows; signup includes an explicit username field in the auth card. By default only **Forgot Password** selector is shown; **Reset Password** and **Verify Email** selectors appear only when arriving via `/reset-password?token=...` or `/verify-email?token=...` links. Verify links auto-submit once; reset links auto-select reset mode and reuse URL token (manual token input only when token is missing). When auth is enabled, access token is kept in-memory, refresh session uses HttpOnly cookie, and CSRF token is sent via `X-CSRF-Token` from `solmaalai_csrf` cookie.
