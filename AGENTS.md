@@ -154,7 +154,7 @@ railway.toml                  # Railway deploy config: watchPatterns to skip doc
 The app opens to a landing page before entering any game:
 
 - **Game title**: "சொல்மாலை" in large peacock blue text
-- **Social link preview**: `public/index.html` publishes absolute Open Graph and X/Twitter `summary_large_image` metadata for `https://solmaalai.com/solmaalai-social-card.png` (1200×630), so shared production links render the branded Tamil game card.
+- **Social link preview**: `public/index.html` publishes absolute Open Graph and X/Twitter `summary_large_image` metadata for `https://solmaalai.com/solmaalai-social-card.png` (1200×630), so shared production links render the branded Tamil game card with Tamil-letter tiles and the multiplayer/computer-play caption.
 - **Logo**: Renders `public/logo.png` above the title (96px height). Hides gracefully via `onError` if the file is missing.
 - **Persistent username**: Editable username input (saved in `localStorage` and synced to server profile)
 - **Account auth panel (feature-flagged)**: Landing page supports login/signup plus verify-email and forgot/reset password flows; signup includes an explicit username field in the auth card. By default only **Forgot Password** selector is shown; **Reset Password** and **Verify Email** selectors appear only when arriving via `/reset-password?token=...` or `/verify-email?token=...` links. Verify links auto-submit once; reset links auto-select reset mode and reuse URL token (manual token input only when token is missing). When auth is enabled, access token is kept in-memory, refresh session uses HttpOnly cookie, and CSRF token is sent via `X-CSRF-Token` from `solmaalai_csrf` cookie.
