@@ -89,6 +89,8 @@ public/
 ├── solmaalai-social-card.png # Original 1200×630 Open Graph/X link preview retained for cached links
 ├── solmaalai-social-card-v2.png # Current cache-busted 1200×630 Open Graph/X link preview image
 ├── tamil_dictionary.txt      # Generated Tamil dictionary served to browser (size/count depends on latest build)
+├── tamil_ai_prefixes.bloom   # Lazy 24 MiB FST-surface prefix + terminal-word Bloom index used only by the solo computer player
+├── tamil_ai_prefixes.manifest.json # Prefix artifact/source/morphology-lock hashes and build statistics
 ├── index.html                # HTML shell with title, canonical URL, and Open Graph/X card metadata
 └── manifest.json             # PWA manifest with game name
 src/
@@ -132,6 +134,7 @@ src/
 │   ├── GameSlice.js          # Game metadata: userId, gameId, gameMode, swapMode, turn tracking
 │   └── LetterBagsSlice.js    # Tile bag inventory (vowels, consonants, bonus)
 ├── utils/
+│   ├── aiPrefixIndex.js      # Lazy/versioned Cache API loader + Bloom lookup for morphology-aware AI prefix pruning
 │   ├── authClient.js         # Auth API client (`/api/auth/*`) with credentialed refresh-cookie requests
 │   ├── authSession.js        # In-memory access-token holder shared by app/hooks for authenticated API writes
 │   ├── TileSet.js            # Tamil tile definitions (points, types, merge/split ops)
@@ -261,7 +264,7 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
                     ├─ Multiplayer: send 'validateWords' via WebSocket (`sendRequest`)
                     │   └─ Server returns 'validateWordsResult' (unicast to requester only)
                     ├─ Single-player/no WebSocket: POST `/api/validate-words`
-                    ├─ Server runs flookup against 11 core FST models by default
+                    ├─ Server runs flookup against all 12 locked FST models
                     └─ ANY FST recognizes word → valid
                   Client caches result → accept or reject
 ```
@@ -275,6 +278,16 @@ submitWord() → local dictionary (binary search on sorted array, <1ms)
 - **Lookup**: Binary search using `<`/`>` comparison (NOT `localeCompare` — must match Python's `sorted()` codepoint order)
 - **Permissive fallback**: If dictionary fails to load or is too small (< 1000 entries, e.g. LFS pointer), all words are accepted
 - **Cache invalidation knob**: `REACT_APP_DICTIONARY_CACHE_VERSION` (frontend build env) can be bumped when dictionary content changes to force a one-time refetch
+
+### Computer-Player Prefix Index
+
+- **File**: `public/tamil_ai_prefixes.bloom` — a checked-in 24 MiB dual Bloom index (16 MiB prefixes + 8 MiB terminal surfaces) generated from the current `fst_generated_forms.txt` inventory plus every Tamil surface in the checked-in morphology regression fixtures
+- **Build command**: `npm run ai-prefixes:build`; both full and conservative dictionary builds regenerate it after FST form generation
+- **Loading**: `useAIGameSync` loads it lazily before computer move search, so multiplayer and landing-page startup do not download it; the no-cache manifest supplies the artifact SHA-256 as the Cache API URL version
+- **Search semantics**: dictionary prefixes and morphology-index prefixes both keep an AI branch alive. A separate terminal-surface Bloom filter prevents arbitrary intermediate prefixes from consuming the bounded validation queue. Bloom false positives are safe because complete words still require exact dictionary membership or `/api/validate-words` FST approval
+- **Candidate scoring**: bounded FST-only candidates are validated even when a dictionary move already exists, and a retry lets both sources compete by score; cross masks and bonus-letter choices are cleared after server validation so newly valid FST cross-words participate
+- **Provenance**: `public/tamil_ai_prefixes.manifest.json` records the Bloom artifact, generated-form source, regression-fixture, and `morphology.lock.json` SHA-256 hashes plus coverage/false-positive statistics
+- **Override knob**: `REACT_APP_AI_PREFIX_INDEX_VERSION` can override manifest-derived artifact versioning for an exceptional deployment
 
 ### Dictionary Sources (built by `static-word-list/build_dictionary.py`)
 
@@ -730,11 +743,12 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
    - Sets `gameMode: 'singleplayer'`, adds `'computer-player'` as opponent
 4. Player places tiles and plays → turn switches to AI
 5. AI turn (1-2.5s simulated thinking delay):
+   - Lazily loads and browser-caches the versioned FST surface-prefix Bloom filter
    - `computeAIMove()` runs anchor-based word search on the board
-   - Tries placing rack tiles at anchor positions, pruning with dictionary prefix checks
+   - Tries placing rack tiles at anchor positions, pruning with compact-headword or FST-surface prefix checks
    - Handles MEY+UYIR tile merging for UYIRMEY combinations
    - Uses a 5s search budget, then runs a timeout-aware quick fallback search before giving up
-   - On no-move paths, validates a bounded set of unknown words via HTTP FST (`/api/validate-words`) and retries search; conservative Tamil orthography start shortcuts prefilter impossible starts client-side before queueing fallback validation
+   - Validates a bounded set of unknown words via HTTP FST (`/api/validate-words`) and retries search even when a compact-dictionary move exists, allowing FST-only moves to win on score; conservative Tamil orthography start shortcuts prefilter impossible starts client-side before queueing fallback validation
    - Validates all cross-words, calculates scores with multipliers
    - Dispatches `addOtherPlayerTurn` with the best-scoring valid move
    - Falls back to adaptive swap (2-4 tiles, with repeat-avoidance using recent swap signatures) or pass if no valid move found
@@ -823,7 +837,7 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] **Dictionary Validation (client-side)**: Generated large Tamil dictionary with binary search (<1ms lookup)
 - [x] **Dictionary Build Pipeline**: Python scripts combining Tamil Lexicon + Wiktionary + ThamizhiMorph verbs + FST noun/adj/adv forms
 - [x] **FST Form Generation**: Generates noun/adj/adv/part/pronoun-derived forms using local foma/flookup models
-- [x] **Server-side FST Validation**: 11 core long-lived flookup processes by default
+- [x] **Server-side FST Validation**: 12 checksum-locked long-lived flookup processes
 - [x] **Vendored FST Upstream Management**: pinned `vendor/thamizhi-morph` submodule + local patch/build/manifest/regression framework under `fst/`
 - [x] **Validation UI**: Async submit with spinner during server check, dictionary-loading toast, disabled Play until ready, error toasts for invalid words
 - [x] **Bilingual UI**: Tamil/English language toggle across all components including landing page
@@ -837,11 +851,11 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 - [x] **Auth integration test suite** (`cd server && npm test`): covers auth lifecycle with CSRF enforcement, account-scoped `/api/games/:gameId` authorization, and WS close codes `4004`/`4005` plus room-full `4001`
 
 - [x] **Single Player Mode**: Play vs Computer with client-side AI engine
-  - Anchor-based word generation with dictionary prefix pruning (O(log N) per check against sorted dictionary)
+  - Anchor-based word generation with compact-dictionary binary-search prefixes plus a lazy 24 MiB FST-surface prefix/terminal Bloom index
   - Tamil MEY+UYIR tile merging for UYIRMEY combinations
   - Cross-word validation, score calculation with multipliers
   - 5s search budget + timeout-aware quick fallback search before swap/pass fallback
-  - Server-assisted rescue validation: bounded unknown-word batches validated via HTTP FST and cached before retrying search
+  - Server-assisted FST validation: bounded unknown-word batches are cached and rescored against dictionary moves; cross masks are rebuilt after new validations
   - Adaptive swap strategy (2-4 tiles based on rack/bag state) with recent-signature avoidance to reduce repeated swap loops
   - UI adapts: "vs Computer" status, "Computer" name, no Chat/Invite, "Thinking..." indicator
 
@@ -903,17 +917,18 @@ The WebSocket connection is managed via React Context (`WebSocketContext.js`), p
 ### Rebuilding the Dictionary
 1. Verify the locked public morphology runtime: `npm run fst:verify-release`
 2. Regenerate FST surface forms: `python3 static-word-list/generate_fst_forms.py`
-3. Build combined dictionary: `python3 static-word-list/build_dictionary.py`
-4. Run regression checks (including dictionary include/exclude assertions): `python3 fst/tests/run_fst_regressions.py --check-dictionary`
-5. Canonical full-mode build/check (local + production artifact path): `npm run dict:build`
-6. Conservative fallback build/check (debug only): `npm run dict:build:conservative`
-7. Gap analysis versus legacy external words: `npm run dict:analyze-gap` (writes `static-word-list/gap_vs_legacy_report.json` and `.md`)
-5. Output: `public/tamil_dictionary.txt` (served to browser)
+3. Build the AI morphology-prefix index: `npm run ai-prefixes:build`
+4. Build combined dictionary: `python3 static-word-list/build_dictionary.py`
+5. Run regression checks (including dictionary include/exclude assertions): `python3 fst/tests/run_fst_regressions.py --check-dictionary`
+6. Canonical full-mode build/check (local + production artifact path): `npm run dict:build`
+7. Conservative fallback build/check (debug only): `npm run dict:build:conservative`
+8. Gap analysis versus legacy external words: `npm run dict:analyze-gap` (writes `static-word-list/gap_vs_legacy_report.json` and `.md`)
+9. Outputs: `public/tamil_dictionary.txt` and `public/tamil_ai_prefixes.bloom`
 
 Shortcut:
 - `npm run dict:build` executes the full sequence above (release verification +
-  proper-name exclusion generation + form generation + dictionary build +
-  regression check).
+  proper-name exclusion generation + form generation + AI prefix-index build +
+  dictionary build + regression check).
 
 ### Adding a New WebSocket Message Type
 1. Add handler in `server/index.js` switch statement
@@ -1041,5 +1056,6 @@ Console logs are present throughout for debugging. Key areas:
 - `ActionMenu.js`: Turn submission, validation flow, server fallback
 - `WebSocketContext.js`: Message send/receive, request-response matching
 - `dictionary.js`: Dictionary load, cache hits/misses
+- `aiPrefixIndex.js`: Solo-only morphology prefix artifact loading and Bloom membership checks
 - `server/index.js`: FST validation requests and results, room management, rate limiting
 - Redux slices: State updates

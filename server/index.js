@@ -1582,6 +1582,7 @@ function handleHttpRequest(req, res) {
             '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg',
             '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.txt': 'text/plain',
             '.woff': 'font/woff', '.woff2': 'font/woff2', '.map': 'application/json',
+            '.bloom': 'application/octet-stream',
         };
         const IMMUTABLE_ASSET_REGEX = /\.[0-9a-f]{8,}\.(js|css|png|jpg|svg|woff2?|map)$/i;
         let filePath = path.join(buildDir, pathname);
@@ -1600,7 +1601,7 @@ function handleHttpRequest(req, res) {
             let cacheControl = 'public, max-age=300';
             if (IMMUTABLE_ASSET_REGEX.test(filename)) {
                 cacheControl = 'public, max-age=31536000, immutable';
-            } else if (filename === 'tamil_dictionary.txt') {
+            } else if (filename === 'tamil_dictionary.txt' || filename === 'tamil_ai_prefixes.manifest.json') {
                 cacheControl = 'no-cache';
             } else if (isSpaFallback || filename === 'index.html') {
                 cacheControl = 'no-cache';

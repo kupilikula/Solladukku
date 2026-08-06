@@ -1,0 +1,30 @@
+{
+  "accepted_words": 3084718,
+  "artifact_sha256": "10c57a9fefbde067c1f369ea06c8290a1468422863fdfc7d87595ab0fc9b0705",
+  "bit_count": 134217728,
+  "estimated_false_positive_rate": 0.00030614,
+  "estimated_unique_prefixes": 5930867,
+  "estimated_word_false_positive_rate": 0.00036335,
+  "fixture_sha256": {
+    "fst/tests/fixtures/full_mode_regressions.json": "0e7a7435dc76010d2d0a2d5808db1aa61c5920ad84fc7370d07364dd4803c18d",
+    "fst/tests/fixtures/heuristic_class_regressions.json": "2c023cfb78f481b704dab1d6303cd923830143a181d59b23aac09892fb128bcb",
+    "fst/tests/fixtures/misc_morph_regressions.json": "f678db7839aa2da235fd28cf74a72cdb8df5b109ebb1e213ebc8a1499e788d61",
+    "fst/tests/fixtures/noun_morph_regressions.json": "21916b588ccd2bf7eaee95bec0b31b29dd8cf5d4d3c950ba281657fc81495d4f",
+    "fst/tests/fixtures/verb_morph_regressions.json": "b2c6e6d6c363503843034cbcc1413553b2d0018612c27298cfa984e76c7248bb",
+    "fst/tests/fixtures/wiktionary_resolution_regressions.json": "3bba0846ebc76fc06fbbc085546dc4bcbd958d9d8cd53b5cb2203836c6ce6312",
+    "fst/tests/fixtures/wiktionary_unknown_review_candidates.json": "b51e402a4bda983f81712d4b3913f15425e2bd9bbdcc0b1ec3895bd2c9b6cafc"
+  },
+  "fixture_words": 1274,
+  "format": "SMAIPF02",
+  "hash_count": 5,
+  "inserted_prefixes": 26041098,
+  "morphology_lock_sha256": "2d4fe58fb292dbc0a7b2cc409076eb4603c4e7ef10cd4d594190f224daf18b43",
+  "occupancy": 0.198237,
+  "output": "public/tamil_ai_prefixes.bloom",
+  "size_bytes": 25165848,
+  "source": "static-word-list/fst_generated_forms.txt",
+  "source_sha256": "8d59b84fe434470caa89945951b4307d40509d919bed1c8cdbcbf8aa8085f09d",
+  "word_bit_count": 67108864,
+  "word_hash_count": 5,
+  "word_occupancy": 0.205147
+}

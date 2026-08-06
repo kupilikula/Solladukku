@@ -8,6 +8,7 @@ import { TileSet, TileMethods } from '../utils/TileSet';
 import { squareMultipliers } from '../utils/squareMultipliers';
 import { validateWordsWithHttpServer } from '../utils/dictionary';
 import { isTamilOrthographyDefinitelyInvalid } from '../utils/tamilOrthography';
+import { hasAIWord } from '../utils/aiPrefixIndex';
 import { buildGrid, findAnchors, hasPrefix, isWordValid, countBagTiles, selectAdaptiveSwapTiles } from './aiHelpers';
 import _ from 'lodash';
 
@@ -64,6 +65,7 @@ function getWordValidCached(word, aiCtx) {
     const valid = isWordValid(word);
     if (!valid &&
         aiCtx.serverValidationEnabled &&
+        hasAIWord(word) &&
         !isTamilOrthographyDefinitelyInvalid(word) &&
         aiCtx.pendingServerWords.size < SERVER_WORD_VALIDATION_LIMIT
     ) {
@@ -348,6 +350,11 @@ async function resolvePendingServerWords(aiCtx, debugCtx = null) {
         debugCtx.serverValidatedHits += newlyValid;
     }
 
+    // Cross masks and wildcard choices may have been computed while these
+    // words were still unknown. Rebuild them with the newly cached results.
+    aiCtx.crossCheckCache.clear();
+    aiCtx.bonusLetterOptionsCache.clear();
+
     return newlyValid;
 }
 
@@ -408,8 +415,9 @@ export async function computeAIMove(boardState, aiRackTileKeys, letterBags, aiUs
         grid, anchors, rackTiles, isFirstMove, startTime, TIME_LIMIT, aiCtx, debugCtx
     );
 
-    // Server-assisted rescue: validate unknown words and re-run search.
-    if (!bestMove && aiCtx.serverValidationEnabled && aiCtx.pendingServerWords.size > 0) {
+    // Validate FST-only candidates even when a dictionary move exists, then
+    // let both sources compete in the same score comparison.
+    if (aiCtx.serverValidationEnabled && aiCtx.pendingServerWords.size > 0) {
         const newlyValid = await resolvePendingServerWords(aiCtx, debugCtx);
         if (newlyValid > 0) {
             const retryStart = Date.now();
@@ -417,7 +425,9 @@ export async function computeAIMove(boardState, aiRackTileKeys, letterBags, aiUs
             const retrySearch = findBestMoveAcrossAnchors(
                 grid, anchors, rackTiles, isFirstMove, retryStart, retryLimit, aiCtx, debugCtx
             );
-            bestMove = retrySearch.bestMove;
+            if (retrySearch.bestMove && (!bestMove || retrySearch.bestMove.score > bestMove.score)) {
+                bestMove = retrySearch.bestMove;
+            }
             timedOut = timedOut || retrySearch.timedOut;
         }
     }

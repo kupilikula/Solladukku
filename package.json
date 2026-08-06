@@ -33,9 +33,10 @@
     "fst:build:lineage": "python3 fst/build/build_fsts.py",
     "fst:verify-release": "python3 scripts/verify_morphology_lock.py --runtime-dir server/fst-models",
     "fst:test": "python3 fst/tests/run_fst_regressions.py",
+    "ai-prefixes:build": "python3 scripts/build_ai_prefix_index.py",
     "gameplay-exclusions:build": "python3 scripts/build_gameplay_exclusions.py static-word-list/entity-sources/tamil_geography.jsonl static-word-list/entity-sources/tamil_reviewed_entities.jsonl static-word-list/entity-sources/gameplay_reviewed_names.jsonl --output server/gameplay-proper-noun-exclusions.txt",
-    "dict:build": "npm run fst:verify-release && npm run gameplay-exclusions:build && FULL_FST_GENERATION=true python3 static-word-list/generate_fst_forms.py && python3 static-word-list/build_dictionary.py && python3 fst/tests/run_fst_regressions.py --check-dictionary --full-mode",
-    "dict:build:conservative": "npm run fst:verify-release && npm run gameplay-exclusions:build && python3 static-word-list/generate_fst_forms.py && python3 static-word-list/build_dictionary.py && python3 fst/tests/run_fst_regressions.py --check-dictionary",
+    "dict:build": "npm run fst:verify-release && npm run gameplay-exclusions:build && FULL_FST_GENERATION=true python3 static-word-list/generate_fst_forms.py && npm run ai-prefixes:build && python3 static-word-list/build_dictionary.py && python3 fst/tests/run_fst_regressions.py --check-dictionary --full-mode",
+    "dict:build:conservative": "npm run fst:verify-release && npm run gameplay-exclusions:build && python3 static-word-list/generate_fst_forms.py && npm run ai-prefixes:build && python3 static-word-list/build_dictionary.py && python3 fst/tests/run_fst_regressions.py --check-dictionary",
     "dict:build:full": "npm run dict:build",
     "dict:analyze-gap": "python3 static-word-list/analyze_gap_vs_legacy.py"
   },

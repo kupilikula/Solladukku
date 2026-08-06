@@ -4,6 +4,7 @@
  */
 
 import { getDictionary } from '../utils/dictionary';
+import { hasAIPrefix } from '../utils/aiPrefixIndex';
 
 /**
  * Build a 15x15 grid from the board's playedTilesWithPositions.
@@ -61,7 +62,7 @@ export function findAnchors(grid, isFirstMove) {
  */
 export function hasPrefix(prefix) {
     const dictionary = getDictionary();
-    if (!dictionary || dictionary.length === 0) return false;
+    if (!dictionary || dictionary.length === 0) return hasAIPrefix(prefix);
 
     let lo = 0;
     let hi = dictionary.length - 1;
@@ -77,7 +78,7 @@ export function hasPrefix(prefix) {
 
     // Check the insertion point
     if (lo < dictionary.length && dictionary[lo].startsWith(prefix)) return true;
-    return false;
+    return hasAIPrefix(prefix);
 }
 
 /**

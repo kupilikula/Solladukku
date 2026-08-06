@@ -6,6 +6,7 @@ import { setGameMode, setSoloAiRack } from '../store/GameSlice';
 import { initialConsonantsBag, initialVowelsBag, initialBonusBag } from '../utils/initialLetterBags';
 import { computeAIMove } from '../ai/aiEngine';
 import { isDictionaryLoaded } from '../utils/dictionary';
+import { loadAIPrefixIndex } from '../utils/aiPrefixIndex';
 import _ from 'lodash';
 
 const AI_USER_ID = 'computer-player';
@@ -174,6 +175,7 @@ export function useAIGameSync({ resumeMode = false } = {}) {
 
         let result;
         try {
+            await loadAIPrefixIndex();
             result = await computeAIMove(
                 boardState,
                 aiRackRef.current,

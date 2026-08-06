@@ -85,6 +85,8 @@ claim that a finite gazetteer contains every possible personal name.
 Static dictionary outputs:
 
 - `public/tamil_dictionary.txt`: compact browser lookup dictionary. It contains lexical headwords only, one word per line, deduplicated, filtered to at most 15 Tamil letters, and sorted with Python `sorted()` Unicode codepoint order. Generated inflections missing from this local payload are validated by server-side FST fallback.
+- `public/tamil_ai_prefixes.bloom`: solo-computer-only 24 MiB dual Bloom index. Its prefix filter lets the anchor search traverse FST-generated surface branches, while its terminal filter limits HTTP validation candidates to likely complete morphology surfaces. Final acceptance still comes only from exact dictionary lookup or the server FST policy.
+- `public/tamil_ai_prefixes.manifest.json`: content hashes for the Bloom artifact, morphology lock, generated-form source, and release regression fixtures. The client uses the artifact hash as its persistent Cache API version.
 - `static-word-list/full_tamil_dictionary.txt`: full generated surface inventory from lexical sources plus FST-generated forms. Regression tests and offline audits use this file when they need comprehensive generated-form coverage.
 - `static-word-list/lemma_dictionary.txt`: source headword/lemma inventory used by tokenizer/root-lemma tooling. It excludes generated inflections.
 
@@ -92,6 +94,9 @@ The client binary search must use JavaScript `<` and `>` comparisons, not `local
 The dictionary request includes a release-version query string, and the server
 marks the file `no-cache`; changing the version invalidates the IndexedDB copy
 and prevents an older gameplay policy from surviving a deployment.
+The AI prefix manifest is also served with `no-cache`; `npm run
+ai-prefixes:build` regenerates both the Bloom payload and its content-addressed
+manifest after morphology form generation.
 
 ## FST Lineage and Models
 

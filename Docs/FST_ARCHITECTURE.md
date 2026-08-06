@@ -60,3 +60,12 @@ The compact `public/tamil_dictionary.txt` is a fast client-side headword cache.
 Server FST validation is authoritative for misses. Full offline dictionary
 generation may use ignored working copies under `build/fst-models/` and
 `static-word-list/fst-models/`, but production never reads them.
+
+The solo AI additionally consumes the checked-in, content-addressed
+`public/tamil_ai_prefixes.bloom` prefix/terminal index. It is rebuilt from the
+generated surface inventory and release regression fixtures with `npm run
+ai-prefixes:build`; its manifest pins the morphology lock and all input/output
+hashes. Bloom membership only controls search traversal and candidate batching:
+the deployed server FST policy remains the final authority. Consumer FST
+regressions resolve `server/fst-models/` first so ignored historical copies
+cannot shadow the deployed runtime.

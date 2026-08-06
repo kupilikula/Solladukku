@@ -23,15 +23,15 @@ WIKTIONARY_UNKNOWN_REVIEW_PATH = ROOT / "fst" / "tests" / "fixtures" / "wiktiona
 FULL_MODE_FIXTURE_PATH = ROOT / "fst" / "tests" / "fixtures" / "full_mode_regressions.json"
 MISC_FIXTURE_PATH = ROOT / "fst" / "tests" / "fixtures" / "misc_morph_regressions.json"
 NOUN_FST_CANDIDATES = [
+    ROOT / "server" / "fst-models" / "noun.fst",
     ROOT / "runtime" / "noun.fst",
     ROOT / "build" / "fst-models" / "noun.fst",
-    ROOT / "server" / "fst-models" / "noun.fst",
     ROOT / "static-word-list" / "fst-models" / "noun.fst",
 ]
 FST_MODEL_DIR_CANDIDATES = [
+    ROOT / "server" / "fst-models",
     ROOT / "runtime",
     ROOT / "build" / "fst-models",
-    ROOT / "server" / "fst-models",
     ROOT / "static-word-list" / "fst-models",
 ]
 CLIENT_DICT_FILE = ROOT / "public" / "tamil_dictionary.txt"
