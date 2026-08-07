@@ -169,8 +169,8 @@ The app opens to a landing page before entering any game:
 - **Auth panel visibility**: Login/Signup/Forgot/Reset/Verify auth card now renders only for guests (`!authAccount`). Signed-in users only see the identity header + logout UI.
 - **Username gate**: If `/api/profile` reports username conflict (`409`), game entry actions are disabled until user picks an available name
 - **"New Game With Invited Opponent" button** (`புது ஆட்டம் அழைப்புடன்`): Creates a private multiplayer room, sets `?game=` in URL, and auto-opens invite modal in-game
-- **"Play Random Opponent" button** (`யாவொருவருடன் விளையாடு`): Joins queue-based matchmaking; on match, navigates to matched `gameId`
-- **"Play vs Computer" button**: Starts a single-player game against the AI (no WebSocket, no game code needed)
+- **"Play Random Opponent" button** (`யாவொருவருடன் விளையாடுங்கள்`): Joins queue-based matchmaking; on match, navigates to matched `gameId`
+- **"Play vs Computer" button** (`கணினியுடன் விளையாடுங்கள்`): Starts a single-player game against the AI (no WebSocket, no game code needed)
 - **"Join Private Game" section**: Accepts either room code (4-8 alphanumeric, canonical uppercase) or full invite URL containing `?game=...`
 - **Leaderboard card**: Shows top rated players when data exists (hidden when empty), fetched with landing-page limit `10`, and stays visible on desktop via sticky positioning
 - **My Games card**: Authenticated users get account-scoped games across linked devices/browsers (with guest fallback when needed); supports **Continue** for in-progress games and **View Final Board** for finished games, includes status filter (All/In Progress/Finished), sort (Recent/Oldest), finished-games collapse toggle, and desktop internal scrolling (max-height) so long lists do not push leaderboard below the fold
